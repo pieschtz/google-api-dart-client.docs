@@ -1,0 +1,130 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>MylibraryReadingpositionsResourceResource Class / books Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books" data-type="MylibraryReadingpositionsResourceResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books.html">books</a> &rsaquo; <a href="../books/MylibraryReadingpositionsResourceResource.html">MylibraryReadingpositionsResourceResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>MylibraryReadingpositionsResourceResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> contentVersion = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to MylibraryReadingpositionsResourceResource.get">#</a></h4>
+<div class="doc">
+<p>Retrieves my reading position information for a volume.
+
+<span class="param">volumeId</span> ID of volume for which to retrieve a reading position.</p>
+<pre class="source">
+Future&lt;ReadingPosition&gt; get(String volumeId, [String source = UNSPECIFIED, String contentVersion = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["volumeId"] = volumeId;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (UNSPECIFIED != contentVersion) $queryParams["contentVersion"] = contentVersion;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/readingpositions/{volumeId}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;ReadingPosition&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = ReadingPosition.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="setPosition">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>setPosition</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> timestamp, <a href="../dart_core/String.html">String</a> position, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> contentVersion = UNSPECIFIED, <a href="../books/MylibraryResourceMylibraryReadingpositionsResourceResourceSetPositionAction.html">MylibraryResourceMylibraryReadingpositionsResourceResourceSetPositionAction</a> action = UNSPECIFIED]) <a class="anchor-link" href="#setPosition"
+              title="Permalink to MylibraryReadingpositionsResourceResource.setPosition">#</a></h4>
+<div class="doc">
+<p>Sets my reading position information for a volume.
+
+<span class="param">volumeId</span> ID of volume for which to update the reading position.
+
+<span class="param">timestamp</span> RFC 3339 UTC format timestamp associated with this reading position.
+
+<span class="param">position</span> Position string for the new volume reading position.</p>
+<pre class="source">
+Future setPosition(String volumeId, String timestamp, String position, [String source = UNSPECIFIED, String contentVersion = UNSPECIFIED, MylibraryResourceMylibraryReadingpositionsResourceResourceSetPositionAction action = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["volumeId"] = volumeId;
+  $pathParams["timestamp"] = timestamp;
+  $pathParams["position"] = position;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (UNSPECIFIED != contentVersion) $queryParams["contentVersion"] = contentVersion;
+  if (UNSPECIFIED != action) $queryParams["action"] = action;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/readingpositions/{volumeId}/setPosition").generate($pathParams, $queryParams);
+  final $completer = new Completer();
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = identity(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:15.092Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

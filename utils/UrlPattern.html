@@ -1,0 +1,95 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>UrlPattern Class / utils Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="utils" data-type="UrlPattern">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../utils.html">utils</a> &rsaquo; <a href="../utils/UrlPattern.html">UrlPattern</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>UrlPattern</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>URL template with placeholders that can be filled in to produce a URL.</p>
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="UrlPattern">
+<span class="show-code">Code</span>
+new <strong>UrlPattern</strong>(<a href="../dart_core/String.html">String</a> pattern) <a class="anchor-link" href="#UrlPattern"
+              title="Permalink to UrlPattern.UrlPattern">#</a></h4>
+<div class="doc">
+<p>Creates a UrlPattern from the specification <code>pattern</code>.
+See http://tools.ietf.org/html/draft-gregorio-uritemplate-07
+We only implement a very simple subset for now.</p>
+<pre class="source">
+UrlPattern(String pattern) : _tokens = [] {
+  var cursor = 0;
+  while (cursor &lt; pattern.length) {
+    final open = pattern.indexOf("{", cursor);
+    if (open &lt; 0) {
+      final rest = pattern.substring(cursor);
+      _tokens.add((params) =&gt; rest);
+      cursor = pattern.length;
+    } else {
+      if (open &gt; cursor) {
+        final intermediate = pattern.substring(cursor, open);
+        _tokens.add((params) =&gt; intermediate);
+      }
+      final close = pattern.indexOf("}", open);
+      if (close &lt; 0) throw new IllegalArgumentException("Token meets end of text: $pattern");
+      String variable = pattern.substring(open + 1, close);
+      _tokens.add((params) =&gt; (params[variable] == null) ? 'null' : params[variable].toString());
+      cursor = close + 1;
+    }
+  }
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="generate">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a> <strong>generate</strong>(<a href="../dart_core/Map.html">Map</a> urlParams, <a href="../dart_core/Map.html">Map</a> queryParams) <a class="anchor-link" href="#generate"
+              title="Permalink to UrlPattern.generate">#</a></h4>
+<div class="doc">
+<p>Generate a URL with the specified list of URL and query parameters.</p>
+<pre class="source">
+String generate(Map&lt;String, Object&gt; urlParams, Map&lt;String, Object&gt; queryParams) {
+  final buffer = new StringBuffer();
+  _tokens.forEach((token) =&gt; buffer.add(token(urlParams)));
+  final specifiedQueryParams =
+      queryParams.getKeys().filter((key) =&gt; queryParams[key] != null);
+  if (!specifiedQueryParams.isEmpty()) {
+    final tokens =
+        map((key) =&gt; "${_escape(key)}=${_escape(queryParams[key])}")(specifiedQueryParams);
+    buffer.add('?').add(Strings.join(tokens, "&amp;"));
+  }
+  return buffer.toString();
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:32.846Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

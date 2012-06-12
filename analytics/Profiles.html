@@ -1,0 +1,208 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Profiles Class / analytics Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="analytics" data-type="Profiles">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../analytics.html">analytics</a> &rsaquo; <a href="../analytics/Profiles.html">Profiles</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Profiles</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Profiles</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../analytics/Profiles.html">Profiles</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Profiles.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Profiles parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Profiles();
+  result.username = identity(json["username"]);
+  result.kind = identity(json["kind"]);
+  result.items = map(Profile.parse)(json["items"]);
+  result.itemsPerPage = identity(json["itemsPerPage"]);
+  result.previousLink = identity(json["previousLink"]);
+  result.startIndex = identity(json["startIndex"]);
+  result.nextLink = identity(json["nextLink"]);
+  result.totalResults = identity(json["totalResults"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../analytics/Profiles.html">Profiles</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Profiles.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Profiles value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["username"] = identity(value.username);
+  result["kind"] = identity(value.kind);
+  result["items"] = map(Profile.serialize)(value.items);
+  result["itemsPerPage"] = identity(value.itemsPerPage);
+  result["previousLink"] = identity(value.previousLink);
+  result["startIndex"] = identity(value.startIndex);
+  result["nextLink"] = identity(value.nextLink);
+  result["totalResults"] = identity(value.totalResults);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Profiles.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="items">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>items</strong> <a class="anchor-link"
+            href="#items"
+            title="Permalink to Profiles.items">#</a>
+        </h4>
+        <div class="doc">
+<p>A list of profiles.</p>
+<pre class="source">
+List&lt;Profile&gt; items;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="itemsPerPage">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>itemsPerPage</strong> <a class="anchor-link"
+            href="#itemsPerPage"
+            title="Permalink to Profiles.itemsPerPage">#</a>
+        </h4>
+        <div class="doc">
+<p>The maximum number of resources the response can contain, regardless of the actual number of
+resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or
+otherwise specified by the max-results query parameter.</p>
+<pre class="source">
+int itemsPerPage;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Profiles.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Collection type.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="nextLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>nextLink</strong> <a class="anchor-link"
+            href="#nextLink"
+            title="Permalink to Profiles.nextLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Link to next page for this profile collection.</p>
+<pre class="source">
+String nextLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="previousLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>previousLink</strong> <a class="anchor-link"
+            href="#previousLink"
+            title="Permalink to Profiles.previousLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Link to previous page for this profile collection.</p>
+<pre class="source">
+String previousLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="startIndex">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>startIndex</strong> <a class="anchor-link"
+            href="#startIndex"
+            title="Permalink to Profiles.startIndex">#</a>
+        </h4>
+        <div class="doc">
+<p>The starting index of the resources, which is 1 by default or otherwise specified by the start-
+index query parameter.</p>
+<pre class="source">
+int startIndex;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="totalResults">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>totalResults</strong> <a class="anchor-link"
+            href="#totalResults"
+            title="Permalink to Profiles.totalResults">#</a>
+        </h4>
+        <div class="doc">
+<p>The total number of results for the query, regardless of the number of results in the response.</p>
+<pre class="source">
+int totalResults;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="username">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>username</strong> <a class="anchor-link"
+            href="#username"
+            title="Permalink to Profiles.username">#</a>
+        </h4>
+        <div class="doc">
+<p>Email ID of the authenticated user</p>
+<pre class="source">
+String username;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:11.962Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

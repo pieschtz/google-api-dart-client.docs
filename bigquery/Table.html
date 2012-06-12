@@ -1,0 +1,281 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Table Class / bigquery Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery" data-type="Table">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery.html">bigquery</a> &rsaquo; <a href="../bigquery/Table.html">Table</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Table</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Table</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../bigquery/Table.html">Table</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Table.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Table parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Table();
+  result.kind = identity(json["kind"]);
+  result.lastModifiedTime = identity(json["lastModifiedTime"]);
+  result.description = identity(json["description"]);
+  result.creationTime = identity(json["creationTime"]);
+  result.tableReference = TableReference.parse(json["tableReference"]);
+  result.numRows = identity(json["numRows"]);
+  result.numBytes = identity(json["numBytes"]);
+  result.etag = identity(json["etag"]);
+  result.friendlyName = identity(json["friendlyName"]);
+  result.expirationTime = identity(json["expirationTime"]);
+  result.id = identity(json["id"]);
+  result.selfLink = identity(json["selfLink"]);
+  result.schema = TableSchema.parse(json["schema"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery/Table.html">Table</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Table.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Table value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["kind"] = identity(value.kind);
+  result["lastModifiedTime"] = identity(value.lastModifiedTime);
+  result["description"] = identity(value.description);
+  result["creationTime"] = identity(value.creationTime);
+  result["tableReference"] = TableReference.serialize(value.tableReference);
+  result["numRows"] = identity(value.numRows);
+  result["numBytes"] = identity(value.numBytes);
+  result["etag"] = identity(value.etag);
+  result["friendlyName"] = identity(value.friendlyName);
+  result["expirationTime"] = identity(value.expirationTime);
+  result["id"] = identity(value.id);
+  result["selfLink"] = identity(value.selfLink);
+  result["schema"] = TableSchema.serialize(value.schema);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Table.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="creationTime">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>creationTime</strong> <a class="anchor-link"
+            href="#creationTime"
+            title="Permalink to Table.creationTime">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> The time when this table was created, in milliseconds since the epoch.</p>
+<pre class="source">
+String creationTime;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to Table.description">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> A user-friendly description of this table.</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to Table.etag">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> A hash of this resource.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="expirationTime">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>expirationTime</strong> <a class="anchor-link"
+            href="#expirationTime"
+            title="Permalink to Table.expirationTime">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> The time when this table expires, in milliseconds since the epoch. If not present, the
+table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.</p>
+<pre class="source">
+String expirationTime;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="friendlyName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>friendlyName</strong> <a class="anchor-link"
+            href="#friendlyName"
+            title="Permalink to Table.friendlyName">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> A descriptive name for this table.</p>
+<pre class="source">
+String friendlyName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Table.id">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> An opaque ID uniquely identifying the table.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Table.kind">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> The type of the resource.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="lastModifiedTime">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>lastModifiedTime</strong> <a class="anchor-link"
+            href="#lastModifiedTime"
+            title="Permalink to Table.lastModifiedTime">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> The time when this table was last modified, in milliseconds since the epoch.</p>
+<pre class="source">
+String lastModifiedTime;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="numBytes">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>numBytes</strong> <a class="anchor-link"
+            href="#numBytes"
+            title="Permalink to Table.numBytes">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> The size of the table in bytes.</p>
+<pre class="source">
+String numBytes;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="numRows">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>numRows</strong> <a class="anchor-link"
+            href="#numRows"
+            title="Permalink to Table.numRows">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> The number of rows of data in this table.</p>
+<pre class="source">
+String numRows;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="schema">
+<span class="show-code">Code</span>
+<a href="../bigquery/TableSchema.html">TableSchema</a>         <strong>schema</strong> <a class="anchor-link"
+            href="#schema"
+            title="Permalink to Table.schema">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Describes the schema of this table.</p>
+<pre class="source">
+TableSchema schema;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to Table.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> A URL that can be used to access this resource again.</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="tableReference">
+<span class="show-code">Code</span>
+<a href="../bigquery/TableReference.html">TableReference</a>         <strong>tableReference</strong> <a class="anchor-link"
+            href="#tableReference"
+            title="Permalink to Table.tableReference">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Required</code> Reference describing the ID of this table.</p>
+<pre class="source">
+TableReference tableReference;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:14.107Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

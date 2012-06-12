@@ -1,0 +1,640 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Query Class / customsearch Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="customsearch" data-type="Query">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../customsearch.html">customsearch</a> &rsaquo; <a href="../customsearch/Query.html">Query</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Query</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Query</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../customsearch/Query.html">Query</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Query.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Query parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Query();
+  result.sort = identity(json["sort"]);
+  result.inputEncoding = identity(json["inputEncoding"]);
+  result.orTerms = identity(json["orTerms"]);
+  result.highRange = identity(json["highRange"]);
+  result.cx = identity(json["cx"]);
+  result.startPage = identity(json["startPage"]);
+  result.disableCnTwTranslation = identity(json["disableCnTwTranslation"]);
+  result.cr = identity(json["cr"]);
+  result.imgType = identity(json["imgType"]);
+  result.gl = identity(json["gl"]);
+  result.relatedSite = identity(json["relatedSite"]);
+  result.searchType = identity(json["searchType"]);
+  result.title = identity(json["title"]);
+  result.googleHost = identity(json["googleHost"]);
+  result.fileType = identity(json["fileType"]);
+  result.imgDominantColor = identity(json["imgDominantColor"]);
+  result.siteSearch = identity(json["siteSearch"]);
+  result.cref = identity(json["cref"]);
+  result.dateRestrict = identity(json["dateRestrict"]);
+  result.safe = identity(json["safe"]);
+  result.outputEncoding = identity(json["outputEncoding"]);
+  result.hq = identity(json["hq"]);
+  result.searchTerms = identity(json["searchTerms"]);
+  result.exactTerms = identity(json["exactTerms"]);
+  result.language = identity(json["language"]);
+  result.hl = identity(json["hl"]);
+  result.totalResults = identity(json["totalResults"]);
+  result.lowRange = identity(json["lowRange"]);
+  result.count = identity(json["count"]);
+  result.imgSize = identity(json["imgSize"]);
+  result.imgColorType = identity(json["imgColorType"]);
+  result.rights = identity(json["rights"]);
+  result.startIndex = identity(json["startIndex"]);
+  result.excludeTerms = identity(json["excludeTerms"]);
+  result.filter = identity(json["filter"]);
+  result.linkSite = identity(json["linkSite"]);
+  result.siteSearchFilter = identity(json["siteSearchFilter"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../customsearch/Query.html">Query</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Query.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Query value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["sort"] = identity(value.sort);
+  result["inputEncoding"] = identity(value.inputEncoding);
+  result["orTerms"] = identity(value.orTerms);
+  result["highRange"] = identity(value.highRange);
+  result["cx"] = identity(value.cx);
+  result["startPage"] = identity(value.startPage);
+  result["disableCnTwTranslation"] = identity(value.disableCnTwTranslation);
+  result["cr"] = identity(value.cr);
+  result["imgType"] = identity(value.imgType);
+  result["gl"] = identity(value.gl);
+  result["relatedSite"] = identity(value.relatedSite);
+  result["searchType"] = identity(value.searchType);
+  result["title"] = identity(value.title);
+  result["googleHost"] = identity(value.googleHost);
+  result["fileType"] = identity(value.fileType);
+  result["imgDominantColor"] = identity(value.imgDominantColor);
+  result["siteSearch"] = identity(value.siteSearch);
+  result["cref"] = identity(value.cref);
+  result["dateRestrict"] = identity(value.dateRestrict);
+  result["safe"] = identity(value.safe);
+  result["outputEncoding"] = identity(value.outputEncoding);
+  result["hq"] = identity(value.hq);
+  result["searchTerms"] = identity(value.searchTerms);
+  result["exactTerms"] = identity(value.exactTerms);
+  result["language"] = identity(value.language);
+  result["hl"] = identity(value.hl);
+  result["totalResults"] = identity(value.totalResults);
+  result["lowRange"] = identity(value.lowRange);
+  result["count"] = identity(value.count);
+  result["imgSize"] = identity(value.imgSize);
+  result["imgColorType"] = identity(value.imgColorType);
+  result["rights"] = identity(value.rights);
+  result["startIndex"] = identity(value.startIndex);
+  result["excludeTerms"] = identity(value.excludeTerms);
+  result["filter"] = identity(value.filter);
+  result["linkSite"] = identity(value.linkSite);
+  result["siteSearchFilter"] = identity(value.siteSearchFilter);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Query.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="count">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>count</strong> <a class="anchor-link"
+            href="#count"
+            title="Permalink to Query.count">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+int count;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="cr">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>cr</strong> <a class="anchor-link"
+            href="#cr"
+            title="Permalink to Query.cr">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String cr;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="cref">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>cref</strong> <a class="anchor-link"
+            href="#cref"
+            title="Permalink to Query.cref">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String cref;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="cx">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>cx</strong> <a class="anchor-link"
+            href="#cx"
+            title="Permalink to Query.cx">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String cx;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="dateRestrict">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>dateRestrict</strong> <a class="anchor-link"
+            href="#dateRestrict"
+            title="Permalink to Query.dateRestrict">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String dateRestrict;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="disableCnTwTranslation">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>disableCnTwTranslation</strong> <a class="anchor-link"
+            href="#disableCnTwTranslation"
+            title="Permalink to Query.disableCnTwTranslation">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String disableCnTwTranslation;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="exactTerms">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>exactTerms</strong> <a class="anchor-link"
+            href="#exactTerms"
+            title="Permalink to Query.exactTerms">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String exactTerms;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="excludeTerms">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>excludeTerms</strong> <a class="anchor-link"
+            href="#excludeTerms"
+            title="Permalink to Query.excludeTerms">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String excludeTerms;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fileType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fileType</strong> <a class="anchor-link"
+            href="#fileType"
+            title="Permalink to Query.fileType">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String fileType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="filter">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>filter</strong> <a class="anchor-link"
+            href="#filter"
+            title="Permalink to Query.filter">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String filter;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="gl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>gl</strong> <a class="anchor-link"
+            href="#gl"
+            title="Permalink to Query.gl">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String gl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="googleHost">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>googleHost</strong> <a class="anchor-link"
+            href="#googleHost"
+            title="Permalink to Query.googleHost">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String googleHost;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="highRange">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>highRange</strong> <a class="anchor-link"
+            href="#highRange"
+            title="Permalink to Query.highRange">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String highRange;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="hl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>hl</strong> <a class="anchor-link"
+            href="#hl"
+            title="Permalink to Query.hl">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String hl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="hq">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>hq</strong> <a class="anchor-link"
+            href="#hq"
+            title="Permalink to Query.hq">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String hq;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="imgColorType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>imgColorType</strong> <a class="anchor-link"
+            href="#imgColorType"
+            title="Permalink to Query.imgColorType">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String imgColorType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="imgDominantColor">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>imgDominantColor</strong> <a class="anchor-link"
+            href="#imgDominantColor"
+            title="Permalink to Query.imgDominantColor">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String imgDominantColor;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="imgSize">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>imgSize</strong> <a class="anchor-link"
+            href="#imgSize"
+            title="Permalink to Query.imgSize">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String imgSize;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="imgType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>imgType</strong> <a class="anchor-link"
+            href="#imgType"
+            title="Permalink to Query.imgType">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String imgType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="inputEncoding">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>inputEncoding</strong> <a class="anchor-link"
+            href="#inputEncoding"
+            title="Permalink to Query.inputEncoding">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String inputEncoding;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="language">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>language</strong> <a class="anchor-link"
+            href="#language"
+            title="Permalink to Query.language">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String language;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="linkSite">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>linkSite</strong> <a class="anchor-link"
+            href="#linkSite"
+            title="Permalink to Query.linkSite">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String linkSite;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="lowRange">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>lowRange</strong> <a class="anchor-link"
+            href="#lowRange"
+            title="Permalink to Query.lowRange">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String lowRange;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="orTerms">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>orTerms</strong> <a class="anchor-link"
+            href="#orTerms"
+            title="Permalink to Query.orTerms">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String orTerms;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="outputEncoding">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>outputEncoding</strong> <a class="anchor-link"
+            href="#outputEncoding"
+            title="Permalink to Query.outputEncoding">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String outputEncoding;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="relatedSite">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>relatedSite</strong> <a class="anchor-link"
+            href="#relatedSite"
+            title="Permalink to Query.relatedSite">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String relatedSite;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rights">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>rights</strong> <a class="anchor-link"
+            href="#rights"
+            title="Permalink to Query.rights">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String rights;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="safe">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>safe</strong> <a class="anchor-link"
+            href="#safe"
+            title="Permalink to Query.safe">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String safe;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="searchTerms">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>searchTerms</strong> <a class="anchor-link"
+            href="#searchTerms"
+            title="Permalink to Query.searchTerms">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String searchTerms;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="searchType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>searchType</strong> <a class="anchor-link"
+            href="#searchType"
+            title="Permalink to Query.searchType">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String searchType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="siteSearch">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>siteSearch</strong> <a class="anchor-link"
+            href="#siteSearch"
+            title="Permalink to Query.siteSearch">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String siteSearch;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="siteSearchFilter">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>siteSearchFilter</strong> <a class="anchor-link"
+            href="#siteSearchFilter"
+            title="Permalink to Query.siteSearchFilter">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String siteSearchFilter;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="sort">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>sort</strong> <a class="anchor-link"
+            href="#sort"
+            title="Permalink to Query.sort">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String sort;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="startIndex">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>startIndex</strong> <a class="anchor-link"
+            href="#startIndex"
+            title="Permalink to Query.startIndex">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+int startIndex;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="startPage">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>startPage</strong> <a class="anchor-link"
+            href="#startPage"
+            title="Permalink to Query.startPage">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+int startPage;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="title">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+            href="#title"
+            title="Permalink to Query.title">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String title;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="totalResults">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>totalResults</strong> <a class="anchor-link"
+            href="#totalResults"
+            title="Permalink to Query.totalResults">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String totalResults;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:17.853Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,192 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>OrkutActivityobjectsResource Class / orkut Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="orkut" data-type="OrkutActivityobjectsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../orkut.html">orkut</a> &rsaquo; <a href="../orkut/OrkutActivityobjectsResource.html">OrkutActivityobjectsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>OrkutActivityobjectsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>OrkutActivityobjectsResource</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../orkut/OrkutActivityobjectsResource.html">OrkutActivityobjectsResource</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to OrkutActivityobjectsResource.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static OrkutActivityobjectsResource parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new OrkutActivityobjectsResource();
+  result.displayName = identity(json["displayName"]);
+  result.links = map(OrkutLinkResource.parse)(json["links"]);
+  result.community = Community.parse(json["community"]);
+  result.content = identity(json["content"]);
+  result.person = OrkutActivitypersonResource.parse(json["person"]);
+  result.id = identity(json["id"]);
+  result.objectType = identity(json["objectType"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../orkut/OrkutActivityobjectsResource.html">OrkutActivityobjectsResource</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to OrkutActivityobjectsResource.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(OrkutActivityobjectsResource value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["displayName"] = identity(value.displayName);
+  result["links"] = map(OrkutLinkResource.serialize)(value.links);
+  result["community"] = Community.serialize(value.community);
+  result["content"] = identity(value.content);
+  result["person"] = OrkutActivitypersonResource.serialize(value.person);
+  result["id"] = identity(value.id);
+  result["objectType"] = identity(value.objectType);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to OrkutActivityobjectsResource.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="community">
+<span class="show-code">Code</span>
+<a href="../orkut/Community.html">Community</a>         <strong>community</strong> <a class="anchor-link"
+            href="#community"
+            title="Permalink to OrkutActivityobjectsResource.community">#</a>
+        </h4>
+        <div class="doc">
+<p>The community which is related with this activity, e.g. a joined community.</p>
+<pre class="source">
+Community community;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="content">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>content</strong> <a class="anchor-link"
+            href="#content"
+            title="Permalink to OrkutActivityobjectsResource.content">#</a>
+        </h4>
+        <div class="doc">
+<p>The HTML-formatted content, suitable for display. When updating an activity's content, post the
+changes to this property, using the value of originalContent as a starting point. If the update
+is successful, the server adds HTML formatting and responds with this formatted content.</p>
+<pre class="source">
+String content;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="displayName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>displayName</strong> <a class="anchor-link"
+            href="#displayName"
+            title="Permalink to OrkutActivityobjectsResource.displayName">#</a>
+        </h4>
+        <div class="doc">
+<p>The title of the object.</p>
+<pre class="source">
+String displayName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to OrkutActivityobjectsResource.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The ID for the object.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="links">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>links</strong> <a class="anchor-link"
+            href="#links"
+            title="Permalink to OrkutActivityobjectsResource.links">#</a>
+        </h4>
+        <div class="doc">
+<p>Links to other resources related to this object.</p>
+<pre class="source">
+List&lt;OrkutLinkResource&gt; links;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="objectType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
+            href="#objectType"
+            title="Permalink to OrkutActivityobjectsResource.objectType">#</a>
+        </h4>
+        <div class="doc">
+<p>The object type.</p>
+<pre class="source">
+String objectType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="person">
+<span class="show-code">Code</span>
+<a href="../orkut/OrkutActivitypersonResource.html">OrkutActivitypersonResource</a>         <strong>person</strong> <a class="anchor-link"
+            href="#person"
+            title="Permalink to OrkutActivityobjectsResource.person">#</a>
+        </h4>
+        <div class="doc">
+<p>The person who is related with this activity, e.g. an Added User.</p>
+<pre class="source">
+OrkutActivitypersonResource person;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:30.662Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

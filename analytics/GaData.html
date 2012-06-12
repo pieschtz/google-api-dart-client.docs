@@ -1,0 +1,286 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>GaData Class / analytics Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="analytics" data-type="GaData">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../analytics.html">analytics</a> &rsaquo; <a href="../analytics/GaData.html">GaData</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>GaData</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>GaData</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../analytics/GaData.html">GaData</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to GaData.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static GaData parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new GaData();
+  result.kind = identity(json["kind"]);
+  result.rows = map(map(identity))(json["rows"]);
+  result.containsSampledData = identity(json["containsSampledData"]);
+  result.totalResults = identity(json["totalResults"]);
+  result.itemsPerPage = identity(json["itemsPerPage"]);
+  result.totalsForAllResults = mapValues(identity)(json["totalsForAllResults"]);
+  result.nextLink = identity(json["nextLink"]);
+  result.id = identity(json["id"]);
+  result.query = GaDataQuery.parse(json["query"]);
+  result.previousLink = identity(json["previousLink"]);
+  result.profileInfo = GaDataProfileInfo.parse(json["profileInfo"]);
+  result.columnHeaders = map(GaDataColumnHeaders.parse)(json["columnHeaders"]);
+  result.selfLink = identity(json["selfLink"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../analytics/GaData.html">GaData</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to GaData.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(GaData value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["kind"] = identity(value.kind);
+  result["rows"] = map(map(identity))(value.rows);
+  result["containsSampledData"] = identity(value.containsSampledData);
+  result["totalResults"] = identity(value.totalResults);
+  result["itemsPerPage"] = identity(value.itemsPerPage);
+  result["totalsForAllResults"] = mapValues(identity)(value.totalsForAllResults);
+  result["nextLink"] = identity(value.nextLink);
+  result["id"] = identity(value.id);
+  result["query"] = GaDataQuery.serialize(value.query);
+  result["previousLink"] = identity(value.previousLink);
+  result["profileInfo"] = GaDataProfileInfo.serialize(value.profileInfo);
+  result["columnHeaders"] = map(GaDataColumnHeaders.serialize)(value.columnHeaders);
+  result["selfLink"] = identity(value.selfLink);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to GaData.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="columnHeaders">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>columnHeaders</strong> <a class="anchor-link"
+            href="#columnHeaders"
+            title="Permalink to GaData.columnHeaders">#</a>
+        </h4>
+        <div class="doc">
+<p>Column headers that list dimension names followed by the metric names. The order of dimensions
+and metrics is same as specified in the request.</p>
+<pre class="source">
+List&lt;GaDataColumnHeaders&gt; columnHeaders;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="containsSampledData">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>containsSampledData</strong> <a class="anchor-link"
+            href="#containsSampledData"
+            title="Permalink to GaData.containsSampledData">#</a>
+        </h4>
+        <div class="doc">
+<p>Determines if Analytics data contains samples.</p>
+<pre class="source">
+bool containsSampledData;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to GaData.id">#</a>
+        </h4>
+        <div class="doc">
+<p>Unique ID for this data response.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="itemsPerPage">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>itemsPerPage</strong> <a class="anchor-link"
+            href="#itemsPerPage"
+            title="Permalink to GaData.itemsPerPage">#</a>
+        </h4>
+        <div class="doc">
+<p>The maximum number of rows the response can contain, regardless of the actual number of rows
+returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise
+specified by the max-results query parameter.</p>
+<pre class="source">
+int itemsPerPage;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to GaData.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Resource type.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="nextLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>nextLink</strong> <a class="anchor-link"
+            href="#nextLink"
+            title="Permalink to GaData.nextLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Link to next page for this Analytics data query.</p>
+<pre class="source">
+String nextLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="previousLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>previousLink</strong> <a class="anchor-link"
+            href="#previousLink"
+            title="Permalink to GaData.previousLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Link to previous page for this Analytics data query.</p>
+<pre class="source">
+String previousLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="profileInfo">
+<span class="show-code">Code</span>
+<a href="../analytics/GaDataProfileInfo.html">GaDataProfileInfo</a>         <strong>profileInfo</strong> <a class="anchor-link"
+            href="#profileInfo"
+            title="Permalink to GaData.profileInfo">#</a>
+        </h4>
+        <div class="doc">
+<p>Information for the profile, for which the Analytics data was requested.</p>
+<pre class="source">
+GaDataProfileInfo profileInfo;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="query">
+<span class="show-code">Code</span>
+<a href="../analytics/GaDataQuery.html">GaDataQuery</a>         <strong>query</strong> <a class="anchor-link"
+            href="#query"
+            title="Permalink to GaData.query">#</a>
+        </h4>
+        <div class="doc">
+<p>Analytics data request query parameters.</p>
+<pre class="source">
+GaDataQuery query;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rows">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>rows</strong> <a class="anchor-link"
+            href="#rows"
+            title="Permalink to GaData.rows">#</a>
+        </h4>
+        <div class="doc">
+<p>Analytics data rows, where each row contains a list of dimension values followed by the metric
+values. The order of dimensions and metrics is same as specified in the request.</p>
+<pre class="source">
+List&lt;List&lt;String&gt;&gt; rows;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to GaData.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Link to this page.</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="totalResults">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>totalResults</strong> <a class="anchor-link"
+            href="#totalResults"
+            title="Permalink to GaData.totalResults">#</a>
+        </h4>
+        <div class="doc">
+<p>The total number of rows for the query, regardless of the number of rows in the response.</p>
+<pre class="source">
+int totalResults;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="totalsForAllResults">
+<span class="show-code">Code</span>
+<a href="../dart_core/Map.html">Map</a>         <strong>totalsForAllResults</strong> <a class="anchor-link"
+            href="#totalsForAllResults"
+            title="Permalink to GaData.totalsForAllResults">#</a>
+        </h4>
+        <div class="doc">
+<p>Total values for the requested metrics over all the results, not just the results returned in
+this response. The order of the metric totals is same as the metric order specified in the
+request.</p>
+<pre class="source">
+Map&lt;String, String&gt; totalsForAllResults;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:11.656Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

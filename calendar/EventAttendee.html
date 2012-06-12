@@ -1,0 +1,224 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>EventAttendee Class / calendar Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="calendar" data-type="EventAttendee">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../calendar.html">calendar</a> &rsaquo; <a href="../calendar/EventAttendee.html">EventAttendee</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>EventAttendee</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>EventAttendee</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../calendar/EventAttendee.html">EventAttendee</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to EventAttendee.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static EventAttendee parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new EventAttendee();
+  result.comment = identity(json["comment"]);
+  result.displayName = identity(json["displayName"]);
+  result.self = identity(json["self"]);
+  result.responseStatus = identity(json["responseStatus"]);
+  result.additionalGuests = identity(json["additionalGuests"]);
+  result.resource = identity(json["resource"]);
+  result.organizer = identity(json["organizer"]);
+  result.optional = identity(json["optional"]);
+  result.email = identity(json["email"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar/EventAttendee.html">EventAttendee</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to EventAttendee.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(EventAttendee value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["comment"] = identity(value.comment);
+  result["displayName"] = identity(value.displayName);
+  result["self"] = identity(value.self);
+  result["responseStatus"] = identity(value.responseStatus);
+  result["additionalGuests"] = identity(value.additionalGuests);
+  result["resource"] = identity(value.resource);
+  result["organizer"] = identity(value.organizer);
+  result["optional"] = identity(value.optional);
+  result["email"] = identity(value.email);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to EventAttendee.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="additionalGuests">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>additionalGuests</strong> <a class="anchor-link"
+            href="#additionalGuests"
+            title="Permalink to EventAttendee.additionalGuests">#</a>
+        </h4>
+        <div class="doc">
+<p>Number of additional guests. Optional. The default is 0.</p>
+<pre class="source">
+int additionalGuests;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="comment">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>comment</strong> <a class="anchor-link"
+            href="#comment"
+            title="Permalink to EventAttendee.comment">#</a>
+        </h4>
+        <div class="doc">
+<p>The attendee's response comment. Optional.</p>
+<pre class="source">
+String comment;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="displayName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>displayName</strong> <a class="anchor-link"
+            href="#displayName"
+            title="Permalink to EventAttendee.displayName">#</a>
+        </h4>
+        <div class="doc">
+<p>The attendee's name, if available. Optional.</p>
+<pre class="source">
+String displayName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="email">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>email</strong> <a class="anchor-link"
+            href="#email"
+            title="Permalink to EventAttendee.email">#</a>
+        </h4>
+        <div class="doc">
+<p>The attendee's email address, if available. This field must be present when adding an attendee.</p>
+<pre class="source">
+String email;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="optional">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>optional</strong> <a class="anchor-link"
+            href="#optional"
+            title="Permalink to EventAttendee.optional">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether this is an optional attendee. Optional. The default is False.</p>
+<pre class="source">
+bool optional;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="organizer">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>organizer</strong> <a class="anchor-link"
+            href="#organizer"
+            title="Permalink to EventAttendee.organizer">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether the attendee is the organizer of the event. Read-only. The default is False.</p>
+<pre class="source">
+bool organizer;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="resource">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>resource</strong> <a class="anchor-link"
+            href="#resource"
+            title="Permalink to EventAttendee.resource">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether the attendee is a resource. Read-only. The default is False.</p>
+<pre class="source">
+bool resource;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="responseStatus">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>responseStatus</strong> <a class="anchor-link"
+            href="#responseStatus"
+            title="Permalink to EventAttendee.responseStatus">#</a>
+        </h4>
+        <div class="doc">
+<p>The attendee's response status. Possible values are: - "needsAction" - The attendee has not
+responded to the invitation. - "declined" - The attendee has declined the invitation. -
+"tentative" - The attendee has tentatively accepted the invitation. - "accepted" - The attendee
+has accepted the invitation.</p>
+<pre class="source">
+String responseStatus;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="self">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>self</strong> <a class="anchor-link"
+            href="#self"
+            title="Permalink to EventAttendee.self">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether this entry represents the calendar on which this copy of the event appears. Read-only.
+The default is False.</p>
+<pre class="source">
+bool self;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:17.226Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

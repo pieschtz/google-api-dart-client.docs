@@ -1,0 +1,130 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>SubmissionAttribution Class / moderator Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="moderator" data-type="SubmissionAttribution">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../moderator.html">moderator</a> &rsaquo; <a href="../moderator/SubmissionAttribution.html">SubmissionAttribution</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>SubmissionAttribution</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>SubmissionAttribution</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../moderator/SubmissionAttribution.html">SubmissionAttribution</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to SubmissionAttribution.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static SubmissionAttribution parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new SubmissionAttribution();
+  result.displayName = identity(json["displayName"]);
+  result.location = identity(json["location"]);
+  result.avatarUrl = identity(json["avatarUrl"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../moderator/SubmissionAttribution.html">SubmissionAttribution</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to SubmissionAttribution.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(SubmissionAttribution value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["displayName"] = identity(value.displayName);
+  result["location"] = identity(value.location);
+  result["avatarUrl"] = identity(value.avatarUrl);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to SubmissionAttribution.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="avatarUrl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>avatarUrl</strong> <a class="anchor-link"
+            href="#avatarUrl"
+            title="Permalink to SubmissionAttribution.avatarUrl">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String avatarUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="displayName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>displayName</strong> <a class="anchor-link"
+            href="#displayName"
+            title="Permalink to SubmissionAttribution.displayName">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String displayName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="location">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
+            href="#location"
+            title="Permalink to SubmissionAttribution.location">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String location;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:29.175Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

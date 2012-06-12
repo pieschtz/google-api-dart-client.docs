@@ -1,0 +1,235 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Comment Class / blogger Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="blogger" data-type="Comment">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../blogger.html">blogger</a> &rsaquo; <a href="../blogger/Comment.html">Comment</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Comment</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Comment</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../blogger/Comment.html">Comment</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Comment.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Comment parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Comment();
+  result.content = identity(json["content"]);
+  result.kind = identity(json["kind"]);
+  result.inReplyTo = CommentInReplyTo.parse(json["inReplyTo"]);
+  result.author = CommentAuthor.parse(json["author"]);
+  result.updated = identity(json["updated"]);
+  result.blog = CommentBlog.parse(json["blog"]);
+  result.published = identity(json["published"]);
+  result.post = CommentPost.parse(json["post"]);
+  result.id = identity(json["id"]);
+  result.selfLink = identity(json["selfLink"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../blogger/Comment.html">Comment</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Comment.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Comment value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["content"] = identity(value.content);
+  result["kind"] = identity(value.kind);
+  result["inReplyTo"] = CommentInReplyTo.serialize(value.inReplyTo);
+  result["author"] = CommentAuthor.serialize(value.author);
+  result["updated"] = identity(value.updated);
+  result["blog"] = CommentBlog.serialize(value.blog);
+  result["published"] = identity(value.published);
+  result["post"] = CommentPost.serialize(value.post);
+  result["id"] = identity(value.id);
+  result["selfLink"] = identity(value.selfLink);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Comment.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="author">
+<span class="show-code">Code</span>
+<a href="../blogger/CommentAuthor.html">CommentAuthor</a>         <strong>author</strong> <a class="anchor-link"
+            href="#author"
+            title="Permalink to Comment.author">#</a>
+        </h4>
+        <div class="doc">
+<p>The author of this Comment.</p>
+<pre class="source">
+CommentAuthor author;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="blog">
+<span class="show-code">Code</span>
+<a href="../blogger/CommentBlog.html">CommentBlog</a>         <strong>blog</strong> <a class="anchor-link"
+            href="#blog"
+            title="Permalink to Comment.blog">#</a>
+        </h4>
+        <div class="doc">
+<p>Data about the blog containing this comment.</p>
+<pre class="source">
+CommentBlog blog;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="content">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>content</strong> <a class="anchor-link"
+            href="#content"
+            title="Permalink to Comment.content">#</a>
+        </h4>
+        <div class="doc">
+<p>The actual content of the comment. May include HTML markup.</p>
+<pre class="source">
+String content;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Comment.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The identifier for this resource.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="inReplyTo">
+<span class="show-code">Code</span>
+<a href="../blogger/CommentInReplyTo.html">CommentInReplyTo</a>         <strong>inReplyTo</strong> <a class="anchor-link"
+            href="#inReplyTo"
+            title="Permalink to Comment.inReplyTo">#</a>
+        </h4>
+        <div class="doc">
+<p>Data about the comment this is in reply to.</p>
+<pre class="source">
+CommentInReplyTo inReplyTo;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Comment.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The kind of this entry. Always blogger#comment</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="post">
+<span class="show-code">Code</span>
+<a href="../blogger/CommentPost.html">CommentPost</a>         <strong>post</strong> <a class="anchor-link"
+            href="#post"
+            title="Permalink to Comment.post">#</a>
+        </h4>
+        <div class="doc">
+<p>Data about the post containing this comment.</p>
+<pre class="source">
+CommentPost post;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="published">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>published</strong> <a class="anchor-link"
+            href="#published"
+            title="Permalink to Comment.published">#</a>
+        </h4>
+        <div class="doc">
+<p>RFC 3339 date-time when this comment was published.</p>
+<pre class="source">
+String published;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to Comment.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>The API REST URL to fetch this resource from.</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="updated">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
+            href="#updated"
+            title="Permalink to Comment.updated">#</a>
+        </h4>
+        <div class="doc">
+<p>RFC 3339 date-time when this comment was last updated.</p>
+<pre class="source">
+String updated;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:14.356Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

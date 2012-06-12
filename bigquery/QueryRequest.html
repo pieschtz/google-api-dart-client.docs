@@ -1,0 +1,169 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>QueryRequest Class / bigquery Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery" data-type="QueryRequest">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery.html">bigquery</a> &rsaquo; <a href="../bigquery/QueryRequest.html">QueryRequest</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>QueryRequest</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>QueryRequest</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../bigquery/QueryRequest.html">QueryRequest</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to QueryRequest.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static QueryRequest parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new QueryRequest();
+  result.timeoutMs = identity(json["timeoutMs"]);
+  result.query = identity(json["query"]);
+  result.kind = identity(json["kind"]);
+  result.maxResults = identity(json["maxResults"]);
+  result.defaultDataset = DatasetReference.parse(json["defaultDataset"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery/QueryRequest.html">QueryRequest</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to QueryRequest.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(QueryRequest value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["timeoutMs"] = identity(value.timeoutMs);
+  result["query"] = identity(value.query);
+  result["kind"] = identity(value.kind);
+  result["maxResults"] = identity(value.maxResults);
+  result["defaultDataset"] = DatasetReference.serialize(value.defaultDataset);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to QueryRequest.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="defaultDataset">
+<span class="show-code">Code</span>
+<a href="../bigquery/DatasetReference.html">DatasetReference</a>         <strong>defaultDataset</strong> <a class="anchor-link"
+            href="#defaultDataset"
+            title="Permalink to QueryRequest.defaultDataset">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Specifies the default datasetId and projectId to assume for any unqualified table
+names in the query. If not set, all table names in the query string must be fully-qualified in
+the format projectId:datasetId.tableid.</p>
+<pre class="source">
+DatasetReference defaultDataset;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to QueryRequest.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The resource type of the request.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maxResults">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>maxResults</strong> <a class="anchor-link"
+            href="#maxResults"
+            title="Permalink to QueryRequest.maxResults">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> The maximum number of results to return per page of results. If the response list
+exceeds the maximum response size for a single response, you will have to page through the
+results. Default is to return the maximum response size.</p>
+<pre class="source">
+int maxResults;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="query">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>query</strong> <a class="anchor-link"
+            href="#query"
+            title="Permalink to QueryRequest.query">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Required</code> A query string, following the BigQuery query syntax of the query to execute. Table
+names should be qualified by dataset name in the format projectId:datasetId.tableId unless you
+specify the defaultDataset value. If the table is in the same project as the job, you can omit
+the project ID. Example: SELECT f1 FROM myProjectId:myDatasetId.myTableId.</p>
+<pre class="source">
+String query;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="timeoutMs">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>timeoutMs</strong> <a class="anchor-link"
+            href="#timeoutMs"
+            title="Permalink to QueryRequest.timeoutMs">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> How long to wait for the query to complete, in milliseconds, before returning. Default
+is to return immediately. If the timeout passes before the job completes, the request will fail
+with a TIMEOUT error.</p>
+<pre class="source">
+int timeoutMs;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:14.001Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

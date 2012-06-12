@@ -1,0 +1,262 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>JobsResource Class / bigquery Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery" data-type="JobsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery.html">bigquery</a> &rsaquo; <a href="../bigquery/JobsResource.html">JobsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>JobsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> jobId) <a class="anchor-link" href="#get"
+              title="Permalink to JobsResource.get">#</a></h4>
+<div class="doc">
+<p>Retrieves the specified job by ID.
+
+<span class="param">projectId</span> Project ID of the requested job
+
+<span class="param">jobId</span> Job ID of the requested job</p>
+<pre class="source">
+Future&lt;Job&gt; get(String projectId, String jobId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  $pathParams["jobId"] = jobId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/jobs/{jobId}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Job&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Job.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getQueryResults">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>getQueryResults</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> jobId, [<a href="../dart_core/int.html">int</a> timeoutMs = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startIndex = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#getQueryResults"
+              title="Permalink to JobsResource.getQueryResults">#</a></h4>
+<div class="doc">
+<p>Retrieves the results of a query job.
+
+<span class="param">projectId</span> Project ID of the query job
+
+<span class="param">jobId</span> Job ID of the query job</p>
+<pre class="source">
+Future&lt;GetQueryResultsResponse&gt; getQueryResults(String projectId, String jobId, [int timeoutMs = UNSPECIFIED, String startIndex = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  $pathParams["jobId"] = jobId;
+  if (UNSPECIFIED != timeoutMs) $queryParams["timeoutMs"] = timeoutMs;
+  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/queries/{jobId}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;GetQueryResultsResponse&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = GetQueryResultsResponse.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../bigquery/Job.html">Job</a> content) <a class="anchor-link" href="#insert"
+              title="Permalink to JobsResource.insert">#</a></h4>
+<div class="doc">
+<p>Starts a new asynchronous job.
+
+<span class="param">projectId</span> Project ID of the project that will be billed for the job
+
+<span class="param">content</span> the Job</p>
+<pre class="source">
+Future&lt;Job&gt; insert(String projectId, Job content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Job.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/jobs").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Job&gt;();
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $request = $http.request($body);
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Job.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, [<a href="../bigquery/JobsResourceListProjection.html">JobsResourceListProjection</a> projection = UNSPECIFIED, <a href="../bigquery/JobsResourceListStateFilter.html">JobsResourceListStateFilter</a> stateFilter = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> allUsers = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to JobsResource.list">#</a></h4>
+<div class="doc">
+<p>Lists all the Jobs in the specified project that were started by the user.
+
+<span class="param">projectId</span> Project ID of the jobs to list</p>
+<pre class="source">
+Future&lt;JobList&gt; list(String projectId, [JobsResourceListProjection projection = UNSPECIFIED, JobsResourceListStateFilter stateFilter = UNSPECIFIED, bool allUsers = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (UNSPECIFIED != stateFilter) $queryParams["stateFilter"] = stateFilter;
+  if (UNSPECIFIED != allUsers) $queryParams["allUsers"] = allUsers;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/jobs").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;JobList&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = JobList.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="query">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>query</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../bigquery/QueryRequest.html">QueryRequest</a> content) <a class="anchor-link" href="#query"
+              title="Permalink to JobsResource.query">#</a></h4>
+<div class="doc">
+<p>Runs a BigQuery SQL query synchronously and returns query results if the query completes within a
+specified timeout.
+
+<span class="param">projectId</span> Project ID of the project billed for the query
+
+<span class="param">content</span> the QueryRequest</p>
+<pre class="source">
+Future&lt;QueryResponse&gt; query(String projectId, QueryRequest content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(QueryRequest.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/queries").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;QueryResponse&gt;();
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $request = $http.request($body);
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = QueryResponse.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:12.873Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

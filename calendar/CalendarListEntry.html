@@ -1,0 +1,287 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CalendarListEntry Class / calendar Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="calendar" data-type="CalendarListEntry">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../calendar.html">calendar</a> &rsaquo; <a href="../calendar/CalendarListEntry.html">CalendarListEntry</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CalendarListEntry</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>CalendarListEntry</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../calendar/CalendarListEntry.html">CalendarListEntry</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to CalendarListEntry.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static CalendarListEntry parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new CalendarListEntry();
+  result.kind = identity(json["kind"]);
+  result.defaultReminders = map(EventReminder.parse)(json["defaultReminders"]);
+  result.description = identity(json["description"]);
+  result.colorId = identity(json["colorId"]);
+  result.selected = identity(json["selected"]);
+  result.summary = identity(json["summary"]);
+  result.etag = identity(json["etag"]);
+  result.location = identity(json["location"]);
+  result.summaryOverride = identity(json["summaryOverride"]);
+  result.timeZone = identity(json["timeZone"]);
+  result.hidden = identity(json["hidden"]);
+  result.accessRole = identity(json["accessRole"]);
+  result.id = identity(json["id"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar/CalendarListEntry.html">CalendarListEntry</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to CalendarListEntry.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(CalendarListEntry value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["kind"] = identity(value.kind);
+  result["defaultReminders"] = map(EventReminder.serialize)(value.defaultReminders);
+  result["description"] = identity(value.description);
+  result["colorId"] = identity(value.colorId);
+  result["selected"] = identity(value.selected);
+  result["summary"] = identity(value.summary);
+  result["etag"] = identity(value.etag);
+  result["location"] = identity(value.location);
+  result["summaryOverride"] = identity(value.summaryOverride);
+  result["timeZone"] = identity(value.timeZone);
+  result["hidden"] = identity(value.hidden);
+  result["accessRole"] = identity(value.accessRole);
+  result["id"] = identity(value.id);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CalendarListEntry.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="accessRole">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>accessRole</strong> <a class="anchor-link"
+            href="#accessRole"
+            title="Permalink to CalendarListEntry.accessRole">#</a>
+        </h4>
+        <div class="doc">
+<p>The effective access role that the authenticated user has on the calendar. Read-only. Possible
+values are: - "freeBusyReader" - Provides read access to free/busy information. - "reader" -
+Provides read access to the calendar. Private events will appear to users with reader access, but
+event details will be hidden. - "writer" - Provides read and write access to the calendar.
+Private events will appear to users with writer access, and event details will be visible. -
+"owner" - Provides ownership of the calendar. This role has all of the permissions of the writer
+role with the additional ability to see and manipulate ACLs.</p>
+<pre class="source">
+String accessRole;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="colorId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>colorId</strong> <a class="anchor-link"
+            href="#colorId"
+            title="Permalink to CalendarListEntry.colorId">#</a>
+        </h4>
+        <div class="doc">
+<p>The color of the calendar. This is an ID referring to an entry in the "calendar" section of the
+colors definition (see the "colors" endpoint). Optional.</p>
+<pre class="source">
+String colorId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="defaultReminders">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>defaultReminders</strong> <a class="anchor-link"
+            href="#defaultReminders"
+            title="Permalink to CalendarListEntry.defaultReminders">#</a>
+        </h4>
+        <div class="doc">
+<p>The default reminders that the authenticated user has for this calendar.</p>
+<pre class="source">
+List&lt;EventReminder&gt; defaultReminders;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to CalendarListEntry.description">#</a>
+        </h4>
+        <div class="doc">
+<p>Description of the calendar. Optional. Read-only.</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to CalendarListEntry.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>ETag of the resource.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="hidden">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>hidden</strong> <a class="anchor-link"
+            href="#hidden"
+            title="Permalink to CalendarListEntry.hidden">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether the calendar has been hidden from the list. Optional. The default is False.</p>
+<pre class="source">
+bool hidden;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to CalendarListEntry.id">#</a>
+        </h4>
+        <div class="doc">
+<p>Identifier of the calendar.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to CalendarListEntry.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Type of the resource ("calendar#calendarListEntry").</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="location">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
+            href="#location"
+            title="Permalink to CalendarListEntry.location">#</a>
+        </h4>
+        <div class="doc">
+<p>Geographic location of the calendar as free-form text. Optional. Read-only.</p>
+<pre class="source">
+String location;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selected">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>selected</strong> <a class="anchor-link"
+            href="#selected"
+            title="Permalink to CalendarListEntry.selected">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether the calendar content shows up in the calendar UI. Optional. The default is False.</p>
+<pre class="source">
+bool selected;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="summary">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>summary</strong> <a class="anchor-link"
+            href="#summary"
+            title="Permalink to CalendarListEntry.summary">#</a>
+        </h4>
+        <div class="doc">
+<p>Title of the calendar. Read-only.</p>
+<pre class="source">
+String summary;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="summaryOverride">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>summaryOverride</strong> <a class="anchor-link"
+            href="#summaryOverride"
+            title="Permalink to CalendarListEntry.summaryOverride">#</a>
+        </h4>
+        <div class="doc">
+<p>The summary that the authenticated user has set for this calendar. Optional.</p>
+<pre class="source">
+String summaryOverride;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="timeZone">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>timeZone</strong> <a class="anchor-link"
+            href="#timeZone"
+            title="Permalink to CalendarListEntry.timeZone">#</a>
+        </h4>
+        <div class="doc">
+<p>The time zone of the calendar. Optional. Read-only.</p>
+<pre class="source">
+String timeZone;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:16.743Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,289 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CalendarListResource Class / calendar Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="calendar" data-type="CalendarListResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../calendar.html">calendar</a> &rsaquo; <a href="../calendar/CalendarListResource.html">CalendarListResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CalendarListResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#delete"
+              title="Permalink to CalendarListResource.delete">#</a></h4>
+<div class="doc">
+<p>Deletes an entry on the user's calendar list.
+
+<span class="param">calendarId</span> Calendar identifier.</p>
+<pre class="source">
+Future delete(String calendarId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["calendarId"] = calendarId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList/{calendarId}").generate($pathParams, $queryParams);
+  final $completer = new Completer();
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = identity(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#get"
+              title="Permalink to CalendarListResource.get">#</a></h4>
+<div class="doc">
+<p>Returns an entry on the user's calendar list.
+
+<span class="param">calendarId</span> Calendar identifier.</p>
+<pre class="source">
+Future&lt;CalendarListEntry&gt; get(String calendarId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["calendarId"] = calendarId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList/{calendarId}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;CalendarListEntry&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = CalendarListEntry.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../calendar/CalendarListEntry.html">CalendarListEntry</a> content) <a class="anchor-link" href="#insert"
+              title="Permalink to CalendarListResource.insert">#</a></h4>
+<div class="doc">
+<p>Adds an entry to the user's calendar list.
+
+<span class="param">content</span> the CalendarListEntry</p>
+<pre class="source">
+Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(CalendarListEntry.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;CalendarListEntry&gt;();
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $request = $http.request($body);
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = CalendarListEntry.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> showHidden = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../calendar/CalendarListResourceListMinAccessRole.html">CalendarListResourceListMinAccessRole</a> minAccessRole = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to CalendarListResource.list">#</a></h4>
+<div class="doc">
+<p>Returns entries on the user's calendar list.</p>
+<pre class="source">
+Future&lt;CalendarList&gt; list([String pageToken = UNSPECIFIED, bool showHidden = UNSPECIFIED, int maxResults = UNSPECIFIED, CalendarListResourceListMinAccessRole minAccessRole = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != showHidden) $queryParams["showHidden"] = showHidden;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != minAccessRole) $queryParams["minAccessRole"] = minAccessRole;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;CalendarList&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = CalendarList.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="patch">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../calendar/CalendarListEntry.html">CalendarListEntry</a> content) <a class="anchor-link" href="#patch"
+              title="Permalink to CalendarListResource.patch">#</a></h4>
+<div class="doc">
+<p>Updates an entry on the user's calendar list. This method supports patch semantics.
+
+<span class="param">calendarId</span> Calendar identifier.
+
+<span class="param">content</span> the CalendarListEntry</p>
+<pre class="source">
+Future&lt;CalendarListEntry&gt; patch(String calendarId, CalendarListEntry content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["calendarId"] = calendarId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(CalendarListEntry.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList/{calendarId}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;CalendarListEntry&gt;();
+  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $request = $http.request($body);
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = CalendarListEntry.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="update">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../calendar/CalendarListEntry.html">CalendarListEntry</a> content) <a class="anchor-link" href="#update"
+              title="Permalink to CalendarListResource.update">#</a></h4>
+<div class="doc">
+<p>Updates an entry on the user's calendar list.
+
+<span class="param">calendarId</span> Calendar identifier.
+
+<span class="param">content</span> the CalendarListEntry</p>
+<pre class="source">
+Future&lt;CalendarListEntry&gt; update(String calendarId, CalendarListEntry content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["calendarId"] = calendarId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(CalendarListEntry.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList/{calendarId}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;CalendarListEntry&gt;();
+  final $http = new HttpRequest($url, "PUT", $headers);
+  final $request = $http.request($body);
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = CalendarListEntry.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:16.058Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

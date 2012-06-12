@@ -1,0 +1,374 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TasksResource Class / taskqueue Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="taskqueue" data-type="TasksResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../taskqueue.html">taskqueue</a> &rsaquo; <a href="../taskqueue/TasksResource.html">TasksResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>TasksResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task) <a class="anchor-link" href="#delete"
+              title="Permalink to TasksResource.delete">#</a></h4>
+<div class="doc">
+<p>Delete a task from a TaskQueue.
+
+<span class="param">project</span> The project under which the queue lies.
+
+<span class="param">taskqueue</span> The taskqueue to delete a task from.
+
+<span class="param">task</span> The id of the task to delete.</p>
+<pre class="source">
+Future delete(String project, String taskqueue, String task) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["taskqueue"] = taskqueue;
+  $pathParams["task"] = task;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/{task}").generate($pathParams, $queryParams);
+  final $completer = new Completer();
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = identity(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task) <a class="anchor-link" href="#get"
+              title="Permalink to TasksResource.get">#</a></h4>
+<div class="doc">
+<p>Get a particular task from a TaskQueue.
+
+<span class="param">project</span> The project under which the queue lies.
+
+<span class="param">taskqueue</span> The taskqueue in which the task belongs.
+
+<span class="param">task</span> The task to get properties of.</p>
+<pre class="source">
+Future&lt;Task&gt; get(String project, String taskqueue, String task) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["taskqueue"] = taskqueue;
+  $pathParams["task"] = task;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/{task}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Task&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Task.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../taskqueue/Task.html">Task</a> content) <a class="anchor-link" href="#insert"
+              title="Permalink to TasksResource.insert">#</a></h4>
+<div class="doc">
+<p>Insert a new task in a TaskQueue
+
+<span class="param">project</span> The project under which the queue lies
+
+<span class="param">taskqueue</span> The taskqueue to insert the task into
+
+<span class="param">content</span> the Task</p>
+<pre class="source">
+Future&lt;Task&gt; insert(String project, String taskqueue, Task content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["taskqueue"] = taskqueue;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Task.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Task&gt;();
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $request = $http.request($body);
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Task.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="lease">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>lease</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/int.html">int</a> numTasks, <a href="../dart_core/int.html">int</a> leaseSecs, [<a href="../dart_core/bool.html">bool</a> groupByTag = UNSPECIFIED, <a href="../dart_core/String.html">String</a> tag = UNSPECIFIED]) <a class="anchor-link" href="#lease"
+              title="Permalink to TasksResource.lease">#</a></h4>
+<div class="doc">
+<p>Lease 1 or more tasks from a TaskQueue.
+
+<span class="param">project</span> The project under which the queue lies.
+
+<span class="param">taskqueue</span> The taskqueue to lease a task from.
+
+<span class="param">numTasks</span> The number of tasks to lease.
+
+<span class="param">leaseSecs</span> The lease in seconds.</p>
+<pre class="source">
+Future&lt;Tasks&gt; lease(String project, String taskqueue, int numTasks, int leaseSecs, [bool groupByTag = UNSPECIFIED, String tag = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["taskqueue"] = taskqueue;
+  $pathParams["numTasks"] = numTasks;
+  $pathParams["leaseSecs"] = leaseSecs;
+  if (UNSPECIFIED != groupByTag) $queryParams["groupByTag"] = groupByTag;
+  if (UNSPECIFIED != tag) $queryParams["tag"] = tag;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/lease").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Tasks&gt;();
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Tasks.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue) <a class="anchor-link" href="#list"
+              title="Permalink to TasksResource.list">#</a></h4>
+<div class="doc">
+<p>List Tasks in a TaskQueue
+
+<span class="param">project</span> The project under which the queue lies.
+
+<span class="param">taskqueue</span> The id of the taskqueue to list tasks from.</p>
+<pre class="source">
+Future&lt;Tasks2&gt; list(String project, String taskqueue) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["taskqueue"] = taskqueue;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Tasks2&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Tasks2.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="patch">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task, <a href="../dart_core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue/Task.html">Task</a> content) <a class="anchor-link" href="#patch"
+              title="Permalink to TasksResource.patch">#</a></h4>
+<div class="doc">
+<p>Update tasks that are leased out of a TaskQueue. This method supports patch semantics.
+
+<span class="param">project</span> The project under which the queue lies.
+[taskqueue]
+[task]
+
+<span class="param">newLeaseSeconds</span> The new lease in seconds.
+
+<span class="param">content</span> the Task</p>
+<pre class="source">
+Future&lt;Task&gt; patch(String project, String taskqueue, String task, int newLeaseSeconds, Task content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["taskqueue"] = taskqueue;
+  $pathParams["task"] = task;
+  $pathParams["newLeaseSeconds"] = newLeaseSeconds;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Task.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/{task}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Task&gt;();
+  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $request = $http.request($body);
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Task.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="update">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task, <a href="../dart_core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue/Task.html">Task</a> content) <a class="anchor-link" href="#update"
+              title="Permalink to TasksResource.update">#</a></h4>
+<div class="doc">
+<p>Update tasks that are leased out of a TaskQueue.
+
+<span class="param">project</span> The project under which the queue lies.
+[taskqueue]
+[task]
+
+<span class="param">newLeaseSeconds</span> The new lease in seconds.
+
+<span class="param">content</span> the Task</p>
+<pre class="source">
+Future&lt;Task&gt; update(String project, String taskqueue, String task, int newLeaseSeconds, Task content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["taskqueue"] = taskqueue;
+  $pathParams["task"] = task;
+  $pathParams["newLeaseSeconds"] = newLeaseSeconds;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Task.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/{task}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Task&gt;();
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $request = $http.request($body);
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Task.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:32.110Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,1038 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CcOffer Class / gan Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="gan" data-type="CcOffer">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../gan.html">gan</a> &rsaquo; <a href="../gan/CcOffer.html">CcOffer</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CcOffer</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>CcOffer</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../gan/CcOffer.html">CcOffer</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to CcOffer.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static CcOffer parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new CcOffer();
+  result.luggageInsurance = identity(json["luggageInsurance"]);
+  result.creditLimitMin = identity(json["creditLimitMin"]);
+  result.cardName = identity(json["cardName"]);
+  result.creditLimitMax = identity(json["creditLimitMax"]);
+  result.gracePeriodDisplay = identity(json["gracePeriodDisplay"]);
+  result.offerId = identity(json["offerId"]);
+  result.rewardUnit = identity(json["rewardUnit"]);
+  result.minPurchaseRate = identity(json["minPurchaseRate"]);
+  result.cardBenefits = map(identity)(json["cardBenefits"]);
+  result.rewards = map(CcOfferRewards.parse)(json["rewards"]);
+  result.offersImmediateCashReward = identity(json["offersImmediateCashReward"]);
+  result.travelInsurance = identity(json["travelInsurance"]);
+  result.returnedPaymentFee = identity(json["returnedPaymentFee"]);
+  result.kind = identity(json["kind"]);
+  result.issuer = identity(json["issuer"]);
+  result.maxPurchaseRate = identity(json["maxPurchaseRate"]);
+  result.minimumFinanceCharge = identity(json["minimumFinanceCharge"]);
+  result.existingCustomerOnly = identity(json["existingCustomerOnly"]);
+  result.annualFeeDisplay = identity(json["annualFeeDisplay"]);
+  result.initialSetupAndProcessingFee = identity(json["initialSetupAndProcessingFee"]);
+  result.issuerId = identity(json["issuerId"]);
+  result.purchaseRateAdditionalDetails = identity(json["purchaseRateAdditionalDetails"]);
+  result.prohibitedCategories = map(identity)(json["prohibitedCategories"]);
+  result.fraudLiability = identity(json["fraudLiability"]);
+  result.cashAdvanceTerms = identity(json["cashAdvanceTerms"]);
+  result.landingPageUrl = identity(json["landingPageUrl"]);
+  result.introCashAdvanceTerms = identity(json["introCashAdvanceTerms"]);
+  result.rewardsExpire = identity(json["rewardsExpire"]);
+  result.introPurchaseTerms = identity(json["introPurchaseTerms"]);
+  result.defaultFees = map(CcOfferDefaultFees.parse)(json["defaultFees"]);
+  result.extendedWarranty = identity(json["extendedWarranty"]);
+  result.emergencyInsurance = identity(json["emergencyInsurance"]);
+  result.firstYearAnnualFee = identity(json["firstYearAnnualFee"]);
+  result.trackingUrl = identity(json["trackingUrl"]);
+  result.latePaymentFee = identity(json["latePaymentFee"]);
+  result.overLimitFee = identity(json["overLimitFee"]);
+  result.cardType = identity(json["cardType"]);
+  result.approvedCategories = map(identity)(json["approvedCategories"]);
+  result.rewardPartner = identity(json["rewardPartner"]);
+  result.introBalanceTransferTerms = identity(json["introBalanceTransferTerms"]);
+  result.foreignCurrencyTransactionFee = identity(json["foreignCurrencyTransactionFee"]);
+  result.annualFee = identity(json["annualFee"]);
+  result.issuerWebsite = identity(json["issuerWebsite"]);
+  result.variableRatesUpdateFrequency = identity(json["variableRatesUpdateFrequency"]);
+  result.carRentalInsurance = identity(json["carRentalInsurance"]);
+  result.additionalCardBenefits = map(identity)(json["additionalCardBenefits"]);
+  result.ageMinimum = identity(json["ageMinimum"]);
+  result.balanceComputationMethod = identity(json["balanceComputationMethod"]);
+  result.aprDisplay = identity(json["aprDisplay"]);
+  result.additionalCardHolderFee = identity(json["additionalCardHolderFee"]);
+  result.variableRatesLastUpdated = identity(json["variableRatesLastUpdated"]);
+  result.network = identity(json["network"]);
+  result.purchaseRateType = identity(json["purchaseRateType"]);
+  result.statementCopyFee = identity(json["statementCopyFee"]);
+  result.rewardsHaveBlackoutDates = identity(json["rewardsHaveBlackoutDates"]);
+  result.creditRatingDisplay = identity(json["creditRatingDisplay"]);
+  result.flightAccidentInsurance = identity(json["flightAccidentInsurance"]);
+  result.annualRewardMaximum = identity(json["annualRewardMaximum"]);
+  result.balanceTransferTerms = identity(json["balanceTransferTerms"]);
+  result.bonusRewards = map(CcOfferBonusRewards.parse)(json["bonusRewards"]);
+  result.imageUrl = identity(json["imageUrl"]);
+  result.ageMinimumDetails = identity(json["ageMinimumDetails"]);
+  result.disclaimer = identity(json["disclaimer"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan/CcOffer.html">CcOffer</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to CcOffer.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(CcOffer value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["luggageInsurance"] = identity(value.luggageInsurance);
+  result["creditLimitMin"] = identity(value.creditLimitMin);
+  result["cardName"] = identity(value.cardName);
+  result["creditLimitMax"] = identity(value.creditLimitMax);
+  result["gracePeriodDisplay"] = identity(value.gracePeriodDisplay);
+  result["offerId"] = identity(value.offerId);
+  result["rewardUnit"] = identity(value.rewardUnit);
+  result["minPurchaseRate"] = identity(value.minPurchaseRate);
+  result["cardBenefits"] = map(identity)(value.cardBenefits);
+  result["rewards"] = map(CcOfferRewards.serialize)(value.rewards);
+  result["offersImmediateCashReward"] = identity(value.offersImmediateCashReward);
+  result["travelInsurance"] = identity(value.travelInsurance);
+  result["returnedPaymentFee"] = identity(value.returnedPaymentFee);
+  result["kind"] = identity(value.kind);
+  result["issuer"] = identity(value.issuer);
+  result["maxPurchaseRate"] = identity(value.maxPurchaseRate);
+  result["minimumFinanceCharge"] = identity(value.minimumFinanceCharge);
+  result["existingCustomerOnly"] = identity(value.existingCustomerOnly);
+  result["annualFeeDisplay"] = identity(value.annualFeeDisplay);
+  result["initialSetupAndProcessingFee"] = identity(value.initialSetupAndProcessingFee);
+  result["issuerId"] = identity(value.issuerId);
+  result["purchaseRateAdditionalDetails"] = identity(value.purchaseRateAdditionalDetails);
+  result["prohibitedCategories"] = map(identity)(value.prohibitedCategories);
+  result["fraudLiability"] = identity(value.fraudLiability);
+  result["cashAdvanceTerms"] = identity(value.cashAdvanceTerms);
+  result["landingPageUrl"] = identity(value.landingPageUrl);
+  result["introCashAdvanceTerms"] = identity(value.introCashAdvanceTerms);
+  result["rewardsExpire"] = identity(value.rewardsExpire);
+  result["introPurchaseTerms"] = identity(value.introPurchaseTerms);
+  result["defaultFees"] = map(CcOfferDefaultFees.serialize)(value.defaultFees);
+  result["extendedWarranty"] = identity(value.extendedWarranty);
+  result["emergencyInsurance"] = identity(value.emergencyInsurance);
+  result["firstYearAnnualFee"] = identity(value.firstYearAnnualFee);
+  result["trackingUrl"] = identity(value.trackingUrl);
+  result["latePaymentFee"] = identity(value.latePaymentFee);
+  result["overLimitFee"] = identity(value.overLimitFee);
+  result["cardType"] = identity(value.cardType);
+  result["approvedCategories"] = map(identity)(value.approvedCategories);
+  result["rewardPartner"] = identity(value.rewardPartner);
+  result["introBalanceTransferTerms"] = identity(value.introBalanceTransferTerms);
+  result["foreignCurrencyTransactionFee"] = identity(value.foreignCurrencyTransactionFee);
+  result["annualFee"] = identity(value.annualFee);
+  result["issuerWebsite"] = identity(value.issuerWebsite);
+  result["variableRatesUpdateFrequency"] = identity(value.variableRatesUpdateFrequency);
+  result["carRentalInsurance"] = identity(value.carRentalInsurance);
+  result["additionalCardBenefits"] = map(identity)(value.additionalCardBenefits);
+  result["ageMinimum"] = identity(value.ageMinimum);
+  result["balanceComputationMethod"] = identity(value.balanceComputationMethod);
+  result["aprDisplay"] = identity(value.aprDisplay);
+  result["additionalCardHolderFee"] = identity(value.additionalCardHolderFee);
+  result["variableRatesLastUpdated"] = identity(value.variableRatesLastUpdated);
+  result["network"] = identity(value.network);
+  result["purchaseRateType"] = identity(value.purchaseRateType);
+  result["statementCopyFee"] = identity(value.statementCopyFee);
+  result["rewardsHaveBlackoutDates"] = identity(value.rewardsHaveBlackoutDates);
+  result["creditRatingDisplay"] = identity(value.creditRatingDisplay);
+  result["flightAccidentInsurance"] = identity(value.flightAccidentInsurance);
+  result["annualRewardMaximum"] = identity(value.annualRewardMaximum);
+  result["balanceTransferTerms"] = identity(value.balanceTransferTerms);
+  result["bonusRewards"] = map(CcOfferBonusRewards.serialize)(value.bonusRewards);
+  result["imageUrl"] = identity(value.imageUrl);
+  result["ageMinimumDetails"] = identity(value.ageMinimumDetails);
+  result["disclaimer"] = identity(value.disclaimer);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CcOffer.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="additionalCardBenefits">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>additionalCardBenefits</strong> <a class="anchor-link"
+            href="#additionalCardBenefits"
+            title="Permalink to CcOffer.additionalCardBenefits">#</a>
+        </h4>
+        <div class="doc">
+<p>More marketing copy about the card's benefits. A summary field.</p>
+<pre class="source">
+List&lt;String&gt; additionalCardBenefits;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="additionalCardHolderFee">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>additionalCardHolderFee</strong> <a class="anchor-link"
+            href="#additionalCardHolderFee"
+            title="Permalink to CcOffer.additionalCardHolderFee">#</a>
+        </h4>
+        <div class="doc">
+<p>Any extra fees levied on card holders.</p>
+<pre class="source">
+String additionalCardHolderFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ageMinimum">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>ageMinimum</strong> <a class="anchor-link"
+            href="#ageMinimum"
+            title="Permalink to CcOffer.ageMinimum">#</a>
+        </h4>
+        <div class="doc">
+<p>The youngest a recipient of this card may be.</p>
+<pre class="source">
+double ageMinimum;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ageMinimumDetails">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>ageMinimumDetails</strong> <a class="anchor-link"
+            href="#ageMinimumDetails"
+            title="Permalink to CcOffer.ageMinimumDetails">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the details of the age minimum restriction.</p>
+<pre class="source">
+String ageMinimumDetails;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="annualFee">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>annualFee</strong> <a class="anchor-link"
+            href="#annualFee"
+            title="Permalink to CcOffer.annualFee">#</a>
+        </h4>
+        <div class="doc">
+<p>The ongoing annual fee, in dollars.</p>
+<pre class="source">
+double annualFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="annualFeeDisplay">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>annualFeeDisplay</strong> <a class="anchor-link"
+            href="#annualFeeDisplay"
+            title="Permalink to CcOffer.annualFeeDisplay">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the annual fee, including any difference for the first year. A summary field.</p>
+<pre class="source">
+String annualFeeDisplay;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="annualRewardMaximum">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>annualRewardMaximum</strong> <a class="anchor-link"
+            href="#annualRewardMaximum"
+            title="Permalink to CcOffer.annualRewardMaximum">#</a>
+        </h4>
+        <div class="doc">
+<p>The largest number of units you may accumulate in a year.</p>
+<pre class="source">
+double annualRewardMaximum;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="approvedCategories">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>approvedCategories</strong> <a class="anchor-link"
+            href="#approvedCategories"
+            title="Permalink to CcOffer.approvedCategories">#</a>
+        </h4>
+        <div class="doc">
+<p>Possible categories for this card, eg "Low Interest" or "Good." A summary field.</p>
+<pre class="source">
+List&lt;String&gt; approvedCategories;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="aprDisplay">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>aprDisplay</strong> <a class="anchor-link"
+            href="#aprDisplay"
+            title="Permalink to CcOffer.aprDisplay">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the purchase APR. A summary field.</p>
+<pre class="source">
+String aprDisplay;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="balanceComputationMethod">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>balanceComputationMethod</strong> <a class="anchor-link"
+            href="#balanceComputationMethod"
+            title="Permalink to CcOffer.balanceComputationMethod">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing how the balance is computed. A summary field.</p>
+<pre class="source">
+String balanceComputationMethod;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="balanceTransferTerms">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>balanceTransferTerms</strong> <a class="anchor-link"
+            href="#balanceTransferTerms"
+            title="Permalink to CcOffer.balanceTransferTerms">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the terms for balance transfers. A summary field.</p>
+<pre class="source">
+String balanceTransferTerms;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="bonusRewards">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>bonusRewards</strong> <a class="anchor-link"
+            href="#bonusRewards"
+            title="Permalink to CcOffer.bonusRewards">#</a>
+        </h4>
+        <div class="doc">
+<p>For cards with rewards programs, extra circumstances whereby additional rewards may be granted.</p>
+<pre class="source">
+List&lt;CcOfferBonusRewards&gt; bonusRewards;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="cardBenefits">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>cardBenefits</strong> <a class="anchor-link"
+            href="#cardBenefits"
+            title="Permalink to CcOffer.cardBenefits">#</a>
+        </h4>
+        <div class="doc">
+<p>A list of what the issuer thinks are the most important benefits of the card. Usually summarizes
+the rewards program, if there is one. A summary field.</p>
+<pre class="source">
+List&lt;String&gt; cardBenefits;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="cardName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>cardName</strong> <a class="anchor-link"
+            href="#cardName"
+            title="Permalink to CcOffer.cardName">#</a>
+        </h4>
+        <div class="doc">
+<p>The issuer's name for the card, including any trademark or service mark designators. A summary
+field.</p>
+<pre class="source">
+String cardName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="cardType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>cardType</strong> <a class="anchor-link"
+            href="#cardType"
+            title="Permalink to CcOffer.cardType">#</a>
+        </h4>
+        <div class="doc">
+<p>What kind of credit card this is, for example secured or unsecured.</p>
+<pre class="source">
+String cardType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="carRentalInsurance">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>carRentalInsurance</strong> <a class="anchor-link"
+            href="#carRentalInsurance"
+            title="Permalink to CcOffer.carRentalInsurance">#</a>
+        </h4>
+        <div class="doc">
+<p>If you get coverage when you use the card for the given activity, this field describes it.</p>
+<pre class="source">
+String carRentalInsurance;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="cashAdvanceTerms">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>cashAdvanceTerms</strong> <a class="anchor-link"
+            href="#cashAdvanceTerms"
+            title="Permalink to CcOffer.cashAdvanceTerms">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the terms for cash advances. A summary field.</p>
+<pre class="source">
+String cashAdvanceTerms;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="creditLimitMax">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>creditLimitMax</strong> <a class="anchor-link"
+            href="#creditLimitMax"
+            title="Permalink to CcOffer.creditLimitMax">#</a>
+        </h4>
+        <div class="doc">
+<p>The high end for credit limits the issuer imposes on recipients of this card.</p>
+<pre class="source">
+double creditLimitMax;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="creditLimitMin">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>creditLimitMin</strong> <a class="anchor-link"
+            href="#creditLimitMin"
+            title="Permalink to CcOffer.creditLimitMin">#</a>
+        </h4>
+        <div class="doc">
+<p>The low end for credit limits the issuer imposes on recipients of this card.</p>
+<pre class="source">
+double creditLimitMin;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="creditRatingDisplay">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>creditRatingDisplay</strong> <a class="anchor-link"
+            href="#creditRatingDisplay"
+            title="Permalink to CcOffer.creditRatingDisplay">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the credit ratings required for recipients of this card, for example
+"Excellent/Good." A summary field.</p>
+<pre class="source">
+String creditRatingDisplay;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="defaultFees">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>defaultFees</strong> <a class="anchor-link"
+            href="#defaultFees"
+            title="Permalink to CcOffer.defaultFees">#</a>
+        </h4>
+        <div class="doc">
+<p>Fees for defaulting on your payments.</p>
+<pre class="source">
+List&lt;CcOfferDefaultFees&gt; defaultFees;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="disclaimer">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>disclaimer</strong> <a class="anchor-link"
+            href="#disclaimer"
+            title="Permalink to CcOffer.disclaimer">#</a>
+        </h4>
+        <div class="doc">
+<p>A notice that, if present, is referenced via an asterisk by many of the other summary fields. If
+this field is present, it will always start with an asterisk ("*"), and must be prominently
+displayed with the offer. A summary field.</p>
+<pre class="source">
+String disclaimer;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="emergencyInsurance">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>emergencyInsurance</strong> <a class="anchor-link"
+            href="#emergencyInsurance"
+            title="Permalink to CcOffer.emergencyInsurance">#</a>
+        </h4>
+        <div class="doc">
+<p>If you get coverage when you use the card for the given activity, this field describes it.</p>
+<pre class="source">
+String emergencyInsurance;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="existingCustomerOnly">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>existingCustomerOnly</strong> <a class="anchor-link"
+            href="#existingCustomerOnly"
+            title="Permalink to CcOffer.existingCustomerOnly">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether this card is only available to existing customers of the issuer.</p>
+<pre class="source">
+bool existingCustomerOnly;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="extendedWarranty">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>extendedWarranty</strong> <a class="anchor-link"
+            href="#extendedWarranty"
+            title="Permalink to CcOffer.extendedWarranty">#</a>
+        </h4>
+        <div class="doc">
+<p>If you get coverage when you use the card for the given activity, this field describes it.</p>
+<pre class="source">
+String extendedWarranty;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="firstYearAnnualFee">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>firstYearAnnualFee</strong> <a class="anchor-link"
+            href="#firstYearAnnualFee"
+            title="Permalink to CcOffer.firstYearAnnualFee">#</a>
+        </h4>
+        <div class="doc">
+<p>The annual fee for the first year, if different from the ongoing fee. Optional.</p>
+<pre class="source">
+double firstYearAnnualFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="flightAccidentInsurance">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>flightAccidentInsurance</strong> <a class="anchor-link"
+            href="#flightAccidentInsurance"
+            title="Permalink to CcOffer.flightAccidentInsurance">#</a>
+        </h4>
+        <div class="doc">
+<p>If you get coverage when you use the card for the given activity, this field describes it.</p>
+<pre class="source">
+String flightAccidentInsurance;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="foreignCurrencyTransactionFee">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>foreignCurrencyTransactionFee</strong> <a class="anchor-link"
+            href="#foreignCurrencyTransactionFee"
+            title="Permalink to CcOffer.foreignCurrencyTransactionFee">#</a>
+        </h4>
+        <div class="doc">
+<p>Fee for each transaction involving a foreign currency.</p>
+<pre class="source">
+String foreignCurrencyTransactionFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fraudLiability">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fraudLiability</strong> <a class="anchor-link"
+            href="#fraudLiability"
+            title="Permalink to CcOffer.fraudLiability">#</a>
+        </h4>
+        <div class="doc">
+<p>If you get coverage when you use the card for the given activity, this field describes it.</p>
+<pre class="source">
+String fraudLiability;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="gracePeriodDisplay">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>gracePeriodDisplay</strong> <a class="anchor-link"
+            href="#gracePeriodDisplay"
+            title="Permalink to CcOffer.gracePeriodDisplay">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the grace period before finance charges apply. A summary field.</p>
+<pre class="source">
+String gracePeriodDisplay;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="imageUrl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>imageUrl</strong> <a class="anchor-link"
+            href="#imageUrl"
+            title="Permalink to CcOffer.imageUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The link to the image of the card that is shown on Connect Commerce. A summary field.</p>
+<pre class="source">
+String imageUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="initialSetupAndProcessingFee">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>initialSetupAndProcessingFee</strong> <a class="anchor-link"
+            href="#initialSetupAndProcessingFee"
+            title="Permalink to CcOffer.initialSetupAndProcessingFee">#</a>
+        </h4>
+        <div class="doc">
+<p>Fee for setting up the card.</p>
+<pre class="source">
+String initialSetupAndProcessingFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="introBalanceTransferTerms">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>introBalanceTransferTerms</strong> <a class="anchor-link"
+            href="#introBalanceTransferTerms"
+            title="Permalink to CcOffer.introBalanceTransferTerms">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the terms for introductory period balance transfers. A summary field.</p>
+<pre class="source">
+String introBalanceTransferTerms;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="introCashAdvanceTerms">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>introCashAdvanceTerms</strong> <a class="anchor-link"
+            href="#introCashAdvanceTerms"
+            title="Permalink to CcOffer.introCashAdvanceTerms">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the terms for introductory period cash advances. A summary field.</p>
+<pre class="source">
+String introCashAdvanceTerms;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="introPurchaseTerms">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>introPurchaseTerms</strong> <a class="anchor-link"
+            href="#introPurchaseTerms"
+            title="Permalink to CcOffer.introPurchaseTerms">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the terms for introductory period purchases. A summary field.</p>
+<pre class="source">
+String introPurchaseTerms;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="issuer">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>issuer</strong> <a class="anchor-link"
+            href="#issuer"
+            title="Permalink to CcOffer.issuer">#</a>
+        </h4>
+        <div class="doc">
+<p>Name of card issuer. A summary field.</p>
+<pre class="source">
+String issuer;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="issuerId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>issuerId</strong> <a class="anchor-link"
+            href="#issuerId"
+            title="Permalink to CcOffer.issuerId">#</a>
+        </h4>
+        <div class="doc">
+<p>The Google Affiliate Network ID of the advertiser making this offer.</p>
+<pre class="source">
+String issuerId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="issuerWebsite">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>issuerWebsite</strong> <a class="anchor-link"
+            href="#issuerWebsite"
+            title="Permalink to CcOffer.issuerWebsite">#</a>
+        </h4>
+        <div class="doc">
+<p>The generic link to the issuer's site.</p>
+<pre class="source">
+String issuerWebsite;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to CcOffer.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The kind for one credit card offer. A summary field.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="landingPageUrl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>landingPageUrl</strong> <a class="anchor-link"
+            href="#landingPageUrl"
+            title="Permalink to CcOffer.landingPageUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The link to the issuer's page for this card. A summary field.</p>
+<pre class="source">
+String landingPageUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="latePaymentFee">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>latePaymentFee</strong> <a class="anchor-link"
+            href="#latePaymentFee"
+            title="Permalink to CcOffer.latePaymentFee">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing how much a late payment will cost, eg "up to $35." A summary field.</p>
+<pre class="source">
+String latePaymentFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="luggageInsurance">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>luggageInsurance</strong> <a class="anchor-link"
+            href="#luggageInsurance"
+            title="Permalink to CcOffer.luggageInsurance">#</a>
+        </h4>
+        <div class="doc">
+<p>If you get coverage when you use the card for the given activity, this field describes it.</p>
+<pre class="source">
+String luggageInsurance;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maxPurchaseRate">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>maxPurchaseRate</strong> <a class="anchor-link"
+            href="#maxPurchaseRate"
+            title="Permalink to CcOffer.maxPurchaseRate">#</a>
+        </h4>
+        <div class="doc">
+<p>The highest interest rate the issuer charges on this card. Expressed as an absolute number, not
+as a percentage.</p>
+<pre class="source">
+double maxPurchaseRate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="minimumFinanceCharge">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>minimumFinanceCharge</strong> <a class="anchor-link"
+            href="#minimumFinanceCharge"
+            title="Permalink to CcOffer.minimumFinanceCharge">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing how much missing the grace period will cost.</p>
+<pre class="source">
+String minimumFinanceCharge;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="minPurchaseRate">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>minPurchaseRate</strong> <a class="anchor-link"
+            href="#minPurchaseRate"
+            title="Permalink to CcOffer.minPurchaseRate">#</a>
+        </h4>
+        <div class="doc">
+<p>The lowest interest rate the issuer charges on this card. Expressed as an absolute number, not as
+a percentage.</p>
+<pre class="source">
+double minPurchaseRate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="network">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>network</strong> <a class="anchor-link"
+            href="#network"
+            title="Permalink to CcOffer.network">#</a>
+        </h4>
+        <div class="doc">
+<p>Which network (eg Visa) the card belongs to. A summary field.</p>
+<pre class="source">
+String network;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="offerId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>offerId</strong> <a class="anchor-link"
+            href="#offerId"
+            title="Permalink to CcOffer.offerId">#</a>
+        </h4>
+        <div class="doc">
+<p>This offer's ID. A summary field.</p>
+<pre class="source">
+String offerId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="offersImmediateCashReward">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>offersImmediateCashReward</strong> <a class="anchor-link"
+            href="#offersImmediateCashReward"
+            title="Permalink to CcOffer.offersImmediateCashReward">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether a cash reward program lets you get cash back sooner than end of year or other longish
+period.</p>
+<pre class="source">
+bool offersImmediateCashReward;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="overLimitFee">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>overLimitFee</strong> <a class="anchor-link"
+            href="#overLimitFee"
+            title="Permalink to CcOffer.overLimitFee">#</a>
+        </h4>
+        <div class="doc">
+<p>Fee for exceeding the card's charge limit.</p>
+<pre class="source">
+String overLimitFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prohibitedCategories">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>prohibitedCategories</strong> <a class="anchor-link"
+            href="#prohibitedCategories"
+            title="Permalink to CcOffer.prohibitedCategories">#</a>
+        </h4>
+        <div class="doc">
+<p>Categories in which the issuer does not wish the card to be displayed. A summary field.</p>
+<pre class="source">
+List&lt;String&gt; prohibitedCategories;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="purchaseRateAdditionalDetails">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>purchaseRateAdditionalDetails</strong> <a class="anchor-link"
+            href="#purchaseRateAdditionalDetails"
+            title="Permalink to CcOffer.purchaseRateAdditionalDetails">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing any additional details for the purchase rate. A summary field.</p>
+<pre class="source">
+String purchaseRateAdditionalDetails;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="purchaseRateType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>purchaseRateType</strong> <a class="anchor-link"
+            href="#purchaseRateType"
+            title="Permalink to CcOffer.purchaseRateType">#</a>
+        </h4>
+        <div class="doc">
+<p>Fixed or variable.</p>
+<pre class="source">
+String purchaseRateType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="returnedPaymentFee">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>returnedPaymentFee</strong> <a class="anchor-link"
+            href="#returnedPaymentFee"
+            title="Permalink to CcOffer.returnedPaymentFee">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing the fee for a payment that doesn't clear. A summary field.</p>
+<pre class="source">
+String returnedPaymentFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rewardPartner">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>rewardPartner</strong> <a class="anchor-link"
+            href="#rewardPartner"
+            title="Permalink to CcOffer.rewardPartner">#</a>
+        </h4>
+        <div class="doc">
+<p>The company that redeems the rewards, if different from the issuer.</p>
+<pre class="source">
+String rewardPartner;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rewards">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>rewards</strong> <a class="anchor-link"
+            href="#rewards"
+            title="Permalink to CcOffer.rewards">#</a>
+        </h4>
+        <div class="doc">
+<p>For cards with rewards programs, detailed rules about how the program works.</p>
+<pre class="source">
+List&lt;CcOfferRewards&gt; rewards;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rewardsExpire">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>rewardsExpire</strong> <a class="anchor-link"
+            href="#rewardsExpire"
+            title="Permalink to CcOffer.rewardsExpire">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether accumulated rewards ever expire.</p>
+<pre class="source">
+bool rewardsExpire;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rewardsHaveBlackoutDates">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>rewardsHaveBlackoutDates</strong> <a class="anchor-link"
+            href="#rewardsHaveBlackoutDates"
+            title="Permalink to CcOffer.rewardsHaveBlackoutDates">#</a>
+        </h4>
+        <div class="doc">
+<p>For airline miles rewards, tells whether blackout dates apply to the miles.</p>
+<pre class="source">
+bool rewardsHaveBlackoutDates;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rewardUnit">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>rewardUnit</strong> <a class="anchor-link"
+            href="#rewardUnit"
+            title="Permalink to CcOffer.rewardUnit">#</a>
+        </h4>
+        <div class="doc">
+<p>For cards with rewards programs, the unit of reward. For example, miles, cash back, points.</p>
+<pre class="source">
+String rewardUnit;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="statementCopyFee">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>statementCopyFee</strong> <a class="anchor-link"
+            href="#statementCopyFee"
+            title="Permalink to CcOffer.statementCopyFee">#</a>
+        </h4>
+        <div class="doc">
+<p>Fee for requesting a copy of your statement.</p>
+<pre class="source">
+String statementCopyFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="trackingUrl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>trackingUrl</strong> <a class="anchor-link"
+            href="#trackingUrl"
+            title="Permalink to CcOffer.trackingUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The link to ping to register a click on this offer. A summary field.</p>
+<pre class="source">
+String trackingUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="travelInsurance">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>travelInsurance</strong> <a class="anchor-link"
+            href="#travelInsurance"
+            title="Permalink to CcOffer.travelInsurance">#</a>
+        </h4>
+        <div class="doc">
+<p>If you get coverage when you use the card for the given activity, this field describes it.</p>
+<pre class="source">
+String travelInsurance;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="variableRatesLastUpdated">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>variableRatesLastUpdated</strong> <a class="anchor-link"
+            href="#variableRatesLastUpdated"
+            title="Permalink to CcOffer.variableRatesLastUpdated">#</a>
+        </h4>
+        <div class="doc">
+<p>When variable rates were last updated.</p>
+<pre class="source">
+String variableRatesLastUpdated;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="variableRatesUpdateFrequency">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>variableRatesUpdateFrequency</strong> <a class="anchor-link"
+            href="#variableRatesUpdateFrequency"
+            title="Permalink to CcOffer.variableRatesUpdateFrequency">#</a>
+        </h4>
+        <div class="doc">
+<p>How often variable rates are updated.</p>
+<pre class="source">
+String variableRatesUpdateFrequency;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:21.995Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

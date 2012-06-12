@@ -1,0 +1,177 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CommunityTopicList Class / orkut Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="orkut" data-type="CommunityTopicList">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../orkut.html">orkut</a> &rsaquo; <a href="../orkut/CommunityTopicList.html">CommunityTopicList</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CommunityTopicList</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>CommunityTopicList</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../orkut/CommunityTopicList.html">CommunityTopicList</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to CommunityTopicList.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static CommunityTopicList parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new CommunityTopicList();
+  result.nextPageToken = identity(json["nextPageToken"]);
+  result.kind = identity(json["kind"]);
+  result.items = map(CommunityTopic.parse)(json["items"]);
+  result.prevPageToken = identity(json["prevPageToken"]);
+  result.lastPageToken = identity(json["lastPageToken"]);
+  result.firstPageToken = identity(json["firstPageToken"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../orkut/CommunityTopicList.html">CommunityTopicList</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to CommunityTopicList.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(CommunityTopicList value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["nextPageToken"] = identity(value.nextPageToken);
+  result["kind"] = identity(value.kind);
+  result["items"] = map(CommunityTopic.serialize)(value.items);
+  result["prevPageToken"] = identity(value.prevPageToken);
+  result["lastPageToken"] = identity(value.lastPageToken);
+  result["firstPageToken"] = identity(value.firstPageToken);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CommunityTopicList.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="firstPageToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>firstPageToken</strong> <a class="anchor-link"
+            href="#firstPageToken"
+            title="Permalink to CommunityTopicList.firstPageToken">#</a>
+        </h4>
+        <div class="doc">
+<p>The value of pageToken query parameter in community_topic.list request to get the first page.</p>
+<pre class="source">
+String firstPageToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="items">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>items</strong> <a class="anchor-link"
+            href="#items"
+            title="Permalink to CommunityTopicList.items">#</a>
+        </h4>
+        <div class="doc">
+<p>List of topics retrieved.</p>
+<pre class="source">
+List&lt;CommunityTopic&gt; items;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to CommunityTopicList.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Identifies this resource as a collection of community topics. Value: "orkut#communityTopicList"</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="lastPageToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>lastPageToken</strong> <a class="anchor-link"
+            href="#lastPageToken"
+            title="Permalink to CommunityTopicList.lastPageToken">#</a>
+        </h4>
+        <div class="doc">
+<p>The value of pageToken query parameter in community_topic.list request to get the last page.</p>
+<pre class="source">
+String lastPageToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="nextPageToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>nextPageToken</strong> <a class="anchor-link"
+            href="#nextPageToken"
+            title="Permalink to CommunityTopicList.nextPageToken">#</a>
+        </h4>
+        <div class="doc">
+<p>The value of pageToken query parameter in community_topic.list request to get the next page, if
+there are more to retrieve.</p>
+<pre class="source">
+String nextPageToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prevPageToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>prevPageToken</strong> <a class="anchor-link"
+            href="#prevPageToken"
+            title="Permalink to CommunityTopicList.prevPageToken">#</a>
+        </h4>
+        <div class="doc">
+<p>The value of pageToken query parameter in community_topic.list request to get the previous page,
+if there are more to retrieve.</p>
+<pre class="source">
+String prevPageToken;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:30.620Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

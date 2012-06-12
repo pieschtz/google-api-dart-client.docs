@@ -1,0 +1,81 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TextResource Class / freebase Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="freebase" data-type="TextResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../freebase.html">freebase</a> &rsaquo; <a href="../freebase/TextResource.html">TextResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>TextResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/List.html">List</a> id, [<a href="../dart_core/int.html">int</a> maxlength = UNSPECIFIED, <a href="../freebase/TextResourceGetFormat.html">TextResourceGetFormat</a> format = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to TextResource.get">#</a></h4>
+<div class="doc">
+<p>Returns blob attached to node at specified id as HTML
+
+<span class="param">id</span> The id of the item that you want data about</p>
+<pre class="source">
+Future&lt;ContentserviceGet&gt; get(List&lt;String&gt; id, [int maxlength = UNSPECIFIED, TextResourceGetFormat format = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["id"] = id;
+  if (UNSPECIFIED != maxlength) $queryParams["maxlength"] = maxlength;
+  if (UNSPECIFIED != format) $queryParams["format"] = format;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "text{/id*}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;ContentserviceGet&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = ContentserviceGet.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:20.977Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

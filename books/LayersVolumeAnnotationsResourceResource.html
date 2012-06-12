@@ -1,0 +1,144 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>LayersVolumeAnnotationsResourceResource Class / books Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books" data-type="LayersVolumeAnnotationsResourceResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books.html">books</a> &rsaquo; <a href="../books/LayersVolumeAnnotationsResourceResource.html">LayersVolumeAnnotationsResourceResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>LayersVolumeAnnotationsResourceResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> annotationId, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to LayersVolumeAnnotationsResourceResource.get">#</a></h4>
+<div class="doc">
+<p>Gets the volume annotation.
+
+<span class="param">volumeId</span> The volume to retrieve annotations for.
+
+<span class="param">layerId</span> The ID for the layer to get the annotations.
+
+<span class="param">annotationId</span> The ID of the volume annotation to retrieve.</p>
+<pre class="source">
+Future&lt;Volumeannotation&gt; get(String volumeId, String layerId, String annotationId, [String locale = UNSPECIFIED, String source = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["volumeId"] = volumeId;
+  $pathParams["layerId"] = layerId;
+  $pathParams["annotationId"] = annotationId;
+  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layers/{layerId}/annotations/{annotationId}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Volumeannotation&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Volumeannotation.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> contentVersion, [<a href="../dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endPosition = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endOffset = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startOffset = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startPosition = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to LayersVolumeAnnotationsResourceResource.list">#</a></h4>
+<div class="doc">
+<p>Gets the volume annotations for a volume and layer.
+
+<span class="param">volumeId</span> The volume to retrieve annotations for.
+
+<span class="param">layerId</span> The ID for the layer to get the annotations.
+
+<span class="param">contentVersion</span> The content version for the requested volume.</p>
+<pre class="source">
+Future&lt;Volumeannotations&gt; list(String volumeId, String layerId, String contentVersion, [bool showDeleted = UNSPECIFIED, String endPosition = UNSPECIFIED, String endOffset = UNSPECIFIED, String locale = UNSPECIFIED, String updatedMin = UNSPECIFIED, String updatedMax = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, String source = UNSPECIFIED, String startOffset = UNSPECIFIED, String startPosition = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["volumeId"] = volumeId;
+  $pathParams["layerId"] = layerId;
+  $pathParams["contentVersion"] = contentVersion;
+  if (UNSPECIFIED != showDeleted) $queryParams["showDeleted"] = showDeleted;
+  if (UNSPECIFIED != endPosition) $queryParams["endPosition"] = endPosition;
+  if (UNSPECIFIED != endOffset) $queryParams["endOffset"] = endOffset;
+  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
+  if (UNSPECIFIED != updatedMin) $queryParams["updatedMin"] = updatedMin;
+  if (UNSPECIFIED != updatedMax) $queryParams["updatedMax"] = updatedMax;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (UNSPECIFIED != startOffset) $queryParams["startOffset"] = startOffset;
+  if (UNSPECIFIED != startPosition) $queryParams["startPosition"] = startPosition;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layers/{layerId}").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Volumeannotations&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Volumeannotations.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:14.735Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

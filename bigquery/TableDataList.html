@@ -1,0 +1,145 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TableDataList Class / bigquery Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery" data-type="TableDataList">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery.html">bigquery</a> &rsaquo; <a href="../bigquery/TableDataList.html">TableDataList</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>TableDataList</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>TableDataList</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../bigquery/TableDataList.html">TableDataList</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to TableDataList.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static TableDataList parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new TableDataList();
+  result.rows = map(TableRow.parse)(json["rows"]);
+  result.kind = identity(json["kind"]);
+  result.etag = identity(json["etag"]);
+  result.totalRows = identity(json["totalRows"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery/TableDataList.html">TableDataList</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to TableDataList.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(TableDataList value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["rows"] = map(TableRow.serialize)(value.rows);
+  result["kind"] = identity(value.kind);
+  result["etag"] = identity(value.etag);
+  result["totalRows"] = identity(value.totalRows);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to TableDataList.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to TableDataList.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>A hash of this page of results.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to TableDataList.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The resource type of the response.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rows">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>rows</strong> <a class="anchor-link"
+            href="#rows"
+            title="Permalink to TableDataList.rows">#</a>
+        </h4>
+        <div class="doc">
+<p>Rows of results.</p>
+<pre class="source">
+List&lt;TableRow&gt; rows;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="totalRows">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>totalRows</strong> <a class="anchor-link"
+            href="#totalRows"
+            title="Permalink to TableDataList.totalRows">#</a>
+        </h4>
+        <div class="doc">
+<p>The total number of rows in the complete table.</p>
+<pre class="source">
+String totalRows;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:14.113Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

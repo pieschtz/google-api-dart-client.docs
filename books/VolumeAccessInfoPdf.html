@@ -1,0 +1,130 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>VolumeAccessInfoPdf Class / books Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books" data-type="VolumeAccessInfoPdf">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books.html">books</a> &rsaquo; <a href="../books/VolumeAccessInfoPdf.html">VolumeAccessInfoPdf</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>VolumeAccessInfoPdf</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>VolumeAccessInfoPdf</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../books/VolumeAccessInfoPdf.html">VolumeAccessInfoPdf</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to VolumeAccessInfoPdf.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static VolumeAccessInfoPdf parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new VolumeAccessInfoPdf();
+  result.isAvailable = identity(json["isAvailable"]);
+  result.downloadLink = identity(json["downloadLink"]);
+  result.acsTokenLink = identity(json["acsTokenLink"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books/VolumeAccessInfoPdf.html">VolumeAccessInfoPdf</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to VolumeAccessInfoPdf.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(VolumeAccessInfoPdf value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["isAvailable"] = identity(value.isAvailable);
+  result["downloadLink"] = identity(value.downloadLink);
+  result["acsTokenLink"] = identity(value.acsTokenLink);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to VolumeAccessInfoPdf.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="acsTokenLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>acsTokenLink</strong> <a class="anchor-link"
+            href="#acsTokenLink"
+            title="Permalink to VolumeAccessInfoPdf.acsTokenLink">#</a>
+        </h4>
+        <div class="doc">
+<p>URL to retrieve ACS token for pdf download. (In LITE projection.)</p>
+<pre class="source">
+String acsTokenLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="downloadLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>downloadLink</strong> <a class="anchor-link"
+            href="#downloadLink"
+            title="Permalink to VolumeAccessInfoPdf.downloadLink">#</a>
+        </h4>
+        <div class="doc">
+<p>URL to download pdf. (In LITE projection.)</p>
+<pre class="source">
+String downloadLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="isAvailable">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>isAvailable</strong> <a class="anchor-link"
+            href="#isAvailable"
+            title="Permalink to VolumeAccessInfoPdf.isAvailable">#</a>
+        </h4>
+        <div class="doc">
+<p>Is a scanned image pdf available either as public domain or for purchase. (In LITE projection.)</p>
+<pre class="source">
+bool isAvailable;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:15.701Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

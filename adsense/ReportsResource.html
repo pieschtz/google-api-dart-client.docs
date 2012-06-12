@@ -1,0 +1,92 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ReportsResource Class / adsense Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adsense" data-type="ReportsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adsense.html">adsense</a> &rsaquo; <a href="../adsense/ReportsResource.html">ReportsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ReportsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="generate">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>generate</strong>(<a href="../dart_core/String.html">String</a> startDate, <a href="../dart_core/String.html">String</a> endDate, [<a href="../dart_core/List.html">List</a> sort = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/List.html">List</a> metric = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/List.html">List</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> currency = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/List.html">List</a> dimension = UNSPECIFIED, <a href="../dart_core/List.html">List</a> accountId = UNSPECIFIED]) <a class="anchor-link" href="#generate"
+              title="Permalink to ReportsResource.generate">#</a></h4>
+<div class="doc">
+<p>Generate an AdSense report based on the report request sent in the query parameters. Returns the
+result as JSON; to retrieve output in CSV format specify "alt=csv" as a query parameter.
+
+<span class="param">startDate</span> Start of the date range to report on in "YYYY-MM-DD" format, inclusive.
+
+<span class="param">endDate</span> End of the date range to report on in "YYYY-MM-DD" format, inclusive.</p>
+<pre class="source">
+Future&lt;AdsenseReportsGenerateResponse&gt; generate(String startDate, String endDate, [List&lt;String&gt; sort = UNSPECIFIED, String locale = UNSPECIFIED, List&lt;String&gt; metric = UNSPECIFIED, int maxResults = UNSPECIFIED, List&lt;String&gt; filter = UNSPECIFIED, String currency = UNSPECIFIED, int startIndex = UNSPECIFIED, List&lt;String&gt; dimension = UNSPECIFIED, List&lt;String&gt; accountId = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["startDate"] = startDate;
+  $pathParams["endDate"] = endDate;
+  if (UNSPECIFIED != sort) $queryParams["sort"] = sort;
+  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
+  if (UNSPECIFIED != metric) $queryParams["metric"] = metric;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != filter) $queryParams["filter"] = filter;
+  if (UNSPECIFIED != currency) $queryParams["currency"] = currency;
+  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
+  if (UNSPECIFIED != dimension) $queryParams["dimension"] = dimension;
+  if (UNSPECIFIED != accountId) $queryParams["accountId"] = accountId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "reports").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;AdsenseReportsGenerateResponse&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = AdsenseReportsGenerateResponse.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:10.764Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

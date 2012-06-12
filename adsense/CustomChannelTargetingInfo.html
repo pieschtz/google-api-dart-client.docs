@@ -1,0 +1,148 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CustomChannelTargetingInfo Class / adsense Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adsense" data-type="CustomChannelTargetingInfo">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adsense.html">adsense</a> &rsaquo; <a href="../adsense/CustomChannelTargetingInfo.html">CustomChannelTargetingInfo</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CustomChannelTargetingInfo</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>CustomChannelTargetingInfo</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../adsense/CustomChannelTargetingInfo.html">CustomChannelTargetingInfo</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to CustomChannelTargetingInfo.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static CustomChannelTargetingInfo parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new CustomChannelTargetingInfo();
+  result.location = identity(json["location"]);
+  result.adsAppearOn = identity(json["adsAppearOn"]);
+  result.siteLanguage = identity(json["siteLanguage"]);
+  result.description = identity(json["description"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adsense/CustomChannelTargetingInfo.html">CustomChannelTargetingInfo</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to CustomChannelTargetingInfo.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(CustomChannelTargetingInfo value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["location"] = identity(value.location);
+  result["adsAppearOn"] = identity(value.adsAppearOn);
+  result["siteLanguage"] = identity(value.siteLanguage);
+  result["description"] = identity(value.description);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CustomChannelTargetingInfo.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="adsAppearOn">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>adsAppearOn</strong> <a class="anchor-link"
+            href="#adsAppearOn"
+            title="Permalink to CustomChannelTargetingInfo.adsAppearOn">#</a>
+        </h4>
+        <div class="doc">
+<p>The name used to describe this channel externally.</p>
+<pre class="source">
+String adsAppearOn;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to CustomChannelTargetingInfo.description">#</a>
+        </h4>
+        <div class="doc">
+<p>The external description of the channel.</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="location">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
+            href="#location"
+            title="Permalink to CustomChannelTargetingInfo.location">#</a>
+        </h4>
+        <div class="doc">
+<p>The locations in which ads appear. (Only valid for content and mobile content ads). Acceptable
+values for content ads are: TOP<em>LEFT, TOP</em>CENTER, TOP<em>RIGHT, MIDDLE</em>LEFT, MIDDLE<em>CENTER,
+MIDDLE</em>RIGHT, BOTTOM<em>LEFT, BOTTOM</em>CENTER, BOTTOM<em>RIGHT, MULTIPLE</em>LOCATIONS. Acceptable values for
+mobile content ads are: TOP, MIDDLE, BOTTOM, MULTIPLE_LOCATIONS.</p>
+<pre class="source">
+String location;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="siteLanguage">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>siteLanguage</strong> <a class="anchor-link"
+            href="#siteLanguage"
+            title="Permalink to CustomChannelTargetingInfo.siteLanguage">#</a>
+        </h4>
+        <div class="doc">
+<p>The language of the sites ads will be displayed on.</p>
+<pre class="source">
+String siteLanguage;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:11.323Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

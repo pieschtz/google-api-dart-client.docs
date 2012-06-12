@@ -1,0 +1,238 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Activity Class / orkut Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="orkut" data-type="Activity">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../orkut.html">orkut</a> &rsaquo; <a href="../orkut/Activity.html">Activity</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Activity</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Activity</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../orkut/Activity.html">Activity</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Activity.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Activity parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Activity();
+  result.kind = identity(json["kind"]);
+  result.links = map(OrkutLinkResource.parse)(json["links"]);
+  result.title = identity(json["title"]);
+  result.object = ActivityObject.parse(json["object"]);
+  result.updated = identity(json["updated"]);
+  result.actor = OrkutAuthorResource.parse(json["actor"]);
+  result.access = Acl.parse(json["access"]);
+  result.verb = identity(json["verb"]);
+  result.published = identity(json["published"]);
+  result.id = identity(json["id"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../orkut/Activity.html">Activity</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Activity.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Activity value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["kind"] = identity(value.kind);
+  result["links"] = map(OrkutLinkResource.serialize)(value.links);
+  result["title"] = identity(value.title);
+  result["object"] = ActivityObject.serialize(value.object);
+  result["updated"] = identity(value.updated);
+  result["actor"] = OrkutAuthorResource.serialize(value.actor);
+  result["access"] = Acl.serialize(value.access);
+  result["verb"] = identity(value.verb);
+  result["published"] = identity(value.published);
+  result["id"] = identity(value.id);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Activity.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="access">
+<span class="show-code">Code</span>
+<a href="../orkut/Acl.html">Acl</a>         <strong>access</strong> <a class="anchor-link"
+            href="#access"
+            title="Permalink to Activity.access">#</a>
+        </h4>
+        <div class="doc">
+<p>Identifies who has access to see this activity.</p>
+<pre class="source">
+Acl access;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="actor">
+<span class="show-code">Code</span>
+<a href="../orkut/OrkutAuthorResource.html">OrkutAuthorResource</a>         <strong>actor</strong> <a class="anchor-link"
+            href="#actor"
+            title="Permalink to Activity.actor">#</a>
+        </h4>
+        <div class="doc">
+<p>The person who performed the activity.</p>
+<pre class="source">
+OrkutAuthorResource actor;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Activity.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The ID for the activity.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Activity.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The kind of activity. Always orkut#activity.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="links">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>links</strong> <a class="anchor-link"
+            href="#links"
+            title="Permalink to Activity.links">#</a>
+        </h4>
+        <div class="doc">
+<p>Links to resources related to this activity.</p>
+<pre class="source">
+List&lt;OrkutLinkResource&gt; links;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="object">
+<span class="show-code">Code</span>
+<a href="../orkut/ActivityObject.html">ActivityObject</a>         <strong>object</strong> <a class="anchor-link"
+            href="#object"
+            title="Permalink to Activity.object">#</a>
+        </h4>
+        <div class="doc">
+<p>The activity's object.</p>
+<pre class="source">
+ActivityObject object;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="published">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>published</strong> <a class="anchor-link"
+            href="#published"
+            title="Permalink to Activity.published">#</a>
+        </h4>
+        <div class="doc">
+<p>The time at which the activity was initially published.</p>
+<pre class="source">
+String published;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="title">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+            href="#title"
+            title="Permalink to Activity.title">#</a>
+        </h4>
+        <div class="doc">
+<p>Title of the activity.</p>
+<pre class="source">
+String title;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="updated">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
+            href="#updated"
+            title="Permalink to Activity.updated">#</a>
+        </h4>
+        <div class="doc">
+<p>The time at which the activity was last updated.</p>
+<pre class="source">
+String updated;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="verb">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>verb</strong> <a class="anchor-link"
+            href="#verb"
+            title="Permalink to Activity.verb">#</a>
+        </h4>
+        <div class="doc">
+<p>This activity's verb, indicating what action was performed. Possible values are: - add - User
+added new content to profile or album, e.g. video, photo. - post - User publish content to the
+stream, e.g. status, scrap. - update - User commented on an activity. - make-friend - User added
+a new friend. - birthday - User has a birthday.</p>
+<pre class="source">
+String verb;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:30.007Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

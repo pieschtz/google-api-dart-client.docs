@@ -1,0 +1,160 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AnalyticsSummary Class / urlshortener Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="urlshortener" data-type="AnalyticsSummary">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../urlshortener.html">urlshortener</a> &rsaquo; <a href="../urlshortener/AnalyticsSummary.html">AnalyticsSummary</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AnalyticsSummary</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>AnalyticsSummary</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../urlshortener/AnalyticsSummary.html">AnalyticsSummary</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to AnalyticsSummary.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static AnalyticsSummary parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new AnalyticsSummary();
+  result.week = AnalyticsSnapshot.parse(json["week"]);
+  result.allTime = AnalyticsSnapshot.parse(json["allTime"]);
+  result.twoHours = AnalyticsSnapshot.parse(json["twoHours"]);
+  result.day = AnalyticsSnapshot.parse(json["day"]);
+  result.month = AnalyticsSnapshot.parse(json["month"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../urlshortener/AnalyticsSummary.html">AnalyticsSummary</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to AnalyticsSummary.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(AnalyticsSummary value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["week"] = AnalyticsSnapshot.serialize(value.week);
+  result["allTime"] = AnalyticsSnapshot.serialize(value.allTime);
+  result["twoHours"] = AnalyticsSnapshot.serialize(value.twoHours);
+  result["day"] = AnalyticsSnapshot.serialize(value.day);
+  result["month"] = AnalyticsSnapshot.serialize(value.month);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to AnalyticsSummary.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="allTime">
+<span class="show-code">Code</span>
+<a href="../urlshortener/AnalyticsSnapshot.html">AnalyticsSnapshot</a>         <strong>allTime</strong> <a class="anchor-link"
+            href="#allTime"
+            title="Permalink to AnalyticsSummary.allTime">#</a>
+        </h4>
+        <div class="doc">
+<p>Click analytics over all time.</p>
+<pre class="source">
+AnalyticsSnapshot allTime;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="day">
+<span class="show-code">Code</span>
+<a href="../urlshortener/AnalyticsSnapshot.html">AnalyticsSnapshot</a>         <strong>day</strong> <a class="anchor-link"
+            href="#day"
+            title="Permalink to AnalyticsSummary.day">#</a>
+        </h4>
+        <div class="doc">
+<p>Click analytics over the last day.</p>
+<pre class="source">
+AnalyticsSnapshot day;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="month">
+<span class="show-code">Code</span>
+<a href="../urlshortener/AnalyticsSnapshot.html">AnalyticsSnapshot</a>         <strong>month</strong> <a class="anchor-link"
+            href="#month"
+            title="Permalink to AnalyticsSummary.month">#</a>
+        </h4>
+        <div class="doc">
+<p>Click analytics over the last month.</p>
+<pre class="source">
+AnalyticsSnapshot month;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="twoHours">
+<span class="show-code">Code</span>
+<a href="../urlshortener/AnalyticsSnapshot.html">AnalyticsSnapshot</a>         <strong>twoHours</strong> <a class="anchor-link"
+            href="#twoHours"
+            title="Permalink to AnalyticsSummary.twoHours">#</a>
+        </h4>
+        <div class="doc">
+<p>Click analytics over the last two hours.</p>
+<pre class="source">
+AnalyticsSnapshot twoHours;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="week">
+<span class="show-code">Code</span>
+<a href="../urlshortener/AnalyticsSnapshot.html">AnalyticsSnapshot</a>         <strong>week</strong> <a class="anchor-link"
+            href="#week"
+            title="Permalink to AnalyticsSummary.week">#</a>
+        </h4>
+        <div class="doc">
+<p>Click analytics over the last week.</p>
+<pre class="source">
+AnalyticsSnapshot week;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:32.704Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

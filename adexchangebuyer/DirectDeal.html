@@ -1,0 +1,222 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>DirectDeal Class / adexchangebuyer Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adexchangebuyer" data-type="DirectDeal">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adexchangebuyer.html">adexchangebuyer</a> &rsaquo; <a href="../adexchangebuyer/DirectDeal.html">DirectDeal</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>DirectDeal</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>DirectDeal</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../adexchangebuyer/DirectDeal.html">DirectDeal</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to DirectDeal.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static DirectDeal parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new DirectDeal();
+  result.advertiser = identity(json["advertiser"]);
+  result.kind = identity(json["kind"]);
+  result.currencyCode = identity(json["currencyCode"]);
+  result.fixedCpm = identity(json["fixedCpm"]);
+  result.startTime = identity(json["startTime"]);
+  result.endTime = identity(json["endTime"]);
+  result.sellerNetwork = identity(json["sellerNetwork"]);
+  result.id = identity(json["id"]);
+  result.accountId = identity(json["accountId"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adexchangebuyer/DirectDeal.html">DirectDeal</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to DirectDeal.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(DirectDeal value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["advertiser"] = identity(value.advertiser);
+  result["kind"] = identity(value.kind);
+  result["currencyCode"] = identity(value.currencyCode);
+  result["fixedCpm"] = identity(value.fixedCpm);
+  result["startTime"] = identity(value.startTime);
+  result["endTime"] = identity(value.endTime);
+  result["sellerNetwork"] = identity(value.sellerNetwork);
+  result["id"] = identity(value.id);
+  result["accountId"] = identity(value.accountId);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to DirectDeal.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="accountId">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>accountId</strong> <a class="anchor-link"
+            href="#accountId"
+            title="Permalink to DirectDeal.accountId">#</a>
+        </h4>
+        <div class="doc">
+<p>The account id of the buyer this deal is for.</p>
+<pre class="source">
+int accountId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="advertiser">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>advertiser</strong> <a class="anchor-link"
+            href="#advertiser"
+            title="Permalink to DirectDeal.advertiser">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of the advertiser this deal is for.</p>
+<pre class="source">
+String advertiser;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="currencyCode">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>currencyCode</strong> <a class="anchor-link"
+            href="#currencyCode"
+            title="Permalink to DirectDeal.currencyCode">#</a>
+        </h4>
+        <div class="doc">
+<p>The currency code that applies to the fixed_cpm value. If not set then assumed to be USD.</p>
+<pre class="source">
+String currencyCode;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="endTime">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>endTime</strong> <a class="anchor-link"
+            href="#endTime"
+            title="Permalink to DirectDeal.endTime">#</a>
+        </h4>
+        <div class="doc">
+<p>End time for when this deal stops being active. If not set then this deal is valid until manually
+disabled by the publisher. In seconds since the epoch.</p>
+<pre class="source">
+String endTime;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fixedCpm">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fixedCpm</strong> <a class="anchor-link"
+            href="#fixedCpm"
+            title="Permalink to DirectDeal.fixedCpm">#</a>
+        </h4>
+        <div class="doc">
+<p>The fixed price for this direct deal. In cpm micros of currency according to currency_code.</p>
+<pre class="source">
+String fixedCpm;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to DirectDeal.id">#</a>
+        </h4>
+        <div class="doc">
+<p>Deal id.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to DirectDeal.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Resource type.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="sellerNetwork">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>sellerNetwork</strong> <a class="anchor-link"
+            href="#sellerNetwork"
+            title="Permalink to DirectDeal.sellerNetwork">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of the publisher offering this direct deal.</p>
+<pre class="source">
+String sellerNetwork;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="startTime">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>startTime</strong> <a class="anchor-link"
+            href="#startTime"
+            title="Permalink to DirectDeal.startTime">#</a>
+        </h4>
+        <div class="doc">
+<p>Start time for when this deal becomes active. If not set then this deal is active immediately
+upon creation. In seconds since the epoch.</p>
+<pre class="source">
+String startTime;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:10.579Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

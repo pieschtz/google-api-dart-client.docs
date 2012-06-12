@@ -1,0 +1,197 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>GetQueryResultsResponse Class / bigquery Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery" data-type="GetQueryResultsResponse">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery.html">bigquery</a> &rsaquo; <a href="../bigquery/GetQueryResultsResponse.html">GetQueryResultsResponse</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>GetQueryResultsResponse</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>GetQueryResultsResponse</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../bigquery/GetQueryResultsResponse.html">GetQueryResultsResponse</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to GetQueryResultsResponse.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static GetQueryResultsResponse parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new GetQueryResultsResponse();
+  result.kind = identity(json["kind"]);
+  result.rows = map(TableRow.parse)(json["rows"]);
+  result.jobReference = JobReference.parse(json["jobReference"]);
+  result.jobComplete = identity(json["jobComplete"]);
+  result.totalRows = identity(json["totalRows"]);
+  result.etag = identity(json["etag"]);
+  result.schema = TableSchema.parse(json["schema"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery/GetQueryResultsResponse.html">GetQueryResultsResponse</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to GetQueryResultsResponse.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(GetQueryResultsResponse value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["kind"] = identity(value.kind);
+  result["rows"] = map(TableRow.serialize)(value.rows);
+  result["jobReference"] = JobReference.serialize(value.jobReference);
+  result["jobComplete"] = identity(value.jobComplete);
+  result["totalRows"] = identity(value.totalRows);
+  result["etag"] = identity(value.etag);
+  result["schema"] = TableSchema.serialize(value.schema);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to GetQueryResultsResponse.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to GetQueryResultsResponse.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>A hash of this response.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="jobComplete">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>jobComplete</strong> <a class="anchor-link"
+            href="#jobComplete"
+            title="Permalink to GetQueryResultsResponse.jobComplete">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether the query has completed or not. If rows or totalRows are present, this will always be
+true. If this is false, totalRows will not be available.</p>
+<pre class="source">
+bool jobComplete;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="jobReference">
+<span class="show-code">Code</span>
+<a href="../bigquery/JobReference.html">JobReference</a>         <strong>jobReference</strong> <a class="anchor-link"
+            href="#jobReference"
+            title="Permalink to GetQueryResultsResponse.jobReference">#</a>
+        </h4>
+        <div class="doc">
+<p>Reference to the Helix Job that was created to run the query. This field will be present even if
+the original request timed out, in which case GetQueryResults can be used to read the results
+once the query has completed. Since this API only returns the first page of results, subsequent
+pages can be fetched via the same mechanism (GetQueryResults).</p>
+<pre class="source">
+JobReference jobReference;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to GetQueryResultsResponse.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The resource type of the response.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rows">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>rows</strong> <a class="anchor-link"
+            href="#rows"
+            title="Permalink to GetQueryResultsResponse.rows">#</a>
+        </h4>
+        <div class="doc">
+<p>An object with as many results as can be contained within the maximum permitted reply size. To
+get any additional rows, you can call GetQueryResults and specify the jobReference returned
+above. Present only when the query completes successfully.</p>
+<pre class="source">
+List&lt;TableRow&gt; rows;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="schema">
+<span class="show-code">Code</span>
+<a href="../bigquery/TableSchema.html">TableSchema</a>         <strong>schema</strong> <a class="anchor-link"
+            href="#schema"
+            title="Permalink to GetQueryResultsResponse.schema">#</a>
+        </h4>
+        <div class="doc">
+<p>The schema of the results. Present only when the query completes successfully.</p>
+<pre class="source">
+TableSchema schema;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="totalRows">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>totalRows</strong> <a class="anchor-link"
+            href="#totalRows"
+            title="Permalink to GetQueryResultsResponse.totalRows">#</a>
+        </h4>
+        <div class="doc">
+<p>The total number of rows in the complete query result set, which can be more than the number of
+rows in this single page of results. Present only when the query completes successfully.</p>
+<pre class="source">
+String totalRows;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:13.573Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

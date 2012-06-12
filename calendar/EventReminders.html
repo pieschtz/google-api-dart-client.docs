@@ -1,0 +1,116 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>EventReminders Class / calendar Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="calendar" data-type="EventReminders">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../calendar.html">calendar</a> &rsaquo; <a href="../calendar/EventReminders.html">EventReminders</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>EventReminders</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>EventReminders</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../calendar/EventReminders.html">EventReminders</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to EventReminders.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static EventReminders parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new EventReminders();
+  result.overrides = map(EventReminder.parse)(json["overrides"]);
+  result.useDefault = identity(json["useDefault"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar/EventReminders.html">EventReminders</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to EventReminders.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(EventReminders value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["overrides"] = map(EventReminder.serialize)(value.overrides);
+  result["useDefault"] = identity(value.useDefault);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to EventReminders.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="overrides">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>overrides</strong> <a class="anchor-link"
+            href="#overrides"
+            title="Permalink to EventReminders.overrides">#</a>
+        </h4>
+        <div class="doc">
+<p>If the event doesn't use the default reminders, this lists the reminders specific to the event,
+or, if not set, indicates that no reminders are set for this event.</p>
+<pre class="source">
+List&lt;EventReminder&gt; overrides;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="useDefault">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>useDefault</strong> <a class="anchor-link"
+            href="#useDefault"
+            title="Permalink to EventReminders.useDefault">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether the default reminders of the calendar apply to the event.</p>
+<pre class="source">
+bool useDefault;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:17.374Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

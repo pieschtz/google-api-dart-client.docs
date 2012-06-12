@@ -1,0 +1,90 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>UserinfoResource Class / oauth2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="oauth2" data-type="UserinfoResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../oauth2.html">oauth2</a> &rsaquo; <a href="../oauth2/UserinfoResource.html">UserinfoResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>UserinfoResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>() <a class="anchor-link" href="#get"
+              title="Permalink to UserinfoResource.get">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Future&lt;Userinfo&gt; get() {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "oauth2/v2/userinfo").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Userinfo&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Userinfo.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="v2">
+<span class="show-code">Code</span>
+final <a href="../oauth2/UserinfoV2ResourceResource.html">UserinfoV2ResourceResource</a>         <strong>v2</strong> <a class="anchor-link"
+            href="#v2"
+            title="Permalink to UserinfoResource.v2">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final UserinfoV2ResourceResource v2;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:29.350Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

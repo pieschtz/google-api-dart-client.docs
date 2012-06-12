@@ -1,0 +1,332 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ModeratorApi Class / moderator Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="moderator" data-type="ModeratorApi">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../moderator.html">moderator</a> &rsaquo; <a href="../moderator/ModeratorApi.html">ModeratorApi</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ModeratorApi</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>Moderator API</p>
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ModeratorApi">
+<span class="show-code">Code</span>
+new <strong>ModeratorApi</strong>([baseUrl = "https://www.googleapis.com/moderator/v1/", applicationName]) <a class="anchor-link" href="#ModeratorApi"
+              title="Permalink to ModeratorApi.ModeratorApi">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ModeratorApi([this.baseUrl = "https://www.googleapis.com/moderator/v1/", this.applicationName]) { 
+  _votes = new VotesResource._internal(this);
+  _responses = new ResponsesResource._internal(this);
+  _tags = new TagsResource._internal(this);
+  _series = new SeriesResource._internal(this);
+  _topics = new TopicsResource._internal(this);
+  _global = new GlobalResource._internal(this);
+  _profiles = new ProfilesResource._internal(this);
+  _featured = new FeaturedResource._internal(this);
+  _myrecent = new MyrecentResource._internal(this);
+  _my = new MyResource._internal(this);
+  _submissions = new SubmissionsResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get:featured">
+<span class="show-code">Code</span>
+<a href="../moderator/FeaturedResource.html">FeaturedResource</a> <strong>get featured</strong>() <a class="anchor-link" href="#get:featured"
+              title="Permalink to ModeratorApi.get featured">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+FeaturedResource get featured() =&gt; _featured;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:global">
+<span class="show-code">Code</span>
+<a href="../moderator/GlobalResource.html">GlobalResource</a> <strong>get global</strong>() <a class="anchor-link" href="#get:global"
+              title="Permalink to ModeratorApi.get global">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+GlobalResource get global() =&gt; _global;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:my">
+<span class="show-code">Code</span>
+<a href="../moderator/MyResource.html">MyResource</a> <strong>get my</strong>() <a class="anchor-link" href="#get:my"
+              title="Permalink to ModeratorApi.get my">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+MyResource get my() =&gt; _my;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:myrecent">
+<span class="show-code">Code</span>
+<a href="../moderator/MyrecentResource.html">MyrecentResource</a> <strong>get myrecent</strong>() <a class="anchor-link" href="#get:myrecent"
+              title="Permalink to ModeratorApi.get myrecent">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+MyrecentResource get myrecent() =&gt; _myrecent;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:profiles">
+<span class="show-code">Code</span>
+<a href="../moderator/ProfilesResource.html">ProfilesResource</a> <strong>get profiles</strong>() <a class="anchor-link" href="#get:profiles"
+              title="Permalink to ModeratorApi.get profiles">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ProfilesResource get profiles() =&gt; _profiles;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:responses">
+<span class="show-code">Code</span>
+<a href="../moderator/ResponsesResource.html">ResponsesResource</a> <strong>get responses</strong>() <a class="anchor-link" href="#get:responses"
+              title="Permalink to ModeratorApi.get responses">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ResponsesResource get responses() =&gt; _responses;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:series">
+<span class="show-code">Code</span>
+<a href="../moderator/SeriesResource.html">SeriesResource</a> <strong>get series</strong>() <a class="anchor-link" href="#get:series"
+              title="Permalink to ModeratorApi.get series">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+SeriesResource get series() =&gt; _series;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:submissions">
+<span class="show-code">Code</span>
+<a href="../moderator/SubmissionsResource.html">SubmissionsResource</a> <strong>get submissions</strong>() <a class="anchor-link" href="#get:submissions"
+              title="Permalink to ModeratorApi.get submissions">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+SubmissionsResource get submissions() =&gt; _submissions;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:tags">
+<span class="show-code">Code</span>
+<a href="../moderator/TagsResource.html">TagsResource</a> <strong>get tags</strong>() <a class="anchor-link" href="#get:tags"
+              title="Permalink to ModeratorApi.get tags">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TagsResource get tags() =&gt; _tags;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:topics">
+<span class="show-code">Code</span>
+<a href="../moderator/TopicsResource.html">TopicsResource</a> <strong>get topics</strong>() <a class="anchor-link" href="#get:topics"
+              title="Permalink to ModeratorApi.get topics">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TopicsResource get topics() =&gt; _topics;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:userAgent">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+              title="Permalink to ModeratorApi.get userAgent">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+String get userAgent() {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}moderator/v1/19700115 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:votes">
+<span class="show-code">Code</span>
+<a href="../moderator/VotesResource.html">VotesResource</a> <strong>get votes</strong>() <a class="anchor-link" href="#get:votes"
+              title="Permalink to ModeratorApi.get votes">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+VotesResource get votes() =&gt; _votes;
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="alt">
+<span class="show-code">Code</span>
+<a href="../moderator/ModeratorApiAlt.html">ModeratorApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
+            href="#alt"
+            title="Permalink to ModeratorApi.alt">#</a>
+        </h4>
+        <div class="doc">
+<p>Data format for the response.</p>
+<pre class="source">
+ModeratorApiAlt alt;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="applicationName">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+            href="#applicationName"
+            title="Permalink to ModeratorApi.applicationName">#</a>
+        </h4>
+        <div class="doc">
+<p>The application name, used in the user-agent header</p>
+<pre class="source">
+final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="baseUrl">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+            href="#baseUrl"
+            title="Permalink to ModeratorApi.baseUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The API root, such as <code>https://www.googleapis.com</code></p>
+<pre class="source">
+final String baseUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clientVersion">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+            href="#clientVersion"
+            title="Permalink to ModeratorApi.clientVersion">#</a>
+        </h4>
+        <div class="doc">
+<p>The client library version</p>
+<pre class="source">
+final String clientVersion = "0.1";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fields">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+            href="#fields"
+            title="Permalink to ModeratorApi.fields">#</a>
+        </h4>
+        <div class="doc">
+<p>Selector specifying which fields to include in a partial response.</p>
+<pre class="source">
+String fields;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="key">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+            href="#key"
+            title="Permalink to ModeratorApi.key">#</a>
+        </h4>
+        <div class="doc">
+<p>API key. Your API key identifies your project and provides you with API access, quota, and
+reports. Required unless you provide an OAuth 2.0 token.</p>
+<pre class="source">
+String key;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="oauthToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+            href="#oauthToken"
+            title="Permalink to ModeratorApi.oauthToken">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth 2.0 token for the current user.</p>
+<pre class="source">
+String oauthToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prettyPrint">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+            href="#prettyPrint"
+            title="Permalink to ModeratorApi.prettyPrint">#</a>
+        </h4>
+        <div class="doc">
+<p>Returns response with indentations and line breaks.</p>
+<pre class="source">
+bool prettyPrint;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaUser">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+            href="#quotaUser"
+            title="Permalink to ModeratorApi.quotaUser">#</a>
+        </h4>
+        <div class="doc">
+<p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
+<pre class="source">
+String quotaUser;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userIp">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+            href="#userIp"
+            title="Permalink to ModeratorApi.userIp">#</a>
+        </h4>
+        <div class="doc">
+<p>IP address of the site where the request originates. Use this if you want to enforce per-user
+limits.</p>
+<pre class="source">
+String userIp;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:28.715Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

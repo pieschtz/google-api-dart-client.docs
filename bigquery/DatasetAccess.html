@@ -1,0 +1,170 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>DatasetAccess Class / bigquery Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery" data-type="DatasetAccess">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery.html">bigquery</a> &rsaquo; <a href="../bigquery/DatasetAccess.html">DatasetAccess</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>DatasetAccess</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>DatasetAccess</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../bigquery/DatasetAccess.html">DatasetAccess</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to DatasetAccess.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static DatasetAccess parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new DatasetAccess();
+  result.specialGroup = identity(json["specialGroup"]);
+  result.domain = identity(json["domain"]);
+  result.role = identity(json["role"]);
+  result.groupByEmail = identity(json["groupByEmail"]);
+  result.userByEmail = identity(json["userByEmail"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery/DatasetAccess.html">DatasetAccess</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to DatasetAccess.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(DatasetAccess value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["specialGroup"] = identity(value.specialGroup);
+  result["domain"] = identity(value.domain);
+  result["role"] = identity(value.role);
+  result["groupByEmail"] = identity(value.groupByEmail);
+  result["userByEmail"] = identity(value.userByEmail);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to DatasetAccess.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="domain">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>domain</strong> <a class="anchor-link"
+            href="#domain"
+            title="Permalink to DatasetAccess.domain">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Pick one</code> A domain to grant access to. Any users signed in with the domain specified will be
+granted the specified access. Example: "example.com".</p>
+<pre class="source">
+String domain;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="groupByEmail">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>groupByEmail</strong> <a class="anchor-link"
+            href="#groupByEmail"
+            title="Permalink to DatasetAccess.groupByEmail">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Pick one</code> A fully-qualified email address of a mailing list to grant access to. This must be
+either a Google Groups mailing list (ends in @googlegroups.com) or a group managed by an
+enterprise version of Google Groups.</p>
+<pre class="source">
+String groupByEmail;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="role">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>role</strong> <a class="anchor-link"
+            href="#role"
+            title="Permalink to DatasetAccess.role">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Required</code> Describes the rights granted to the user specified by the other member of the access
+object. The following string values are supported: READ - User can call any list() or get()
+method on any collection or resource. WRITE - User can call any method on any collection except
+for datasets, on which they can call list() and get(). OWNER - User can call any method. The
+dataset creator is granted this role by default.</p>
+<pre class="source">
+String role;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="specialGroup">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>specialGroup</strong> <a class="anchor-link"
+            href="#specialGroup"
+            title="Permalink to DatasetAccess.specialGroup">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Pick one</code> A special group to grant access to. The valid values are: projectOwners: Owners of the
+enclosing project. projectReaders: Readers of the enclosing project. projectWriters: Writers of
+the enclosing project. allAuthenticatedUsers: All authenticated BigQuery users.</p>
+<pre class="source">
+String specialGroup;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userByEmail">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>userByEmail</strong> <a class="anchor-link"
+            href="#userByEmail"
+            title="Permalink to DatasetAccess.userByEmail">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Pick one</code> A fully qualified email address of a user to grant access to. For example:
+fred@example.com.</p>
+<pre class="source">
+String userByEmail;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:13.393Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

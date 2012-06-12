@@ -1,0 +1,306 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>FreebaseApi Class / freebase Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="freebase" data-type="FreebaseApi">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../freebase.html">freebase</a> &rsaquo; <a href="../freebase/FreebaseApi.html">FreebaseApi</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>FreebaseApi</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>Lets you access the Freebase repository of open data.</p>
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="FreebaseApi">
+<span class="show-code">Code</span>
+new <strong>FreebaseApi</strong>([baseUrl = "https://www.googleapis.com/freebase/v1/", applicationName]) <a class="anchor-link" href="#FreebaseApi"
+              title="Permalink to FreebaseApi.FreebaseApi">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+FreebaseApi([this.baseUrl = "https://www.googleapis.com/freebase/v1/", this.applicationName]) { 
+  _text = new TextResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="image">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>image</strong>(<a href="../dart_core/List.html">List</a> id, [<a href="../dart_core/int.html">int</a> maxwidth = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxheight = UNSPECIFIED, <a href="../dart_core/String.html">String</a> fallbackid = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> pad = UNSPECIFIED, <a href="../freebase/ImageMode.html">ImageMode</a> mode = UNSPECIFIED]) <a class="anchor-link" href="#image"
+              title="Permalink to FreebaseApi.image">#</a></h4>
+<div class="doc">
+<p>Returns the scaled/cropped image attached to a freebase node.
+
+<span class="param">id</span> Freebase entity or content id, mid, or guid.</p>
+<pre class="source">
+Future image(List&lt;String&gt; id, [int maxwidth = UNSPECIFIED, int maxheight = UNSPECIFIED, String fallbackid = UNSPECIFIED, bool pad = UNSPECIFIED, ImageMode mode = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["id"] = id;
+  if (UNSPECIFIED != maxwidth) $queryParams["maxwidth"] = maxwidth;
+  if (UNSPECIFIED != maxheight) $queryParams["maxheight"] = maxheight;
+  if (UNSPECIFIED != fallbackid) $queryParams["fallbackid"] = fallbackid;
+  if (UNSPECIFIED != pad) $queryParams["pad"] = pad;
+  if (UNSPECIFIED != mode) $queryParams["mode"] = mode;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "image{/id*}").generate($pathParams, $queryParams);
+  final $completer = new Completer();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = identity(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="mqlread">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>mqlread</strong>(<a href="../dart_core/String.html">String</a> query, [<a href="../dart_core/String.html">String</a> lang = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> htmlEscape = UNSPECIFIED, <a href="../dart_core/int.html">int</a> indent = UNSPECIFIED, <a href="../freebase/MqlreadUniquenessFailure.html">MqlreadUniquenessFailure</a> uniquenessFailure = UNSPECIFIED, <a href="../dart_core/String.html">String</a> dateline = UNSPECIFIED, <a href="../dart_core/String.html">String</a> cursor = UNSPECIFIED, <a href="../dart_core/String.html">String</a> callback = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> cost = UNSPECIFIED, <a href="../dart_core/String.html">String</a> asOfTime = UNSPECIFIED]) <a class="anchor-link" href="#mqlread"
+              title="Permalink to FreebaseApi.mqlread">#</a></h4>
+<div class="doc">
+<p>Performs MQL Queries.
+
+<span class="param">query</span> An envelope containing a single MQL query.</p>
+<pre class="source">
+Future mqlread(String query, [String lang = UNSPECIFIED, bool htmlEscape = UNSPECIFIED, int indent = UNSPECIFIED, MqlreadUniquenessFailure uniquenessFailure = UNSPECIFIED, String dateline = UNSPECIFIED, String cursor = UNSPECIFIED, String callback = UNSPECIFIED, bool cost = UNSPECIFIED, String asOfTime = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["query"] = query;
+  if (UNSPECIFIED != lang) $queryParams["lang"] = lang;
+  if (UNSPECIFIED != htmlEscape) $queryParams["html_escape"] = htmlEscape;
+  if (UNSPECIFIED != indent) $queryParams["indent"] = indent;
+  if (UNSPECIFIED != uniquenessFailure) $queryParams["uniqueness_failure"] = uniquenessFailure;
+  if (UNSPECIFIED != dateline) $queryParams["dateline"] = dateline;
+  if (UNSPECIFIED != cursor) $queryParams["cursor"] = cursor;
+  if (UNSPECIFIED != callback) $queryParams["callback"] = callback;
+  if (UNSPECIFIED != cost) $queryParams["cost"] = cost;
+  if (UNSPECIFIED != asOfTime) $queryParams["as_of_time"] = asOfTime;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "mqlread").generate($pathParams, $queryParams);
+  final $completer = new Completer();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = identity(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:text">
+<span class="show-code">Code</span>
+<a href="../freebase/TextResource.html">TextResource</a> <strong>get text</strong>() <a class="anchor-link" href="#get:text"
+              title="Permalink to FreebaseApi.get text">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TextResource get text() =&gt; _text;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:userAgent">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+              title="Permalink to FreebaseApi.get userAgent">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+String get userAgent() {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}freebase/v1/20120421 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="alt">
+<span class="show-code">Code</span>
+<a href="../freebase/FreebaseApiAlt.html">FreebaseApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
+            href="#alt"
+            title="Permalink to FreebaseApi.alt">#</a>
+        </h4>
+        <div class="doc">
+<p>Data format for the response.</p>
+<pre class="source">
+FreebaseApiAlt alt;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="applicationName">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+            href="#applicationName"
+            title="Permalink to FreebaseApi.applicationName">#</a>
+        </h4>
+        <div class="doc">
+<p>The application name, used in the user-agent header</p>
+<pre class="source">
+final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="baseUrl">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+            href="#baseUrl"
+            title="Permalink to FreebaseApi.baseUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The API root, such as <code>https://www.googleapis.com</code></p>
+<pre class="source">
+final String baseUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clientVersion">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+            href="#clientVersion"
+            title="Permalink to FreebaseApi.clientVersion">#</a>
+        </h4>
+        <div class="doc">
+<p>The client library version</p>
+<pre class="source">
+final String clientVersion = "0.1";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fields">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+            href="#fields"
+            title="Permalink to FreebaseApi.fields">#</a>
+        </h4>
+        <div class="doc">
+<p>Selector specifying which fields to include in a partial response.</p>
+<pre class="source">
+String fields;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="key">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+            href="#key"
+            title="Permalink to FreebaseApi.key">#</a>
+        </h4>
+        <div class="doc">
+<p>API key. Your API key identifies your project and provides you with API access, quota, and
+reports. Required unless you provide an OAuth 2.0 token.</p>
+<pre class="source">
+String key;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="oauthToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+            href="#oauthToken"
+            title="Permalink to FreebaseApi.oauthToken">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth 2.0 token for the current user.</p>
+<pre class="source">
+String oauthToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prettyPrint">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+            href="#prettyPrint"
+            title="Permalink to FreebaseApi.prettyPrint">#</a>
+        </h4>
+        <div class="doc">
+<p>Returns response with indentations and line breaks.</p>
+<pre class="source">
+bool prettyPrint;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaUser">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+            href="#quotaUser"
+            title="Permalink to FreebaseApi.quotaUser">#</a>
+        </h4>
+        <div class="doc">
+<p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
+<pre class="source">
+String quotaUser;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userIp">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+            href="#userIp"
+            title="Permalink to FreebaseApi.userIp">#</a>
+        </h4>
+        <div class="doc">
+<p>IP address of the site where the request originates. Use this if you want to enforce per-user
+limits.</p>
+<pre class="source">
+String userIp;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:20.971Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

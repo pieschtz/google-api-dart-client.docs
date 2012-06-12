@@ -1,0 +1,160 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>FreeBusyResponse Class / calendar Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="calendar" data-type="FreeBusyResponse">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../calendar.html">calendar</a> &rsaquo; <a href="../calendar/FreeBusyResponse.html">FreeBusyResponse</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>FreeBusyResponse</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>FreeBusyResponse</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../calendar/FreeBusyResponse.html">FreeBusyResponse</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to FreeBusyResponse.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static FreeBusyResponse parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new FreeBusyResponse();
+  result.timeMax = identity(json["timeMax"]);
+  result.kind = identity(json["kind"]);
+  result.calendars = mapValues(FreeBusyCalendar.parse)(json["calendars"]);
+  result.timeMin = identity(json["timeMin"]);
+  result.groups = mapValues(FreeBusyGroup.parse)(json["groups"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar/FreeBusyResponse.html">FreeBusyResponse</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to FreeBusyResponse.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(FreeBusyResponse value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["timeMax"] = identity(value.timeMax);
+  result["kind"] = identity(value.kind);
+  result["calendars"] = mapValues(FreeBusyCalendar.serialize)(value.calendars);
+  result["timeMin"] = identity(value.timeMin);
+  result["groups"] = mapValues(FreeBusyGroup.serialize)(value.groups);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to FreeBusyResponse.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="calendars">
+<span class="show-code">Code</span>
+<a href="../dart_core/Map.html">Map</a>         <strong>calendars</strong> <a class="anchor-link"
+            href="#calendars"
+            title="Permalink to FreeBusyResponse.calendars">#</a>
+        </h4>
+        <div class="doc">
+<p>List of free/busy information for calendars.</p>
+<pre class="source">
+Map&lt;String, FreeBusyCalendar&gt; calendars;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="groups">
+<span class="show-code">Code</span>
+<a href="../dart_core/Map.html">Map</a>         <strong>groups</strong> <a class="anchor-link"
+            href="#groups"
+            title="Permalink to FreeBusyResponse.groups">#</a>
+        </h4>
+        <div class="doc">
+<p>Expansion of groups.</p>
+<pre class="source">
+Map&lt;String, FreeBusyGroup&gt; groups;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to FreeBusyResponse.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Type of the resource ("calendar#freeBusy").</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="timeMax">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>timeMax</strong> <a class="anchor-link"
+            href="#timeMax"
+            title="Permalink to FreeBusyResponse.timeMax">#</a>
+        </h4>
+        <div class="doc">
+<p>The end of the interval.</p>
+<pre class="source">
+String timeMax;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="timeMin">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>timeMin</strong> <a class="anchor-link"
+            href="#timeMin"
+            title="Permalink to FreeBusyResponse.timeMin">#</a>
+        </h4>
+        <div class="doc">
+<p>The start of the interval.</p>
+<pre class="source">
+String timeMin;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:17.622Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

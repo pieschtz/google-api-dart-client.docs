@@ -1,0 +1,191 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ReadingPosition Class / books Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books" data-type="ReadingPosition">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books.html">books</a> &rsaquo; <a href="../books/ReadingPosition.html">ReadingPosition</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ReadingPosition</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ReadingPosition</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../books/ReadingPosition.html">ReadingPosition</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ReadingPosition.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ReadingPosition parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ReadingPosition();
+  result.kind = identity(json["kind"]);
+  result.gbImagePosition = identity(json["gbImagePosition"]);
+  result.epubCfiPosition = identity(json["epubCfiPosition"]);
+  result.updated = identity(json["updated"]);
+  result.volumeId = identity(json["volumeId"]);
+  result.pdfPosition = identity(json["pdfPosition"]);
+  result.gbTextPosition = identity(json["gbTextPosition"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books/ReadingPosition.html">ReadingPosition</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ReadingPosition.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ReadingPosition value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["kind"] = identity(value.kind);
+  result["gbImagePosition"] = identity(value.gbImagePosition);
+  result["epubCfiPosition"] = identity(value.epubCfiPosition);
+  result["updated"] = identity(value.updated);
+  result["volumeId"] = identity(value.volumeId);
+  result["pdfPosition"] = identity(value.pdfPosition);
+  result["gbTextPosition"] = identity(value.gbTextPosition);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ReadingPosition.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="epubCfiPosition">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>epubCfiPosition</strong> <a class="anchor-link"
+            href="#epubCfiPosition"
+            title="Permalink to ReadingPosition.epubCfiPosition">#</a>
+        </h4>
+        <div class="doc">
+<p>Position in an EPUB as a CFI.</p>
+<pre class="source">
+String epubCfiPosition;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="gbImagePosition">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>gbImagePosition</strong> <a class="anchor-link"
+            href="#gbImagePosition"
+            title="Permalink to ReadingPosition.gbImagePosition">#</a>
+        </h4>
+        <div class="doc">
+<p>Position in a volume for image-based content.</p>
+<pre class="source">
+String gbImagePosition;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="gbTextPosition">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>gbTextPosition</strong> <a class="anchor-link"
+            href="#gbTextPosition"
+            title="Permalink to ReadingPosition.gbTextPosition">#</a>
+        </h4>
+        <div class="doc">
+<p>Position in a volume for text-based content.</p>
+<pre class="source">
+String gbTextPosition;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to ReadingPosition.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Resource type for a reading position.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="pdfPosition">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>pdfPosition</strong> <a class="anchor-link"
+            href="#pdfPosition"
+            title="Permalink to ReadingPosition.pdfPosition">#</a>
+        </h4>
+        <div class="doc">
+<p>Position in a PDF file.</p>
+<pre class="source">
+String pdfPosition;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="updated">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
+            href="#updated"
+            title="Permalink to ReadingPosition.updated">#</a>
+        </h4>
+        <div class="doc">
+<p>Timestamp when this reading position was last updated (formatted UTC timestamp with millisecond
+resolution).</p>
+<pre class="source">
+String updated;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="volumeId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>volumeId</strong> <a class="anchor-link"
+            href="#volumeId"
+            title="Permalink to ReadingPosition.volumeId">#</a>
+        </h4>
+        <div class="doc">
+<p>Volume id associated with this reading position.</p>
+<pre class="source">
+String volumeId;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:15.425Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

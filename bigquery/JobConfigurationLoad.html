@@ -1,0 +1,223 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>JobConfigurationLoad Class / bigquery Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery" data-type="JobConfigurationLoad">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery.html">bigquery</a> &rsaquo; <a href="../bigquery/JobConfigurationLoad.html">JobConfigurationLoad</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>JobConfigurationLoad</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>JobConfigurationLoad</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../bigquery/JobConfigurationLoad.html">JobConfigurationLoad</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to JobConfigurationLoad.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static JobConfigurationLoad parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new JobConfigurationLoad();
+  result.encoding = identity(json["encoding"]);
+  result.fieldDelimiter = identity(json["fieldDelimiter"]);
+  result.destinationTable = TableReference.parse(json["destinationTable"]);
+  result.maxBadRecords = identity(json["maxBadRecords"]);
+  result.writeDisposition = identity(json["writeDisposition"]);
+  result.sourceUris = map(identity)(json["sourceUris"]);
+  result.skipLeadingRows = identity(json["skipLeadingRows"]);
+  result.createDisposition = identity(json["createDisposition"]);
+  result.schema = TableSchema.parse(json["schema"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery/JobConfigurationLoad.html">JobConfigurationLoad</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to JobConfigurationLoad.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(JobConfigurationLoad value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["encoding"] = identity(value.encoding);
+  result["fieldDelimiter"] = identity(value.fieldDelimiter);
+  result["destinationTable"] = TableReference.serialize(value.destinationTable);
+  result["maxBadRecords"] = identity(value.maxBadRecords);
+  result["writeDisposition"] = identity(value.writeDisposition);
+  result["sourceUris"] = map(identity)(value.sourceUris);
+  result["skipLeadingRows"] = identity(value.skipLeadingRows);
+  result["createDisposition"] = identity(value.createDisposition);
+  result["schema"] = TableSchema.serialize(value.schema);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to JobConfigurationLoad.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="createDisposition">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>createDisposition</strong> <a class="anchor-link"
+            href="#createDisposition"
+            title="Permalink to JobConfigurationLoad.createDisposition">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Whether to create the table if it doesn't already exist (CREATE<em>IF</em>NEEDED) or to
+require the table already exist (CREATE<em>NEVER). Default is CREATE</em>IF_NEEDED.</p>
+<pre class="source">
+String createDisposition;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="destinationTable">
+<span class="show-code">Code</span>
+<a href="../bigquery/TableReference.html">TableReference</a>         <strong>destinationTable</strong> <a class="anchor-link"
+            href="#destinationTable"
+            title="Permalink to JobConfigurationLoad.destinationTable">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Required</code> Table being written to.</p>
+<pre class="source">
+TableReference destinationTable;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="encoding">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>encoding</strong> <a class="anchor-link"
+            href="#encoding"
+            title="Permalink to JobConfigurationLoad.encoding">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Character encoding of the input data. May be UTF-8 or ISO-8859-1. Default is UTF-8.</p>
+<pre class="source">
+String encoding;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fieldDelimiter">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fieldDelimiter</strong> <a class="anchor-link"
+            href="#fieldDelimiter"
+            title="Permalink to JobConfigurationLoad.fieldDelimiter">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Delimiter to use between fields in the import data. Default is ','</p>
+<pre class="source">
+String fieldDelimiter;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maxBadRecords">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>maxBadRecords</strong> <a class="anchor-link"
+            href="#maxBadRecords"
+            title="Permalink to JobConfigurationLoad.maxBadRecords">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Maximum number of bad records that should be ignored before the entire job is aborted
+and no updates are performed.</p>
+<pre class="source">
+int maxBadRecords;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="schema">
+<span class="show-code">Code</span>
+<a href="../bigquery/TableSchema.html">TableSchema</a>         <strong>schema</strong> <a class="anchor-link"
+            href="#schema"
+            title="Permalink to JobConfigurationLoad.schema">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Schema of the table being written to.</p>
+<pre class="source">
+TableSchema schema;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="skipLeadingRows">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>skipLeadingRows</strong> <a class="anchor-link"
+            href="#skipLeadingRows"
+            title="Permalink to JobConfigurationLoad.skipLeadingRows">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Number of rows of initial data to skip in the data being imported.</p>
+<pre class="source">
+int skipLeadingRows;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="sourceUris">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>sourceUris</strong> <a class="anchor-link"
+            href="#sourceUris"
+            title="Permalink to JobConfigurationLoad.sourceUris">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Required</code> Source URIs describing Google Cloud Storage locations of data to load.</p>
+<pre class="source">
+List&lt;String&gt; sourceUris;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="writeDisposition">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>writeDisposition</strong> <a class="anchor-link"
+            href="#writeDisposition"
+            title="Permalink to JobConfigurationLoad.writeDisposition">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Whether to overwrite an existing table (WRITE<em>TRUNCATE), append to an existing table
+(WRITE</em>APPEND), or require that the the table is empty (WRITE<em>EMPTY). Default is WRITE</em>APPEND.</p>
+<pre class="source">
+String writeDisposition;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:13.681Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

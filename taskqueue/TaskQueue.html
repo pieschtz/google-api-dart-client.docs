@@ -1,0 +1,161 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TaskQueue Class / taskqueue Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="taskqueue" data-type="TaskQueue">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../taskqueue.html">taskqueue</a> &rsaquo; <a href="../taskqueue/TaskQueue.html">TaskQueue</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>TaskQueue</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>TaskQueue</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../taskqueue/TaskQueue.html">TaskQueue</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to TaskQueue.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static TaskQueue parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new TaskQueue();
+  result.kind = identity(json["kind"]);
+  result.stats = TaskQueueStats.parse(json["stats"]);
+  result.id = identity(json["id"]);
+  result.maxLeases = identity(json["maxLeases"]);
+  result.acl = TaskQueueAcl.parse(json["acl"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../taskqueue/TaskQueue.html">TaskQueue</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to TaskQueue.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(TaskQueue value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["kind"] = identity(value.kind);
+  result["stats"] = TaskQueueStats.serialize(value.stats);
+  result["id"] = identity(value.id);
+  result["maxLeases"] = identity(value.maxLeases);
+  result["acl"] = TaskQueueAcl.serialize(value.acl);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to TaskQueue.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="acl">
+<span class="show-code">Code</span>
+<a href="../taskqueue/TaskQueueAcl.html">TaskQueueAcl</a>         <strong>acl</strong> <a class="anchor-link"
+            href="#acl"
+            title="Permalink to TaskQueue.acl">#</a>
+        </h4>
+        <div class="doc">
+<p>ACLs that are applicable to this TaskQueue object.</p>
+<pre class="source">
+TaskQueueAcl acl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to TaskQueue.id">#</a>
+        </h4>
+        <div class="doc">
+<p>Name of the taskqueue.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to TaskQueue.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The kind of REST object returned, in this case taskqueue.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maxLeases">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>maxLeases</strong> <a class="anchor-link"
+            href="#maxLeases"
+            title="Permalink to TaskQueue.maxLeases">#</a>
+        </h4>
+        <div class="doc">
+<p>The number of times we should lease out tasks before giving up on them. If unset we lease them
+out forever until a worker deletes the task.</p>
+<pre class="source">
+int maxLeases;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="stats">
+<span class="show-code">Code</span>
+<a href="../taskqueue/TaskQueueStats.html">TaskQueueStats</a>         <strong>stats</strong> <a class="anchor-link"
+            href="#stats"
+            title="Permalink to TaskQueue.stats">#</a>
+        </h4>
+        <div class="doc">
+<p>Statistics for the TaskQueue object in question.</p>
+<pre class="source">
+TaskQueueStats stats;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:32.194Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

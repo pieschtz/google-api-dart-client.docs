@@ -1,0 +1,85 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>VolumesAssociatedResourceResource Class / books Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books" data-type="VolumesAssociatedResourceResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books.html">books</a> &rsaquo; <a href="../books/VolumesAssociatedResourceResource.html">VolumesAssociatedResourceResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>VolumesAssociatedResourceResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, [<a href="../books/VolumesResourceVolumesAssociatedResourceResourceListProjection.html">VolumesResourceVolumesAssociatedResourceResourceListProjection</a> projection = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../books/VolumesResourceVolumesAssociatedResourceResourceListFilter.html">VolumesResourceVolumesAssociatedResourceResourceListFilter</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../books/VolumesResourceVolumesAssociatedResourceResourceListAssociation.html">VolumesResourceVolumesAssociatedResourceResourceListAssociation</a> association = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to VolumesAssociatedResourceResource.list">#</a></h4>
+<div class="doc">
+<p>Return a list of associated books.
+
+<span class="param">volumeId</span> ID of the source volume.</p>
+<pre class="source">
+Future&lt;Volumes&gt; list(String volumeId, [VolumesResourceVolumesAssociatedResourceResourceListProjection projection = UNSPECIFIED, int maxResults = UNSPECIFIED, VolumesResourceVolumesAssociatedResourceResourceListFilter filter = UNSPECIFIED, String source = UNSPECIFIED, int startIndex = UNSPECIFIED, VolumesResourceVolumesAssociatedResourceResourceListAssociation association = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["volumeId"] = volumeId;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != filter) $queryParams["filter"] = filter;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
+  if (UNSPECIFIED != association) $queryParams["association"] = association;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/associated").generate($pathParams, $queryParams);
+  final $completer = new Completer&lt;Volumes&gt;();
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $request = $http.request();
+  $request.handleException(($ex) { $completer.completeException($ex); return true; });
+  $request.then((final $text) {
+    var $result;
+    bool $success = false;
+    try {
+      $result = Volumes.parse(JSON.parse($text)); $success = true;
+    } catch (final $ex) { $completer.completeException($ex); }
+    if ($success) $completer.complete($result);
+  });
+  return $completer.future;
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:14.932Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

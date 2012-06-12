@@ -1,0 +1,258 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>VolumeAccessInfo Class / books Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books" data-type="VolumeAccessInfo">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books.html">books</a> &rsaquo; <a href="../books/VolumeAccessInfo.html">VolumeAccessInfo</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>VolumeAccessInfo</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>VolumeAccessInfo</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../books/VolumeAccessInfo.html">VolumeAccessInfo</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to VolumeAccessInfo.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static VolumeAccessInfo parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new VolumeAccessInfo();
+  result.webReaderLink = identity(json["webReaderLink"]);
+  result.publicDomain = identity(json["publicDomain"]);
+  result.embeddable = identity(json["embeddable"]);
+  result.downloadAccess = DownloadAccessRestriction.parse(json["downloadAccess"]);
+  result.country = identity(json["country"]);
+  result.viewOrderUrl = identity(json["viewOrderUrl"]);
+  result.textToSpeechPermission = identity(json["textToSpeechPermission"]);
+  result.pdf = VolumeAccessInfoPdf.parse(json["pdf"]);
+  result.viewability = identity(json["viewability"]);
+  result.epub = VolumeAccessInfoEpub.parse(json["epub"]);
+  result.accessViewStatus = identity(json["accessViewStatus"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books/VolumeAccessInfo.html">VolumeAccessInfo</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to VolumeAccessInfo.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(VolumeAccessInfo value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["webReaderLink"] = identity(value.webReaderLink);
+  result["publicDomain"] = identity(value.publicDomain);
+  result["embeddable"] = identity(value.embeddable);
+  result["downloadAccess"] = DownloadAccessRestriction.serialize(value.downloadAccess);
+  result["country"] = identity(value.country);
+  result["viewOrderUrl"] = identity(value.viewOrderUrl);
+  result["textToSpeechPermission"] = identity(value.textToSpeechPermission);
+  result["pdf"] = VolumeAccessInfoPdf.serialize(value.pdf);
+  result["viewability"] = identity(value.viewability);
+  result["epub"] = VolumeAccessInfoEpub.serialize(value.epub);
+  result["accessViewStatus"] = identity(value.accessViewStatus);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to VolumeAccessInfo.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="accessViewStatus">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>accessViewStatus</strong> <a class="anchor-link"
+            href="#accessViewStatus"
+            title="Permalink to VolumeAccessInfo.accessViewStatus">#</a>
+        </h4>
+        <div class="doc">
+<p>Combines the access and viewability of this volume into a single status field for this user.
+Values can be FULL<em>PURCHASED, FULL</em>PUBLIC_DOMAIN, SAMPLE or NONE. (In LITE projection.)</p>
+<pre class="source">
+String accessViewStatus;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="country">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>country</strong> <a class="anchor-link"
+            href="#country"
+            title="Permalink to VolumeAccessInfo.country">#</a>
+        </h4>
+        <div class="doc">
+<p>The two-letter ISO_3166-1 country code for which this access information is valid. (In LITE
+projection.)</p>
+<pre class="source">
+String country;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="downloadAccess">
+<span class="show-code">Code</span>
+<a href="../books/DownloadAccessRestriction.html">DownloadAccessRestriction</a>         <strong>downloadAccess</strong> <a class="anchor-link"
+            href="#downloadAccess"
+            title="Permalink to VolumeAccessInfo.downloadAccess">#</a>
+        </h4>
+        <div class="doc">
+<p>Information about a volume's download license access restrictions.</p>
+<pre class="source">
+DownloadAccessRestriction downloadAccess;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="embeddable">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>embeddable</strong> <a class="anchor-link"
+            href="#embeddable"
+            title="Permalink to VolumeAccessInfo.embeddable">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether this volume can be embedded in a viewport using the Embedded Viewer API.</p>
+<pre class="source">
+bool embeddable;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="epub">
+<span class="show-code">Code</span>
+<a href="../books/VolumeAccessInfoEpub.html">VolumeAccessInfoEpub</a>         <strong>epub</strong> <a class="anchor-link"
+            href="#epub"
+            title="Permalink to VolumeAccessInfo.epub">#</a>
+        </h4>
+        <div class="doc">
+<p>Information about epub content. (In LITE projection.)</p>
+<pre class="source">
+VolumeAccessInfoEpub epub;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="pdf">
+<span class="show-code">Code</span>
+<a href="../books/VolumeAccessInfoPdf.html">VolumeAccessInfoPdf</a>         <strong>pdf</strong> <a class="anchor-link"
+            href="#pdf"
+            title="Permalink to VolumeAccessInfo.pdf">#</a>
+        </h4>
+        <div class="doc">
+<p>Information about pdf content. (In LITE projection.)</p>
+<pre class="source">
+VolumeAccessInfoPdf pdf;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="publicDomain">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>publicDomain</strong> <a class="anchor-link"
+            href="#publicDomain"
+            title="Permalink to VolumeAccessInfo.publicDomain">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether or not this book is public domain in the country listed above.</p>
+<pre class="source">
+bool publicDomain;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="textToSpeechPermission">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>textToSpeechPermission</strong> <a class="anchor-link"
+            href="#textToSpeechPermission"
+            title="Permalink to VolumeAccessInfo.textToSpeechPermission">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether text-to-speech is permitted for this volume. Values can be ALLOWED,
+ALLOWED<em>FOR</em>ACCESSIBILITY, or NOT_ALLOWED.</p>
+<pre class="source">
+String textToSpeechPermission;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="viewability">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>viewability</strong> <a class="anchor-link"
+            href="#viewability"
+            title="Permalink to VolumeAccessInfo.viewability">#</a>
+        </h4>
+        <div class="doc">
+<p>The read access of a volume. Possible values are PARTIAL, ALL<em>PAGES, NO</em>PAGES or UNKNOWN. This
+value depends on the country listed above. A value of PARTIAL means that the publisher has
+allowed some portion of the volume to be viewed publicly, without purchase. This can apply to
+eBooks as well as non-eBooks. Public domain books will always have a value of ALL_PAGES.</p>
+<pre class="source">
+String viewability;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="viewOrderUrl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>viewOrderUrl</strong> <a class="anchor-link"
+            href="#viewOrderUrl"
+            title="Permalink to VolumeAccessInfo.viewOrderUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>For ordered but not yet processed orders, we give a URL that can be used to go to the appropriate
+Google Wallet page.</p>
+<pre class="source">
+String viewOrderUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="webReaderLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>webReaderLink</strong> <a class="anchor-link"
+            href="#webReaderLink"
+            title="Permalink to VolumeAccessInfo.webReaderLink">#</a>
+        </h4>
+        <div class="doc">
+<p>URL to read this volume on the Google Books site. Link will not allow users to read non-viewable
+volumes.</p>
+<pre class="source">
+String webReaderLink;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:15.635Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

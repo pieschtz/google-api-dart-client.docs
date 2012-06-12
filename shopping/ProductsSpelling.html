@@ -1,0 +1,100 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ProductsSpelling Class / shopping Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="shopping" data-type="ProductsSpelling">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../shopping.html">shopping</a> &rsaquo; <a href="../shopping/ProductsSpelling.html">ProductsSpelling</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ProductsSpelling</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ProductsSpelling</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../shopping/ProductsSpelling.html">ProductsSpelling</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ProductsSpelling.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ProductsSpelling parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ProductsSpelling();
+  result.suggestion = identity(json["suggestion"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping/ProductsSpelling.html">ProductsSpelling</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ProductsSpelling.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ProductsSpelling value) {
+  if (value == null) return null;
+  Map&lt;String, Object&gt; result = {};
+  result["suggestion"] = identity(value.suggestion);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ProductsSpelling.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="suggestion">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>suggestion</strong> <a class="anchor-link"
+            href="#suggestion"
+            title="Permalink to ProductsSpelling.suggestion">#</a>
+        </h4>
+        <div class="doc">
+<p>Suggestion for spelling.</p>
+<pre class="source">
+String suggestion;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-12 17:26:31.543Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        
