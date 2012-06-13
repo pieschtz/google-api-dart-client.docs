@@ -50,19 +50,13 @@ Future&lt;Series&gt; get(int seriesId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Series&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Series.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Series.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -91,19 +85,13 @@ Future&lt;Series&gt; insert(Series content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Series.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "series").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Series&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Series.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Series.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -131,19 +119,13 @@ Future&lt;SeriesList&gt; list([int maxResults = UNSPECIFIED, String q = UNSPECIF
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "series").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;SeriesList&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = SeriesList.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; SeriesList.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -175,19 +157,13 @@ Future&lt;Series&gt; patch(int seriesId, Series content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Series.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Series&gt;();
   final $http = new HttpRequest($url, "PATCH", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Series.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Series.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -219,19 +195,13 @@ Future&lt;Series&gt; update(int seriesId, Series content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Series.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Series&gt;();
   final $http = new HttpRequest($url, "PUT", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Series.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Series.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -268,7 +238,7 @@ final SeriesSubmissionsResourceResource submissions;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:28.960Z</div>
+          <div>This page generated at 2012-06-13 18:45:08.680Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

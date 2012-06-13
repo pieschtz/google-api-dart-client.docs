@@ -58,7 +58,7 @@ static DatasetList parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(DatasetList value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["nextPageToken"] = identity(value.nextPageToken);
   result["kind"] = identity(value.kind);
   result["datasets"] = map(DatasetListDatasets.serialize)(value.datasets);
@@ -140,7 +140,7 @@ String nextPageToken;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:13.413Z</div>
+          <div>This page generated at 2012-06-13 18:44:52.997Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

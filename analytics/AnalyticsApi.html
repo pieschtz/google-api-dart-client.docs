@@ -29,12 +29,12 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="AnalyticsApi">
 <span class="show-code">Code</span>
-new <strong>AnalyticsApi</strong>([baseUrl = "https://www.googleapis.com/analytics/v3/", applicationName]) <a class="anchor-link" href="#AnalyticsApi"
+new <strong>AnalyticsApi</strong>([baseUrl = "https://www.googleapis.com/analytics/v3/", applicationName, authenticator]) <a class="anchor-link" href="#AnalyticsApi"
               title="Permalink to AnalyticsApi.AnalyticsApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-AnalyticsApi([this.baseUrl = "https://www.googleapis.com/analytics/v3/", this.applicationName]) { 
+AnalyticsApi([this.baseUrl = "https://www.googleapis.com/analytics/v3/", this.applicationName, this.authenticator]) { 
   _management = new ManagementResource._internal(this);
   _data = new DataResource._internal(this);
 }
@@ -102,6 +102,19 @@ final <a href="../dart_core/String.html">String</a>         <strong>applicationN
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
 final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to AnalyticsApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
 </pre>
 </div>
 </div>
@@ -217,7 +230,7 @@ String userIp;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:11.425Z</div>
+          <div>This page generated at 2012-06-13 18:44:51.000Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

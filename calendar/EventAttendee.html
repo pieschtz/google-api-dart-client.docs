@@ -63,7 +63,7 @@ static EventAttendee parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(EventAttendee value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["comment"] = identity(value.comment);
   result["displayName"] = identity(value.displayName);
   result["self"] = identity(value.self);
@@ -217,7 +217,7 @@ bool self;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:17.226Z</div>
+          <div>This page generated at 2012-06-13 18:44:56.828Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

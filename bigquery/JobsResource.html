@@ -53,19 +53,13 @@ Future&lt;Job&gt; get(String projectId, String jobId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/jobs/{jobId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Job&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Job.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Job.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -99,19 +93,13 @@ Future&lt;GetQueryResultsResponse&gt; getQueryResults(String projectId, String j
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/queries/{jobId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;GetQueryResultsResponse&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = GetQueryResultsResponse.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; GetQueryResultsResponse.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -143,19 +131,13 @@ Future&lt;Job&gt; insert(String projectId, Job content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Job.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/jobs").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Job&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Job.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Job.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -188,19 +170,13 @@ Future&lt;JobList&gt; list(String projectId, [JobsResourceListProjection project
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/jobs").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;JobList&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = JobList.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; JobList.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -233,19 +209,13 @@ Future&lt;QueryResponse&gt; query(String projectId, QueryRequest content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(QueryRequest.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/queries").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;QueryResponse&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = QueryResponse.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; QueryResponse.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -255,7 +225,7 @@ Future&lt;QueryResponse&gt; query(String projectId, QueryRequest content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:12.873Z</div>
+          <div>This page generated at 2012-06-13 18:44:52.459Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

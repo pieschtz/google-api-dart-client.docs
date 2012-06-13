@@ -59,7 +59,7 @@ static AnalyticsSummary parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(AnalyticsSummary value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["week"] = AnalyticsSnapshot.serialize(value.week);
   result["allTime"] = AnalyticsSnapshot.serialize(value.allTime);
   result["twoHours"] = AnalyticsSnapshot.serialize(value.twoHours);
@@ -153,7 +153,7 @@ AnalyticsSnapshot week;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:32.704Z</div>
+          <div>This page generated at 2012-06-13 18:45:12.968Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

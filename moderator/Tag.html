@@ -57,7 +57,7 @@ static Tag parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Tag value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["text"] = identity(value.text);
   result["kind"] = identity(value.kind);
   result["id"] = TagId.serialize(value.id);
@@ -123,7 +123,7 @@ String text;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:29.198Z</div>
+          <div>This page generated at 2012-06-13 18:45:08.915Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

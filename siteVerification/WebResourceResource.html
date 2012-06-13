@@ -50,19 +50,13 @@ Future delete(String id) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "webResource/{id}").generate($pathParams, $queryParams);
-  final $completer = new Completer();
   final $http = new HttpRequest($url, "DELETE", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = identity(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -90,19 +84,13 @@ Future&lt;SiteVerificationWebResourceResource&gt; get(String id) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "webResource/{id}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;SiteVerificationWebResourceResource&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = SiteVerificationWebResourceResource.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; SiteVerificationWebResourceResource.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -131,19 +119,13 @@ Future&lt;SiteVerificationWebResourceGettokenResponse&gt; getToken(SiteVerificat
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(SiteVerificationWebResourceGettokenRequest.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "token").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;SiteVerificationWebResourceGettokenResponse&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = SiteVerificationWebResourceGettokenResponse.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; SiteVerificationWebResourceGettokenResponse.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -175,19 +157,13 @@ Future&lt;SiteVerificationWebResourceResource&gt; insert(String verificationMeth
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(SiteVerificationWebResourceResource.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "webResource").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;SiteVerificationWebResourceResource&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = SiteVerificationWebResourceResource.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; SiteVerificationWebResourceResource.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -212,19 +188,13 @@ Future&lt;SiteVerificationWebResourceListResponse&gt; list() {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "webResource").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;SiteVerificationWebResourceListResponse&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = SiteVerificationWebResourceListResponse.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; SiteVerificationWebResourceListResponse.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -256,19 +226,13 @@ Future&lt;SiteVerificationWebResourceResource&gt; patch(String id, SiteVerificat
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(SiteVerificationWebResourceResource.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "webResource/{id}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;SiteVerificationWebResourceResource&gt;();
   final $http = new HttpRequest($url, "PATCH", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = SiteVerificationWebResourceResource.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; SiteVerificationWebResourceResource.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -300,19 +264,13 @@ Future&lt;SiteVerificationWebResourceResource&gt; update(String id, SiteVerifica
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(SiteVerificationWebResourceResource.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "webResource/{id}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;SiteVerificationWebResourceResource&gt;();
   final $http = new HttpRequest($url, "PUT", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = SiteVerificationWebResourceResource.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; SiteVerificationWebResourceResource.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -322,7 +280,7 @@ Future&lt;SiteVerificationWebResourceResource&gt; update(String id, SiteVerifica
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:31.821Z</div>
+          <div>This page generated at 2012-06-13 18:45:11.565Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

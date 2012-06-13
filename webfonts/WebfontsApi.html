@@ -29,12 +29,12 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="WebfontsApi">
 <span class="show-code">Code</span>
-new <strong>WebfontsApi</strong>([baseUrl = "https://www.googleapis.com/webfonts/v1/", applicationName]) <a class="anchor-link" href="#WebfontsApi"
+new <strong>WebfontsApi</strong>([baseUrl = "https://www.googleapis.com/webfonts/v1/", applicationName, authenticator]) <a class="anchor-link" href="#WebfontsApi"
               title="Permalink to WebfontsApi.WebfontsApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-WebfontsApi([this.baseUrl = "https://www.googleapis.com/webfonts/v1/", this.applicationName]) { 
+WebfontsApi([this.baseUrl = "https://www.googleapis.com/webfonts/v1/", this.applicationName, this.authenticator]) { 
   _webfonts = new WebfontsResource._internal(this);
 }
 </pre>
@@ -90,6 +90,19 @@ final <a href="../dart_core/String.html">String</a>         <strong>applicationN
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
 final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to WebfontsApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
 </pre>
 </div>
 </div>
@@ -205,7 +218,7 @@ String userIp;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:32.881Z</div>
+          <div>This page generated at 2012-06-13 18:45:14.180Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

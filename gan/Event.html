@@ -72,7 +72,7 @@ static Event parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Event value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["networkFee"] = Money.serialize(value.networkFee);
   result["advertiserName"] = identity(value.advertiserName);
   result["kind"] = identity(value.kind);
@@ -349,7 +349,7 @@ String type;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:22.075Z</div>
+          <div>This page generated at 2012-06-13 18:45:01.692Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

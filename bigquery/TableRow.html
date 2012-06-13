@@ -55,7 +55,7 @@ static TableRow parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(TableRow value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["f"] = map(TableRowF.serialize)(value.f);
   return result;
 }
@@ -93,7 +93,7 @@ List&lt;TableRowF&gt; f;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:14.194Z</div>
+          <div>This page generated at 2012-06-13 18:44:53.749Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

@@ -50,19 +50,13 @@ Future&lt;Groups&gt; get(String groupUniqueId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "{groupUniqueId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Groups&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Groups.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Groups.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -94,19 +88,13 @@ Future&lt;Groups&gt; patch(String groupUniqueId, Groups content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Groups.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "{groupUniqueId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Groups&gt;();
   final $http = new HttpRequest($url, "PATCH", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Groups.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Groups.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -138,19 +126,13 @@ Future&lt;Groups&gt; update(String groupUniqueId, Groups content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Groups.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "{groupUniqueId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Groups&gt;();
   final $http = new HttpRequest($url, "PUT", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Groups.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Groups.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -160,7 +142,7 @@ Future&lt;Groups&gt; update(String groupUniqueId, Groups content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:22.284Z</div>
+          <div>This page generated at 2012-06-13 18:45:01.904Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

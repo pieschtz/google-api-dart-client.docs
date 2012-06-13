@@ -60,7 +60,7 @@ static JobConfigurationQuery parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(JobConfigurationQuery value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["defaultDataset"] = DatasetReference.serialize(value.defaultDataset);
   result["destinationTable"] = TableReference.serialize(value.destinationTable);
   result["priority"] = identity(value.priority);
@@ -172,7 +172,7 @@ String writeDisposition;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:13.773Z</div>
+          <div>This page generated at 2012-06-13 18:44:53.309Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

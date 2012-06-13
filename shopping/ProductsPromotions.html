@@ -45,7 +45,6 @@ static ProductsPromotions parse(Map&lt;String, Object&gt; json) {
   result.imageLink = identity(json["imageLink"]);
   result.destLink = identity(json["destLink"]);
   result.customHtml = identity(json["customHtml"]);
-  result.link = identity(json["link"]);
   result.customFields = map(ProductsPromotionsCustomFields.parse)(json["customFields"]);
   result.type = identity(json["type"]);
   result.name = identity(json["name"]);
@@ -63,13 +62,12 @@ static ProductsPromotions parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(ProductsPromotions value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["product"] = ShoppingModelProductJsonV1.serialize(value.product);
   result["description"] = identity(value.description);
   result["imageLink"] = identity(value.imageLink);
   result["destLink"] = identity(value.destLink);
   result["customHtml"] = identity(value.customHtml);
-  result["link"] = identity(value.link);
   result["customFields"] = map(ProductsPromotionsCustomFields.serialize)(value.customFields);
   result["type"] = identity(value.type);
   result["name"] = identity(value.name);
@@ -156,19 +154,6 @@ String imageLink;
 </pre>
 </div>
 </div>
-<div class="field"><h4 id="link">
-<span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
-            href="#link"
-            title="Permalink to ProductsPromotions.link">#</a>
-        </h4>
-        <div class="doc">
-<p>Link to promotion without scheme. DEPRECATED. WILL BE REMOVED SOON. USE destLink.</p>
-<pre class="source">
-String link;
-</pre>
-</div>
-</div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
 <a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
@@ -213,7 +198,7 @@ String type;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:31.536Z</div>
+          <div>This page generated at 2012-06-13 18:45:11.278Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

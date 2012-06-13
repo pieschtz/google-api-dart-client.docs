@@ -51,19 +51,13 @@ Future clear(String tasklist) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/clear").generate($pathParams, $queryParams);
-  final $completer = new Completer();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = identity(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -94,19 +88,13 @@ Future delete(String tasklist, String task) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}").generate($pathParams, $queryParams);
-  final $completer = new Completer();
   final $http = new HttpRequest($url, "DELETE", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = identity(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -137,19 +125,13 @@ Future&lt;Task&gt; get(String tasklist, String task) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Task&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Task.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -183,19 +165,13 @@ Future&lt;Task&gt; insert(String tasklist, Task content, [String parent = UNSPEC
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Task.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Task&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Task.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -233,19 +209,13 @@ Future&lt;Tasks&gt; list(String tasklist, [String dueMax = UNSPECIFIED, bool sho
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Tasks&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Tasks.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Tasks.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -279,19 +249,13 @@ Future&lt;Task&gt; move(String tasklist, String task, [String parent = UNSPECIFI
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}/move").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Task&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Task.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -326,19 +290,13 @@ Future&lt;Task&gt; patch(String tasklist, String task, Task content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Task.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Task&gt;();
   final $http = new HttpRequest($url, "PATCH", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Task.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -373,19 +331,13 @@ Future&lt;Task&gt; update(String tasklist, String task, Task content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Task.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Task&gt;();
   final $http = new HttpRequest($url, "PUT", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Task.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -395,7 +347,7 @@ Future&lt;Task&gt; update(String tasklist, String task, Task content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:32.396Z</div>
+          <div>This page generated at 2012-06-13 18:45:12.142Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

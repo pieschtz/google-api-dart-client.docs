@@ -68,7 +68,7 @@ static Community parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Community value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["category"] = identity(value.category);
   result["kind"] = identity(value.kind);
   result["member_count"] = identity(value.memberCount);
@@ -289,7 +289,7 @@ String photoUrl;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:30.190Z</div>
+          <div>This page generated at 2012-06-13 18:45:09.956Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

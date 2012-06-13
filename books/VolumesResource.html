@@ -54,19 +54,13 @@ Future&lt;Volume&gt; get(String volumeId, [String source = UNSPECIFIED, String c
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Volume&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Volume.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Volume.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -106,19 +100,13 @@ Future&lt;Volumes&gt; list(String q, [VolumesResourceListOrderBy orderBy = UNSPE
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "volumes").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Volumes&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Volumes.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Volumes.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -142,7 +130,7 @@ final VolumesAssociatedResourceResource associated;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:14.874Z</div>
+          <div>This page generated at 2012-06-13 18:44:54.480Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

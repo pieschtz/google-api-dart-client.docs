@@ -29,7 +29,7 @@
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> source, <a href="../dart_core/int.html">int</a> accountId, <a href="../dart_core/String.html">String</a> productIdType, <a href="../dart_core/String.html">String</a> productId, [<a href="../dart_core/String.html">String</a> categoriesInclude = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> recommendationsEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> taxonomy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> recommendationsInclude = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> location = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> thumbnails = UNSPECIFIED, <a href="../dart_core/String.html">String</a> attributeFilter = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> recommendationsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> plusOneOptions = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> source, <a href="../dart_core/int.html">int</a> accountId, <a href="../dart_core/String.html">String</a> productIdType, <a href="../dart_core/String.html">String</a> productId, [<a href="../dart_core/String.html">String</a> categoriesInclude = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> recommendationsEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> thumbnails = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> taxonomy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> plusOneStyles = UNSPECIFIED, <a href="../dart_core/String.html">String</a> recommendationsInclude = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> location = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> attributeFilter = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> recommendationsUseGcsConfig = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to ProductsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns a single product
@@ -42,7 +42,7 @@
 
 <span class="param">productId</span> Id of product</p>
 <pre class="source">
-Future&lt;Product&gt; get(String source, int accountId, String productIdType, String productId, [String categoriesInclude = UNSPECIFIED, bool recommendationsEnabled = UNSPECIFIED, bool plusOneUseGcsConfig = UNSPECIFIED, String taxonomy = UNSPECIFIED, bool categoriesUseGcsConfig = UNSPECIFIED, String recommendationsInclude = UNSPECIFIED, bool categoriesEnabled = UNSPECIFIED, String location = UNSPECIFIED, bool plusOneEnabled = UNSPECIFIED, String thumbnails = UNSPECIFIED, String attributeFilter = UNSPECIFIED, bool recommendationsUseGcsConfig = UNSPECIFIED, String plusOneOptions = UNSPECIFIED]) {
+Future&lt;Product&gt; get(String source, int accountId, String productIdType, String productId, [String categoriesInclude = UNSPECIFIED, bool recommendationsEnabled = UNSPECIFIED, String thumbnails = UNSPECIFIED, bool plusOneUseGcsConfig = UNSPECIFIED, String taxonomy = UNSPECIFIED, bool categoriesUseGcsConfig = UNSPECIFIED, String plusOneStyles = UNSPECIFIED, String recommendationsInclude = UNSPECIFIED, bool categoriesEnabled = UNSPECIFIED, String location = UNSPECIFIED, bool plusOneEnabled = UNSPECIFIED, String attributeFilter = UNSPECIFIED, bool recommendationsUseGcsConfig = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,17 +52,17 @@ Future&lt;Product&gt; get(String source, int accountId, String productIdType, St
   $pathParams["productId"] = productId;
   if (UNSPECIFIED != categoriesInclude) $queryParams["categories.include"] = categoriesInclude;
   if (UNSPECIFIED != recommendationsEnabled) $queryParams["recommendations.enabled"] = recommendationsEnabled;
+  if (UNSPECIFIED != thumbnails) $queryParams["thumbnails"] = thumbnails;
   if (UNSPECIFIED != plusOneUseGcsConfig) $queryParams["plusOne.useGcsConfig"] = plusOneUseGcsConfig;
   if (UNSPECIFIED != taxonomy) $queryParams["taxonomy"] = taxonomy;
   if (UNSPECIFIED != categoriesUseGcsConfig) $queryParams["categories.useGcsConfig"] = categoriesUseGcsConfig;
+  if (UNSPECIFIED != plusOneStyles) $queryParams["plusOne.styles"] = plusOneStyles;
   if (UNSPECIFIED != recommendationsInclude) $queryParams["recommendations.include"] = recommendationsInclude;
   if (UNSPECIFIED != categoriesEnabled) $queryParams["categories.enabled"] = categoriesEnabled;
   if (UNSPECIFIED != location) $queryParams["location"] = location;
   if (UNSPECIFIED != plusOneEnabled) $queryParams["plusOne.enabled"] = plusOneEnabled;
-  if (UNSPECIFIED != thumbnails) $queryParams["thumbnails"] = thumbnails;
   if (UNSPECIFIED != attributeFilter) $queryParams["attributeFilter"] = attributeFilter;
   if (UNSPECIFIED != recommendationsUseGcsConfig) $queryParams["recommendations.useGcsConfig"] = recommendationsUseGcsConfig;
-  if (UNSPECIFIED != plusOneOptions) $queryParams["plusOne.options"] = plusOneOptions;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -72,33 +72,27 @@ Future&lt;Product&gt; get(String source, int accountId, String productIdType, St
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "{source}/products/{accountId}/{productIdType}/{productId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Product&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Product.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Product.parse(JSON.parse($text)));
 }
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> source, [<a href="../dart_core/String.html">String</a> facetsInclude = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> facetsEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> relatedQueriesUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> promotionsEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> channels = UNSPECIFIED, <a href="../dart_core/String.html">String</a> currency = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoryRecommendationsEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> facetsDiscover = UNSPECIFIED, <a href="../dart_core/String.html">String</a> categoryRecommendationsCategory = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/String.html">String</a> availability = UNSPECIFIED, <a href="../dart_core/String.html">String</a> crowdBy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> spellingEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> taxonomy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> spellingUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> useCase = UNSPECIFIED, <a href="../dart_core/String.html">String</a> location = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxVariants = UNSPECIFIED, <a href="../dart_core/String.html">String</a> plusOneOptions = UNSPECIFIED, <a href="../dart_core/String.html">String</a> categoriesInclude = UNSPECIFIED, <a href="../dart_core/String.html">String</a> boostBy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> safe = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesUseGcsConfig = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> facetsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> attributeFilter = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> clickTracking = UNSPECIFIED, <a href="../dart_core/String.html">String</a> thumbnails = UNSPECIFIED, <a href="../dart_core/String.html">String</a> language = UNSPECIFIED, <a href="../dart_core/String.html">String</a> categoryRecommendationsInclude = UNSPECIFIED, <a href="../dart_core/String.html">String</a> country = UNSPECIFIED, <a href="../dart_core/String.html">String</a> rankBy = UNSPECIFIED, <a href="../dart_core/String.html">String</a> restrictBy = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> redirectsEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> redirectsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> relatedQueriesEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoryRecommendationsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> promotionsUseGcsConfig = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> source, [<a href="../dart_core/String.html">String</a> facetsInclude = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> facetsEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> relatedQueriesUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> promotionsEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> channels = UNSPECIFIED, <a href="../dart_core/String.html">String</a> currency = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoryRecommendationsEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> facetsDiscover = UNSPECIFIED, <a href="../dart_core/String.html">String</a> categoryRecommendationsCategory = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/String.html">String</a> availability = UNSPECIFIED, <a href="../dart_core/String.html">String</a> crowdBy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> spellingEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> taxonomy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> spellingUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> useCase = UNSPECIFIED, <a href="../dart_core/String.html">String</a> location = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxVariants = UNSPECIFIED, <a href="../dart_core/String.html">String</a> categoriesInclude = UNSPECIFIED, <a href="../dart_core/String.html">String</a> boostBy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> safe = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesUseGcsConfig = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> facetsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> plusOneStyles = UNSPECIFIED, <a href="../dart_core/String.html">String</a> attributeFilter = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> clickTracking = UNSPECIFIED, <a href="../dart_core/String.html">String</a> thumbnails = UNSPECIFIED, <a href="../dart_core/String.html">String</a> language = UNSPECIFIED, <a href="../dart_core/String.html">String</a> categoryRecommendationsInclude = UNSPECIFIED, <a href="../dart_core/String.html">String</a> country = UNSPECIFIED, <a href="../dart_core/String.html">String</a> rankBy = UNSPECIFIED, <a href="../dart_core/String.html">String</a> restrictBy = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> redirectsEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> redirectsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> relatedQueriesEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoryRecommendationsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> promotionsUseGcsConfig = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ProductsResource.list">#</a></h4>
 <div class="doc">
 <p>Returns a list of products and content modules
 
 <span class="param">source</span> Query source</p>
 <pre class="source">
-Future&lt;Products&gt; list(String source, [String facetsInclude = UNSPECIFIED, bool plusOneEnabled = UNSPECIFIED, bool plusOneUseGcsConfig = UNSPECIFIED, bool facetsEnabled = UNSPECIFIED, bool relatedQueriesUseGcsConfig = UNSPECIFIED, bool promotionsEnabled = UNSPECIFIED, String channels = UNSPECIFIED, String currency = UNSPECIFIED, bool categoryRecommendationsEnabled = UNSPECIFIED, String facetsDiscover = UNSPECIFIED, String categoryRecommendationsCategory = UNSPECIFIED, int startIndex = UNSPECIFIED, String availability = UNSPECIFIED, String crowdBy = UNSPECIFIED, bool spellingEnabled = UNSPECIFIED, String taxonomy = UNSPECIFIED, bool spellingUseGcsConfig = UNSPECIFIED, String useCase = UNSPECIFIED, String location = UNSPECIFIED, int maxVariants = UNSPECIFIED, String plusOneOptions = UNSPECIFIED, String categoriesInclude = UNSPECIFIED, String boostBy = UNSPECIFIED, bool safe = UNSPECIFIED, bool categoriesUseGcsConfig = UNSPECIFIED, int maxResults = UNSPECIFIED, bool facetsUseGcsConfig = UNSPECIFIED, bool categoriesEnabled = UNSPECIFIED, String attributeFilter = UNSPECIFIED, bool clickTracking = UNSPECIFIED, String thumbnails = UNSPECIFIED, String language = UNSPECIFIED, String categoryRecommendationsInclude = UNSPECIFIED, String country = UNSPECIFIED, String rankBy = UNSPECIFIED, String restrictBy = UNSPECIFIED, String q = UNSPECIFIED, bool redirectsEnabled = UNSPECIFIED, bool redirectsUseGcsConfig = UNSPECIFIED, bool relatedQueriesEnabled = UNSPECIFIED, bool categoryRecommendationsUseGcsConfig = UNSPECIFIED, bool promotionsUseGcsConfig = UNSPECIFIED]) {
+Future&lt;Products&gt; list(String source, [String facetsInclude = UNSPECIFIED, bool plusOneEnabled = UNSPECIFIED, bool plusOneUseGcsConfig = UNSPECIFIED, bool facetsEnabled = UNSPECIFIED, bool relatedQueriesUseGcsConfig = UNSPECIFIED, bool promotionsEnabled = UNSPECIFIED, String channels = UNSPECIFIED, String currency = UNSPECIFIED, bool categoryRecommendationsEnabled = UNSPECIFIED, String facetsDiscover = UNSPECIFIED, String categoryRecommendationsCategory = UNSPECIFIED, int startIndex = UNSPECIFIED, String availability = UNSPECIFIED, String crowdBy = UNSPECIFIED, bool spellingEnabled = UNSPECIFIED, String taxonomy = UNSPECIFIED, bool spellingUseGcsConfig = UNSPECIFIED, String useCase = UNSPECIFIED, String location = UNSPECIFIED, int maxVariants = UNSPECIFIED, String categoriesInclude = UNSPECIFIED, String boostBy = UNSPECIFIED, bool safe = UNSPECIFIED, bool categoriesUseGcsConfig = UNSPECIFIED, int maxResults = UNSPECIFIED, bool facetsUseGcsConfig = UNSPECIFIED, bool categoriesEnabled = UNSPECIFIED, String plusOneStyles = UNSPECIFIED, String attributeFilter = UNSPECIFIED, bool clickTracking = UNSPECIFIED, String thumbnails = UNSPECIFIED, String language = UNSPECIFIED, String categoryRecommendationsInclude = UNSPECIFIED, String country = UNSPECIFIED, String rankBy = UNSPECIFIED, String restrictBy = UNSPECIFIED, String q = UNSPECIFIED, bool redirectsEnabled = UNSPECIFIED, bool redirectsUseGcsConfig = UNSPECIFIED, bool relatedQueriesEnabled = UNSPECIFIED, bool categoryRecommendationsUseGcsConfig = UNSPECIFIED, bool promotionsUseGcsConfig = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -123,7 +117,6 @@ Future&lt;Products&gt; list(String source, [String facetsInclude = UNSPECIFIED, 
   if (UNSPECIFIED != useCase) $queryParams["useCase"] = useCase;
   if (UNSPECIFIED != location) $queryParams["location"] = location;
   if (UNSPECIFIED != maxVariants) $queryParams["maxVariants"] = maxVariants;
-  if (UNSPECIFIED != plusOneOptions) $queryParams["plusOne.options"] = plusOneOptions;
   if (UNSPECIFIED != categoriesInclude) $queryParams["categories.include"] = categoriesInclude;
   if (UNSPECIFIED != boostBy) $queryParams["boostBy"] = boostBy;
   if (UNSPECIFIED != safe) $queryParams["safe"] = safe;
@@ -131,6 +124,7 @@ Future&lt;Products&gt; list(String source, [String facetsInclude = UNSPECIFIED, 
   if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
   if (UNSPECIFIED != facetsUseGcsConfig) $queryParams["facets.useGcsConfig"] = facetsUseGcsConfig;
   if (UNSPECIFIED != categoriesEnabled) $queryParams["categories.enabled"] = categoriesEnabled;
+  if (UNSPECIFIED != plusOneStyles) $queryParams["plusOne.styles"] = plusOneStyles;
   if (UNSPECIFIED != attributeFilter) $queryParams["attributeFilter"] = attributeFilter;
   if (UNSPECIFIED != clickTracking) $queryParams["clickTracking"] = clickTracking;
   if (UNSPECIFIED != thumbnails) $queryParams["thumbnails"] = thumbnails;
@@ -154,19 +148,13 @@ Future&lt;Products&gt; list(String source, [String facetsInclude = UNSPECIFIED, 
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "{source}/products").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Products&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Products.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Products.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -176,7 +164,7 @@ Future&lt;Products&gt; list(String source, [String facetsInclude = UNSPECIFIED, 
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:31.403Z</div>
+          <div>This page generated at 2012-06-13 18:45:11.143Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

@@ -50,19 +50,13 @@ Future&lt;User&gt; get(String userId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "users/{userId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;User&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = User.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; User.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -86,7 +80,7 @@ final UsersBlogsResourceResource blogs;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:14.296Z</div>
+          <div>This page generated at 2012-06-13 18:44:53.898Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

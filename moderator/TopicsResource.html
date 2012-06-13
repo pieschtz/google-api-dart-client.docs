@@ -53,19 +53,13 @@ Future&lt;Topic&gt; get(int seriesId, int topicId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/topics/{topicId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Topic&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Topic.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Topic.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -97,19 +91,13 @@ Future&lt;Topic&gt; insert(int seriesId, Topic content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Topic.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/topics").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Topic&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Topic.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Topic.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -141,19 +129,13 @@ Future&lt;TopicList&gt; list(int seriesId, [int maxResults = UNSPECIFIED, String
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/topics").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;TopicList&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = TopicList.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; TopicList.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -188,19 +170,13 @@ Future&lt;Topic&gt; update(int seriesId, int topicId, Topic content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Topic.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/topics/{topicId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Topic&gt;();
   final $http = new HttpRequest($url, "PUT", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Topic.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Topic.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -224,7 +200,7 @@ final TopicsSubmissionsResourceResource submissions;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:29.006Z</div>
+          <div>This page generated at 2012-06-13 18:45:08.725Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

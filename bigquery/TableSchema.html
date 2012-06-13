@@ -55,7 +55,7 @@ static TableSchema parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(TableSchema value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["fields"] = map(TableFieldSchema.serialize)(value.fields);
   return result;
 }
@@ -93,7 +93,7 @@ List&lt;TableFieldSchema&gt; fields;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:14.202Z</div>
+          <div>This page generated at 2012-06-13 18:44:53.757Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

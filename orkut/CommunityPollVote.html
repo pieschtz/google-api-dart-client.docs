@@ -57,7 +57,7 @@ static CommunityPollVote parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(CommunityPollVote value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["kind"] = identity(value.kind);
   result["optionIds"] = map(identity)(value.optionIds);
   result["isVotevisible"] = identity(value.isVotevisible);
@@ -123,7 +123,7 @@ List&lt;int&gt; optionIds;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:30.519Z</div>
+          <div>This page generated at 2012-06-13 18:45:10.393Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

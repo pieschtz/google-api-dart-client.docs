@@ -57,7 +57,7 @@ static RestMethodMediaUpload parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(RestMethodMediaUpload value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["maxSize"] = identity(value.maxSize);
   result["protocols"] = RestMethodMediaUploadProtocols.serialize(value.protocols);
   result["accept"] = map(identity)(value.accept);
@@ -123,7 +123,7 @@ RestMethodMediaUploadProtocols protocols;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:20.626Z</div>
+          <div>This page generated at 2012-06-13 18:45:00.230Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

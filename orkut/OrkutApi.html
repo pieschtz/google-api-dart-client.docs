@@ -29,12 +29,12 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="OrkutApi">
 <span class="show-code">Code</span>
-new <strong>OrkutApi</strong>([baseUrl = "https://www.googleapis.com/orkut/v2/", applicationName]) <a class="anchor-link" href="#OrkutApi"
+new <strong>OrkutApi</strong>([baseUrl = "https://www.googleapis.com/orkut/v2/", applicationName, authenticator]) <a class="anchor-link" href="#OrkutApi"
               title="Permalink to OrkutApi.OrkutApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-OrkutApi([this.baseUrl = "https://www.googleapis.com/orkut/v2/", this.applicationName]) { 
+OrkutApi([this.baseUrl = "https://www.googleapis.com/orkut/v2/", this.applicationName, this.authenticator]) { 
   _communityMembers = new CommunityMembersResource._internal(this);
   _activities = new ActivitiesResource._internal(this);
   _communityPollComments = new CommunityPollCommentsResource._internal(this);
@@ -273,6 +273,19 @@ final String applicationName;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to OrkutApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="baseUrl">
 <span class="show-code">Code</span>
 final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
@@ -385,7 +398,7 @@ String userIp;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:29.456Z</div>
+          <div>This page generated at 2012-06-13 18:45:09.268Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

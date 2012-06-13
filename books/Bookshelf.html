@@ -64,7 +64,7 @@ static Bookshelf parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Bookshelf value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["kind"] = identity(value.kind);
   result["description"] = identity(value.description);
   result["created"] = identity(value.created);
@@ -229,7 +229,7 @@ String volumesLastUpdated;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:15.330Z</div>
+          <div>This page generated at 2012-06-13 18:44:54.940Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

@@ -1,0 +1,157 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>OAuth2 Class / oauth2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="oauth2" data-type="OAuth2">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../oauth2.html">oauth2</a> &rsaquo; <a href="../oauth2/OAuth2.html">OAuth2</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>OAuth2</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>An OAuth2 authentication context.</p>
+</div>
+<h3>Implements</h3>
+<p>
+<span class="type-box"><span class="icon-interface"></span><a href="../http/Authenticator.html">Authenticator</a></span></p>
+<h3>Constructors</h3>
+<div class="method"><h4 id="OAuth2">
+<span class="show-code">Code</span>
+new <strong>OAuth2</strong>(<a href="../dart_core/String.html">String</a> _clientId, <a href="../dart_core/List.html">List</a> _scopes, [<a href="../dart_core/String.html">String</a> provider = "https://accounts.google.com/o/oauth2/"]) <a class="anchor-link" href="#OAuth2"
+              title="Permalink to OAuth2.OAuth2">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+OAuth2(String this._clientId, List&lt;String&gt; this._scopes,
+    [String provider = "https://accounts.google.com/o/oauth2/"])
+    : _provider = provider {
+  _channel = _createFutureChannel();
+  try {
+    __token = _storedToken;  // Pull cached token from localStorage
+  } catch (final e) {}
+  // Attempt an immediate login, we may already be authorized.
+  login(immediate:true);
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="authenticate">
+<span class="show-code">Code</span>
+<a href="../http/HttpRequest.html">HttpRequest</a> <strong>authenticate</strong>(<a href="../http/HttpRequest.html">HttpRequest</a> request) <a class="anchor-link" href="#authenticate"
+              title="Permalink to OAuth2.authenticate">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+HttpRequest authenticate(HttpRequest request) =&gt; login().transform((token) {
+  request.headers["Authorization"] = "Bearer ${token.data}";
+  return request;
+});
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="login">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>login</strong>([immediate = null]) <a class="anchor-link" href="#login"
+              title="Permalink to OAuth2.login">#</a></h4>
+<div class="doc">
+<p>Attempt to authenticate.
+If you have an existing valid token, it will be immediately returned.
+If you have an expired token, it will be silently renewed (override
+  with immediate:false)
+If you have no token, a popup prompt will be displayed.
+If the user declines, closes the popup, or the service returns a token
+that cannot be validated, an exception will be delivered.</p>
+<pre class="source">
+Future&lt;Token&gt; login([immediate=null]) {
+  if (token != null) {
+    if (token.expired) {
+      if (immediate == null) {
+        immediate = true; // We should be able to simply renew
+      }
+    } else { // We already have a good token
+      return new Future&lt;Token&gt;.immediate(token);
+    }
+  }
+  if (immediate == null) {
+    immediate = false;
+  }
+
+  // Login may already be in progress
+  if (_tokenFuture != null) {
+    // An in-progress request will satisfy an immediate request
+    // (even if it's not immediate).
+    if (!immediate) {
+      return _tokenFuture.chain((v) {
+        if (v is Token) return new Future.immediate(v);
+        return login(immediate:immediate);
+      });
+    }
+  } else {
+    Completer&lt;Token&gt; tokenCompleter = new Completer();
+    _tokenFuture = _mergeErrors(tokenCompleter.future);
+    _tokenFuture.then((v) {
+      _token = (v is Token) ? v : null;
+      _tokenFuture = null;
+    });
+    
+    _tokenCompleter = _wrapValidation(tokenCompleter);
+
+    // Synchronous if the channel is already open -&gt; avoids popup blocker
+    _channel.then((proxyChannel) {
+      String uri = _getAuthorizeUri(immediate);
+      if (immediate) {
+        IFrameElement iframe = _iframe(uri);
+        _tokenCompleter.future.then((v) =&gt; iframe.remove());
+        _tokenCompleter.future.handleException((e) { iframe.remove(); });
+      } else {
+        Window popup = _popup(uri);
+        new _WindowPoller(_tokenCompleter, popup).poll();
+      }
+    });
+  }
+  // Convert back to standard exception-handling mechanism before returning.
+  return _tokenFuture.transform((v) {
+    if (v is! Token) throw v;
+    return v;
+  });
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:token">
+<span class="show-code">Code</span>
+<a href="../oauth2/Token.html">Token</a> <strong>get token</strong>() <a class="anchor-link" href="#get:token"
+              title="Permalink to OAuth2.get token">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Token get token() =&gt; __token;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 18:45:09.151Z</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

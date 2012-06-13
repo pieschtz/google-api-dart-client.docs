@@ -57,7 +57,7 @@ static FileLabels parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(FileLabels value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["hidden"] = identity(value.hidden);
   result["starred"] = identity(value.starred);
   result["trashed"] = identity(value.trashed);
@@ -123,7 +123,7 @@ bool trashed;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:20.856Z</div>
+          <div>This page generated at 2012-06-13 18:45:00.461Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

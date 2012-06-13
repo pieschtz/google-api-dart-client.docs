@@ -57,7 +57,7 @@ static SiteVerificationWebResourceResource parse(Map&lt;String, Object&gt; json)
 <pre class="source">
 static Object serialize(SiteVerificationWebResourceResource value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["owners"] = map(identity)(value.owners);
   result["id"] = identity(value.id);
   result["site"] = SiteVerificationWebResourceResourceSite.serialize(value.site);
@@ -124,7 +124,7 @@ SiteVerificationWebResourceResourceSite site;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:31.911Z</div>
+          <div>This page generated at 2012-06-13 18:45:11.704Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

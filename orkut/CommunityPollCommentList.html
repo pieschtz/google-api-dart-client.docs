@@ -60,7 +60,7 @@ static CommunityPollCommentList parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(CommunityPollCommentList value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["nextPageToken"] = identity(value.nextPageToken);
   result["kind"] = identity(value.kind);
   result["items"] = map(CommunityPollComment.serialize)(value.items);
@@ -173,7 +173,7 @@ String prevPageToken;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:30.481Z</div>
+          <div>This page generated at 2012-06-13 18:45:10.270Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

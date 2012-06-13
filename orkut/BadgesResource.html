@@ -53,19 +53,13 @@ Future&lt;Badge&gt; get(String userId, String badgeId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "people/{userId}/badges/{badgeId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Badge&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Badge.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Badge.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -93,19 +87,13 @@ Future&lt;BadgeList&gt; list(String userId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "people/{userId}/badges").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;BadgeList&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = BadgeList.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; BadgeList.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -115,7 +103,7 @@ Future&lt;BadgeList&gt; list(String userId) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:29.887Z</div>
+          <div>This page generated at 2012-06-13 18:45:09.696Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

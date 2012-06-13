@@ -58,7 +58,7 @@ static JobConfigurationLink parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(JobConfigurationLink value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["createDisposition"] = identity(value.createDisposition);
   result["writeDisposition"] = identity(value.writeDisposition);
   result["destinationTable"] = TableReference.serialize(value.destinationTable);
@@ -139,7 +139,7 @@ String writeDisposition;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:13.636Z</div>
+          <div>This page generated at 2012-06-13 18:44:53.220Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

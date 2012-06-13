@@ -62,7 +62,7 @@ static Job parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Job value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["status"] = JobStatus.serialize(value.status);
   result["kind"] = identity(value.kind);
   result["statistics"] = JobStatistics.serialize(value.statistics);
@@ -199,7 +199,7 @@ JobStatus status;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:13.592Z</div>
+          <div>This page generated at 2012-06-13 18:44:53.176Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

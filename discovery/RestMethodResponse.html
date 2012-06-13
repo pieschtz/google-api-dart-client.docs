@@ -55,7 +55,7 @@ static RestMethodResponse parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(RestMethodResponse value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["\$ref"] = identity(value.$ref);
   return result;
 }
@@ -93,7 +93,7 @@ String $ref;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:20.705Z</div>
+          <div>This page generated at 2012-06-13 18:45:00.261Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

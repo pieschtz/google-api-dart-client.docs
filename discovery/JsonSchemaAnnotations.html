@@ -55,7 +55,7 @@ static JsonSchemaAnnotations parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(JsonSchemaAnnotations value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["required"] = map(identity)(value.required);
   return result;
 }
@@ -93,7 +93,7 @@ List&lt;String&gt; required;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:20.547Z</div>
+          <div>This page generated at 2012-06-13 18:45:00.151Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

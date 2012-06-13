@@ -76,7 +76,7 @@ static CommunityPoll parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(CommunityPoll value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["links"] = map(OrkutLinkResource.serialize)(value.links);
   result["isMultipleAnswers"] = identity(value.isMultipleAnswers);
   result["image"] = CommunityPollImage.serialize(value.image);
@@ -415,7 +415,7 @@ List&lt;int&gt; votedOptions;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:30.442Z</div>
+          <div>This page generated at 2012-06-13 18:45:10.212Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

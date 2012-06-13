@@ -56,19 +56,13 @@ Future&lt;Comment&gt; get(String blogId, String postId, String commentId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "blogs/{blogId}/posts/{postId}/comments/{commentId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Comment&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Comment.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Comment.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -103,19 +97,13 @@ Future&lt;CommentList&gt; list(String blogId, String postId, [String startDate =
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "blogs/{blogId}/posts/{postId}/comments").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;CommentList&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = CommentList.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; CommentList.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -125,7 +113,7 @@ Future&lt;CommentList&gt; list(String blogId, String postId, [String startDate =
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:14.293Z</div>
+          <div>This page generated at 2012-06-13 18:44:53.896Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

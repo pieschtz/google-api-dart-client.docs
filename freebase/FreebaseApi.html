@@ -29,12 +29,12 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="FreebaseApi">
 <span class="show-code">Code</span>
-new <strong>FreebaseApi</strong>([baseUrl = "https://www.googleapis.com/freebase/v1/", applicationName]) <a class="anchor-link" href="#FreebaseApi"
+new <strong>FreebaseApi</strong>([baseUrl = "https://www.googleapis.com/freebase/v1/", applicationName, authenticator]) <a class="anchor-link" href="#FreebaseApi"
               title="Permalink to FreebaseApi.FreebaseApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-FreebaseApi([this.baseUrl = "https://www.googleapis.com/freebase/v1/", this.applicationName]) { 
+FreebaseApi([this.baseUrl = "https://www.googleapis.com/freebase/v1/", this.applicationName, this.authenticator]) { 
   _text = new TextResource._internal(this);
 }
 </pre>
@@ -69,19 +69,13 @@ Future image(List&lt;String&gt; id, [int maxwidth = UNSPECIFIED, int maxheight =
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "image{/id*}").generate($pathParams, $queryParams);
-  final $completer = new Completer();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = identity(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -118,19 +112,13 @@ Future mqlread(String query, [String lang = UNSPECIFIED, bool htmlEscape = UNSPE
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "mqlread").generate($pathParams, $queryParams);
-  final $completer = new Completer();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = identity(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -184,6 +172,19 @@ final <a href="../dart_core/String.html">String</a>         <strong>applicationN
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
 final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to FreebaseApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
 </pre>
 </div>
 </div>
@@ -299,7 +300,7 @@ String userIp;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:20.971Z</div>
+          <div>This page generated at 2012-06-13 18:45:00.579Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

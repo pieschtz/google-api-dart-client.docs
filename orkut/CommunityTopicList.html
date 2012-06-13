@@ -60,7 +60,7 @@ static CommunityTopicList parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(CommunityTopicList value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["nextPageToken"] = identity(value.nextPageToken);
   result["kind"] = identity(value.kind);
   result["items"] = map(CommunityTopic.serialize)(value.items);
@@ -170,7 +170,7 @@ String prevPageToken;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:30.620Z</div>
+          <div>This page generated at 2012-06-13 18:45:10.434Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

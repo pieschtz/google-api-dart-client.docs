@@ -58,7 +58,7 @@ static Annotations parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Annotations value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["nextPageToken"] = identity(value.nextPageToken);
   result["items"] = map(Annotation.serialize)(value.items);
   result["kind"] = identity(value.kind);
@@ -140,7 +140,7 @@ int totalItems;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:15.182Z</div>
+          <div>This page generated at 2012-06-13 18:44:54.793Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

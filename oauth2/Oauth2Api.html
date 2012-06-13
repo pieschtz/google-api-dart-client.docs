@@ -29,12 +29,12 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="Oauth2Api">
 <span class="show-code">Code</span>
-new <strong>Oauth2Api</strong>([baseUrl = "https://www.googleapis.com//", applicationName]) <a class="anchor-link" href="#Oauth2Api"
+new <strong>Oauth2Api</strong>([baseUrl = "https://www.googleapis.com//", applicationName, authenticator]) <a class="anchor-link" href="#Oauth2Api"
               title="Permalink to Oauth2Api.Oauth2Api">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-Oauth2Api([this.baseUrl = "https://www.googleapis.com//", this.applicationName]) { 
+Oauth2Api([this.baseUrl = "https://www.googleapis.com//", this.applicationName, this.authenticator]) { 
   _userinfo = new UserinfoResource._internal(this);
 }
 </pre>
@@ -63,19 +63,13 @@ Future&lt;Tokeninfo&gt; tokeninfo([String accessToken = UNSPECIFIED, String idTo
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "oauth2/v2/tokeninfo").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Tokeninfo&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Tokeninfo.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Tokeninfo.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -129,6 +123,19 @@ final <a href="../dart_core/String.html">String</a>         <strong>applicationN
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
 final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to Oauth2Api.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
 </pre>
 </div>
 </div>
@@ -244,7 +251,7 @@ String userIp;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:29.349Z</div>
+          <div>This page generated at 2012-06-13 18:45:09.059Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

@@ -63,7 +63,7 @@ static Volume parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Volume value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["kind"] = identity(value.kind);
   result["accessInfo"] = VolumeAccessInfo.serialize(value.accessInfo);
   result["searchInfo"] = VolumeSearchInfo.serialize(value.searchInfo);
@@ -217,7 +217,7 @@ VolumeVolumeInfo volumeInfo;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:15.548Z</div>
+          <div>This page generated at 2012-06-13 18:44:55.159Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

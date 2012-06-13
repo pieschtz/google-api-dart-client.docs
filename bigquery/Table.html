@@ -67,7 +67,7 @@ static Table parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Table value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["kind"] = identity(value.kind);
   result["lastModifiedTime"] = identity(value.lastModifiedTime);
   result["description"] = identity(value.description);
@@ -274,7 +274,7 @@ TableReference tableReference;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:14.107Z</div>
+          <div>This page generated at 2012-06-13 18:44:53.708Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

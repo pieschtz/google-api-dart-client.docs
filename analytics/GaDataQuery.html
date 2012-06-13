@@ -64,7 +64,7 @@ static GaDataQuery parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(GaDataQuery value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["max-results"] = identity(value.maxResults);
   result["sort"] = map(identity)(value.sort);
   result["dimensions"] = identity(value.dimensions);
@@ -228,7 +228,7 @@ int startIndex;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:11.734Z</div>
+          <div>This page generated at 2012-06-13 18:44:51.266Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

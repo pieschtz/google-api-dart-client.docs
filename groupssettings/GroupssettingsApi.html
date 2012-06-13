@@ -29,12 +29,12 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="GroupssettingsApi">
 <span class="show-code">Code</span>
-new <strong>GroupssettingsApi</strong>([baseUrl = "https://www.googleapis.com/groups/v1/groups/", applicationName]) <a class="anchor-link" href="#GroupssettingsApi"
+new <strong>GroupssettingsApi</strong>([baseUrl = "https://www.googleapis.com/groups/v1/groups/", applicationName, authenticator]) <a class="anchor-link" href="#GroupssettingsApi"
               title="Permalink to GroupssettingsApi.GroupssettingsApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-GroupssettingsApi([this.baseUrl = "https://www.googleapis.com/groups/v1/groups/", this.applicationName]) { 
+GroupssettingsApi([this.baseUrl = "https://www.googleapis.com/groups/v1/groups/", this.applicationName, this.authenticator]) { 
   _groups = new GroupsResource._internal(this);
 }
 </pre>
@@ -90,6 +90,19 @@ final <a href="../dart_core/String.html">String</a>         <strong>applicationN
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
 final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to GroupssettingsApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
 </pre>
 </div>
 </div>
@@ -205,7 +218,7 @@ String userIp;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:22.272Z</div>
+          <div>This page generated at 2012-06-13 18:45:01.892Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

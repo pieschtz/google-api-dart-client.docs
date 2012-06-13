@@ -60,7 +60,7 @@ static TopicCounters parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(TopicCounters value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["users"] = identity(value.users);
   result["noneVotes"] = identity(value.noneVotes);
   result["videoSubmissions"] = identity(value.videoSubmissions);
@@ -168,7 +168,7 @@ int videoSubmissions;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:29.212Z</div>
+          <div>This page generated at 2012-06-13 18:45:08.937Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

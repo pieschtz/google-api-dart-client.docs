@@ -75,7 +75,7 @@ static Products parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Products value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["promotions"] = map(ProductsPromotions.serialize)(value.promotions);
   result["selfLink"] = identity(value.selfLink);
   result["kind"] = identity(value.kind);
@@ -393,7 +393,7 @@ int totalItems;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:31.426Z</div>
+          <div>This page generated at 2012-06-13 18:45:11.166Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

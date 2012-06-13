@@ -51,19 +51,13 @@ Future clear(String calendarId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/clear").generate($pathParams, $queryParams);
-  final $completer = new Completer();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = identity(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -91,19 +85,13 @@ Future delete(String calendarId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}").generate($pathParams, $queryParams);
-  final $completer = new Completer();
   final $http = new HttpRequest($url, "DELETE", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = identity(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -131,19 +119,13 @@ Future&lt;Calendar&gt; get(String calendarId) {
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Calendar&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Calendar.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Calendar.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -172,19 +154,13 @@ Future&lt;Calendar&gt; insert(Calendar content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Calendar.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "calendars").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Calendar&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Calendar.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Calendar.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -216,19 +192,13 @@ Future&lt;Calendar&gt; patch(String calendarId, Calendar content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Calendar.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Calendar&gt;();
   final $http = new HttpRequest($url, "PATCH", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Calendar.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Calendar.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -260,19 +230,13 @@ Future&lt;Calendar&gt; update(String calendarId, Calendar content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Calendar.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;Calendar&gt;();
   final $http = new HttpRequest($url, "PUT", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = Calendar.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Calendar.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -282,7 +246,7 @@ Future&lt;Calendar&gt; update(String calendarId, Calendar content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:16.143Z</div>
+          <div>This page generated at 2012-06-13 18:44:55.706Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

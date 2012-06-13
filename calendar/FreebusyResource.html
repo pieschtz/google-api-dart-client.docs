@@ -51,19 +51,13 @@ Future&lt;FreeBusyResponse&gt; query(FreeBusyRequest content) {
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(FreeBusyRequest.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "freeBusy").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;FreeBusyResponse&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = FreeBusyResponse.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; FreeBusyResponse.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -73,7 +67,7 @@ Future&lt;FreeBusyResponse&gt; query(FreeBusyRequest content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:16.028Z</div>
+          <div>This page generated at 2012-06-13 18:44:55.638Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

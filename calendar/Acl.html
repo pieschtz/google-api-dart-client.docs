@@ -58,7 +58,7 @@ static Acl parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Acl value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["nextPageToken"] = identity(value.nextPageToken);
   result["items"] = map(AclRule.serialize)(value.items);
   result["kind"] = identity(value.kind);
@@ -138,7 +138,7 @@ String nextPageToken;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:16.269Z</div>
+          <div>This page generated at 2012-06-13 18:44:55.879Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

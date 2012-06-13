@@ -86,7 +86,7 @@ static Event parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Event value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["creator"] = EventCreator.serialize(value.creator);
   result["organizer"] = EventOrganizer.serialize(value.organizer);
   result["id"] = identity(value.id);
@@ -580,7 +580,7 @@ String visibility;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:17.173Z</div>
+          <div>This page generated at 2012-06-13 18:44:56.775Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

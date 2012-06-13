@@ -60,7 +60,7 @@ static TaskList parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(TaskList value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["kind"] = identity(value.kind);
   result["title"] = identity(value.title);
   result["updated"] = identity(value.updated);
@@ -168,7 +168,7 @@ String updated;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:32.538Z</div>
+          <div>This page generated at 2012-06-13 18:45:12.333Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

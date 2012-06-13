@@ -57,19 +57,13 @@ Future&lt;CommunityPollComment&gt; insert(int communityId, String pollId, Commun
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(CommunityPollComment.serialize(content));
   final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/polls/{pollId}/comments").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;CommunityPollComment&gt;();
   final $http = new HttpRequest($url, "POST", $headers);
-  final $request = $http.request($body);
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = CommunityPollComment.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; CommunityPollComment.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -103,19 +97,13 @@ Future&lt;CommunityPollCommentList&gt; list(int communityId, String pollId, [Str
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/polls/{pollId}/comments").generate($pathParams, $queryParams);
-  final $completer = new Completer&lt;CommunityPollCommentList&gt;();
   final $http = new HttpRequest($url, "GET", $headers);
-  final $request = $http.request();
-  $request.handleException(($ex) { $completer.completeException($ex); return true; });
-  $request.then((final $text) {
-    var $result;
-    bool $success = false;
-    try {
-      $result = CommunityPollCommentList.parse(JSON.parse($text)); $success = true;
-    } catch (final $ex) { $completer.completeException($ex); }
-    if ($success) $completer.complete($result);
-  });
-  return $completer.future;
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; CommunityPollCommentList.parse(JSON.parse($text)));
 }
 </pre>
 </div>
@@ -125,7 +113,7 @@ Future&lt;CommunityPollCommentList&gt; list(int communityId, String pollId, [Str
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:29.610Z</div>
+          <div>This page generated at 2012-06-13 18:45:09.372Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

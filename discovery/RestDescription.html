@@ -77,7 +77,7 @@ static RestDescription parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(RestDescription value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["protocol"] = identity(value.protocol);
   result["methods"] = mapValues(RestMethod.serialize)(value.methods);
   result["labels"] = map(identity)(value.labels);
@@ -423,7 +423,7 @@ String version;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:20.570Z</div>
+          <div>This page generated at 2012-06-13 18:45:00.175Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

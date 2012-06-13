@@ -58,7 +58,7 @@ static Vote parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(Vote value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["vote"] = identity(value.vote);
   result["flag"] = identity(value.flag);
   result["id"] = VoteId.serialize(value.id);
@@ -138,7 +138,7 @@ String vote;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:29.233Z</div>
+          <div>This page generated at 2012-06-13 18:45:08.960Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

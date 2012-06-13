@@ -58,7 +58,7 @@ static ActivityObject parse(Map&lt;String, Object&gt; json) {
 <pre class="source">
 static Object serialize(ActivityObject value) {
   if (value == null) return null;
-  Map&lt;String, Object&gt; result = {};
+  final result = {};
   result["content"] = identity(value.content);
   result["items"] = map(OrkutActivityobjectsResource.serialize)(value.items);
   result["replies"] = ActivityObjectReplies.serialize(value.replies);
@@ -141,7 +141,7 @@ ActivityObjectReplies replies;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-12 17:26:30.057Z</div>
+          <div>This page generated at 2012-06-13 18:45:09.818Z</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>
