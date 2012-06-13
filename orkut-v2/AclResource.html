@@ -1,0 +1,76 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AclResource Class / orkut-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="orkut-v2" data-type="AclResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../orkut-v2.html">orkut-v2</a> &rsaquo; <a href="../orkut-v2/AclResource.html">AclResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AclResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> activityId, <a href="../dart_core/String.html">String</a> userId) <a class="anchor-link" href="#delete"
+              title="Permalink to AclResource.delete">#</a></h4>
+<div class="doc">
+<p>Excludes an element from the ACL of the activity.
+
+<span class="param">activityId</span> ID of the activity.
+
+<span class="param">userId</span> ID of the user to be removed from the activity.</p>
+<pre class="source">
+Future delete(String activityId, String userId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["activityId"] = activityId;
+  $pathParams["userId"] = userId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "activities/{activityId}/acl/{userId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:56.021</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

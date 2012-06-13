@@ -1,0 +1,137 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>VolumesResource Class / books-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books-v1" data-type="VolumesResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/VolumesResource.html">VolumesResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>VolumesResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> country = UNSPECIFIED, <a href="../books-v1/VolumesResourceGetProjection.html">VolumesResourceGetProjection</a> projection = UNSPECIFIED, <a href="../dart_core/String.html">String</a> partner = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to VolumesResource.get">#</a></h4>
+<div class="doc">
+<p>Gets volume information for a single volume.
+
+<span class="param">volumeId</span> ID of volume to retrieve.</p>
+<pre class="source">
+Future&lt;Volume&gt; get(String volumeId, [String source = UNSPECIFIED, String country = UNSPECIFIED, VolumesResourceGetProjection projection = UNSPECIFIED, String partner = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["volumeId"] = volumeId;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (UNSPECIFIED != country) $queryParams["country"] = country;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (UNSPECIFIED != partner) $queryParams["partner"] = partner;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Volume.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> q, [<a href="../books-v1/VolumesResourceListOrderBy.html">VolumesResourceListOrderBy</a> orderBy = UNSPECIFIED, <a href="../books-v1/VolumesResourceListProjection.html">VolumesResourceListProjection</a> projection = UNSPECIFIED, <a href="../books-v1/VolumesResourceListLibraryRestrict.html">VolumesResourceListLibraryRestrict</a> libraryRestrict = UNSPECIFIED, <a href="../dart_core/String.html">String</a> langRestrict = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> showPreorders = UNSPECIFIED, <a href="../books-v1/VolumesResourceListPrintType.html">VolumesResourceListPrintType</a> printType = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../books-v1/VolumesResourceListFilter.html">VolumesResourceListFilter</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../books-v1/VolumesResourceListDownload.html">VolumesResourceListDownload</a> download = UNSPECIFIED, <a href="../dart_core/String.html">String</a> partner = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to VolumesResource.list">#</a></h4>
+<div class="doc">
+<p>Performs a book search.
+
+<span class="param">q</span> Full-text search query string.</p>
+<pre class="source">
+Future&lt;Volumes&gt; list(String q, [VolumesResourceListOrderBy orderBy = UNSPECIFIED, VolumesResourceListProjection projection = UNSPECIFIED, VolumesResourceListLibraryRestrict libraryRestrict = UNSPECIFIED, String langRestrict = UNSPECIFIED, bool showPreorders = UNSPECIFIED, VolumesResourceListPrintType printType = UNSPECIFIED, int maxResults = UNSPECIFIED, VolumesResourceListFilter filter = UNSPECIFIED, String source = UNSPECIFIED, int startIndex = UNSPECIFIED, VolumesResourceListDownload download = UNSPECIFIED, String partner = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["q"] = q;
+  if (UNSPECIFIED != orderBy) $queryParams["orderBy"] = orderBy;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (UNSPECIFIED != libraryRestrict) $queryParams["libraryRestrict"] = libraryRestrict;
+  if (UNSPECIFIED != langRestrict) $queryParams["langRestrict"] = langRestrict;
+  if (UNSPECIFIED != showPreorders) $queryParams["showPreorders"] = showPreorders;
+  if (UNSPECIFIED != printType) $queryParams["printType"] = printType;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != filter) $queryParams["filter"] = filter;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
+  if (UNSPECIFIED != download) $queryParams["download"] = download;
+  if (UNSPECIFIED != partner) $queryParams["partner"] = partner;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "volumes").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Volumes.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="associated">
+<span class="show-code">Code</span>
+final <a href="../books-v1/VolumesAssociatedResourceResource.html">VolumesAssociatedResourceResource</a>         <strong>associated</strong> <a class="anchor-link"
+            href="#associated"
+            title="Permalink to VolumesResource.associated">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final VolumesAssociatedResourceResource associated;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:40.810</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

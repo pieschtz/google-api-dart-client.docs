@@ -1,0 +1,249 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Dataset Class / bigquery-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery-v2" data-type="Dataset">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/Dataset.html">Dataset</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Dataset</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Dataset</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../bigquery-v2/Dataset.html">Dataset</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Dataset.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Dataset parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Dataset();
+  result.kind = identity(json["kind"]);
+  result.description = identity(json["description"]);
+  result.datasetReference = DatasetReference.parse(json["datasetReference"]);
+  result.creationTime = identity(json["creationTime"]);
+  result.access = map(DatasetAccess.parse)(json["access"]);
+  result.etag = identity(json["etag"]);
+  result.friendlyName = identity(json["friendlyName"]);
+  result.lastModifiedTime = identity(json["lastModifiedTime"]);
+  result.id = identity(json["id"]);
+  result.selfLink = identity(json["selfLink"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/Dataset.html">Dataset</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Dataset.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Dataset value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["description"] = identity(value.description);
+  result["datasetReference"] = DatasetReference.serialize(value.datasetReference);
+  result["creationTime"] = identity(value.creationTime);
+  result["access"] = map(DatasetAccess.serialize)(value.access);
+  result["etag"] = identity(value.etag);
+  result["friendlyName"] = identity(value.friendlyName);
+  result["lastModifiedTime"] = identity(value.lastModifiedTime);
+  result["id"] = identity(value.id);
+  result["selfLink"] = identity(value.selfLink);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Dataset.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="access">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>access</strong> <a class="anchor-link"
+            href="#access"
+            title="Permalink to Dataset.access">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Describes users' rights on the dataset. You can assign the same role to multiple
+users, and assign multiple roles to the same user. Default values assigned to a new dataset are
+as follows: OWNER - Project owners, dataset creator READ - Project readers WRITE - Project
+writers See ACLs and Rights for a description of these rights. If you specify any of these roles
+when creating a dataset, the assigned roles will overwrite the defaults listed above. To revoke
+rights to a dataset, call datasets.update() and omit the names of anyone whose rights you wish to
+revoke. However, every dataset must have at least one entity granted OWNER role. Each access
+object can have only one of the following members: userByEmail, groupByEmail, domain, or
+allAuthenticatedUsers.</p>
+<pre class="source">
+List&lt;DatasetAccess&gt; access;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="creationTime">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>creationTime</strong> <a class="anchor-link"
+            href="#creationTime"
+            title="Permalink to Dataset.creationTime">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> The time when this dataset was created, in milliseconds since the epoch.</p>
+<pre class="source">
+String creationTime;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="datasetReference">
+<span class="show-code">Code</span>
+<a href="../bigquery-v2/DatasetReference.html">DatasetReference</a>         <strong>datasetReference</strong> <a class="anchor-link"
+            href="#datasetReference"
+            title="Permalink to Dataset.datasetReference">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Required</code> Reference identifying dataset.</p>
+<pre class="source">
+DatasetReference datasetReference;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to Dataset.description">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> A user-friendly string description for the dataset. This might be shown in BigQuery UI
+for browsing the dataset.</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to Dataset.etag">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> A hash of this resource.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="friendlyName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>friendlyName</strong> <a class="anchor-link"
+            href="#friendlyName"
+            title="Permalink to Dataset.friendlyName">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> A descriptive name for this dataset, which might be shown in any BigQuery user
+interfaces for browsing the dataset. Use datasetId for making API calls.</p>
+<pre class="source">
+String friendlyName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Dataset.id">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> The fully-qualified unique name of this dataset in the format projectId:datasetId.
+The dataset name without the project name is given in the datasetId field. When creating a new
+dataset, leave this field blank, and instead specify the datasetId field.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Dataset.kind">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> The resource type.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="lastModifiedTime">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>lastModifiedTime</strong> <a class="anchor-link"
+            href="#lastModifiedTime"
+            title="Permalink to Dataset.lastModifiedTime">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> The date when this dataset or any of its tables was last modified, in milliseconds
+since the epoch.</p>
+<pre class="source">
+String lastModifiedTime;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to Dataset.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Output-only</code> An URL that can be used to access this resource again. You can use this URL in Get
+or Update requests to this resource.</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:39.211</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,96 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>DataGaResourceResource Class / analytics-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="analytics-v3" data-type="DataGaResourceResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/DataGaResourceResource.html">DataGaResourceResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>DataGaResourceResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> ids, <a href="../dart_core/String.html">String</a> startDate, <a href="../dart_core/String.html">String</a> endDate, <a href="../dart_core/String.html">String</a> metrics, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sort = UNSPECIFIED, <a href="../dart_core/String.html">String</a> dimensions = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/String.html">String</a> segment = UNSPECIFIED, <a href="../dart_core/String.html">String</a> filters = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to DataGaResourceResource.get">#</a></h4>
+<div class="doc">
+<p>Returns Analytics data for a profile.
+
+<span class="param">ids</span> Unique table ID for retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the</p>
+<pre><code>   Analytics profile ID.
+</code></pre>
+<p>
+<span class="param">startDate</span> Start date for fetching Analytics data. All requests should specify a start date formatted as YYYY-</p>
+<pre><code>   MM-DD.
+</code></pre>
+<p>
+<span class="param">endDate</span> End date for fetching Analytics data. All requests should specify an end date formatted as YYYY-MM-</p>
+<pre><code>   DD.
+</code></pre>
+<p>
+<span class="param">metrics</span> A comma-separated list of Analytics metrics. E.g., 'ga:visits,ga:pageviews'. At least one metric</p>
+<pre><code>   must be specified.
+</code></pre>
+<pre class="source">
+Future&lt;GaData&gt; get(String ids, String startDate, String endDate, String metrics, [int maxResults = UNSPECIFIED, String sort = UNSPECIFIED, String dimensions = UNSPECIFIED, int startIndex = UNSPECIFIED, String segment = UNSPECIFIED, String filters = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["ids"] = ids;
+  $pathParams["start-date"] = startDate;
+  $pathParams["end-date"] = endDate;
+  $pathParams["metrics"] = metrics;
+  if (UNSPECIFIED != maxResults) $queryParams["max-results"] = maxResults;
+  if (UNSPECIFIED != sort) $queryParams["sort"] = sort;
+  if (UNSPECIFIED != dimensions) $queryParams["dimensions"] = dimensions;
+  if (UNSPECIFIED != startIndex) $queryParams["start-index"] = startIndex;
+  if (UNSPECIFIED != segment) $queryParams["segment"] = segment;
+  if (UNSPECIFIED != filters) $queryParams["filters"] = filters;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "data/ga").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; GaData.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:37.330</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

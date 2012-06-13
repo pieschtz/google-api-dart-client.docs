@@ -1,0 +1,176 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>FreeBusyRequest Class / calendar-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="calendar-v3" data-type="FreeBusyRequest">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/FreeBusyRequest.html">FreeBusyRequest</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>FreeBusyRequest</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>FreeBusyRequest</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../calendar-v3/FreeBusyRequest.html">FreeBusyRequest</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to FreeBusyRequest.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static FreeBusyRequest parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new FreeBusyRequest();
+  result.calendarExpansionMax = identity(json["calendarExpansionMax"]);
+  result.groupExpansionMax = identity(json["groupExpansionMax"]);
+  result.timeMax = identity(json["timeMax"]);
+  result.items = map(FreeBusyRequestItem.parse)(json["items"]);
+  result.timeMin = identity(json["timeMin"]);
+  result.timeZone = identity(json["timeZone"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/FreeBusyRequest.html">FreeBusyRequest</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to FreeBusyRequest.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(FreeBusyRequest value) {
+  if (value == null) return null;
+  final result = {};
+  result["calendarExpansionMax"] = identity(value.calendarExpansionMax);
+  result["groupExpansionMax"] = identity(value.groupExpansionMax);
+  result["timeMax"] = identity(value.timeMax);
+  result["items"] = map(FreeBusyRequestItem.serialize)(value.items);
+  result["timeMin"] = identity(value.timeMin);
+  result["timeZone"] = identity(value.timeZone);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to FreeBusyRequest.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="calendarExpansionMax">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>calendarExpansionMax</strong> <a class="anchor-link"
+            href="#calendarExpansionMax"
+            title="Permalink to FreeBusyRequest.calendarExpansionMax">#</a>
+        </h4>
+        <div class="doc">
+<p>Maximal number of calendars for which FreeBusy information is to be provided. Optional.</p>
+<pre class="source">
+int calendarExpansionMax;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="groupExpansionMax">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>groupExpansionMax</strong> <a class="anchor-link"
+            href="#groupExpansionMax"
+            title="Permalink to FreeBusyRequest.groupExpansionMax">#</a>
+        </h4>
+        <div class="doc">
+<p>Maximal number of calendar identifiers to be provided for a single group. Optional. An error will
+be returned for a group with more members than this value.</p>
+<pre class="source">
+int groupExpansionMax;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="items">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>items</strong> <a class="anchor-link"
+            href="#items"
+            title="Permalink to FreeBusyRequest.items">#</a>
+        </h4>
+        <div class="doc">
+<p>List of calendars and/or groups to query.</p>
+<pre class="source">
+List&lt;FreeBusyRequestItem&gt; items;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="timeMax">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>timeMax</strong> <a class="anchor-link"
+            href="#timeMax"
+            title="Permalink to FreeBusyRequest.timeMax">#</a>
+        </h4>
+        <div class="doc">
+<p>The end of the interval for the query.</p>
+<pre class="source">
+String timeMax;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="timeMin">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>timeMin</strong> <a class="anchor-link"
+            href="#timeMin"
+            title="Permalink to FreeBusyRequest.timeMin">#</a>
+        </h4>
+        <div class="doc">
+<p>The start of the interval for the query.</p>
+<pre class="source">
+String timeMin;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="timeZone">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>timeZone</strong> <a class="anchor-link"
+            href="#timeZone"
+            title="Permalink to FreeBusyRequest.timeZone">#</a>
+        </h4>
+        <div class="doc">
+<p>Time zone used in the response. Optional. The default is UTC.</p>
+<pre class="source">
+String timeZone;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:43.577</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

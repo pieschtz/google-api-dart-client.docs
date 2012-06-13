@@ -1,0 +1,355 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Goal Class / analytics-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="analytics-v3" data-type="Goal">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/Goal.html">Goal</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Goal</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Goal</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../analytics-v3/Goal.html">Goal</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Goal.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Goal parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Goal();
+  result.kind = identity(json["kind"]);
+  result.visitTimeOnSiteDetails = GoalVisitTimeOnSiteDetails.parse(json["visitTimeOnSiteDetails"]);
+  result.name = identity(json["name"]);
+  result.created = identity(json["created"]);
+  result.urlDestinationDetails = GoalUrlDestinationDetails.parse(json["urlDestinationDetails"]);
+  result.updated = identity(json["updated"]);
+  result.value = identity(json["value"]);
+  result.visitNumPagesDetails = GoalVisitNumPagesDetails.parse(json["visitNumPagesDetails"]);
+  result.internalWebPropertyId = identity(json["internalWebPropertyId"]);
+  result.eventDetails = GoalEventDetails.parse(json["eventDetails"]);
+  result.webPropertyId = identity(json["webPropertyId"]);
+  result.active = identity(json["active"]);
+  result.profileId = identity(json["profileId"]);
+  result.parentLink = GoalParentLink.parse(json["parentLink"]);
+  result.type = identity(json["type"]);
+  result.id = identity(json["id"]);
+  result.selfLink = identity(json["selfLink"]);
+  result.accountId = identity(json["accountId"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../analytics-v3/Goal.html">Goal</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Goal.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Goal value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["visitTimeOnSiteDetails"] = GoalVisitTimeOnSiteDetails.serialize(value.visitTimeOnSiteDetails);
+  result["name"] = identity(value.name);
+  result["created"] = identity(value.created);
+  result["urlDestinationDetails"] = GoalUrlDestinationDetails.serialize(value.urlDestinationDetails);
+  result["updated"] = identity(value.updated);
+  result["value"] = identity(value.value);
+  result["visitNumPagesDetails"] = GoalVisitNumPagesDetails.serialize(value.visitNumPagesDetails);
+  result["internalWebPropertyId"] = identity(value.internalWebPropertyId);
+  result["eventDetails"] = GoalEventDetails.serialize(value.eventDetails);
+  result["webPropertyId"] = identity(value.webPropertyId);
+  result["active"] = identity(value.active);
+  result["profileId"] = identity(value.profileId);
+  result["parentLink"] = GoalParentLink.serialize(value.parentLink);
+  result["type"] = identity(value.type);
+  result["id"] = identity(value.id);
+  result["selfLink"] = identity(value.selfLink);
+  result["accountId"] = identity(value.accountId);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Goal.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="accountId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>accountId</strong> <a class="anchor-link"
+            href="#accountId"
+            title="Permalink to Goal.accountId">#</a>
+        </h4>
+        <div class="doc">
+<p>Account ID to which this goal belongs.</p>
+<pre class="source">
+String accountId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="active">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>active</strong> <a class="anchor-link"
+            href="#active"
+            title="Permalink to Goal.active">#</a>
+        </h4>
+        <div class="doc">
+<p>Determines whether this goal is active.</p>
+<pre class="source">
+bool active;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="created">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
+            href="#created"
+            title="Permalink to Goal.created">#</a>
+        </h4>
+        <div class="doc">
+<p>Time this goal was created.</p>
+<pre class="source">
+String created;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="eventDetails">
+<span class="show-code">Code</span>
+<a href="../analytics-v3/GoalEventDetails.html">GoalEventDetails</a>         <strong>eventDetails</strong> <a class="anchor-link"
+            href="#eventDetails"
+            title="Permalink to Goal.eventDetails">#</a>
+        </h4>
+        <div class="doc">
+<p>Details for the goal of the type EVENT.</p>
+<pre class="source">
+GoalEventDetails eventDetails;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Goal.id">#</a>
+        </h4>
+        <div class="doc">
+<p>Goal ID.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="internalWebPropertyId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>internalWebPropertyId</strong> <a class="anchor-link"
+            href="#internalWebPropertyId"
+            title="Permalink to Goal.internalWebPropertyId">#</a>
+        </h4>
+        <div class="doc">
+<p>Internal ID for the web property to which this goal belongs.</p>
+<pre class="source">
+String internalWebPropertyId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Goal.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Resource type for an Analytics goal.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to Goal.name">#</a>
+        </h4>
+        <div class="doc">
+<p>Goal name.</p>
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="parentLink">
+<span class="show-code">Code</span>
+<a href="../analytics-v3/GoalParentLink.html">GoalParentLink</a>         <strong>parentLink</strong> <a class="anchor-link"
+            href="#parentLink"
+            title="Permalink to Goal.parentLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Parent link for a goal. Points to the profile to which this goal belongs.</p>
+<pre class="source">
+GoalParentLink parentLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="profileId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>profileId</strong> <a class="anchor-link"
+            href="#profileId"
+            title="Permalink to Goal.profileId">#</a>
+        </h4>
+        <div class="doc">
+<p>Profile ID to which this goal belongs.</p>
+<pre class="source">
+String profileId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to Goal.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Link for this goal.</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="type">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+            href="#type"
+            title="Permalink to Goal.type">#</a>
+        </h4>
+        <div class="doc">
+<p>Goal type. Possible values are URL<em>DESTINATION, VISIT</em>TIME<em>ON</em>SITE, VISIT<em>NUM</em>PAGES, AND EVENT.</p>
+<pre class="source">
+String type;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="updated">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
+            href="#updated"
+            title="Permalink to Goal.updated">#</a>
+        </h4>
+        <div class="doc">
+<p>Time this goal was last modified.</p>
+<pre class="source">
+String updated;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="urlDestinationDetails">
+<span class="show-code">Code</span>
+<a href="../analytics-v3/GoalUrlDestinationDetails.html">GoalUrlDestinationDetails</a>         <strong>urlDestinationDetails</strong> <a class="anchor-link"
+            href="#urlDestinationDetails"
+            title="Permalink to Goal.urlDestinationDetails">#</a>
+        </h4>
+        <div class="doc">
+<p>Details for the goal of the type URL_DESTINATION.</p>
+<pre class="source">
+GoalUrlDestinationDetails urlDestinationDetails;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="value">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>value</strong> <a class="anchor-link"
+            href="#value"
+            title="Permalink to Goal.value">#</a>
+        </h4>
+        <div class="doc">
+<p>Goal value.</p>
+<pre class="source">
+double value;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="visitNumPagesDetails">
+<span class="show-code">Code</span>
+<a href="../analytics-v3/GoalVisitNumPagesDetails.html">GoalVisitNumPagesDetails</a>         <strong>visitNumPagesDetails</strong> <a class="anchor-link"
+            href="#visitNumPagesDetails"
+            title="Permalink to Goal.visitNumPagesDetails">#</a>
+        </h4>
+        <div class="doc">
+<p>Details for the goal of the type VISIT<em>NUM</em>PAGES.</p>
+<pre class="source">
+GoalVisitNumPagesDetails visitNumPagesDetails;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="visitTimeOnSiteDetails">
+<span class="show-code">Code</span>
+<a href="../analytics-v3/GoalVisitTimeOnSiteDetails.html">GoalVisitTimeOnSiteDetails</a>         <strong>visitTimeOnSiteDetails</strong> <a class="anchor-link"
+            href="#visitTimeOnSiteDetails"
+            title="Permalink to Goal.visitTimeOnSiteDetails">#</a>
+        </h4>
+        <div class="doc">
+<p>Details for the goal of the type VISIT<em>TIME</em>ON_SITE.</p>
+<pre class="source">
+GoalVisitTimeOnSiteDetails visitTimeOnSiteDetails;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="webPropertyId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>webPropertyId</strong> <a class="anchor-link"
+            href="#webPropertyId"
+            title="Permalink to Goal.webPropertyId">#</a>
+        </h4>
+        <div class="doc">
+<p>Web property ID to which this goal belongs. The web property ID is of the form UA-XXXXX-YY.</p>
+<pre class="source">
+String webPropertyId;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:37.690</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

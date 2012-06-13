@@ -1,0 +1,206 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>EventGadget Class / calendar-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="calendar-v3" data-type="EventGadget">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/EventGadget.html">EventGadget</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>EventGadget</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>EventGadget</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../calendar-v3/EventGadget.html">EventGadget</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to EventGadget.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static EventGadget parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new EventGadget();
+  result.preferences = mapValues(identity)(json["preferences"]);
+  result.title = identity(json["title"]);
+  result.height = identity(json["height"]);
+  result.width = identity(json["width"]);
+  result.link = identity(json["link"]);
+  result.type = identity(json["type"]);
+  result.display = identity(json["display"]);
+  result.iconLink = identity(json["iconLink"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/EventGadget.html">EventGadget</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to EventGadget.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(EventGadget value) {
+  if (value == null) return null;
+  final result = {};
+  result["preferences"] = mapValues(identity)(value.preferences);
+  result["title"] = identity(value.title);
+  result["height"] = identity(value.height);
+  result["width"] = identity(value.width);
+  result["link"] = identity(value.link);
+  result["type"] = identity(value.type);
+  result["display"] = identity(value.display);
+  result["iconLink"] = identity(value.iconLink);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to EventGadget.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="display">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>display</strong> <a class="anchor-link"
+            href="#display"
+            title="Permalink to EventGadget.display">#</a>
+        </h4>
+        <div class="doc">
+<p>The gadget's display mode. Optional. Possible values are: - "icon" - The gadget displays next to
+the event's title in the calendar view. - "chip" - The gadget displays when the event is clicked.</p>
+<pre class="source">
+String display;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="height">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>height</strong> <a class="anchor-link"
+            href="#height"
+            title="Permalink to EventGadget.height">#</a>
+        </h4>
+        <div class="doc">
+<p>The gadget's height in pixels. Optional.</p>
+<pre class="source">
+int height;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="iconLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>iconLink</strong> <a class="anchor-link"
+            href="#iconLink"
+            title="Permalink to EventGadget.iconLink">#</a>
+        </h4>
+        <div class="doc">
+<p>The gadget's icon URL.</p>
+<pre class="source">
+String iconLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="link">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
+            href="#link"
+            title="Permalink to EventGadget.link">#</a>
+        </h4>
+        <div class="doc">
+<p>The gadget's URL.</p>
+<pre class="source">
+String link;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="preferences">
+<span class="show-code">Code</span>
+<a href="../dart_core/Map.html">Map</a>         <strong>preferences</strong> <a class="anchor-link"
+            href="#preferences"
+            title="Permalink to EventGadget.preferences">#</a>
+        </h4>
+        <div class="doc">
+<p>Preferences.</p>
+<pre class="source">
+Map&lt;String, String&gt; preferences;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="title">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+            href="#title"
+            title="Permalink to EventGadget.title">#</a>
+        </h4>
+        <div class="doc">
+<p>The gadget's title.</p>
+<pre class="source">
+String title;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="type">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+            href="#type"
+            title="Permalink to EventGadget.type">#</a>
+        </h4>
+        <div class="doc">
+<p>The gadget's type.</p>
+<pre class="source">
+String type;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="width">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>width</strong> <a class="anchor-link"
+            href="#width"
+            title="Permalink to EventGadget.width">#</a>
+        </h4>
+        <div class="doc">
+<p>The gadget's width in pixels. Optional.</p>
+<pre class="source">
+int width;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:43.252</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

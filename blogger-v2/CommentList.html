@@ -1,0 +1,145 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CommentList Class / blogger-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="blogger-v2" data-type="CommentList">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../blogger-v2.html">blogger-v2</a> &rsaquo; <a href="../blogger-v2/CommentList.html">CommentList</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CommentList</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>CommentList</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../blogger-v2/CommentList.html">CommentList</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to CommentList.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static CommentList parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new CommentList();
+  result.nextPageToken = identity(json["nextPageToken"]);
+  result.items = map(Comment.parse)(json["items"]);
+  result.kind = identity(json["kind"]);
+  result.prevPageToken = identity(json["prevPageToken"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../blogger-v2/CommentList.html">CommentList</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to CommentList.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(CommentList value) {
+  if (value == null) return null;
+  final result = {};
+  result["nextPageToken"] = identity(value.nextPageToken);
+  result["items"] = map(Comment.serialize)(value.items);
+  result["kind"] = identity(value.kind);
+  result["prevPageToken"] = identity(value.prevPageToken);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CommentList.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="items">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>items</strong> <a class="anchor-link"
+            href="#items"
+            title="Permalink to CommentList.items">#</a>
+        </h4>
+        <div class="doc">
+<p>The List of Comments for a Post.</p>
+<pre class="source">
+List&lt;Comment&gt; items;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to CommentList.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The kind of this entry. Always blogger#commentList</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="nextPageToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>nextPageToken</strong> <a class="anchor-link"
+            href="#nextPageToken"
+            title="Permalink to CommentList.nextPageToken">#</a>
+        </h4>
+        <div class="doc">
+<p>Pagination token to fetch the next page, if one exists.</p>
+<pre class="source">
+String nextPageToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prevPageToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>prevPageToken</strong> <a class="anchor-link"
+            href="#prevPageToken"
+            title="Permalink to CommentList.prevPageToken">#</a>
+        </h4>
+        <div class="doc">
+<p>Pagination token to fetch the previous page, if one exists.</p>
+<pre class="source">
+String prevPageToken;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:40.371</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

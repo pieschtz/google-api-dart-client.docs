@@ -70,14 +70,17 @@ void complete(T value);
 </div>
 <div class="method"><h4 id="completeException">
 <span class="show-code">Code</span>
-<a href="../dart_core/void.html">void</a> <strong>completeException</strong>(<a href="../dart_core/Object.html">Object</a> exception) <a class="anchor-link" href="#completeException"
+<a href="../dart_core/void.html">void</a> <strong>completeException</strong>(<a href="../dart_core/Object.html">Object</a> exception, [<a href="../dart_core/Object.html">Object</a> stackTrace]) <a class="anchor-link" href="#completeException"
               title="Permalink to Completer&lt;T&gt;.completeException">#</a></h4>
 <div class="doc">
 <p>Indicate in <a class="crossref" href="../dart_core/Completer.html#get:future">future</a> that an exception occured while trying to produce its
 value. The argument 
-<span class="param">exception</span> should not be <code>null</code>.</p>
+<span class="param">exception</span> should not be <code>null</code>. A 
+<span class="param">stackTrace</span>
+object can be provided as well to give the user information about where
+the error occurred. If omitted, it will be <code>null</code>.</p>
 <pre class="source">
-void completeException(Object exception);
+void completeException(Object exception, [Object stackTrace]);
 </pre>
 </div>
 </div>
@@ -97,7 +100,7 @@ Future get future();
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-13 18:44:58.845Z</div>
+          <div>This page generated at 2012-06-13 22:22:45.430</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

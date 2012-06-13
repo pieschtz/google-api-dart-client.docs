@@ -1,0 +1,430 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>RestDescription Class / discovery-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="discovery-v1" data-type="RestDescription">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../discovery-v1.html">discovery-v1</a> &rsaquo; <a href="../discovery-v1/RestDescription.html">RestDescription</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>RestDescription</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>RestDescription</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../discovery-v1/RestDescription.html">RestDescription</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to RestDescription.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static RestDescription parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new RestDescription();
+  result.protocol = identity(json["protocol"]);
+  result.methods = mapValues(RestMethod.parse)(json["methods"]);
+  result.labels = map(identity)(json["labels"]);
+  result.batchPath = identity(json["batchPath"]);
+  result.id = identity(json["id"]);
+  result.schemas = mapValues(JsonSchema.parse)(json["schemas"]);
+  result.rootUrl = identity(json["rootUrl"]);
+  result.parameters = mapValues(JsonSchema.parse)(json["parameters"]);
+  result.icons = RestDescriptionIcons.parse(json["icons"]);
+  result.baseUrl = identity(json["baseUrl"]);
+  result.version = identity(json["version"]);
+  result.features = map(identity)(json["features"]);
+  result.servicePath = identity(json["servicePath"]);
+  result.resources = mapValues(RestResource.parse)(json["resources"]);
+  result.revision = identity(json["revision"]);
+  result.description = identity(json["description"]);
+  result.auth = RestDescriptionAuth.parse(json["auth"]);
+  result.kind = identity(json["kind"]);
+  result.name = identity(json["name"]);
+  result.basePath = identity(json["basePath"]);
+  result.title = identity(json["title"]);
+  result.discoveryVersion = identity(json["discoveryVersion"]);
+  result.documentationLink = identity(json["documentationLink"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../discovery-v1/RestDescription.html">RestDescription</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to RestDescription.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(RestDescription value) {
+  if (value == null) return null;
+  final result = {};
+  result["protocol"] = identity(value.protocol);
+  result["methods"] = mapValues(RestMethod.serialize)(value.methods);
+  result["labels"] = map(identity)(value.labels);
+  result["batchPath"] = identity(value.batchPath);
+  result["id"] = identity(value.id);
+  result["schemas"] = mapValues(JsonSchema.serialize)(value.schemas);
+  result["rootUrl"] = identity(value.rootUrl);
+  result["parameters"] = mapValues(JsonSchema.serialize)(value.parameters);
+  result["icons"] = RestDescriptionIcons.serialize(value.icons);
+  result["baseUrl"] = identity(value.baseUrl);
+  result["version"] = identity(value.version);
+  result["features"] = map(identity)(value.features);
+  result["servicePath"] = identity(value.servicePath);
+  result["resources"] = mapValues(RestResource.serialize)(value.resources);
+  result["revision"] = identity(value.revision);
+  result["description"] = identity(value.description);
+  result["auth"] = RestDescriptionAuth.serialize(value.auth);
+  result["kind"] = identity(value.kind);
+  result["name"] = identity(value.name);
+  result["basePath"] = identity(value.basePath);
+  result["title"] = identity(value.title);
+  result["discoveryVersion"] = identity(value.discoveryVersion);
+  result["documentationLink"] = identity(value.documentationLink);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to RestDescription.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="auth">
+<span class="show-code">Code</span>
+<a href="../discovery-v1/RestDescriptionAuth.html">RestDescriptionAuth</a>         <strong>auth</strong> <a class="anchor-link"
+            href="#auth"
+            title="Permalink to RestDescription.auth">#</a>
+        </h4>
+        <div class="doc">
+<p>Authentication information.</p>
+<pre class="source">
+RestDescriptionAuth auth;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="basePath">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>basePath</strong> <a class="anchor-link"
+            href="#basePath"
+            title="Permalink to RestDescription.basePath">#</a>
+        </h4>
+        <div class="doc">
+<p><code>DEPRECATED</code> The base path for REST requests.</p>
+<pre class="source">
+String basePath;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="baseUrl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+            href="#baseUrl"
+            title="Permalink to RestDescription.baseUrl">#</a>
+        </h4>
+        <div class="doc">
+<p><code>DEPRECATED</code> The base URL for REST requests.</p>
+<pre class="source">
+String baseUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="batchPath">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>batchPath</strong> <a class="anchor-link"
+            href="#batchPath"
+            title="Permalink to RestDescription.batchPath">#</a>
+        </h4>
+        <div class="doc">
+<p>The path for REST batch requests.</p>
+<pre class="source">
+String batchPath;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to RestDescription.description">#</a>
+        </h4>
+        <div class="doc">
+<p>The description of this API.</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="discoveryVersion">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>discoveryVersion</strong> <a class="anchor-link"
+            href="#discoveryVersion"
+            title="Permalink to RestDescription.discoveryVersion">#</a>
+        </h4>
+        <div class="doc">
+<p>Indicate the version of the Discovery API used to generate this doc.</p>
+<pre class="source">
+String discoveryVersion;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="documentationLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>documentationLink</strong> <a class="anchor-link"
+            href="#documentationLink"
+            title="Permalink to RestDescription.documentationLink">#</a>
+        </h4>
+        <div class="doc">
+<p>A link to human readable documentation for the API.</p>
+<pre class="source">
+String documentationLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="features">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>features</strong> <a class="anchor-link"
+            href="#features"
+            title="Permalink to RestDescription.features">#</a>
+        </h4>
+        <div class="doc">
+<p>A list of supported features for this API.</p>
+<pre class="source">
+List&lt;String&gt; features;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="icons">
+<span class="show-code">Code</span>
+<a href="../discovery-v1/RestDescriptionIcons.html">RestDescriptionIcons</a>         <strong>icons</strong> <a class="anchor-link"
+            href="#icons"
+            title="Permalink to RestDescription.icons">#</a>
+        </h4>
+        <div class="doc">
+<p>Links to 16x16 and 32x32 icons representing the API.</p>
+<pre class="source">
+RestDescriptionIcons icons;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to RestDescription.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The id of this API.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to RestDescription.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The kind for this response.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="labels">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>labels</strong> <a class="anchor-link"
+            href="#labels"
+            title="Permalink to RestDescription.labels">#</a>
+        </h4>
+        <div class="doc">
+<p>Labels for the status of this API, such as labs or deprecated.</p>
+<pre class="source">
+List&lt;String&gt; labels;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="methods">
+<span class="show-code">Code</span>
+<a href="../dart_core/Map.html">Map</a>         <strong>methods</strong> <a class="anchor-link"
+            href="#methods"
+            title="Permalink to RestDescription.methods">#</a>
+        </h4>
+        <div class="doc">
+<p>API-level methods for this API.</p>
+<pre class="source">
+Map&lt;String, RestMethod&gt; methods;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to RestDescription.name">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of this API.</p>
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="parameters">
+<span class="show-code">Code</span>
+<a href="../dart_core/Map.html">Map</a>         <strong>parameters</strong> <a class="anchor-link"
+            href="#parameters"
+            title="Permalink to RestDescription.parameters">#</a>
+        </h4>
+        <div class="doc">
+<p>Common parameters that apply across all apis.</p>
+<pre class="source">
+Map&lt;String, JsonSchema&gt; parameters;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="protocol">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>protocol</strong> <a class="anchor-link"
+            href="#protocol"
+            title="Permalink to RestDescription.protocol">#</a>
+        </h4>
+        <div class="doc">
+<p>The protocol described by this document.</p>
+<pre class="source">
+String protocol;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="resources">
+<span class="show-code">Code</span>
+<a href="../dart_core/Map.html">Map</a>         <strong>resources</strong> <a class="anchor-link"
+            href="#resources"
+            title="Permalink to RestDescription.resources">#</a>
+        </h4>
+        <div class="doc">
+<p>The resources in this API.</p>
+<pre class="source">
+Map&lt;String, RestResource&gt; resources;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="revision">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>revision</strong> <a class="anchor-link"
+            href="#revision"
+            title="Permalink to RestDescription.revision">#</a>
+        </h4>
+        <div class="doc">
+<p>The version of this API.</p>
+<pre class="source">
+String revision;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rootUrl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>rootUrl</strong> <a class="anchor-link"
+            href="#rootUrl"
+            title="Permalink to RestDescription.rootUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The root url under which all API services live.</p>
+<pre class="source">
+String rootUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="schemas">
+<span class="show-code">Code</span>
+<a href="../dart_core/Map.html">Map</a>         <strong>schemas</strong> <a class="anchor-link"
+            href="#schemas"
+            title="Permalink to RestDescription.schemas">#</a>
+        </h4>
+        <div class="doc">
+<p>The schemas for this API.</p>
+<pre class="source">
+Map&lt;String, JsonSchema&gt; schemas;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="servicePath">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>servicePath</strong> <a class="anchor-link"
+            href="#servicePath"
+            title="Permalink to RestDescription.servicePath">#</a>
+        </h4>
+        <div class="doc">
+<p>The base path for all REST requests.</p>
+<pre class="source">
+String servicePath;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="title">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+            href="#title"
+            title="Permalink to RestDescription.title">#</a>
+        </h4>
+        <div class="doc">
+<p>The title of this API.</p>
+<pre class="source">
+String title;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="version">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>version</strong> <a class="anchor-link"
+            href="#version"
+            title="Permalink to RestDescription.version">#</a>
+        </h4>
+        <div class="doc">
+<p>The version of this API.</p>
+<pre class="source">
+String version;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:46.734</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

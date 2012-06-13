@@ -1,0 +1,114 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CommunityPollsResource Class / orkut-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="orkut-v2" data-type="CommunityPollsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../orkut-v2.html">orkut-v2</a> &rsaquo; <a href="../orkut-v2/CommunityPollsResource.html">CommunityPollsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CommunityPollsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> pollId, [<a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to CommunityPollsResource.get">#</a></h4>
+<div class="doc">
+<p>Retrieves one specific poll of a community.
+
+<span class="param">communityId</span> The ID of the community for whose poll will be retrieved.
+
+<span class="param">pollId</span> The ID of the poll to get.</p>
+<pre class="source">
+Future&lt;CommunityPoll&gt; get(int communityId, String pollId, [String hl = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["communityId"] = communityId;
+  $pathParams["pollId"] = pollId;
+  if (UNSPECIFIED != hl) $queryParams["hl"] = hl;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/polls/{pollId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; CommunityPoll.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> communityId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to CommunityPollsResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves the polls of a community.
+
+<span class="param">communityId</span> The ID of the community which polls will be listed.</p>
+<pre class="source">
+Future&lt;CommunityPollList&gt; list(int communityId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, String hl = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["communityId"] = communityId;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != hl) $queryParams["hl"] = hl;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/polls").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; CommunityPollList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:55.854</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

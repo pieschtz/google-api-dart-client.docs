@@ -1,0 +1,205 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Search Class / customsearch-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="customsearch-v1" data-type="Search">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../customsearch-v1.html">customsearch-v1</a> &rsaquo; <a href="../customsearch-v1/Search.html">Search</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Search</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Search</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../customsearch-v1/Search.html">Search</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Search.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Search parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Search();
+  result.promotions = map(Promotion.parse)(json["promotions"]);
+  result.kind = identity(json["kind"]);
+  result.url = SearchUrl.parse(json["url"]);
+  result.items = map(Result.parse)(json["items"]);
+  result.context = Context.parse(json["context"]);
+  result.queries = mapValues(map(Query.parse))(json["queries"]);
+  result.spelling = SearchSpelling.parse(json["spelling"]);
+  result.searchInformation = SearchSearchInformation.parse(json["searchInformation"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../customsearch-v1/Search.html">Search</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Search.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Search value) {
+  if (value == null) return null;
+  final result = {};
+  result["promotions"] = map(Promotion.serialize)(value.promotions);
+  result["kind"] = identity(value.kind);
+  result["url"] = SearchUrl.serialize(value.url);
+  result["items"] = map(Result.serialize)(value.items);
+  result["context"] = Context.serialize(value.context);
+  result["queries"] = mapValues(map(Query.serialize))(value.queries);
+  result["spelling"] = SearchSpelling.serialize(value.spelling);
+  result["searchInformation"] = SearchSearchInformation.serialize(value.searchInformation);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Search.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="context">
+<span class="show-code">Code</span>
+<a href="../customsearch-v1/Context.html">Context</a>         <strong>context</strong> <a class="anchor-link"
+            href="#context"
+            title="Permalink to Search.context">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Context context;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="items">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>items</strong> <a class="anchor-link"
+            href="#items"
+            title="Permalink to Search.items">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+List&lt;Result&gt; items;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Search.kind">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="promotions">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>promotions</strong> <a class="anchor-link"
+            href="#promotions"
+            title="Permalink to Search.promotions">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+List&lt;Promotion&gt; promotions;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="queries">
+<span class="show-code">Code</span>
+<a href="../dart_core/Map.html">Map</a>         <strong>queries</strong> <a class="anchor-link"
+            href="#queries"
+            title="Permalink to Search.queries">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Map&lt;String, List&lt;Query&gt;&gt; queries;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="searchInformation">
+<span class="show-code">Code</span>
+<a href="../customsearch-v1/SearchSearchInformation.html">SearchSearchInformation</a>         <strong>searchInformation</strong> <a class="anchor-link"
+            href="#searchInformation"
+            title="Permalink to Search.searchInformation">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+SearchSearchInformation searchInformation;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="spelling">
+<span class="show-code">Code</span>
+<a href="../customsearch-v1/SearchSpelling.html">SearchSpelling</a>         <strong>spelling</strong> <a class="anchor-link"
+            href="#spelling"
+            title="Permalink to Search.spelling">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+SearchSpelling spelling;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="url">
+<span class="show-code">Code</span>
+<a href="../customsearch-v1/SearchUrl.html">SearchUrl</a>         <strong>url</strong> <a class="anchor-link"
+            href="#url"
+            title="Permalink to Search.url">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+SearchUrl url;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:43.819</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

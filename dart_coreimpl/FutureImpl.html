@@ -54,21 +54,23 @@ FutureImpl()
 <pre class="source">
 Future chain(Function transformation) {
   final completer = new Completer();
-  onComplete((f) {
-    if (!f.hasValue) {
-      completer.completeException(f.exception);
-      return;
-    }
+  handleException((e) {
+    completer.completeException(e);
+    return true;
+  });
+  then((v) {
     var future = null;
     try {
-      future = transformation(f.value);
-    } catch (final e) {
-      completer.completeException(e);
+      future = transformation(v);
+    } catch (final ex, final stackTrace) {
+      completer.completeException(ex, stackTrace);
       return;
     }
-    future.onComplete((g) =&gt; g.hasValue
-      ? completer.complete(g.value)
-      : completer.completeException(g.exception));
+    future.handleException((e) {
+      completer.completeException(e);
+      return true;
+    });
+    future.then((b) =&gt; completer.complete(b));
   });
   return completer.future;
 }
@@ -156,6 +158,22 @@ void onComplete(void complete(Future&lt;T&gt; future)) {
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="get:stackTrace">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>get stackTrace</strong>() <a class="anchor-link" href="#get:stackTrace"
+              title="Permalink to FutureImpl&lt;T&gt;.get stackTrace">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Object get stackTrace() {
+  if (!isComplete) {
+    throw new FutureNotCompleteException();
+  }
+  return _stackTrace;
+}
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="then">
 <span class="show-code">Code</span>
 <a href="../dart_core/void.html">void</a> <strong>then</strong>(<a href="../dart_core/void.html">void</a> onSuccess(value)) <a class="anchor-link" href="#then"
@@ -184,16 +202,16 @@ void then(void onSuccess(T value)) {
 <pre class="source">
 Future transform(Function transformation) {
   final completer = new Completer();
-  onComplete((f) {
-    if (!f.hasValue) {
-      completer.completeException(f.exception);
-      return;
-    }
+  handleException((e) {
+    completer.completeException(e);
+    return true;
+  });
+  then((v) {
     var transformed = null;
     try {
-      transformed = transformation(f.value);
-    } catch (final e) {
-      completer.completeException(e);
+      transformed = transformation(v);
+    } catch (final ex, final stackTrace) {
+      completer.completeException(ex, stackTrace);
       return;
     }
     completer.complete(transformed);
@@ -227,7 +245,7 @@ T get value() {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-13 18:44:59.625Z</div>
+          <div>This page generated at 2012-06-13 22:22:46.192</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

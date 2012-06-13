@@ -1,0 +1,280 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Submission Class / moderator-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="moderator-v1" data-type="Submission">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/Submission.html">Submission</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Submission</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Submission</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../moderator-v1/Submission.html">Submission</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Submission.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Submission parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Submission();
+  result.kind = identity(json["kind"]);
+  result.attribution = SubmissionAttribution.parse(json["attribution"]);
+  result.created = identity(json["created"]);
+  result.text = identity(json["text"]);
+  result.topics = map(ModeratorTopicsResourcePartial.parse)(json["topics"]);
+  result.author = identity(json["author"]);
+  result.translations = map(SubmissionTranslations.parse)(json["translations"]);
+  result.parentSubmissionId = SubmissionParentSubmissionId.parse(json["parentSubmissionId"]);
+  result.vote = ModeratorVotesResourcePartial.parse(json["vote"]);
+  result.attachmentUrl = identity(json["attachmentUrl"]);
+  result.geo = SubmissionGeo.parse(json["geo"]);
+  result.id = SubmissionId.parse(json["id"]);
+  result.counters = SubmissionCounters.parse(json["counters"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../moderator-v1/Submission.html">Submission</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Submission.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Submission value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["attribution"] = SubmissionAttribution.serialize(value.attribution);
+  result["created"] = identity(value.created);
+  result["text"] = identity(value.text);
+  result["topics"] = map(ModeratorTopicsResourcePartial.serialize)(value.topics);
+  result["author"] = identity(value.author);
+  result["translations"] = map(SubmissionTranslations.serialize)(value.translations);
+  result["parentSubmissionId"] = SubmissionParentSubmissionId.serialize(value.parentSubmissionId);
+  result["vote"] = ModeratorVotesResourcePartial.serialize(value.vote);
+  result["attachmentUrl"] = identity(value.attachmentUrl);
+  result["geo"] = SubmissionGeo.serialize(value.geo);
+  result["id"] = SubmissionId.serialize(value.id);
+  result["counters"] = SubmissionCounters.serialize(value.counters);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Submission.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="attachmentUrl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>attachmentUrl</strong> <a class="anchor-link"
+            href="#attachmentUrl"
+            title="Permalink to Submission.attachmentUrl">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String attachmentUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="attribution">
+<span class="show-code">Code</span>
+<a href="../moderator-v1/SubmissionAttribution.html">SubmissionAttribution</a>         <strong>attribution</strong> <a class="anchor-link"
+            href="#attribution"
+            title="Permalink to Submission.attribution">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+SubmissionAttribution attribution;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="author">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>author</strong> <a class="anchor-link"
+            href="#author"
+            title="Permalink to Submission.author">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String author;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="counters">
+<span class="show-code">Code</span>
+<a href="../moderator-v1/SubmissionCounters.html">SubmissionCounters</a>         <strong>counters</strong> <a class="anchor-link"
+            href="#counters"
+            title="Permalink to Submission.counters">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+SubmissionCounters counters;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="created">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
+            href="#created"
+            title="Permalink to Submission.created">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String created;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="geo">
+<span class="show-code">Code</span>
+<a href="../moderator-v1/SubmissionGeo.html">SubmissionGeo</a>         <strong>geo</strong> <a class="anchor-link"
+            href="#geo"
+            title="Permalink to Submission.geo">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+SubmissionGeo geo;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../moderator-v1/SubmissionId.html">SubmissionId</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Submission.id">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+SubmissionId id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Submission.kind">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="parentSubmissionId">
+<span class="show-code">Code</span>
+<a href="../moderator-v1/SubmissionParentSubmissionId.html">SubmissionParentSubmissionId</a>         <strong>parentSubmissionId</strong> <a class="anchor-link"
+            href="#parentSubmissionId"
+            title="Permalink to Submission.parentSubmissionId">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+SubmissionParentSubmissionId parentSubmissionId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="text">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>text</strong> <a class="anchor-link"
+            href="#text"
+            title="Permalink to Submission.text">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String text;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="topics">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>topics</strong> <a class="anchor-link"
+            href="#topics"
+            title="Permalink to Submission.topics">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+List&lt;ModeratorTopicsResourcePartial&gt; topics;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="translations">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>translations</strong> <a class="anchor-link"
+            href="#translations"
+            title="Permalink to Submission.translations">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+List&lt;SubmissionTranslations&gt; translations;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="vote">
+<span class="show-code">Code</span>
+<a href="../moderator-v1/ModeratorVotesResourcePartial.html">ModeratorVotesResourcePartial</a>         <strong>vote</strong> <a class="anchor-link"
+            href="#vote"
+            title="Permalink to Submission.vote">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+ModeratorVotesResourcePartial vote;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:55.374</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

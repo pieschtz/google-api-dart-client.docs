@@ -1,0 +1,250 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Blog Class / blogger-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="blogger-v2" data-type="Blog">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../blogger-v2.html">blogger-v2</a> &rsaquo; <a href="../blogger-v2/Blog.html">Blog</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Blog</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Blog</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../blogger-v2/Blog.html">Blog</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Blog.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Blog parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Blog();
+  result.kind = identity(json["kind"]);
+  result.description = identity(json["description"]);
+  result.locale = BlogLocale.parse(json["locale"]);
+  result.posts = BlogPosts.parse(json["posts"]);
+  result.updated = identity(json["updated"]);
+  result.id = identity(json["id"]);
+  result.url = identity(json["url"]);
+  result.published = identity(json["published"]);
+  result.pages = BlogPages.parse(json["pages"]);
+  result.selfLink = identity(json["selfLink"]);
+  result.name = identity(json["name"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../blogger-v2/Blog.html">Blog</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Blog.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Blog value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["description"] = identity(value.description);
+  result["locale"] = BlogLocale.serialize(value.locale);
+  result["posts"] = BlogPosts.serialize(value.posts);
+  result["updated"] = identity(value.updated);
+  result["id"] = identity(value.id);
+  result["url"] = identity(value.url);
+  result["published"] = identity(value.published);
+  result["pages"] = BlogPages.serialize(value.pages);
+  result["selfLink"] = identity(value.selfLink);
+  result["name"] = identity(value.name);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Blog.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to Blog.description">#</a>
+        </h4>
+        <div class="doc">
+<p>The description of this blog. This is displayed underneath the title.</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Blog.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The identifier for this resource.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Blog.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The kind of this entry. Always blogger#blog</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="locale">
+<span class="show-code">Code</span>
+<a href="../blogger-v2/BlogLocale.html">BlogLocale</a>         <strong>locale</strong> <a class="anchor-link"
+            href="#locale"
+            title="Permalink to Blog.locale">#</a>
+        </h4>
+        <div class="doc">
+<p>The locale this Blog is set to.</p>
+<pre class="source">
+BlogLocale locale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to Blog.name">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of this blog. This is displayed as the title.</p>
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="pages">
+<span class="show-code">Code</span>
+<a href="../blogger-v2/BlogPages.html">BlogPages</a>         <strong>pages</strong> <a class="anchor-link"
+            href="#pages"
+            title="Permalink to Blog.pages">#</a>
+        </h4>
+        <div class="doc">
+<p>The container of pages in this blog.</p>
+<pre class="source">
+BlogPages pages;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="posts">
+<span class="show-code">Code</span>
+<a href="../blogger-v2/BlogPosts.html">BlogPosts</a>         <strong>posts</strong> <a class="anchor-link"
+            href="#posts"
+            title="Permalink to Blog.posts">#</a>
+        </h4>
+        <div class="doc">
+<p>The container of posts in this blog.</p>
+<pre class="source">
+BlogPosts posts;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="published">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>published</strong> <a class="anchor-link"
+            href="#published"
+            title="Permalink to Blog.published">#</a>
+        </h4>
+        <div class="doc">
+<p>RFC 3339 date-time when this blog was published.</p>
+<pre class="source">
+String published;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to Blog.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>The API REST URL to fetch this resource from.</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="updated">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
+            href="#updated"
+            title="Permalink to Blog.updated">#</a>
+        </h4>
+        <div class="doc">
+<p>RFC 3339 date-time when this blog was last updated.</p>
+<pre class="source">
+String updated;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="url">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>url</strong> <a class="anchor-link"
+            href="#url"
+            title="Permalink to Blog.url">#</a>
+        </h4>
+        <div class="doc">
+<p>The URL where this blog is published.</p>
+<pre class="source">
+String url;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:40.308</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

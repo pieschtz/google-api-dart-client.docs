@@ -1,0 +1,114 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>PostsResource Class / blogger-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="blogger-v2" data-type="PostsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../blogger-v2.html">blogger-v2</a> &rsaquo; <a href="../blogger-v2/PostsResource.html">PostsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>PostsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> blogId, <a href="../dart_core/String.html">String</a> postId) <a class="anchor-link" href="#get"
+              title="Permalink to PostsResource.get">#</a></h4>
+<div class="doc">
+<p>Get a post by id.
+
+<span class="param">blogId</span> ID of the blog to fetch the post from.
+
+<span class="param">postId</span> The ID of the post</p>
+<pre class="source">
+Future&lt;Post&gt; get(String blogId, String postId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["blogId"] = blogId;
+  $pathParams["postId"] = postId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "blogs/{blogId}/posts/{postId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Post.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> blogId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> fetchBodies = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startDate = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to PostsResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves a list of posts, possibly filtered.
+
+<span class="param">blogId</span> ID of the blog to fetch posts from.</p>
+<pre class="source">
+Future&lt;PostList&gt; list(String blogId, [String pageToken = UNSPECIFIED, bool fetchBodies = UNSPECIFIED, int maxResults = UNSPECIFIED, String startDate = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["blogId"] = blogId;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != fetchBodies) $queryParams["fetchBodies"] = fetchBodies;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != startDate) $queryParams["startDate"] = startDate;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "blogs/{blogId}/posts").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; PostList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:40.254</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

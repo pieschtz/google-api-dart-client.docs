@@ -1,0 +1,77 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TaskqueuesResource Class / taskqueue-v1beta2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="taskqueue-v1beta2" data-type="TaskqueuesResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../taskqueue-v1beta2.html">taskqueue-v1beta2</a> &rsaquo; <a href="../taskqueue-v1beta2/TaskqueuesResource.html">TaskqueuesResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>TaskqueuesResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, [<a href="../dart_core/bool.html">bool</a> getStats = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to TaskqueuesResource.get">#</a></h4>
+<div class="doc">
+<p>Get detailed information about a TaskQueue.
+
+<span class="param">project</span> The project under which the queue lies.
+
+<span class="param">taskqueue</span> The id of the taskqueue to get the properties of.</p>
+<pre class="source">
+Future&lt;TaskQueue&gt; get(String project, String taskqueue, [bool getStats = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["taskqueue"] = taskqueue;
+  if (UNSPECIFIED != getStats) $queryParams["getStats"] = getStats;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; TaskQueue.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:58.154</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

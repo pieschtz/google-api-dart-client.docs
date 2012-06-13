@@ -1,0 +1,173 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AccountsResource Class / adsense-v1.1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adsense-v1.1" data-type="AccountsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adsense-v1.1.html">adsense-v1.1</a> &rsaquo; <a href="../adsense-v1.1/AccountsResource.html">AccountsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AccountsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> accountId, [<a href="../dart_core/bool.html">bool</a> tree = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to AccountsResource.get">#</a></h4>
+<div class="doc">
+<p>Get information about the selected AdSense account.
+
+<span class="param">accountId</span> Account to get information about.</p>
+<pre class="source">
+Future&lt;Account&gt; get(String accountId, [bool tree = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["accountId"] = accountId;
+  if (UNSPECIFIED != tree) $queryParams["tree"] = tree;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "accounts/{accountId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Account.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to AccountsResource.list">#</a></h4>
+<div class="doc">
+<p>List all accounts available to this AdSense account.</p>
+<pre class="source">
+Future&lt;Accounts&gt; list([String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "accounts").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Accounts.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="adclients">
+<span class="show-code">Code</span>
+final <a href="../adsense-v1.1/AccountsAdclientsResourceResource.html">AccountsAdclientsResourceResource</a>         <strong>adclients</strong> <a class="anchor-link"
+            href="#adclients"
+            title="Permalink to AccountsResource.adclients">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final AccountsAdclientsResourceResource adclients;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="adunits">
+<span class="show-code">Code</span>
+final <a href="../adsense-v1.1/AccountsAdunitsResourceResource.html">AccountsAdunitsResourceResource</a>         <strong>adunits</strong> <a class="anchor-link"
+            href="#adunits"
+            title="Permalink to AccountsResource.adunits">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final AccountsAdunitsResourceResource adunits;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="customchannels">
+<span class="show-code">Code</span>
+final <a href="../adsense-v1.1/AccountsCustomchannelsResourceResource.html">AccountsCustomchannelsResourceResource</a>         <strong>customchannels</strong> <a class="anchor-link"
+            href="#customchannels"
+            title="Permalink to AccountsResource.customchannels">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final AccountsCustomchannelsResourceResource customchannels;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="reports">
+<span class="show-code">Code</span>
+final <a href="../adsense-v1.1/AccountsReportsResourceResource.html">AccountsReportsResourceResource</a>         <strong>reports</strong> <a class="anchor-link"
+            href="#reports"
+            title="Permalink to AccountsResource.reports">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final AccountsReportsResourceResource reports;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="urlchannels">
+<span class="show-code">Code</span>
+final <a href="../adsense-v1.1/AccountsUrlchannelsResourceResource.html">AccountsUrlchannelsResourceResource</a>         <strong>urlchannels</strong> <a class="anchor-link"
+            href="#urlchannels"
+            title="Permalink to AccountsResource.urlchannels">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final AccountsUrlchannelsResourceResource urlchannels;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:35.956</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

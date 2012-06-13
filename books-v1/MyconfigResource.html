@@ -1,0 +1,165 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>MyconfigResource Class / books-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books-v1" data-type="MyconfigResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/MyconfigResource.html">MyconfigResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>MyconfigResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="releaseDownloadAccess">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>releaseDownloadAccess</strong>(<a href="../dart_core/List.html">List</a> volumeIds, <a href="../dart_core/String.html">String</a> cpksver, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#releaseDownloadAccess"
+              title="Permalink to MyconfigResource.releaseDownloadAccess">#</a></h4>
+<div class="doc">
+<p>Release downloaded content access restriction.
+
+<span class="param">volumeIds</span> The volume(s) to release restrictions for.
+
+<span class="param">cpksver</span> The device/version ID from which to release the restriction.</p>
+<pre class="source">
+Future&lt;DownloadAccesses&gt; releaseDownloadAccess(List&lt;String&gt; volumeIds, String cpksver, [String locale = UNSPECIFIED, String source = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["volumeIds"] = volumeIds;
+  $pathParams["cpksver"] = cpksver;
+  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "myconfig/releaseDownloadAccess").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; DownloadAccesses.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="requestAccess">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>requestAccess</strong>(<a href="../dart_core/String.html">String</a> source, <a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> nonce, <a href="../dart_core/String.html">String</a> cpksver, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED]) <a class="anchor-link" href="#requestAccess"
+              title="Permalink to MyconfigResource.requestAccess">#</a></h4>
+<div class="doc">
+<p>Request concurrent and download access restrictions.
+
+<span class="param">source</span> String to identify the originator of this request.
+
+<span class="param">volumeId</span> The volume to request concurrent/download restrictions for.
+
+<span class="param">nonce</span> The client nonce value.
+
+<span class="param">cpksver</span> The device/version ID from which to request the restrictions.</p>
+<pre class="source">
+Future&lt;RequestAccess&gt; requestAccess(String source, String volumeId, String nonce, String cpksver, [String locale = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["source"] = source;
+  $pathParams["volumeId"] = volumeId;
+  $pathParams["nonce"] = nonce;
+  $pathParams["cpksver"] = cpksver;
+  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "myconfig/requestAccess").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; RequestAccess.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="syncVolumeLicenses">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>syncVolumeLicenses</strong>(<a href="../dart_core/String.html">String</a> source, <a href="../dart_core/String.html">String</a> nonce, <a href="../dart_core/String.html">String</a> cpksver, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> showPreorders = UNSPECIFIED, <a href="../dart_core/List.html">List</a> volumeIds = UNSPECIFIED]) <a class="anchor-link" href="#syncVolumeLicenses"
+              title="Permalink to MyconfigResource.syncVolumeLicenses">#</a></h4>
+<div class="doc">
+<p>Request downloaded content access for specified volumes on the My eBooks shelf.
+
+<span class="param">source</span> String to identify the originator of this request.
+
+<span class="param">nonce</span> The client nonce value.
+
+<span class="param">cpksver</span> The device/version ID from which to release the restriction.</p>
+<pre class="source">
+Future&lt;Volumes&gt; syncVolumeLicenses(String source, String nonce, String cpksver, [String locale = UNSPECIFIED, bool showPreorders = UNSPECIFIED, List&lt;String&gt; volumeIds = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["source"] = source;
+  $pathParams["nonce"] = nonce;
+  $pathParams["cpksver"] = cpksver;
+  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
+  if (UNSPECIFIED != showPreorders) $queryParams["showPreorders"] = showPreorders;
+  if (UNSPECIFIED != volumeIds) $queryParams["volumeIds"] = volumeIds;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "myconfig/syncVolumeLicenses").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Volumes.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:40.803</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

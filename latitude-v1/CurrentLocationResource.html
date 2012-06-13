@@ -1,0 +1,137 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CurrentLocationResource Class / latitude-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="latitude-v1" data-type="CurrentLocationResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../latitude-v1.html">latitude-v1</a> &rsaquo; <a href="../latitude-v1/CurrentLocationResource.html">CurrentLocationResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CurrentLocationResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>() <a class="anchor-link" href="#delete"
+              title="Permalink to CurrentLocationResource.delete">#</a></h4>
+<div class="doc">
+<p>Deletes the authenticated user's current location.</p>
+<pre class="source">
+Future delete() {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "currentLocation").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>([<a href="../latitude-v1/CurrentLocationResourceGetGranularity.html">CurrentLocationResourceGetGranularity</a> granularity = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to CurrentLocationResource.get">#</a></h4>
+<div class="doc">
+<p>Returns the authenticated user's current location.</p>
+<pre class="source">
+Future&lt;Location&gt; get([CurrentLocationResourceGetGranularity granularity = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (UNSPECIFIED != granularity) $queryParams["granularity"] = granularity;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "currentLocation").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Location.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../latitude-v1/Location.html">Location</a> content) <a class="anchor-link" href="#insert"
+              title="Permalink to CurrentLocationResource.insert">#</a></h4>
+<div class="doc">
+<p>Updates or creates the user's current location.
+
+<span class="param">content</span> the Location</p>
+<pre class="source">
+Future&lt;Location&gt; insert(Location content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Location.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "currentLocation").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Location.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:54.736</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

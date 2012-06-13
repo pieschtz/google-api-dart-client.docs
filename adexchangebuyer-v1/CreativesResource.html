@@ -1,0 +1,147 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CreativesResource Class / adexchangebuyer-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adexchangebuyer-v1" data-type="CreativesResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adexchangebuyer-v1.html">adexchangebuyer-v1</a> &rsaquo; <a href="../adexchangebuyer-v1/CreativesResource.html">CreativesResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CreativesResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> accountId, <a href="../dart_core/String.html">String</a> buyerCreativeId, <a href="../dart_core/String.html">String</a> adgroupId) <a class="anchor-link" href="#get"
+              title="Permalink to CreativesResource.get">#</a></h4>
+<div class="doc">
+<p>Gets the status for a single creative.
+
+<span class="param">accountId</span> The id for the account that will serve this creative.
+
+<span class="param">buyerCreativeId</span> The buyer-specific id for this creative.
+
+<span class="param">adgroupId</span> The adgroup this creative belongs to.</p>
+<pre class="source">
+Future&lt;Creative&gt; get(int accountId, String buyerCreativeId, String adgroupId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["accountId"] = accountId;
+  $pathParams["buyerCreativeId"] = buyerCreativeId;
+  $pathParams["adgroupId"] = adgroupId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "creatives/{accountId}/{buyerCreativeId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Creative.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../adexchangebuyer-v1/Creative.html">Creative</a> content) <a class="anchor-link" href="#insert"
+              title="Permalink to CreativesResource.insert">#</a></h4>
+<div class="doc">
+<p>Submit a new creative.
+
+<span class="param">content</span> the Creative</p>
+<pre class="source">
+Future&lt;Creative&gt; insert(Creative content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Creative.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "creatives").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Creative.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to CreativesResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves a list of the authenticated user's active creatives.</p>
+<pre class="source">
+Future&lt;CreativesList&gt; list([String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "creatives").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; CreativesList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:34.850</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

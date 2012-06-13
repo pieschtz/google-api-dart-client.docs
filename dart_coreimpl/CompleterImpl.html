@@ -57,13 +57,13 @@ void complete(T value) {
 </div>
 <div class="method"><h4 id="completeException">
 <span class="show-code">Code</span>
-<a href="../dart_core/void.html">void</a> <strong>completeException</strong>(exception) <a class="anchor-link" href="#completeException"
+<a href="../dart_core/void.html">void</a> <strong>completeException</strong>(<a href="../dart_core/Object.html">Object</a> exception, [<a href="../dart_core/Object.html">Object</a> stackTrace]) <a class="anchor-link" href="#completeException"
               title="Permalink to CompleterImpl&lt;T&gt;.completeException">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-void completeException(var exception) {
-  _futureImpl._setException(exception);
+void completeException(Object exception, [Object stackTrace]) {
+  _futureImpl._setException(exception, stackTrace);
 }
 </pre>
 </div>
@@ -86,7 +86,7 @@ Future&lt;T&gt; get future() {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-13 18:44:59.626Z</div>
+          <div>This page generated at 2012-06-13 22:22:46.193</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

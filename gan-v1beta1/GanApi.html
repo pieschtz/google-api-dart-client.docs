@@ -1,0 +1,273 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>GanApi Class / gan-v1beta1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="gan-v1beta1" data-type="GanApi">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/GanApi.html">GanApi</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>GanApi</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>Lets you have programmatic access to your Google Affiliate Network data.</p>
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="GanApi">
+<span class="show-code">Code</span>
+new <strong>GanApi</strong>([baseUrl = "https://www.googleapis.com/gan/v1beta1/", applicationName, authenticator]) <a class="anchor-link" href="#GanApi"
+              title="Permalink to GanApi.GanApi">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+GanApi([this.baseUrl = "https://www.googleapis.com/gan/v1beta1/", this.applicationName, this.authenticator]) { 
+  _advertisers = new AdvertisersResource._internal(this);
+  _ccOffers = new CcOffersResource._internal(this);
+  _events = new EventsResource._internal(this);
+  _links = new LinksResource._internal(this);
+  _publishers = new PublishersResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get:advertisers">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/AdvertisersResource.html">AdvertisersResource</a> <strong>get advertisers</strong>() <a class="anchor-link" href="#get:advertisers"
+              title="Permalink to GanApi.get advertisers">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AdvertisersResource get advertisers() =&gt; _advertisers;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:ccOffers">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/CcOffersResource.html">CcOffersResource</a> <strong>get ccOffers</strong>() <a class="anchor-link" href="#get:ccOffers"
+              title="Permalink to GanApi.get ccOffers">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CcOffersResource get ccOffers() =&gt; _ccOffers;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:events">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/EventsResource.html">EventsResource</a> <strong>get events</strong>() <a class="anchor-link" href="#get:events"
+              title="Permalink to GanApi.get events">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+EventsResource get events() =&gt; _events;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:links">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/LinksResource.html">LinksResource</a> <strong>get links</strong>() <a class="anchor-link" href="#get:links"
+              title="Permalink to GanApi.get links">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+LinksResource get links() =&gt; _links;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:publishers">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/PublishersResource.html">PublishersResource</a> <strong>get publishers</strong>() <a class="anchor-link" href="#get:publishers"
+              title="Permalink to GanApi.get publishers">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+PublishersResource get publishers() =&gt; _publishers;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:userAgent">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+              title="Permalink to GanApi.get userAgent">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+String get userAgent() {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}gan/v1beta1/20120501 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="alt">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/GanApiAlt.html">GanApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
+            href="#alt"
+            title="Permalink to GanApi.alt">#</a>
+        </h4>
+        <div class="doc">
+<p>Data format for the response.</p>
+<pre class="source">
+GanApiAlt alt;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="applicationName">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+            href="#applicationName"
+            title="Permalink to GanApi.applicationName">#</a>
+        </h4>
+        <div class="doc">
+<p>The application name, used in the user-agent header</p>
+<pre class="source">
+final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to GanApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="baseUrl">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+            href="#baseUrl"
+            title="Permalink to GanApi.baseUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The API root, such as <code>https://www.googleapis.com</code></p>
+<pre class="source">
+final String baseUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clientVersion">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+            href="#clientVersion"
+            title="Permalink to GanApi.clientVersion">#</a>
+        </h4>
+        <div class="doc">
+<p>The client library version</p>
+<pre class="source">
+final String clientVersion = "0.1";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fields">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+            href="#fields"
+            title="Permalink to GanApi.fields">#</a>
+        </h4>
+        <div class="doc">
+<p>Selector specifying which fields to include in a partial response.</p>
+<pre class="source">
+String fields;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="key">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+            href="#key"
+            title="Permalink to GanApi.key">#</a>
+        </h4>
+        <div class="doc">
+<p>API key. Your API key identifies your project and provides you with API access, quota, and
+reports. Required unless you provide an OAuth 2.0 token.</p>
+<pre class="source">
+String key;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="oauthToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+            href="#oauthToken"
+            title="Permalink to GanApi.oauthToken">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth 2.0 token for the current user.</p>
+<pre class="source">
+String oauthToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prettyPrint">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+            href="#prettyPrint"
+            title="Permalink to GanApi.prettyPrint">#</a>
+        </h4>
+        <div class="doc">
+<p>Returns response with indentations and line breaks.</p>
+<pre class="source">
+bool prettyPrint;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaUser">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+            href="#quotaUser"
+            title="Permalink to GanApi.quotaUser">#</a>
+        </h4>
+        <div class="doc">
+<p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
+<pre class="source">
+String quotaUser;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userIp">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+            href="#userIp"
+            title="Permalink to GanApi.userIp">#</a>
+        </h4>
+        <div class="doc">
+<p>IP address of the site where the request originates. Use this if you want to enforce per-user
+limits.</p>
+<pre class="source">
+String userIp;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:47.229</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -97,27 +97,6 @@ Date.now();
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="Date">
-<span class="show-code">Code</span>
-new <strong>Date</strong>.withTimeZone(<a href="../dart_core/int.html">int</a> year, <a href="../dart_core/int.html">int</a> month, <a href="../dart_core/int.html">int</a> day, <a href="../dart_core/int.html">int</a> hours, <a href="../dart_core/int.html">int</a> minutes, <a href="../dart_core/int.html">int</a> seconds, <a href="../dart_core/int.html">int</a> milliseconds, <a href="../dart_core/TimeZone.html">TimeZone</a> timeZone) <a class="anchor-link" href="#Date"
-              title="Permalink to Date.Date">#</a></h4>
-<div class="doc">
-<p>Constructs a <a class="crossref" href="../dart_core/Date.html">Date</a> instance based on the individual parts.
-
-<span class="param">timeZone</span> may not be <code>null</code>.</p>
-<p><em>DEPRECATED</em></p>
-<pre class="source">
-Date.withTimeZone(int year,
-                  int month,
-                  int day,
-                  int hours,
-                  int minutes,
-                  int seconds,
-                  int milliseconds,
-                  TimeZone timeZone);
-</pre>
-</div>
-</div>
 <h3>Static Fields</h3>
 <div class="field"><h4 id="APR">
 <span class="show-code">Code</span>
@@ -460,22 +439,6 @@ Date add(Duration duration);
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="changeTimeZone">
-<span class="show-code">Code</span>
-<a href="../dart_core/Date.html">Date</a> <strong>changeTimeZone</strong>(<a href="../dart_core/TimeZone.html">TimeZone</a> targetTimeZone) <a class="anchor-link" href="#changeTimeZone"
-              title="Permalink to Date.changeTimeZone">#</a></h4>
-<div class="doc">
-<p>Returns a new <a class="crossref" href="../dart_core/Date.html">Date</a> in the given 
-<span class="param">targetTimeZone</span> time zone. The
-<a class="crossref" href="../dart_core/Date.html#value">value</a> of the new instance is equal to <code>this.value</code>.</p>
-<p>This call is equivalent to
- <code>new Date.fromEpoch(this.value, targetTimeZone)</code>.</p>
-<p><em>DEPRECATED</em></p>
-<pre class="source">
-Date changeTimeZone(TimeZone targetTimeZone);
-</pre>
-</div>
-</div>
 <div class="method"><h4 id="get:day">
 <span class="show-code">Code</span>
 <a href="../dart_core/int.html">int</a> <strong>get day</strong>() <a class="anchor-link" href="#get:day"
@@ -684,7 +647,7 @@ final int value;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-13 18:44:58.312Z</div>
+          <div>This page generated at 2012-06-13 22:22:44.789</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

@@ -1,0 +1,175 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>GaDataProfileInfo Class / analytics-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="analytics-v3" data-type="GaDataProfileInfo">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/GaDataProfileInfo.html">GaDataProfileInfo</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>GaDataProfileInfo</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>GaDataProfileInfo</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../analytics-v3/GaDataProfileInfo.html">GaDataProfileInfo</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to GaDataProfileInfo.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static GaDataProfileInfo parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new GaDataProfileInfo();
+  result.webPropertyId = identity(json["webPropertyId"]);
+  result.internalWebPropertyId = identity(json["internalWebPropertyId"]);
+  result.tableId = identity(json["tableId"]);
+  result.profileId = identity(json["profileId"]);
+  result.profileName = identity(json["profileName"]);
+  result.accountId = identity(json["accountId"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../analytics-v3/GaDataProfileInfo.html">GaDataProfileInfo</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to GaDataProfileInfo.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(GaDataProfileInfo value) {
+  if (value == null) return null;
+  final result = {};
+  result["webPropertyId"] = identity(value.webPropertyId);
+  result["internalWebPropertyId"] = identity(value.internalWebPropertyId);
+  result["tableId"] = identity(value.tableId);
+  result["profileId"] = identity(value.profileId);
+  result["profileName"] = identity(value.profileName);
+  result["accountId"] = identity(value.accountId);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to GaDataProfileInfo.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="accountId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>accountId</strong> <a class="anchor-link"
+            href="#accountId"
+            title="Permalink to GaDataProfileInfo.accountId">#</a>
+        </h4>
+        <div class="doc">
+<p>Account ID to which this profile belongs.</p>
+<pre class="source">
+String accountId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="internalWebPropertyId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>internalWebPropertyId</strong> <a class="anchor-link"
+            href="#internalWebPropertyId"
+            title="Permalink to GaDataProfileInfo.internalWebPropertyId">#</a>
+        </h4>
+        <div class="doc">
+<p>Internal ID for the web property to which this profile belongs.</p>
+<pre class="source">
+String internalWebPropertyId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="profileId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>profileId</strong> <a class="anchor-link"
+            href="#profileId"
+            title="Permalink to GaDataProfileInfo.profileId">#</a>
+        </h4>
+        <div class="doc">
+<p>Profile ID.</p>
+<pre class="source">
+String profileId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="profileName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>profileName</strong> <a class="anchor-link"
+            href="#profileName"
+            title="Permalink to GaDataProfileInfo.profileName">#</a>
+        </h4>
+        <div class="doc">
+<p>Profile name.</p>
+<pre class="source">
+String profileName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="tableId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>tableId</strong> <a class="anchor-link"
+            href="#tableId"
+            title="Permalink to GaDataProfileInfo.tableId">#</a>
+        </h4>
+        <div class="doc">
+<p>Table ID for profile.</p>
+<pre class="source">
+String tableId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="webPropertyId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>webPropertyId</strong> <a class="anchor-link"
+            href="#webPropertyId"
+            title="Permalink to GaDataProfileInfo.webPropertyId">#</a>
+        </h4>
+        <div class="doc">
+<p>Web Property ID to which this profile belongs.</p>
+<pre class="source">
+String webPropertyId;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:37.654</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

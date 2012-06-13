@@ -1,0 +1,130 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CommunityMembers Class / orkut-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="orkut-v2" data-type="CommunityMembers">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../orkut-v2.html">orkut-v2</a> &rsaquo; <a href="../orkut-v2/CommunityMembers.html">CommunityMembers</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CommunityMembers</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>CommunityMembers</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../orkut-v2/CommunityMembers.html">CommunityMembers</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to CommunityMembers.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static CommunityMembers parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new CommunityMembers();
+  result.communityMembershipStatus = CommunityMembershipStatus.parse(json["communityMembershipStatus"]);
+  result.person = OrkutActivitypersonResource.parse(json["person"]);
+  result.kind = identity(json["kind"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../orkut-v2/CommunityMembers.html">CommunityMembers</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to CommunityMembers.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(CommunityMembers value) {
+  if (value == null) return null;
+  final result = {};
+  result["communityMembershipStatus"] = CommunityMembershipStatus.serialize(value.communityMembershipStatus);
+  result["person"] = OrkutActivitypersonResource.serialize(value.person);
+  result["kind"] = identity(value.kind);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CommunityMembers.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="communityMembershipStatus">
+<span class="show-code">Code</span>
+<a href="../orkut-v2/CommunityMembershipStatus.html">CommunityMembershipStatus</a>         <strong>communityMembershipStatus</strong> <a class="anchor-link"
+            href="#communityMembershipStatus"
+            title="Permalink to CommunityMembers.communityMembershipStatus">#</a>
+        </h4>
+        <div class="doc">
+<p>Status and permissions of the user related to the community.</p>
+<pre class="source">
+CommunityMembershipStatus communityMembershipStatus;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to CommunityMembers.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Kind of this item. Always orkut#communityMembers.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="person">
+<span class="show-code">Code</span>
+<a href="../orkut-v2/OrkutActivitypersonResource.html">OrkutActivitypersonResource</a>         <strong>person</strong> <a class="anchor-link"
+            href="#person"
+            title="Permalink to CommunityMembers.person">#</a>
+        </h4>
+        <div class="doc">
+<p>Description of the community member.</p>
+<pre class="source">
+OrkutActivitypersonResource person;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:56.428</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

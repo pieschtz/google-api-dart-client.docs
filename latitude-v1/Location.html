@@ -1,0 +1,239 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Location Class / latitude-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="latitude-v1" data-type="Location">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../latitude-v1.html">latitude-v1</a> &rsaquo; <a href="../latitude-v1/Location.html">Location</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Location</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Location</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../latitude-v1/Location.html">Location</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Location.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Location parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Location();
+  result.kind = identity(json["kind"]);
+  result.altitude = identity(json["altitude"]);
+  result.longitude = identity(json["longitude"]);
+  result.activityId = identity(json["activityId"]);
+  result.latitude = identity(json["latitude"]);
+  result.altitudeAccuracy = identity(json["altitudeAccuracy"]);
+  result.timestampMs = identity(json["timestampMs"]);
+  result.speed = identity(json["speed"]);
+  result.heading = identity(json["heading"]);
+  result.accuracy = identity(json["accuracy"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../latitude-v1/Location.html">Location</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Location.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Location value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["altitude"] = identity(value.altitude);
+  result["longitude"] = identity(value.longitude);
+  result["activityId"] = identity(value.activityId);
+  result["latitude"] = identity(value.latitude);
+  result["altitudeAccuracy"] = identity(value.altitudeAccuracy);
+  result["timestampMs"] = identity(value.timestampMs);
+  result["speed"] = identity(value.speed);
+  result["heading"] = identity(value.heading);
+  result["accuracy"] = identity(value.accuracy);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Location.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="accuracy">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a>         <strong>accuracy</strong> <a class="anchor-link"
+            href="#accuracy"
+            title="Permalink to Location.accuracy">#</a>
+        </h4>
+        <div class="doc">
+<p>Accuracy of the latitude and longitude coordinates, in non-negative meters. Optional.</p>
+<pre class="source">
+Object accuracy;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="activityId">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a>         <strong>activityId</strong> <a class="anchor-link"
+            href="#activityId"
+            title="Permalink to Location.activityId">#</a>
+        </h4>
+        <div class="doc">
+<p>Unique ID of the Buzz message that corresponds to the check-in associated with this location.
+Available only for check-in locations. Optional.</p>
+<pre class="source">
+Object activityId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="altitude">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a>         <strong>altitude</strong> <a class="anchor-link"
+            href="#altitude"
+            title="Permalink to Location.altitude">#</a>
+        </h4>
+        <div class="doc">
+<p>Altitude of the location, in meters. Optional.</p>
+<pre class="source">
+Object altitude;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="altitudeAccuracy">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a>         <strong>altitudeAccuracy</strong> <a class="anchor-link"
+            href="#altitudeAccuracy"
+            title="Permalink to Location.altitudeAccuracy">#</a>
+        </h4>
+        <div class="doc">
+<p>Accuracy of the altitude value, in meters. Optional.</p>
+<pre class="source">
+Object altitudeAccuracy;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="heading">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a>         <strong>heading</strong> <a class="anchor-link"
+            href="#heading"
+            title="Permalink to Location.heading">#</a>
+        </h4>
+        <div class="doc">
+<p>Direction of travel of the user when this location was recorded. In degrees, clockwise relative
+to true north. Optional.</p>
+<pre class="source">
+Object heading;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Location.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Kind of this item.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="latitude">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a>         <strong>latitude</strong> <a class="anchor-link"
+            href="#latitude"
+            title="Permalink to Location.latitude">#</a>
+        </h4>
+        <div class="doc">
+<p>Latitude of the location, in decimal degrees.</p>
+<pre class="source">
+Object latitude;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="longitude">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a>         <strong>longitude</strong> <a class="anchor-link"
+            href="#longitude"
+            title="Permalink to Location.longitude">#</a>
+        </h4>
+        <div class="doc">
+<p>Longitude of the location, in decimal degrees.</p>
+<pre class="source">
+Object longitude;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="speed">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a>         <strong>speed</strong> <a class="anchor-link"
+            href="#speed"
+            title="Permalink to Location.speed">#</a>
+        </h4>
+        <div class="doc">
+<p>Ground speed of the user at the time this location was recorded, in meters per second. Non-
+negative. Optional.</p>
+<pre class="source">
+Object speed;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="timestampMs">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a>         <strong>timestampMs</strong> <a class="anchor-link"
+            href="#timestampMs"
+            title="Permalink to Location.timestampMs">#</a>
+        </h4>
+        <div class="doc">
+<p>Timestamp of the Location Resource, in milliseconds since the epoch (UTC). This is also the
+Location Resource's unique id.</p>
+<pre class="source">
+Object timestampMs;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:54.809</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

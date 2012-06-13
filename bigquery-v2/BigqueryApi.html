@@ -1,0 +1,273 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>BigqueryApi Class / bigquery-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery-v2" data-type="BigqueryApi">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>BigqueryApi</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>A data platform for customers to create, manage, share and query data.</p>
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="BigqueryApi">
+<span class="show-code">Code</span>
+new <strong>BigqueryApi</strong>([baseUrl = "https://www.googleapis.com/bigquery/v2/", applicationName, authenticator]) <a class="anchor-link" href="#BigqueryApi"
+              title="Permalink to BigqueryApi.BigqueryApi">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+BigqueryApi([this.baseUrl = "https://www.googleapis.com/bigquery/v2/", this.applicationName, this.authenticator]) { 
+  _tables = new TablesResource._internal(this);
+  _datasets = new DatasetsResource._internal(this);
+  _jobs = new JobsResource._internal(this);
+  _tabledata = new TabledataResource._internal(this);
+  _projects = new ProjectsResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get:datasets">
+<span class="show-code">Code</span>
+<a href="../bigquery-v2/DatasetsResource.html">DatasetsResource</a> <strong>get datasets</strong>() <a class="anchor-link" href="#get:datasets"
+              title="Permalink to BigqueryApi.get datasets">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+DatasetsResource get datasets() =&gt; _datasets;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:jobs">
+<span class="show-code">Code</span>
+<a href="../bigquery-v2/JobsResource.html">JobsResource</a> <strong>get jobs</strong>() <a class="anchor-link" href="#get:jobs"
+              title="Permalink to BigqueryApi.get jobs">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+JobsResource get jobs() =&gt; _jobs;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:projects">
+<span class="show-code">Code</span>
+<a href="../bigquery-v2/ProjectsResource.html">ProjectsResource</a> <strong>get projects</strong>() <a class="anchor-link" href="#get:projects"
+              title="Permalink to BigqueryApi.get projects">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ProjectsResource get projects() =&gt; _projects;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:tabledata">
+<span class="show-code">Code</span>
+<a href="../bigquery-v2/TabledataResource.html">TabledataResource</a> <strong>get tabledata</strong>() <a class="anchor-link" href="#get:tabledata"
+              title="Permalink to BigqueryApi.get tabledata">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TabledataResource get tabledata() =&gt; _tabledata;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:tables">
+<span class="show-code">Code</span>
+<a href="../bigquery-v2/TablesResource.html">TablesResource</a> <strong>get tables</strong>() <a class="anchor-link" href="#get:tables"
+              title="Permalink to BigqueryApi.get tables">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TablesResource get tables() =&gt; _tables;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:userAgent">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+              title="Permalink to BigqueryApi.get userAgent">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+String get userAgent() {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}bigquery/v2/20120602 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="alt">
+<span class="show-code">Code</span>
+<a href="../bigquery-v2/BigqueryApiAlt.html">BigqueryApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
+            href="#alt"
+            title="Permalink to BigqueryApi.alt">#</a>
+        </h4>
+        <div class="doc">
+<p>Data format for the response.</p>
+<pre class="source">
+BigqueryApiAlt alt;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="applicationName">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+            href="#applicationName"
+            title="Permalink to BigqueryApi.applicationName">#</a>
+        </h4>
+        <div class="doc">
+<p>The application name, used in the user-agent header</p>
+<pre class="source">
+final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to BigqueryApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="baseUrl">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+            href="#baseUrl"
+            title="Permalink to BigqueryApi.baseUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The API root, such as <code>https://www.googleapis.com</code></p>
+<pre class="source">
+final String baseUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clientVersion">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+            href="#clientVersion"
+            title="Permalink to BigqueryApi.clientVersion">#</a>
+        </h4>
+        <div class="doc">
+<p>The client library version</p>
+<pre class="source">
+final String clientVersion = "0.1";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fields">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+            href="#fields"
+            title="Permalink to BigqueryApi.fields">#</a>
+        </h4>
+        <div class="doc">
+<p>Selector specifying which fields to include in a partial response.</p>
+<pre class="source">
+String fields;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="key">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+            href="#key"
+            title="Permalink to BigqueryApi.key">#</a>
+        </h4>
+        <div class="doc">
+<p>API key. Your API key identifies your project and provides you with API access, quota, and
+reports. Required unless you provide an OAuth 2.0 token.</p>
+<pre class="source">
+String key;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="oauthToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+            href="#oauthToken"
+            title="Permalink to BigqueryApi.oauthToken">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth 2.0 token for the current user.</p>
+<pre class="source">
+String oauthToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prettyPrint">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+            href="#prettyPrint"
+            title="Permalink to BigqueryApi.prettyPrint">#</a>
+        </h4>
+        <div class="doc">
+<p>Returns response with indentations and line breaks.</p>
+<pre class="source">
+bool prettyPrint;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaUser">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+            href="#quotaUser"
+            title="Permalink to BigqueryApi.quotaUser">#</a>
+        </h4>
+        <div class="doc">
+<p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
+<pre class="source">
+String quotaUser;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userIp">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+            href="#userIp"
+            title="Permalink to BigqueryApi.userIp">#</a>
+        </h4>
+        <div class="doc">
+<p>IP address of the site where the request originates. Use this if you want to enforce per-user
+limits.</p>
+<pre class="source">
+String userIp;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:38.432</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

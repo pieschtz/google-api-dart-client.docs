@@ -1,0 +1,143 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>LayersResource Class / books-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books-v1" data-type="LayersResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/LayersResource.html">LayersResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>LayersResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> summaryId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> contentVersion = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to LayersResource.get">#</a></h4>
+<div class="doc">
+<p>Gets the layer summary for a volume.
+
+<span class="param">volumeId</span> The volume to retrieve layers for.
+
+<span class="param">summaryId</span> The ID for the layer to get the summary for.</p>
+<pre class="source">
+Future&lt;Layersummary&gt; get(String volumeId, String summaryId, [String source = UNSPECIFIED, String contentVersion = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["volumeId"] = volumeId;
+  $pathParams["summaryId"] = summaryId;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (UNSPECIFIED != contentVersion) $queryParams["contentVersion"] = contentVersion;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layersummary/{summaryId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Layersummary.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> contentVersion = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to LayersResource.list">#</a></h4>
+<div class="doc">
+<p>List the layer summaries for a volume.
+
+<span class="param">volumeId</span> The volume to retrieve layers for.</p>
+<pre class="source">
+Future&lt;Layersummaries&gt; list(String volumeId, [String pageToken = UNSPECIFIED, String contentVersion = UNSPECIFIED, int maxResults = UNSPECIFIED, String source = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["volumeId"] = volumeId;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != contentVersion) $queryParams["contentVersion"] = contentVersion;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layersummary").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Layersummaries.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="annotationData">
+<span class="show-code">Code</span>
+final <a href="../books-v1/LayersAnnotationDataResourceResource.html">LayersAnnotationDataResourceResource</a>         <strong>annotationData</strong> <a class="anchor-link"
+            href="#annotationData"
+            title="Permalink to LayersResource.annotationData">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final LayersAnnotationDataResourceResource annotationData;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="volumeAnnotations">
+<span class="show-code">Code</span>
+final <a href="../books-v1/LayersVolumeAnnotationsResourceResource.html">LayersVolumeAnnotationsResourceResource</a>         <strong>volumeAnnotations</strong> <a class="anchor-link"
+            href="#volumeAnnotations"
+            title="Permalink to LayersResource.volumeAnnotations">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final LayersVolumeAnnotationsResourceResource volumeAnnotations;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:40.598</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,190 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CommunityTopicsResource Class / orkut-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="orkut-v2" data-type="CommunityTopicsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../orkut-v2.html">orkut-v2</a> &rsaquo; <a href="../orkut-v2/CommunityTopicsResource.html">CommunityTopicsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CommunityTopicsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> topicId) <a class="anchor-link" href="#delete"
+              title="Permalink to CommunityTopicsResource.delete">#</a></h4>
+<div class="doc">
+<p>Moves a topic of the community to the trash folder.
+
+<span class="param">communityId</span> The ID of the community whose topic will be moved to the trash folder.
+
+<span class="param">topicId</span> The ID of the topic to be moved to the trash folder.</p>
+<pre class="source">
+Future delete(int communityId, String topicId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["communityId"] = communityId;
+  $pathParams["topicId"] = topicId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/topics/{topicId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> topicId, [<a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to CommunityTopicsResource.get">#</a></h4>
+<div class="doc">
+<p>Retrieves a topic of a community.
+
+<span class="param">communityId</span> The ID of the community whose topic will be retrieved.
+
+<span class="param">topicId</span> The ID of the topic to get.</p>
+<pre class="source">
+Future&lt;CommunityTopic&gt; get(int communityId, String topicId, [String hl = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["communityId"] = communityId;
+  $pathParams["topicId"] = topicId;
+  if (UNSPECIFIED != hl) $queryParams["hl"] = hl;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/topics/{topicId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; CommunityTopic.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../orkut-v2/CommunityTopic.html">CommunityTopic</a> content, [<a href="../dart_core/bool.html">bool</a> isShout = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+              title="Permalink to CommunityTopicsResource.insert">#</a></h4>
+<div class="doc">
+<p>Adds a topic to a given community.
+
+<span class="param">communityId</span> The ID of the community the topic should be added to.
+
+<span class="param">content</span> the CommunityTopic</p>
+<pre class="source">
+Future&lt;CommunityTopic&gt; insert(int communityId, CommunityTopic content, [bool isShout = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["communityId"] = communityId;
+  if (UNSPECIFIED != isShout) $queryParams["isShout"] = isShout;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(CommunityTopic.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/topics").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; CommunityTopic.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> communityId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to CommunityTopicsResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves the topics of a community.
+
+<span class="param">communityId</span> The ID of the community which topics will be listed.</p>
+<pre class="source">
+Future&lt;CommunityTopicList&gt; list(int communityId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, String hl = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["communityId"] = communityId;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != hl) $queryParams["hl"] = hl;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/topics").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; CommunityTopicList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:55.988</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,130 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ReviewSource Class / books-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books-v1" data-type="ReviewSource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/ReviewSource.html">ReviewSource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ReviewSource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ReviewSource</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../books-v1/ReviewSource.html">ReviewSource</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ReviewSource.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ReviewSource parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ReviewSource();
+  result.extraDescription = identity(json["extraDescription"]);
+  result.url = identity(json["url"]);
+  result.description = identity(json["description"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/ReviewSource.html">ReviewSource</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ReviewSource.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ReviewSource value) {
+  if (value == null) return null;
+  final result = {};
+  result["extraDescription"] = identity(value.extraDescription);
+  result["url"] = identity(value.url);
+  result["description"] = identity(value.description);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ReviewSource.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to ReviewSource.description">#</a>
+        </h4>
+        <div class="doc">
+<p>Name of the source.</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="extraDescription">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>extraDescription</strong> <a class="anchor-link"
+            href="#extraDescription"
+            title="Permalink to ReviewSource.extraDescription">#</a>
+        </h4>
+        <div class="doc">
+<p>Extra text about the source of the review.</p>
+<pre class="source">
+String extraDescription;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="url">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>url</strong> <a class="anchor-link"
+            href="#url"
+            title="Permalink to ReviewSource.url">#</a>
+        </h4>
+        <div class="doc">
+<p>URL of the source of the review.</p>
+<pre class="source">
+String url;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:41.431</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

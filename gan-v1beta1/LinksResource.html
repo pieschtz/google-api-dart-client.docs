@@ -1,0 +1,170 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>LinksResource Class / gan-v1beta1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="gan-v1beta1" data-type="LinksResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/LinksResource.html">LinksResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>LinksResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../gan-v1beta1/LinksResourceGetRole.html">LinksResourceGetRole</a> role, <a href="../dart_core/String.html">String</a> roleId, <a href="../dart_core/String.html">String</a> linkId) <a class="anchor-link" href="#get"
+              title="Permalink to LinksResource.get">#</a></h4>
+<div class="doc">
+<p>Retrieves data about a single link if the requesting advertiser/publisher has access to it.
+Advertisers can look up their own links. Publishers can look up visible links or links belonging
+to advertisers they are in a relationship with.
+
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
+
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.
+
+<span class="param">linkId</span> The ID of the link to look up.</p>
+<pre class="source">
+Future&lt;Link&gt; get(LinksResourceGetRole role, String roleId, String linkId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["role"] = role;
+  $pathParams["roleId"] = roleId;
+  $pathParams["linkId"] = linkId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "{role}/{roleId}/link/{linkId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Link.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../gan-v1beta1/LinksResourceInsertRole.html">LinksResourceInsertRole</a> role, <a href="../dart_core/String.html">String</a> roleId, <a href="../gan-v1beta1/Link.html">Link</a> content) <a class="anchor-link" href="#insert"
+              title="Permalink to LinksResource.insert">#</a></h4>
+<div class="doc">
+<p>Inserts a new link.
+
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
+
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.
+
+<span class="param">content</span> the Link</p>
+<pre class="source">
+Future&lt;Link&gt; insert(LinksResourceInsertRole role, String roleId, Link content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["role"] = role;
+  $pathParams["roleId"] = roleId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Link.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "{role}/{roleId}/link").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Link.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../gan-v1beta1/LinksResourceListRole.html">LinksResourceListRole</a> role, <a href="../dart_core/String.html">String</a> roleId, [<a href="../gan-v1beta1/LinksResourceListLinkType.html">LinksResourceListLinkType</a> linkType = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startDateMin = UNSPECIFIED, <a href="../dart_core/List.html">List</a> assetSize = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListRelationshipStatus.html">LinksResourceListRelationshipStatus</a> relationshipStatus = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAdvertiserCategory.html">LinksResourceListAdvertiserCategory</a> advertiserCategory = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/List.html">List</a> advertiserId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startDateMax = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListPromotionType.html">LinksResourceListPromotionType</a> promotionType = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAuthorship.html">LinksResourceListAuthorship</a> authorship = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to LinksResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves all links that match the query parameters.
+
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
+
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</p>
+<pre class="source">
+Future&lt;Links&gt; list(LinksResourceListRole role, String roleId, [LinksResourceListLinkType linkType = UNSPECIFIED, String startDateMin = UNSPECIFIED, List&lt;String&gt; assetSize = UNSPECIFIED, LinksResourceListRelationshipStatus relationshipStatus = UNSPECIFIED, LinksResourceListAdvertiserCategory advertiserCategory = UNSPECIFIED, int maxResults = UNSPECIFIED, List&lt;String&gt; advertiserId = UNSPECIFIED, String pageToken = UNSPECIFIED, String startDateMax = UNSPECIFIED, LinksResourceListPromotionType promotionType = UNSPECIFIED, LinksResourceListAuthorship authorship = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["role"] = role;
+  $pathParams["roleId"] = roleId;
+  if (UNSPECIFIED != linkType) $queryParams["linkType"] = linkType;
+  if (UNSPECIFIED != startDateMin) $queryParams["startDateMin"] = startDateMin;
+  if (UNSPECIFIED != assetSize) $queryParams["assetSize"] = assetSize;
+  if (UNSPECIFIED != relationshipStatus) $queryParams["relationshipStatus"] = relationshipStatus;
+  if (UNSPECIFIED != advertiserCategory) $queryParams["advertiserCategory"] = advertiserCategory;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != advertiserId) $queryParams["advertiserId"] = advertiserId;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != startDateMax) $queryParams["startDateMax"] = startDateMax;
+  if (UNSPECIFIED != promotionType) $queryParams["promotionType"] = promotionType;
+  if (UNSPECIFIED != authorship) $queryParams["authorship"] = authorship;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "{role}/{roleId}/links").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Links.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:47.599</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

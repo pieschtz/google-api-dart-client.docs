@@ -1,0 +1,310 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ShoppingModelProductJsonV1Inventories Class / shopping-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="shopping-v1" data-type="ShoppingModelProductJsonV1Inventories">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../shopping-v1.html">shopping-v1</a> &rsaquo; <a href="../shopping-v1/ShoppingModelProductJsonV1Inventories.html">ShoppingModelProductJsonV1Inventories</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ShoppingModelProductJsonV1Inventories</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ShoppingModelProductJsonV1Inventories</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../shopping-v1/ShoppingModelProductJsonV1Inventories.html">ShoppingModelProductJsonV1Inventories</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ShoppingModelProductJsonV1Inventories.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ShoppingModelProductJsonV1Inventories parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ShoppingModelProductJsonV1Inventories();
+  result.installmentPrice = identity(json["installmentPrice"]);
+  result.installmentMonths = identity(json["installmentMonths"]);
+  result.distance = identity(json["distance"]);
+  result.price = identity(json["price"]);
+  result.storeId = identity(json["storeId"]);
+  result.tax = identity(json["tax"]);
+  result.shipping = identity(json["shipping"]);
+  result.currency = identity(json["currency"]);
+  result.salePrice = identity(json["salePrice"]);
+  result.originalPrice = identity(json["originalPrice"]);
+  result.distanceUnit = identity(json["distanceUnit"]);
+  result.saleStartDate = identity(json["saleStartDate"]);
+  result.availability = identity(json["availability"]);
+  result.channel = identity(json["channel"]);
+  result.saleEndDate = identity(json["saleEndDate"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ShoppingModelProductJsonV1Inventories.html">ShoppingModelProductJsonV1Inventories</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ShoppingModelProductJsonV1Inventories.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ShoppingModelProductJsonV1Inventories value) {
+  if (value == null) return null;
+  final result = {};
+  result["installmentPrice"] = identity(value.installmentPrice);
+  result["installmentMonths"] = identity(value.installmentMonths);
+  result["distance"] = identity(value.distance);
+  result["price"] = identity(value.price);
+  result["storeId"] = identity(value.storeId);
+  result["tax"] = identity(value.tax);
+  result["shipping"] = identity(value.shipping);
+  result["currency"] = identity(value.currency);
+  result["salePrice"] = identity(value.salePrice);
+  result["originalPrice"] = identity(value.originalPrice);
+  result["distanceUnit"] = identity(value.distanceUnit);
+  result["saleStartDate"] = identity(value.saleStartDate);
+  result["availability"] = identity(value.availability);
+  result["channel"] = identity(value.channel);
+  result["saleEndDate"] = identity(value.saleEndDate);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ShoppingModelProductJsonV1Inventories.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="availability">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>availability</strong> <a class="anchor-link"
+            href="#availability"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.availability">#</a>
+        </h4>
+        <div class="doc">
+<p>Availability of product inventory.</p>
+<pre class="source">
+String availability;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="channel">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>channel</strong> <a class="anchor-link"
+            href="#channel"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.channel">#</a>
+        </h4>
+        <div class="doc">
+<p>Channel of product inventory (one of: online, local).</p>
+<pre class="source">
+String channel;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="currency">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>currency</strong> <a class="anchor-link"
+            href="#currency"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.currency">#</a>
+        </h4>
+        <div class="doc">
+<p>Currency of product inventory (an ISO 4217 alphabetic code).</p>
+<pre class="source">
+String currency;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="distance">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>distance</strong> <a class="anchor-link"
+            href="#distance"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.distance">#</a>
+        </h4>
+        <div class="doc">
+<p>Distance of product inventory.</p>
+<pre class="source">
+double distance;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="distanceUnit">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>distanceUnit</strong> <a class="anchor-link"
+            href="#distanceUnit"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.distanceUnit">#</a>
+        </h4>
+        <div class="doc">
+<p>Distance unit of product inventory.</p>
+<pre class="source">
+String distanceUnit;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="installmentMonths">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>installmentMonths</strong> <a class="anchor-link"
+            href="#installmentMonths"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.installmentMonths">#</a>
+        </h4>
+        <div class="doc">
+<p>Number of months for installment price.</p>
+<pre class="source">
+int installmentMonths;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="installmentPrice">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>installmentPrice</strong> <a class="anchor-link"
+            href="#installmentPrice"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.installmentPrice">#</a>
+        </h4>
+        <div class="doc">
+<p>Installment price of product inventory.</p>
+<pre class="source">
+double installmentPrice;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="originalPrice">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>originalPrice</strong> <a class="anchor-link"
+            href="#originalPrice"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.originalPrice">#</a>
+        </h4>
+        <div class="doc">
+<p>Original price of product inventory. Only returned for products that are on sale.</p>
+<pre class="source">
+double originalPrice;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="price">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>price</strong> <a class="anchor-link"
+            href="#price"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.price">#</a>
+        </h4>
+        <div class="doc">
+<p>Price of product inventory.</p>
+<pre class="source">
+double price;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="saleEndDate">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>saleEndDate</strong> <a class="anchor-link"
+            href="#saleEndDate"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.saleEndDate">#</a>
+        </h4>
+        <div class="doc">
+<p>Sale end date.</p>
+<pre class="source">
+String saleEndDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="salePrice">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>salePrice</strong> <a class="anchor-link"
+            href="#salePrice"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.salePrice">#</a>
+        </h4>
+        <div class="doc">
+<p>Sale price of product inventory.</p>
+<pre class="source">
+double salePrice;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="saleStartDate">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>saleStartDate</strong> <a class="anchor-link"
+            href="#saleStartDate"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.saleStartDate">#</a>
+        </h4>
+        <div class="doc">
+<p>Sale start date.</p>
+<pre class="source">
+String saleStartDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="shipping">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>shipping</strong> <a class="anchor-link"
+            href="#shipping"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.shipping">#</a>
+        </h4>
+        <div class="doc">
+<p>Shipping cost of product inventory.</p>
+<pre class="source">
+double shipping;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="storeId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>storeId</strong> <a class="anchor-link"
+            href="#storeId"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.storeId">#</a>
+        </h4>
+        <div class="doc">
+<p>Store ID of product inventory.</p>
+<pre class="source">
+String storeId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="tax">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>tax</strong> <a class="anchor-link"
+            href="#tax"
+            title="Permalink to ShoppingModelProductJsonV1Inventories.tax">#</a>
+        </h4>
+        <div class="doc">
+<p>Tax of product inventory.</p>
+<pre class="source">
+double tax;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:57.776</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

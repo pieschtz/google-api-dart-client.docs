@@ -1,0 +1,75 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CcOffersResource Class / gan-v1beta1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="gan-v1beta1" data-type="CcOffersResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/CcOffersResource.html">CcOffersResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CcOffersResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> publisher, [<a href="../dart_core/List.html">List</a> advertiser = UNSPECIFIED, <a href="../gan-v1beta1/CcOffersResourceListProjection.html">CcOffersResourceListProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to CcOffersResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves credit card offers for the given publisher.
+
+<span class="param">publisher</span> The ID of the publisher in question.</p>
+<pre class="source">
+Future&lt;CcOffers&gt; list(String publisher, [List&lt;String&gt; advertiser = UNSPECIFIED, CcOffersResourceListProjection projection = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["publisher"] = publisher;
+  if (UNSPECIFIED != advertiser) $queryParams["advertiser"] = advertiser;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "publishers/{publisher}/ccOffers").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; CcOffers.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:47.386</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

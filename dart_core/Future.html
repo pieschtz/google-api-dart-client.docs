@@ -25,17 +25,16 @@
         
 <div class="doc">
 <p>A <a class="crossref" href="../dart_core/Future.html">Future</a> is used to obtain a value sometime in the future.  Receivers of a
-<a class="crossref" href="../dart_core/Future.html">Future</a> can obtain the value by passing a callback to <a class="crossref" href="../dart_core/Future.html#then">then</a>.
-For example:</p>
-<p>  Future&lt;int> future = getFutureFromSomewhere();
-  future.then((value) {</p>
-<pre><code>print("I received the number $value");
+<a class="crossref" href="../dart_core/Future.html">Future</a> can obtain the value by passing a callback to <a class="crossref" href="../dart_core/Future.html#then">then</a>. For example:</p>
+<pre><code>Future&lt;int&gt; future = getFutureFromSomewhere();
+future.then((value) {
+  print("I received the number $value");
+});
 </code></pre>
-<p>  });</p>
 <p>A future may complete by <em>succeeding</em> (producing a value) or <em>failing</em>
 (producing an exception, which may be handled with <a class="crossref" href="../dart_core/Future.html#handleException">handleException</a>).
 Callbacks passed to <a class="crossref" href="../dart_core/Future.html#onComplete">onComplete</a> will be invoked in either case.</p>
-<p>When a future completes:</p><ol><li>if the future suceeded, handlers registered with <a class="crossref" href="../dart_core/Future.html#then">then</a> are called.</li><li>
+<p>When a future completes, the following actions happen in order:</p><ol><li>if the future suceeded, handlers registered with <a class="crossref" href="../dart_core/Future.html#then">then</a> are called.</li><li>
 <p>if the future failed, handlers registered with <a class="crossref" href="../dart_core/Future.html#handleException">handleException</a> are
  called in sequence, until one returns true.</p></li><li>handlers registered with <a class="crossref" href="../dart_core/Future.html#onComplete">onComplete</a> are called</li><li>
 <p>if the future failed, and at least one handler was registered with
@@ -79,6 +78,8 @@ will receive it.</p>
 <span class="param">transformation</span>, or received by the future returned by 
 <span class="param">transformation</span>)
 then the returned future will receive the exception.</p>
+<p>You must not add exception handlers to <code>this</code> future prior to calling
+chain, and any you add afterwards will not be invoked.</p>
 <pre class="source">
 Future chain(Future transformation(T value));
 </pre>
@@ -160,16 +161,29 @@ void onComplete(void complete(Future&lt;T&gt; future));
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="get:stackTrace">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>get stackTrace</strong>() <a class="anchor-link" href="#get:stackTrace"
+              title="Permalink to Future&lt;T&gt;.get stackTrace">#</a></h4>
+<div class="doc">
+<p>The stack trace object associated with the exception that occurred. This
+throws a <a class="crossref" href="../dart_core/FutureNotCompleteException.html">FutureNotCompleteException</a> if it is used before the future
+completes. Returns <code>null</code> if the future completed successfully or a
+stack trace wasn't provided with the exception when it occurred.</p>
+<pre class="source">
+Object get stackTrace();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="then">
 <span class="show-code">Code</span>
-<a href="../dart_core/void.html">void</a> <strong>then</strong>(<a href="../dart_core/void.html">void</a> onValue(value)) <a class="anchor-link" href="#then"
+<a href="../dart_core/void.html">void</a> <strong>then</strong>(<a href="../dart_core/void.html">void</a> onSuccess(value)) <a class="anchor-link" href="#then"
               title="Permalink to Future&lt;T&gt;.then">#</a></h4>
 <div class="doc">
-<p>If this future is complete and has a value, then 
-<span class="param">onValue</span> is called
+<p>If this future is complete and has a value, then <code>onValue</code> is called
 with the value.</p>
 <pre class="source">
-void then(void onValue(T value));
+void then(void onSuccess(T value));
 </pre>
 </div>
 </div>
@@ -186,6 +200,8 @@ value, and the returned future will receive the result.</p>
 <p>If an exception occurs (received by this future, or thrown by
 
 <span class="param">transformation</span>) then the returned future will receive the exception.</p>
+<p>You must not add exception handlers to <code>this</code> future prior to calling
+transform, and any you add afterwards will not be invoked.</p>
 <pre class="source">
 Future transform(transformation(T value));
 </pre>
@@ -207,7 +223,7 @@ T get value();
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-13 18:44:58.761Z</div>
+          <div>This page generated at 2012-06-13 22:22:45.337</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

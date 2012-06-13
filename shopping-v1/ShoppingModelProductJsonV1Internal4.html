@@ -1,0 +1,115 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ShoppingModelProductJsonV1Internal4 Class / shopping-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="shopping-v1" data-type="ShoppingModelProductJsonV1Internal4">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../shopping-v1.html">shopping-v1</a> &rsaquo; <a href="../shopping-v1/ShoppingModelProductJsonV1Internal4.html">ShoppingModelProductJsonV1Internal4</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ShoppingModelProductJsonV1Internal4</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ShoppingModelProductJsonV1Internal4</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../shopping-v1/ShoppingModelProductJsonV1Internal4.html">ShoppingModelProductJsonV1Internal4</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ShoppingModelProductJsonV1Internal4.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ShoppingModelProductJsonV1Internal4 parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ShoppingModelProductJsonV1Internal4();
+  result.node = identity(json["node"]);
+  result.confidence = identity(json["confidence"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ShoppingModelProductJsonV1Internal4.html">ShoppingModelProductJsonV1Internal4</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ShoppingModelProductJsonV1Internal4.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ShoppingModelProductJsonV1Internal4 value) {
+  if (value == null) return null;
+  final result = {};
+  result["node"] = identity(value.node);
+  result["confidence"] = identity(value.confidence);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ShoppingModelProductJsonV1Internal4.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="confidence">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>confidence</strong> <a class="anchor-link"
+            href="#confidence"
+            title="Permalink to ShoppingModelProductJsonV1Internal4.confidence">#</a>
+        </h4>
+        <div class="doc">
+<p>Google Internal.</p>
+<pre class="source">
+double confidence;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="node">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>node</strong> <a class="anchor-link"
+            href="#node"
+            title="Permalink to ShoppingModelProductJsonV1Internal4.node">#</a>
+        </h4>
+        <div class="doc">
+<p>Google Internal.</p>
+<pre class="source">
+int node;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:57.759</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

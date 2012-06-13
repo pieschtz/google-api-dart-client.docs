@@ -1,0 +1,74 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>FreebusyResource Class / calendar-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="calendar-v3" data-type="FreebusyResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/FreebusyResource.html">FreebusyResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>FreebusyResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="query">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>query</strong>(<a href="../calendar-v3/FreeBusyRequest.html">FreeBusyRequest</a> content) <a class="anchor-link" href="#query"
+              title="Permalink to FreebusyResource.query">#</a></h4>
+<div class="doc">
+<p>Returns free/busy information for a set of calendars.
+
+<span class="param">content</span> the FreeBusyRequest</p>
+<pre class="source">
+Future&lt;FreeBusyResponse&gt; query(FreeBusyRequest content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(FreeBusyRequest.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "freeBusy").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; FreeBusyResponse.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:42.000</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

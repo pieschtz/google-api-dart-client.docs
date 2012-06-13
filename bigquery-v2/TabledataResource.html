@@ -1,0 +1,81 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TabledataResource Class / bigquery-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery-v2" data-type="TabledataResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/TabledataResource.html">TabledataResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>TabledataResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId, [<a href="../dart_core/String.html">String</a> startIndex = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to TabledataResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves table data from a specified set of rows.
+
+<span class="param">projectId</span> Project ID of the table to read
+
+<span class="param">datasetId</span> Dataset ID of the table to read
+
+<span class="param">tableId</span> Table ID of the table to read</p>
+<pre class="source">
+Future&lt;TableDataList&gt; list(String projectId, String datasetId, String tableId, [String startIndex = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  $pathParams["datasetId"] = datasetId;
+  $pathParams["tableId"] = tableId;
+  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}/tables/{tableId}/data").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; TableDataList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:38.876</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

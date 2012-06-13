@@ -1,0 +1,86 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ActivitiesResource Class / audit-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="audit-v1" data-type="ActivitiesResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../audit-v1.html">audit-v1</a> &rsaquo; <a href="../audit-v1/ActivitiesResource.html">ActivitiesResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ActivitiesResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> customerId, <a href="../dart_core/String.html">String</a> applicationId, [<a href="../dart_core/String.html">String</a> actorEmail = UNSPECIFIED, <a href="../dart_core/String.html">String</a> actorApplicationId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> actorIpAddress = UNSPECIFIED, <a href="../audit-v1/ActivitiesResourceListCaller.html">ActivitiesResourceListCaller</a> caller = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> eventName = UNSPECIFIED, <a href="../dart_core/String.html">String</a> parameters = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startTime = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endTime = UNSPECIFIED, <a href="../dart_core/String.html">String</a> continuationToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to ActivitiesResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves a list of activities for a specific customer and application.
+
+<span class="param">customerId</span> Represents the customer who is the owner of target object on which action was performed.
+
+<span class="param">applicationId</span> Application ID of the application on which the event was performed.</p>
+<pre class="source">
+Future&lt;Activities&gt; list(String customerId, String applicationId, [String actorEmail = UNSPECIFIED, String actorApplicationId = UNSPECIFIED, String actorIpAddress = UNSPECIFIED, ActivitiesResourceListCaller caller = UNSPECIFIED, int maxResults = UNSPECIFIED, String eventName = UNSPECIFIED, String parameters = UNSPECIFIED, String startTime = UNSPECIFIED, String endTime = UNSPECIFIED, String continuationToken = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["customerId"] = customerId;
+  $pathParams["applicationId"] = applicationId;
+  if (UNSPECIFIED != actorEmail) $queryParams["actorEmail"] = actorEmail;
+  if (UNSPECIFIED != actorApplicationId) $queryParams["actorApplicationId"] = actorApplicationId;
+  if (UNSPECIFIED != actorIpAddress) $queryParams["actorIpAddress"] = actorIpAddress;
+  if (UNSPECIFIED != caller) $queryParams["caller"] = caller;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != eventName) $queryParams["eventName"] = eventName;
+  if (UNSPECIFIED != parameters) $queryParams["parameters"] = parameters;
+  if (UNSPECIFIED != startTime) $queryParams["startTime"] = startTime;
+  if (UNSPECIFIED != endTime) $queryParams["endTime"] = endTime;
+  if (UNSPECIFIED != continuationToken) $queryParams["continuationToken"] = continuationToken;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "{customerId}/{applicationId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Activities.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:38.283</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

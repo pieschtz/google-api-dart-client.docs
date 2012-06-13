@@ -1,0 +1,223 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>BooksLayerGeoDataGeo Class / books-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books-v1" data-type="BooksLayerGeoDataGeo">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/BooksLayerGeoDataGeo.html">BooksLayerGeoDataGeo</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>BooksLayerGeoDataGeo</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>BooksLayerGeoDataGeo</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../books-v1/BooksLayerGeoDataGeo.html">BooksLayerGeoDataGeo</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to BooksLayerGeoDataGeo.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static BooksLayerGeoDataGeo parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new BooksLayerGeoDataGeo();
+  result.countryCode = identity(json["countryCode"]);
+  result.zoom = identity(json["zoom"]);
+  result.longitude = identity(json["longitude"]);
+  result.mapType = identity(json["mapType"]);
+  result.latitude = identity(json["latitude"]);
+  result.boundary = map(map(BooksLayerGeoDataGeoBoundary.parse))(json["boundary"]);
+  result.resolution = identity(json["resolution"]);
+  result.viewport = BooksLayerGeoDataGeoViewport.parse(json["viewport"]);
+  result.cachePolicy = identity(json["cachePolicy"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/BooksLayerGeoDataGeo.html">BooksLayerGeoDataGeo</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to BooksLayerGeoDataGeo.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(BooksLayerGeoDataGeo value) {
+  if (value == null) return null;
+  final result = {};
+  result["countryCode"] = identity(value.countryCode);
+  result["zoom"] = identity(value.zoom);
+  result["longitude"] = identity(value.longitude);
+  result["mapType"] = identity(value.mapType);
+  result["latitude"] = identity(value.latitude);
+  result["boundary"] = map(map(BooksLayerGeoDataGeoBoundary.serialize))(value.boundary);
+  result["resolution"] = identity(value.resolution);
+  result["viewport"] = BooksLayerGeoDataGeoViewport.serialize(value.viewport);
+  result["cachePolicy"] = identity(value.cachePolicy);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to BooksLayerGeoDataGeo.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="boundary">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>boundary</strong> <a class="anchor-link"
+            href="#boundary"
+            title="Permalink to BooksLayerGeoDataGeo.boundary">#</a>
+        </h4>
+        <div class="doc">
+<p>The boundary of the location as a set of loops containing pairs of latitude, longitude
+coordinates.</p>
+<pre class="source">
+List&lt;List&lt;BooksLayerGeoDataGeoBoundary&gt;&gt; boundary;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="cachePolicy">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>cachePolicy</strong> <a class="anchor-link"
+            href="#cachePolicy"
+            title="Permalink to BooksLayerGeoDataGeo.cachePolicy">#</a>
+        </h4>
+        <div class="doc">
+<p>The cache policy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER</p>
+<pre class="source">
+String cachePolicy;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="countryCode">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>countryCode</strong> <a class="anchor-link"
+            href="#countryCode"
+            title="Permalink to BooksLayerGeoDataGeo.countryCode">#</a>
+        </h4>
+        <div class="doc">
+<p>The country code of the location.</p>
+<pre class="source">
+String countryCode;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="latitude">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>latitude</strong> <a class="anchor-link"
+            href="#latitude"
+            title="Permalink to BooksLayerGeoDataGeo.latitude">#</a>
+        </h4>
+        <div class="doc">
+<p>The latitude of the location.</p>
+<pre class="source">
+double latitude;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="longitude">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>longitude</strong> <a class="anchor-link"
+            href="#longitude"
+            title="Permalink to BooksLayerGeoDataGeo.longitude">#</a>
+        </h4>
+        <div class="doc">
+<p>The longitude of the location.</p>
+<pre class="source">
+double longitude;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="mapType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>mapType</strong> <a class="anchor-link"
+            href="#mapType"
+            title="Permalink to BooksLayerGeoDataGeo.mapType">#</a>
+        </h4>
+        <div class="doc">
+<p>The type of map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN</p>
+<pre class="source">
+String mapType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="resolution">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>resolution</strong> <a class="anchor-link"
+            href="#resolution"
+            title="Permalink to BooksLayerGeoDataGeo.resolution">#</a>
+        </h4>
+        <div class="doc">
+<p>The resolution of the location. Ex: POI_LEVEL</p>
+<pre class="source">
+String resolution;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="viewport">
+<span class="show-code">Code</span>
+<a href="../books-v1/BooksLayerGeoDataGeoViewport.html">BooksLayerGeoDataGeoViewport</a>         <strong>viewport</strong> <a class="anchor-link"
+            href="#viewport"
+            title="Permalink to BooksLayerGeoDataGeo.viewport">#</a>
+        </h4>
+        <div class="doc">
+<p>The viewport for showing this location. This is a latitude, longitude rectangle.</p>
+<pre class="source">
+BooksLayerGeoDataGeoViewport viewport;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="zoom">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>zoom</strong> <a class="anchor-link"
+            href="#zoom"
+            title="Permalink to BooksLayerGeoDataGeo.zoom">#</a>
+        </h4>
+        <div class="doc">
+<p>The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the
+entire world can be seen on one map) to 21+ (down to individual buildings). See:
+https://developers.google.com/maps/documentation/staticmaps/#Zoomlevels</p>
+<pre class="source">
+int zoom;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:41.226</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

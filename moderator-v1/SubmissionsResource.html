@@ -1,0 +1,121 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>SubmissionsResource Class / moderator-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="moderator-v1" data-type="SubmissionsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/SubmissionsResource.html">SubmissionsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>SubmissionsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> submissionId, [<a href="../dart_core/String.html">String</a> lang = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> includeVotes = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to SubmissionsResource.get">#</a></h4>
+<div class="doc">
+<p>Returns the specified submission within the specified series.
+
+<span class="param">seriesId</span> The decimal ID of the Series.
+
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</p>
+<pre class="source">
+Future&lt;Submission&gt; get(int seriesId, int submissionId, [String lang = UNSPECIFIED, bool includeVotes = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["seriesId"] = seriesId;
+  $pathParams["submissionId"] = submissionId;
+  if (UNSPECIFIED != lang) $queryParams["lang"] = lang;
+  if (UNSPECIFIED != includeVotes) $queryParams["includeVotes"] = includeVotes;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/submissions/{submissionId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Submission.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> topicId, <a href="../moderator-v1/Submission.html">Submission</a> content, [<a href="../dart_core/String.html">String</a> unauthToken = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> anonymous = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+              title="Permalink to SubmissionsResource.insert">#</a></h4>
+<div class="doc">
+<p>Inserts a new submission in the specified topic within the specified series.
+
+<span class="param">seriesId</span> The decimal ID of the Series.
+
+<span class="param">topicId</span> The decimal ID of the Topic within the Series.
+
+<span class="param">content</span> the Submission</p>
+<pre class="source">
+Future&lt;Submission&gt; insert(int seriesId, int topicId, Submission content, [String unauthToken = UNSPECIFIED, bool anonymous = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["seriesId"] = seriesId;
+  $pathParams["topicId"] = topicId;
+  if (UNSPECIFIED != unauthToken) $queryParams["unauthToken"] = unauthToken;
+  if (UNSPECIFIED != anonymous) $queryParams["anonymous"] = anonymous;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Submission.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/topics/{topicId}/submissions").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Submission.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:55.324</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

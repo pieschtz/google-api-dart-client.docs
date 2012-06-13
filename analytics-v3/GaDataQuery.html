@@ -1,0 +1,235 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>GaDataQuery Class / analytics-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="analytics-v3" data-type="GaDataQuery">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/GaDataQuery.html">GaDataQuery</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>GaDataQuery</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>GaDataQuery</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../analytics-v3/GaDataQuery.html">GaDataQuery</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to GaDataQuery.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static GaDataQuery parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new GaDataQuery();
+  result.maxResults = identity(json["max-results"]);
+  result.sort = map(identity)(json["sort"]);
+  result.dimensions = identity(json["dimensions"]);
+  result.startDate = identity(json["start-date"]);
+  result.startIndex = identity(json["start-index"]);
+  result.segment = identity(json["segment"]);
+  result.ids = identity(json["ids"]);
+  result.metrics = map(identity)(json["metrics"]);
+  result.filters = identity(json["filters"]);
+  result.endDate = identity(json["end-date"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../analytics-v3/GaDataQuery.html">GaDataQuery</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to GaDataQuery.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(GaDataQuery value) {
+  if (value == null) return null;
+  final result = {};
+  result["max-results"] = identity(value.maxResults);
+  result["sort"] = map(identity)(value.sort);
+  result["dimensions"] = identity(value.dimensions);
+  result["start-date"] = identity(value.startDate);
+  result["start-index"] = identity(value.startIndex);
+  result["segment"] = identity(value.segment);
+  result["ids"] = identity(value.ids);
+  result["metrics"] = map(identity)(value.metrics);
+  result["filters"] = identity(value.filters);
+  result["end-date"] = identity(value.endDate);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to GaDataQuery.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="dimensions">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>dimensions</strong> <a class="anchor-link"
+            href="#dimensions"
+            title="Permalink to GaDataQuery.dimensions">#</a>
+        </h4>
+        <div class="doc">
+<p>List of analytics dimensions.</p>
+<pre class="source">
+String dimensions;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="endDate">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>endDate</strong> <a class="anchor-link"
+            href="#endDate"
+            title="Permalink to GaDataQuery.endDate">#</a>
+        </h4>
+        <div class="doc">
+<p>End date.</p>
+<pre class="source">
+String endDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="filters">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>filters</strong> <a class="anchor-link"
+            href="#filters"
+            title="Permalink to GaDataQuery.filters">#</a>
+        </h4>
+        <div class="doc">
+<p>Comma-separated list of dimension or metric filters.</p>
+<pre class="source">
+String filters;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ids">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>ids</strong> <a class="anchor-link"
+            href="#ids"
+            title="Permalink to GaDataQuery.ids">#</a>
+        </h4>
+        <div class="doc">
+<p>Unique table ID.</p>
+<pre class="source">
+String ids;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maxResults">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>maxResults</strong> <a class="anchor-link"
+            href="#maxResults"
+            title="Permalink to GaDataQuery.maxResults">#</a>
+        </h4>
+        <div class="doc">
+<p>Maximum results per page.</p>
+<pre class="source">
+int maxResults;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="metrics">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>metrics</strong> <a class="anchor-link"
+            href="#metrics"
+            title="Permalink to GaDataQuery.metrics">#</a>
+        </h4>
+        <div class="doc">
+<p>List of analytics metrics.</p>
+<pre class="source">
+List&lt;String&gt; metrics;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="segment">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>segment</strong> <a class="anchor-link"
+            href="#segment"
+            title="Permalink to GaDataQuery.segment">#</a>
+        </h4>
+        <div class="doc">
+<p>Analytics advanced segment.</p>
+<pre class="source">
+String segment;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="sort">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>sort</strong> <a class="anchor-link"
+            href="#sort"
+            title="Permalink to GaDataQuery.sort">#</a>
+        </h4>
+        <div class="doc">
+<p>List of dimensions or metrics based on which Analytics data is sorted.</p>
+<pre class="source">
+List&lt;String&gt; sort;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="startDate">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>startDate</strong> <a class="anchor-link"
+            href="#startDate"
+            title="Permalink to GaDataQuery.startDate">#</a>
+        </h4>
+        <div class="doc">
+<p>Start date.</p>
+<pre class="source">
+String startDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="startIndex">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>startIndex</strong> <a class="anchor-link"
+            href="#startIndex"
+            title="Permalink to GaDataQuery.startIndex">#</a>
+        </h4>
+        <div class="doc">
+<p>Start index.</p>
+<pre class="source">
+int startIndex;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:37.664</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

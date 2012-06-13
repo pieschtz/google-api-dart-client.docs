@@ -1,0 +1,290 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TablesResource Class / bigquery-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="bigquery-v2" data-type="TablesResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/TablesResource.html">TablesResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>TablesResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId) <a class="anchor-link" href="#delete"
+              title="Permalink to TablesResource.delete">#</a></h4>
+<div class="doc">
+<p>Deletes the table specified by tableId from the dataset. If the table contains data, all the data
+will be deleted.
+
+<span class="param">projectId</span> Project ID of the table to delete
+
+<span class="param">datasetId</span> Dataset ID of the table to delete
+
+<span class="param">tableId</span> Table ID of the table to delete</p>
+<pre class="source">
+Future delete(String projectId, String datasetId, String tableId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  $pathParams["datasetId"] = datasetId;
+  $pathParams["tableId"] = tableId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}/tables/{tableId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId) <a class="anchor-link" href="#get"
+              title="Permalink to TablesResource.get">#</a></h4>
+<div class="doc">
+<p>Gets the specified table resource by table ID. This method does not return the data in the table,
+it only returns the table resource, which describes the structure of this table.
+
+<span class="param">projectId</span> Project ID of the requested table
+
+<span class="param">datasetId</span> Dataset ID of the requested table
+
+<span class="param">tableId</span> Table ID of the requested table</p>
+<pre class="source">
+Future&lt;Table&gt; get(String projectId, String datasetId, String tableId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  $pathParams["datasetId"] = datasetId;
+  $pathParams["tableId"] = tableId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}/tables/{tableId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Table.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#insert"
+              title="Permalink to TablesResource.insert">#</a></h4>
+<div class="doc">
+<p>Creates a new, empty table in the dataset.
+
+<span class="param">projectId</span> Project ID of the new table
+
+<span class="param">datasetId</span> Dataset ID of the new table
+
+<span class="param">content</span> the Table</p>
+<pre class="source">
+Future&lt;Table&gt; insert(String projectId, String datasetId, Table content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  $pathParams["datasetId"] = datasetId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Table.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}/tables").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Table.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to TablesResource.list">#</a></h4>
+<div class="doc">
+<p>Lists all tables in the specified dataset.
+
+<span class="param">projectId</span> Project ID of the tables to list
+
+<span class="param">datasetId</span> Dataset ID of the tables to list</p>
+<pre class="source">
+Future&lt;TableList&gt; list(String projectId, String datasetId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  $pathParams["datasetId"] = datasetId;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}/tables").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; TableList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="patch">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#patch"
+              title="Permalink to TablesResource.patch">#</a></h4>
+<div class="doc">
+<p>Updates information in an existing table, specified by tableId. This method supports patch
+semantics.
+
+<span class="param">projectId</span> Project ID of the table to update
+
+<span class="param">datasetId</span> Dataset ID of the table to update
+
+<span class="param">tableId</span> Table ID of the table to update
+
+<span class="param">content</span> the Table</p>
+<pre class="source">
+Future&lt;Table&gt; patch(String projectId, String datasetId, String tableId, Table content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  $pathParams["datasetId"] = datasetId;
+  $pathParams["tableId"] = tableId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Table.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}/tables/{tableId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Table.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="update">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#update"
+              title="Permalink to TablesResource.update">#</a></h4>
+<div class="doc">
+<p>Updates information in an existing table, specified by tableId.
+
+<span class="param">projectId</span> Project ID of the table to update
+
+<span class="param">datasetId</span> Dataset ID of the table to update
+
+<span class="param">tableId</span> Table ID of the table to update
+
+<span class="param">content</span> the Table</p>
+<pre class="source">
+Future&lt;Table&gt; update(String projectId, String datasetId, String tableId, Table content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["projectId"] = projectId;
+  $pathParams["datasetId"] = datasetId;
+  $pathParams["tableId"] = tableId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Table.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}/tables/{tableId}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PUT", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Table.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:38.540</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

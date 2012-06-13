@@ -1,0 +1,100 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>RestMethodRequest Class / discovery-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="discovery-v1" data-type="RestMethodRequest">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../discovery-v1.html">discovery-v1</a> &rsaquo; <a href="../discovery-v1/RestMethodRequest.html">RestMethodRequest</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>RestMethodRequest</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>RestMethodRequest</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../discovery-v1/RestMethodRequest.html">RestMethodRequest</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to RestMethodRequest.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static RestMethodRequest parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new RestMethodRequest();
+  result.$ref = identity(json["\$ref"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../discovery-v1/RestMethodRequest.html">RestMethodRequest</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to RestMethodRequest.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(RestMethodRequest value) {
+  if (value == null) return null;
+  final result = {};
+  result["\$ref"] = identity(value.$ref);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to RestMethodRequest.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="$ref">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>$ref</strong> <a class="anchor-link"
+            href="#$ref"
+            title="Permalink to RestMethodRequest.$ref">#</a>
+        </h4>
+        <div class="doc">
+<p>Schema ID for the request schema.</p>
+<pre class="source">
+String $ref;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:46.817</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

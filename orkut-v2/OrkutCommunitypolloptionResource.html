@@ -1,0 +1,145 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>OrkutCommunitypolloptionResource Class / orkut-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="orkut-v2" data-type="OrkutCommunitypolloptionResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../orkut-v2.html">orkut-v2</a> &rsaquo; <a href="../orkut-v2/OrkutCommunitypolloptionResource.html">OrkutCommunitypolloptionResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>OrkutCommunitypolloptionResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>OrkutCommunitypolloptionResource</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../orkut-v2/OrkutCommunitypolloptionResource.html">OrkutCommunitypolloptionResource</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to OrkutCommunitypolloptionResource.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static OrkutCommunitypolloptionResource parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new OrkutCommunitypolloptionResource();
+  result.image = OrkutCommunitypolloptionResourceImage.parse(json["image"]);
+  result.optionId = identity(json["optionId"]);
+  result.description = identity(json["description"]);
+  result.numberOfVotes = identity(json["numberOfVotes"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../orkut-v2/OrkutCommunitypolloptionResource.html">OrkutCommunitypolloptionResource</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to OrkutCommunitypolloptionResource.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(OrkutCommunitypolloptionResource value) {
+  if (value == null) return null;
+  final result = {};
+  result["image"] = OrkutCommunitypolloptionResourceImage.serialize(value.image);
+  result["optionId"] = identity(value.optionId);
+  result["description"] = identity(value.description);
+  result["numberOfVotes"] = identity(value.numberOfVotes);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to OrkutCommunitypolloptionResource.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to OrkutCommunitypolloptionResource.description">#</a>
+        </h4>
+        <div class="doc">
+<p>The option description.</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="image">
+<span class="show-code">Code</span>
+<a href="../orkut-v2/OrkutCommunitypolloptionResourceImage.html">OrkutCommunitypolloptionResourceImage</a>         <strong>image</strong> <a class="anchor-link"
+            href="#image"
+            title="Permalink to OrkutCommunitypolloptionResource.image">#</a>
+        </h4>
+        <div class="doc">
+<p>Image data about the poll option. Field is omitted if no image exists.</p>
+<pre class="source">
+OrkutCommunitypolloptionResourceImage image;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="numberOfVotes">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>numberOfVotes</strong> <a class="anchor-link"
+            href="#numberOfVotes"
+            title="Permalink to OrkutCommunitypolloptionResource.numberOfVotes">#</a>
+        </h4>
+        <div class="doc">
+<p>The total number of votes that this option received.</p>
+<pre class="source">
+int numberOfVotes;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="optionId">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>optionId</strong> <a class="anchor-link"
+            href="#optionId"
+            title="Permalink to OrkutCommunitypolloptionResource.optionId">#</a>
+        </h4>
+        <div class="doc">
+<p>The poll option ID</p>
+<pre class="source">
+int optionId;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:56.927</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,191 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ProductsFacets Class / shopping-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="shopping-v1" data-type="ProductsFacets">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../shopping-v1.html">shopping-v1</a> &rsaquo; <a href="../shopping-v1/ProductsFacets.html">ProductsFacets</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ProductsFacets</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ProductsFacets</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../shopping-v1/ProductsFacets.html">ProductsFacets</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ProductsFacets.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ProductsFacets parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ProductsFacets();
+  result.count = identity(json["count"]);
+  result.displayName = identity(json["displayName"]);
+  result.name = identity(json["name"]);
+  result.buckets = map(ProductsFacetsBuckets.parse)(json["buckets"]);
+  result.property = identity(json["property"]);
+  result.type = identity(json["type"]);
+  result.unit = identity(json["unit"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ProductsFacets.html">ProductsFacets</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ProductsFacets.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ProductsFacets value) {
+  if (value == null) return null;
+  final result = {};
+  result["count"] = identity(value.count);
+  result["displayName"] = identity(value.displayName);
+  result["name"] = identity(value.name);
+  result["buckets"] = map(ProductsFacetsBuckets.serialize)(value.buckets);
+  result["property"] = identity(value.property);
+  result["type"] = identity(value.type);
+  result["unit"] = identity(value.unit);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ProductsFacets.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="buckets">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>buckets</strong> <a class="anchor-link"
+            href="#buckets"
+            title="Permalink to ProductsFacets.buckets">#</a>
+        </h4>
+        <div class="doc">
+<p>List of Buckets within facet.</p>
+<pre class="source">
+List&lt;ProductsFacetsBuckets&gt; buckets;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="count">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>count</strong> <a class="anchor-link"
+            href="#count"
+            title="Permalink to ProductsFacets.count">#</a>
+        </h4>
+        <div class="doc">
+<p>Number of products matching the query that have a value for the facet's property or attribute.</p>
+<pre class="source">
+int count;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="displayName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>displayName</strong> <a class="anchor-link"
+            href="#displayName"
+            title="Permalink to ProductsFacets.displayName">#</a>
+        </h4>
+        <div class="doc">
+<p>Display name of facet.</p>
+<pre class="source">
+String displayName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to ProductsFacets.name">#</a>
+        </h4>
+        <div class="doc">
+<p>Name of the facet's attribute (omitted for property facets).</p>
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="property">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>property</strong> <a class="anchor-link"
+            href="#property"
+            title="Permalink to ProductsFacets.property">#</a>
+        </h4>
+        <div class="doc">
+<p>Property of facet (omitted for attribute facets).</p>
+<pre class="source">
+String property;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="type">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+            href="#type"
+            title="Permalink to ProductsFacets.type">#</a>
+        </h4>
+        <div class="doc">
+<p>Type of facet's attribute (omitted for property facets, one of: text, bool, int, float).</p>
+<pre class="source">
+String type;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="unit">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>unit</strong> <a class="anchor-link"
+            href="#unit"
+            title="Permalink to ProductsFacets.unit">#</a>
+        </h4>
+        <div class="doc">
+<p>Unit of the facet's property or attribute (omitted if the facet's property or attribute has no
+unit).</p>
+<pre class="source">
+String unit;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:57.575</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

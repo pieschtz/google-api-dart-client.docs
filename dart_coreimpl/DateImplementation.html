@@ -38,8 +38,7 @@ new <strong>DateImplementation</strong>.fromEpoch(value, [<a href="../dart_core/
 
 <pre class="source">
 DateImplementation.fromEpoch(this.value, [bool isUtc = false])
-    : this.timeZone = isUtc ? const TimeZoneImplementation.utc()
-                            : new TimeZoneImplementation.local();
+    : this.timeZone = isUtc ? const TimeZone.utc() : new TimeZone.local();
 </pre>
 </div>
 </div>
@@ -60,7 +59,7 @@ DateImplementation.now()
 </div>
 <div class="method"><h4 id="DateImplementation">
 <span class="show-code">Code</span>
-new <strong>DateImplementation</strong>.withTimeZone(<a href="../dart_core/int.html">int</a> years, <a href="../dart_core/int.html">int</a> month, <a href="../dart_core/int.html">int</a> day, <a href="../dart_core/int.html">int</a> hours, <a href="../dart_core/int.html">int</a> minutes, <a href="../dart_core/int.html">int</a> seconds, <a href="../dart_core/int.html">int</a> milliseconds, <a href="../dart_core/TimeZone.html">TimeZone</a> timeZone) <a class="anchor-link" href="#DateImplementation"
+new <strong>DateImplementation</strong>.withTimeZone(<a href="../dart_core/int.html">int</a> years, <a href="../dart_core/int.html">int</a> month, <a href="../dart_core/int.html">int</a> day, <a href="../dart_core/int.html">int</a> hours, <a href="../dart_core/int.html">int</a> minutes, <a href="../dart_core/int.html">int</a> seconds, <a href="../dart_core/int.html">int</a> milliseconds, <a href="../dart_coreimpl/TimeZone.html">TimeZone</a> timeZone) <a class="anchor-link" href="#DateImplementation"
               title="Permalink to DateImplementation.DateImplementation">#</a></h4>
 <div class="doc">
 
@@ -158,14 +157,14 @@ Date add(Duration duration) {
 </div>
 <div class="method"><h4 id="changeTimeZone">
 <span class="show-code">Code</span>
-<a href="../dart_core/Date.html">Date</a> <strong>changeTimeZone</strong>(<a href="../dart_core/TimeZone.html">TimeZone</a> targetTimeZone) <a class="anchor-link" href="#changeTimeZone"
+<a href="../dart_core/Date.html">Date</a> <strong>changeTimeZone</strong>(<a href="../dart_coreimpl/TimeZone.html">TimeZone</a> targetTimeZone) <a class="anchor-link" href="#changeTimeZone"
               title="Permalink to DateImplementation.changeTimeZone">#</a></h4>
 <div class="doc">
 
 <pre class="source">
 Date changeTimeZone(TimeZone targetTimeZone) {
   if (targetTimeZone == null) {
-    targetTimeZone = new TimeZoneImplementation.local();
+    targetTimeZone = new TimeZone.local();
   }
   return new Date.fromEpoch(value, targetTimeZone.isUtc);
 }
@@ -364,7 +363,7 @@ Duration get timeZoneOffset() { throw "Unimplemented"; }
 
 <pre class="source">
 Date toLocal() {
-  if (isUtc()) return changeTimeZone(new TimeZoneImplementation.local());
+  if (isUtc()) return changeTimeZone(new TimeZone.local());
   return this;
 }
 </pre>
@@ -421,7 +420,7 @@ String toString() {
 <pre class="source">
 Date toUtc() {
   if (isUtc()) return this;
-  return changeTimeZone(const TimeZoneImplementation.utc());
+  return changeTimeZone(const TimeZone.utc());
 }
 </pre>
 </div>
@@ -458,7 +457,7 @@ int get year() native
 <h3>Fields</h3>
 <div class="field"><h4 id="timeZone">
 <span class="show-code">Code</span>
-final <a href="../dart_core/TimeZone.html">TimeZone</a>         <strong>timeZone</strong> <a class="anchor-link"
+final <a href="../dart_coreimpl/TimeZone.html">TimeZone</a>         <strong>timeZone</strong> <a class="anchor-link"
             href="#timeZone"
             title="Permalink to DateImplementation.timeZone">#</a>
         </h4>
@@ -487,7 +486,7 @@ final int value;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-13 18:44:59.957Z</div>
+          <div>This page generated at 2012-06-13 22:22:46.518</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

@@ -1,0 +1,206 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Tokeninfo Class / oauth2-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="oauth2-v2" data-type="Tokeninfo">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../oauth2-v2.html">oauth2-v2</a> &rsaquo; <a href="../oauth2-v2/Tokeninfo.html">Tokeninfo</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Tokeninfo</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Tokeninfo</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../oauth2-v2/Tokeninfo.html">Tokeninfo</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Tokeninfo.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Tokeninfo parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Tokeninfo();
+  result.issuedTo = identity(json["issued_to"]);
+  result.userId = identity(json["user_id"]);
+  result.expiresIn = identity(json["expires_in"]);
+  result.accessType = identity(json["access_type"]);
+  result.audience = identity(json["audience"]);
+  result.scope = identity(json["scope"]);
+  result.email = identity(json["email"]);
+  result.verifiedEmail = identity(json["verified_email"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../oauth2-v2/Tokeninfo.html">Tokeninfo</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Tokeninfo.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Tokeninfo value) {
+  if (value == null) return null;
+  final result = {};
+  result["issued_to"] = identity(value.issuedTo);
+  result["user_id"] = identity(value.userId);
+  result["expires_in"] = identity(value.expiresIn);
+  result["access_type"] = identity(value.accessType);
+  result["audience"] = identity(value.audience);
+  result["scope"] = identity(value.scope);
+  result["email"] = identity(value.email);
+  result["verified_email"] = identity(value.verifiedEmail);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Tokeninfo.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="accessType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>accessType</strong> <a class="anchor-link"
+            href="#accessType"
+            title="Permalink to Tokeninfo.accessType">#</a>
+        </h4>
+        <div class="doc">
+<p>The access type granted with this token. It can be offline or online.</p>
+<pre class="source">
+String accessType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="audience">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>audience</strong> <a class="anchor-link"
+            href="#audience"
+            title="Permalink to Tokeninfo.audience">#</a>
+        </h4>
+        <div class="doc">
+<p>Who is the intended audience for this token. In general the same as issued_to.</p>
+<pre class="source">
+String audience;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="email">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>email</strong> <a class="anchor-link"
+            href="#email"
+            title="Permalink to Tokeninfo.email">#</a>
+        </h4>
+        <div class="doc">
+<p>The email address of the user. Present only if the email scope is present in the request.</p>
+<pre class="source">
+String email;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="expiresIn">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>expiresIn</strong> <a class="anchor-link"
+            href="#expiresIn"
+            title="Permalink to Tokeninfo.expiresIn">#</a>
+        </h4>
+        <div class="doc">
+<p>The expiry time of the token, as number of seconds left until expiry.</p>
+<pre class="source">
+int expiresIn;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="issuedTo">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>issuedTo</strong> <a class="anchor-link"
+            href="#issuedTo"
+            title="Permalink to Tokeninfo.issuedTo">#</a>
+        </h4>
+        <div class="doc">
+<p>To whom was the token issued to. In general the same as audience.</p>
+<pre class="source">
+String issuedTo;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="scope">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>scope</strong> <a class="anchor-link"
+            href="#scope"
+            title="Permalink to Tokeninfo.scope">#</a>
+        </h4>
+        <div class="doc">
+<p>The space separated list of scopes granted to this token.</p>
+<pre class="source">
+String scope;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>userId</strong> <a class="anchor-link"
+            href="#userId"
+            title="Permalink to Tokeninfo.userId">#</a>
+        </h4>
+        <div class="doc">
+<p>The Gaia obfuscated user id.</p>
+<pre class="source">
+String userId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="verifiedEmail">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>verifiedEmail</strong> <a class="anchor-link"
+            href="#verifiedEmail"
+            title="Permalink to Tokeninfo.verifiedEmail">#</a>
+        </h4>
+        <div class="doc">
+<p>Boolean flag which is true if the email address is verified. Present only if the email scope is
+present in the request.</p>
+<pre class="source">
+bool verifiedEmail;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:55.607</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

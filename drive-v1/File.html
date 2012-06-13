@@ -1,0 +1,376 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>File Class / drive-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="drive-v1" data-type="File">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../drive-v1.html">drive-v1</a> &rsaquo; <a href="../drive-v1/File.html">File</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>File</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>File</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../drive-v1/File.html">File</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to File.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static File parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new File();
+  result.mimeType = identity(json["mimeType"]);
+  result.selfLink = identity(json["selfLink"]);
+  result.kind = identity(json["kind"]);
+  result.description = identity(json["description"]);
+  result.title = identity(json["title"]);
+  result.modifiedByMeDate = identity(json["modifiedByMeDate"]);
+  result.labels = FileLabels.parse(json["labels"]);
+  result.indexableText = FileIndexableText.parse(json["indexableText"]);
+  result.parentsCollection = map(FileParentsCollection.parse)(json["parentsCollection"]);
+  result.downloadUrl = identity(json["downloadUrl"]);
+  result.userPermission = Permission.parse(json["userPermission"]);
+  result.etag = identity(json["etag"]);
+  result.fileSize = identity(json["fileSize"]);
+  result.createdDate = identity(json["createdDate"]);
+  result.fileExtension = identity(json["fileExtension"]);
+  result.lastViewedDate = identity(json["lastViewedDate"]);
+  result.id = identity(json["id"]);
+  result.md5Checksum = identity(json["md5Checksum"]);
+  result.modifiedDate = identity(json["modifiedDate"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v1/File.html">File</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to File.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(File value) {
+  if (value == null) return null;
+  final result = {};
+  result["mimeType"] = identity(value.mimeType);
+  result["selfLink"] = identity(value.selfLink);
+  result["kind"] = identity(value.kind);
+  result["description"] = identity(value.description);
+  result["title"] = identity(value.title);
+  result["modifiedByMeDate"] = identity(value.modifiedByMeDate);
+  result["labels"] = FileLabels.serialize(value.labels);
+  result["indexableText"] = FileIndexableText.serialize(value.indexableText);
+  result["parentsCollection"] = map(FileParentsCollection.serialize)(value.parentsCollection);
+  result["downloadUrl"] = identity(value.downloadUrl);
+  result["userPermission"] = Permission.serialize(value.userPermission);
+  result["etag"] = identity(value.etag);
+  result["fileSize"] = identity(value.fileSize);
+  result["createdDate"] = identity(value.createdDate);
+  result["fileExtension"] = identity(value.fileExtension);
+  result["lastViewedDate"] = identity(value.lastViewedDate);
+  result["id"] = identity(value.id);
+  result["md5Checksum"] = identity(value.md5Checksum);
+  result["modifiedDate"] = identity(value.modifiedDate);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to File.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="createdDate">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>createdDate</strong> <a class="anchor-link"
+            href="#createdDate"
+            title="Permalink to File.createdDate">#</a>
+        </h4>
+        <div class="doc">
+<p>Create time for this file (formatted ISO8601 timestamp).</p>
+<pre class="source">
+String createdDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to File.description">#</a>
+        </h4>
+        <div class="doc">
+<p>A short description of the file</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="downloadUrl">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>downloadUrl</strong> <a class="anchor-link"
+            href="#downloadUrl"
+            title="Permalink to File.downloadUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>Short term download URL for the file. This will only be populated on files with content stored in
+Drive.</p>
+<pre class="source">
+String downloadUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to File.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>ETag of the file.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fileExtension">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fileExtension</strong> <a class="anchor-link"
+            href="#fileExtension"
+            title="Permalink to File.fileExtension">#</a>
+        </h4>
+        <div class="doc">
+<p>The file extension used when downloading this file. This field is read only. To set the
+extension, include it on title when creating the file. This will only be populated on files with
+content stored in Drive.</p>
+<pre class="source">
+String fileExtension;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fileSize">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fileSize</strong> <a class="anchor-link"
+            href="#fileSize"
+            title="Permalink to File.fileSize">#</a>
+        </h4>
+        <div class="doc">
+<p>The size of the file in bytes. This will only be populated on files with content stored in Drive.</p>
+<pre class="source">
+String fileSize;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to File.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The id of the file.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="indexableText">
+<span class="show-code">Code</span>
+<a href="../drive-v1/FileIndexableText.html">FileIndexableText</a>         <strong>indexableText</strong> <a class="anchor-link"
+            href="#indexableText"
+            title="Permalink to File.indexableText">#</a>
+        </h4>
+        <div class="doc">
+<p>Indexable text attributes for the file (can only be written)</p>
+<pre class="source">
+FileIndexableText indexableText;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to File.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The type of file. This is always drive#file</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="labels">
+<span class="show-code">Code</span>
+<a href="../drive-v1/FileLabels.html">FileLabels</a>         <strong>labels</strong> <a class="anchor-link"
+            href="#labels"
+            title="Permalink to File.labels">#</a>
+        </h4>
+        <div class="doc">
+<p>Labels for the file.</p>
+<pre class="source">
+FileLabels labels;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="lastViewedDate">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>lastViewedDate</strong> <a class="anchor-link"
+            href="#lastViewedDate"
+            title="Permalink to File.lastViewedDate">#</a>
+        </h4>
+        <div class="doc">
+<p>Last time this file was viewed by anyone (formatted RFC 3339 timestamp).</p>
+<pre class="source">
+String lastViewedDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="md5Checksum">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>md5Checksum</strong> <a class="anchor-link"
+            href="#md5Checksum"
+            title="Permalink to File.md5Checksum">#</a>
+        </h4>
+        <div class="doc">
+<p>An MD5 checksum for the content of this file. This will only be populated on files with content
+stored in Drive.</p>
+<pre class="source">
+String md5Checksum;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="mimeType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>mimeType</strong> <a class="anchor-link"
+            href="#mimeType"
+            title="Permalink to File.mimeType">#</a>
+        </h4>
+        <div class="doc">
+<p>The mimetype of the file</p>
+<pre class="source">
+String mimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="modifiedByMeDate">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>modifiedByMeDate</strong> <a class="anchor-link"
+            href="#modifiedByMeDate"
+            title="Permalink to File.modifiedByMeDate">#</a>
+        </h4>
+        <div class="doc">
+<p>Last time this file was modified by the user (formatted RFC 3339 timestamp).</p>
+<pre class="source">
+String modifiedByMeDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="modifiedDate">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>modifiedDate</strong> <a class="anchor-link"
+            href="#modifiedDate"
+            title="Permalink to File.modifiedDate">#</a>
+        </h4>
+        <div class="doc">
+<p>Last time this file was modified by anyone (formatted RFC 3339 timestamp).</p>
+<pre class="source">
+String modifiedDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="parentsCollection">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>parentsCollection</strong> <a class="anchor-link"
+            href="#parentsCollection"
+            title="Permalink to File.parentsCollection">#</a>
+        </h4>
+        <div class="doc">
+<p>Collection of parent folders which contain this file. On insert, setting this field will put the
+file in all of the provided folders. If no folders are provided, the file will be placed in the
+default root folder. On update, this field is ignored.</p>
+<pre class="source">
+List&lt;FileParentsCollection&gt; parentsCollection;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to File.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>A link back to this file.</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="title">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+            href="#title"
+            title="Permalink to File.title">#</a>
+        </h4>
+        <div class="doc">
+<p>The title of this file.</p>
+<pre class="source">
+String title;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userPermission">
+<span class="show-code">Code</span>
+<a href="../drive-v1/Permission.html">Permission</a>         <strong>userPermission</strong> <a class="anchor-link"
+            href="#userPermission"
+            title="Permalink to File.userPermission">#</a>
+        </h4>
+        <div class="doc">
+<p>The permissions for the authenticated user on this file.</p>
+<pre class="source">
+Permission userPermission;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:47.011</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

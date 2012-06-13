@@ -1,0 +1,220 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>EventProducts Class / gan-v1beta1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="gan-v1beta1" data-type="EventProducts">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/EventProducts.html">EventProducts</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>EventProducts</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>EventProducts</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/EventProducts.html">EventProducts</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to EventProducts.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static EventProducts parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new EventProducts();
+  result.networkFee = Money.parse(json["networkFee"]);
+  result.sku = identity(json["sku"]);
+  result.categoryName = identity(json["categoryName"]);
+  result.skuName = identity(json["skuName"]);
+  result.publisherFee = Money.parse(json["publisherFee"]);
+  result.earnings = Money.parse(json["earnings"]);
+  result.unitPrice = Money.parse(json["unitPrice"]);
+  result.categoryId = identity(json["categoryId"]);
+  result.quantity = identity(json["quantity"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/EventProducts.html">EventProducts</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to EventProducts.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(EventProducts value) {
+  if (value == null) return null;
+  final result = {};
+  result["networkFee"] = Money.serialize(value.networkFee);
+  result["sku"] = identity(value.sku);
+  result["categoryName"] = identity(value.categoryName);
+  result["skuName"] = identity(value.skuName);
+  result["publisherFee"] = Money.serialize(value.publisherFee);
+  result["earnings"] = Money.serialize(value.earnings);
+  result["unitPrice"] = Money.serialize(value.unitPrice);
+  result["categoryId"] = identity(value.categoryId);
+  result["quantity"] = identity(value.quantity);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to EventProducts.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="categoryId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>categoryId</strong> <a class="anchor-link"
+            href="#categoryId"
+            title="Permalink to EventProducts.categoryId">#</a>
+        </h4>
+        <div class="doc">
+<p>Id of the category this product belongs to.</p>
+<pre class="source">
+String categoryId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="categoryName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>categoryName</strong> <a class="anchor-link"
+            href="#categoryName"
+            title="Permalink to EventProducts.categoryName">#</a>
+        </h4>
+        <div class="doc">
+<p>Name of the category this product belongs to.</p>
+<pre class="source">
+String categoryName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="earnings">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/Money.html">Money</a>         <strong>earnings</strong> <a class="anchor-link"
+            href="#earnings"
+            title="Permalink to EventProducts.earnings">#</a>
+        </h4>
+        <div class="doc">
+<p>Amount earned by the publisher on this product.</p>
+<pre class="source">
+Money earnings;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="networkFee">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/Money.html">Money</a>         <strong>networkFee</strong> <a class="anchor-link"
+            href="#networkFee"
+            title="Permalink to EventProducts.networkFee">#</a>
+        </h4>
+        <div class="doc">
+<p>Fee that the advertiser paid to the Google Affiliate Network for this product.</p>
+<pre class="source">
+Money networkFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="publisherFee">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/Money.html">Money</a>         <strong>publisherFee</strong> <a class="anchor-link"
+            href="#publisherFee"
+            title="Permalink to EventProducts.publisherFee">#</a>
+        </h4>
+        <div class="doc">
+<p>Fee that the advertiser paid to the publisehr for this product.</p>
+<pre class="source">
+Money publisherFee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quantity">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>quantity</strong> <a class="anchor-link"
+            href="#quantity"
+            title="Permalink to EventProducts.quantity">#</a>
+        </h4>
+        <div class="doc">
+<p>Quantity of this product bought/exchanged.</p>
+<pre class="source">
+String quantity;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="sku">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>sku</strong> <a class="anchor-link"
+            href="#sku"
+            title="Permalink to EventProducts.sku">#</a>
+        </h4>
+        <div class="doc">
+<p>Sku of this product.</p>
+<pre class="source">
+String sku;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="skuName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>skuName</strong> <a class="anchor-link"
+            href="#skuName"
+            title="Permalink to EventProducts.skuName">#</a>
+        </h4>
+        <div class="doc">
+<p>Sku name of this product.</p>
+<pre class="source">
+String skuName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="unitPrice">
+<span class="show-code">Code</span>
+<a href="../gan-v1beta1/Money.html">Money</a>         <strong>unitPrice</strong> <a class="anchor-link"
+            href="#unitPrice"
+            title="Permalink to EventProducts.unitPrice">#</a>
+        </h4>
+        <div class="doc">
+<p>Price per unit of this product.</p>
+<pre class="source">
+Money unitPrice;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:48.250</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

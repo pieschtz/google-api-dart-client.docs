@@ -1,0 +1,140 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ProfilesResource Class / moderator-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="moderator-v1" data-type="ProfilesResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/ProfilesResource.html">ProfilesResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ProfilesResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>() <a class="anchor-link" href="#get"
+              title="Permalink to ProfilesResource.get">#</a></h4>
+<div class="doc">
+<p>Returns the profile information for the authenticated user.</p>
+<pre class="source">
+Future&lt;Profile&gt; get() {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $url = new UrlPattern(_$service.baseUrl + "profiles/@me").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Profile.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="patch">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../moderator-v1/Profile.html">Profile</a> content) <a class="anchor-link" href="#patch"
+              title="Permalink to ProfilesResource.patch">#</a></h4>
+<div class="doc">
+<p>Updates the profile information for the authenticated user. This method supports patch semantics.
+
+<span class="param">content</span> the Profile</p>
+<pre class="source">
+Future&lt;Profile&gt; patch(Profile content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Profile.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "profiles/@me").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Profile.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="update">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../moderator-v1/Profile.html">Profile</a> content) <a class="anchor-link" href="#update"
+              title="Permalink to ProfilesResource.update">#</a></h4>
+<div class="doc">
+<p>Updates the profile information for the authenticated user.
+
+<span class="param">content</span> the Profile</p>
+<pre class="source">
+Future&lt;Profile&gt; update(Profile content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Profile.serialize(content));
+  final $url = new UrlPattern(_$service.baseUrl + "profiles/@me").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PUT", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Profile.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:55.247</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

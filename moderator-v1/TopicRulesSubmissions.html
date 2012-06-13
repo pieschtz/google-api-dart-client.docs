@@ -1,0 +1,115 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TopicRulesSubmissions Class / moderator-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="moderator-v1" data-type="TopicRulesSubmissions">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/TopicRulesSubmissions.html">TopicRulesSubmissions</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>TopicRulesSubmissions</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>TopicRulesSubmissions</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../moderator-v1/TopicRulesSubmissions.html">TopicRulesSubmissions</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to TopicRulesSubmissions.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static TopicRulesSubmissions parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new TopicRulesSubmissions();
+  result.close = identity(json["close"]);
+  result.open = identity(json["open"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../moderator-v1/TopicRulesSubmissions.html">TopicRulesSubmissions</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to TopicRulesSubmissions.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(TopicRulesSubmissions value) {
+  if (value == null) return null;
+  final result = {};
+  result["close"] = identity(value.close);
+  result["open"] = identity(value.open);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to TopicRulesSubmissions.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="close">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>close</strong> <a class="anchor-link"
+            href="#close"
+            title="Permalink to TopicRulesSubmissions.close">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String close;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="open">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>open</strong> <a class="anchor-link"
+            href="#open"
+            title="Permalink to TopicRulesSubmissions.open">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String open;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:55.426</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

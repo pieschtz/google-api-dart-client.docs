@@ -1,0 +1,117 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ShoppingModelRecommendationsJsonV1 Class / shopping-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="shopping-v1" data-type="ShoppingModelRecommendationsJsonV1">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../shopping-v1.html">shopping-v1</a> &rsaquo; <a href="../shopping-v1/ShoppingModelRecommendationsJsonV1.html">ShoppingModelRecommendationsJsonV1</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ShoppingModelRecommendationsJsonV1</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ShoppingModelRecommendationsJsonV1</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../shopping-v1/ShoppingModelRecommendationsJsonV1.html">ShoppingModelRecommendationsJsonV1</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ShoppingModelRecommendationsJsonV1.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ShoppingModelRecommendationsJsonV1 parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ShoppingModelRecommendationsJsonV1();
+  result.recommendationList = map(ShoppingModelRecommendationsJsonV1RecommendationList.parse)(json["recommendationList"]);
+  result.type = identity(json["type"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ShoppingModelRecommendationsJsonV1.html">ShoppingModelRecommendationsJsonV1</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ShoppingModelRecommendationsJsonV1.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ShoppingModelRecommendationsJsonV1 value) {
+  if (value == null) return null;
+  final result = {};
+  result["recommendationList"] = map(ShoppingModelRecommendationsJsonV1RecommendationList.serialize)(value.recommendationList);
+  result["type"] = identity(value.type);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ShoppingModelRecommendationsJsonV1.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="recommendationList">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>recommendationList</strong> <a class="anchor-link"
+            href="#recommendationList"
+            title="Permalink to ShoppingModelRecommendationsJsonV1.recommendationList">#</a>
+        </h4>
+        <div class="doc">
+<p>List of recommendations.</p>
+<pre class="source">
+List&lt;ShoppingModelRecommendationsJsonV1RecommendationList&gt; recommendationList;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="type">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+            href="#type"
+            title="Permalink to ShoppingModelRecommendationsJsonV1.type">#</a>
+        </h4>
+        <div class="doc">
+<p>Type of recommendation list (for offer-based recommendations, one of: all, purchaseToPurchase,
+visitToVisit, visitToPurchase, relatedItems; for category-based recommendations, one of: all,
+categoryMostVisited, categoryBestSeller).</p>
+<pre class="source">
+String type;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page generated at 2012-06-13 22:22:57.847</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        
