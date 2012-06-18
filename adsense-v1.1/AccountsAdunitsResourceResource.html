@@ -55,7 +55,8 @@ Future&lt;AdUnit&gt; get(String accountId, String adClientId, String adUnitId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}").generate($pathParams, $queryParams);
+  final $path = "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -95,7 +96,8 @@ Future&lt;AdUnits&gt; list(String accountId, String adClientId, [bool includeIna
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "accounts/{accountId}/adclients/{adClientId}/adunits").generate($pathParams, $queryParams);
+  final $path = "accounts/{accountId}/adclients/{adClientId}/adunits";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -126,7 +128,7 @@ final AccountsAdunitsResourceAccountsAdunitsCustomchannelsResourceResourceResour
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:29.907</div>
+          <div>This page generated at 2012-06-18 15:31:17.558</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

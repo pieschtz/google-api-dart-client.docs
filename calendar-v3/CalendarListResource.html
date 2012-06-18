@@ -49,7 +49,8 @@ Future delete(String calendarId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList/{calendarId}").generate($pathParams, $queryParams);
+  final $path = "users/me/calendarList/{calendarId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -83,7 +84,8 @@ Future&lt;CalendarListEntry&gt; get(String calendarId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList/{calendarId}").generate($pathParams, $queryParams);
+  final $path = "users/me/calendarList/{calendarId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -118,7 +120,8 @@ Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(CalendarListEntry.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList").generate($pathParams, $queryParams);
+  final $path = "users/me/calendarList";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -153,7 +156,8 @@ Future&lt;CalendarList&gt; list([String pageToken = UNSPECIFIED, bool showHidden
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList").generate($pathParams, $queryParams);
+  final $path = "users/me/calendarList";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -191,7 +195,8 @@ Future&lt;CalendarListEntry&gt; patch(String calendarId, CalendarListEntry conte
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(CalendarListEntry.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList/{calendarId}").generate($pathParams, $queryParams);
+  final $path = "users/me/calendarList/{calendarId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -229,7 +234,8 @@ Future&lt;CalendarListEntry&gt; update(String calendarId, CalendarListEntry cont
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(CalendarListEntry.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "users/me/calendarList/{calendarId}").generate($pathParams, $queryParams);
+  final $path = "users/me/calendarList/{calendarId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -246,7 +252,7 @@ Future&lt;CalendarListEntry&gt; update(String calendarId, CalendarListEntry cont
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:35.950</div>
+          <div>This page generated at 2012-06-18 15:31:23.596</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

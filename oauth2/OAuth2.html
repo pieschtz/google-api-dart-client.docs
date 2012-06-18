@@ -53,12 +53,12 @@ OAuth2(String this._clientId, List&lt;String&gt; this._scopes,
 <h3>Methods</h3>
 <div class="method"><h4 id="authenticate">
 <span class="show-code">Code</span>
-<a href="../http/HttpRequest.html">HttpRequest</a> <strong>authenticate</strong>(<a href="../http/HttpRequest.html">HttpRequest</a> request) <a class="anchor-link" href="#authenticate"
+<a href="../dart_core/Future.html">Future</a> <strong>authenticate</strong>(<a href="../http/HttpRequest.html">HttpRequest</a> request) <a class="anchor-link" href="#authenticate"
               title="Permalink to OAuth2.authenticate">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-HttpRequest authenticate(HttpRequest request) =&gt; login().transform((token) {
+Future&lt;HttpRequest&gt; authenticate(HttpRequest request) =&gt; login().transform((token) {
   request.headers["Authorization"] = "Bearer ${token.data}";
   return request;
 });
@@ -150,7 +150,7 @@ Token get token() =&gt; __token;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:49.587</div>
+          <div>This page generated at 2012-06-18 15:31:37.237</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

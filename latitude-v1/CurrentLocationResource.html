@@ -46,7 +46,8 @@ Future delete() {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "currentLocation").generate($pathParams, $queryParams);
+  final $path = "currentLocation";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -78,7 +79,8 @@ Future&lt;Location&gt; get([CurrentLocationResourceGetGranularity granularity = 
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "currentLocation").generate($pathParams, $queryParams);
+  final $path = "currentLocation";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -113,7 +115,8 @@ Future&lt;Location&gt; insert(Location content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Location.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "currentLocation").generate($pathParams, $queryParams);
+  final $path = "currentLocation";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -130,7 +133,7 @@ Future&lt;Location&gt; insert(Location content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:48.791</div>
+          <div>This page generated at 2012-06-18 15:31:36.444</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

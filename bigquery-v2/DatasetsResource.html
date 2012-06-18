@@ -55,7 +55,8 @@ Future delete(String projectId, String datasetId, [bool deleteContents = UNSPECI
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}").generate($pathParams, $queryParams);
+  final $path = "projects/{projectId}/datasets/{datasetId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -92,7 +93,8 @@ Future&lt;Dataset&gt; get(String projectId, String datasetId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}").generate($pathParams, $queryParams);
+  final $path = "projects/{projectId}/datasets/{datasetId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -130,7 +132,8 @@ Future&lt;Dataset&gt; insert(String projectId, Dataset content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Dataset.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets").generate($pathParams, $queryParams);
+  final $path = "projects/{projectId}/datasets";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -167,7 +170,8 @@ Future&lt;DatasetList&gt; list(String projectId, [String pageToken = UNSPECIFIED
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets").generate($pathParams, $queryParams);
+  final $path = "projects/{projectId}/datasets";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -211,7 +215,8 @@ Future&lt;Dataset&gt; patch(String projectId, String datasetId, Dataset content)
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Dataset.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}").generate($pathParams, $queryParams);
+  final $path = "projects/{projectId}/datasets/{datasetId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -254,7 +259,8 @@ Future&lt;Dataset&gt; update(String projectId, String datasetId, Dataset content
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Dataset.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "projects/{projectId}/datasets/{datasetId}").generate($pathParams, $queryParams);
+  final $path = "projects/{projectId}/datasets/{datasetId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -271,7 +277,7 @@ Future&lt;Dataset&gt; update(String projectId, String datasetId, Dataset content
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:32.724</div>
+          <div>This page generated at 2012-06-18 15:31:20.356</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

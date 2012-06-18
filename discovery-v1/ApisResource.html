@@ -52,7 +52,8 @@ Future&lt;RestDescription&gt; getRest(String api, String version) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "apis/{api}/{version}/rest").generate($pathParams, $queryParams);
+  final $path = "apis/{api}/{version}/rest";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -86,7 +87,8 @@ Future&lt;DirectoryList&gt; list([String name = UNSPECIFIED, bool preferred = UN
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "apis").generate($pathParams, $queryParams);
+  final $path = "apis";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -103,7 +105,7 @@ Future&lt;DirectoryList&gt; list([String name = UNSPECIFIED, bool preferred = UN
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:40.500</div>
+          <div>This page generated at 2012-06-18 15:31:28.179</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

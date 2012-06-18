@@ -50,7 +50,8 @@ Future delete(String annotationId, [String source = UNSPECIFIED]) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/annotations/{annotationId}").generate($pathParams, $queryParams);
+  final $path = "mylibrary/annotations/{annotationId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -85,7 +86,8 @@ Future&lt;Annotation&gt; get(String annotationId, [String source = UNSPECIFIED])
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/annotations/{annotationId}").generate($pathParams, $queryParams);
+  final $path = "mylibrary/annotations/{annotationId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -121,7 +123,8 @@ Future&lt;Annotation&gt; insert(Annotation content, [String source = UNSPECIFIED
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Annotation.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/annotations").generate($pathParams, $queryParams);
+  final $path = "mylibrary/annotations";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -162,7 +165,8 @@ Future&lt;Annotations&gt; list([bool showDeleted = UNSPECIFIED, String updatedMi
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/annotations").generate($pathParams, $queryParams);
+  final $path = "mylibrary/annotations";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -201,7 +205,8 @@ Future&lt;Annotation&gt; update(String annotationId, Annotation content, [String
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Annotation.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/annotations/{annotationId}").generate($pathParams, $queryParams);
+  final $path = "mylibrary/annotations/{annotationId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -218,7 +223,7 @@ Future&lt;Annotation&gt; update(String annotationId, Annotation content, [String
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:35.011</div>
+          <div>This page generated at 2012-06-18 15:31:22.639</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

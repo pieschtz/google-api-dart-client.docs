@@ -53,7 +53,8 @@ Future&lt;CommunityPoll&gt; get(int communityId, String pollId, [String hl = UNS
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/polls/{pollId}").generate($pathParams, $queryParams);
+  final $path = "communities/{communityId}/polls/{pollId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -90,7 +91,8 @@ Future&lt;CommunityPollList&gt; list(int communityId, [String pageToken = UNSPEC
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}/polls").generate($pathParams, $queryParams);
+  final $path = "communities/{communityId}/polls";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -107,7 +109,7 @@ Future&lt;CommunityPollList&gt; list(int communityId, [String pageToken = UNSPEC
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:49.902</div>
+          <div>This page generated at 2012-06-18 15:31:37.552</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

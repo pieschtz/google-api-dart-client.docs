@@ -68,7 +68,8 @@ Future image(List&lt;String&gt; id, [int maxwidth = UNSPECIFIED, int maxheight =
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "image{/id*}").generate($pathParams, $queryParams);
+  final $path = "image{/id*}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -111,7 +112,8 @@ Future mqlread(String query, [String lang = UNSPECIFIED, bool htmlEscape = UNSPE
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mqlread").generate($pathParams, $queryParams);
+  final $path = "mqlread";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -300,7 +302,7 @@ String userIp;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:41.068</div>
+          <div>This page generated at 2012-06-18 15:31:28.764</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

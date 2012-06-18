@@ -52,7 +52,8 @@ Future&lt;Topic&gt; get(int seriesId, int topicId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/topics/{topicId}").generate($pathParams, $queryParams);
+  final $path = "series/{seriesId}/topics/{topicId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -90,7 +91,8 @@ Future&lt;Topic&gt; insert(int seriesId, Topic content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Topic.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/topics").generate($pathParams, $queryParams);
+  final $path = "series/{seriesId}/topics";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -128,7 +130,8 @@ Future&lt;TopicList&gt; list(int seriesId, [int maxResults = UNSPECIFIED, String
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/topics").generate($pathParams, $queryParams);
+  final $path = "series/{seriesId}/topics";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -169,7 +172,8 @@ Future&lt;Topic&gt; update(int seriesId, int topicId, Topic content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Topic.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "series/{seriesId}/topics/{topicId}").generate($pathParams, $queryParams);
+  final $path = "series/{seriesId}/topics/{topicId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -200,7 +204,7 @@ final TopicsSubmissionsResourceResource submissions;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:49.261</div>
+          <div>This page generated at 2012-06-18 15:31:36.910</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

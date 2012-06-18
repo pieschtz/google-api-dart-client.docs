@@ -52,7 +52,8 @@ Future&lt;CustomChannel&gt; get(String adClientId, String customChannelId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "adclients/{adClientId}/customchannels/{customChannelId}").generate($pathParams, $queryParams);
+  final $path = "adclients/{adClientId}/customchannels/{customChannelId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -88,7 +89,8 @@ Future&lt;CustomChannels&gt; list(String adClientId, [String pageToken = UNSPECI
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "adclients/{adClientId}/customchannels").generate($pathParams, $queryParams);
+  final $path = "adclients/{adClientId}/customchannels";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -119,7 +121,7 @@ final CustomchannelsAdunitsResourceResource adunits;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:30.250</div>
+          <div>This page generated at 2012-06-18 15:31:17.900</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

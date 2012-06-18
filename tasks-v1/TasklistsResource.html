@@ -49,7 +49,8 @@ Future delete(String tasklist) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "users/@me/lists/{tasklist}").generate($pathParams, $queryParams);
+  final $path = "users/@me/lists/{tasklist}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -83,7 +84,8 @@ Future&lt;TaskList&gt; get(String tasklist) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "users/@me/lists/{tasklist}").generate($pathParams, $queryParams);
+  final $path = "users/@me/lists/{tasklist}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -118,7 +120,8 @@ Future&lt;TaskList&gt; insert(TaskList content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(TaskList.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "users/@me/lists").generate($pathParams, $queryParams);
+  final $path = "users/@me/lists";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -151,7 +154,8 @@ Future&lt;TaskLists&gt; list([String pageToken = UNSPECIFIED, String maxResults 
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "users/@me/lists").generate($pathParams, $queryParams);
+  final $path = "users/@me/lists";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -189,7 +193,8 @@ Future&lt;TaskList&gt; patch(String tasklist, TaskList content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(TaskList.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "users/@me/lists/{tasklist}").generate($pathParams, $queryParams);
+  final $path = "users/@me/lists/{tasklist}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -227,7 +232,8 @@ Future&lt;TaskList&gt; update(String tasklist, TaskList content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(TaskList.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "users/@me/lists/{tasklist}").generate($pathParams, $queryParams);
+  final $path = "users/@me/lists/{tasklist}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -244,7 +250,7 @@ Future&lt;TaskList&gt; update(String tasklist, TaskList content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:52.615</div>
+          <div>This page generated at 2012-06-18 15:31:40.246</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

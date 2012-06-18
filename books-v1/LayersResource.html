@@ -54,7 +54,8 @@ Future&lt;Layersummary&gt; get(String volumeId, String summaryId, [String source
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layersummary/{summaryId}").generate($pathParams, $queryParams);
+  final $path = "volumes/{volumeId}/layersummary/{summaryId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -92,7 +93,8 @@ Future&lt;Layersummaries&gt; list(String volumeId, [String pageToken = UNSPECIFI
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layersummary").generate($pathParams, $queryParams);
+  final $path = "volumes/{volumeId}/layersummary";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -136,7 +138,7 @@ final LayersVolumeAnnotationsResourceResource volumeAnnotations;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:34.504</div>
+          <div>This page generated at 2012-06-18 15:31:22.130</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

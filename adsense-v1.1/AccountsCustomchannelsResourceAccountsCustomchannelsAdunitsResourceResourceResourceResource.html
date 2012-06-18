@@ -58,7 +58,8 @@ Future&lt;AdUnits&gt; list(String accountId, String adClientId, String customCha
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}/adunits").generate($pathParams, $queryParams);
+  final $path = "accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}/adunits";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -75,7 +76,7 @@ Future&lt;AdUnits&gt; list(String accountId, String adClientId, String customCha
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:30.232</div>
+          <div>This page generated at 2012-06-18 15:31:17.882</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

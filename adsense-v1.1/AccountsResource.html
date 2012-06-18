@@ -50,7 +50,8 @@ Future&lt;Account&gt; get(String accountId, [bool tree = UNSPECIFIED]) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "accounts/{accountId}").generate($pathParams, $queryParams);
+  final $path = "accounts/{accountId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -83,7 +84,8 @@ Future&lt;Accounts&gt; list([String pageToken = UNSPECIFIED, int maxResults = UN
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "accounts").generate($pathParams, $queryParams);
+  final $path = "accounts";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -166,7 +168,7 @@ final AccountsUrlchannelsResourceResource urlchannels;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:29.865</div>
+          <div>This page generated at 2012-06-18 15:31:17.517</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

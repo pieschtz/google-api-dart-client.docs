@@ -55,7 +55,8 @@ Future&lt;Comment&gt; get(String blogId, String postId, String commentId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "blogs/{blogId}/posts/{postId}/comments/{commentId}").generate($pathParams, $queryParams);
+  final $path = "blogs/{blogId}/posts/{postId}/comments/{commentId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -96,7 +97,8 @@ Future&lt;CommentList&gt; list(String blogId, String postId, [String startDate =
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "blogs/{blogId}/posts/{postId}/comments").generate($pathParams, $queryParams);
+  final $path = "blogs/{blogId}/posts/{postId}/comments";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -113,7 +115,7 @@ Future&lt;CommentList&gt; list(String blogId, String postId, [String startDate =
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:34.186</div>
+          <div>This page generated at 2012-06-18 15:31:21.812</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

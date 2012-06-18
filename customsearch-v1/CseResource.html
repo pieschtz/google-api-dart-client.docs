@@ -81,7 +81,8 @@ Future&lt;Search&gt; list(String q, [String sort = UNSPECIFIED, String orTerms =
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "v1").generate($pathParams, $queryParams);
+  final $path = "v1";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -98,7 +99,7 @@ Future&lt;Search&gt; list(String q, [String sort = UNSPECIFIED, String orTerms =
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:37.605</div>
+          <div>This page generated at 2012-06-18 15:31:25.266</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

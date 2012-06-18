@@ -52,7 +52,8 @@ Future&lt;Page&gt; get(String blogId, String pageId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "blogs/{blogId}/pages/{pageId}").generate($pathParams, $queryParams);
+  final $path = "blogs/{blogId}/pages/{pageId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -87,7 +88,8 @@ Future&lt;PageList&gt; list(String blogId, [bool fetchBodies = UNSPECIFIED]) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "blogs/{blogId}/pages").generate($pathParams, $queryParams);
+  final $path = "blogs/{blogId}/pages";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -104,7 +106,7 @@ Future&lt;PageList&gt; list(String blogId, [bool fetchBodies = UNSPECIFIED]) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:34.168</div>
+          <div>This page generated at 2012-06-18 15:31:21.793</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

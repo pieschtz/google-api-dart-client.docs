@@ -57,7 +57,8 @@ Future cancel(String packageName, String subscriptionId, String token) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{packageName}/subscriptions/{subscriptionId}/purchases/{token}/cancel").generate($pathParams, $queryParams);
+  final $path = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}/cancel";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -99,7 +100,8 @@ Future&lt;SubscriptionPurchase&gt; get(String packageName, String subscriptionId
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{packageName}/subscriptions/{subscriptionId}/purchases/{token}").generate($pathParams, $queryParams);
+  final $path = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -116,7 +118,7 @@ Future&lt;SubscriptionPurchase&gt; get(String packageName, String subscriptionId
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:32.107</div>
+          <div>This page generated at 2012-06-18 15:31:19.743</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

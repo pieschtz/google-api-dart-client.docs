@@ -53,7 +53,8 @@ Future addVolume(String shelf, String volumeId, [String source = UNSPECIFIED]) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/bookshelves/{shelf}/addVolume").generate($pathParams, $queryParams);
+  final $path = "mylibrary/bookshelves/{shelf}/addVolume";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -88,7 +89,8 @@ Future clearVolumes(String shelf, [String source = UNSPECIFIED]) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/bookshelves/{shelf}/clearVolumes").generate($pathParams, $queryParams);
+  final $path = "mylibrary/bookshelves/{shelf}/clearVolumes";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -123,7 +125,8 @@ Future&lt;Bookshelf&gt; get(String shelf, [String source = UNSPECIFIED]) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/bookshelves/{shelf}").generate($pathParams, $queryParams);
+  final $path = "mylibrary/bookshelves/{shelf}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -155,7 +158,8 @@ Future&lt;Bookshelves&gt; list([String source = UNSPECIFIED]) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/bookshelves").generate($pathParams, $queryParams);
+  final $path = "mylibrary/bookshelves";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -198,7 +202,8 @@ Future moveVolume(String shelf, String volumeId, int volumePosition, [String sou
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/bookshelves/{shelf}/moveVolume").generate($pathParams, $queryParams);
+  final $path = "mylibrary/bookshelves/{shelf}/moveVolume";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -236,7 +241,8 @@ Future removeVolume(String shelf, String volumeId, [String source = UNSPECIFIED]
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/bookshelves/{shelf}/removeVolume").generate($pathParams, $queryParams);
+  final $path = "mylibrary/bookshelves/{shelf}/removeVolume";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -267,7 +273,7 @@ final MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceRes
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:34.887</div>
+          <div>This page generated at 2012-06-18 15:31:22.515</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

@@ -53,7 +53,8 @@ Future delete(String calendarId, String eventId, [bool sendNotifications = UNSPE
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events/{eventId}").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events/{eventId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -92,7 +93,8 @@ Future&lt;Event&gt; get(String calendarId, String eventId, [String timeZone = UN
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events/{eventId}").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events/{eventId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -130,7 +132,8 @@ Future&lt;Event&gt; import(String calendarId, Event content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Event.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events/import").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events/import";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -169,7 +172,8 @@ Future&lt;Event&gt; insert(String calendarId, Event content, [bool sendNotificat
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Event.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -212,7 +216,8 @@ Future&lt;Events&gt; instances(String calendarId, String eventId, [bool showDele
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events/{eventId}/instances").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events/{eventId}/instances";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -259,7 +264,8 @@ Future&lt;Events&gt; list(String calendarId, [EventsResourceListOrderBy orderBy 
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -300,7 +306,8 @@ Future&lt;Event&gt; move(String calendarId, String eventId, String destination, 
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events/{eventId}/move").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events/{eventId}/move";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -342,7 +349,8 @@ Future&lt;Event&gt; patch(String calendarId, String eventId, Event content, [boo
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Event.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events/{eventId}").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events/{eventId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -380,7 +388,8 @@ Future&lt;Event&gt; quickAdd(String calendarId, String text, [bool sendNotificat
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events/quickAdd").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events/quickAdd";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -422,7 +431,8 @@ Future&lt;Event&gt; update(String calendarId, String eventId, Event content, [bo
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Event.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/events/{eventId}").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/events/{eventId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -439,7 +449,7 @@ Future&lt;Event&gt; update(String calendarId, String eventId, Event content, [bo
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:36.135</div>
+          <div>This page generated at 2012-06-18 15:31:23.780</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

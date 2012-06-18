@@ -49,7 +49,8 @@ Future delete(String locationId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "location/{locationId}").generate($pathParams, $queryParams);
+  final $path = "location/{locationId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -84,7 +85,8 @@ Future&lt;Location&gt; get(String locationId, [LocationResourceGetGranularity gr
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "location/{locationId}").generate($pathParams, $queryParams);
+  final $path = "location/{locationId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -119,7 +121,8 @@ Future&lt;Location&gt; insert(Location content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Location.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "location").generate($pathParams, $queryParams);
+  final $path = "location";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -154,7 +157,8 @@ Future&lt;LocationFeed&gt; list([String maxResults = UNSPECIFIED, String maxTime
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "location").generate($pathParams, $queryParams);
+  final $path = "location";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -171,7 +175,7 @@ Future&lt;LocationFeed&gt; list([String maxResults = UNSPECIFIED, String maxTime
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:48.816</div>
+          <div>This page generated at 2012-06-18 15:31:36.468</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

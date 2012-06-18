@@ -54,7 +54,8 @@ Future&lt;DownloadAccesses&gt; releaseDownloadAccess(List&lt;String&gt; volumeId
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "myconfig/releaseDownloadAccess").generate($pathParams, $queryParams);
+  final $path = "myconfig/releaseDownloadAccess";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -98,7 +99,8 @@ Future&lt;RequestAccess&gt; requestAccess(String source, String volumeId, String
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "myconfig/requestAccess").generate($pathParams, $queryParams);
+  final $path = "myconfig/requestAccess";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -141,7 +143,8 @@ Future&lt;Volumes&gt; syncVolumeLicenses(String source, String nonce, String cpk
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "myconfig/syncVolumeLicenses").generate($pathParams, $queryParams);
+  final $path = "myconfig/syncVolumeLicenses";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -158,7 +161,7 @@ Future&lt;Volumes&gt; syncVolumeLicenses(String source, String nonce, String cpk
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:34.710</div>
+          <div>This page generated at 2012-06-18 15:31:22.336</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

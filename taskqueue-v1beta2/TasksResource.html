@@ -55,7 +55,8 @@ Future delete(String project, String taskqueue, String task) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/{task}").generate($pathParams, $queryParams);
+  final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -95,7 +96,8 @@ Future&lt;Task&gt; get(String project, String taskqueue, String task) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/{task}").generate($pathParams, $queryParams);
+  final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -136,7 +138,8 @@ Future&lt;Task&gt; insert(String project, String taskqueue, Task content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Task.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks").generate($pathParams, $queryParams);
+  final $path = "{project}/taskqueues/{taskqueue}/tasks";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -181,7 +184,8 @@ Future&lt;Tasks&gt; lease(String project, String taskqueue, int numTasks, int le
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/lease").generate($pathParams, $queryParams);
+  final $path = "{project}/taskqueues/{taskqueue}/tasks/lease";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -218,7 +222,8 @@ Future&lt;Tasks2&gt; list(String project, String taskqueue) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks").generate($pathParams, $queryParams);
+  final $path = "{project}/taskqueues/{taskqueue}/tasks";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -263,7 +268,8 @@ Future&lt;Task&gt; patch(String project, String taskqueue, String task, int newL
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Task.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/{task}").generate($pathParams, $queryParams);
+  final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -308,7 +314,8 @@ Future&lt;Task&gt; update(String project, String taskqueue, String task, int new
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Task.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "{project}/taskqueues/{taskqueue}/tasks/{task}").generate($pathParams, $queryParams);
+  final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -325,7 +332,7 @@ Future&lt;Task&gt; update(String project, String taskqueue, String task, int new
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:52.349</div>
+          <div>This page generated at 2012-06-18 15:31:39.982</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

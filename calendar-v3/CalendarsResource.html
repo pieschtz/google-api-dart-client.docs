@@ -50,7 +50,8 @@ Future clear(String calendarId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}/clear").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}/clear";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -84,7 +85,8 @@ Future delete(String calendarId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -118,7 +120,8 @@ Future&lt;Calendar&gt; get(String calendarId) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -153,7 +156,8 @@ Future&lt;Calendar&gt; insert(Calendar content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Calendar.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "calendars").generate($pathParams, $queryParams);
+  final $path = "calendars";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -191,7 +195,8 @@ Future&lt;Calendar&gt; patch(String calendarId, Calendar content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Calendar.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -229,7 +234,8 @@ Future&lt;Calendar&gt; update(String calendarId, Calendar content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Calendar.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "calendars/{calendarId}").generate($pathParams, $queryParams);
+  final $path = "calendars/{calendarId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -246,7 +252,7 @@ Future&lt;Calendar&gt; update(String calendarId, Calendar content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:35.989</div>
+          <div>This page generated at 2012-06-18 15:31:23.634</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

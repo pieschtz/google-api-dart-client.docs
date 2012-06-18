@@ -50,7 +50,8 @@ Future&lt;Url&gt; get(String shortUrl, [UrlResourceGetProjection projection = UN
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "url").generate($pathParams, $queryParams);
+  final $path = "url";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -85,7 +86,8 @@ Future&lt;Url&gt; insert(Url content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Url.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "url").generate($pathParams, $queryParams);
+  final $path = "url";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -118,7 +120,8 @@ Future&lt;UrlHistory&gt; list([String startToken = UNSPECIFIED, UrlResourceListP
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "url/history").generate($pathParams, $queryParams);
+  final $path = "url/history";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -135,7 +138,7 @@ Future&lt;UrlHistory&gt; list([String startToken = UNSPECIFIED, UrlResourceListP
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:53.355</div>
+          <div>This page generated at 2012-06-18 15:31:40.982</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

@@ -29,7 +29,7 @@
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> annotationDataId, <a href="../dart_core/String.html">String</a> contentVersion, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/int.html">int</a> h = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/int.html">int</a> w = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> annotationDataId, <a href="../dart_core/String.html">String</a> contentVersion, [<a href="../dart_core/int.html">int</a> scale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/int.html">int</a> h = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/int.html">int</a> w = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to LayersAnnotationDataResourceResource.get">#</a></h4>
 <div class="doc">
 <p>Gets the annotation data.
@@ -42,7 +42,7 @@
 
 <span class="param">contentVersion</span> The content version for the volume you are trying to retrieve.</p>
 <pre class="source">
-Future&lt;Annotationdata&gt; get(String volumeId, String layerId, String annotationDataId, String contentVersion, [String locale = UNSPECIFIED, int h = UNSPECIFIED, String source = UNSPECIFIED, int w = UNSPECIFIED]) {
+Future&lt;Annotationdata&gt; get(String volumeId, String layerId, String annotationDataId, String contentVersion, [int scale = UNSPECIFIED, String locale = UNSPECIFIED, int h = UNSPECIFIED, String source = UNSPECIFIED, int w = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -50,6 +50,7 @@ Future&lt;Annotationdata&gt; get(String volumeId, String layerId, String annotat
   $pathParams["layerId"] = layerId;
   $pathParams["annotationDataId"] = annotationDataId;
   $pathParams["contentVersion"] = contentVersion;
+  if (UNSPECIFIED != scale) $queryParams["scale"] = scale;
   if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
   if (UNSPECIFIED != h) $queryParams["h"] = h;
   if (UNSPECIFIED != source) $queryParams["source"] = source;
@@ -62,7 +63,8 @@ Future&lt;Annotationdata&gt; get(String volumeId, String layerId, String annotat
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layers/{layerId}/data/{annotationDataId}").generate($pathParams, $queryParams);
+  final $path = "volumes/{volumeId}/layers/{layerId}/data/{annotationDataId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -76,7 +78,7 @@ Future&lt;Annotationdata&gt; get(String volumeId, String layerId, String annotat
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> contentVersion, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/int.html">int</a> h = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/List.html">List</a> annotationDataId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> w = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMin = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> contentVersion, [<a href="../dart_core/int.html">int</a> scale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/int.html">int</a> h = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/List.html">List</a> annotationDataId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> w = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMin = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to LayersAnnotationDataResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Gets the annotation data for a volume and layer.
@@ -87,13 +89,14 @@ Future&lt;Annotationdata&gt; get(String volumeId, String layerId, String annotat
 
 <span class="param">contentVersion</span> The content version for the requested volume.</p>
 <pre class="source">
-Future&lt;Annotationsdata&gt; list(String volumeId, String layerId, String contentVersion, [String source = UNSPECIFIED, String locale = UNSPECIFIED, int h = UNSPECIFIED, String updatedMax = UNSPECIFIED, int maxResults = UNSPECIFIED, List&lt;String&gt; annotationDataId = UNSPECIFIED, String pageToken = UNSPECIFIED, int w = UNSPECIFIED, String updatedMin = UNSPECIFIED]) {
+Future&lt;Annotationsdata&gt; list(String volumeId, String layerId, String contentVersion, [int scale = UNSPECIFIED, String source = UNSPECIFIED, String locale = UNSPECIFIED, int h = UNSPECIFIED, String updatedMax = UNSPECIFIED, int maxResults = UNSPECIFIED, List&lt;String&gt; annotationDataId = UNSPECIFIED, String pageToken = UNSPECIFIED, int w = UNSPECIFIED, String updatedMin = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["volumeId"] = volumeId;
   $pathParams["layerId"] = layerId;
   $pathParams["contentVersion"] = contentVersion;
+  if (UNSPECIFIED != scale) $queryParams["scale"] = scale;
   if (UNSPECIFIED != source) $queryParams["source"] = source;
   if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
   if (UNSPECIFIED != h) $queryParams["h"] = h;
@@ -111,7 +114,8 @@ Future&lt;Annotationsdata&gt; list(String volumeId, String layerId, String conte
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layers/{layerId}/data").generate($pathParams, $queryParams);
+  final $path = "volumes/{volumeId}/layers/{layerId}/data";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -128,7 +132,7 @@ Future&lt;Annotationsdata&gt; list(String volumeId, String layerId, String conte
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:34.592</div>
+          <div>This page generated at 2012-06-18 15:31:22.218</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

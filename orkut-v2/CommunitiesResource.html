@@ -50,7 +50,8 @@ Future&lt;Community&gt; get(int communityId, [String hl = UNSPECIFIED]) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "communities/{communityId}").generate($pathParams, $queryParams);
+  final $path = "communities/{communityId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -87,7 +88,8 @@ Future&lt;CommunityList&gt; list(String userId, [CommunitiesResourceListOrderBy 
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "people/{userId}/communities").generate($pathParams, $queryParams);
+  final $path = "people/{userId}/communities";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -104,7 +106,7 @@ Future&lt;CommunityList&gt; list(String userId, [CommunitiesResourceListOrderBy 
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:50.111</div>
+          <div>This page generated at 2012-06-18 15:31:37.753</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

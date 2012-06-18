@@ -50,7 +50,8 @@ Future&lt;FreeBusyResponse&gt; query(FreeBusyRequest content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(FreeBusyRequest.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "freeBusy").generate($pathParams, $queryParams);
+  final $path = "freeBusy";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -67,7 +68,7 @@ Future&lt;FreeBusyResponse&gt; query(FreeBusyRequest content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:35.920</div>
+          <div>This page generated at 2012-06-18 15:31:23.566</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

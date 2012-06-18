@@ -49,7 +49,8 @@ Future delete(String id) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "webResource/{id}").generate($pathParams, $queryParams);
+  final $path = "webResource/{id}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -83,7 +84,8 @@ Future&lt;SiteVerificationWebResourceResource&gt; get(String id) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "webResource/{id}").generate($pathParams, $queryParams);
+  final $path = "webResource/{id}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -118,7 +120,8 @@ Future&lt;SiteVerificationWebResourceGettokenResponse&gt; getToken(SiteVerificat
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(SiteVerificationWebResourceGettokenRequest.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "token").generate($pathParams, $queryParams);
+  final $path = "token";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -156,7 +159,8 @@ Future&lt;SiteVerificationWebResourceResource&gt; insert(String verificationMeth
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(SiteVerificationWebResourceResource.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "webResource").generate($pathParams, $queryParams);
+  final $path = "webResource";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -187,7 +191,8 @@ Future&lt;SiteVerificationWebResourceListResponse&gt; list() {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "webResource").generate($pathParams, $queryParams);
+  final $path = "webResource";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -225,7 +230,8 @@ Future&lt;SiteVerificationWebResourceResource&gt; patch(String id, SiteVerificat
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(SiteVerificationWebResourceResource.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "webResource/{id}").generate($pathParams, $queryParams);
+  final $path = "webResource/{id}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -263,7 +269,8 @@ Future&lt;SiteVerificationWebResourceResource&gt; update(String id, SiteVerifica
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(SiteVerificationWebResourceResource.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "webResource/{id}").generate($pathParams, $queryParams);
+  final $path = "webResource/{id}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -280,7 +287,7 @@ Future&lt;SiteVerificationWebResourceResource&gt; update(String id, SiteVerifica
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:52.012</div>
+          <div>This page generated at 2012-06-18 15:31:39.649</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

@@ -57,7 +57,8 @@ Future&lt;Link&gt; get(LinksResourceGetRole role, String roleId, String linkId) 
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{role}/{roleId}/link/{linkId}").generate($pathParams, $queryParams);
+  final $path = "{role}/{roleId}/link/{linkId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -98,7 +99,8 @@ Future&lt;Link&gt; insert(LinksResourceInsertRole role, String roleId, Link cont
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Link.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "{role}/{roleId}/link").generate($pathParams, $queryParams);
+  final $path = "{role}/{roleId}/link";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -146,7 +148,8 @@ Future&lt;Links&gt; list(LinksResourceListRole role, String roleId, [LinksResour
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{role}/{roleId}/links").generate($pathParams, $queryParams);
+  final $path = "{role}/{roleId}/links";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -163,7 +166,7 @@ Future&lt;Links&gt; list(LinksResourceListRole role, String roleId, [LinksResour
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:41.536</div>
+          <div>This page generated at 2012-06-18 15:31:29.230</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

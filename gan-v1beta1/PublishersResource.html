@@ -55,7 +55,8 @@ Future&lt;Publisher&gt; get(PublishersResourceGetRole role, String roleId, [Stri
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{role}/{roleId}/publisher").generate($pathParams, $queryParams);
+  final $path = "{role}/{roleId}/publisher";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -99,7 +100,8 @@ Future&lt;Publishers&gt; list(PublishersResourceListRole role, String roleId, [S
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "{role}/{roleId}/publishers").generate($pathParams, $queryParams);
+  final $path = "{role}/{roleId}/publishers";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -116,7 +118,7 @@ Future&lt;Publishers&gt; list(PublishersResourceListRole role, String roleId, [S
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:41.707</div>
+          <div>This page generated at 2012-06-18 15:31:29.400</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

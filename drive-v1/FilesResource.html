@@ -51,7 +51,8 @@ Future&lt;File&gt; get(String id, [bool updateViewedDate = UNSPECIFIED, FilesRes
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "files/{id}").generate($pathParams, $queryParams);
+  final $path = "files/{id}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -86,7 +87,8 @@ Future&lt;File&gt; insert(File content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(File.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "files").generate($pathParams, $queryParams);
+  final $path = "files";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -127,7 +129,8 @@ Future&lt;File&gt; patch(String id, File content, [bool updateViewedDate = UNSPE
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(File.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "files/{id}").generate($pathParams, $queryParams);
+  final $path = "files/{id}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -168,7 +171,8 @@ Future&lt;File&gt; update(String id, File content, [bool updateViewedDate = UNSP
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(File.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "files/{id}").generate($pathParams, $queryParams);
+  final $path = "files/{id}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -185,7 +189,7 @@ Future&lt;File&gt; update(String id, File content, [bool updateViewedDate = UNSP
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:40.865</div>
+          <div>This page generated at 2012-06-18 15:31:28.539</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

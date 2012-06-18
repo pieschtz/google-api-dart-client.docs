@@ -57,7 +57,8 @@ Future&lt;Volumeannotation&gt; get(String volumeId, String layerId, String annot
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layers/{layerId}/annotations/{annotationId}").generate($pathParams, $queryParams);
+  final $path = "volumes/{volumeId}/layers/{layerId}/annotations/{annotationId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -108,7 +109,8 @@ Future&lt;Volumeannotations&gt; list(String volumeId, String layerId, String con
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "volumes/{volumeId}/layers/{layerId}").generate($pathParams, $queryParams);
+  final $path = "volumes/{volumeId}/layers/{layerId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -125,7 +127,7 @@ Future&lt;Volumeannotations&gt; list(String volumeId, String layerId, String con
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:34.624</div>
+          <div>This page generated at 2012-06-18 15:31:22.249</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

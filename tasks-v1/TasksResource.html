@@ -50,7 +50,8 @@ Future clear(String tasklist) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/clear").generate($pathParams, $queryParams);
+  final $path = "lists/{tasklist}/clear";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -87,7 +88,8 @@ Future delete(String tasklist, String task) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}").generate($pathParams, $queryParams);
+  final $path = "lists/{tasklist}/tasks/{task}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -124,7 +126,8 @@ Future&lt;Task&gt; get(String tasklist, String task) {
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}").generate($pathParams, $queryParams);
+  final $path = "lists/{tasklist}/tasks/{task}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -164,7 +167,8 @@ Future&lt;Task&gt; insert(String tasklist, Task content, [String parent = UNSPEC
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Task.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks").generate($pathParams, $queryParams);
+  final $path = "lists/{tasklist}/tasks";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -208,7 +212,8 @@ Future&lt;Tasks&gt; list(String tasklist, [String dueMax = UNSPECIFIED, bool sho
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks").generate($pathParams, $queryParams);
+  final $path = "lists/{tasklist}/tasks";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -248,7 +253,8 @@ Future&lt;Task&gt; move(String tasklist, String task, [String parent = UNSPECIFI
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}/move").generate($pathParams, $queryParams);
+  final $path = "lists/{tasklist}/tasks/{task}/move";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -289,7 +295,8 @@ Future&lt;Task&gt; patch(String tasklist, String task, Task content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Task.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}").generate($pathParams, $queryParams);
+  final $path = "lists/{tasklist}/tasks/{task}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -330,7 +337,8 @@ Future&lt;Task&gt; update(String tasklist, String task, Task content) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
   final $body = JSON.stringify(Task.serialize(content));
-  final $url = new UrlPattern(_$service.baseUrl + "lists/{tasklist}/tasks/{task}").generate($pathParams, $queryParams);
+  final $path = "lists/{tasklist}/tasks/{task}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -347,7 +355,7 @@ Future&lt;Task&gt; update(String tasklist, String task, Task content) {
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:52.587</div>
+          <div>This page generated at 2012-06-18 15:31:40.219</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

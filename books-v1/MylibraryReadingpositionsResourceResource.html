@@ -51,7 +51,8 @@ Future&lt;ReadingPosition&gt; get(String volumeId, [String source = UNSPECIFIED,
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/readingpositions/{volumeId}").generate($pathParams, $queryParams);
+  final $path = "mylibrary/readingpositions/{volumeId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -94,7 +95,8 @@ Future setPosition(String volumeId, String timestamp, String position, [String s
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $url = new UrlPattern(_$service.baseUrl + "mylibrary/readingpositions/{volumeId}/setPosition").generate($pathParams, $queryParams);
+  final $path = "mylibrary/readingpositions/{volumeId}/setPosition";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new Future.immediate($http)
@@ -111,7 +113,7 @@ Future setPosition(String volumeId, String timestamp, String position, [String s
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-14 19:33:34.941</div>
+          <div>This page generated at 2012-06-18 15:31:22.561</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>
