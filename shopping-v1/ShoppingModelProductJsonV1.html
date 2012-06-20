@@ -45,6 +45,7 @@ static ShoppingModelProductJsonV1 parse(Map&lt;String, Object&gt; json) {
   result.images = map(ShoppingModelProductJsonV1Images.parse)(json["images"]);
   result.inventories = map(ShoppingModelProductJsonV1Inventories.parse)(json["inventories"]);
   result.author = ShoppingModelProductJsonV1Author.parse(json["author"]);
+  result.score = identity(json["score"]);
   result.condition = identity(json["condition"]);
   result.providedId = identity(json["providedId"]);
   result.internal8 = map(identity)(json["internal8"]);
@@ -94,6 +95,7 @@ static Object serialize(ShoppingModelProductJsonV1 value) {
   result["images"] = map(ShoppingModelProductJsonV1Images.serialize)(value.images);
   result["inventories"] = map(ShoppingModelProductJsonV1Inventories.serialize)(value.inventories);
   result["author"] = ShoppingModelProductJsonV1Author.serialize(value.author);
+  result["score"] = identity(value.score);
   result["condition"] = identity(value.condition);
   result["providedId"] = identity(value.providedId);
   result["internal8"] = map(identity)(value.internal8);
@@ -545,6 +547,19 @@ bool queryMatched;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="score">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>score</strong> <a class="anchor-link"
+            href="#score"
+            title="Permalink to ShoppingModelProductJsonV1.score">#</a>
+        </h4>
+        <div class="doc">
+<p>Google Internal</p>
+<pre class="source">
+double score;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="title">
 <span class="show-code">Code</span>
 <a href="../dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
@@ -589,7 +604,7 @@ List&lt;ShoppingModelProductJsonV1Variants&gt; variants;
         </div>
         
         <div class="footer">
-          <div>This page generated at 2012-06-18 15:31:39.430</div>
+          
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>
