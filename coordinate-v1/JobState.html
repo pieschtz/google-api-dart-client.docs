@@ -1,0 +1,205 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>JobState Class / coordinate-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="coordinate-v1" data-type="JobState">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../coordinate-v1.html">coordinate-v1</a> &rsaquo; <a href="../coordinate-v1/JobState.html">JobState</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>JobState</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>JobState</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../coordinate-v1/JobState.html">JobState</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to JobState.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static JobState parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new JobState();
+  result.kind = identity(json["kind"]);
+  result.customerName = identity(json["customerName"]);
+  result.title = identity(json["title"]);
+  result.note = map(identity)(json["note"]);
+  result.assignee = identity(json["assignee"]);
+  result.customerPhoneNumber = identity(json["customerPhoneNumber"]);
+  result.location = Location.parse(json["location"]);
+  result.progress = identity(json["progress"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../coordinate-v1/JobState.html">JobState</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to JobState.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(JobState value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["customerName"] = identity(value.customerName);
+  result["title"] = identity(value.title);
+  result["note"] = map(identity)(value.note);
+  result["assignee"] = identity(value.assignee);
+  result["customerPhoneNumber"] = identity(value.customerPhoneNumber);
+  result["location"] = Location.serialize(value.location);
+  result["progress"] = identity(value.progress);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to JobState.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="assignee">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>assignee</strong> <a class="anchor-link"
+            href="#assignee"
+            title="Permalink to JobState.assignee">#</a>
+        </h4>
+        <div class="doc">
+<p>Email address of the assignee.</p>
+<pre class="source">
+String assignee;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="customerName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>customerName</strong> <a class="anchor-link"
+            href="#customerName"
+            title="Permalink to JobState.customerName">#</a>
+        </h4>
+        <div class="doc">
+<p>Customer name.</p>
+<pre class="source">
+String customerName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="customerPhoneNumber">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>customerPhoneNumber</strong> <a class="anchor-link"
+            href="#customerPhoneNumber"
+            title="Permalink to JobState.customerPhoneNumber">#</a>
+        </h4>
+        <div class="doc">
+<p>Customer phone number.</p>
+<pre class="source">
+String customerPhoneNumber;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to JobState.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Identifies this object as a job state.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="location">
+<span class="show-code">Code</span>
+<a href="../coordinate-v1/Location.html">Location</a>         <strong>location</strong> <a class="anchor-link"
+            href="#location"
+            title="Permalink to JobState.location">#</a>
+        </h4>
+        <div class="doc">
+<p>Job location.</p>
+<pre class="source">
+Location location;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="note">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>note</strong> <a class="anchor-link"
+            href="#note"
+            title="Permalink to JobState.note">#</a>
+        </h4>
+        <div class="doc">
+<p>Note added to the job.</p>
+<pre class="source">
+List&lt;String&gt; note;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="progress">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>progress</strong> <a class="anchor-link"
+            href="#progress"
+            title="Permalink to JobState.progress">#</a>
+        </h4>
+        <div class="doc">
+<p>Job progress.</p>
+<pre class="source">
+String progress;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="title">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+            href="#title"
+            title="Permalink to JobState.title">#</a>
+        </h4>
+        <div class="doc">
+<p>Job title.</p>
+<pre class="source">
+String title;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

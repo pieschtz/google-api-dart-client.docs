@@ -1,0 +1,221 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>File Class / dfareporting-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="dfareporting-v1" data-type="File">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../dfareporting-v1.html">dfareporting-v1</a> &rsaquo; <a href="../dfareporting-v1/File.html">File</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>File</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>File</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../dfareporting-v1/File.html">File</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to File.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static File parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new File();
+  result.status = identity(json["status"]);
+  result.kind = identity(json["kind"]);
+  result.dateRange = FileDateRange.parse(json["dateRange"]);
+  result.fileName = identity(json["fileName"]);
+  result.etag = identity(json["etag"]);
+  result.reportId = identity(json["reportId"]);
+  result.urls = FileUrls.parse(json["urls"]);
+  result.lastModifiedTime = identity(json["lastModifiedTime"]);
+  result.id = identity(json["id"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1/File.html">File</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to File.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(File value) {
+  if (value == null) return null;
+  final result = {};
+  result["status"] = identity(value.status);
+  result["kind"] = identity(value.kind);
+  result["dateRange"] = FileDateRange.serialize(value.dateRange);
+  result["fileName"] = identity(value.fileName);
+  result["etag"] = identity(value.etag);
+  result["reportId"] = identity(value.reportId);
+  result["urls"] = FileUrls.serialize(value.urls);
+  result["lastModifiedTime"] = identity(value.lastModifiedTime);
+  result["id"] = identity(value.id);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to File.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="dateRange">
+<span class="show-code">Code</span>
+<a href="../dfareporting-v1/FileDateRange.html">FileDateRange</a>         <strong>dateRange</strong> <a class="anchor-link"
+            href="#dateRange"
+            title="Permalink to File.dateRange">#</a>
+        </h4>
+        <div class="doc">
+<p>The date range for which the file has report data.</p>
+<pre class="source">
+FileDateRange dateRange;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to File.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>ETag of this response for caching purposes.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fileName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fileName</strong> <a class="anchor-link"
+            href="#fileName"
+            title="Permalink to File.fileName">#</a>
+        </h4>
+        <div class="doc">
+<p>The file name of the file.</p>
+<pre class="source">
+String fileName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to File.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The unique ID of this report file.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to File.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Kind of resource this is, in this case dfareporting#file.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="lastModifiedTime">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>lastModifiedTime</strong> <a class="anchor-link"
+            href="#lastModifiedTime"
+            title="Permalink to File.lastModifiedTime">#</a>
+        </h4>
+        <div class="doc">
+<p>The timestamp in milliseconds since epoch when this file was last modified.</p>
+<pre class="source">
+String lastModifiedTime;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="reportId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>reportId</strong> <a class="anchor-link"
+            href="#reportId"
+            title="Permalink to File.reportId">#</a>
+        </h4>
+        <div class="doc">
+<p>The ID of the report this file was generated from.</p>
+<pre class="source">
+String reportId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="status">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
+            href="#status"
+            title="Permalink to File.status">#</a>
+        </h4>
+        <div class="doc">
+<p>The status of the report file, one of: - "PROCESSING" - "REPORT_AVAILABLE" - "FAILED" -
+"CANCELLED"</p>
+<pre class="source">
+String status;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="urls">
+<span class="show-code">Code</span>
+<a href="../dfareporting-v1/FileUrls.html">FileUrls</a>         <strong>urls</strong> <a class="anchor-link"
+            href="#urls"
+            title="Permalink to File.urls">#</a>
+        </h4>
+        <div class="doc">
+<p>The urls where the completed report file can be downloaded.</p>
+<pre class="source">
+FileUrls urls;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

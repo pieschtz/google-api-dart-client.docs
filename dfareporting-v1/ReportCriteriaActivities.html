@@ -1,0 +1,116 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ReportCriteriaActivities Class / dfareporting-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="dfareporting-v1" data-type="ReportCriteriaActivities">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../dfareporting-v1.html">dfareporting-v1</a> &rsaquo; <a href="../dfareporting-v1/ReportCriteriaActivities.html">ReportCriteriaActivities</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ReportCriteriaActivities</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ReportCriteriaActivities</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../dfareporting-v1/ReportCriteriaActivities.html">ReportCriteriaActivities</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ReportCriteriaActivities.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ReportCriteriaActivities parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ReportCriteriaActivities();
+  result.filters = map(DimensionValue.parse)(json["filters"]);
+  result.metricNames = map(identity)(json["metricNames"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1/ReportCriteriaActivities.html">ReportCriteriaActivities</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ReportCriteriaActivities.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ReportCriteriaActivities value) {
+  if (value == null) return null;
+  final result = {};
+  result["filters"] = map(DimensionValue.serialize)(value.filters);
+  result["metricNames"] = map(identity)(value.metricNames);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ReportCriteriaActivities.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="filters">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>filters</strong> <a class="anchor-link"
+            href="#filters"
+            title="Permalink to ReportCriteriaActivities.filters">#</a>
+        </h4>
+        <div class="doc">
+<p>List of activity filters. The dimension values need to be all either of type "dfa:activity" or
+"dfa:activityGroup".</p>
+<pre class="source">
+List&lt;DimensionValue&gt; filters;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="metricNames">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>metricNames</strong> <a class="anchor-link"
+            href="#metricNames"
+            title="Permalink to ReportCriteriaActivities.metricNames">#</a>
+        </h4>
+        <div class="doc">
+<p>List of names of floodlight activity metrics.</p>
+<pre class="source">
+List&lt;String&gt; metricNames;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

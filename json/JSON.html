@@ -34,12 +34,12 @@
 <div class="doc">
 <p>Takes a string in JSON notation and returns the value it
 represents.  The resulting value is one of the following:
-  null
-  a bool
-  a double
-  a String
-  an Array of values (recursively)
-  a Map from property names to values (recursively)</p>
+ * null
+ * a bool
+ * a double
+ * a String
+ * an Array of values (recursively)
+ * a Map from property names to values (recursively)</p>
 <pre class="source">
 static Object parse(String str) {
   return _JSON.parse(str, (_, obj) {
@@ -65,12 +65,12 @@ static Object parse(String str) {
 <p>Takes a value and returns a string in JSON notation
 representing its value, or returns null if the value is not representable
 in JSON.  A representable value is one of the following:
-  null
-  a bool
-  a double
-  a String
-  an Array of values (recursively)
-  a Map from property names to values (recursively)</p>
+ * null
+ * a bool
+ * a double
+ * a String
+ * an Array of values (recursively)
+ * a Map from property names to values (recursively)</p>
 <pre class="source">
 static String stringify(Object value) {
   return _JSON.stringify(value, (_, obj) {

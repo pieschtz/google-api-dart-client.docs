@@ -1,0 +1,266 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Report Class / dfareporting-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="dfareporting-v1" data-type="Report">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../dfareporting-v1.html">dfareporting-v1</a> &rsaquo; <a href="../dfareporting-v1/Report.html">Report</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Report</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Report</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../dfareporting-v1/Report.html">Report</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Report.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Report parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Report();
+  result.kind = identity(json["kind"]);
+  result.subAccountId = identity(json["subAccountId"]);
+  result.name = identity(json["name"]);
+  result.schedule = ReportSchedule.parse(json["schedule"]);
+  result.ownerProfileId = identity(json["ownerProfileId"]);
+  result.fileName = identity(json["fileName"]);
+  result.etag = identity(json["etag"]);
+  result.criteria = ReportCriteria.parse(json["criteria"]);
+  result.lastModifiedTime = identity(json["lastModifiedTime"]);
+  result.type = identity(json["type"]);
+  result.id = identity(json["id"]);
+  result.accountId = identity(json["accountId"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1/Report.html">Report</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Report.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Report value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["subAccountId"] = identity(value.subAccountId);
+  result["name"] = identity(value.name);
+  result["schedule"] = ReportSchedule.serialize(value.schedule);
+  result["ownerProfileId"] = identity(value.ownerProfileId);
+  result["fileName"] = identity(value.fileName);
+  result["etag"] = identity(value.etag);
+  result["criteria"] = ReportCriteria.serialize(value.criteria);
+  result["lastModifiedTime"] = identity(value.lastModifiedTime);
+  result["type"] = identity(value.type);
+  result["id"] = identity(value.id);
+  result["accountId"] = identity(value.accountId);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Report.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="accountId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>accountId</strong> <a class="anchor-link"
+            href="#accountId"
+            title="Permalink to Report.accountId">#</a>
+        </h4>
+        <div class="doc">
+<p>The account id this report belongs to.</p>
+<pre class="source">
+String accountId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="criteria">
+<span class="show-code">Code</span>
+<a href="../dfareporting-v1/ReportCriteria.html">ReportCriteria</a>         <strong>criteria</strong> <a class="anchor-link"
+            href="#criteria"
+            title="Permalink to Report.criteria">#</a>
+        </h4>
+        <div class="doc">
+<p>The report criteria.</p>
+<pre class="source">
+ReportCriteria criteria;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to Report.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>ETag of this response for caching purposes.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fileName">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fileName</strong> <a class="anchor-link"
+            href="#fileName"
+            title="Permalink to Report.fileName">#</a>
+        </h4>
+        <div class="doc">
+<p>The file name used when generating report files for this report.</p>
+<pre class="source">
+String fileName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Report.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The unique ID identifying this report resource.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Report.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Kind of resource this is, in this case dfareporting#report.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="lastModifiedTime">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>lastModifiedTime</strong> <a class="anchor-link"
+            href="#lastModifiedTime"
+            title="Permalink to Report.lastModifiedTime">#</a>
+        </h4>
+        <div class="doc">
+<p>The timestamp (in milliseconds since epoch) of when this report was last modified.</p>
+<pre class="source">
+String lastModifiedTime;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to Report.name">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of the report.</p>
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ownerProfileId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>ownerProfileId</strong> <a class="anchor-link"
+            href="#ownerProfileId"
+            title="Permalink to Report.ownerProfileId">#</a>
+        </h4>
+        <div class="doc">
+<p>The user profile id of the owner of this report.</p>
+<pre class="source">
+String ownerProfileId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="schedule">
+<span class="show-code">Code</span>
+<a href="../dfareporting-v1/ReportSchedule.html">ReportSchedule</a>         <strong>schedule</strong> <a class="anchor-link"
+            href="#schedule"
+            title="Permalink to Report.schedule">#</a>
+        </h4>
+        <div class="doc">
+<p>The report's schedule. Can only be set if the report's 'dateRange' is a relative date range and
+the relative date range is not "TODAY".</p>
+<pre class="source">
+ReportSchedule schedule;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="subAccountId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>subAccountId</strong> <a class="anchor-link"
+            href="#subAccountId"
+            title="Permalink to Report.subAccountId">#</a>
+        </h4>
+        <div class="doc">
+<p>The subbaccount id this report belongs to if applicable.</p>
+<pre class="source">
+String subAccountId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="type">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+            href="#type"
+            title="Permalink to Report.type">#</a>
+        </h4>
+        <div class="doc">
+<p>The type of the report, currently only "STANDARD" is supported.</p>
+<pre class="source">
+String type;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,122 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ReportsFilesResourceResource Class / dfareporting-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="dfareporting-v1" data-type="ReportsFilesResourceResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../dfareporting-v1.html">dfareporting-v1</a> &rsaquo; <a href="../dfareporting-v1/ReportsFilesResourceResource.html">ReportsFilesResourceResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ReportsFilesResourceResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, <a href="../dart_core/String.html">String</a> fileId) <a class="anchor-link" href="#get"
+              title="Permalink to ReportsFilesResourceResource.get">#</a></h4>
+<div class="doc">
+<p>Retrieves a report file.
+
+<span class="param">profileId</span> The DFA profile id.
+
+<span class="param">reportId</span> The id of the report.
+
+<span class="param">fileId</span> The id of the report file.</p>
+<pre class="source">
+Future&lt;File&gt; get(String profileId, String reportId, String fileId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["profileId"] = profileId;
+  $pathParams["reportId"] = reportId;
+  $pathParams["fileId"] = fileId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "userprofiles/{profileId}/reports/{reportId}/files/{fileId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, [<a href="../dfareporting-v1/ReportsResourceReportsFilesResourceResourceListSortField.html">ReportsResourceReportsFilesResourceResourceListSortField</a> sortField = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dfareporting-v1/ReportsResourceReportsFilesResourceResourceListSortOrder.html">ReportsResourceReportsFilesResourceResourceListSortOrder</a> sortOrder = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to ReportsFilesResourceResource.list">#</a></h4>
+<div class="doc">
+<p>Lists files for a report.
+
+<span class="param">profileId</span> The DFA profile id.
+
+<span class="param">reportId</span> The id of the parent report.</p>
+<pre class="source">
+Future&lt;FileList&gt; list(String profileId, String reportId, [ReportsResourceReportsFilesResourceResourceListSortField sortField = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, ReportsResourceReportsFilesResourceResourceListSortOrder sortOrder = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["profileId"] = profileId;
+  $pathParams["reportId"] = reportId;
+  if (UNSPECIFIED != sortField) $queryParams["sortField"] = sortField;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != sortOrder) $queryParams["sortOrder"] = sortOrder;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "userprofiles/{profileId}/reports/{reportId}/files";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; FileList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

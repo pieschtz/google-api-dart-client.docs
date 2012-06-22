@@ -29,6 +29,18 @@
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-interface"></span><a href="../html/ArrayBufferView.html">ArrayBufferView</a></span></p>
+<h3>Constructors</h3>
+<div class="method"><h4 id="DataView">
+<span class="show-code">Code</span>
+new <strong>DataView</strong>(<a href="../html/ArrayBuffer.html">ArrayBuffer</a> buffer, [<a href="../dart_core/int.html">int</a> byteOffset, <a href="../dart_core/int.html">int</a> byteLength]) <a class="anchor-link" href="#DataView"
+              title="Permalink to DataView.DataView">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+DataView(ArrayBuffer buffer, [int byteOffset, int byteLength]);
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="getFloat32">
 <span class="show-code">Code</span>
@@ -76,12 +88,12 @@ int getInt32(int byteOffset, [bool littleEndian]);
 </div>
 <div class="method"><h4 id="getInt8">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>getInt8</strong>() <a class="anchor-link" href="#getInt8"
+<a href="../dart_core/int.html">int</a> <strong>getInt8</strong>(<a href="../dart_core/int.html">int</a> byteOffset) <a class="anchor-link" href="#getInt8"
               title="Permalink to DataView.getInt8">#</a></h4>
 <div class="doc">
 <p>@domName DataView.getInt8</p>
 <pre class="source">
-Object getInt8();
+int getInt8(int byteOffset);
 </pre>
 </div>
 </div>
@@ -109,12 +121,12 @@ int getUint32(int byteOffset, [bool littleEndian]);
 </div>
 <div class="method"><h4 id="getUint8">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>getUint8</strong>() <a class="anchor-link" href="#getUint8"
+<a href="../dart_core/int.html">int</a> <strong>getUint8</strong>(<a href="../dart_core/int.html">int</a> byteOffset) <a class="anchor-link" href="#getUint8"
               title="Permalink to DataView.getUint8">#</a></h4>
 <div class="doc">
 <p>@domName DataView.getUint8</p>
 <pre class="source">
-Object getUint8();
+int getUint8(int byteOffset);
 </pre>
 </div>
 </div>
@@ -164,12 +176,12 @@ void setInt32(int byteOffset, int value, [bool littleEndian]);
 </div>
 <div class="method"><h4 id="setInt8">
 <span class="show-code">Code</span>
-<a href="../dart_core/void.html">void</a> <strong>setInt8</strong>() <a class="anchor-link" href="#setInt8"
+<a href="../dart_core/void.html">void</a> <strong>setInt8</strong>(<a href="../dart_core/int.html">int</a> byteOffset, <a href="../dart_core/int.html">int</a> value) <a class="anchor-link" href="#setInt8"
               title="Permalink to DataView.setInt8">#</a></h4>
 <div class="doc">
 <p>@domName DataView.setInt8</p>
 <pre class="source">
-void setInt8();
+void setInt8(int byteOffset, int value);
 </pre>
 </div>
 </div>
@@ -197,12 +209,12 @@ void setUint32(int byteOffset, int value, [bool littleEndian]);
 </div>
 <div class="method"><h4 id="setUint8">
 <span class="show-code">Code</span>
-<a href="../dart_core/void.html">void</a> <strong>setUint8</strong>() <a class="anchor-link" href="#setUint8"
+<a href="../dart_core/void.html">void</a> <strong>setUint8</strong>(<a href="../dart_core/int.html">int</a> byteOffset, <a href="../dart_core/int.html">int</a> value) <a class="anchor-link" href="#setUint8"
               title="Permalink to DataView.setUint8">#</a></h4>
 <div class="doc">
 <p>@domName DataView.setUint8</p>
 <pre class="source">
-void setUint8();
+void setUint8(int byteOffset, int value);
 </pre>
 </div>
 </div>
