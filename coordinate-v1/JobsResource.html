@@ -32,11 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> teamId, <a href="../dart_core/String.html">String</a> jobId) <a class="anchor-link" href="#get"
               title="Permalink to JobsResource.get">#</a></h4>
 <div class="doc">
-<p>Retrieves a job, including all the changes made to the job.
-
-<span class="param">teamId</span> Team ID
-
-<span class="param">jobId</span> Job number</p>
+<p>Retrieves a job, including all the changes made to the job.</p><ul><li>
+<span class="param">teamId</span> Team ID</li><li>
+<span class="param">jobId</span> Job number</li></ul>
 <pre class="source">
 Future&lt;Job&gt; get(String teamId, String jobId) {
   final $queryParams = {};
@@ -70,19 +68,17 @@ Future&lt;Job&gt; get(String teamId, String jobId) {
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> teamId, <a href="../dart_core/String.html">String</a> address, <a href="../dart_core/double.html">double</a> lat, <a href="../dart_core/double.html">double</a> lng, <a href="../dart_core/String.html">String</a> title, <a href="../coordinate-v1/Job.html">Job</a> content, [<a href="../dart_core/String.html">String</a> customerName = UNSPECIFIED, <a href="../dart_core/String.html">String</a> note = UNSPECIFIED, <a href="../dart_core/String.html">String</a> assignee = UNSPECIFIED, <a href="../dart_core/String.html">String</a> customerPhoneNumber = UNSPECIFIED]) <a class="anchor-link" href="#insert"
               title="Permalink to JobsResource.insert">#</a></h4>
 <div class="doc">
-<p>Inserts a new job. Only the state field of the job should be set.
-
-<span class="param">teamId</span> Team ID
-
-<span class="param">address</span> Job address as newline (Unix) separated string
-
-<span class="param">lat</span> The latitude coordinate of this job's location.
-
-<span class="param">lng</span> The longitude coordinate of this job's location.
-
-<span class="param">title</span> Job title
-
-<span class="param">content</span> the Job</p>
+<p>Inserts a new job. Only the state field of the job should be set.</p><ul><li>
+<span class="param">content</span> the Job</li><li>
+<span class="param">teamId</span> Team ID</li><li>
+<span class="param">address</span> Job address as newline (Unix) separated string</li><li>
+<span class="param">lat</span> The latitude coordinate of this job's location.</li><li>
+<span class="param">lng</span> The longitude coordinate of this job's location.</li><li>
+<span class="param">title</span> Job title</li><li>
+<span class="param">customerName</span> Customer name</li><li>
+<span class="param">note</span> Job note as newline (Unix) separated string</li><li>
+<span class="param">assignee</span> Assignee email address</li><li>
+<span class="param">customerPhoneNumber</span> Customer phone number</li></ul>
 <pre class="source">
 Future&lt;Job&gt; insert(String teamId, String address, double lat, double lng, String title, Job content, [String customerName = UNSPECIFIED, String note = UNSPECIFIED, String assignee = UNSPECIFIED, String customerPhoneNumber = UNSPECIFIED]) {
   final $queryParams = {};
@@ -125,9 +121,11 @@ Future&lt;Job&gt; insert(String teamId, String address, double lat, double lng, 
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> teamId, [<a href="../dart_core/String.html">String</a> minModifiedTimestampMs = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to JobsResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves jobs created or modified since the given timestamp.
-
-<span class="param">teamId</span> Team ID</p>
+<p>Retrieves jobs created or modified since the given timestamp.</p><ul><li>
+<span class="param">teamId</span> Team ID</li><li>
+<span class="param">minModifiedTimestampMs</span> Minimum time a job was modified in milliseconds since epoch.</li><li>
+<span class="param">maxResults</span> Maximum number of results to return in one page.</li><li>
+<span class="param">pageToken</span> Continuation token</li></ul>
 <pre class="source">
 Future&lt;JobListResponse&gt; list(String teamId, [String minModifiedTimestampMs = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED]) {
   final $queryParams = {};
@@ -164,13 +162,19 @@ Future&lt;JobListResponse&gt; list(String teamId, [String minModifiedTimestampMs
               title="Permalink to JobsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates a job. Fields that are set in the job state will be updated. This method supports patch
-semantics.
-
-<span class="param">teamId</span> Team ID
-
-<span class="param">jobId</span> Job number
-
-<span class="param">content</span> the Job</p>
+semantics.</p><ul><li>
+<span class="param">content</span> the Job</li><li>
+<span class="param">teamId</span> Team ID</li><li>
+<span class="param">jobId</span> Job number</li><li>
+<span class="param">customerName</span> Customer name</li><li>
+<span class="param">title</span> Job title</li><li>
+<span class="param">note</span> Job note as newline (Unix) separated string</li><li>
+<span class="param">assignee</span> Assignee email address</li><li>
+<span class="param">customerPhoneNumber</span> Customer phone number</li><li>
+<span class="param">address</span> Job address as newline (Unix) separated string</li><li>
+<span class="param">lat</span> The latitude coordinate of this job's location.</li><li>
+<span class="param">progress</span> Job progress</li><li>
+<span class="param">lng</span> The longitude coordinate of this job's location.</li></ul>
 <pre class="source">
 Future&lt;Job&gt; patch(String teamId, String jobId, Job content, [String customerName = UNSPECIFIED, String title = UNSPECIFIED, String note = UNSPECIFIED, String assignee = UNSPECIFIED, String customerPhoneNumber = UNSPECIFIED, String address = UNSPECIFIED, double lat = UNSPECIFIED, JobsResourcePatchProgress progress = UNSPECIFIED, double lng = UNSPECIFIED]) {
   final $queryParams = {};
@@ -215,13 +219,19 @@ Future&lt;Job&gt; patch(String teamId, String jobId, Job content, [String custom
 <a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> teamId, <a href="../dart_core/String.html">String</a> jobId, <a href="../coordinate-v1/Job.html">Job</a> content, [<a href="../dart_core/String.html">String</a> customerName = UNSPECIFIED, <a href="../dart_core/String.html">String</a> title = UNSPECIFIED, <a href="../dart_core/String.html">String</a> note = UNSPECIFIED, <a href="../dart_core/String.html">String</a> assignee = UNSPECIFIED, <a href="../dart_core/String.html">String</a> customerPhoneNumber = UNSPECIFIED, <a href="../dart_core/String.html">String</a> address = UNSPECIFIED, <a href="../dart_core/double.html">double</a> lat = UNSPECIFIED, <a href="../coordinate-v1/JobsResourceUpdateProgress.html">JobsResourceUpdateProgress</a> progress = UNSPECIFIED, <a href="../dart_core/double.html">double</a> lng = UNSPECIFIED]) <a class="anchor-link" href="#update"
               title="Permalink to JobsResource.update">#</a></h4>
 <div class="doc">
-<p>Updates a job. Fields that are set in the job state will be updated.
-
-<span class="param">teamId</span> Team ID
-
-<span class="param">jobId</span> Job number
-
-<span class="param">content</span> the Job</p>
+<p>Updates a job. Fields that are set in the job state will be updated.</p><ul><li>
+<span class="param">content</span> the Job</li><li>
+<span class="param">teamId</span> Team ID</li><li>
+<span class="param">jobId</span> Job number</li><li>
+<span class="param">customerName</span> Customer name</li><li>
+<span class="param">title</span> Job title</li><li>
+<span class="param">note</span> Job note as newline (Unix) separated string</li><li>
+<span class="param">assignee</span> Assignee email address</li><li>
+<span class="param">customerPhoneNumber</span> Customer phone number</li><li>
+<span class="param">address</span> Job address as newline (Unix) separated string</li><li>
+<span class="param">lat</span> The latitude coordinate of this job's location.</li><li>
+<span class="param">progress</span> Job progress</li><li>
+<span class="param">lng</span> The longitude coordinate of this job's location.</li></ul>
 <pre class="source">
 Future&lt;Job&gt; update(String teamId, String jobId, Job content, [String customerName = UNSPECIFIED, String title = UNSPECIFIED, String note = UNSPECIFIED, String assignee = UNSPECIFIED, String customerPhoneNumber = UNSPECIFIED, String address = UNSPECIFIED, double lat = UNSPECIFIED, JobsResourceUpdateProgress progress = UNSPECIFIED, double lng = UNSPECIFIED]) {
   final $queryParams = {};

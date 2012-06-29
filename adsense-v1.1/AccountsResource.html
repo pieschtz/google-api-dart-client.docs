@@ -32,9 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> accountId, [<a href="../dart_core/bool.html">bool</a> tree = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to AccountsResource.get">#</a></h4>
 <div class="doc">
-<p>Get information about the selected AdSense account.
-
-<span class="param">accountId</span> Account to get information about.</p>
+<p>Get information about the selected AdSense account.</p><ul><li>
+<span class="param">accountId</span> Account to get information about.</li><li>
+<span class="param">tree</span> Whether the tree of sub accounts should be returned.</li></ul>
 <pre class="source">
 Future&lt;Account&gt; get(String accountId, [bool tree = UNSPECIFIED]) {
   final $queryParams = {};
@@ -68,7 +68,15 @@ Future&lt;Account&gt; get(String accountId, [bool tree = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to AccountsResource.list">#</a></h4>
 <div class="doc">
-<p>List all accounts available to this AdSense account.</p>
+<p>List all accounts available to this AdSense account.</p><ul><li>
+<p>
+<span class="param">pageToken</span> A continuation token, used to page through accounts. To retrieve the next page, set this parameter
+   to the value of "nextPageToken" from the previous response.</p></li><li>
+<span class="param">maxResults</span> The maximum number of accounts to include in the response, used for paging.</li></ul>
+<p>Minimum: 0.
+Maximum:</p>
+<pre><code>   10000.
+</code></pre>
 <pre class="source">
 Future&lt;Accounts&gt; list([String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};

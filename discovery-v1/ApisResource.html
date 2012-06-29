@@ -32,11 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>getRest</strong>(<a href="../dart_core/String.html">String</a> api, <a href="../dart_core/String.html">String</a> version) <a class="anchor-link" href="#getRest"
               title="Permalink to ApisResource.getRest">#</a></h4>
 <div class="doc">
-<p>Retrieve the description of a particular version of an api.
-
-<span class="param">api</span> The name of the API.
-
-<span class="param">version</span> The version of the API.</p>
+<p>Retrieve the description of a particular version of an api.</p><ul><li>
+<span class="param">api</span> The name of the API.</li><li>
+<span class="param">version</span> The version of the API.</li></ul>
 <pre class="source">
 Future&lt;RestDescription&gt; getRest(String api, String version) {
   final $queryParams = {};
@@ -70,7 +68,12 @@ Future&lt;RestDescription&gt; getRest(String api, String version) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> name = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> preferred = UNSPECIFIED, <a href="../discovery-v1/ApisResourceListLabel.html">ApisResourceListLabel</a> label = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ApisResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieve the list of APIs supported at this endpoint.</p>
+<p>Retrieve the list of APIs supported at this endpoint.</p><ul><li>
+<span class="param">name</span> Only include APIs with the given name.</li><li>
+<p>
+<span class="param">preferred</span> Return only the preferred version of an API.
+Default: false.</p></li><li>
+<span class="param">label</span> Only include APIs with a matching label, such as 'graduated' or 'labs'.</li></ul>
 <pre class="source">
 Future&lt;DirectoryList&gt; list([String name = UNSPECIFIED, bool preferred = UNSPECIFIED, ApisResourceListLabel label = UNSPECIFIED]) {
   final $queryParams = {};

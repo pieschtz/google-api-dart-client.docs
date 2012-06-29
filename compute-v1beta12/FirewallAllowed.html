@@ -1,0 +1,118 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>FirewallAllowed Class / compute-v1beta12 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="compute-v1beta12" data-type="FirewallAllowed">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/FirewallAllowed.html">FirewallAllowed</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>FirewallAllowed</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>FirewallAllowed</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../compute-v1beta12/FirewallAllowed.html">FirewallAllowed</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to FirewallAllowed.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static FirewallAllowed parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new FirewallAllowed();
+  result.iPProtocol = identity(json["IPProtocol"]);
+  result.ports = map(identity)(json["ports"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/FirewallAllowed.html">FirewallAllowed</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to FirewallAllowed.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(FirewallAllowed value) {
+  if (value == null) return null;
+  final result = {};
+  result["IPProtocol"] = identity(value.iPProtocol);
+  result["ports"] = map(identity)(value.ports);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to FirewallAllowed.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="iPProtocol">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>iPProtocol</strong> <a class="anchor-link"
+            href="#iPProtocol"
+            title="Permalink to FirewallAllowed.iPProtocol">#</a>
+        </h4>
+        <div class="doc">
+<p>Required; this is the IP protocol that is allowed for this rule. This can either be a well known
+protocol string (tcp, udp or icmp) or the IP protocol number.</p>
+<pre class="source">
+String iPProtocol;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ports">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>ports</strong> <a class="anchor-link"
+            href="#ports"
+            title="Permalink to FirewallAllowed.ports">#</a>
+        </h4>
+        <div class="doc">
+<p>An optional list of ports which are allowed. It is an error to specify this for any protocol that
+isn't UDP or TCP. Each entry must be either an integer or a range. If not specified, connections
+through any port are allowed. Example inputs include: <code>"22"</code>, <code>"80,"443"</code> and <code>"12345-12349"</code>.</p>
+<pre class="source">
+List&lt;String&gt; ports;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

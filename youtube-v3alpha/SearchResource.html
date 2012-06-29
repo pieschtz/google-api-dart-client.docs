@@ -1,0 +1,91 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>SearchResource Class / youtube-v3alpha Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="youtube-v3alpha" data-type="SearchResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../youtube-v3alpha.html">youtube-v3alpha</a> &rsaquo; <a href="../youtube-v3alpha/SearchResource.html">SearchResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>SearchResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../youtube-v3alpha/SearchResourceListType.html">SearchResourceListType</a> type = UNSPECIFIED, <a href="../youtube-v3alpha/SearchResourceListOrder.html">SearchResourceListOrder</a> order = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to SearchResource.list">#</a></h4>
+<div class="doc">
+<p>Universal search for youtube.</p><ul><li>
+<span class="param">q</span> Query to search in Youtube.</li><li>
+<p>
+<span class="param">startIndex</span> Index of the first search result to return.
+Default: 0.
+Minimum: 0.
+Maximum: 1000.</p></li><li>
+<span class="param">type</span> Type of resource to search.</li><li>
+<p>
+<span class="param">order</span> Sort order.
+Default: SEARCH<em>SORT</em>RELEVANCE.</p></li><li>
+<p>
+<span class="param">maxResults</span> Maximum number of search results to return per page.
+Default: 25.
+Minimum: 0.
+Maximum: 50.</p></li></ul>
+<pre class="source">
+Future&lt;SearchListResponse&gt; list([String q = UNSPECIFIED, int startIndex = UNSPECIFIED, SearchResourceListType type = UNSPECIFIED, SearchResourceListOrder order = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (UNSPECIFIED != q) $queryParams["q"] = q;
+  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
+  if (UNSPECIFIED != type) $queryParams["type"] = type;
+  if (UNSPECIFIED != order) $queryParams["order"] = order;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "search";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; SearchListResponse.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

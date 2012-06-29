@@ -32,11 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> jobId) <a class="anchor-link" href="#get"
               title="Permalink to JobsResource.get">#</a></h4>
 <div class="doc">
-<p>Retrieves the specified job by ID.
-
-<span class="param">projectId</span> Project ID of the requested job
-
-<span class="param">jobId</span> Job ID of the requested job</p>
+<p>Retrieves the specified job by ID.</p><ul><li>
+<span class="param">projectId</span> Project ID of the requested job</li><li>
+<span class="param">jobId</span> Job ID of the requested job</li></ul>
 <pre class="source">
 Future&lt;Job&gt; get(String projectId, String jobId) {
   final $queryParams = {};
@@ -70,11 +68,15 @@ Future&lt;Job&gt; get(String projectId, String jobId) {
 <a href="../dart_core/Future.html">Future</a> <strong>getQueryResults</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> jobId, [<a href="../dart_core/int.html">int</a> timeoutMs = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startIndex = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#getQueryResults"
               title="Permalink to JobsResource.getQueryResults">#</a></h4>
 <div class="doc">
-<p>Retrieves the results of a query job.
-
-<span class="param">projectId</span> Project ID of the query job
-
-<span class="param">jobId</span> Job ID of the query job</p>
+<p>Retrieves the results of a query job.</p><ul><li>
+<span class="param">projectId</span> Project ID of the query job</li><li>
+<span class="param">jobId</span> Job ID of the query job</li><li>
+<p>
+<span class="param">timeoutMs</span> How long to wait for the query to complete, in milliseconds, before returning. Default is to return
+   immediately. If the timeout passes before the job completes, the request will fail with a
+   TIMEOUT error</p></li><li>
+<span class="param">startIndex</span> Zero-based index of the starting row</li><li>
+<span class="param">maxResults</span> Maximum number of results to read</li></ul>
 <pre class="source">
 Future&lt;GetQueryResultsResponse&gt; getQueryResults(String projectId, String jobId, [int timeoutMs = UNSPECIFIED, String startIndex = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
@@ -111,11 +113,9 @@ Future&lt;GetQueryResultsResponse&gt; getQueryResults(String projectId, String j
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../bigquery-v2/Job.html">Job</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to JobsResource.insert">#</a></h4>
 <div class="doc">
-<p>Starts a new asynchronous job.
-
-<span class="param">projectId</span> Project ID of the project that will be billed for the job
-
-<span class="param">content</span> the Job</p>
+<p>Starts a new asynchronous job.</p><ul><li>
+<span class="param">content</span> the Job</li><li>
+<span class="param">projectId</span> Project ID of the project that will be billed for the job</li></ul>
 <pre class="source">
 Future&lt;Job&gt; insert(String projectId, Job content) {
   final $queryParams = {};
@@ -150,9 +150,13 @@ Future&lt;Job&gt; insert(String projectId, Job content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, [<a href="../bigquery-v2/JobsResourceListProjection.html">JobsResourceListProjection</a> projection = UNSPECIFIED, <a href="../bigquery-v2/JobsResourceListStateFilter.html">JobsResourceListStateFilter</a> stateFilter = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> allUsers = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to JobsResource.list">#</a></h4>
 <div class="doc">
-<p>Lists all the Jobs in the specified project that were started by the user.
-
-<span class="param">projectId</span> Project ID of the jobs to list</p>
+<p>Lists all the Jobs in the specified project that were started by the user.</p><ul><li>
+<span class="param">projectId</span> Project ID of the jobs to list</li><li>
+<span class="param">projection</span> Restrict information returned to a set of selected fields</li><li>
+<span class="param">stateFilter</span> Filter for job state</li><li>
+<span class="param">allUsers</span> Whether to display jobs owned by all users in the project. Default false</li><li>
+<span class="param">maxResults</span> Maximum number of results to return</li><li>
+<span class="param">pageToken</span> Page token, returned by a previous call, to request the next page of results</li></ul>
 <pre class="source">
 Future&lt;JobList&gt; list(String projectId, [JobsResourceListProjection projection = UNSPECIFIED, JobsResourceListStateFilter stateFilter = UNSPECIFIED, bool allUsers = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED]) {
   final $queryParams = {};
@@ -191,11 +195,9 @@ Future&lt;JobList&gt; list(String projectId, [JobsResourceListProjection project
               title="Permalink to JobsResource.query">#</a></h4>
 <div class="doc">
 <p>Runs a BigQuery SQL query synchronously and returns query results if the query completes within a
-specified timeout.
-
-<span class="param">projectId</span> Project ID of the project billed for the query
-
-<span class="param">content</span> the QueryRequest</p>
+specified timeout.</p><ul><li>
+<span class="param">content</span> the QueryRequest</li><li>
+<span class="param">projectId</span> Project ID of the project billed for the query</li></ul>
 <pre class="source">
 Future&lt;QueryResponse&gt; query(String projectId, QueryRequest content) {
   final $queryParams = {};

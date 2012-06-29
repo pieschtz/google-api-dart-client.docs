@@ -33,13 +33,10 @@
               title="Permalink to TablesResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes the table specified by tableId from the dataset. If the table contains data, all the data
-will be deleted.
-
-<span class="param">projectId</span> Project ID of the table to delete
-
-<span class="param">datasetId</span> Dataset ID of the table to delete
-
-<span class="param">tableId</span> Table ID of the table to delete</p>
+will be deleted.</p><ul><li>
+<span class="param">projectId</span> Project ID of the table to delete</li><li>
+<span class="param">datasetId</span> Dataset ID of the table to delete</li><li>
+<span class="param">tableId</span> Table ID of the table to delete</li></ul>
 <pre class="source">
 Future delete(String projectId, String datasetId, String tableId) {
   final $queryParams = {};
@@ -75,13 +72,10 @@ Future delete(String projectId, String datasetId, String tableId) {
               title="Permalink to TablesResource.get">#</a></h4>
 <div class="doc">
 <p>Gets the specified table resource by table ID. This method does not return the data in the table,
-it only returns the table resource, which describes the structure of this table.
-
-<span class="param">projectId</span> Project ID of the requested table
-
-<span class="param">datasetId</span> Dataset ID of the requested table
-
-<span class="param">tableId</span> Table ID of the requested table</p>
+it only returns the table resource, which describes the structure of this table.</p><ul><li>
+<span class="param">projectId</span> Project ID of the requested table</li><li>
+<span class="param">datasetId</span> Dataset ID of the requested table</li><li>
+<span class="param">tableId</span> Table ID of the requested table</li></ul>
 <pre class="source">
 Future&lt;Table&gt; get(String projectId, String datasetId, String tableId) {
   final $queryParams = {};
@@ -116,13 +110,10 @@ Future&lt;Table&gt; get(String projectId, String datasetId, String tableId) {
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to TablesResource.insert">#</a></h4>
 <div class="doc">
-<p>Creates a new, empty table in the dataset.
-
-<span class="param">projectId</span> Project ID of the new table
-
-<span class="param">datasetId</span> Dataset ID of the new table
-
-<span class="param">content</span> the Table</p>
+<p>Creates a new, empty table in the dataset.</p><ul><li>
+<span class="param">content</span> the Table</li><li>
+<span class="param">projectId</span> Project ID of the new table</li><li>
+<span class="param">datasetId</span> Dataset ID of the new table</li></ul>
 <pre class="source">
 Future&lt;Table&gt; insert(String projectId, String datasetId, Table content) {
   final $queryParams = {};
@@ -158,11 +149,11 @@ Future&lt;Table&gt; insert(String projectId, String datasetId, Table content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to TablesResource.list">#</a></h4>
 <div class="doc">
-<p>Lists all tables in the specified dataset.
-
-<span class="param">projectId</span> Project ID of the tables to list
-
-<span class="param">datasetId</span> Dataset ID of the tables to list</p>
+<p>Lists all tables in the specified dataset.</p><ul><li>
+<span class="param">projectId</span> Project ID of the tables to list</li><li>
+<span class="param">datasetId</span> Dataset ID of the tables to list</li><li>
+<span class="param">pageToken</span> Page token, returned by a previous call, to request the next page of results</li><li>
+<span class="param">maxResults</span> Maximum number of results to return</li></ul>
 <pre class="source">
 Future&lt;TableList&gt; list(String projectId, String datasetId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
@@ -199,15 +190,11 @@ Future&lt;TableList&gt; list(String projectId, String datasetId, [String pageTok
               title="Permalink to TablesResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates information in an existing table, specified by tableId. This method supports patch
-semantics.
-
-<span class="param">projectId</span> Project ID of the table to update
-
-<span class="param">datasetId</span> Dataset ID of the table to update
-
-<span class="param">tableId</span> Table ID of the table to update
-
-<span class="param">content</span> the Table</p>
+semantics.</p><ul><li>
+<span class="param">content</span> the Table</li><li>
+<span class="param">projectId</span> Project ID of the table to update</li><li>
+<span class="param">datasetId</span> Dataset ID of the table to update</li><li>
+<span class="param">tableId</span> Table ID of the table to update</li></ul>
 <pre class="source">
 Future&lt;Table&gt; patch(String projectId, String datasetId, String tableId, Table content) {
   final $queryParams = {};
@@ -244,15 +231,11 @@ Future&lt;Table&gt; patch(String projectId, String datasetId, String tableId, Ta
 <a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#update"
               title="Permalink to TablesResource.update">#</a></h4>
 <div class="doc">
-<p>Updates information in an existing table, specified by tableId.
-
-<span class="param">projectId</span> Project ID of the table to update
-
-<span class="param">datasetId</span> Dataset ID of the table to update
-
-<span class="param">tableId</span> Table ID of the table to update
-
-<span class="param">content</span> the Table</p>
+<p>Updates information in an existing table, specified by tableId.</p><ul><li>
+<span class="param">content</span> the Table</li><li>
+<span class="param">projectId</span> Project ID of the table to update</li><li>
+<span class="param">datasetId</span> Dataset ID of the table to update</li><li>
+<span class="param">tableId</span> Table ID of the table to update</li></ul>
 <pre class="source">
 Future&lt;Table&gt; update(String projectId, String datasetId, String tableId, Table content) {
   final $queryParams = {};

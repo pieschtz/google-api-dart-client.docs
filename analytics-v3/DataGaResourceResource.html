@@ -32,23 +32,30 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> ids, <a href="../dart_core/String.html">String</a> startDate, <a href="../dart_core/String.html">String</a> endDate, <a href="../dart_core/String.html">String</a> metrics, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sort = UNSPECIFIED, <a href="../dart_core/String.html">String</a> dimensions = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/String.html">String</a> segment = UNSPECIFIED, <a href="../dart_core/String.html">String</a> filters = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to DataGaResourceResource.get">#</a></h4>
 <div class="doc">
-<p>Returns Analytics data for a profile.
-
-<span class="param">ids</span> Unique table ID for retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the</p>
-<pre><code>   Analytics profile ID.
-</code></pre>
+<p>Returns Analytics data for a profile.</p><ul><li>
 <p>
-<span class="param">startDate</span> Start date for fetching Analytics data. All requests should specify a start date formatted as YYYY-</p>
-<pre><code>   MM-DD.
-</code></pre>
+<span class="param">ids</span> Unique table ID for retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the
+   Analytics profile ID.</p></li><li>
 <p>
-<span class="param">endDate</span> End date for fetching Analytics data. All requests should specify an end date formatted as YYYY-MM-</p>
-<pre><code>   DD.
-</code></pre>
+<span class="param">startDate</span> Start date for fetching Analytics data. All requests should specify a start date formatted as YYYY-
+   MM-DD.</p></li><li>
 <p>
-<span class="param">metrics</span> A comma-separated list of Analytics metrics. E.g., 'ga:visits,ga:pageviews'. At least one metric</p>
-<pre><code>   must be specified.
-</code></pre>
+<span class="param">endDate</span> End date for fetching Analytics data. All requests should specify an end date formatted as YYYY-MM-
+   DD.</p></li><li>
+<p>
+<span class="param">metrics</span> A comma-separated list of Analytics metrics. E.g., 'ga:visits,ga:pageviews'. At least one metric
+   must be specified.</p></li><li>
+<span class="param">maxResults</span> The maximum number of entries to include in this feed.</li><li>
+<span class="param">sort</span> A comma-separated list of dimensions or metrics that determine the sort order for Analytics data.</li><li>
+<span class="param">dimensions</span> A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'.</li><li>
+<p>
+<span class="param">startIndex</span> An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with
+   the max-results parameter.</p></li></ul>
+<p>Minimum: 1.
+   * 
+<span class="param">segment</span> An Analytics advanced segment to be applied to data.
+   * 
+<span class="param">filters</span> A comma-separated list of dimension or metric filters to be applied to Analytics data.</p>
 <pre class="source">
 Future&lt;GaData&gt; get(String ids, String startDate, String endDate, String metrics, [int maxResults = UNSPECIFIED, String sort = UNSPECIFIED, String dimensions = UNSPECIFIED, int startIndex = UNSPECIFIED, String segment = UNSPECIFIED, String filters = UNSPECIFIED]) {
   final $queryParams = {};

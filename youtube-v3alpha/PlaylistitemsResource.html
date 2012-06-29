@@ -1,0 +1,87 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>PlaylistitemsResource Class / youtube-v3alpha Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="youtube-v3alpha" data-type="PlaylistitemsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../youtube-v3alpha.html">youtube-v3alpha</a> &rsaquo; <a href="../youtube-v3alpha/PlaylistitemsResource.html">PlaylistitemsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>PlaylistitemsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> part, [<a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/String.html">String</a> playlistId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> id = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to PlaylistitemsResource.list">#</a></h4>
+<div class="doc">
+<p>Browse the YouTube playlist collection.</p><ul><li>
+<span class="param">part</span> Parts of the playlist resource to be returned.</li><li>
+<span class="param">startIndex</span> Index of the first element to return (starts at 0)</li></ul>
+<p>Minimum: 0.
+   * 
+<span class="param">playlistId</span> Retrieves playlist items from the given playlist id.
+   * 
+<span class="param">id</span> YouTube IDs of the playlists to be returned.
+   * 
+<span class="param">maxResults</span> Maximum number of results to return
+Default: 50.
+Minimum: 0.</p>
+<pre class="source">
+Future&lt;PlaylistItemListResponse&gt; list(String part, [int startIndex = UNSPECIFIED, String playlistId = UNSPECIFIED, String id = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["part"] = part;
+  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
+  if (UNSPECIFIED != playlistId) $queryParams["playlistId"] = playlistId;
+  if (UNSPECIFIED != id) $queryParams["id"] = id;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "playlistitems";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; PlaylistItemListResponse.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

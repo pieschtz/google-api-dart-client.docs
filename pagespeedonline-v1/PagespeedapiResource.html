@@ -33,9 +33,11 @@
               title="Permalink to PagespeedapiResource.runpagespeed">#</a></h4>
 <div class="doc">
 <p>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list
-of suggestions to make that page faster, and other information.
-
-<span class="param">url</span> The URL to fetch and analyze</p>
+of suggestions to make that page faster, and other information.</p><ul><li>
+<span class="param">url</span> The URL to fetch and analyze</li><li>
+<span class="param">locale</span> The locale used to localize formatted results</li><li>
+<span class="param">rule</span> A Page Speed rule to run; if none are given, all rules are run</li><li>
+<span class="param">strategy</span> The analysis strategy to use</li></ul>
 <pre class="source">
 Future&lt;Result&gt; runpagespeed(String url, [String locale = UNSPECIFIED, List&lt;String&gt; rule = UNSPECIFIED, PagespeedapiResourceRunpagespeedStrategy strategy = UNSPECIFIED]) {
   final $queryParams = {};

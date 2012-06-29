@@ -32,9 +32,8 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> activityId) <a class="anchor-link" href="#delete"
               title="Permalink to ActivitiesResource.delete">#</a></h4>
 <div class="doc">
-<p>Deletes an existing activity, if the access controls allow it.
-
-<span class="param">activityId</span> ID of the activity to remove.</p>
+<p>Deletes an existing activity, if the access controls allow it.</p><ul><li>
+<span class="param">activityId</span> ID of the activity to remove.</li></ul>
 <pre class="source">
 Future delete(String activityId) {
   final $queryParams = {};
@@ -67,13 +66,17 @@ Future delete(String activityId) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> userId, <a href="../orkut-v2/ActivitiesResourceListCollection.html">ActivitiesResourceListCollection</a> collection, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ActivitiesResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of activities.
-
-<span class="param">userId</span> The ID of the user whose activities will be listed. Can be me to refer to the viewer (i.e. the</p>
-<pre><code>   authenticated user).
-</code></pre>
+<p>Retrieves a list of activities.</p><ul><li>
 <p>
-<span class="param">collection</span> The collection of activities to list.</p>
+<span class="param">userId</span> The ID of the user whose activities will be listed. Can be me to refer to the viewer (i.e. the
+   authenticated user).</p></li><li>
+<span class="param">collection</span> The collection of activities to list.</li><li>
+<span class="param">pageToken</span> A continuation token that allows pagination.</li><li>
+<span class="param">maxResults</span> The maximum number of activities to include in the response.</li></ul>
+<p>Minimum: 1.
+Maximum: 100.
+   * 
+<span class="param">hl</span> Specifies the interface language (host language) of your user interface.</p>
 <pre class="source">
 Future&lt;ActivityList&gt; list(String userId, ActivitiesResourceListCollection collection, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, String hl = UNSPECIFIED]) {
   final $queryParams = {};

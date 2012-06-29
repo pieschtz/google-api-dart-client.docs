@@ -32,9 +32,21 @@
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, [<a href="../books-v1/VolumesResourceVolumesAssociatedResourceResourceListProjection.html">VolumesResourceVolumesAssociatedResourceResourceListProjection</a> projection = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../books-v1/VolumesResourceVolumesAssociatedResourceResourceListFilter.html">VolumesResourceVolumesAssociatedResourceResourceListFilter</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../books-v1/VolumesResourceVolumesAssociatedResourceResourceListAssociation.html">VolumesResourceVolumesAssociatedResourceResourceListAssociation</a> association = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to VolumesAssociatedResourceResource.list">#</a></h4>
 <div class="doc">
-<p>Return a list of associated books.
-
-<span class="param">volumeId</span> ID of the source volume.</p>
+<p>Return a list of associated books.</p><ul><li>
+<span class="param">volumeId</span> ID of the source volume.</li><li>
+<span class="param">projection</span> Restrict information returned to a set of selected fields.</li><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li></ul>
+<p>Minimum: 0.
+Maximum: 40.
+   * 
+<span class="param">filter</span> Filter search results.
+   * 
+<span class="param">source</span> String to identify the originator of this request.
+   * 
+<span class="param">startIndex</span> Index of the first result to return (starts at 0)</p>
+<p>Minimum: 0.
+   * 
+<span class="param">association</span> Association type.</p>
 <pre class="source">
 Future&lt;Volumes&gt; list(String volumeId, [VolumesResourceVolumesAssociatedResourceResourceListProjection projection = UNSPECIFIED, int maxResults = UNSPECIFIED, VolumesResourceVolumesAssociatedResourceResourceListFilter filter = UNSPECIFIED, String source = UNSPECIFIED, int startIndex = UNSPECIFIED, VolumesResourceVolumesAssociatedResourceResourceListAssociation association = UNSPECIFIED]) {
   final $queryParams = {};

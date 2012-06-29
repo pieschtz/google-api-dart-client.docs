@@ -32,9 +32,8 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> commentId) <a class="anchor-link" href="#delete"
               title="Permalink to CommentsResource.delete">#</a></h4>
 <div class="doc">
-<p>Deletes an existing comment.
-
-<span class="param">commentId</span> ID of the comment to remove.</p>
+<p>Deletes an existing comment.</p><ul><li>
+<span class="param">commentId</span> ID of the comment to remove.</li></ul>
 <pre class="source">
 Future delete(String commentId) {
   final $queryParams = {};
@@ -67,9 +66,9 @@ Future delete(String commentId) {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> commentId, [<a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to CommentsResource.get">#</a></h4>
 <div class="doc">
-<p>Retrieves an existing comment.
-
-<span class="param">commentId</span> ID of the comment to get.</p>
+<p>Retrieves an existing comment.</p><ul><li>
+<span class="param">commentId</span> ID of the comment to get.</li><li>
+<span class="param">hl</span> Specifies the interface language (host language) of your user interface.</li></ul>
 <pre class="source">
 Future&lt;Comment&gt; get(String commentId, [String hl = UNSPECIFIED]) {
   final $queryParams = {};
@@ -103,11 +102,9 @@ Future&lt;Comment&gt; get(String commentId, [String hl = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> activityId, <a href="../orkut-v2/Comment.html">Comment</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CommentsResource.insert">#</a></h4>
 <div class="doc">
-<p>Inserts a new comment to an activity.
-
-<span class="param">activityId</span> The ID of the activity to contain the new comment.
-
-<span class="param">content</span> the Comment</p>
+<p>Inserts a new comment to an activity.</p><ul><li>
+<span class="param">content</span> the Comment</li><li>
+<span class="param">activityId</span> The ID of the activity to contain the new comment.</li></ul>
 <pre class="source">
 Future&lt;Comment&gt; insert(String activityId, Comment content) {
   final $queryParams = {};
@@ -142,9 +139,16 @@ Future&lt;Comment&gt; insert(String activityId, Comment content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> activityId, [<a href="../orkut-v2/CommentsResourceListOrderBy.html">CommentsResourceListOrderBy</a> orderBy = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CommentsResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of comments, possibly filtered.
-
-<span class="param">activityId</span> The ID of the activity containing the comments.</p>
+<p>Retrieves a list of comments, possibly filtered.</p><ul><li>
+<span class="param">activityId</span> The ID of the activity containing the comments.</li><li>
+<p>
+<span class="param">orderBy</span> Sort search results.
+Default: DESCENDING_SORT.</p></li><li>
+<span class="param">pageToken</span> A continuation token that allows pagination.</li><li>
+<span class="param">maxResults</span> The maximum number of activities to include in the response.</li></ul>
+<p>Minimum: 1.
+   * 
+<span class="param">hl</span> Specifies the interface language (host language) of your user interface.</p>
 <pre class="source">
 Future&lt;CommentList&gt; list(String activityId, [CommentsResourceListOrderBy orderBy = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, String hl = UNSPECIFIED]) {
   final $queryParams = {};

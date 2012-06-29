@@ -32,13 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> blogId, <a href="../dart_core/String.html">String</a> postId, <a href="../dart_core/String.html">String</a> commentId) <a class="anchor-link" href="#get"
               title="Permalink to CommentsResource.get">#</a></h4>
 <div class="doc">
-<p>Gets one comment by id.
-
-<span class="param">blogId</span> ID of the blog to containing the comment.
-
-<span class="param">postId</span> ID of the post to fetch posts from.
-
-<span class="param">commentId</span> The ID of the comment to get.</p>
+<p>Gets one comment by id.</p><ul><li>
+<span class="param">blogId</span> ID of the blog to containing the comment.</li><li>
+<span class="param">postId</span> ID of the post to fetch posts from.</li><li>
+<span class="param">commentId</span> The ID of the comment to get.</li></ul>
 <pre class="source">
 Future&lt;Comment&gt; get(String blogId, String postId, String commentId) {
   final $queryParams = {};
@@ -73,11 +70,14 @@ Future&lt;Comment&gt; get(String blogId, String postId, String commentId) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> blogId, <a href="../dart_core/String.html">String</a> postId, [<a href="../dart_core/String.html">String</a> startDate = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endDate = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> fetchBodies = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CommentsResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves the comments for a blog, possibly filtered.
-
-<span class="param">blogId</span> ID of the blog to fetch comments from.
-
-<span class="param">postId</span> ID of the post to fetch posts from.</p>
+<p>Retrieves the comments for a blog, possibly filtered.</p><ul><li>
+<span class="param">blogId</span> ID of the blog to fetch comments from.</li><li>
+<span class="param">postId</span> ID of the post to fetch posts from.</li><li>
+<span class="param">startDate</span> Earliest date of comment to fetch, a date-time with RFC 3339 formatting.</li><li>
+<span class="param">endDate</span> Latest date of comment to fetch, a date-time with RFC 3339 formatting.</li><li>
+<span class="param">maxResults</span> Maximum number of comments to include in the result.</li><li>
+<span class="param">pageToken</span> Continuation token if request is paged.</li><li>
+<span class="param">fetchBodies</span> Whether the body content of the comments is included.</li></ul>
 <pre class="source">
 Future&lt;CommentList&gt; list(String blogId, String postId, [String startDate = UNSPECIFIED, String endDate = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, bool fetchBodies = UNSPECIFIED]) {
   final $queryParams = {};

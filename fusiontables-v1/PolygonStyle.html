@@ -1,0 +1,206 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>PolygonStyle Class / fusiontables-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="fusiontables-v1" data-type="PolygonStyle">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../fusiontables-v1.html">fusiontables-v1</a> &rsaquo; <a href="../fusiontables-v1/PolygonStyle.html">PolygonStyle</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>PolygonStyle</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>PolygonStyle</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../fusiontables-v1/PolygonStyle.html">PolygonStyle</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to PolygonStyle.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static PolygonStyle parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new PolygonStyle();
+  result.strokeColorStyler = StyleFunction.parse(json["strokeColorStyler"]);
+  result.strokeWeight = identity(json["strokeWeight"]);
+  result.strokeOpacity = identity(json["strokeOpacity"]);
+  result.strokeWeightStyler = StyleFunction.parse(json["strokeWeightStyler"]);
+  result.fillColorStyler = StyleFunction.parse(json["fillColorStyler"]);
+  result.fillColor = identity(json["fillColor"]);
+  result.strokeColor = identity(json["strokeColor"]);
+  result.fillOpacity = identity(json["fillOpacity"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../fusiontables-v1/PolygonStyle.html">PolygonStyle</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to PolygonStyle.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(PolygonStyle value) {
+  if (value == null) return null;
+  final result = {};
+  result["strokeColorStyler"] = StyleFunction.serialize(value.strokeColorStyler);
+  result["strokeWeight"] = identity(value.strokeWeight);
+  result["strokeOpacity"] = identity(value.strokeOpacity);
+  result["strokeWeightStyler"] = StyleFunction.serialize(value.strokeWeightStyler);
+  result["fillColorStyler"] = StyleFunction.serialize(value.fillColorStyler);
+  result["fillColor"] = identity(value.fillColor);
+  result["strokeColor"] = identity(value.strokeColor);
+  result["fillOpacity"] = identity(value.fillOpacity);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to PolygonStyle.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="fillColor">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fillColor</strong> <a class="anchor-link"
+            href="#fillColor"
+            title="Permalink to PolygonStyle.fillColor">#</a>
+        </h4>
+        <div class="doc">
+<p>Color of the interior of the polygon in #RRGGBB format.</p>
+<pre class="source">
+String fillColor;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fillColorStyler">
+<span class="show-code">Code</span>
+<a href="../fusiontables-v1/StyleFunction.html">StyleFunction</a>         <strong>fillColorStyler</strong> <a class="anchor-link"
+            href="#fillColorStyler"
+            title="Permalink to PolygonStyle.fillColorStyler">#</a>
+        </h4>
+        <div class="doc">
+<p>Column-value, gradient, or bucket styler that is used to determine the interior color and opacity
+of the polygon.</p>
+<pre class="source">
+StyleFunction fillColorStyler;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fillOpacity">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>fillOpacity</strong> <a class="anchor-link"
+            href="#fillOpacity"
+            title="Permalink to PolygonStyle.fillOpacity">#</a>
+        </h4>
+        <div class="doc">
+<p>Opacity of the interior of the polygon: 0.0 (transparent) to 1.0 (opaque).</p>
+<pre class="source">
+double fillOpacity;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="strokeColor">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>strokeColor</strong> <a class="anchor-link"
+            href="#strokeColor"
+            title="Permalink to PolygonStyle.strokeColor">#</a>
+        </h4>
+        <div class="doc">
+<p>Color of the polygon border in #RRGGBB format.</p>
+<pre class="source">
+String strokeColor;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="strokeColorStyler">
+<span class="show-code">Code</span>
+<a href="../fusiontables-v1/StyleFunction.html">StyleFunction</a>         <strong>strokeColorStyler</strong> <a class="anchor-link"
+            href="#strokeColorStyler"
+            title="Permalink to PolygonStyle.strokeColorStyler">#</a>
+        </h4>
+        <div class="doc">
+<p>Column-value, gradient or buckets styler that is used to determine the border color and opacity.</p>
+<pre class="source">
+StyleFunction strokeColorStyler;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="strokeOpacity">
+<span class="show-code">Code</span>
+<a href="../dart_core/double.html">double</a>         <strong>strokeOpacity</strong> <a class="anchor-link"
+            href="#strokeOpacity"
+            title="Permalink to PolygonStyle.strokeOpacity">#</a>
+        </h4>
+        <div class="doc">
+<p>Opacity of the polygon border: 0.0 (transparent) to 1.0 (opaque).</p>
+<pre class="source">
+double strokeOpacity;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="strokeWeight">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>strokeWeight</strong> <a class="anchor-link"
+            href="#strokeWeight"
+            title="Permalink to PolygonStyle.strokeWeight">#</a>
+        </h4>
+        <div class="doc">
+<p>Width of the polyon border in pixels.</p>
+<pre class="source">
+int strokeWeight;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="strokeWeightStyler">
+<span class="show-code">Code</span>
+<a href="../fusiontables-v1/StyleFunction.html">StyleFunction</a>         <strong>strokeWeightStyler</strong> <a class="anchor-link"
+            href="#strokeWeightStyler"
+            title="Permalink to PolygonStyle.strokeWeightStyler">#</a>
+        </h4>
+        <div class="doc">
+<p>Column-value or bucket styler that is used to determine the width of the polygon border.</p>
+<pre class="source">
+StyleFunction strokeWeightStyler;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

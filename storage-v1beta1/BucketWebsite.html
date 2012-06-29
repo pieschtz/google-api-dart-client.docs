@@ -1,0 +1,116 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>BucketWebsite Class / storage-v1beta1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="storage-v1beta1" data-type="BucketWebsite">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../storage-v1beta1.html">storage-v1beta1</a> &rsaquo; <a href="../storage-v1beta1/BucketWebsite.html">BucketWebsite</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>BucketWebsite</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>BucketWebsite</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../storage-v1beta1/BucketWebsite.html">BucketWebsite</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to BucketWebsite.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static BucketWebsite parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new BucketWebsite();
+  result.notFoundPage = identity(json["notFoundPage"]);
+  result.mainPageSuffix = identity(json["mainPageSuffix"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../storage-v1beta1/Object.html">Object</a> <strong>serialize</strong>(<a href="../storage-v1beta1/BucketWebsite.html">BucketWebsite</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to BucketWebsite.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(BucketWebsite value) {
+  if (value == null) return null;
+  final result = {};
+  result["notFoundPage"] = identity(value.notFoundPage);
+  result["mainPageSuffix"] = identity(value.mainPageSuffix);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to BucketWebsite.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="mainPageSuffix">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>mainPageSuffix</strong> <a class="anchor-link"
+            href="#mainPageSuffix"
+            title="Permalink to BucketWebsite.mainPageSuffix">#</a>
+        </h4>
+        <div class="doc">
+<p>Behaves as the bucket's directory index where missing objects are treated as potential
+directories.</p>
+<pre class="source">
+String mainPageSuffix;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="notFoundPage">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>notFoundPage</strong> <a class="anchor-link"
+            href="#notFoundPage"
+            title="Permalink to BucketWebsite.notFoundPage">#</a>
+        </h4>
+        <div class="doc">
+<p>The custom object to return when a requested resource is not found.</p>
+<pre class="source">
+String notFoundPage;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

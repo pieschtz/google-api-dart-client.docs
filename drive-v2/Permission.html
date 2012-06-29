@@ -1,0 +1,272 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Permission Class / drive-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="drive-v2" data-type="Permission">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/Permission.html">Permission</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Permission</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Permission</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../drive-v2/Permission.html">Permission</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Permission.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Permission parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Permission();
+  result.withLink = identity(json["withLink"]);
+  result.kind = identity(json["kind"]);
+  result.name = identity(json["name"]);
+  result.value = identity(json["value"]);
+  result.id = identity(json["id"]);
+  result.authKey = identity(json["authKey"]);
+  result.etag = identity(json["etag"]);
+  result.role = identity(json["role"]);
+  result.photoLink = identity(json["photoLink"]);
+  result.type = identity(json["type"]);
+  result.additionalRoles = map(identity)(json["additionalRoles"]);
+  result.selfLink = identity(json["selfLink"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/Permission.html">Permission</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Permission.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Permission value) {
+  if (value == null) return null;
+  final result = {};
+  result["withLink"] = identity(value.withLink);
+  result["kind"] = identity(value.kind);
+  result["name"] = identity(value.name);
+  result["value"] = identity(value.value);
+  result["id"] = identity(value.id);
+  result["authKey"] = identity(value.authKey);
+  result["etag"] = identity(value.etag);
+  result["role"] = identity(value.role);
+  result["photoLink"] = identity(value.photoLink);
+  result["type"] = identity(value.type);
+  result["additionalRoles"] = map(identity)(value.additionalRoles);
+  result["selfLink"] = identity(value.selfLink);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Permission.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="additionalRoles">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>additionalRoles</strong> <a class="anchor-link"
+            href="#additionalRoles"
+            title="Permalink to Permission.additionalRoles">#</a>
+        </h4>
+        <div class="doc">
+<p>Additional roles for this user. Only commenter is currently allowed.</p>
+<pre class="source">
+List&lt;String&gt; additionalRoles;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authKey">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>authKey</strong> <a class="anchor-link"
+            href="#authKey"
+            title="Permalink to Permission.authKey">#</a>
+        </h4>
+        <div class="doc">
+<p>The authkey parameter required for this permission.</p>
+<pre class="source">
+String authKey;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to Permission.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>The ETag of the permission.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Permission.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The ID of the permission.</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Permission.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>This is always drive#permission.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to Permission.name">#</a>
+        </h4>
+        <div class="doc">
+<p>The name for this permission.</p>
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="photoLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>photoLink</strong> <a class="anchor-link"
+            href="#photoLink"
+            title="Permalink to Permission.photoLink">#</a>
+        </h4>
+        <div class="doc">
+<p>A link to the profile photo, if available.</p>
+<pre class="source">
+String photoLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="role">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>role</strong> <a class="anchor-link"
+            href="#role"
+            title="Permalink to Permission.role">#</a>
+        </h4>
+        <div class="doc">
+<p>The primary role for this user. Allowed values are:
+- owner
+- reader
+- writer</p>
+<pre class="source">
+String role;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to Permission.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>A link back to this permission.</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="type">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+            href="#type"
+            title="Permalink to Permission.type">#</a>
+        </h4>
+        <div class="doc">
+<p>The account type. Allowed values are:
+- user
+- group
+- domain
+- anyone</p>
+<pre class="source">
+String type;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="value">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>value</strong> <a class="anchor-link"
+            href="#value"
+            title="Permalink to Permission.value">#</a>
+        </h4>
+        <div class="doc">
+<p>The email address or domain name for the entity. This is not populated in responses.</p>
+<pre class="source">
+String value;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="withLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>withLink</strong> <a class="anchor-link"
+            href="#withLink"
+            title="Permalink to Permission.withLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether the link is required for this permission.</p>
+<pre class="source">
+bool withLink;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -34,13 +34,10 @@
 <div class="doc">
 <p>Retrieves data about a single link if the requesting advertiser/publisher has access to it.
 Advertisers can look up their own links. Publishers can look up visible links or links belonging
-to advertisers they are in a relationship with.
-
-<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
-
-<span class="param">roleId</span> The ID of the requesting advertiser or publisher.
-
-<span class="param">linkId</span> The ID of the link to look up.</p>
+to advertisers they are in a relationship with.</p><ul><li>
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.</li><li>
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li><li>
+<span class="param">linkId</span> The ID of the link to look up.</li></ul>
 <pre class="source">
 Future&lt;Link&gt; get(LinksResourceGetRole role, String roleId, String linkId) {
   final $queryParams = {};
@@ -75,13 +72,10 @@ Future&lt;Link&gt; get(LinksResourceGetRole role, String roleId, String linkId) 
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../gan-v1beta1/LinksResourceInsertRole.html">LinksResourceInsertRole</a> role, <a href="../dart_core/String.html">String</a> roleId, <a href="../gan-v1beta1/Link.html">Link</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to LinksResource.insert">#</a></h4>
 <div class="doc">
-<p>Inserts a new link.
-
-<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
-
-<span class="param">roleId</span> The ID of the requesting advertiser or publisher.
-
-<span class="param">content</span> the Link</p>
+<p>Inserts a new link.</p><ul><li>
+<span class="param">content</span> the Link</li><li>
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.</li><li>
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li></ul>
 <pre class="source">
 Future&lt;Link&gt; insert(LinksResourceInsertRole role, String roleId, Link content) {
   final $queryParams = {};
@@ -117,11 +111,27 @@ Future&lt;Link&gt; insert(LinksResourceInsertRole role, String roleId, Link cont
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../gan-v1beta1/LinksResourceListRole.html">LinksResourceListRole</a> role, <a href="../dart_core/String.html">String</a> roleId, [<a href="../gan-v1beta1/LinksResourceListLinkType.html">LinksResourceListLinkType</a> linkType = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startDateMin = UNSPECIFIED, <a href="../dart_core/List.html">List</a> assetSize = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListRelationshipStatus.html">LinksResourceListRelationshipStatus</a> relationshipStatus = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAdvertiserCategory.html">LinksResourceListAdvertiserCategory</a> advertiserCategory = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/List.html">List</a> advertiserId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startDateMax = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListPromotionType.html">LinksResourceListPromotionType</a> promotionType = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAuthorship.html">LinksResourceListAuthorship</a> authorship = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to LinksResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves all links that match the query parameters.
-
-<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
-
-<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</p>
+<p>Retrieves all links that match the query parameters.</p><ul><li>
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.</li><li>
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li><li>
+<span class="param">linkType</span> The type of the link.</li><li>
+<span class="param">startDateMin</span> The beginning of the start date range.</li><li>
+<span class="param">assetSize</span> The size of the given asset.</li><li>
+<span class="param">relationshipStatus</span> The status of the relationship.</li><li>
+<span class="param">advertiserCategory</span> The advertiser's primary vertical.</li><li>
+<span class="param">maxResults</span> Max number of items to return in this page. Optional. Defaults to 20.</li></ul>
+<p>Minimum: 0.
+Maximum: 100.
+   * 
+<span class="param">advertiserId</span> Limits the resulting links to the ones belonging to the listed advertisers.
+   * 
+<span class="param">pageToken</span> The value of 'nextPageToken' from the previous page. Optional.
+   * 
+<span class="param">startDateMax</span> The end of the start date range.
+   * 
+<span class="param">promotionType</span> The promotion type.
+   * 
+<span class="param">authorship</span> The role of the author of the link.</p>
 <pre class="source">
 Future&lt;Links&gt; list(LinksResourceListRole role, String roleId, [LinksResourceListLinkType linkType = UNSPECIFIED, String startDateMin = UNSPECIFIED, List&lt;String&gt; assetSize = UNSPECIFIED, LinksResourceListRelationshipStatus relationshipStatus = UNSPECIFIED, LinksResourceListAdvertiserCategory advertiserCategory = UNSPECIFIED, int maxResults = UNSPECIFIED, List&lt;String&gt; advertiserId = UNSPECIFIED, String pageToken = UNSPECIFIED, String startDateMax = UNSPECIFIED, LinksResourceListPromotionType promotionType = UNSPECIFIED, LinksResourceListAuthorship authorship = UNSPECIFIED]) {
   final $queryParams = {};

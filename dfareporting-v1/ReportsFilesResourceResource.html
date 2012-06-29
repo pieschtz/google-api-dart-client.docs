@@ -32,13 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, <a href="../dart_core/String.html">String</a> fileId) <a class="anchor-link" href="#get"
               title="Permalink to ReportsFilesResourceResource.get">#</a></h4>
 <div class="doc">
-<p>Retrieves a report file.
-
-<span class="param">profileId</span> The DFA profile id.
-
-<span class="param">reportId</span> The id of the report.
-
-<span class="param">fileId</span> The id of the report file.</p>
+<p>Retrieves a report file.</p><ul><li>
+<span class="param">profileId</span> The DFA profile id.</li><li>
+<span class="param">reportId</span> The id of the report.</li><li>
+<span class="param">fileId</span> The id of the report file.</li></ul>
 <pre class="source">
 Future&lt;File&gt; get(String profileId, String reportId, String fileId) {
   final $queryParams = {};
@@ -73,11 +70,20 @@ Future&lt;File&gt; get(String profileId, String reportId, String fileId) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, [<a href="../dfareporting-v1/ReportsResourceReportsFilesResourceResourceListSortField.html">ReportsResourceReportsFilesResourceResourceListSortField</a> sortField = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dfareporting-v1/ReportsResourceReportsFilesResourceResourceListSortOrder.html">ReportsResourceReportsFilesResourceResourceListSortOrder</a> sortOrder = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ReportsFilesResourceResource.list">#</a></h4>
 <div class="doc">
-<p>Lists files for a report.
-
-<span class="param">profileId</span> The DFA profile id.
-
-<span class="param">reportId</span> The id of the parent report.</p>
+<p>Lists files for a report.</p><ul><li>
+<span class="param">profileId</span> The DFA profile id.</li><li>
+<span class="param">reportId</span> The id of the parent report.</li><li>
+<p>
+<span class="param">sortField</span> The field to sort the list by.
+Default: LAST<em>MODIFIED</em>TIME.</p></li><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li></ul>
+<p>Minimum: 0.
+Maximum: 10.
+   * 
+<span class="param">pageToken</span> The value of the nextToken from the previous result page.
+   * 
+<span class="param">sortOrder</span> Order of sorted results, default is 'DESCENDING'.
+Default: DESCENDING.</p>
 <pre class="source">
 Future&lt;FileList&gt; list(String profileId, String reportId, [ReportsResourceReportsFilesResourceResourceListSortField sortField = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, ReportsResourceReportsFilesResourceResourceListSortOrder sortOrder = UNSPECIFIED]) {
   final $queryParams = {};

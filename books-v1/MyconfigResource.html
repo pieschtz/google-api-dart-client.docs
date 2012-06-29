@@ -32,11 +32,11 @@
 <a href="../dart_core/Future.html">Future</a> <strong>releaseDownloadAccess</strong>(<a href="../dart_core/List.html">List</a> volumeIds, <a href="../dart_core/String.html">String</a> cpksver, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#releaseDownloadAccess"
               title="Permalink to MyconfigResource.releaseDownloadAccess">#</a></h4>
 <div class="doc">
-<p>Release downloaded content access restriction.
-
-<span class="param">volumeIds</span> The volume(s) to release restrictions for.
-
-<span class="param">cpksver</span> The device/version ID from which to release the restriction.</p>
+<p>Release downloaded content access restriction.</p><ul><li>
+<span class="param">volumeIds</span> The volume(s) to release restrictions for.</li><li>
+<span class="param">cpksver</span> The device/version ID from which to release the restriction.</li><li>
+<span class="param">locale</span> ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future&lt;DownloadAccesses&gt; releaseDownloadAccess(List&lt;String&gt; volumeIds, String cpksver, [String locale = UNSPECIFIED, String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -72,15 +72,12 @@ Future&lt;DownloadAccesses&gt; releaseDownloadAccess(List&lt;String&gt; volumeId
 <a href="../dart_core/Future.html">Future</a> <strong>requestAccess</strong>(<a href="../dart_core/String.html">String</a> source, <a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> nonce, <a href="../dart_core/String.html">String</a> cpksver, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED]) <a class="anchor-link" href="#requestAccess"
               title="Permalink to MyconfigResource.requestAccess">#</a></h4>
 <div class="doc">
-<p>Request concurrent and download access restrictions.
-
-<span class="param">source</span> String to identify the originator of this request.
-
-<span class="param">volumeId</span> The volume to request concurrent/download restrictions for.
-
-<span class="param">nonce</span> The client nonce value.
-
-<span class="param">cpksver</span> The device/version ID from which to request the restrictions.</p>
+<p>Request concurrent and download access restrictions.</p><ul><li>
+<span class="param">source</span> String to identify the originator of this request.</li><li>
+<span class="param">volumeId</span> The volume to request concurrent/download restrictions for.</li><li>
+<span class="param">nonce</span> The client nonce value.</li><li>
+<span class="param">cpksver</span> The device/version ID from which to request the restrictions.</li><li>
+<span class="param">locale</span> ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</li></ul>
 <pre class="source">
 Future&lt;RequestAccess&gt; requestAccess(String source, String volumeId, String nonce, String cpksver, [String locale = UNSPECIFIED]) {
   final $queryParams = {};
@@ -117,13 +114,13 @@ Future&lt;RequestAccess&gt; requestAccess(String source, String volumeId, String
 <a href="../dart_core/Future.html">Future</a> <strong>syncVolumeLicenses</strong>(<a href="../dart_core/String.html">String</a> source, <a href="../dart_core/String.html">String</a> nonce, <a href="../dart_core/String.html">String</a> cpksver, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> showPreorders = UNSPECIFIED, <a href="../dart_core/List.html">List</a> volumeIds = UNSPECIFIED]) <a class="anchor-link" href="#syncVolumeLicenses"
               title="Permalink to MyconfigResource.syncVolumeLicenses">#</a></h4>
 <div class="doc">
-<p>Request downloaded content access for specified volumes on the My eBooks shelf.
-
-<span class="param">source</span> String to identify the originator of this request.
-
-<span class="param">nonce</span> The client nonce value.
-
-<span class="param">cpksver</span> The device/version ID from which to release the restriction.</p>
+<p>Request downloaded content access for specified volumes on the My eBooks shelf.</p><ul><li>
+<span class="param">source</span> String to identify the originator of this request.</li><li>
+<span class="param">nonce</span> The client nonce value.</li><li>
+<span class="param">cpksver</span> The device/version ID from which to release the restriction.</li><li>
+<span class="param">locale</span> ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</li><li>
+<span class="param">showPreorders</span> Set to true to show pre-ordered books. Defaults to false.</li><li>
+<span class="param">volumeIds</span> The volume(s) to request download restrictions for.</li></ul>
 <pre class="source">
 Future&lt;Volumes&gt; syncVolumeLicenses(String source, String nonce, String cpksver, [String locale = UNSPECIFIED, bool showPreorders = UNSPECIFIED, List&lt;String&gt; volumeIds = UNSPECIFIED]) {
   final $queryParams = {};

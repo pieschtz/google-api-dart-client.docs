@@ -32,11 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> blogId, <a href="../dart_core/String.html">String</a> postId) <a class="anchor-link" href="#delete"
               title="Permalink to PostsResource.delete">#</a></h4>
 <div class="doc">
-<p>Delete a post by id.
-
-<span class="param">blogId</span> The Id of the Blog.
-
-<span class="param">postId</span> The ID of the Post.</p>
+<p>Delete a post by id.</p><ul><li>
+<span class="param">blogId</span> The Id of the Blog.</li><li>
+<span class="param">postId</span> The ID of the Post.</li></ul>
 <pre class="source">
 Future delete(String blogId, String postId) {
   final $queryParams = {};
@@ -70,11 +68,10 @@ Future delete(String blogId, String postId) {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> blogId, <a href="../dart_core/String.html">String</a> postId, [<a href="../dart_core/int.html">int</a> maxComments = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to PostsResource.get">#</a></h4>
 <div class="doc">
-<p>Get a post by id.
-
-<span class="param">blogId</span> ID of the blog to fetch the post from.
-
-<span class="param">postId</span> The ID of the post</p>
+<p>Get a post by id.</p><ul><li>
+<span class="param">blogId</span> ID of the blog to fetch the post from.</li><li>
+<span class="param">postId</span> The ID of the post</li><li>
+<span class="param">maxComments</span> Maximum number of comments to pull back on a post.</li></ul>
 <pre class="source">
 Future&lt;Post&gt; get(String blogId, String postId, [int maxComments = UNSPECIFIED]) {
   final $queryParams = {};
@@ -109,9 +106,10 @@ Future&lt;Post&gt; get(String blogId, String postId, [int maxComments = UNSPECIF
 <a href="../dart_core/Future.html">Future</a> <strong>getByPath</strong>(<a href="../dart_core/String.html">String</a> blogId, [<a href="../dart_core/String.html">String</a> path = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxComments = UNSPECIFIED]) <a class="anchor-link" href="#getByPath"
               title="Permalink to PostsResource.getByPath">#</a></h4>
 <div class="doc">
-<p>Retrieve a Post by Path.
-
-<span class="param">blogId</span> ID of the blog to fetch the post from.</p>
+<p>Retrieve a Post by Path.</p><ul><li>
+<span class="param">blogId</span> ID of the blog to fetch the post from.</li><li>
+<span class="param">path</span> Path of the Post to retrieve.</li><li>
+<span class="param">maxComments</span> Maximum number of comments to pull back on a post.</li></ul>
 <pre class="source">
 Future&lt;Post&gt; getByPath(String blogId, [String path = UNSPECIFIED, int maxComments = UNSPECIFIED]) {
   final $queryParams = {};
@@ -146,11 +144,9 @@ Future&lt;Post&gt; getByPath(String blogId, [String path = UNSPECIFIED, int maxC
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> blogId, <a href="../blogger-v3/Post.html">Post</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to PostsResource.insert">#</a></h4>
 <div class="doc">
-<p>Add a post.
-
-<span class="param">blogId</span> ID of the blog to fetch the post from.
-
-<span class="param">content</span> the Post</p>
+<p>Add a post.</p><ul><li>
+<span class="param">content</span> the Post</li><li>
+<span class="param">blogId</span> ID of the blog to fetch the post from.</li></ul>
 <pre class="source">
 Future&lt;Post&gt; insert(String blogId, Post content) {
   final $queryParams = {};
@@ -185,9 +181,14 @@ Future&lt;Post&gt; insert(String blogId, Post content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> blogId, [<a href="../dart_core/String.html">String</a> startDate = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endDate = UNSPECIFIED, <a href="../dart_core/String.html">String</a> labels = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> fetchBodies = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to PostsResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of posts, possibly filtered.
-
-<span class="param">blogId</span> ID of the blog to fetch posts from.</p>
+<p>Retrieves a list of posts, possibly filtered.</p><ul><li>
+<span class="param">blogId</span> ID of the blog to fetch posts from.</li><li>
+<span class="param">startDate</span> Earliest post date to fetch, a date-time with RFC 3339 formatting.</li><li>
+<span class="param">endDate</span> Latest post date to fetch, a date-time with RFC 3339 formatting.</li><li>
+<span class="param">labels</span> Comma-separated list of labels to search for.</li><li>
+<span class="param">maxResults</span> Maximum number of posts to fetch.</li><li>
+<span class="param">pageToken</span> Continuation token if the request is paged.</li><li>
+<span class="param">fetchBodies</span> Whether the body content of posts is included.</li></ul>
 <pre class="source">
 Future&lt;PostList&gt; list(String blogId, [String startDate = UNSPECIFIED, String endDate = UNSPECIFIED, String labels = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, bool fetchBodies = UNSPECIFIED]) {
   final $queryParams = {};
@@ -226,13 +227,10 @@ Future&lt;PostList&gt; list(String blogId, [String startDate = UNSPECIFIED, Stri
 <a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> blogId, <a href="../dart_core/String.html">String</a> postId, <a href="../blogger-v3/Post.html">Post</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to PostsResource.patch">#</a></h4>
 <div class="doc">
-<p>Update a post. This method supports patch semantics.
-
-<span class="param">blogId</span> The ID of the Blog.
-
-<span class="param">postId</span> The ID of the Post.
-
-<span class="param">content</span> the Post</p>
+<p>Update a post. This method supports patch semantics.</p><ul><li>
+<span class="param">content</span> the Post</li><li>
+<span class="param">blogId</span> The ID of the Blog.</li><li>
+<span class="param">postId</span> The ID of the Post.</li></ul>
 <pre class="source">
 Future&lt;Post&gt; patch(String blogId, String postId, Post content) {
   final $queryParams = {};
@@ -268,9 +266,9 @@ Future&lt;Post&gt; patch(String blogId, String postId, Post content) {
 <a href="../dart_core/Future.html">Future</a> <strong>search</strong>(<a href="../dart_core/String.html">String</a> blogId, [<a href="../dart_core/String.html">String</a> q = UNSPECIFIED]) <a class="anchor-link" href="#search"
               title="Permalink to PostsResource.search">#</a></h4>
 <div class="doc">
-<p>Search for a post.
-
-<span class="param">blogId</span> ID of the blog to fetch the post from.</p>
+<p>Search for a post.</p><ul><li>
+<span class="param">blogId</span> ID of the blog to fetch the post from.</li><li>
+<span class="param">q</span> Query terms to search this blog for matching posts.</li></ul>
 <pre class="source">
 Future&lt;PostList&gt; search(String blogId, [String q = UNSPECIFIED]) {
   final $queryParams = {};
@@ -304,13 +302,10 @@ Future&lt;PostList&gt; search(String blogId, [String q = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> blogId, <a href="../dart_core/String.html">String</a> postId, <a href="../blogger-v3/Post.html">Post</a> content) <a class="anchor-link" href="#update"
               title="Permalink to PostsResource.update">#</a></h4>
 <div class="doc">
-<p>Update a post.
-
-<span class="param">blogId</span> The ID of the Blog.
-
-<span class="param">postId</span> The ID of the Post.
-
-<span class="param">content</span> the Post</p>
+<p>Update a post.</p><ul><li>
+<span class="param">content</span> the Post</li><li>
+<span class="param">blogId</span> The ID of the Blog.</li><li>
+<span class="param">postId</span> The ID of the Post.</li></ul>
 <pre class="source">
 Future&lt;Post&gt; update(String blogId, String postId, Post content) {
   final $queryParams = {};

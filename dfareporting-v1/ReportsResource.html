@@ -32,11 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId) <a class="anchor-link" href="#delete"
               title="Permalink to ReportsResource.delete">#</a></h4>
 <div class="doc">
-<p>Deletes a report by its id.
-
-<span class="param">profileId</span> The DFA user profile id.
-
-<span class="param">reportId</span> The id of the report.</p>
+<p>Deletes a report by its id.</p><ul><li>
+<span class="param">profileId</span> The DFA user profile id.</li><li>
+<span class="param">reportId</span> The id of the report.</li></ul>
 <pre class="source">
 Future delete(String profileId, String reportId) {
   final $queryParams = {};
@@ -70,11 +68,9 @@ Future delete(String profileId, String reportId) {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId) <a class="anchor-link" href="#get"
               title="Permalink to ReportsResource.get">#</a></h4>
 <div class="doc">
-<p>Retrieves a report by its id.
-
-<span class="param">profileId</span> The DFA user profile id.
-
-<span class="param">reportId</span> The id of the report.</p>
+<p>Retrieves a report by its id.</p><ul><li>
+<span class="param">profileId</span> The DFA user profile id.</li><li>
+<span class="param">reportId</span> The id of the report.</li></ul>
 <pre class="source">
 Future&lt;Report&gt; get(String profileId, String reportId) {
   final $queryParams = {};
@@ -108,11 +104,9 @@ Future&lt;Report&gt; get(String profileId, String reportId) {
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dfareporting-v1/Report.html">Report</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to ReportsResource.insert">#</a></h4>
 <div class="doc">
-<p>Creates a report.
-
-<span class="param">profileId</span> The DFA user profile id.
-
-<span class="param">content</span> the Report</p>
+<p>Creates a report.</p><ul><li>
+<span class="param">content</span> the Report</li><li>
+<span class="param">profileId</span> The DFA user profile id.</li></ul>
 <pre class="source">
 Future&lt;Report&gt; insert(String profileId, Report content) {
   final $queryParams = {};
@@ -147,9 +141,18 @@ Future&lt;Report&gt; insert(String profileId, Report content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> profileId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dfareporting-v1/ReportsResourceListSortField.html">ReportsResourceListSortField</a> sortField = UNSPECIFIED, <a href="../dfareporting-v1/ReportsResourceListSortOrder.html">ReportsResourceListSortOrder</a> sortOrder = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ReportsResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves list of reports.
-
-<span class="param">profileId</span> The DFA user profile id.</p>
+<p>Retrieves list of reports.</p><ul><li>
+<span class="param">profileId</span> The DFA user profile id.</li><li>
+<span class="param">pageToken</span> The value of the nextToken from the previous result page.</li><li>
+<p>
+<span class="param">sortField</span> The field to sort the list by.
+Default: LAST<em>MODIFIED</em>TIME.</p></li><li>
+<p>
+<span class="param">sortOrder</span> Order of sorted results, default is 'DESCENDING'.
+Default: DESCENDING.</p></li><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li></ul>
+<p>Minimum: 0.
+Maximum: 10.</p>
 <pre class="source">
 Future&lt;ReportList&gt; list(String profileId, [String pageToken = UNSPECIFIED, ReportsResourceListSortField sortField = UNSPECIFIED, ReportsResourceListSortOrder sortOrder = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
@@ -186,13 +189,10 @@ Future&lt;ReportList&gt; list(String profileId, [String pageToken = UNSPECIFIED,
 <a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, <a href="../dfareporting-v1/Report.html">Report</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to ReportsResource.patch">#</a></h4>
 <div class="doc">
-<p>Updates a report. This method supports patch semantics.
-
-<span class="param">profileId</span> The DFA user profile id.
-
-<span class="param">reportId</span> The id of the report.
-
-<span class="param">content</span> the Report</p>
+<p>Updates a report. This method supports patch semantics.</p><ul><li>
+<span class="param">content</span> the Report</li><li>
+<span class="param">profileId</span> The DFA user profile id.</li><li>
+<span class="param">reportId</span> The id of the report.</li></ul>
 <pre class="source">
 Future&lt;Report&gt; patch(String profileId, String reportId, Report content) {
   final $queryParams = {};
@@ -228,11 +228,10 @@ Future&lt;Report&gt; patch(String profileId, String reportId, Report content) {
 <a href="../dart_core/Future.html">Future</a> <strong>run</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, [<a href="../dart_core/bool.html">bool</a> synchronous = UNSPECIFIED]) <a class="anchor-link" href="#run"
               title="Permalink to ReportsResource.run">#</a></h4>
 <div class="doc">
-<p>Runs a report.
-
-<span class="param">profileId</span> The DFA profile id.
-
-<span class="param">reportId</span> The id of the report.</p>
+<p>Runs a report.</p><ul><li>
+<span class="param">profileId</span> The DFA profile id.</li><li>
+<span class="param">reportId</span> The id of the report.</li><li>
+<span class="param">synchronous</span> If set and true, tries to run the report synchronously.</li></ul>
 <pre class="source">
 Future&lt;File&gt; run(String profileId, String reportId, [bool synchronous = UNSPECIFIED]) {
   final $queryParams = {};
@@ -267,13 +266,10 @@ Future&lt;File&gt; run(String profileId, String reportId, [bool synchronous = UN
 <a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, <a href="../dfareporting-v1/Report.html">Report</a> content) <a class="anchor-link" href="#update"
               title="Permalink to ReportsResource.update">#</a></h4>
 <div class="doc">
-<p>Updates a report.
-
-<span class="param">profileId</span> The DFA user profile id.
-
-<span class="param">reportId</span> The id of the report.
-
-<span class="param">content</span> the Report</p>
+<p>Updates a report.</p><ul><li>
+<span class="param">content</span> the Report</li><li>
+<span class="param">profileId</span> The DFA user profile id.</li><li>
+<span class="param">reportId</span> The id of the report.</li></ul>
 <pre class="source">
 Future&lt;Report&gt; update(String profileId, String reportId, Report content) {
   final $queryParams = {};

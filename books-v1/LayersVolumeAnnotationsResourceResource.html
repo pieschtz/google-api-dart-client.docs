@@ -32,13 +32,12 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> annotationId, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to LayersVolumeAnnotationsResourceResource.get">#</a></h4>
 <div class="doc">
-<p>Gets the volume annotation.
-
-<span class="param">volumeId</span> The volume to retrieve annotations for.
-
-<span class="param">layerId</span> The ID for the layer to get the annotations.
-
-<span class="param">annotationId</span> The ID of the volume annotation to retrieve.</p>
+<p>Gets the volume annotation.</p><ul><li>
+<span class="param">volumeId</span> The volume to retrieve annotations for.</li><li>
+<span class="param">layerId</span> The ID for the layer to get the annotations.</li><li>
+<span class="param">annotationId</span> The ID of the volume annotation to retrieve.</li><li>
+<span class="param">locale</span> The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future&lt;Volumeannotation&gt; get(String volumeId, String layerId, String annotationId, [String locale = UNSPECIFIED, String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -75,13 +74,29 @@ Future&lt;Volumeannotation&gt; get(String volumeId, String layerId, String annot
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> contentVersion, [<a href="../dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endPosition = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endOffset = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startOffset = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startPosition = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to LayersVolumeAnnotationsResourceResource.list">#</a></h4>
 <div class="doc">
-<p>Gets the volume annotations for a volume and layer.
-
-<span class="param">volumeId</span> The volume to retrieve annotations for.
-
-<span class="param">layerId</span> The ID for the layer to get the annotations.
-
-<span class="param">contentVersion</span> The content version for the requested volume.</p>
+<p>Gets the volume annotations for a volume and layer.</p><ul><li>
+<span class="param">volumeId</span> The volume to retrieve annotations for.</li><li>
+<span class="param">layerId</span> The ID for the layer to get the annotations.</li><li>
+<span class="param">contentVersion</span> The content version for the requested volume.</li><li>
+<p>
+<span class="param">showDeleted</span> Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults
+   to false.</p></li><li>
+<span class="param">endPosition</span> The end position to end retrieving data from.</li><li>
+<span class="param">endOffset</span> The end offset to end retrieving data from.</li><li>
+<span class="param">locale</span> The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</li><li>
+<span class="param">updatedMin</span> RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</li><li>
+<span class="param">updatedMax</span> RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).</li><li>
+<span class="param">maxResults</span> Maximum number of results to return</li></ul>
+<p>Minimum: 0.
+Maximum: 200.
+   * 
+<span class="param">pageToken</span> The value of the nextToken from the previous page.
+   * 
+<span class="param">source</span> String to identify the originator of this request.
+   * 
+<span class="param">startOffset</span> The start offset to start retrieving data from.
+   * 
+<span class="param">startPosition</span> The start position to start retrieving data from.</p>
 <pre class="source">
 Future&lt;Volumeannotations&gt; list(String volumeId, String layerId, String contentVersion, [bool showDeleted = UNSPECIFIED, String endPosition = UNSPECIFIED, String endOffset = UNSPECIFIED, String locale = UNSPECIFIED, String updatedMin = UNSPECIFIED, String updatedMax = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, String source = UNSPECIFIED, String startOffset = UNSPECIFIED, String startPosition = UNSPECIFIED]) {
   final $queryParams = {};

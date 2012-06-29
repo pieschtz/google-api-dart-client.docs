@@ -1,0 +1,300 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ObjectsResource Class / storage-v1beta1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="storage-v1beta1" data-type="ObjectsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../storage-v1beta1.html">storage-v1beta1</a> &rsaquo; <a href="../storage-v1beta1/ObjectsResource.html">ObjectsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ObjectsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><a href="../storage-v1beta1/Object.html">Object</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ObjectsResource</strong></span></p>
+<h3>Methods</h3>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object) <a class="anchor-link" href="#delete"
+              title="Permalink to ObjectsResource.delete">#</a></h4>
+<div class="doc">
+<p>Deletes data blobs and associated metadata.</p><ul><li>
+<span class="param">bucket</span> Name of the bucket in which the object resides.</li><li>
+<span class="param">object</span> Name of the object.</li></ul>
+<pre class="source">
+Future delete(String bucket, String object) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["bucket"] = bucket;
+  $pathParams["object"] = object;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "b/{bucket}/o/{object}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object, [<a href="../storage-v1beta1/ObjectsResourceGetProjection.html">ObjectsResourceGetProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to ObjectsResource.get">#</a></h4>
+<div class="doc">
+<p>Retrieves objects or their associated metadata.</p><ul><li>
+<span class="param">bucket</span> Name of the bucket in which the object resides.</li><li>
+<span class="param">object</span> Name of the object.</li><li>
+<span class="param">projection</span> Set of properties to return. Defaults to no_acl.</li></ul>
+<pre class="source">
+Future&lt;Object&gt; get(String bucket, String object, [ObjectsResourceGetProjection projection = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["bucket"] = bucket;
+  $pathParams["object"] = object;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "b/{bucket}/o/{object}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Object.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../storage-v1beta1/Object.html">Object</a> content, [<a href="../dart_core/String.html">String</a> name = UNSPECIFIED, <a href="../storage-v1beta1/ObjectsResourceInsertProjection.html">ObjectsResourceInsertProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+              title="Permalink to ObjectsResource.insert">#</a></h4>
+<div class="doc">
+<p>Stores new data blobs and associated metadata.</p><ul><li>
+<span class="param">content</span> the Object</li><li>
+<p>
+<span class="param">bucket</span> Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket
+   value, if any.</p></li><li>
+<p>
+<span class="param">name</span> Name of the object. Required when the object metadata is not otherwise provided. Overrides the
+   object metadata's name value, if any.</p></li><li>
+<p>
+<span class="param">projection</span> Set of properties to return. Defaults to no_acl, unless the object resource specifies the acl
+   property, when it defaults to full.</p></li></ul>
+<pre class="source">
+Future&lt;Object&gt; insert(String bucket, Object content, [String name = UNSPECIFIED, ObjectsResourceInsertProjection projection = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["bucket"] = bucket;
+  if (UNSPECIFIED != name) $queryParams["name"] = name;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Object.serialize(content));
+  final $path = "b/{bucket}/o";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Object.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> bucket, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../storage-v1beta1/ObjectsResourceListProjection.html">ObjectsResourceListProjection</a> projection = UNSPECIFIED, <a href="../dart_core/String.html">String</a> prefix = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> delimiter = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to ObjectsResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves a list of objects matching the criteria.</p><ul><li>
+<span class="param">bucket</span> Name of the bucket in which to look for objects.</li><li>
+<p>
+<span class="param">maxResults</span> Maximum number of items plus prefixes to return. As duplicate prefixes are omitted, fewer total
+   results may be returned than requested.</p></li></ul>
+<p>Minimum: 0.
+   * 
+<span class="param">projection</span> Set of properties to return. Defaults to no_acl.
+   * 
+<span class="param">prefix</span> Filter results to objects whose names begin with this prefix.
+   * 
+<span class="param">pageToken</span> A previously-returned page token representing part of the larger set of results to view.
+   * 
+<span class="param">delimiter</span> Returns results in a directory-like mode. items will contain only objects whose names, aside from</p>
+<pre><code>   the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain
+   delimiter will have their name, truncated after the delimiter, returned in prefixes.
+   Duplicate prefixes are omitted.
+</code></pre>
+<pre class="source">
+Future&lt;Objects&gt; list(String bucket, [int maxResults = UNSPECIFIED, ObjectsResourceListProjection projection = UNSPECIFIED, String prefix = UNSPECIFIED, String pageToken = UNSPECIFIED, String delimiter = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["bucket"] = bucket;
+  if (UNSPECIFIED != maxResults) $queryParams["max-results"] = maxResults;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (UNSPECIFIED != prefix) $queryParams["prefix"] = prefix;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != delimiter) $queryParams["delimiter"] = delimiter;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "b/{bucket}/o";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Objects.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="patch">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object, <a href="../storage-v1beta1/Object.html">Object</a> content, [<a href="../storage-v1beta1/ObjectsResourcePatchProjection.html">ObjectsResourcePatchProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+              title="Permalink to ObjectsResource.patch">#</a></h4>
+<div class="doc">
+<p>Updates a data blob's associated metadata. This method supports patch semantics.</p><ul><li>
+<span class="param">content</span> the Object</li><li>
+<span class="param">bucket</span> Name of the bucket in which the object resides.</li><li>
+<span class="param">object</span> Name of the object.</li><li>
+<span class="param">projection</span> Set of properties to return. Defaults to full.</li></ul>
+<pre class="source">
+Future&lt;Object&gt; patch(String bucket, String object, Object content, [ObjectsResourcePatchProjection projection = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["bucket"] = bucket;
+  $pathParams["object"] = object;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Object.serialize(content));
+  final $path = "b/{bucket}/o/{object}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Object.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="update">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object, <a href="../storage-v1beta1/Object.html">Object</a> content, [<a href="../storage-v1beta1/ObjectsResourceUpdateProjection.html">ObjectsResourceUpdateProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#update"
+              title="Permalink to ObjectsResource.update">#</a></h4>
+<div class="doc">
+<p>Updates a data blob's associated metadata.</p><ul><li>
+<span class="param">content</span> the Object</li><li>
+<span class="param">bucket</span> Name of the bucket in which the object resides.</li><li>
+<span class="param">object</span> Name of the object.</li><li>
+<span class="param">projection</span> Set of properties to return. Defaults to full.</li></ul>
+<pre class="source">
+Future&lt;Object&gt; update(String bucket, String object, Object content, [ObjectsResourceUpdateProjection projection = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["bucket"] = bucket;
+  $pathParams["object"] = object;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Object.serialize(content));
+  final $path = "b/{bucket}/o/{object}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PUT", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Object.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

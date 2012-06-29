@@ -32,11 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> blogId, <a href="../dart_core/String.html">String</a> pageId) <a class="anchor-link" href="#get"
               title="Permalink to PagesResource.get">#</a></h4>
 <div class="doc">
-<p>Gets one blog page by id.
-
-<span class="param">blogId</span> ID of the blog containing the page.
-
-<span class="param">pageId</span> The ID of the page to get.</p>
+<p>Gets one blog page by id.</p><ul><li>
+<span class="param">blogId</span> ID of the blog containing the page.</li><li>
+<span class="param">pageId</span> The ID of the page to get.</li></ul>
 <pre class="source">
 Future&lt;Page&gt; get(String blogId, String pageId) {
   final $queryParams = {};
@@ -70,9 +68,9 @@ Future&lt;Page&gt; get(String blogId, String pageId) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> blogId, [<a href="../dart_core/bool.html">bool</a> fetchBodies = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to PagesResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves pages for a blog, possibly filtered.
-
-<span class="param">blogId</span> ID of the blog to fetch pages from.</p>
+<p>Retrieves pages for a blog, possibly filtered.</p><ul><li>
+<span class="param">blogId</span> ID of the blog to fetch pages from.</li><li>
+<span class="param">fetchBodies</span> Whether to retrieve the Page bodies.</li></ul>
 <pre class="source">
 Future&lt;PageList&gt; list(String blogId, [bool fetchBodies = UNSPECIFIED]) {
   final $queryParams = {};

@@ -32,11 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, [<a href="../dart_core/bool.html">bool</a> getStats = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to TaskqueuesResource.get">#</a></h4>
 <div class="doc">
-<p>Get detailed information about a TaskQueue.
-
-<span class="param">project</span> The project under which the queue lies.
-
-<span class="param">taskqueue</span> The id of the taskqueue to get the properties of.</p>
+<p>Get detailed information about a TaskQueue.</p><ul><li>
+<span class="param">project</span> The project under which the queue lies.</li><li>
+<span class="param">taskqueue</span> The id of the taskqueue to get the properties of.</li><li>
+<span class="param">getStats</span> Whether to get stats. Optional.</li></ul>
 <pre class="source">
 Future&lt;TaskQueue&gt; get(String project, String taskqueue, [bool getStats = UNSPECIFIED]) {
   final $queryParams = {};

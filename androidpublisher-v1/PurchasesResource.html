@@ -32,15 +32,12 @@
 <a href="../dart_core/Future.html">Future</a> <strong>cancel</strong>(<a href="../dart_core/String.html">String</a> packageName, <a href="../dart_core/String.html">String</a> subscriptionId, <a href="../dart_core/String.html">String</a> token) <a class="anchor-link" href="#cancel"
               title="Permalink to PurchasesResource.cancel">#</a></h4>
 <div class="doc">
-<p>Cancels a user's subscription purchase. The subscription remains valid until its expiration time.
-
-<span class="param">packageName</span> The package name of the application for which this subscription was purchased (for example,</p>
-<pre><code>   'com.some.thing').
-</code></pre>
+<p>Cancels a user's subscription purchase. The subscription remains valid until its expiration time.</p><ul><li>
 <p>
-<span class="param">subscriptionId</span> The purchased subscription ID (for example, 'monthly001').
-
-<span class="param">token</span> The token provided to the user's device when the subscription was purchased.</p>
+<span class="param">packageName</span> The package name of the application for which this subscription was purchased (for example,
+   'com.some.thing').</p></li><li>
+<span class="param">subscriptionId</span> The purchased subscription ID (for example, 'monthly001').</li><li>
+<span class="param">token</span> The token provided to the user's device when the subscription was purchased.</li></ul>
 <pre class="source">
 Future cancel(String packageName, String subscriptionId, String token) {
   final $queryParams = {};
@@ -75,15 +72,12 @@ Future cancel(String packageName, String subscriptionId, String token) {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> packageName, <a href="../dart_core/String.html">String</a> subscriptionId, <a href="../dart_core/String.html">String</a> token) <a class="anchor-link" href="#get"
               title="Permalink to PurchasesResource.get">#</a></h4>
 <div class="doc">
-<p>Checks whether a user's subscription purchase is valid and returns its expiry time.
-
-<span class="param">packageName</span> The package name of the application for which this subscription was purchased (for example,</p>
-<pre><code>   'com.some.thing').
-</code></pre>
+<p>Checks whether a user's subscription purchase is valid and returns its expiry time.</p><ul><li>
 <p>
-<span class="param">subscriptionId</span> The purchased subscription ID (for example, 'monthly001').
-
-<span class="param">token</span> The token provided to the user's device when the subscription was purchased.</p>
+<span class="param">packageName</span> The package name of the application for which this subscription was purchased (for example,
+   'com.some.thing').</p></li><li>
+<span class="param">subscriptionId</span> The purchased subscription ID (for example, 'monthly001').</li><li>
+<span class="param">token</span> The token provided to the user's device when the subscription was purchased.</li></ul>
 <pre class="source">
 Future&lt;SubscriptionPurchase&gt; get(String packageName, String subscriptionId, String token) {
   final $queryParams = {};

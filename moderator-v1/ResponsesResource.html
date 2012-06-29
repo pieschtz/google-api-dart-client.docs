@@ -33,15 +33,13 @@
               title="Permalink to ResponsesResource.insert">#</a></h4>
 <div class="doc">
 <p>Inserts a response for the specified submission in the specified topic within the specified
-series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">topicId</span> The decimal ID of the Topic within the Series.
-
-<span class="param">parentSubmissionId</span> The decimal ID of the parent Submission within the Series.
-
-<span class="param">content</span> the Submission</p>
+series.</p><ul><li>
+<span class="param">content</span> the Submission</li><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">topicId</span> The decimal ID of the Topic within the Series.</li><li>
+<span class="param">parentSubmissionId</span> The decimal ID of the parent Submission within the Series.</li><li>
+<span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li><li>
+<span class="param">anonymous</span> Set to true to mark the new submission as anonymous.</li></ul>
 <pre class="source">
 Future&lt;Submission&gt; insert(int seriesId, int topicId, int parentSubmissionId, Submission content, [String unauthToken = UNSPECIFIED, bool anonymous = UNSPECIFIED]) {
   final $queryParams = {};
@@ -81,11 +79,15 @@ Future&lt;Submission&gt; insert(int seriesId, int topicId, int parentSubmissionI
               title="Permalink to ResponsesResource.list">#</a></h4>
 <div class="doc">
 <p>Lists or searches the responses for the specified submission within the specified series and
-returns the search results.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</p>
+returns the search results.</p><ul><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li><li>
+<span class="param">sort</span> Sort order.</li><li>
+<span class="param">author</span> Restricts the results to submissions by a specific author.</li><li>
+<span class="param">startIndex</span> Index of the first result to be retrieved.</li><li>
+<span class="param">q</span> Search query.</li><li>
+<span class="param">hasAttachedVideo</span> Specifies whether to restrict to submissions that have videos attached.</li></ul>
 <pre class="source">
 Future&lt;SubmissionList&gt; list(int seriesId, int submissionId, [int maxResults = UNSPECIFIED, String sort = UNSPECIFIED, String author = UNSPECIFIED, int startIndex = UNSPECIFIED, String q = UNSPECIFIED, bool hasAttachedVideo = UNSPECIFIED]) {
   final $queryParams = {};

@@ -32,9 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> annotationId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#delete"
               title="Permalink to MylibraryAnnotationsResourceResource.delete">#</a></h4>
 <div class="doc">
-<p>Deletes an annotation.
-
-<span class="param">annotationId</span> The ID for the annotation to delete.</p>
+<p>Deletes an annotation.</p><ul><li>
+<span class="param">annotationId</span> The ID for the annotation to delete.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future delete(String annotationId, [String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -68,9 +68,9 @@ Future delete(String annotationId, [String source = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> annotationId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to MylibraryAnnotationsResourceResource.get">#</a></h4>
 <div class="doc">
-<p>Gets an annotation by its ID.
-
-<span class="param">annotationId</span> The ID for the annotation to retrieve.</p>
+<p>Gets an annotation by its ID.</p><ul><li>
+<span class="param">annotationId</span> The ID for the annotation to retrieve.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future&lt;Annotation&gt; get(String annotationId, [String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -104,9 +104,9 @@ Future&lt;Annotation&gt; get(String annotationId, [String source = UNSPECIFIED])
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../books-v1/Annotation.html">Annotation</a> content, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#insert"
               title="Permalink to MylibraryAnnotationsResourceResource.insert">#</a></h4>
 <div class="doc">
-<p>Inserts a new annotation.
-
-<span class="param">content</span> the Annotation</p>
+<p>Inserts a new annotation.</p><ul><li>
+<span class="param">content</span> the Annotation</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future&lt;Annotation&gt; insert(Annotation content, [String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -141,7 +141,26 @@ Future&lt;Annotation&gt; insert(Annotation content, [String source = UNSPECIFIED
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../dart_core/String.html">String</a> volumeId = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/List.html">List</a> pageIds = UNSPECIFIED, <a href="../dart_core/String.html">String</a> contentVersion = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> layerId = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to MylibraryAnnotationsResourceResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of annotations, possibly filtered.</p>
+<p>Retrieves a list of annotations, possibly filtered.</p><ul><li>
+<p>
+<span class="param">showDeleted</span> Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults
+   to false.</p></li><li>
+<span class="param">updatedMin</span> RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</li><li>
+<span class="param">updatedMax</span> RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).</li><li>
+<span class="param">volumeId</span> The volume to restrict annotations to.</li><li>
+<span class="param">maxResults</span> Maximum number of results to return</li></ul>
+<p>Minimum: 0.
+Maximum: 40.
+   * 
+<span class="param">pageToken</span> The value of the nextToken from the previous page.
+   * 
+<span class="param">pageIds</span> The page ID(s) for the volume that is being queried.
+   * 
+<span class="param">contentVersion</span> The content version for the requested volume.
+   * 
+<span class="param">source</span> String to identify the originator of this request.
+   * 
+<span class="param">layerId</span> The layer ID to limit annotation by.</p>
 <pre class="source">
 Future&lt;Annotations&gt; list([bool showDeleted = UNSPECIFIED, String updatedMin = UNSPECIFIED, String updatedMax = UNSPECIFIED, String volumeId = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, List&lt;String&gt; pageIds = UNSPECIFIED, String contentVersion = UNSPECIFIED, String source = UNSPECIFIED, String layerId = UNSPECIFIED]) {
   final $queryParams = {};
@@ -183,11 +202,10 @@ Future&lt;Annotations&gt; list([bool showDeleted = UNSPECIFIED, String updatedMi
 <a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> annotationId, <a href="../books-v1/Annotation.html">Annotation</a> content, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#update"
               title="Permalink to MylibraryAnnotationsResourceResource.update">#</a></h4>
 <div class="doc">
-<p>Updates an existing annotation.
-
-<span class="param">annotationId</span> The ID for the annotation to update.
-
-<span class="param">content</span> the Annotation</p>
+<p>Updates an existing annotation.</p><ul><li>
+<span class="param">content</span> the Annotation</li><li>
+<span class="param">annotationId</span> The ID for the annotation to update.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future&lt;Annotation&gt; update(String annotationId, Annotation content, [String source = UNSPECIFIED]) {
   final $queryParams = {};

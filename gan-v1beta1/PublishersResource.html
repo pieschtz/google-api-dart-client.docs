@@ -34,11 +34,10 @@
 <div class="doc">
 <p>Retrieves data about a single advertiser if that the requesting advertiser/publisher has access
 to it. Only advertisers can look up publishers. Publishers can request information about
-themselves by omitting the publisherId query parameter.
-
-<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
-
-<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</p>
+themselves by omitting the publisherId query parameter.</p><ul><li>
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.</li><li>
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li><li>
+<span class="param">publisherId</span> The ID of the publisher to look up. Optional.</li></ul>
 <pre class="source">
 Future&lt;Publisher&gt; get(PublishersResourceGetRole role, String roleId, [String publisherId = UNSPECIFIED]) {
   final $queryParams = {};
@@ -73,11 +72,35 @@ Future&lt;Publisher&gt; get(PublishersResourceGetRole role, String roleId, [Stri
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../gan-v1beta1/PublishersResourceListRole.html">PublishersResourceListRole</a> role, <a href="../dart_core/String.html">String</a> roleId, [<a href="../dart_core/String.html">String</a> publisherCategory = UNSPECIFIED, <a href="../gan-v1beta1/PublishersResourceListRelationshipStatus.html">PublishersResourceListRelationshipStatus</a> relationshipStatus = UNSPECIFIED, <a href="../dart_core/double.html">double</a> minSevenDayEpc = UNSPECIFIED, <a href="../dart_core/double.html">double</a> minNinetyDayEpc = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/int.html">int</a> minPayoutRank = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to PublishersResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves data about all publishers that the requesting advertiser/publisher has access to.
-
-<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
-
-<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</p>
+<p>Retrieves data about all publishers that the requesting advertiser/publisher has access to.</p><ul><li>
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.</li><li>
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li><li>
+<p>
+<span class="param">publisherCategory</span> Caret(^) delimted list of publisher categories. Valid categories: (unclassified|community<em>and</em>conten
+   t|shopping<em>and</em>promotion|loyalty<em>and</em>rewards|network|search<em>specialist|comparison</em>shopping
+   |email). Filters out all publishers not in one of the given advertiser categories.
+   Optional.</p></li><li>
+<p>
+<span class="param">relationshipStatus</span> Filters out all publishers for which do not have the given relationship status with the requesting
+   publisher.</p></li><li>
+<p>
+<span class="param">minSevenDayEpc</span> Filters out all publishers that have a seven day EPC average lower than the given value (inclusive).
+   Min value 0.0. Optional.</p></li><li>
+<p>
+<span class="param">minNinetyDayEpc</span> Filters out all publishers that have a ninety day EPC average lower than the given value
+   (inclusive). Min value: 0.0. Optional.</p></li><li>
+<span class="param">pageToken</span> The value of 'nextPageToken' from the previous page. Optional.</li><li>
+<span class="param">maxResults</span> Max number of items to return in this page. Optional. Defaults to 20.</li></ul>
+<p>Minimum: 0.
+Maximum: 100.
+   * 
+<span class="param">minPayoutRank</span> A value between 1 and 4, where 1 represents the quartile of publishers with the lowest ranks and 4</p>
+<pre><code>   represents the quartile of publishers with the highest ranks. Filters out all publishers
+   with a lower rank than the given quartile. For example if a 2 was given only publishers
+   with a payout rank of 25 or higher would be included. Optional.
+</code></pre>
+<p>Minimum: 1.
+Maximum: 4.</p>
 <pre class="source">
 Future&lt;Publishers&gt; list(PublishersResourceListRole role, String roleId, [String publisherCategory = UNSPECIFIED, PublishersResourceListRelationshipStatus relationshipStatus = UNSPECIFIED, double minSevenDayEpc = UNSPECIFIED, double minNinetyDayEpc = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, int minPayoutRank = UNSPECIFIED]) {
   final $queryParams = {};

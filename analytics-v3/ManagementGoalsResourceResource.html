@@ -32,19 +32,21 @@
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> accountId, <a href="../dart_core/String.html">String</a> webPropertyId, <a href="../dart_core/String.html">String</a> profileId, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ManagementGoalsResourceResource.list">#</a></h4>
 <div class="doc">
-<p>Lists goals to which the user has access.
-
-<span class="param">accountId</span> Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all</p>
-<pre><code>   the accounts that user has access to.
-</code></pre>
+<p>Lists goals to which the user has access.</p><ul><li>
 <p>
-<span class="param">webPropertyId</span> Web property ID to retrieve goals for. Can either be a specific web property ID or '~all', which</p>
-<pre><code>   refers to all the web properties that user has access to.
-</code></pre>
+<span class="param">accountId</span> Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all
+   the accounts that user has access to.</p></li><li>
 <p>
-<span class="param">profileId</span> Profile ID to retrieve goals for. Can either be a specific profile ID or '~all', which refers to all</p>
-<pre><code>   the profiles that user has access to.
-</code></pre>
+<span class="param">webPropertyId</span> Web property ID to retrieve goals for. Can either be a specific web property ID or '~all', which
+   refers to all the web properties that user has access to.</p></li><li>
+<p>
+<span class="param">profileId</span> Profile ID to retrieve goals for. Can either be a specific profile ID or '~all', which refers to all
+   the profiles that user has access to.</p></li><li>
+<span class="param">maxResults</span> The maximum number of goals to include in this response.</li><li>
+<p>
+<span class="param">startIndex</span> An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the
+   max-results parameter.</p></li></ul>
+<p>Minimum: 1.</p>
 <pre class="source">
 Future&lt;Goals&gt; list(String accountId, String webPropertyId, String profileId, [int maxResults = UNSPECIFIED, int startIndex = UNSPECIFIED]) {
   final $queryParams = {};

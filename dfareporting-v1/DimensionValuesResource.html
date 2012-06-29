@@ -32,11 +32,13 @@
 <a href="../dart_core/Future.html">Future</a> <strong>query</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dfareporting-v1/DimensionValueRequest.html">DimensionValueRequest</a> content, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#query"
               title="Permalink to DimensionValuesResource.query">#</a></h4>
 <div class="doc">
-<p>Retrieves list of report dimension values for a list of filters.
-
-<span class="param">profileId</span> The DFA user profile id.
-
-<span class="param">content</span> the DimensionValueRequest</p>
+<p>Retrieves list of report dimension values for a list of filters.</p><ul><li>
+<span class="param">content</span> the DimensionValueRequest</li><li>
+<span class="param">profileId</span> The DFA user profile id.</li><li>
+<span class="param">pageToken</span> The value of the nextToken from the previous result page.</li><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li></ul>
+<p>Minimum: 0.
+Maximum: 100.</p>
 <pre class="source">
 Future&lt;DimensionValueList&gt; query(String profileId, DimensionValueRequest content, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};

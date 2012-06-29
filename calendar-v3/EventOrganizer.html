@@ -43,6 +43,7 @@ static EventOrganizer parse(Map&lt;String, Object&gt; json) {
   result.self = identity(json["self"]);
   result.displayName = identity(json["displayName"]);
   result.email = identity(json["email"]);
+  result.id = identity(json["id"]);
   return result;
 }
 </pre>
@@ -61,6 +62,7 @@ static Object serialize(EventOrganizer value) {
   result["self"] = identity(value.self);
   result["displayName"] = identity(value.displayName);
   result["email"] = identity(value.email);
+  result["id"] = identity(value.id);
   return result;
 }
 </pre>
@@ -102,6 +104,19 @@ String displayName;
 <p>The organizer's email address, if available.</p>
 <pre class="source">
 String email;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to EventOrganizer.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The organizer's Profile ID, if available.</p>
+<pre class="source">
+String id;
 </pre>
 </div>
 </div>

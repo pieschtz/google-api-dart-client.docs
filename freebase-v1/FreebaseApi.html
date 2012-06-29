@@ -46,9 +46,23 @@ FreebaseApi([this.baseUrl = "https://www.googleapis.com/freebase/v1/", this.appl
 <a href="../dart_core/Future.html">Future</a> <strong>image</strong>(<a href="../dart_core/List.html">List</a> id, [<a href="../dart_core/int.html">int</a> maxwidth = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxheight = UNSPECIFIED, <a href="../dart_core/String.html">String</a> fallbackid = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> pad = UNSPECIFIED, <a href="../freebase-v1/ImageMode.html">ImageMode</a> mode = UNSPECIFIED]) <a class="anchor-link" href="#image"
               title="Permalink to FreebaseApi.image">#</a></h4>
 <div class="doc">
-<p>Returns the scaled/cropped image attached to a freebase node.
-
-<span class="param">id</span> Freebase entity or content id, mid, or guid.</p>
+<p>Returns the scaled/cropped image attached to a freebase node.</p><ul><li>
+<span class="param">id</span> Freebase entity or content id, mid, or guid.</li><li>
+<span class="param">maxwidth</span> Maximum width in pixels for resulting image.</li></ul>
+<p>Maximum: 4096.
+   * 
+<span class="param">maxheight</span> Maximum height in pixels for resulting image.</p>
+<p>Maximum: 4096.
+   * 
+<span class="param">fallbackid</span> Use the image associated with this secondary id if no image is associated with the primary id.</p>
+<pre><code>   Default: /freebase/no_image_png.
+</code></pre><ul><li>
+<p>
+<span class="param">pad</span> A boolean specifying whether the resulting image should be padded up to the requested dimensions.
+   Default: false.</p></li><li>
+<p>
+<span class="param">mode</span> Method used to scale or crop image.
+Default: fit.</p></li></ul>
 <pre class="source">
 Future image(List&lt;String&gt; id, [int maxwidth = UNSPECIFIED, int maxheight = UNSPECIFIED, String fallbackid = UNSPECIFIED, bool pad = UNSPECIFIED, ImageMode mode = UNSPECIFIED]) {
   final $queryParams = {};
@@ -86,9 +100,32 @@ Future image(List&lt;String&gt; id, [int maxwidth = UNSPECIFIED, int maxheight =
 <a href="../dart_core/Future.html">Future</a> <strong>mqlread</strong>(<a href="../dart_core/String.html">String</a> query, [<a href="../dart_core/String.html">String</a> lang = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> htmlEscape = UNSPECIFIED, <a href="../dart_core/int.html">int</a> indent = UNSPECIFIED, <a href="../freebase-v1/MqlreadUniquenessFailure.html">MqlreadUniquenessFailure</a> uniquenessFailure = UNSPECIFIED, <a href="../dart_core/String.html">String</a> dateline = UNSPECIFIED, <a href="../dart_core/String.html">String</a> cursor = UNSPECIFIED, <a href="../dart_core/String.html">String</a> callback = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> cost = UNSPECIFIED, <a href="../dart_core/String.html">String</a> asOfTime = UNSPECIFIED]) <a class="anchor-link" href="#mqlread"
               title="Permalink to FreebaseApi.mqlread">#</a></h4>
 <div class="doc">
-<p>Performs MQL Queries.
-
-<span class="param">query</span> An envelope containing a single MQL query.</p>
+<p>Performs MQL Queries.</p><ul><li>
+<span class="param">query</span> An envelope containing a single MQL query.</li><li>
+<p>
+<span class="param">lang</span> The language of the results - an id of a /type/lang object.
+Default: /lang/en.</p></li><li>
+<p>
+<span class="param">htmlEscape</span> Whether or not to escape entities.
+Default: true.</p></li><li>
+<p>
+<span class="param">indent</span> How many spaces to indent the json.
+Default: 0.</p></li></ul>
+<p>Maximum: 10.
+   * 
+<span class="param">uniquenessFailure</span> How MQL responds to uniqueness failures.
+Default: hard.
+   * 
+<span class="param">dateline</span> The dateline that you get in a mqlwrite response to ensure consistent results.
+   * 
+<span class="param">cursor</span> The mql cursor.
+   * 
+<span class="param">callback</span> JS method name for JSONP callbacks.
+   * 
+<span class="param">cost</span> Show the costs or not.
+Default: false.
+   * 
+<span class="param">asOfTime</span> Run the query as it would've been run at the specified point in time.</p>
 <pre class="source">
 Future mqlread(String query, [String lang = UNSPECIFIED, bool htmlEscape = UNSPECIFIED, int indent = UNSPECIFIED, MqlreadUniquenessFailure uniquenessFailure = UNSPECIFIED, String dateline = UNSPECIFIED, String cursor = UNSPECIFIED, String callback = UNSPECIFIED, bool cost = UNSPECIFIED, String asOfTime = UNSPECIFIED]) {
   final $queryParams = {};

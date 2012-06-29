@@ -1,0 +1,160 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ImageList Class / compute-v1beta12 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="compute-v1beta12" data-type="ImageList">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/ImageList.html">ImageList</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ImageList</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ImageList</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../compute-v1beta12/ImageList.html">ImageList</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ImageList.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ImageList parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ImageList();
+  result.nextPageToken = identity(json["nextPageToken"]);
+  result.items = map(Image.parse)(json["items"]);
+  result.kind = identity(json["kind"]);
+  result.id = identity(json["id"]);
+  result.selfLink = identity(json["selfLink"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/ImageList.html">ImageList</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ImageList.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ImageList value) {
+  if (value == null) return null;
+  final result = {};
+  result["nextPageToken"] = identity(value.nextPageToken);
+  result["items"] = map(Image.serialize)(value.items);
+  result["kind"] = identity(value.kind);
+  result["id"] = identity(value.id);
+  result["selfLink"] = identity(value.selfLink);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ImageList.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to ImageList.id">#</a>
+        </h4>
+        <div class="doc">
+<p>Unique identifier for the resource; defined by the server (output only).</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="items">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>items</strong> <a class="anchor-link"
+            href="#items"
+            title="Permalink to ImageList.items">#</a>
+        </h4>
+        <div class="doc">
+<p>The disk image resources.</p>
+<pre class="source">
+List&lt;Image&gt; items;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to ImageList.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Type of resource.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="nextPageToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>nextPageToken</strong> <a class="anchor-link"
+            href="#nextPageToken"
+            title="Permalink to ImageList.nextPageToken">#</a>
+        </h4>
+        <div class="doc">
+<p>A token used to continue a truncated list request.</p>
+<pre class="source">
+String nextPageToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to ImageList.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Server defined URL for this resource (output only).</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

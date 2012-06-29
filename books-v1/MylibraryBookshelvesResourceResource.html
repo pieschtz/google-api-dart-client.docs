@@ -32,11 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>addVolume</strong>(<a href="../dart_core/String.html">String</a> shelf, <a href="../dart_core/String.html">String</a> volumeId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#addVolume"
               title="Permalink to MylibraryBookshelvesResourceResource.addVolume">#</a></h4>
 <div class="doc">
-<p>Adds a volume to a bookshelf.
-
-<span class="param">shelf</span> ID of bookshelf to which to add a volume.
-
-<span class="param">volumeId</span> ID of volume to add.</p>
+<p>Adds a volume to a bookshelf.</p><ul><li>
+<span class="param">shelf</span> ID of bookshelf to which to add a volume.</li><li>
+<span class="param">volumeId</span> ID of volume to add.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future addVolume(String shelf, String volumeId, [String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -71,9 +70,9 @@ Future addVolume(String shelf, String volumeId, [String source = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>clearVolumes</strong>(<a href="../dart_core/String.html">String</a> shelf, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#clearVolumes"
               title="Permalink to MylibraryBookshelvesResourceResource.clearVolumes">#</a></h4>
 <div class="doc">
-<p>Clears all volumes from a bookshelf.
-
-<span class="param">shelf</span> ID of bookshelf from which to remove a volume.</p>
+<p>Clears all volumes from a bookshelf.</p><ul><li>
+<span class="param">shelf</span> ID of bookshelf from which to remove a volume.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future clearVolumes(String shelf, [String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -107,9 +106,9 @@ Future clearVolumes(String shelf, [String source = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> shelf, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to MylibraryBookshelvesResourceResource.get">#</a></h4>
 <div class="doc">
-<p>Retrieves metadata for a specific bookshelf belonging to the authenticated user.
-
-<span class="param">shelf</span> ID of bookshelf to retrieve.</p>
+<p>Retrieves metadata for a specific bookshelf belonging to the authenticated user.</p><ul><li>
+<span class="param">shelf</span> ID of bookshelf to retrieve.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future&lt;Bookshelf&gt; get(String shelf, [String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -143,7 +142,8 @@ Future&lt;Bookshelf&gt; get(String shelf, [String source = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to MylibraryBookshelvesResourceResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of bookshelves belonging to the authenticated user.</p>
+<p>Retrieves a list of bookshelves belonging to the authenticated user.</p><ul><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future&lt;Bookshelves&gt; list([String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -176,15 +176,13 @@ Future&lt;Bookshelves&gt; list([String source = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>moveVolume</strong>(<a href="../dart_core/String.html">String</a> shelf, <a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/int.html">int</a> volumePosition, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#moveVolume"
               title="Permalink to MylibraryBookshelvesResourceResource.moveVolume">#</a></h4>
 <div class="doc">
-<p>Moves a volume within a bookshelf.
-
-<span class="param">shelf</span> ID of bookshelf with the volume.
-
-<span class="param">volumeId</span> ID of volume to move.
-
-<span class="param">volumePosition</span> Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between</p>
-<pre><code>   the first and the second and so on.)
-</code></pre>
+<p>Moves a volume within a bookshelf.</p><ul><li>
+<span class="param">shelf</span> ID of bookshelf with the volume.</li><li>
+<span class="param">volumeId</span> ID of volume to move.</li><li>
+<p>
+<span class="param">volumePosition</span> Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between
+   the first and the second and so on.)</p></li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future moveVolume(String shelf, String volumeId, int volumePosition, [String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -220,11 +218,10 @@ Future moveVolume(String shelf, String volumeId, int volumePosition, [String sou
 <a href="../dart_core/Future.html">Future</a> <strong>removeVolume</strong>(<a href="../dart_core/String.html">String</a> shelf, <a href="../dart_core/String.html">String</a> volumeId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#removeVolume"
               title="Permalink to MylibraryBookshelvesResourceResource.removeVolume">#</a></h4>
 <div class="doc">
-<p>Removes a volume from a bookshelf.
-
-<span class="param">shelf</span> ID of bookshelf from which to remove a volume.
-
-<span class="param">volumeId</span> ID of volume to remove.</p>
+<p>Removes a volume from a bookshelf.</p><ul><li>
+<span class="param">shelf</span> ID of bookshelf from which to remove a volume.</li><li>
+<span class="param">volumeId</span> ID of volume to remove.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future removeVolume(String shelf, String volumeId, [String source = UNSPECIFIED]) {
   final $queryParams = {};

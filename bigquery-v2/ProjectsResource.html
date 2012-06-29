@@ -32,7 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ProjectsResource.list">#</a></h4>
 <div class="doc">
-<p>Lists the projects to which you have at least read access.</p>
+<p>Lists the projects to which you have at least read access.</p><ul><li>
+<span class="param">pageToken</span> Page token, returned by a previous call, to request the next page of results</li><li>
+<span class="param">maxResults</span> Maximum number of results to return</li></ul>
 <pre class="source">
 Future&lt;ProjectList&gt; list([String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};

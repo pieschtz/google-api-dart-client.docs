@@ -32,13 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> topicId, <a href="../dart_core/String.html">String</a> messageId) <a class="anchor-link" href="#delete"
               title="Permalink to CommunityMessagesResource.delete">#</a></h4>
 <div class="doc">
-<p>Moves a message of the community to the trash folder.
-
-<span class="param">communityId</span> The ID of the community whose message will be moved to the trash folder.
-
-<span class="param">topicId</span> The ID of the topic whose message will be moved to the trash folder.
-
-<span class="param">messageId</span> The ID of the message to be moved to the trash folder.</p>
+<p>Moves a message of the community to the trash folder.</p><ul><li>
+<span class="param">communityId</span> The ID of the community whose message will be moved to the trash folder.</li><li>
+<span class="param">topicId</span> The ID of the topic whose message will be moved to the trash folder.</li><li>
+<span class="param">messageId</span> The ID of the message to be moved to the trash folder.</li></ul>
 <pre class="source">
 Future delete(int communityId, String topicId, String messageId) {
   final $queryParams = {};
@@ -73,13 +70,10 @@ Future delete(int communityId, String topicId, String messageId) {
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> topicId, <a href="../orkut-v2/CommunityMessage.html">CommunityMessage</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CommunityMessagesResource.insert">#</a></h4>
 <div class="doc">
-<p>Adds a message to a given community topic.
-
-<span class="param">communityId</span> The ID of the community the message should be added to.
-
-<span class="param">topicId</span> The ID of the topic the message should be added to.
-
-<span class="param">content</span> the CommunityMessage</p>
+<p>Adds a message to a given community topic.</p><ul><li>
+<span class="param">content</span> the CommunityMessage</li><li>
+<span class="param">communityId</span> The ID of the community the message should be added to.</li><li>
+<span class="param">topicId</span> The ID of the topic the message should be added to.</li></ul>
 <pre class="source">
 Future&lt;CommunityMessage&gt; insert(int communityId, String topicId, CommunityMessage content) {
   final $queryParams = {};
@@ -115,11 +109,15 @@ Future&lt;CommunityMessage&gt; insert(int communityId, String topicId, Community
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> topicId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CommunityMessagesResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves the messages of a topic of a community.
-
-<span class="param">communityId</span> The ID of the community which messages will be listed.
-
-<span class="param">topicId</span> The ID of the topic which messages will be listed.</p>
+<p>Retrieves the messages of a topic of a community.</p><ul><li>
+<span class="param">communityId</span> The ID of the community which messages will be listed.</li><li>
+<span class="param">topicId</span> The ID of the topic which messages will be listed.</li><li>
+<span class="param">pageToken</span> A continuation token that allows pagination.</li><li>
+<span class="param">maxResults</span> The maximum number of messages to include in the response.</li></ul>
+<p>Minimum: 1.
+Maximum: 100.
+   * 
+<span class="param">hl</span> Specifies the interface language (host language) of your user interface.</p>
 <pre class="source">
 Future&lt;CommunityMessageList&gt; list(int communityId, String topicId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, String hl = UNSPECIFIED]) {
   final $queryParams = {};

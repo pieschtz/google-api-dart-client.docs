@@ -33,11 +33,11 @@
               title="Permalink to VotesResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the votes by the authenticated user for the specified submission within the specified
-series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</p>
+series.</p><ul><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li><li>
+<span class="param">userId</span></li><li>
+<span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li></ul>
 <pre class="source">
 Future&lt;Vote&gt; get(int seriesId, int submissionId, [String userId = UNSPECIFIED, String unauthToken = UNSPECIFIED]) {
   final $queryParams = {};
@@ -74,13 +74,11 @@ Future&lt;Vote&gt; get(int seriesId, int submissionId, [String userId = UNSPECIF
               title="Permalink to VotesResource.insert">#</a></h4>
 <div class="doc">
 <p>Inserts a new vote by the authenticated user for the specified submission within the specified
-series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">submissionId</span> The decimal ID of the Submission within the Series.
-
-<span class="param">content</span> the Vote</p>
+series.</p><ul><li>
+<span class="param">content</span> the Vote</li><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li><li>
+<span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li></ul>
 <pre class="source">
 Future&lt;Vote&gt; insert(int seriesId, int submissionId, Vote content, [String unauthToken = UNSPECIFIED]) {
   final $queryParams = {};
@@ -117,9 +115,10 @@ Future&lt;Vote&gt; insert(int seriesId, int submissionId, Vote content, [String 
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> seriesId, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to VotesResource.list">#</a></h4>
 <div class="doc">
-<p>Lists the votes by the authenticated user for the given series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.</p>
+<p>Lists the votes by the authenticated user for the given series.</p><ul><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li><li>
+<span class="param">startIndex</span> Index of the first result to be retrieved.</li></ul>
 <pre class="source">
 Future&lt;VoteList&gt; list(int seriesId, [int maxResults = UNSPECIFIED, int startIndex = UNSPECIFIED]) {
   final $queryParams = {};
@@ -155,13 +154,12 @@ Future&lt;VoteList&gt; list(int seriesId, [int maxResults = UNSPECIFIED, int sta
               title="Permalink to VotesResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates the votes by the authenticated user for the specified submission within the specified
-series. This method supports patch semantics.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">submissionId</span> The decimal ID of the Submission within the Series.
-
-<span class="param">content</span> the Vote</p>
+series. This method supports patch semantics.</p><ul><li>
+<span class="param">content</span> the Vote</li><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li><li>
+<span class="param">userId</span></li><li>
+<span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li></ul>
 <pre class="source">
 Future&lt;Vote&gt; patch(int seriesId, int submissionId, Vote content, [String userId = UNSPECIFIED, String unauthToken = UNSPECIFIED]) {
   final $queryParams = {};
@@ -200,13 +198,12 @@ Future&lt;Vote&gt; patch(int seriesId, int submissionId, Vote content, [String u
               title="Permalink to VotesResource.update">#</a></h4>
 <div class="doc">
 <p>Updates the votes by the authenticated user for the specified submission within the specified
-series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">submissionId</span> The decimal ID of the Submission within the Series.
-
-<span class="param">content</span> the Vote</p>
+series.</p><ul><li>
+<span class="param">content</span> the Vote</li><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li><li>
+<span class="param">userId</span></li><li>
+<span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li></ul>
 <pre class="source">
 Future&lt;Vote&gt; update(int seriesId, int submissionId, Vote content, [String userId = UNSPECIFIED, String unauthToken = UNSPECIFIED]) {
   final $queryParams = {};

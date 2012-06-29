@@ -32,13 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> submissionId, <a href="../dart_core/String.html">String</a> tagId) <a class="anchor-link" href="#delete"
               title="Permalink to TagsResource.delete">#</a></h4>
 <div class="doc">
-<p>Deletes the specified tag from the specified submission within the specified series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">submissionId</span> The decimal ID of the Submission within the Series.
-
-<span class="param">tagId</span></p>
+<p>Deletes the specified tag from the specified submission within the specified series.</p><ul><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li><li>
+<span class="param">tagId</span></li></ul>
 <pre class="source">
 Future delete(int seriesId, int submissionId, String tagId) {
   final $queryParams = {};
@@ -73,13 +70,10 @@ Future delete(int seriesId, int submissionId, String tagId) {
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> submissionId, <a href="../moderator-v1/Tag.html">Tag</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to TagsResource.insert">#</a></h4>
 <div class="doc">
-<p>Inserts a new tag for the specified submission within the specified series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">submissionId</span> The decimal ID of the Submission within the Series.
-
-<span class="param">content</span> the Tag</p>
+<p>Inserts a new tag for the specified submission within the specified series.</p><ul><li>
+<span class="param">content</span> the Tag</li><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li></ul>
 <pre class="source">
 Future&lt;Tag&gt; insert(int seriesId, int submissionId, Tag content) {
   final $queryParams = {};
@@ -115,11 +109,9 @@ Future&lt;Tag&gt; insert(int seriesId, int submissionId, Tag content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> submissionId) <a class="anchor-link" href="#list"
               title="Permalink to TagsResource.list">#</a></h4>
 <div class="doc">
-<p>Lists all tags for the specified submission within the specified series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</p>
+<p>Lists all tags for the specified submission within the specified series.</p><ul><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li></ul>
 <pre class="source">
 Future&lt;TagList&gt; list(int seriesId, int submissionId) {
   final $queryParams = {};

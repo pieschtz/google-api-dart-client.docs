@@ -32,9 +32,16 @@
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> seriesId, [<a href="../dart_core/String.html">String</a> lang = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> includeVotes = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/String.html">String</a> author = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sort = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> hasAttachedVideo = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to SeriesSubmissionsResourceResource.list">#</a></h4>
 <div class="doc">
-<p>Searches the submissions for the specified series and returns the search results.
-
-<span class="param">seriesId</span> The decimal ID of the Series.</p>
+<p>Searches the submissions for the specified series and returns the search results.</p><ul><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">lang</span> The language code for the language the client prefers resuls in.</li><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li><li>
+<span class="param">includeVotes</span> Specifies whether to include the current user's vote</li><li>
+<span class="param">startIndex</span> Index of the first result to be retrieved.</li><li>
+<span class="param">author</span> Restricts the results to submissions by a specific author.</li><li>
+<span class="param">sort</span> Sort order.</li><li>
+<span class="param">q</span> Search query.</li><li>
+<span class="param">hasAttachedVideo</span> Specifies whether to restrict to submissions that have videos attached.</li></ul>
 <pre class="source">
 Future&lt;SubmissionList&gt; list(int seriesId, [String lang = UNSPECIFIED, int maxResults = UNSPECIFIED, bool includeVotes = UNSPECIFIED, int startIndex = UNSPECIFIED, String author = UNSPECIFIED, String sort = UNSPECIFIED, String q = UNSPECIFIED, bool hasAttachedVideo = UNSPECIFIED]) {
   final $queryParams = {};

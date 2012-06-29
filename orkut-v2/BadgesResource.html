@@ -32,11 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> userId, <a href="../dart_core/String.html">String</a> badgeId) <a class="anchor-link" href="#get"
               title="Permalink to BadgesResource.get">#</a></h4>
 <div class="doc">
-<p>Retrieves a badge from a user.
-
-<span class="param">userId</span> The ID of the user whose badges will be listed. Can be me to refer to caller.
-
-<span class="param">badgeId</span> The ID of the badge that will be retrieved.</p>
+<p>Retrieves a badge from a user.</p><ul><li>
+<span class="param">userId</span> The ID of the user whose badges will be listed. Can be me to refer to caller.</li><li>
+<span class="param">badgeId</span> The ID of the badge that will be retrieved.</li></ul>
 <pre class="source">
 Future&lt;Badge&gt; get(String userId, String badgeId) {
   final $queryParams = {};
@@ -70,9 +68,8 @@ Future&lt;Badge&gt; get(String userId, String badgeId) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> userId) <a class="anchor-link" href="#list"
               title="Permalink to BadgesResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves the list of visible badges of a user.
-
-<span class="param">userId</span> The id of the user whose badges will be listed. Can be me to refer to caller.</p>
+<p>Retrieves the list of visible badges of a user.</p><ul><li>
+<span class="param">userId</span> The id of the user whose badges will be listed. Can be me to refer to caller.</li></ul>
 <pre class="source">
 Future&lt;BadgeList&gt; list(String userId) {
   final $queryParams = {};

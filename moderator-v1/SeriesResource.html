@@ -32,9 +32,8 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> seriesId) <a class="anchor-link" href="#get"
               title="Permalink to SeriesResource.get">#</a></h4>
 <div class="doc">
-<p>Returns the specified series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.</p>
+<p>Returns the specified series.</p><ul><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li></ul>
 <pre class="source">
 Future&lt;Series&gt; get(int seriesId) {
   final $queryParams = {};
@@ -67,9 +66,8 @@ Future&lt;Series&gt; get(int seriesId) {
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to SeriesResource.insert">#</a></h4>
 <div class="doc">
-<p>Inserts a new series.
-
-<span class="param">content</span> the Series</p>
+<p>Inserts a new series.</p><ul><li>
+<span class="param">content</span> the Series</li></ul>
 <pre class="source">
 Future&lt;Series&gt; insert(Series content) {
   final $queryParams = {};
@@ -103,7 +101,10 @@ Future&lt;Series&gt; insert(Series content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to SeriesResource.list">#</a></h4>
 <div class="doc">
-<p>Searches the series and returns the search results.</p>
+<p>Searches the series and returns the search results.</p><ul><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li><li>
+<span class="param">q</span> Search query.</li><li>
+<span class="param">startIndex</span> Index of the first result to be retrieved.</li></ul>
 <pre class="source">
 Future&lt;SeriesList&gt; list([int maxResults = UNSPECIFIED, String q = UNSPECIFIED, int startIndex = UNSPECIFIED]) {
   final $queryParams = {};
@@ -138,11 +139,9 @@ Future&lt;SeriesList&gt; list([int maxResults = UNSPECIFIED, String q = UNSPECIF
 <a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to SeriesResource.patch">#</a></h4>
 <div class="doc">
-<p>Updates the specified series. This method supports patch semantics.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">content</span> the Series</p>
+<p>Updates the specified series. This method supports patch semantics.</p><ul><li>
+<span class="param">content</span> the Series</li><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li></ul>
 <pre class="source">
 Future&lt;Series&gt; patch(int seriesId, Series content) {
   final $queryParams = {};
@@ -177,11 +176,9 @@ Future&lt;Series&gt; patch(int seriesId, Series content) {
 <a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#update"
               title="Permalink to SeriesResource.update">#</a></h4>
 <div class="doc">
-<p>Updates the specified series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">content</span> the Series</p>
+<p>Updates the specified series.</p><ul><li>
+<span class="param">content</span> the Series</li><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li></ul>
 <pre class="source">
 Future&lt;Series&gt; update(int seriesId, Series content) {
   final $queryParams = {};

@@ -32,13 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> accountId, <a href="../dart_core/String.html">String</a> buyerCreativeId, <a href="../dart_core/String.html">String</a> adgroupId) <a class="anchor-link" href="#get"
               title="Permalink to CreativesResource.get">#</a></h4>
 <div class="doc">
-<p>Gets the status for a single creative.
-
-<span class="param">accountId</span> The id for the account that will serve this creative.
-
-<span class="param">buyerCreativeId</span> The buyer-specific id for this creative.
-
-<span class="param">adgroupId</span> The adgroup this creative belongs to.</p>
+<p>Gets the status for a single creative.</p><ul><li>
+<span class="param">accountId</span> The id for the account that will serve this creative.</li><li>
+<span class="param">buyerCreativeId</span> The buyer-specific id for this creative.</li><li>
+<span class="param">adgroupId</span> The adgroup this creative belongs to.</li></ul>
 <pre class="source">
 Future&lt;Creative&gt; get(int accountId, String buyerCreativeId, String adgroupId) {
   final $queryParams = {};
@@ -73,9 +70,8 @@ Future&lt;Creative&gt; get(int accountId, String buyerCreativeId, String adgroup
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../adexchangebuyer-v1/Creative.html">Creative</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CreativesResource.insert">#</a></h4>
 <div class="doc">
-<p>Submit a new creative.
-
-<span class="param">content</span> the Creative</p>
+<p>Submit a new creative.</p><ul><li>
+<span class="param">content</span> the Creative</li></ul>
 <pre class="source">
 Future&lt;Creative&gt; insert(Creative content) {
   final $queryParams = {};
@@ -109,7 +105,14 @@ Future&lt;Creative&gt; insert(Creative content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CreativesResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of the authenticated user's active creatives.</p>
+<p>Retrieves a list of the authenticated user's active creatives.</p><ul><li>
+<p>
+<span class="param">pageToken</span> A continuation token, used to page through ad clients. To retrieve the next page, set this parameter
+   to the value of "nextPageToken" from the previous response. Optional.</p></li><li>
+<p>
+<span class="param">maxResults</span> Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
+   Minimum: 1.
+Maximum: 1000.</p></li></ul>
 <pre class="source">
 Future&lt;CreativesList&gt; list([String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};

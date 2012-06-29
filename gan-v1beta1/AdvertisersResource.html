@@ -34,11 +34,10 @@
 <div class="doc">
 <p>Retrieves data about a single advertiser if that the requesting advertiser/publisher has access
 to it. Only publishers can lookup advertisers. Advertisers can request information about
-themselves by omitting the advertiserId query parameter.
-
-<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
-
-<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</p>
+themselves by omitting the advertiserId query parameter.</p><ul><li>
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.</li><li>
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li><li>
+<span class="param">advertiserId</span> The ID of the advertiser to look up. Optional.</li></ul>
 <pre class="source">
 Future&lt;Advertiser&gt; get(AdvertisersResourceGetRole role, String roleId, [String advertiserId = UNSPECIFIED]) {
   final $queryParams = {};
@@ -73,11 +72,34 @@ Future&lt;Advertiser&gt; get(AdvertisersResourceGetRole role, String roleId, [St
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../gan-v1beta1/AdvertisersResourceListRole.html">AdvertisersResourceListRole</a> role, <a href="../dart_core/String.html">String</a> roleId, [<a href="../gan-v1beta1/AdvertisersResourceListRelationshipStatus.html">AdvertisersResourceListRelationshipStatus</a> relationshipStatus = UNSPECIFIED, <a href="../dart_core/double.html">double</a> minSevenDayEpc = UNSPECIFIED, <a href="../dart_core/String.html">String</a> advertiserCategory = UNSPECIFIED, <a href="../dart_core/double.html">double</a> minNinetyDayEpc = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/int.html">int</a> minPayoutRank = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to AdvertisersResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves data about all advertisers that the requesting advertiser/publisher has access to.
-
-<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
-
-<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</p>
+<p>Retrieves data about all advertisers that the requesting advertiser/publisher has access to.</p><ul><li>
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.</li><li>
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li><li>
+<p>
+<span class="param">relationshipStatus</span> Filters out all advertisers for which do not have the given relationship status with the requesting
+   publisher.</p></li><li>
+<p>
+<span class="param">minSevenDayEpc</span> Filters out all advertisers that have a seven day EPC average lower than the given value
+   (inclusive). Min value: 0.0. Optional.</p></li><li>
+<p>
+<span class="param">advertiserCategory</span> Caret(^) delimted list of advertiser categories. Valid categories are defined here:
+   http://www.google.com/support/affiliatenetwork/advertiser/bin/answer.py?hl=en=107581.
+   Filters out all advertisers not in one of the given advertiser categories. Optional.</p></li><li>
+<p>
+<span class="param">minNinetyDayEpc</span> Filters out all advertisers that have a ninety day EPC average lower than the given value
+   (inclusive). Min value: 0.0. Optional.</p></li><li>
+<span class="param">pageToken</span> The value of 'nextPageToken' from the previous page. Optional.</li><li>
+<span class="param">maxResults</span> Max number of items to return in this page. Optional. Defaults to 20.</li></ul>
+<p>Minimum: 0.
+Maximum: 100.
+   * 
+<span class="param">minPayoutRank</span> A value between 1 and 4, where 1 represents the quartile of advertisers with the lowest ranks and 4</p>
+<pre><code>   represents the quartile of advertisers with the highest ranks. Filters out all advertisers
+   with a lower rank than the given quartile. For example if a 2 was given only advertisers
+   with a payout rank of 25 or higher would be included. Optional.
+</code></pre>
+<p>Minimum: 1.
+Maximum: 4.</p>
 <pre class="source">
 Future&lt;Advertisers&gt; list(AdvertisersResourceListRole role, String roleId, [AdvertisersResourceListRelationshipStatus relationshipStatus = UNSPECIFIED, double minSevenDayEpc = UNSPECIFIED, String advertiserCategory = UNSPECIFIED, double minNinetyDayEpc = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, int minPayoutRank = UNSPECIFIED]) {
   final $queryParams = {};

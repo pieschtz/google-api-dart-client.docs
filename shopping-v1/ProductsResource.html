@@ -32,15 +32,24 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> source, <a href="../dart_core/int.html">int</a> accountId, <a href="../dart_core/String.html">String</a> productIdType, <a href="../dart_core/String.html">String</a> productId, [<a href="../dart_core/String.html">String</a> categoriesInclude = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> recommendationsEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> thumbnails = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> taxonomy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> plusOneStyles = UNSPECIFIED, <a href="../dart_core/String.html">String</a> recommendationsInclude = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> location = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> attributeFilter = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> recommendationsUseGcsConfig = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to ProductsResource.get">#</a></h4>
 <div class="doc">
-<p>Returns a single product
-
-<span class="param">source</span> Query source
-
-<span class="param">accountId</span> Merchant center account id
-
-<span class="param">productIdType</span> Type of productId
-
-<span class="param">productId</span> Id of product</p>
+<p>Returns a single product</p><ul><li>
+<span class="param">source</span> Query source</li><li>
+<span class="param">accountId</span> Merchant center account id</li><li>
+<span class="param">productIdType</span> Type of productId</li><li>
+<span class="param">productId</span> Id of product</li><li>
+<span class="param">categoriesInclude</span> Category specification</li><li>
+<span class="param">recommendationsEnabled</span> Whether to return recommendation information</li><li>
+<span class="param">thumbnails</span> Thumbnail specification</li><li>
+<span class="param">plusOneUseGcsConfig</span> Whether to use +1 button styles configured in the GCS account</li><li>
+<span class="param">taxonomy</span> Merchant taxonomy</li><li>
+<span class="param">categoriesUseGcsConfig</span> This parameter is currently ignored</li><li>
+<span class="param">plusOneStyles</span> +1 button rendering styles</li><li>
+<span class="param">recommendationsInclude</span> Recommendation specification</li><li>
+<span class="param">categoriesEnabled</span> Whether to return category information</li><li>
+<span class="param">location</span> Location used to determine tax and shipping</li><li>
+<span class="param">plusOneEnabled</span> Whether to return +1 button code</li><li>
+<span class="param">attributeFilter</span> Comma separated list of attributes to return</li><li>
+<span class="param">recommendationsUseGcsConfig</span> This parameter is currently ignored</li></ul>
 <pre class="source">
 Future&lt;Product&gt; get(String source, int accountId, String productIdType, String productId, [String categoriesInclude = UNSPECIFIED, bool recommendationsEnabled = UNSPECIFIED, String thumbnails = UNSPECIFIED, bool plusOneUseGcsConfig = UNSPECIFIED, String taxonomy = UNSPECIFIED, bool categoriesUseGcsConfig = UNSPECIFIED, String plusOneStyles = UNSPECIFIED, String recommendationsInclude = UNSPECIFIED, bool categoriesEnabled = UNSPECIFIED, String location = UNSPECIFIED, bool plusOneEnabled = UNSPECIFIED, String attributeFilter = UNSPECIFIED, bool recommendationsUseGcsConfig = UNSPECIFIED]) {
   final $queryParams = {};
@@ -89,9 +98,52 @@ Future&lt;Product&gt; get(String source, int accountId, String productIdType, St
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> source, [<a href="../dart_core/String.html">String</a> facetsInclude = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> plusOneUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> facetsEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> relatedQueriesUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> promotionsEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> channels = UNSPECIFIED, <a href="../dart_core/String.html">String</a> currency = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoryRecommendationsEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> facetsDiscover = UNSPECIFIED, <a href="../dart_core/String.html">String</a> categoryRecommendationsCategory = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/String.html">String</a> availability = UNSPECIFIED, <a href="../dart_core/String.html">String</a> crowdBy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> spellingEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> taxonomy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> spellingUseGcsConfig = UNSPECIFIED, <a href="../dart_core/String.html">String</a> useCase = UNSPECIFIED, <a href="../dart_core/String.html">String</a> location = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxVariants = UNSPECIFIED, <a href="../dart_core/String.html">String</a> categoriesInclude = UNSPECIFIED, <a href="../dart_core/String.html">String</a> boostBy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> safe = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesUseGcsConfig = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> facetsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoriesEnabled = UNSPECIFIED, <a href="../dart_core/String.html">String</a> plusOneStyles = UNSPECIFIED, <a href="../dart_core/String.html">String</a> attributeFilter = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> clickTracking = UNSPECIFIED, <a href="../dart_core/String.html">String</a> thumbnails = UNSPECIFIED, <a href="../dart_core/String.html">String</a> language = UNSPECIFIED, <a href="../dart_core/String.html">String</a> categoryRecommendationsInclude = UNSPECIFIED, <a href="../dart_core/String.html">String</a> country = UNSPECIFIED, <a href="../dart_core/String.html">String</a> rankBy = UNSPECIFIED, <a href="../dart_core/String.html">String</a> restrictBy = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> redirectsEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> redirectsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> relatedQueriesEnabled = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> categoryRecommendationsUseGcsConfig = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> promotionsUseGcsConfig = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ProductsResource.list">#</a></h4>
 <div class="doc">
-<p>Returns a list of products and content modules
-
-<span class="param">source</span> Query source</p>
+<p>Returns a list of products and content modules</p><ul><li>
+<span class="param">source</span> Query source</li><li>
+<span class="param">facetsInclude</span> Facets to include (applies when useGcsConfig == false)</li><li>
+<span class="param">plusOneEnabled</span> Whether to return +1 button code</li><li>
+<span class="param">plusOneUseGcsConfig</span> Whether to use +1 button styles configured in the GCS account</li><li>
+<span class="param">facetsEnabled</span> Whether to return facet information</li><li>
+<span class="param">relatedQueriesUseGcsConfig</span> This parameter is currently ignored</li><li>
+<span class="param">promotionsEnabled</span> Whether to return promotion information</li><li>
+<span class="param">channels</span> Channels specification</li><li>
+<span class="param">currency</span> Currency restriction (ISO 4217)</li><li>
+<span class="param">categoryRecommendationsEnabled</span> Whether to return category recommendation information</li><li>
+<span class="param">facetsDiscover</span> Facets to discover</li><li>
+<span class="param">categoryRecommendationsCategory</span> Category for which to retrieve recommendations</li><li>
+<span class="param">startIndex</span> Index (1-based) of first product to return</li><li>
+<p>
+<span class="param">availability</span> Comma separated list of availabilities (outOfStock, limited, inStock, backOrder, preOrder,
+   onDisplayToOrder) to return</p></li><li>
+<span class="param">crowdBy</span> Crowding specification</li><li>
+<span class="param">spellingEnabled</span> Whether to return spelling suggestions</li><li>
+<span class="param">taxonomy</span> Taxonomy name</li><li>
+<span class="param">spellingUseGcsConfig</span> This parameter is currently ignored</li><li>
+<span class="param">useCase</span> One of CommerceSearchUseCase, ShoppingApiUseCase</li><li>
+<span class="param">location</span> Location used to determine tax and shipping</li><li>
+<span class="param">maxVariants</span> Maximum number of variant results to return per result</li><li>
+<span class="param">categoriesInclude</span> Category specification</li><li>
+<span class="param">boostBy</span> Boosting specification</li><li>
+<span class="param">safe</span> Whether safe search is enabled. Default: true</li><li>
+<span class="param">categoriesUseGcsConfig</span> This parameter is currently ignored</li><li>
+<span class="param">maxResults</span> Maximum number of results to return</li><li>
+<span class="param">facetsUseGcsConfig</span> Whether to return facet information as configured in the GCS account</li><li>
+<span class="param">categoriesEnabled</span> Whether to return category information</li><li>
+<span class="param">plusOneStyles</span> +1 button rendering styles</li><li>
+<span class="param">attributeFilter</span> Comma separated list of attributes to return</li><li>
+<span class="param">clickTracking</span> Whether to add a click tracking parameter to offer URLs</li><li>
+<span class="param">thumbnails</span> Image thumbnails specification</li><li>
+<span class="param">language</span> Language restriction (BCP 47)</li><li>
+<span class="param">categoryRecommendationsInclude</span> Category recommendation specification</li><li>
+<span class="param">country</span> Country restriction (ISO 3166)</li><li>
+<span class="param">rankBy</span> Ranking specification</li><li>
+<span class="param">restrictBy</span> Restriction specification</li><li>
+<span class="param">q</span> Search query</li><li>
+<span class="param">redirectsEnabled</span> Whether to return redirect information</li><li>
+<span class="param">redirectsUseGcsConfig</span> Whether to return redirect information as configured in the GCS account</li><li>
+<span class="param">relatedQueriesEnabled</span> Whether to return related queries</li><li>
+<span class="param">categoryRecommendationsUseGcsConfig</span> This parameter is currently ignored</li><li>
+<span class="param">promotionsUseGcsConfig</span> Whether to return promotion information as configured in the GCS account</li></ul>
 <pre class="source">
 Future&lt;Products&gt; list(String source, [String facetsInclude = UNSPECIFIED, bool plusOneEnabled = UNSPECIFIED, bool plusOneUseGcsConfig = UNSPECIFIED, bool facetsEnabled = UNSPECIFIED, bool relatedQueriesUseGcsConfig = UNSPECIFIED, bool promotionsEnabled = UNSPECIFIED, String channels = UNSPECIFIED, String currency = UNSPECIFIED, bool categoryRecommendationsEnabled = UNSPECIFIED, String facetsDiscover = UNSPECIFIED, String categoryRecommendationsCategory = UNSPECIFIED, int startIndex = UNSPECIFIED, String availability = UNSPECIFIED, String crowdBy = UNSPECIFIED, bool spellingEnabled = UNSPECIFIED, String taxonomy = UNSPECIFIED, bool spellingUseGcsConfig = UNSPECIFIED, String useCase = UNSPECIFIED, String location = UNSPECIFIED, int maxVariants = UNSPECIFIED, String categoriesInclude = UNSPECIFIED, String boostBy = UNSPECIFIED, bool safe = UNSPECIFIED, bool categoriesUseGcsConfig = UNSPECIFIED, int maxResults = UNSPECIFIED, bool facetsUseGcsConfig = UNSPECIFIED, bool categoriesEnabled = UNSPECIFIED, String plusOneStyles = UNSPECIFIED, String attributeFilter = UNSPECIFIED, bool clickTracking = UNSPECIFIED, String thumbnails = UNSPECIFIED, String language = UNSPECIFIED, String categoryRecommendationsInclude = UNSPECIFIED, String country = UNSPECIFIED, String rankBy = UNSPECIFIED, String restrictBy = UNSPECIFIED, String q = UNSPECIFIED, bool redirectsEnabled = UNSPECIFIED, bool redirectsUseGcsConfig = UNSPECIFIED, bool relatedQueriesEnabled = UNSPECIFIED, bool categoryRecommendationsUseGcsConfig = UNSPECIFIED, bool promotionsUseGcsConfig = UNSPECIFIED]) {
   final $queryParams = {};

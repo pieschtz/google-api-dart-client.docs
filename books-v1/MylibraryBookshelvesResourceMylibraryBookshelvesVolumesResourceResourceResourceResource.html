@@ -32,9 +32,20 @@
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> shelf, [<a href="../books-v1/MylibraryResourceMylibraryBookshelvesResourceResourceMylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResourceListProjection.html">MylibraryResourceMylibraryBookshelvesResourceResourceMylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResourceListProjection</a> projection = UNSPECIFIED, <a href="../dart_core/String.html">String</a> country = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> showPreorders = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource.list">#</a></h4>
 <div class="doc">
-<p>Gets volume information for volumes on a bookshelf.
-
-<span class="param">shelf</span> The bookshelf ID or name retrieve volumes for.</p>
+<p>Gets volume information for volumes on a bookshelf.</p><ul><li>
+<span class="param">shelf</span> The bookshelf ID or name retrieve volumes for.</li><li>
+<span class="param">projection</span> Restrict information returned to a set of selected fields.</li><li>
+<span class="param">country</span> ISO-3166-1 code to override the IP-based location.</li><li>
+<span class="param">showPreorders</span> Set to true to show pre-ordered books. Defaults to false.</li><li>
+<span class="param">maxResults</span> Maximum number of results to return</li></ul>
+<p>Minimum: 0.
+   * 
+<span class="param">q</span> Full-text search query string in this bookshelf.
+   * 
+<span class="param">source</span> String to identify the originator of this request.
+   * 
+<span class="param">startIndex</span> Index of the first element to return (starts at 0)</p>
+<p>Minimum: 0.</p>
 <pre class="source">
 Future&lt;Volumes&gt; list(String shelf, [MylibraryResourceMylibraryBookshelvesResourceResourceMylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResourceListProjection projection = UNSPECIFIED, String country = UNSPECIFIED, bool showPreorders = UNSPECIFIED, int maxResults = UNSPECIFIED, String q = UNSPECIFIED, String source = UNSPECIFIED, int startIndex = UNSPECIFIED]) {
   final $queryParams = {};

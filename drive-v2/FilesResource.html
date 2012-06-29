@@ -1,0 +1,522 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>FilesResource Class / drive-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="drive-v2" data-type="FilesResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/FilesResource.html">FilesResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>FilesResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="copy">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>copy</strong>(<a href="../dart_core/String.html">String</a> fileId, <a href="../drive-v2/File.html">File</a> content, [<a href="../dart_core/bool.html">bool</a> convert = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> ocr = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sourceLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> ocrLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timedTextLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> targetLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timedTextTrackName = UNSPECIFIED]) <a class="anchor-link" href="#copy"
+              title="Permalink to FilesResource.copy">#</a></h4>
+<div class="doc">
+<p>Creates a copy of the specified file.</p><ul><li>
+<span class="param">content</span> the File</li><li>
+<span class="param">fileId</span> The ID of the file to copy.</li><li>
+<p>
+<span class="param">convert</span> Whether to convert this file to the corresponding Google Docs format.
+Default: false.</p></li><li>
+<p>
+<span class="param">ocr</span> Whether to attempt OCR on .jpg, .png, or .gif uploads.
+Default: false.</p></li><li>
+<span class="param">sourceLanguage</span> The language of the original file to be translated.</li><li>
+<span class="param">ocrLanguage</span> If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</li><li>
+<span class="param">timedTextLanguage</span> The language of the timed text.</li><li>
+<p>
+<span class="param">targetLanguage</span> Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to
+   detect the language.</p></li><li>
+<span class="param">timedTextTrackName</span> The timed text track name.</li></ul>
+<pre class="source">
+Future&lt;File&gt; copy(String fileId, File content, [bool convert = UNSPECIFIED, bool ocr = UNSPECIFIED, String sourceLanguage = UNSPECIFIED, String ocrLanguage = UNSPECIFIED, String timedTextLanguage = UNSPECIFIED, String targetLanguage = UNSPECIFIED, String timedTextTrackName = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["fileId"] = fileId;
+  if (UNSPECIFIED != convert) $queryParams["convert"] = convert;
+  if (UNSPECIFIED != ocr) $queryParams["ocr"] = ocr;
+  if (UNSPECIFIED != sourceLanguage) $queryParams["sourceLanguage"] = sourceLanguage;
+  if (UNSPECIFIED != ocrLanguage) $queryParams["ocrLanguage"] = ocrLanguage;
+  if (UNSPECIFIED != timedTextLanguage) $queryParams["timedTextLanguage"] = timedTextLanguage;
+  if (UNSPECIFIED != targetLanguage) $queryParams["targetLanguage"] = targetLanguage;
+  if (UNSPECIFIED != timedTextTrackName) $queryParams["timedTextTrackName"] = timedTextTrackName;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(File.serialize(content));
+  final $path = "files/{fileId}/copy";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> fileId) <a class="anchor-link" href="#delete"
+              title="Permalink to FilesResource.delete">#</a></h4>
+<div class="doc">
+<p>Permanently deletes a file by ID. Skips the trash.</p><ul><li>
+<span class="param">fileId</span> The ID of the file to delete.</li></ul>
+<pre class="source">
+Future delete(String fileId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["fileId"] = fileId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "files/{fileId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> fileId, [<a href="../dart_core/bool.html">bool</a> updateViewedDate = UNSPECIFIED, <a href="../drive-v2/FilesResourceGetProjection.html">FilesResourceGetProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to FilesResource.get">#</a></h4>
+<div class="doc">
+<p>Gets a file's metadata by ID.</p><ul><li>
+<span class="param">fileId</span> The ID for the file in question.</li><li>
+<p>
+<span class="param">updateViewedDate</span> Whether to update the view date after successfully retrieving the file.
+Default: false.</p></li><li>
+<span class="param">projection</span> Restrict information returned for simplicity and optimization.</li></ul>
+<pre class="source">
+Future&lt;File&gt; get(String fileId, [bool updateViewedDate = UNSPECIFIED, FilesResourceGetProjection projection = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["fileId"] = fileId;
+  if (UNSPECIFIED != updateViewedDate) $queryParams["updateViewedDate"] = updateViewedDate;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "files/{fileId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../drive-v2/File.html">File</a> content, [<a href="../dart_core/bool.html">bool</a> convert = UNSPECIFIED, <a href="../dart_core/String.html">String</a> targetLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sourceLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> ocrLanguage = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> pinned = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> ocr = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timedTextTrackName = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timedTextLanguage = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+              title="Permalink to FilesResource.insert">#</a></h4>
+<div class="doc">
+<p>Insert a new file.</p><ul><li>
+<span class="param">content</span> the File</li><li>
+<p>
+<span class="param">convert</span> Whether to convert this file to the corresponding Google Docs format.
+Default: false.</p></li><li>
+<p>
+<span class="param">targetLanguage</span> Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to
+   detect the language.</p></li><li>
+<span class="param">sourceLanguage</span> The language of the original file to be translated.</li><li>
+<span class="param">ocrLanguage</span> If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</li><li>
+<p>
+<span class="param">pinned</span> Whether to pin the head revision of the uploaded file.
+Default: false.</p></li><li>
+<p>
+<span class="param">ocr</span> Whether to attempt OCR on .jpg, .png, or .gif uploads.
+Default: false.</p></li><li>
+<span class="param">timedTextTrackName</span> The timed text track name.</li><li>
+<span class="param">timedTextLanguage</span> The language of the timed text.</li></ul>
+<pre class="source">
+Future&lt;File&gt; insert(File content, [bool convert = UNSPECIFIED, String targetLanguage = UNSPECIFIED, String sourceLanguage = UNSPECIFIED, String ocrLanguage = UNSPECIFIED, bool pinned = UNSPECIFIED, bool ocr = UNSPECIFIED, String timedTextTrackName = UNSPECIFIED, String timedTextLanguage = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (UNSPECIFIED != convert) $queryParams["convert"] = convert;
+  if (UNSPECIFIED != targetLanguage) $queryParams["targetLanguage"] = targetLanguage;
+  if (UNSPECIFIED != sourceLanguage) $queryParams["sourceLanguage"] = sourceLanguage;
+  if (UNSPECIFIED != ocrLanguage) $queryParams["ocrLanguage"] = ocrLanguage;
+  if (UNSPECIFIED != pinned) $queryParams["pinned"] = pinned;
+  if (UNSPECIFIED != ocr) $queryParams["ocr"] = ocr;
+  if (UNSPECIFIED != timedTextTrackName) $queryParams["timedTextTrackName"] = timedTextTrackName;
+  if (UNSPECIFIED != timedTextLanguage) $queryParams["timedTextLanguage"] = timedTextLanguage;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(File.serialize(content));
+  final $path = "files";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../drive-v2/FilesResourceListProjection.html">FilesResourceListProjection</a> projection = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to FilesResource.list">#</a></h4>
+<div class="doc">
+<p>Lists the user's files.</p><ul><li>
+<span class="param">q</span> Query string for searching files.</li><li>
+<span class="param">pageToken</span> Page token for files.</li><li>
+<span class="param">projection</span> Restrict information returned for simplicity and optimization.</li><li>
+<p>
+<span class="param">maxResults</span> Maximum number of files to return.
+Default: 100.
+Minimum: 0.</p></li></ul>
+<pre class="source">
+Future&lt;FileList&gt; list([String q = UNSPECIFIED, String pageToken = UNSPECIFIED, FilesResourceListProjection projection = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (UNSPECIFIED != q) $queryParams["q"] = q;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "files";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; FileList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="patch">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> fileId, <a href="../drive-v2/File.html">File</a> content, [<a href="../dart_core/bool.html">bool</a> convert = UNSPECIFIED, <a href="../dart_core/String.html">String</a> targetLanguage = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> setModifiedDate = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> updateViewedDate = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sourceLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> ocrLanguage = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> pinned = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> newRevision = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> ocr = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timedTextLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timedTextTrackName = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+              title="Permalink to FilesResource.patch">#</a></h4>
+<div class="doc">
+<p>Updates file metadata and/or content. This method supports patch semantics.</p><ul><li>
+<span class="param">content</span> the File</li><li>
+<span class="param">fileId</span> The ID of the file to update.</li><li>
+<p>
+<span class="param">convert</span> Whether to convert this file to the corresponding Google Docs format.
+Default: false.</p></li><li>
+<p>
+<span class="param">targetLanguage</span> Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to
+   detect the language.</p></li><li>
+<p>
+<span class="param">setModifiedDate</span> Whether to set the modified date with the supplied modified date.
+Default: false.</p></li><li>
+<p>
+<span class="param">updateViewedDate</span> Whether to update the view date after successfully updating the file.
+Default: true.</p></li><li>
+<span class="param">sourceLanguage</span> The language of the original file to be translated.</li><li>
+<span class="param">ocrLanguage</span> If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</li><li>
+<p>
+<span class="param">pinned</span> Whether to pin the new revision.
+Default: false.</p></li><li>
+<p>
+<span class="param">newRevision</span> Whether a blob upload should create a new revision. If false, the blob data in the current head
+   revision will be replaced.
+Default: true.</p></li><li>
+<p>
+<span class="param">ocr</span> Whether to attempt OCR on .jpg, .png, or .gif uploads.
+Default: false.</p></li><li>
+<span class="param">timedTextLanguage</span> The language of the timed text.</li><li>
+<span class="param">timedTextTrackName</span> The timed text track name.</li></ul>
+<pre class="source">
+Future&lt;File&gt; patch(String fileId, File content, [bool convert = UNSPECIFIED, String targetLanguage = UNSPECIFIED, bool setModifiedDate = UNSPECIFIED, bool updateViewedDate = UNSPECIFIED, String sourceLanguage = UNSPECIFIED, String ocrLanguage = UNSPECIFIED, bool pinned = UNSPECIFIED, bool newRevision = UNSPECIFIED, bool ocr = UNSPECIFIED, String timedTextLanguage = UNSPECIFIED, String timedTextTrackName = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["fileId"] = fileId;
+  if (UNSPECIFIED != convert) $queryParams["convert"] = convert;
+  if (UNSPECIFIED != targetLanguage) $queryParams["targetLanguage"] = targetLanguage;
+  if (UNSPECIFIED != setModifiedDate) $queryParams["setModifiedDate"] = setModifiedDate;
+  if (UNSPECIFIED != updateViewedDate) $queryParams["updateViewedDate"] = updateViewedDate;
+  if (UNSPECIFIED != sourceLanguage) $queryParams["sourceLanguage"] = sourceLanguage;
+  if (UNSPECIFIED != ocrLanguage) $queryParams["ocrLanguage"] = ocrLanguage;
+  if (UNSPECIFIED != pinned) $queryParams["pinned"] = pinned;
+  if (UNSPECIFIED != newRevision) $queryParams["newRevision"] = newRevision;
+  if (UNSPECIFIED != ocr) $queryParams["ocr"] = ocr;
+  if (UNSPECIFIED != timedTextLanguage) $queryParams["timedTextLanguage"] = timedTextLanguage;
+  if (UNSPECIFIED != timedTextTrackName) $queryParams["timedTextTrackName"] = timedTextTrackName;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(File.serialize(content));
+  final $path = "files/{fileId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="touch">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>touch</strong>(<a href="../dart_core/String.html">String</a> fileId) <a class="anchor-link" href="#touch"
+              title="Permalink to FilesResource.touch">#</a></h4>
+<div class="doc">
+<p>Set the file's updated time to the current server time.</p><ul><li>
+<span class="param">fileId</span> The ID of the file to update.</li></ul>
+<pre class="source">
+Future&lt;File&gt; touch(String fileId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["fileId"] = fileId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "files/{fileId}/touch";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="trash">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>trash</strong>(<a href="../dart_core/String.html">String</a> fileId) <a class="anchor-link" href="#trash"
+              title="Permalink to FilesResource.trash">#</a></h4>
+<div class="doc">
+<p>Moves a file to the trash.</p><ul><li>
+<span class="param">fileId</span> The ID of the file to trash.</li></ul>
+<pre class="source">
+Future&lt;File&gt; trash(String fileId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["fileId"] = fileId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "files/{fileId}/trash";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="untrash">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>untrash</strong>(<a href="../dart_core/String.html">String</a> fileId) <a class="anchor-link" href="#untrash"
+              title="Permalink to FilesResource.untrash">#</a></h4>
+<div class="doc">
+<p>Restores a file from the trash.</p><ul><li>
+<span class="param">fileId</span> The ID of the file to untrash.</li></ul>
+<pre class="source">
+Future&lt;File&gt; untrash(String fileId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["fileId"] = fileId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "files/{fileId}/untrash";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="update">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> fileId, <a href="../drive-v2/File.html">File</a> content, [<a href="../dart_core/bool.html">bool</a> convert = UNSPECIFIED, <a href="../dart_core/String.html">String</a> targetLanguage = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> setModifiedDate = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> updateViewedDate = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sourceLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> ocrLanguage = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> pinned = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> newRevision = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> ocr = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timedTextLanguage = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timedTextTrackName = UNSPECIFIED]) <a class="anchor-link" href="#update"
+              title="Permalink to FilesResource.update">#</a></h4>
+<div class="doc">
+<p>Updates file metadata and/or content</p><ul><li>
+<span class="param">content</span> the File</li><li>
+<span class="param">fileId</span> The ID of the file to update.</li><li>
+<p>
+<span class="param">convert</span> Whether to convert this file to the corresponding Google Docs format.
+Default: false.</p></li><li>
+<p>
+<span class="param">targetLanguage</span> Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to
+   detect the language.</p></li><li>
+<p>
+<span class="param">setModifiedDate</span> Whether to set the modified date with the supplied modified date.
+Default: false.</p></li><li>
+<p>
+<span class="param">updateViewedDate</span> Whether to update the view date after successfully updating the file.
+Default: true.</p></li><li>
+<span class="param">sourceLanguage</span> The language of the original file to be translated.</li><li>
+<span class="param">ocrLanguage</span> If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</li><li>
+<p>
+<span class="param">pinned</span> Whether to pin the new revision.
+Default: false.</p></li><li>
+<p>
+<span class="param">newRevision</span> Whether a blob upload should create a new revision. If false, the blob data in the current head
+   revision will be replaced.
+Default: true.</p></li><li>
+<p>
+<span class="param">ocr</span> Whether to attempt OCR on .jpg, .png, or .gif uploads.
+Default: false.</p></li><li>
+<span class="param">timedTextLanguage</span> The language of the timed text.</li><li>
+<span class="param">timedTextTrackName</span> The timed text track name.</li></ul>
+<pre class="source">
+Future&lt;File&gt; update(String fileId, File content, [bool convert = UNSPECIFIED, String targetLanguage = UNSPECIFIED, bool setModifiedDate = UNSPECIFIED, bool updateViewedDate = UNSPECIFIED, String sourceLanguage = UNSPECIFIED, String ocrLanguage = UNSPECIFIED, bool pinned = UNSPECIFIED, bool newRevision = UNSPECIFIED, bool ocr = UNSPECIFIED, String timedTextLanguage = UNSPECIFIED, String timedTextTrackName = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["fileId"] = fileId;
+  if (UNSPECIFIED != convert) $queryParams["convert"] = convert;
+  if (UNSPECIFIED != targetLanguage) $queryParams["targetLanguage"] = targetLanguage;
+  if (UNSPECIFIED != setModifiedDate) $queryParams["setModifiedDate"] = setModifiedDate;
+  if (UNSPECIFIED != updateViewedDate) $queryParams["updateViewedDate"] = updateViewedDate;
+  if (UNSPECIFIED != sourceLanguage) $queryParams["sourceLanguage"] = sourceLanguage;
+  if (UNSPECIFIED != ocrLanguage) $queryParams["ocrLanguage"] = ocrLanguage;
+  if (UNSPECIFIED != pinned) $queryParams["pinned"] = pinned;
+  if (UNSPECIFIED != newRevision) $queryParams["newRevision"] = newRevision;
+  if (UNSPECIFIED != ocr) $queryParams["ocr"] = ocr;
+  if (UNSPECIFIED != timedTextLanguage) $queryParams["timedTextLanguage"] = timedTextLanguage;
+  if (UNSPECIFIED != timedTextTrackName) $queryParams["timedTextTrackName"] = timedTextTrackName;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(File.serialize(content));
+  final $path = "files/{fileId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PUT", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

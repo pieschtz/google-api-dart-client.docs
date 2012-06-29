@@ -32,11 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> userId, <a href="../dart_core/String.html">String</a> shelf, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to BookshelvesResource.get">#</a></h4>
 <div class="doc">
-<p>Retrieves metadata for a specific bookshelf for the specified user.
-
-<span class="param">userId</span> ID of user for whom to retrieve bookshelves.
-
-<span class="param">shelf</span> ID of bookshelf to retrieve.</p>
+<p>Retrieves metadata for a specific bookshelf for the specified user.</p><ul><li>
+<span class="param">userId</span> ID of user for whom to retrieve bookshelves.</li><li>
+<span class="param">shelf</span> ID of bookshelf to retrieve.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future&lt;Bookshelf&gt; get(String userId, String shelf, [String source = UNSPECIFIED]) {
   final $queryParams = {};
@@ -71,9 +70,9 @@ Future&lt;Bookshelf&gt; get(String userId, String shelf, [String source = UNSPEC
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> userId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to BookshelvesResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of public bookshelves for the specified user.
-
-<span class="param">userId</span> ID of user for whom to retrieve bookshelves.</p>
+<p>Retrieves a list of public bookshelves for the specified user.</p><ul><li>
+<span class="param">userId</span> ID of user for whom to retrieve bookshelves.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
 Future&lt;Bookshelves&gt; list(String userId, [String source = UNSPECIFIED]) {
   final $queryParams = {};

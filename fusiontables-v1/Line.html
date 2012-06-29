@@ -1,0 +1,115 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Line Class / fusiontables-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="fusiontables-v1" data-type="Line">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../fusiontables-v1.html">fusiontables-v1</a> &rsaquo; <a href="../fusiontables-v1/Line.html">Line</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Line</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Line</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../fusiontables-v1/Line.html">Line</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to Line.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Line parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new Line();
+  result.type = identity(json["type"]);
+  result.coordinates = map(map(identity))(json["coordinates"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../fusiontables-v1/Line.html">Line</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Line.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(Line value) {
+  if (value == null) return null;
+  final result = {};
+  result["type"] = identity(value.type);
+  result["coordinates"] = map(map(identity))(value.coordinates);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Line.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="coordinates">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>coordinates</strong> <a class="anchor-link"
+            href="#coordinates"
+            title="Permalink to Line.coordinates">#</a>
+        </h4>
+        <div class="doc">
+<p>The coordinates that define the line.</p>
+<pre class="source">
+List&lt;List&lt;double&gt;&gt; coordinates;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="type">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+            href="#type"
+            title="Permalink to Line.type">#</a>
+        </h4>
+        <div class="doc">
+<p>Type: A line geometry.</p>
+<pre class="source">
+String type;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -32,11 +32,11 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> summaryId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> contentVersion = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to LayersResource.get">#</a></h4>
 <div class="doc">
-<p>Gets the layer summary for a volume.
-
-<span class="param">volumeId</span> The volume to retrieve layers for.
-
-<span class="param">summaryId</span> The ID for the layer to get the summary for.</p>
+<p>Gets the layer summary for a volume.</p><ul><li>
+<span class="param">volumeId</span> The volume to retrieve layers for.</li><li>
+<span class="param">summaryId</span> The ID for the layer to get the summary for.</li><li>
+<span class="param">source</span> String to identify the originator of this request.</li><li>
+<span class="param">contentVersion</span> The content version for the requested volume.</li></ul>
 <pre class="source">
 Future&lt;Layersummary&gt; get(String volumeId, String summaryId, [String source = UNSPECIFIED, String contentVersion = UNSPECIFIED]) {
   final $queryParams = {};
@@ -72,9 +72,15 @@ Future&lt;Layersummary&gt; get(String volumeId, String summaryId, [String source
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> contentVersion = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to LayersResource.list">#</a></h4>
 <div class="doc">
-<p>List the layer summaries for a volume.
-
-<span class="param">volumeId</span> The volume to retrieve layers for.</p>
+<p>List the layer summaries for a volume.</p><ul><li>
+<span class="param">volumeId</span> The volume to retrieve layers for.</li><li>
+<span class="param">pageToken</span> The value of the nextToken from the previous page.</li><li>
+<span class="param">contentVersion</span> The content version for the requested volume.</li><li>
+<span class="param">maxResults</span> Maximum number of results to return</li></ul>
+<p>Minimum: 0.
+Maximum: 200.
+   * 
+<span class="param">source</span> String to identify the originator of this request.</p>
 <pre class="source">
 Future&lt;Layersummaries&gt; list(String volumeId, [String pageToken = UNSPECIFIED, String contentVersion = UNSPECIFIED, int maxResults = UNSPECIFIED, String source = UNSPECIFIED]) {
   final $queryParams = {};

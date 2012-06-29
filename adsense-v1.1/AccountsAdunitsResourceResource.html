@@ -32,13 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> accountId, <a href="../dart_core/String.html">String</a> adClientId, <a href="../dart_core/String.html">String</a> adUnitId) <a class="anchor-link" href="#get"
               title="Permalink to AccountsAdunitsResourceResource.get">#</a></h4>
 <div class="doc">
-<p>Gets the specified ad unit in the specified ad client for the specified account.
-
-<span class="param">accountId</span> Account to which the ad client belongs.
-
-<span class="param">adClientId</span> Ad client for which to get the ad unit.
-
-<span class="param">adUnitId</span> Ad unit to retrieve.</p>
+<p>Gets the specified ad unit in the specified ad client for the specified account.</p><ul><li>
+<span class="param">accountId</span> Account to which the ad client belongs.</li><li>
+<span class="param">adClientId</span> Ad client for which to get the ad unit.</li><li>
+<span class="param">adUnitId</span> Ad unit to retrieve.</li></ul>
 <pre class="source">
 Future&lt;AdUnit&gt; get(String accountId, String adClientId, String adUnitId) {
   final $queryParams = {};
@@ -73,11 +70,18 @@ Future&lt;AdUnit&gt; get(String accountId, String adClientId, String adUnitId) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> accountId, <a href="../dart_core/String.html">String</a> adClientId, [<a href="../dart_core/bool.html">bool</a> includeInactive = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to AccountsAdunitsResourceResource.list">#</a></h4>
 <div class="doc">
-<p>List all ad units in the specified ad client for the specified account.
-
-<span class="param">accountId</span> Account to which the ad client belongs.
-
-<span class="param">adClientId</span> Ad client for which to list ad units.</p>
+<p>List all ad units in the specified ad client for the specified account.</p><ul><li>
+<span class="param">accountId</span> Account to which the ad client belongs.</li><li>
+<span class="param">adClientId</span> Ad client for which to list ad units.</li><li>
+<span class="param">includeInactive</span> Whether to include inactive ad units. Default: true.</li><li>
+<p>
+<span class="param">pageToken</span> A continuation token, used to page through ad units. To retrieve the next page, set this parameter
+   to the value of "nextPageToken" from the previous response.</p></li><li>
+<span class="param">maxResults</span> The maximum number of ad units to include in the response, used for paging.</li></ul>
+<p>Minimum: 0.
+Maximum:</p>
+<pre><code>   10000.
+</code></pre>
 <pre class="source">
 Future&lt;AdUnits&gt; list(String accountId, String adClientId, [bool includeInactive = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};

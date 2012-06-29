@@ -1,0 +1,295 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>MachineType Class / compute-v1beta12 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="compute-v1beta12" data-type="MachineType">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/MachineType.html">MachineType</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>MachineType</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>MachineType</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../compute-v1beta12/MachineType.html">MachineType</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to MachineType.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static MachineType parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new MachineType();
+  result.guestCpus = identity(json["guestCpus"]);
+  result.imageSpaceGb = identity(json["imageSpaceGb"]);
+  result.kind = identity(json["kind"]);
+  result.ephemeralDisks = map(MachineTypeEphemeralDisks.parse)(json["ephemeralDisks"]);
+  result.maximumPersistentDisksSizeGb = identity(json["maximumPersistentDisksSizeGb"]);
+  result.description = identity(json["description"]);
+  result.maximumPersistentDisks = identity(json["maximumPersistentDisks"]);
+  result.name = identity(json["name"]);
+  result.memoryMb = identity(json["memoryMb"]);
+  result.availableZone = map(identity)(json["availableZone"]);
+  result.creationTimestamp = identity(json["creationTimestamp"]);
+  result.id = identity(json["id"]);
+  result.selfLink = identity(json["selfLink"]);
+  result.hostCpus = identity(json["hostCpus"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/MachineType.html">MachineType</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to MachineType.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(MachineType value) {
+  if (value == null) return null;
+  final result = {};
+  result["guestCpus"] = identity(value.guestCpus);
+  result["imageSpaceGb"] = identity(value.imageSpaceGb);
+  result["kind"] = identity(value.kind);
+  result["ephemeralDisks"] = map(MachineTypeEphemeralDisks.serialize)(value.ephemeralDisks);
+  result["maximumPersistentDisksSizeGb"] = identity(value.maximumPersistentDisksSizeGb);
+  result["description"] = identity(value.description);
+  result["maximumPersistentDisks"] = identity(value.maximumPersistentDisks);
+  result["name"] = identity(value.name);
+  result["memoryMb"] = identity(value.memoryMb);
+  result["availableZone"] = map(identity)(value.availableZone);
+  result["creationTimestamp"] = identity(value.creationTimestamp);
+  result["id"] = identity(value.id);
+  result["selfLink"] = identity(value.selfLink);
+  result["hostCpus"] = identity(value.hostCpus);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to MachineType.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="availableZone">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>availableZone</strong> <a class="anchor-link"
+            href="#availableZone"
+            title="Permalink to MachineType.availableZone">#</a>
+        </h4>
+        <div class="doc">
+<p>The zones that this machine type can run in.</p>
+<pre class="source">
+List&lt;Object&gt; availableZone;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="creationTimestamp">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
+            href="#creationTimestamp"
+            title="Permalink to MachineType.creationTimestamp">#</a>
+        </h4>
+        <div class="doc">
+<p>Creation timestamp in RFC3339 text format (output only).</p>
+<pre class="source">
+String creationTimestamp;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="description">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+            href="#description"
+            title="Permalink to MachineType.description">#</a>
+        </h4>
+        <div class="doc">
+<p>An optional textual description of the resource.</p>
+<pre class="source">
+String description;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ephemeralDisks">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>ephemeralDisks</strong> <a class="anchor-link"
+            href="#ephemeralDisks"
+            title="Permalink to MachineType.ephemeralDisks">#</a>
+        </h4>
+        <div class="doc">
+<p>List of extended ephemeral disks assigned to the instance.</p>
+<pre class="source">
+List&lt;MachineTypeEphemeralDisks&gt; ephemeralDisks;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="guestCpus">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>guestCpus</strong> <a class="anchor-link"
+            href="#guestCpus"
+            title="Permalink to MachineType.guestCpus">#</a>
+        </h4>
+        <div class="doc">
+<p>Count of CPUs exposed to the instance.</p>
+<pre class="source">
+int guestCpus;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="hostCpus">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>hostCpus</strong> <a class="anchor-link"
+            href="#hostCpus"
+            title="Permalink to MachineType.hostCpus">#</a>
+        </h4>
+        <div class="doc">
+<p>Count of physical CPUs reserved on the virtual machine host.</p>
+<pre class="source">
+int hostCpus;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to MachineType.id">#</a>
+        </h4>
+        <div class="doc">
+<p>Unique identifier for the resource; defined by the server (output only).</p>
+<pre class="source">
+String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="imageSpaceGb">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>imageSpaceGb</strong> <a class="anchor-link"
+            href="#imageSpaceGb"
+            title="Permalink to MachineType.imageSpaceGb">#</a>
+        </h4>
+        <div class="doc">
+<p>Space allotted for the image, defined in GB.</p>
+<pre class="source">
+int imageSpaceGb;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to MachineType.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Type of the resource.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maximumPersistentDisks">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>maximumPersistentDisks</strong> <a class="anchor-link"
+            href="#maximumPersistentDisks"
+            title="Permalink to MachineType.maximumPersistentDisks">#</a>
+        </h4>
+        <div class="doc">
+<p>Maximum persistent disks allowed.</p>
+<pre class="source">
+int maximumPersistentDisks;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maximumPersistentDisksSizeGb">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>maximumPersistentDisksSizeGb</strong> <a class="anchor-link"
+            href="#maximumPersistentDisksSizeGb"
+            title="Permalink to MachineType.maximumPersistentDisksSizeGb">#</a>
+        </h4>
+        <div class="doc">
+<p>Maximum total persistent disks size (GB) allowed.</p>
+<pre class="source">
+String maximumPersistentDisksSizeGb;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="memoryMb">
+<span class="show-code">Code</span>
+<a href="../dart_core/int.html">int</a>         <strong>memoryMb</strong> <a class="anchor-link"
+            href="#memoryMb"
+            title="Permalink to MachineType.memoryMb">#</a>
+        </h4>
+        <div class="doc">
+<p>Physical memory assigned to the instance, defined in MB.</p>
+<pre class="source">
+int memoryMb;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to MachineType.name">#</a>
+        </h4>
+        <div class="doc">
+<p>Name of the resource.</p>
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to MachineType.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Server defined URL for the resource (output only).</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -32,9 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> blogId, [<a href="../dart_core/int.html">int</a> maxPosts = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to BlogsResource.get">#</a></h4>
 <div class="doc">
-<p>Gets one blog by id.
-
-<span class="param">blogId</span> The ID of the blog to get.</p>
+<p>Gets one blog by id.</p><ul><li>
+<span class="param">blogId</span> The ID of the blog to get.</li><li>
+<span class="param">maxPosts</span> Maximum number of posts to pull back with the blog.</li></ul>
 <pre class="source">
 Future&lt;Blog&gt; get(String blogId, [int maxPosts = UNSPECIFIED]) {
   final $queryParams = {};
@@ -68,7 +68,8 @@ Future&lt;Blog&gt; get(String blogId, [int maxPosts = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>getByUrl</strong>([<a href="../dart_core/String.html">String</a> url = UNSPECIFIED]) <a class="anchor-link" href="#getByUrl"
               title="Permalink to BlogsResource.getByUrl">#</a></h4>
 <div class="doc">
-<p>Retrieve a Blog by URL.</p>
+<p>Retrieve a Blog by URL.</p><ul><li>
+<span class="param">url</span> The URL of the blog to retrieve.</li></ul>
 <pre class="source">
 Future&lt;Blog&gt; getByUrl([String url = UNSPECIFIED]) {
   final $queryParams = {};
@@ -101,11 +102,10 @@ Future&lt;Blog&gt; getByUrl([String url = UNSPECIFIED]) {
 <a href="../dart_core/Future.html">Future</a> <strong>listByUser</strong>(<a href="../dart_core/String.html">String</a> userId) <a class="anchor-link" href="#listByUser"
               title="Permalink to BlogsResource.listByUser">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of blogs, possibly filtered.
-
-<span class="param">userId</span> ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the</p>
-<pre><code>   user's profile identifier.
-</code></pre>
+<p>Retrieves a list of blogs, possibly filtered.</p><ul><li>
+<p>
+<span class="param">userId</span> ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the
+   user's profile identifier.</p></li></ul>
 <pre class="source">
 Future&lt;BlogList&gt; listByUser(String userId) {
   final $queryParams = {};

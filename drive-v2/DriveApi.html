@@ -1,0 +1,375 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>DriveApi Class / drive-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="drive-v2" data-type="DriveApi">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/DriveApi.html">DriveApi</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>DriveApi</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>The API to interact with Drive.</p>
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="DriveApi">
+<span class="show-code">Code</span>
+new <strong>DriveApi</strong>([baseUrl = "https://www.googleapis.com/drive/v2/", applicationName, authenticator]) <a class="anchor-link" href="#DriveApi"
+              title="Permalink to DriveApi.DriveApi">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+DriveApi([this.baseUrl = "https://www.googleapis.com/drive/v2/", this.applicationName, this.authenticator]) { 
+  _files = new FilesResource._internal(this);
+  _about = new AboutResource._internal(this);
+  _apps = new AppsResource._internal(this);
+  _parents = new ParentsResource._internal(this);
+  _revisions = new RevisionsResource._internal(this);
+  _changes = new ChangesResource._internal(this);
+  _children = new ChildrenResource._internal(this);
+  _permissions = new PermissionsResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<h3>Static Fields</h3>
+<div class="field"><h4 id="DRIVE_APPS_READONLY_SCOPE">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>DRIVE_APPS_READONLY_SCOPE</strong> <a class="anchor-link"
+            href="#DRIVE_APPS_READONLY_SCOPE"
+            title="Permalink to DriveApi.DRIVE_APPS_READONLY_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: New service: https://www.googleapis.com/auth/drive.apps.readonly</p>
+<pre class="source">
+static final String DRIVE_APPS_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.apps.readonly";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="DRIVE_FILE_SCOPE">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>DRIVE_FILE_SCOPE</strong> <a class="anchor-link"
+            href="#DRIVE_FILE_SCOPE"
+            title="Permalink to DriveApi.DRIVE_FILE_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View and manage Google Drive files that you have opened or created with this app</p>
+<pre class="source">
+static final String DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/drive.file";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="DRIVE_METADATA_READONLY_SCOPE">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>DRIVE_METADATA_READONLY_SCOPE</strong> <a class="anchor-link"
+            href="#DRIVE_METADATA_READONLY_SCOPE"
+            title="Permalink to DriveApi.DRIVE_METADATA_READONLY_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View metadata for files and documents in your Google Drive</p>
+<pre class="source">
+static final String DRIVE_METADATA_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.metadata.readonly";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="DRIVE_READONLY_SCOPE">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>DRIVE_READONLY_SCOPE</strong> <a class="anchor-link"
+            href="#DRIVE_READONLY_SCOPE"
+            title="Permalink to DriveApi.DRIVE_READONLY_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View the files and documents in your Google Drive</p>
+<pre class="source">
+static final String DRIVE_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.readonly";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="DRIVE_SCOPE">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>DRIVE_SCOPE</strong> <a class="anchor-link"
+            href="#DRIVE_SCOPE"
+            title="Permalink to DriveApi.DRIVE_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View and manage the files and documents in your Google Drive</p>
+<pre class="source">
+static final String DRIVE_SCOPE = "https://www.googleapis.com/auth/drive";
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get:about">
+<span class="show-code">Code</span>
+<a href="../drive-v2/AboutResource.html">AboutResource</a> <strong>get about</strong>() <a class="anchor-link" href="#get:about"
+              title="Permalink to DriveApi.get about">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AboutResource get about() =&gt; _about;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:apps">
+<span class="show-code">Code</span>
+<a href="../drive-v2/AppsResource.html">AppsResource</a> <strong>get apps</strong>() <a class="anchor-link" href="#get:apps"
+              title="Permalink to DriveApi.get apps">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AppsResource get apps() =&gt; _apps;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:changes">
+<span class="show-code">Code</span>
+<a href="../drive-v2/ChangesResource.html">ChangesResource</a> <strong>get changes</strong>() <a class="anchor-link" href="#get:changes"
+              title="Permalink to DriveApi.get changes">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ChangesResource get changes() =&gt; _changes;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:children">
+<span class="show-code">Code</span>
+<a href="../drive-v2/ChildrenResource.html">ChildrenResource</a> <strong>get children</strong>() <a class="anchor-link" href="#get:children"
+              title="Permalink to DriveApi.get children">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ChildrenResource get children() =&gt; _children;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:files">
+<span class="show-code">Code</span>
+<a href="../drive-v2/FilesResource.html">FilesResource</a> <strong>get files</strong>() <a class="anchor-link" href="#get:files"
+              title="Permalink to DriveApi.get files">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+FilesResource get files() =&gt; _files;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:parents">
+<span class="show-code">Code</span>
+<a href="../drive-v2/ParentsResource.html">ParentsResource</a> <strong>get parents</strong>() <a class="anchor-link" href="#get:parents"
+              title="Permalink to DriveApi.get parents">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ParentsResource get parents() =&gt; _parents;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:permissions">
+<span class="show-code">Code</span>
+<a href="../drive-v2/PermissionsResource.html">PermissionsResource</a> <strong>get permissions</strong>() <a class="anchor-link" href="#get:permissions"
+              title="Permalink to DriveApi.get permissions">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+PermissionsResource get permissions() =&gt; _permissions;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:revisions">
+<span class="show-code">Code</span>
+<a href="../drive-v2/RevisionsResource.html">RevisionsResource</a> <strong>get revisions</strong>() <a class="anchor-link" href="#get:revisions"
+              title="Permalink to DriveApi.get revisions">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+RevisionsResource get revisions() =&gt; _revisions;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get:userAgent">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+              title="Permalink to DriveApi.get userAgent">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+String get userAgent() {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}drive/v2/20120501 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="alt">
+<span class="show-code">Code</span>
+<a href="../drive-v2/DriveApiAlt.html">DriveApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
+            href="#alt"
+            title="Permalink to DriveApi.alt">#</a>
+        </h4>
+        <div class="doc">
+<p>Data format for the response.</p>
+<pre class="source">
+DriveApiAlt alt;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="applicationName">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+            href="#applicationName"
+            title="Permalink to DriveApi.applicationName">#</a>
+        </h4>
+        <div class="doc">
+<p>The application name, used in the user-agent header</p>
+<pre class="source">
+final String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to DriveApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="baseUrl">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+            href="#baseUrl"
+            title="Permalink to DriveApi.baseUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The API root, such as <code>https://www.googleapis.com</code></p>
+<pre class="source">
+final String baseUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clientVersion">
+<span class="show-code">Code</span>
+final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+            href="#clientVersion"
+            title="Permalink to DriveApi.clientVersion">#</a>
+        </h4>
+        <div class="doc">
+<p>The client library version</p>
+<pre class="source">
+final String clientVersion = "0.1";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fields">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+            href="#fields"
+            title="Permalink to DriveApi.fields">#</a>
+        </h4>
+        <div class="doc">
+<p>Selector specifying which fields to include in a partial response.</p>
+<pre class="source">
+String fields;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="key">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+            href="#key"
+            title="Permalink to DriveApi.key">#</a>
+        </h4>
+        <div class="doc">
+<p>API key. Your API key identifies your project and provides you with API access, quota, and
+reports. Required unless you provide an OAuth 2.0 token.</p>
+<pre class="source">
+String key;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="oauthToken">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+            href="#oauthToken"
+            title="Permalink to DriveApi.oauthToken">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth 2.0 token for the current user.</p>
+<pre class="source">
+String oauthToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prettyPrint">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+            href="#prettyPrint"
+            title="Permalink to DriveApi.prettyPrint">#</a>
+        </h4>
+        <div class="doc">
+<p>Returns response with indentations and line breaks.</p>
+<pre class="source">
+bool prettyPrint;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaUser">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+            href="#quotaUser"
+            title="Permalink to DriveApi.quotaUser">#</a>
+        </h4>
+        <div class="doc">
+<p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
+<pre class="source">
+String quotaUser;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userIp">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+            href="#userIp"
+            title="Permalink to DriveApi.userIp">#</a>
+        </h4>
+        <div class="doc">
+<p>IP address of the site where the request originates. Use this if you want to enforce per-user
+limits.</p>
+<pre class="source">
+String userIp;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

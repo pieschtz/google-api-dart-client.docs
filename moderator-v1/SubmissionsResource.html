@@ -32,11 +32,11 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> submissionId, [<a href="../dart_core/String.html">String</a> lang = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> includeVotes = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to SubmissionsResource.get">#</a></h4>
 <div class="doc">
-<p>Returns the specified submission within the specified series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</p>
+<p>Returns the specified submission within the specified series.</p><ul><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li><li>
+<span class="param">lang</span> The language code for the language the client prefers resuls in.</li><li>
+<span class="param">includeVotes</span> Specifies whether to include the current user's vote</li></ul>
 <pre class="source">
 Future&lt;Submission&gt; get(int seriesId, int submissionId, [String lang = UNSPECIFIED, bool includeVotes = UNSPECIFIED]) {
   final $queryParams = {};
@@ -72,13 +72,12 @@ Future&lt;Submission&gt; get(int seriesId, int submissionId, [String lang = UNSP
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> topicId, <a href="../moderator-v1/Submission.html">Submission</a> content, [<a href="../dart_core/String.html">String</a> unauthToken = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> anonymous = UNSPECIFIED]) <a class="anchor-link" href="#insert"
               title="Permalink to SubmissionsResource.insert">#</a></h4>
 <div class="doc">
-<p>Inserts a new submission in the specified topic within the specified series.
-
-<span class="param">seriesId</span> The decimal ID of the Series.
-
-<span class="param">topicId</span> The decimal ID of the Topic within the Series.
-
-<span class="param">content</span> the Submission</p>
+<p>Inserts a new submission in the specified topic within the specified series.</p><ul><li>
+<span class="param">content</span> the Submission</li><li>
+<span class="param">seriesId</span> The decimal ID of the Series.</li><li>
+<span class="param">topicId</span> The decimal ID of the Topic within the Series.</li><li>
+<span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li><li>
+<span class="param">anonymous</span> Set to true to mark the new submission as anonymous.</li></ul>
 <pre class="source">
 Future&lt;Submission&gt; insert(int seriesId, int topicId, Submission content, [String unauthToken = UNSPECIFIED, bool anonymous = UNSPECIFIED]) {
   final $queryParams = {};

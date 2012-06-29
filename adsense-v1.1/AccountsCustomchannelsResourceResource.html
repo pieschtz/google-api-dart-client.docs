@@ -32,13 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> accountId, <a href="../dart_core/String.html">String</a> adClientId, <a href="../dart_core/String.html">String</a> customChannelId) <a class="anchor-link" href="#get"
               title="Permalink to AccountsCustomchannelsResourceResource.get">#</a></h4>
 <div class="doc">
-<p>Get the specified custom channel from the specified ad client for the specified account.
-
-<span class="param">accountId</span> Account to which the ad client belongs.
-
-<span class="param">adClientId</span> Ad client which contains the custom channel.
-
-<span class="param">customChannelId</span> Custom channel to retrieve.</p>
+<p>Get the specified custom channel from the specified ad client for the specified account.</p><ul><li>
+<span class="param">accountId</span> Account to which the ad client belongs.</li><li>
+<span class="param">adClientId</span> Ad client which contains the custom channel.</li><li>
+<span class="param">customChannelId</span> Custom channel to retrieve.</li></ul>
 <pre class="source">
 Future&lt;CustomChannel&gt; get(String accountId, String adClientId, String customChannelId) {
   final $queryParams = {};
@@ -73,11 +70,16 @@ Future&lt;CustomChannel&gt; get(String accountId, String adClientId, String cust
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> accountId, <a href="../dart_core/String.html">String</a> adClientId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to AccountsCustomchannelsResourceResource.list">#</a></h4>
 <div class="doc">
-<p>List all custom channels in the specified ad client for the specified account.
-
-<span class="param">accountId</span> Account to which the ad client belongs.
-
-<span class="param">adClientId</span> Ad client for which to list custom channels.</p>
+<p>List all custom channels in the specified ad client for the specified account.</p><ul><li>
+<span class="param">accountId</span> Account to which the ad client belongs.</li><li>
+<span class="param">adClientId</span> Ad client for which to list custom channels.</li><li>
+<p>
+<span class="param">pageToken</span> A continuation token, used to page through custom channels. To retrieve the next page, set this
+   parameter to the value of "nextPageToken" from the previous response.</p></li><li>
+<span class="param">maxResults</span> The maximum number of custom channels to include in the response, used for paging.</li></ul>
+<p>Minimum: 0.</p>
+<pre><code>   Maximum: 10000.
+</code></pre>
 <pre class="source">
 Future&lt;CustomChannels&gt; list(String accountId, String adClientId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};

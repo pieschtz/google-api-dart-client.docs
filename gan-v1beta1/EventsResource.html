@@ -32,11 +32,54 @@
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../gan-v1beta1/EventsResourceListRole.html">EventsResourceListRole</a> role, <a href="../dart_core/String.html">String</a> roleId, [<a href="../dart_core/String.html">String</a> orderId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sku = UNSPECIFIED, <a href="../dart_core/String.html">String</a> eventDateMax = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListType.html">EventsResourceListType</a> type = UNSPECIFIED, <a href="../dart_core/String.html">String</a> linkId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> modifyDateMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> eventDateMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> memberId = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> advertiserId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> productCategory = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListChargeType.html">EventsResourceListChargeType</a> chargeType = UNSPECIFIED, <a href="../dart_core/String.html">String</a> modifyDateMax = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListStatus.html">EventsResourceListStatus</a> status = UNSPECIFIED, <a href="../dart_core/String.html">String</a> publisherId = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to EventsResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves event data for a given advertiser/publisher.
-
-<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.
-
-<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</p>
+<p>Retrieves event data for a given advertiser/publisher.</p><ul><li>
+<span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.</li><li>
+<span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li><li>
+<p>
+<span class="param">orderId</span> Caret(^) delimited list of order IDs. Filters out all events that do not reference one of the given
+   order IDs. Optional.</p></li><li>
+<p>
+<span class="param">sku</span> Caret(^) delimited list of SKUs. Filters out all events that do not reference one of the given SKU.
+   Optional.</p></li><li>
+<span class="param">eventDateMax</span> Filters out all events later than given date. Optional. Defaults to 24 hours after eventMin.</li><li>
+<p>
+<span class="param">type</span> Filters out all events that are not of the given type. Valid values: 'action', 'transaction',
+   'charge'. Optional.</p></li><li>
+<p>
+<span class="param">linkId</span> Caret(^) delimited list of link IDs. Filters out all events that do not reference one of the given
+   link IDs. Optional.</p></li><li>
+<p>
+<span class="param">modifyDateMin</span> Filters out all events modified earlier than given date. Optional. Defaults to 24 hours before the
+   current modifyDateMax, if modifyDateMax is explicitly set.</p></li><li>
+<p>
+<span class="param">eventDateMin</span> Filters out all events earlier than given date. Optional. Defaults to 24 hours from current
+   date/time.</p></li><li>
+<p>
+<span class="param">memberId</span> Caret(^) delimited list of member IDs. Filters out all events that do not reference one of the given
+   member IDs. Optional.</p></li><li>
+<span class="param">maxResults</span> Max number of offers to return in this page. Optional. Defaults to 20.</li></ul>
+<p>Minimum: 0.
+Maximum: 100.
+   * 
+<span class="param">advertiserId</span> Caret(^) delimited list of advertiser IDs. Filters out all events that do not reference one of the</p>
+<pre><code>   given advertiser IDs. Only used when under publishers role. Optional.
+</code></pre><ul><li>
+<span class="param">pageToken</span> The value of 'nextPageToken' from the previous page. Optional.</li><li>
+<p>
+<span class="param">productCategory</span> Caret(^) delimited list of product categories. Filters out all events that do not reference a
+   product in one of the given product categories. Optional.</p></li><li>
+<p>
+<span class="param">chargeType</span> Filters out all charge events that are not of the given charge type. Valid values: 'other',
+   'slotting<em>fee', 'monthly</em>minimum', 'tier_bonus', 'credit', 'debit'. Optional.</p></li><li>
+<p>
+<span class="param">modifyDateMax</span> Filters out all events modified later than given date. Optional. Defaults to 24 hours after
+   modifyDateMin, if modifyDateMin is explicitly set.</p></li><li>
+<p>
+<span class="param">status</span> Filters out all events that do not have the given status. Valid values: 'active', 'canceled'.
+   Optional.</p></li><li>
+<p>
+<span class="param">publisherId</span> Caret(^) delimited list of publisher IDs. Filters out all events that do not reference one of the
+   given publishers IDs. Only used when under advertiser role. Optional.</p></li></ul>
 <pre class="source">
 Future&lt;Events&gt; list(EventsResourceListRole role, String roleId, [String orderId = UNSPECIFIED, String sku = UNSPECIFIED, String eventDateMax = UNSPECIFIED, EventsResourceListType type = UNSPECIFIED, String linkId = UNSPECIFIED, String modifyDateMin = UNSPECIFIED, String eventDateMin = UNSPECIFIED, String memberId = UNSPECIFIED, int maxResults = UNSPECIFIED, String advertiserId = UNSPECIFIED, String pageToken = UNSPECIFIED, String productCategory = UNSPECIFIED, EventsResourceListChargeType chargeType = UNSPECIFIED, String modifyDateMax = UNSPECIFIED, EventsResourceListStatus status = UNSPECIFIED, String publisherId = UNSPECIFIED]) {
   final $queryParams = {};

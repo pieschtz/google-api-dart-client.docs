@@ -32,9 +32,15 @@
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> adClientId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to UrlchannelsResource.list">#</a></h4>
 <div class="doc">
-<p>List all URL channels in the specified ad client for this AdSense account.
-
-<span class="param">adClientId</span> Ad client for which to list URL channels.</p>
+<p>List all URL channels in the specified ad client for this AdSense account.</p><ul><li>
+<span class="param">adClientId</span> Ad client for which to list URL channels.</li><li>
+<p>
+<span class="param">pageToken</span> A continuation token, used to page through URL channels. To retrieve the next page, set this
+   parameter to the value of "nextPageToken" from the previous response.</p></li><li>
+<span class="param">maxResults</span> The maximum number of URL channels to include in the response, used for paging.</li></ul>
+<p>Minimum: 0.</p>
+<pre><code>   Maximum: 10000.
+</code></pre>
 <pre class="source">
 Future&lt;UrlChannels&gt; list(String adClientId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};

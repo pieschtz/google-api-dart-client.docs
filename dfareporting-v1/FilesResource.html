@@ -32,9 +32,18 @@
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> profileId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dfareporting-v1/FilesResourceListSortField.html">FilesResourceListSortField</a> sortField = UNSPECIFIED, <a href="../dfareporting-v1/FilesResourceListSortOrder.html">FilesResourceListSortOrder</a> sortOrder = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to FilesResource.list">#</a></h4>
 <div class="doc">
-<p>Lists files for a user profile.
-
-<span class="param">profileId</span> The DFA profile id.</p>
+<p>Lists files for a user profile.</p><ul><li>
+<span class="param">profileId</span> The DFA profile id.</li><li>
+<span class="param">pageToken</span> The value of the nextToken from the previous result page.</li><li>
+<p>
+<span class="param">sortField</span> The field to sort the list by.
+Default: LAST<em>MODIFIED</em>TIME.</p></li><li>
+<p>
+<span class="param">sortOrder</span> Order of sorted results, default is 'DESCENDING'.
+Default: DESCENDING.</p></li><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li></ul>
+<p>Minimum: 0.
+Maximum: 10.</p>
 <pre class="source">
 Future&lt;FileList&gt; list(String profileId, [String pageToken = UNSPECIFIED, FilesResourceListSortField sortField = UNSPECIFIED, FilesResourceListSortOrder sortOrder = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
   final $queryParams = {};

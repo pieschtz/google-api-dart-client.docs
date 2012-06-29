@@ -32,13 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> pollId, <a href="../orkut-v2/CommunityPollVote.html">CommunityPollVote</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CommunityPollVotesResource.insert">#</a></h4>
 <div class="doc">
-<p>Votes on a community poll.
-
-<span class="param">communityId</span> The ID of the community whose poll is being voted.
-
-<span class="param">pollId</span> The ID of the poll being voted.
-
-<span class="param">content</span> the CommunityPollVote</p>
+<p>Votes on a community poll.</p><ul><li>
+<span class="param">content</span> the CommunityPollVote</li><li>
+<span class="param">communityId</span> The ID of the community whose poll is being voted.</li><li>
+<span class="param">pollId</span> The ID of the poll being voted.</li></ul>
 <pre class="source">
 Future&lt;CommunityPollVote&gt; insert(int communityId, String pollId, CommunityPollVote content) {
   final $queryParams = {};

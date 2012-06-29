@@ -32,11 +32,25 @@
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> customerId, <a href="../dart_core/String.html">String</a> applicationId, [<a href="../dart_core/String.html">String</a> actorEmail = UNSPECIFIED, <a href="../dart_core/String.html">String</a> actorApplicationId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> actorIpAddress = UNSPECIFIED, <a href="../audit-v1/ActivitiesResourceListCaller.html">ActivitiesResourceListCaller</a> caller = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> eventName = UNSPECIFIED, <a href="../dart_core/String.html">String</a> parameters = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startTime = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endTime = UNSPECIFIED, <a href="../dart_core/String.html">String</a> continuationToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ActivitiesResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of activities for a specific customer and application.
-
-<span class="param">customerId</span> Represents the customer who is the owner of target object on which action was performed.
-
-<span class="param">applicationId</span> Application ID of the application on which the event was performed.</p>
+<p>Retrieves a list of activities for a specific customer and application.</p><ul><li>
+<span class="param">customerId</span> Represents the customer who is the owner of target object on which action was performed.</li><li>
+<span class="param">applicationId</span> Application ID of the application on which the event was performed.</li><li>
+<span class="param">actorEmail</span> Email address of the user who performed the action.</li><li>
+<span class="param">actorApplicationId</span> Application ID of the application which interacted on behalf of the user while performing the event.</li><li>
+<span class="param">actorIpAddress</span> IP Address of host where the event was performed. Supports both IPv4 and IPv6 addresses.</li><li>
+<span class="param">caller</span> Type of the caller.</li><li>
+<span class="param">maxResults</span> Number of activity records to be shown in each page.</li></ul>
+<p>Minimum: 1.
+Maximum: 1000.
+   * 
+<span class="param">eventName</span> Name of the event being queried.
+   * 
+<span class="param">parameters</span> Event parameters in the form <code>parameter1 name</code>:<code>parameter1 value</code>,<code>parameter2 name</code>:[parameter2</p>
+<pre><code>   value],...
+</code></pre><ul><li>
+<span class="param">startTime</span> Return events which occured at or after this time.</li><li>
+<span class="param">endTime</span> Return events which occured at or before this time.</li><li>
+<span class="param">continuationToken</span> Next page URL.</li></ul>
 <pre class="source">
 Future&lt;Activities&gt; list(String customerId, String applicationId, [String actorEmail = UNSPECIFIED, String actorApplicationId = UNSPECIFIED, String actorIpAddress = UNSPECIFIED, ActivitiesResourceListCaller caller = UNSPECIFIED, int maxResults = UNSPECIFIED, String eventName = UNSPECIFIED, String parameters = UNSPECIFIED, String startTime = UNSPECIFIED, String endTime = UNSPECIFIED, String continuationToken = UNSPECIFIED]) {
   final $queryParams = {};

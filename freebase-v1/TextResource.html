@@ -32,9 +32,12 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/List.html">List</a> id, [<a href="../dart_core/int.html">int</a> maxlength = UNSPECIFIED, <a href="../freebase-v1/TextResourceGetFormat.html">TextResourceGetFormat</a> format = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to TextResource.get">#</a></h4>
 <div class="doc">
-<p>Returns blob attached to node at specified id as HTML
-
-<span class="param">id</span> The id of the item that you want data about</p>
+<p>Returns blob attached to node at specified id as HTML</p><ul><li>
+<span class="param">id</span> The id of the item that you want data about</li><li>
+<span class="param">maxlength</span> The max number of characters to return. Valid only for 'plain' format.</li><li>
+<p>
+<span class="param">format</span> Sanitizing transformation.
+Default: plain.</p></li></ul>
 <pre class="source">
 Future&lt;ContentserviceGet&gt; get(List&lt;String&gt; id, [int maxlength = UNSPECIFIED, TextResourceGetFormat format = UNSPECIFIED]) {
   final $queryParams = {};

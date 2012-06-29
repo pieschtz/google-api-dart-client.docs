@@ -42,6 +42,7 @@ static Event parse(Map&lt;String, Object&gt; json) {
   final result = new Event();
   result.creator = EventCreator.parse(json["creator"]);
   result.organizer = EventOrganizer.parse(json["organizer"]);
+  result.summary = identity(json["summary"]);
   result.id = identity(json["id"]);
   result.attendees = map(EventAttendee.parse)(json["attendees"]);
   result.htmlLink = identity(json["htmlLink"]);
@@ -50,25 +51,26 @@ static Event parse(Map&lt;String, Object&gt; json) {
   result.etag = identity(json["etag"]);
   result.location = identity(json["location"]);
   result.recurringEventId = identity(json["recurringEventId"]);
-  result.originalStartTime = EventDateTime.parse(json["originalStartTime"]);
+  result.gadget = EventGadget.parse(json["gadget"]);
   result.status = identity(json["status"]);
   result.updated = identity(json["updated"]);
-  result.gadget = EventGadget.parse(json["gadget"]);
   result.description = identity(json["description"]);
   result.iCalUID = identity(json["iCalUID"]);
   result.extendedProperties = EventExtendedProperties.parse(json["extendedProperties"]);
+  result.endTimeUnspecified = identity(json["endTimeUnspecified"]);
   result.sequence = identity(json["sequence"]);
   result.visibility = identity(json["visibility"]);
   result.guestsCanModify = identity(json["guestsCanModify"]);
   result.end = EventDateTime.parse(json["end"]);
   result.attendeesOmitted = identity(json["attendeesOmitted"]);
   result.kind = identity(json["kind"]);
+  result.locked = identity(json["locked"]);
   result.created = identity(json["created"]);
   result.colorId = identity(json["colorId"]);
   result.anyoneCanAddSelf = identity(json["anyoneCanAddSelf"]);
   result.reminders = EventReminders.parse(json["reminders"]);
   result.guestsCanSeeOtherGuests = identity(json["guestsCanSeeOtherGuests"]);
-  result.summary = identity(json["summary"]);
+  result.originalStartTime = EventDateTime.parse(json["originalStartTime"]);
   result.guestsCanInviteOthers = identity(json["guestsCanInviteOthers"]);
   result.transparency = identity(json["transparency"]);
   result.privateCopy = identity(json["privateCopy"]);
@@ -89,6 +91,7 @@ static Object serialize(Event value) {
   final result = {};
   result["creator"] = EventCreator.serialize(value.creator);
   result["organizer"] = EventOrganizer.serialize(value.organizer);
+  result["summary"] = identity(value.summary);
   result["id"] = identity(value.id);
   result["attendees"] = map(EventAttendee.serialize)(value.attendees);
   result["htmlLink"] = identity(value.htmlLink);
@@ -97,25 +100,26 @@ static Object serialize(Event value) {
   result["etag"] = identity(value.etag);
   result["location"] = identity(value.location);
   result["recurringEventId"] = identity(value.recurringEventId);
-  result["originalStartTime"] = EventDateTime.serialize(value.originalStartTime);
+  result["gadget"] = EventGadget.serialize(value.gadget);
   result["status"] = identity(value.status);
   result["updated"] = identity(value.updated);
-  result["gadget"] = EventGadget.serialize(value.gadget);
   result["description"] = identity(value.description);
   result["iCalUID"] = identity(value.iCalUID);
   result["extendedProperties"] = EventExtendedProperties.serialize(value.extendedProperties);
+  result["endTimeUnspecified"] = identity(value.endTimeUnspecified);
   result["sequence"] = identity(value.sequence);
   result["visibility"] = identity(value.visibility);
   result["guestsCanModify"] = identity(value.guestsCanModify);
   result["end"] = EventDateTime.serialize(value.end);
   result["attendeesOmitted"] = identity(value.attendeesOmitted);
   result["kind"] = identity(value.kind);
+  result["locked"] = identity(value.locked);
   result["created"] = identity(value.created);
   result["colorId"] = identity(value.colorId);
   result["anyoneCanAddSelf"] = identity(value.anyoneCanAddSelf);
   result["reminders"] = EventReminders.serialize(value.reminders);
   result["guestsCanSeeOtherGuests"] = identity(value.guestsCanSeeOtherGuests);
-  result["summary"] = identity(value.summary);
+  result["originalStartTime"] = EventDateTime.serialize(value.originalStartTime);
   result["guestsCanInviteOthers"] = identity(value.guestsCanInviteOthers);
   result["transparency"] = identity(value.transparency);
   result["privateCopy"] = identity(value.privateCopy);
@@ -243,6 +247,19 @@ String description;
 instance.</p>
 <pre class="source">
 EventDateTime end;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="endTimeUnspecified">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>endTimeUnspecified</strong> <a class="anchor-link"
+            href="#endTimeUnspecified"
+            title="Permalink to Event.endTimeUnspecified">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool endTimeUnspecified;
 </pre>
 </div>
 </div>
@@ -388,6 +405,21 @@ String kind;
 <p>Geographic location of the event as free-form text. Optional.</p>
 <pre class="source">
 String location;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="locked">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>locked</strong> <a class="anchor-link"
+            href="#locked"
+            title="Permalink to Event.locked">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether this is a locked event copy where no changes can be made to the main event fields
+"summary", "description", "location", "start", "end" or "recurrence". The default is False. Read-
+Only.</p>
+<pre class="source">
+bool locked;
 </pre>
 </div>
 </div>

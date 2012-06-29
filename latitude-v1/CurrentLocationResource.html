@@ -64,7 +64,10 @@ Future delete() {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>([<a href="../latitude-v1/CurrentLocationResourceGetGranularity.html">CurrentLocationResourceGetGranularity</a> granularity = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to CurrentLocationResource.get">#</a></h4>
 <div class="doc">
-<p>Returns the authenticated user's current location.</p>
+<p>Returns the authenticated user's current location.</p><ul><li>
+<p>
+<span class="param">granularity</span> Granularity of the requested location.
+Default: city.</p></li></ul>
 <pre class="source">
 Future&lt;Location&gt; get([CurrentLocationResourceGetGranularity granularity = UNSPECIFIED]) {
   final $queryParams = {};
@@ -97,9 +100,8 @@ Future&lt;Location&gt; get([CurrentLocationResourceGetGranularity granularity = 
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../latitude-v1/Location.html">Location</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CurrentLocationResource.insert">#</a></h4>
 <div class="doc">
-<p>Updates or creates the user's current location.
-
-<span class="param">content</span> the Location</p>
+<p>Updates or creates the user's current location.</p><ul><li>
+<span class="param">content</span> the Location</li></ul>
 <pre class="source">
 Future&lt;Location&gt; insert(Location content) {
   final $queryParams = {};

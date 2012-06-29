@@ -48,6 +48,8 @@ static JobConfigurationLoad parse(Map&lt;String, Object&gt; json) {
   result.sourceUris = map(identity)(json["sourceUris"]);
   result.skipLeadingRows = identity(json["skipLeadingRows"]);
   result.createDisposition = identity(json["createDisposition"]);
+  result.schemaInlineFormat = identity(json["schemaInlineFormat"]);
+  result.schemaInline = identity(json["schemaInline"]);
   result.schema = TableSchema.parse(json["schema"]);
   return result;
 }
@@ -72,6 +74,8 @@ static Object serialize(JobConfigurationLoad value) {
   result["sourceUris"] = map(identity)(value.sourceUris);
   result["skipLeadingRows"] = identity(value.skipLeadingRows);
   result["createDisposition"] = identity(value.createDisposition);
+  result["schemaInlineFormat"] = identity(value.schemaInlineFormat);
+  result["schemaInline"] = identity(value.schemaInline);
   result["schema"] = TableSchema.serialize(value.schema);
   return result;
 }
@@ -168,6 +172,33 @@ int maxBadRecords;
 <p><code>Optional</code> Schema of the table being written to.</p>
 <pre class="source">
 TableSchema schema;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="schemaInline">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>schemaInline</strong> <a class="anchor-link"
+            href="#schemaInline"
+            title="Permalink to JobConfigurationLoad.schemaInline">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Experimental</code> Inline schema. For CSV schemas, specify as "Field1:Type1<code>,Field2:Type2</code>*". For
+example, "foo:STRING, bar:INTEGER, baz:FLOAT"</p>
+<pre class="source">
+String schemaInline;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="schemaInlineFormat">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>schemaInlineFormat</strong> <a class="anchor-link"
+            href="#schemaInlineFormat"
+            title="Permalink to JobConfigurationLoad.schemaInlineFormat">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Experimental</code> Format of inlineSchema field.</p>
+<pre class="source">
+String schemaInlineFormat;
 </pre>
 </div>
 </div>

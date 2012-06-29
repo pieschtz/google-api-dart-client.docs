@@ -32,15 +32,21 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> annotationDataId, <a href="../dart_core/String.html">String</a> contentVersion, [<a href="../dart_core/int.html">int</a> scale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/int.html">int</a> h = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/int.html">int</a> w = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to LayersAnnotationDataResourceResource.get">#</a></h4>
 <div class="doc">
-<p>Gets the annotation data.
-
-<span class="param">volumeId</span> The volume to retrieve annotations for.
-
-<span class="param">layerId</span> The ID for the layer to get the annotations.
-
-<span class="param">annotationDataId</span> The ID of the annotation data to retrieve.
-
-<span class="param">contentVersion</span> The content version for the volume you are trying to retrieve.</p>
+<p>Gets the annotation data.</p><ul><li>
+<span class="param">volumeId</span> The volume to retrieve annotations for.</li><li>
+<span class="param">layerId</span> The ID for the layer to get the annotations.</li><li>
+<span class="param">annotationDataId</span> The ID of the annotation data to retrieve.</li><li>
+<span class="param">contentVersion</span> The content version for the volume you are trying to retrieve.</li><li>
+<span class="param">scale</span> The requested scale for the image.</li></ul>
+<p>Minimum: 0.
+   * 
+<span class="param">locale</span> The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
+   * 
+<span class="param">h</span> The requested pixel height for any images. If height is provided width must also be provided.
+   * 
+<span class="param">source</span> String to identify the originator of this request.
+   * 
+<span class="param">w</span> The requested pixel width for any images. If width is provided height must also be provided.</p>
 <pre class="source">
 Future&lt;Annotationdata&gt; get(String volumeId, String layerId, String annotationDataId, String contentVersion, [int scale = UNSPECIFIED, String locale = UNSPECIFIED, int h = UNSPECIFIED, String source = UNSPECIFIED, int w = UNSPECIFIED]) {
   final $queryParams = {};
@@ -81,13 +87,32 @@ Future&lt;Annotationdata&gt; get(String volumeId, String layerId, String annotat
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> contentVersion, [<a href="../dart_core/int.html">int</a> scale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/int.html">int</a> h = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/List.html">List</a> annotationDataId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> w = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMin = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to LayersAnnotationDataResourceResource.list">#</a></h4>
 <div class="doc">
-<p>Gets the annotation data for a volume and layer.
-
-<span class="param">volumeId</span> The volume to retrieve annotation data for.
-
-<span class="param">layerId</span> The ID for the layer to get the annotation data.
-
-<span class="param">contentVersion</span> The content version for the requested volume.</p>
+<p>Gets the annotation data for a volume and layer.</p><ul><li>
+<span class="param">volumeId</span> The volume to retrieve annotation data for.</li><li>
+<span class="param">layerId</span> The ID for the layer to get the annotation data.</li><li>
+<span class="param">contentVersion</span> The content version for the requested volume.</li><li>
+<span class="param">scale</span> The requested scale for the image.</li></ul>
+<p>Minimum: 0.
+   * 
+<span class="param">source</span> String to identify the originator of this request.
+   * 
+<span class="param">locale</span> The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
+   * 
+<span class="param">h</span> The requested pixel height for any images. If height is provided width must also be provided.
+   * 
+<span class="param">updatedMax</span> RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
+   * 
+<span class="param">maxResults</span> Maximum number of results to return</p>
+<p>Minimum: 0.
+Maximum: 200.
+   * 
+<span class="param">annotationDataId</span> The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.
+   * 
+<span class="param">pageToken</span> The value of the nextToken from the previous page.
+   * 
+<span class="param">w</span> The requested pixel width for any images. If width is provided height must also be provided.
+   * 
+<span class="param">updatedMin</span> RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</p>
 <pre class="source">
 Future&lt;Annotationsdata&gt; list(String volumeId, String layerId, String contentVersion, [int scale = UNSPECIFIED, String source = UNSPECIFIED, String locale = UNSPECIFIED, int h = UNSPECIFIED, String updatedMax = UNSPECIFIED, int maxResults = UNSPECIFIED, List&lt;String&gt; annotationDataId = UNSPECIFIED, String pageToken = UNSPECIFIED, int w = UNSPECIFIED, String updatedMin = UNSPECIFIED]) {
   final $queryParams = {};

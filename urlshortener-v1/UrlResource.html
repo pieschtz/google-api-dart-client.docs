@@ -32,9 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> shortUrl, [<a href="../urlshortener-v1/UrlResourceGetProjection.html">UrlResourceGetProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to UrlResource.get">#</a></h4>
 <div class="doc">
-<p>Expands a short URL or gets creation time and analytics.
-
-<span class="param">shortUrl</span> The short URL, including the protocol.</p>
+<p>Expands a short URL or gets creation time and analytics.</p><ul><li>
+<span class="param">shortUrl</span> The short URL, including the protocol.</li><li>
+<span class="param">projection</span> Additional information to return.</li></ul>
 <pre class="source">
 Future&lt;Url&gt; get(String shortUrl, [UrlResourceGetProjection projection = UNSPECIFIED]) {
   final $queryParams = {};
@@ -68,9 +68,8 @@ Future&lt;Url&gt; get(String shortUrl, [UrlResourceGetProjection projection = UN
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../urlshortener-v1/Url.html">Url</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to UrlResource.insert">#</a></h4>
 <div class="doc">
-<p>Creates a new short URL.
-
-<span class="param">content</span> the Url</p>
+<p>Creates a new short URL.</p><ul><li>
+<span class="param">content</span> the Url</li></ul>
 <pre class="source">
 Future&lt;Url&gt; insert(Url content) {
   final $queryParams = {};
@@ -104,7 +103,9 @@ Future&lt;Url&gt; insert(Url content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> startToken = UNSPECIFIED, <a href="../urlshortener-v1/UrlResourceListProjection.html">UrlResourceListProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to UrlResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves a list of URLs shortened by a user.</p>
+<p>Retrieves a list of URLs shortened by a user.</p><ul><li>
+<span class="param">startToken</span> Token for requesting successive pages of results.</li><li>
+<span class="param">projection</span> Additional information to return.</li></ul>
 <pre class="source">
 Future&lt;UrlHistory&gt; list([String startToken = UNSPECIFIED, UrlResourceListProjection projection = UNSPECIFIED]) {
   final $queryParams = {};

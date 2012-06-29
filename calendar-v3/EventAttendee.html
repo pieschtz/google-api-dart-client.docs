@@ -42,8 +42,9 @@ static EventAttendee parse(Map&lt;String, Object&gt; json) {
   final result = new EventAttendee();
   result.comment = identity(json["comment"]);
   result.displayName = identity(json["displayName"]);
-  result.self = identity(json["self"]);
   result.responseStatus = identity(json["responseStatus"]);
+  result.self = identity(json["self"]);
+  result.id = identity(json["id"]);
   result.additionalGuests = identity(json["additionalGuests"]);
   result.resource = identity(json["resource"]);
   result.organizer = identity(json["organizer"]);
@@ -66,8 +67,9 @@ static Object serialize(EventAttendee value) {
   final result = {};
   result["comment"] = identity(value.comment);
   result["displayName"] = identity(value.displayName);
-  result["self"] = identity(value.self);
   result["responseStatus"] = identity(value.responseStatus);
+  result["self"] = identity(value.self);
+  result["id"] = identity(value.id);
   result["additionalGuests"] = identity(value.additionalGuests);
   result["resource"] = identity(value.resource);
   result["organizer"] = identity(value.organizer);
@@ -140,6 +142,19 @@ String displayName;
 <p>The attendee's email address, if available. This field must be present when adding an attendee.</p>
 <pre class="source">
 String email;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to EventAttendee.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The attendee's Profile ID, if available.</p>
+<pre class="source">
+String id;
 </pre>
 </div>
 </div>

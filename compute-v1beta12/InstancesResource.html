@@ -1,0 +1,271 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>InstancesResource Class / compute-v1beta12 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="compute-v1beta12" data-type="InstancesResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/InstancesResource.html">InstancesResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>InstancesResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="addAccessConfig">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>addAccessConfig</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> instance, <a href="../dart_core/String.html">String</a> networkInterface, <a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a> content) <a class="anchor-link" href="#addAccessConfig"
+              title="Permalink to InstancesResource.addAccessConfig">#</a></h4>
+<div class="doc">
+<p>Adds an access config to an instance's network interface.</p><ul><li>
+<span class="param">content</span> the AccessConfig</li><li>
+<span class="param">project</span> Project name.</li><li>
+<span class="param">instance</span> Instance name.</li><li>
+<span class="param">networkInterface</span> Network interface name.</li></ul>
+<pre class="source">
+Future&lt;Operation&gt; addAccessConfig(String project, String instance, String networkInterface, AccessConfig content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["instance"] = instance;
+  $pathParams["network_interface"] = networkInterface;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(AccessConfig.serialize(content));
+  final $path = "{project}/instances/{instance}/add-access-config";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Operation.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> instance) <a class="anchor-link" href="#delete"
+              title="Permalink to InstancesResource.delete">#</a></h4>
+<div class="doc">
+<p>Deletes the specified instance resource.</p><ul><li>
+<span class="param">project</span> Name of the project scoping this request.</li><li>
+<span class="param">instance</span> Name of the instance resource to delete.</li></ul>
+<pre class="source">
+Future&lt;Operation&gt; delete(String project, String instance) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["instance"] = instance;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "{project}/instances/{instance}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Operation.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="deleteAccessConfig">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>deleteAccessConfig</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> instance, <a href="../dart_core/String.html">String</a> accessConfig, <a href="../dart_core/String.html">String</a> networkInterface) <a class="anchor-link" href="#deleteAccessConfig"
+              title="Permalink to InstancesResource.deleteAccessConfig">#</a></h4>
+<div class="doc">
+<p>Deletes an access config from an instance's network interface.</p><ul><li>
+<span class="param">project</span> Project name.</li><li>
+<span class="param">instance</span> Instance name.</li><li>
+<span class="param">accessConfig</span> Access config name.</li><li>
+<span class="param">networkInterface</span> Network interface name.</li></ul>
+<pre class="source">
+Future&lt;Operation&gt; deleteAccessConfig(String project, String instance, String accessConfig, String networkInterface) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["instance"] = instance;
+  $pathParams["access_config"] = accessConfig;
+  $pathParams["network_interface"] = networkInterface;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "{project}/instances/{instance}/delete-access-config";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Operation.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> instance) <a class="anchor-link" href="#get"
+              title="Permalink to InstancesResource.get">#</a></h4>
+<div class="doc">
+<p>Returns the specified instance resource.</p><ul><li>
+<span class="param">project</span> Name of the project scoping this request.</li><li>
+<span class="param">instance</span> Name of the instance resource to return.</li></ul>
+<pre class="source">
+Future&lt;Instance&gt; get(String project, String instance) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  $pathParams["instance"] = instance;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "{project}/instances/{instance}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Instance.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../compute-v1beta12/Instance.html">Instance</a> content) <a class="anchor-link" href="#insert"
+              title="Permalink to InstancesResource.insert">#</a></h4>
+<div class="doc">
+<p>Creates an instance resource in the specified project using the data included in the request.</p><ul><li>
+<span class="param">content</span> the Instance</li><li>
+<span class="param">project</span> Name of the project scoping this request.</li></ul>
+<pre class="source">
+Future&lt;Operation&gt; insert(String project, Instance content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Instance.serialize(content));
+  final $path = "{project}/instances";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Operation.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> project, [<a href="../dart_core/String.html">String</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to InstancesResource.list">#</a></h4>
+<div class="doc">
+<p>Retrieves the list of instance resources contained within the specified project.</p><ul><li>
+<span class="param">project</span> Name of the project scoping this request.</li><li>
+<span class="param">filter</span> Optional. Filter expression for filtering listed resources.</li><li>
+<p>
+<span class="param">pageToken</span> Optional. Tag returned by a previous list request truncated by maxResults. Used to continue a
+   previous list request.</p></li><li>
+<span class="param">maxResults</span> Optional. Maximum count of results to be returned. Maximum and default value is 100.</li></ul>
+<pre class="source">
+Future&lt;InstanceList&gt; list(String project, [String filter = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["project"] = project;
+  if (UNSPECIFIED != filter) $queryParams["filter"] = filter;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "{project}/instances";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; InstanceList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

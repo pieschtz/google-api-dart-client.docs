@@ -1,0 +1,119 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>QueryResource Class / fusiontables-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="fusiontables-v1" data-type="QueryResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../fusiontables-v1.html">fusiontables-v1</a> &rsaquo; <a href="../fusiontables-v1/QueryResource.html">QueryResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>QueryResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="sql">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>sql</strong>(<a href="../dart_core/String.html">String</a> sql, [<a href="../dart_core/bool.html">bool</a> typed = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> hdrs = UNSPECIFIED]) <a class="anchor-link" href="#sql"
+              title="Permalink to QueryResource.sql">#</a></h4>
+<div class="doc">
+<p>Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE statement.</p><ul><li>
+<span class="param">sql</span> An SQL SELECT/SHOW/DESCRIBE/INSERT/UPDATE/DELETE statement.</li><li>
+<p>
+<span class="param">typed</span> Should typed values be returned in the (JSON) response -- numbers for numeric values and parsed
+   geometries for KML values? Default is true.</p></li><li>
+<span class="param">hdrs</span> Should column names be included (in the first row)?. Default is true.</li></ul>
+<pre class="source">
+Future&lt;Sqlresponse&gt; sql(String sql, [bool typed = UNSPECIFIED, bool hdrs = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["sql"] = sql;
+  if (UNSPECIFIED != typed) $queryParams["typed"] = typed;
+  if (UNSPECIFIED != hdrs) $queryParams["hdrs"] = hdrs;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "query";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Sqlresponse.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="sqlGet">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>sqlGet</strong>(<a href="../dart_core/String.html">String</a> sql, [<a href="../dart_core/bool.html">bool</a> typed = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> hdrs = UNSPECIFIED]) <a class="anchor-link" href="#sqlGet"
+              title="Permalink to QueryResource.sqlGet">#</a></h4>
+<div class="doc">
+<p>Executes an SQL SELECT/SHOW/DESCRIBE statement.</p><ul><li>
+<span class="param">sql</span> An SQL SELECT/SHOW/DESCRIBE statement.</li><li>
+<p>
+<span class="param">typed</span> Should typed values be returned in the (JSON) response -- numbers for numeric values and parsed
+   geometries for KML values? Default is true.</p></li><li>
+<span class="param">hdrs</span> Should column names be included (in the first row)?. Default is true.</li></ul>
+<pre class="source">
+Future&lt;Sqlresponse&gt; sqlGet(String sql, [bool typed = UNSPECIFIED, bool hdrs = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["sql"] = sql;
+  if (UNSPECIFIED != typed) $queryParams["typed"] = typed;
+  if (UNSPECIFIED != hdrs) $queryParams["hdrs"] = hdrs;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "query";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Sqlresponse.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

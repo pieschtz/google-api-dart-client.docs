@@ -29,26 +29,27 @@
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId, [<a href="../dart_core/String.html">String</a> startIndex = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to TabledataResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves table data from a specified set of rows.
-
-<span class="param">projectId</span> Project ID of the table to read
-
-<span class="param">datasetId</span> Dataset ID of the table to read
-
-<span class="param">tableId</span> Table ID of the table to read</p>
+<p>Retrieves table data from a specified set of rows.</p><ul><li>
+<span class="param">projectId</span> Project ID of the table to read</li><li>
+<span class="param">datasetId</span> Dataset ID of the table to read</li><li>
+<span class="param">tableId</span> Table ID of the table to read</li><li>
+<span class="param">maxResults</span> Maximum number of results to return</li><li>
+<span class="param">pageToken</span> Page token, returned by a previous call, identifying the result set</li><li>
+<span class="param">startIndex</span> Zero-based index of the starting row to read</li></ul>
 <pre class="source">
-Future&lt;TableDataList&gt; list(String projectId, String datasetId, String tableId, [String startIndex = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+Future&lt;TableDataList&gt; list(String projectId, String datasetId, String tableId, [int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, String startIndex = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["projectId"] = projectId;
   $pathParams["datasetId"] = datasetId;
   $pathParams["tableId"] = tableId;
-  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
   if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;

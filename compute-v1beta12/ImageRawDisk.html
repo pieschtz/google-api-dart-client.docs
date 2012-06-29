@@ -1,0 +1,134 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ImageRawDisk Class / compute-v1beta12 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="compute-v1beta12" data-type="ImageRawDisk">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/ImageRawDisk.html">ImageRawDisk</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ImageRawDisk</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ImageRawDisk</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../compute-v1beta12/ImageRawDisk.html">ImageRawDisk</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to ImageRawDisk.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ImageRawDisk parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new ImageRawDisk();
+  result.containerType = identity(json["containerType"]);
+  result.source = identity(json["source"]);
+  result.sha1Checksum = identity(json["sha1Checksum"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/ImageRawDisk.html">ImageRawDisk</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ImageRawDisk.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(ImageRawDisk value) {
+  if (value == null) return null;
+  final result = {};
+  result["containerType"] = identity(value.containerType);
+  result["source"] = identity(value.source);
+  result["sha1Checksum"] = identity(value.sha1Checksum);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ImageRawDisk.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="containerType">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>containerType</strong> <a class="anchor-link"
+            href="#containerType"
+            title="Permalink to ImageRawDisk.containerType">#</a>
+        </h4>
+        <div class="doc">
+<p>The format used to encode and transmit the block device. Should be TAR. This is just a container
+and transmission format and not a runtime format. Provided by the client when the disk image is
+created.</p>
+<pre class="source">
+String containerType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="sha1Checksum">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>sha1Checksum</strong> <a class="anchor-link"
+            href="#sha1Checksum"
+            title="Permalink to ImageRawDisk.sha1Checksum">#</a>
+        </h4>
+        <div class="doc">
+<p>An optional SHA1 checksum of the disk image before unpackaging; provided by the client when the
+disk image is created.</p>
+<pre class="source">
+String sha1Checksum;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="source">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>source</strong> <a class="anchor-link"
+            href="#source"
+            title="Permalink to ImageRawDisk.source">#</a>
+        </h4>
+        <div class="doc">
+<p>The full Google Cloud Storage URL where the disk image is stored; provided by the client when the
+disk image is created.</p>
+<pre class="source">
+String source;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

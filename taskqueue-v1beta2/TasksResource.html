@@ -32,13 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task) <a class="anchor-link" href="#delete"
               title="Permalink to TasksResource.delete">#</a></h4>
 <div class="doc">
-<p>Delete a task from a TaskQueue.
-
-<span class="param">project</span> The project under which the queue lies.
-
-<span class="param">taskqueue</span> The taskqueue to delete a task from.
-
-<span class="param">task</span> The id of the task to delete.</p>
+<p>Delete a task from a TaskQueue.</p><ul><li>
+<span class="param">project</span> The project under which the queue lies.</li><li>
+<span class="param">taskqueue</span> The taskqueue to delete a task from.</li><li>
+<span class="param">task</span> The id of the task to delete.</li></ul>
 <pre class="source">
 Future delete(String project, String taskqueue, String task) {
   final $queryParams = {};
@@ -73,13 +70,10 @@ Future delete(String project, String taskqueue, String task) {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task) <a class="anchor-link" href="#get"
               title="Permalink to TasksResource.get">#</a></h4>
 <div class="doc">
-<p>Get a particular task from a TaskQueue.
-
-<span class="param">project</span> The project under which the queue lies.
-
-<span class="param">taskqueue</span> The taskqueue in which the task belongs.
-
-<span class="param">task</span> The task to get properties of.</p>
+<p>Get a particular task from a TaskQueue.</p><ul><li>
+<span class="param">project</span> The project under which the queue lies.</li><li>
+<span class="param">taskqueue</span> The taskqueue in which the task belongs.</li><li>
+<span class="param">task</span> The task to get properties of.</li></ul>
 <pre class="source">
 Future&lt;Task&gt; get(String project, String taskqueue, String task) {
   final $queryParams = {};
@@ -114,13 +108,10 @@ Future&lt;Task&gt; get(String project, String taskqueue, String task) {
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to TasksResource.insert">#</a></h4>
 <div class="doc">
-<p>Insert a new task in a TaskQueue
-
-<span class="param">project</span> The project under which the queue lies
-
-<span class="param">taskqueue</span> The taskqueue to insert the task into
-
-<span class="param">content</span> the Task</p>
+<p>Insert a new task in a TaskQueue</p><ul><li>
+<span class="param">content</span> the Task</li><li>
+<span class="param">project</span> The project under which the queue lies</li><li>
+<span class="param">taskqueue</span> The taskqueue to insert the task into</li></ul>
 <pre class="source">
 Future&lt;Task&gt; insert(String project, String taskqueue, Task content) {
   final $queryParams = {};
@@ -156,15 +147,16 @@ Future&lt;Task&gt; insert(String project, String taskqueue, Task content) {
 <a href="../dart_core/Future.html">Future</a> <strong>lease</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/int.html">int</a> numTasks, <a href="../dart_core/int.html">int</a> leaseSecs, [<a href="../dart_core/bool.html">bool</a> groupByTag = UNSPECIFIED, <a href="../dart_core/String.html">String</a> tag = UNSPECIFIED]) <a class="anchor-link" href="#lease"
               title="Permalink to TasksResource.lease">#</a></h4>
 <div class="doc">
-<p>Lease 1 or more tasks from a TaskQueue.
-
-<span class="param">project</span> The project under which the queue lies.
-
-<span class="param">taskqueue</span> The taskqueue to lease a task from.
-
-<span class="param">numTasks</span> The number of tasks to lease.
-
-<span class="param">leaseSecs</span> The lease in seconds.</p>
+<p>Lease 1 or more tasks from a TaskQueue.</p><ul><li>
+<span class="param">project</span> The project under which the queue lies.</li><li>
+<span class="param">taskqueue</span> The taskqueue to lease a task from.</li><li>
+<span class="param">numTasks</span> The number of tasks to lease.</li><li>
+<span class="param">leaseSecs</span> The lease in seconds.</li><li>
+<span class="param">groupByTag</span> When true, all returned tasks will have the same tag</li><li>
+<p>
+<span class="param">tag</span> The tag allowed for tasks in the response. Must only be specified if group<em>by</em>tag is true. If
+   group<em>by</em>tag is true and tag is not specified the tag will be that of the oldest task by
+   eta, i.e. the first available tag</p></li></ul>
 <pre class="source">
 Future&lt;Tasks&gt; lease(String project, String taskqueue, int numTasks, int leaseSecs, [bool groupByTag = UNSPECIFIED, String tag = UNSPECIFIED]) {
   final $queryParams = {};
@@ -202,11 +194,9 @@ Future&lt;Tasks&gt; lease(String project, String taskqueue, int numTasks, int le
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue) <a class="anchor-link" href="#list"
               title="Permalink to TasksResource.list">#</a></h4>
 <div class="doc">
-<p>List Tasks in a TaskQueue
-
-<span class="param">project</span> The project under which the queue lies.
-
-<span class="param">taskqueue</span> The id of the taskqueue to list tasks from.</p>
+<p>List Tasks in a TaskQueue</p><ul><li>
+<span class="param">project</span> The project under which the queue lies.</li><li>
+<span class="param">taskqueue</span> The id of the taskqueue to list tasks from.</li></ul>
 <pre class="source">
 Future&lt;Tasks2&gt; list(String project, String taskqueue) {
   final $queryParams = {};
@@ -240,15 +230,12 @@ Future&lt;Tasks2&gt; list(String project, String taskqueue) {
 <a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task, <a href="../dart_core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to TasksResource.patch">#</a></h4>
 <div class="doc">
-<p>Update tasks that are leased out of a TaskQueue. This method supports patch semantics.
-
-<span class="param">project</span> The project under which the queue lies.
-[taskqueue]
-[task]
-
-<span class="param">newLeaseSeconds</span> The new lease in seconds.
-
-<span class="param">content</span> the Task</p>
+<p>Update tasks that are leased out of a TaskQueue. This method supports patch semantics.</p><ul><li>
+<span class="param">content</span> the Task</li><li>
+<span class="param">project</span> The project under which the queue lies.</li><li>
+<span class="param">taskqueue</span></li><li>
+<span class="param">task</span></li><li>
+<span class="param">newLeaseSeconds</span> The new lease in seconds.</li></ul>
 <pre class="source">
 Future&lt;Task&gt; patch(String project, String taskqueue, String task, int newLeaseSeconds, Task content) {
   final $queryParams = {};
@@ -286,15 +273,12 @@ Future&lt;Task&gt; patch(String project, String taskqueue, String task, int newL
 <a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task, <a href="../dart_core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#update"
               title="Permalink to TasksResource.update">#</a></h4>
 <div class="doc">
-<p>Update tasks that are leased out of a TaskQueue.
-
-<span class="param">project</span> The project under which the queue lies.
-[taskqueue]
-[task]
-
-<span class="param">newLeaseSeconds</span> The new lease in seconds.
-
-<span class="param">content</span> the Task</p>
+<p>Update tasks that are leased out of a TaskQueue.</p><ul><li>
+<span class="param">content</span> the Task</li><li>
+<span class="param">project</span> The project under which the queue lies.</li><li>
+<span class="param">taskqueue</span></li><li>
+<span class="param">task</span></li><li>
+<span class="param">newLeaseSeconds</span> The new lease in seconds.</li></ul>
 <pre class="source">
 Future&lt;Task&gt; update(String project, String taskqueue, String task, int newLeaseSeconds, Task content) {
   final $queryParams = {};

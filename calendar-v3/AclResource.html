@@ -32,11 +32,9 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> ruleId) <a class="anchor-link" href="#delete"
               title="Permalink to AclResource.delete">#</a></h4>
 <div class="doc">
-<p>Deletes an access control rule.
-
-<span class="param">calendarId</span> Calendar identifier.
-
-<span class="param">ruleId</span> ACL rule identifier.</p>
+<p>Deletes an access control rule.</p><ul><li>
+<span class="param">calendarId</span> Calendar identifier.</li><li>
+<span class="param">ruleId</span> ACL rule identifier.</li></ul>
 <pre class="source">
 Future delete(String calendarId, String ruleId) {
   final $queryParams = {};
@@ -70,11 +68,9 @@ Future delete(String calendarId, String ruleId) {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> ruleId) <a class="anchor-link" href="#get"
               title="Permalink to AclResource.get">#</a></h4>
 <div class="doc">
-<p>Returns an access control rule.
-
-<span class="param">calendarId</span> Calendar identifier.
-
-<span class="param">ruleId</span> ACL rule identifier.</p>
+<p>Returns an access control rule.</p><ul><li>
+<span class="param">calendarId</span> Calendar identifier.</li><li>
+<span class="param">ruleId</span> ACL rule identifier.</li></ul>
 <pre class="source">
 Future&lt;AclRule&gt; get(String calendarId, String ruleId) {
   final $queryParams = {};
@@ -108,11 +104,9 @@ Future&lt;AclRule&gt; get(String calendarId, String ruleId) {
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/AclRule.html">AclRule</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to AclResource.insert">#</a></h4>
 <div class="doc">
-<p>Creates an access control rule.
-
-<span class="param">calendarId</span> Calendar identifier.
-
-<span class="param">content</span> the AclRule</p>
+<p>Creates an access control rule.</p><ul><li>
+<span class="param">content</span> the AclRule</li><li>
+<span class="param">calendarId</span> Calendar identifier.</li></ul>
 <pre class="source">
 Future&lt;AclRule&gt; insert(String calendarId, AclRule content) {
   final $queryParams = {};
@@ -147,9 +141,8 @@ Future&lt;AclRule&gt; insert(String calendarId, AclRule content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#list"
               title="Permalink to AclResource.list">#</a></h4>
 <div class="doc">
-<p>Returns the rules in the access control list for the calendar.
-
-<span class="param">calendarId</span> Calendar identifier.</p>
+<p>Returns the rules in the access control list for the calendar.</p><ul><li>
+<span class="param">calendarId</span> Calendar identifier.</li></ul>
 <pre class="source">
 Future&lt;Acl&gt; list(String calendarId) {
   final $queryParams = {};
@@ -182,13 +175,10 @@ Future&lt;Acl&gt; list(String calendarId) {
 <a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> ruleId, <a href="../calendar-v3/AclRule.html">AclRule</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to AclResource.patch">#</a></h4>
 <div class="doc">
-<p>Updates an access control rule. This method supports patch semantics.
-
-<span class="param">calendarId</span> Calendar identifier.
-
-<span class="param">ruleId</span> ACL rule identifier.
-
-<span class="param">content</span> the AclRule</p>
+<p>Updates an access control rule. This method supports patch semantics.</p><ul><li>
+<span class="param">content</span> the AclRule</li><li>
+<span class="param">calendarId</span> Calendar identifier.</li><li>
+<span class="param">ruleId</span> ACL rule identifier.</li></ul>
 <pre class="source">
 Future&lt;AclRule&gt; patch(String calendarId, String ruleId, AclRule content) {
   final $queryParams = {};
@@ -224,13 +214,10 @@ Future&lt;AclRule&gt; patch(String calendarId, String ruleId, AclRule content) {
 <a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> ruleId, <a href="../calendar-v3/AclRule.html">AclRule</a> content) <a class="anchor-link" href="#update"
               title="Permalink to AclResource.update">#</a></h4>
 <div class="doc">
-<p>Updates an access control rule.
-
-<span class="param">calendarId</span> Calendar identifier.
-
-<span class="param">ruleId</span> ACL rule identifier.
-
-<span class="param">content</span> the AclRule</p>
+<p>Updates an access control rule.</p><ul><li>
+<span class="param">content</span> the AclRule</li><li>
+<span class="param">calendarId</span> Calendar identifier.</li><li>
+<span class="param">ruleId</span> ACL rule identifier.</li></ul>
 <pre class="source">
 Future&lt;AclRule&gt; update(String calendarId, String ruleId, AclRule content) {
   final $queryParams = {};

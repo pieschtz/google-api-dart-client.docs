@@ -1,0 +1,355 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>About Class / drive-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="drive-v2" data-type="About">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/About.html">About</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>About</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>About</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../drive-v2/About.html">About</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to About.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static About parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new About();
+  result.kind = identity(json["kind"]);
+  result.features = map(AboutFeatures.parse)(json["features"]);
+  result.quotaBytesUsed = identity(json["quotaBytesUsed"]);
+  result.permissionId = identity(json["permissionId"]);
+  result.maxUploadSizes = map(AboutMaxUploadSizes.parse)(json["maxUploadSizes"]);
+  result.name = identity(json["name"]);
+  result.remainingChangeIds = identity(json["remainingChangeIds"]);
+  result.additionalRoleInfo = map(AboutAdditionalRoleInfo.parse)(json["additionalRoleInfo"]);
+  result.etag = identity(json["etag"]);
+  result.importFormats = map(AboutImportFormats.parse)(json["importFormats"]);
+  result.quotaBytesTotal = identity(json["quotaBytesTotal"]);
+  result.rootFolderId = identity(json["rootFolderId"]);
+  result.largestChangeId = identity(json["largestChangeId"]);
+  result.quotaBytesUsedInTrash = identity(json["quotaBytesUsedInTrash"]);
+  result.exportFormats = map(AboutExportFormats.parse)(json["exportFormats"]);
+  result.domainSharingPolicy = identity(json["domainSharingPolicy"]);
+  result.selfLink = identity(json["selfLink"]);
+  result.isCurrentAppInstalled = identity(json["isCurrentAppInstalled"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/About.html">About</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to About.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(About value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["features"] = map(AboutFeatures.serialize)(value.features);
+  result["quotaBytesUsed"] = identity(value.quotaBytesUsed);
+  result["permissionId"] = identity(value.permissionId);
+  result["maxUploadSizes"] = map(AboutMaxUploadSizes.serialize)(value.maxUploadSizes);
+  result["name"] = identity(value.name);
+  result["remainingChangeIds"] = identity(value.remainingChangeIds);
+  result["additionalRoleInfo"] = map(AboutAdditionalRoleInfo.serialize)(value.additionalRoleInfo);
+  result["etag"] = identity(value.etag);
+  result["importFormats"] = map(AboutImportFormats.serialize)(value.importFormats);
+  result["quotaBytesTotal"] = identity(value.quotaBytesTotal);
+  result["rootFolderId"] = identity(value.rootFolderId);
+  result["largestChangeId"] = identity(value.largestChangeId);
+  result["quotaBytesUsedInTrash"] = identity(value.quotaBytesUsedInTrash);
+  result["exportFormats"] = map(AboutExportFormats.serialize)(value.exportFormats);
+  result["domainSharingPolicy"] = identity(value.domainSharingPolicy);
+  result["selfLink"] = identity(value.selfLink);
+  result["isCurrentAppInstalled"] = identity(value.isCurrentAppInstalled);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to About.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="additionalRoleInfo">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>additionalRoleInfo</strong> <a class="anchor-link"
+            href="#additionalRoleInfo"
+            title="Permalink to About.additionalRoleInfo">#</a>
+        </h4>
+        <div class="doc">
+<p>Additional ACL role info.</p>
+<pre class="source">
+List&lt;AboutAdditionalRoleInfo&gt; additionalRoleInfo;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="domainSharingPolicy">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>domainSharingPolicy</strong> <a class="anchor-link"
+            href="#domainSharingPolicy"
+            title="Permalink to About.domainSharingPolicy">#</a>
+        </h4>
+        <div class="doc">
+<p>The domain sharing policy for the current user.</p>
+<pre class="source">
+String domainSharingPolicy;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to About.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>The ETag of the item.</p>
+<pre class="source">
+String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="exportFormats">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>exportFormats</strong> <a class="anchor-link"
+            href="#exportFormats"
+            title="Permalink to About.exportFormats">#</a>
+        </h4>
+        <div class="doc">
+<p>The allowable export formats.</p>
+<pre class="source">
+List&lt;AboutExportFormats&gt; exportFormats;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="features">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>features</strong> <a class="anchor-link"
+            href="#features"
+            title="Permalink to About.features">#</a>
+        </h4>
+        <div class="doc">
+<p>List of additional features enabled on this account.</p>
+<pre class="source">
+List&lt;AboutFeatures&gt; features;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="importFormats">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>importFormats</strong> <a class="anchor-link"
+            href="#importFormats"
+            title="Permalink to About.importFormats">#</a>
+        </h4>
+        <div class="doc">
+<p>The allowable import formats.</p>
+<pre class="source">
+List&lt;AboutImportFormats&gt; importFormats;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="isCurrentAppInstalled">
+<span class="show-code">Code</span>
+<a href="../dart_core/bool.html">bool</a>         <strong>isCurrentAppInstalled</strong> <a class="anchor-link"
+            href="#isCurrentAppInstalled"
+            title="Permalink to About.isCurrentAppInstalled">#</a>
+        </h4>
+        <div class="doc">
+<p>A boolean indicating whether the authenticated app is installed by the authenticated user.</p>
+<pre class="source">
+bool isCurrentAppInstalled;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to About.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>This is always drive#about.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="largestChangeId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>largestChangeId</strong> <a class="anchor-link"
+            href="#largestChangeId"
+            title="Permalink to About.largestChangeId">#</a>
+        </h4>
+        <div class="doc">
+<p>The largest change id.</p>
+<pre class="source">
+String largestChangeId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maxUploadSizes">
+<span class="show-code">Code</span>
+<a href="../dart_core/List.html">List</a>         <strong>maxUploadSizes</strong> <a class="anchor-link"
+            href="#maxUploadSizes"
+            title="Permalink to About.maxUploadSizes">#</a>
+        </h4>
+        <div class="doc">
+<p>List of max upload sizes for each file type.</p>
+<pre class="source">
+List&lt;AboutMaxUploadSizes&gt; maxUploadSizes;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to About.name">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of the current user.</p>
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="permissionId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>permissionId</strong> <a class="anchor-link"
+            href="#permissionId"
+            title="Permalink to About.permissionId">#</a>
+        </h4>
+        <div class="doc">
+<p>The current user's ID as visible in the permissions collection.</p>
+<pre class="source">
+String permissionId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaBytesTotal">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>quotaBytesTotal</strong> <a class="anchor-link"
+            href="#quotaBytesTotal"
+            title="Permalink to About.quotaBytesTotal">#</a>
+        </h4>
+        <div class="doc">
+<p>The total number of quota bytes.</p>
+<pre class="source">
+String quotaBytesTotal;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaBytesUsed">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>quotaBytesUsed</strong> <a class="anchor-link"
+            href="#quotaBytesUsed"
+            title="Permalink to About.quotaBytesUsed">#</a>
+        </h4>
+        <div class="doc">
+<p>The number of quota bytes used.</p>
+<pre class="source">
+String quotaBytesUsed;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaBytesUsedInTrash">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>quotaBytesUsedInTrash</strong> <a class="anchor-link"
+            href="#quotaBytesUsedInTrash"
+            title="Permalink to About.quotaBytesUsedInTrash">#</a>
+        </h4>
+        <div class="doc">
+<p>The number of quota bytes used by trashed items.</p>
+<pre class="source">
+String quotaBytesUsedInTrash;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="remainingChangeIds">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>remainingChangeIds</strong> <a class="anchor-link"
+            href="#remainingChangeIds"
+            title="Permalink to About.remainingChangeIds">#</a>
+        </h4>
+        <div class="doc">
+<p>The number of remaining change ids.</p>
+<pre class="source">
+String remainingChangeIds;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rootFolderId">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>rootFolderId</strong> <a class="anchor-link"
+            href="#rootFolderId"
+            title="Permalink to About.rootFolderId">#</a>
+        </h4>
+        <div class="doc">
+<p>The id of the root folder.</p>
+<pre class="source">
+String rootFolderId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to About.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>A link back to this item.</p>
+<pre class="source">
+String selfLink;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

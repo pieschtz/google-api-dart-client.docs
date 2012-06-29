@@ -32,11 +32,10 @@
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> pollId, [<a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to CommunityPollsResource.get">#</a></h4>
 <div class="doc">
-<p>Retrieves one specific poll of a community.
-
-<span class="param">communityId</span> The ID of the community for whose poll will be retrieved.
-
-<span class="param">pollId</span> The ID of the poll to get.</p>
+<p>Retrieves one specific poll of a community.</p><ul><li>
+<span class="param">communityId</span> The ID of the community for whose poll will be retrieved.</li><li>
+<span class="param">pollId</span> The ID of the poll to get.</li><li>
+<span class="param">hl</span> Specifies the interface language (host language) of your user interface.</li></ul>
 <pre class="source">
 Future&lt;CommunityPoll&gt; get(int communityId, String pollId, [String hl = UNSPECIFIED]) {
   final $queryParams = {};
@@ -71,9 +70,13 @@ Future&lt;CommunityPoll&gt; get(int communityId, String pollId, [String hl = UNS
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> communityId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CommunityPollsResource.list">#</a></h4>
 <div class="doc">
-<p>Retrieves the polls of a community.
-
-<span class="param">communityId</span> The ID of the community which polls will be listed.</p>
+<p>Retrieves the polls of a community.</p><ul><li>
+<span class="param">communityId</span> The ID of the community which polls will be listed.</li><li>
+<span class="param">pageToken</span> A continuation token that allows pagination.</li><li>
+<span class="param">maxResults</span> The maximum number of polls to include in the response.</li></ul>
+<p>Minimum: 1.
+   * 
+<span class="param">hl</span> Specifies the interface language (host language) of your user interface.</p>
 <pre class="source">
 Future&lt;CommunityPollList&gt; list(int communityId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, String hl = UNSPECIFIED]) {
   final $queryParams = {};

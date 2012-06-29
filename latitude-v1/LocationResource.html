@@ -32,9 +32,8 @@
 <a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> locationId) <a class="anchor-link" href="#delete"
               title="Permalink to LocationResource.delete">#</a></h4>
 <div class="doc">
-<p>Deletes a location from the user's location history.
-
-<span class="param">locationId</span> Timestamp of the location to delete (ms since epoch).</p>
+<p>Deletes a location from the user's location history.</p><ul><li>
+<span class="param">locationId</span> Timestamp of the location to delete (ms since epoch).</li></ul>
 <pre class="source">
 Future delete(String locationId) {
   final $queryParams = {};
@@ -67,9 +66,11 @@ Future delete(String locationId) {
 <a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> locationId, [<a href="../latitude-v1/LocationResourceGetGranularity.html">LocationResourceGetGranularity</a> granularity = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to LocationResource.get">#</a></h4>
 <div class="doc">
-<p>Reads a location from the user's location history.
-
-<span class="param">locationId</span> Timestamp of the location to read (ms since epoch).</p>
+<p>Reads a location from the user's location history.</p><ul><li>
+<span class="param">locationId</span> Timestamp of the location to read (ms since epoch).</li><li>
+<p>
+<span class="param">granularity</span> Granularity of the location to return.
+Default: city.</p></li></ul>
 <pre class="source">
 Future&lt;Location&gt; get(String locationId, [LocationResourceGetGranularity granularity = UNSPECIFIED]) {
   final $queryParams = {};
@@ -103,9 +104,8 @@ Future&lt;Location&gt; get(String locationId, [LocationResourceGetGranularity gr
 <a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../latitude-v1/Location.html">Location</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to LocationResource.insert">#</a></h4>
 <div class="doc">
-<p>Inserts or updates a location in the user's location history.
-
-<span class="param">content</span> the Location</p>
+<p>Inserts or updates a location in the user's location history.</p><ul><li>
+<span class="param">content</span> the Location</li></ul>
 <pre class="source">
 Future&lt;Location&gt; insert(Location content) {
   final $queryParams = {};
@@ -139,7 +139,13 @@ Future&lt;Location&gt; insert(Location content) {
 <a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> maxTime = UNSPECIFIED, <a href="../dart_core/String.html">String</a> minTime = UNSPECIFIED, <a href="../latitude-v1/LocationResourceListGranularity.html">LocationResourceListGranularity</a> granularity = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to LocationResource.list">#</a></h4>
 <div class="doc">
-<p>Lists the user's location history.</p>
+<p>Lists the user's location history.</p><ul><li>
+<span class="param">maxResults</span> Maximum number of locations to return.</li><li>
+<span class="param">maxTime</span> Maximum timestamp of locations to return (ms since epoch).</li><li>
+<span class="param">minTime</span> Minimum timestamp of locations to return (ms since epoch).</li><li>
+<p>
+<span class="param">granularity</span> Granularity of the requested locations.
+Default: city.</p></li></ul>
 <pre class="source">
 Future&lt;LocationFeed&gt; list([String maxResults = UNSPECIFIED, String maxTime = UNSPECIFIED, String minTime = UNSPECIFIED, LocationResourceListGranularity granularity = UNSPECIFIED]) {
   final $queryParams = {};

@@ -1,0 +1,148 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AccessConfig Class / compute-v1beta12 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="compute-v1beta12" data-type="AccessConfig">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AccessConfig</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>AccessConfig</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+              title="Permalink to AccessConfig.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static AccessConfig parse(Map&lt;String, Object&gt; json) {
+  if (json == null) return null;
+  final result = new AccessConfig();
+  result.kind = identity(json["kind"]);
+  result.type = identity(json["type"]);
+  result.name = identity(json["name"]);
+  result.natIP = identity(json["natIP"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to AccessConfig.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static Object serialize(AccessConfig value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["type"] = identity(value.type);
+  result["name"] = identity(value.name);
+  result["natIP"] = identity(value.natIP);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to AccessConfig.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to AccessConfig.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Type of the resource.</p>
+<pre class="source">
+String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to AccessConfig.name">#</a>
+        </h4>
+        <div class="doc">
+<p>Name of this access configuration.</p>
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="natIP">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>natIP</strong> <a class="anchor-link"
+            href="#natIP"
+            title="Permalink to AccessConfig.natIP">#</a>
+        </h4>
+        <div class="doc">
+<p>An external IP address associated with this instance. Specify an unused static IP address
+available to the project. If left blank, the external IP will be drawn from a shared ephemeral
+pool.</p>
+<pre class="source">
+String natIP;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="type">
+<span class="show-code">Code</span>
+<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+            href="#type"
+            title="Permalink to AccessConfig.type">#</a>
+        </h4>
+        <div class="doc">
+<p>Type of configuration. Must be set to "ONE<em>TO</em>ONE_NAT". This configures port-for-port NAT to the
+internet.</p>
+<pre class="source">
+String type;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,82 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AboutResource Class / drive-v2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="drive-v2" data-type="AboutResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/AboutResource.html">AboutResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AboutResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../dart_core/Future.html">Future</a> <strong>get</strong>([<a href="../dart_core/bool.html">bool</a> includeSubscribed = UNSPECIFIED, <a href="../dart_core/String.html">String</a> maxChangeIdCount = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startChangeId = UNSPECIFIED]) <a class="anchor-link" href="#get"
+              title="Permalink to AboutResource.get">#</a></h4>
+<div class="doc">
+<p>Gets the information about the current user along with Drive API settings</p><ul><li>
+<p>
+<span class="param">includeSubscribed</span> Whether to include subscribed items when calculating the number of remaining change IDs
+Default:
+   true.</p></li><li>
+<p>
+<span class="param">maxChangeIdCount</span> Maximum number of remaining change IDs to count
+Default: 1.</p></li><li>
+<span class="param">startChangeId</span> Change ID to start counting from when calculating number of remaining change IDs</li></ul>
+<pre class="source">
+Future&lt;About&gt; get([bool includeSubscribed = UNSPECIFIED, String maxChangeIdCount = UNSPECIFIED, String startChangeId = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (UNSPECIFIED != includeSubscribed) $queryParams["includeSubscribed"] = includeSubscribed;
+  if (UNSPECIFIED != maxChangeIdCount) $queryParams["maxChangeIdCount"] = maxChangeIdCount;
+  if (UNSPECIFIED != startChangeId) $queryParams["startChangeId"] = startChangeId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "about";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; About.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        
