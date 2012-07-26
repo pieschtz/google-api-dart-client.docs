@@ -29,7 +29,35 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="Uri">
 <span class="show-code">Code</span>
-const <strong>Uri</strong>([<a href="../dart_core/String.html">String</a> scheme = "", <a href="../dart_core/String.html">String</a> userInfo = "", <a href="../dart_core/String.html">String</a> domain = "", <a href="../dart_core/int.html">int</a> port = 0, <a href="../dart_core/String.html">String</a> path = "", <a href="../dart_core/String.html">String</a> query = "", <a href="../dart_core/String.html">String</a> fragment = ""]) <a class="anchor-link" href="#Uri"
+new <strong>Uri</strong>._fromMatch(<a href="../core/Match.html">Match</a> m) <a class="anchor-link" href="#Uri"
+              title="Permalink to Uri.Uri">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Uri._fromMatch(Match m) : this(_emptyIfNull(m[_COMPONENT_SCHEME]),
+                               _emptyIfNull(m[_COMPONENT_USER_INFO]),
+                               _emptyIfNull(m[_COMPONENT_DOMAIN]),
+                               _parseIntOrZero(m[_COMPONENT_PORT]),
+                               _emptyIfNull(m[_COMPONENT_PATH]),
+                               _emptyIfNull(m[_COMPONENT_QUERY_DATA]),
+                               _emptyIfNull(m[_COMPONENT_FRAGMENT]));
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="Uri">
+<span class="show-code">Code</span>
+new <strong>Uri</strong>.fromString(<a href="../core/String.html">String</a> uri) <a class="anchor-link" href="#Uri"
+              title="Permalink to Uri.Uri">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Uri.fromString(String uri) : this._fromMatch(_splitRe.firstMatch(uri));
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="Uri">
+<span class="show-code">Code</span>
+const <strong>Uri</strong>([<a href="../core/String.html">String</a> scheme = "", <a href="../core/String.html">String</a> userInfo = "", <a href="../core/String.html">String</a> domain = "", <a href="../core/int.html">int</a> port = 0, <a href="../core/String.html">String</a> path = "", <a href="../core/String.html">String</a> query = "", <a href="../core/String.html">String</a> fragment = ""]) <a class="anchor-link" href="#Uri"
               title="Permalink to Uri.Uri">#</a></h4>
 <div class="doc">
 
@@ -41,21 +69,10 @@ const Uri([String this.scheme = "", String this.userInfo ="",
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="Uri">
-<span class="show-code">Code</span>
-new <strong>Uri</strong>.fromString(<a href="../dart_core/String.html">String</a> uri) <a class="anchor-link" href="#Uri"
-              title="Permalink to Uri.Uri">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-Uri.fromString(String uri) : this._fromMatch(_splitRe.firstMatch(uri));
-</pre>
-</div>
-</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="hasAuthority">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a> <strong>hasAuthority</strong>() <a class="anchor-link" href="#hasAuthority"
+<a href="../core/bool.html">bool</a> <strong>hasAuthority</strong>() <a class="anchor-link" href="#hasAuthority"
               title="Permalink to Uri.hasAuthority">#</a></h4>
 <div class="doc">
 
@@ -68,7 +85,7 @@ bool hasAuthority() {
 </div>
 <div class="method"><h4 id="isAbsolute">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a> <strong>isAbsolute</strong>() <a class="anchor-link" href="#isAbsolute"
+<a href="../core/bool.html">bool</a> <strong>isAbsolute</strong>() <a class="anchor-link" href="#isAbsolute"
               title="Permalink to Uri.isAbsolute">#</a></h4>
 <div class="doc">
 <p>Returns <code>true</code> if the URI is absolute.</p>
@@ -108,7 +125,7 @@ bool isAbsolute() {
 </div>
 <div class="method"><h4 id="resolve">
 <span class="show-code">Code</span>
-<a href="../uri/Uri.html">Uri</a> <strong>resolve</strong>(<a href="../dart_core/String.html">String</a> uri) <a class="anchor-link" href="#resolve"
+<a href="../uri/Uri.html">Uri</a> <strong>resolve</strong>(<a href="../core/String.html">String</a> uri) <a class="anchor-link" href="#resolve"
               title="Permalink to Uri.resolve">#</a></h4>
 <div class="doc">
 
@@ -178,7 +195,7 @@ Uri resolveUri(Uri reference) {
 </div>
 <div class="method"><h4 id="toString">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+<a href="../core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
               title="Permalink to Uri.toString">#</a></h4>
 <div class="doc">
 
@@ -206,7 +223,7 @@ String toString() {
 <h3>Fields</h3>
 <div class="field"><h4 id="domain">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>domain</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>domain</strong> <a class="anchor-link"
             href="#domain"
             title="Permalink to Uri.domain">#</a>
         </h4>
@@ -219,7 +236,7 @@ final String domain;
 </div>
 <div class="field"><h4 id="fragment">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>fragment</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>fragment</strong> <a class="anchor-link"
             href="#fragment"
             title="Permalink to Uri.fragment">#</a>
         </h4>
@@ -232,7 +249,7 @@ final String fragment;
 </div>
 <div class="field"><h4 id="path">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>path</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>path</strong> <a class="anchor-link"
             href="#path"
             title="Permalink to Uri.path">#</a>
         </h4>
@@ -245,7 +262,7 @@ final String path;
 </div>
 <div class="field"><h4 id="port">
 <span class="show-code">Code</span>
-final <a href="../dart_core/int.html">int</a>         <strong>port</strong> <a class="anchor-link"
+final <a href="../core/int.html">int</a>         <strong>port</strong> <a class="anchor-link"
             href="#port"
             title="Permalink to Uri.port">#</a>
         </h4>
@@ -258,7 +275,7 @@ final int port;
 </div>
 <div class="field"><h4 id="query">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>query</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>query</strong> <a class="anchor-link"
             href="#query"
             title="Permalink to Uri.query">#</a>
         </h4>
@@ -271,7 +288,7 @@ final String query;
 </div>
 <div class="field"><h4 id="scheme">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>scheme</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>scheme</strong> <a class="anchor-link"
             href="#scheme"
             title="Permalink to Uri.scheme">#</a>
         </h4>
@@ -284,7 +301,7 @@ final String scheme;
 </div>
 <div class="field"><h4 id="userInfo">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>userInfo</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>userInfo</strong> <a class="anchor-link"
             href="#userInfo"
             title="Permalink to Uri.userInfo">#</a>
         </h4>

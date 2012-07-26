@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="LinksResource">
+<span class="show-code">Code</span>
+new <strong>LinksResource</strong>._internal(<a href="../gan-v1beta1/GanApi.html">GanApi</a> $service) <a class="anchor-link" href="#LinksResource"
+              title="Permalink to LinksResource.LinksResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+LinksResource._internal(GanApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../gan-v1beta1/LinksResourceGetRole.html">LinksResourceGetRole</a> role, <a href="../dart_core/String.html">String</a> roleId, <a href="../dart_core/String.html">String</a> linkId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Link.html">Link</a>&gt; <strong>get</strong>(<a href="../gan-v1beta1/LinksResourceGetRole.html">LinksResourceGetRole</a> role, <a href="../core/String.html">String</a> roleId, <a href="../core/String.html">String</a> linkId) <a class="anchor-link" href="#get"
               title="Permalink to LinksResource.get">#</a></h4>
 <div class="doc">
 <p>Retrieves data about a single link if the requesting advertiser/publisher has access to it.
@@ -39,7 +51,7 @@ to advertisers they are in a relationship with.</p><ul><li>
 <span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li><li>
 <span class="param">linkId</span> The ID of the link to look up.</li></ul>
 <pre class="source">
-Future&lt;Link&gt; get(LinksResourceGetRole role, String roleId, String linkId) {
+core.Future&lt;Link&gt; get(LinksResourceGetRole role, core.String roleId, core.String linkId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -58,7 +70,7 @@ Future&lt;Link&gt; get(LinksResourceGetRole role, String roleId, String linkId) 
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -69,7 +81,7 @@ Future&lt;Link&gt; get(LinksResourceGetRole role, String roleId, String linkId) 
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../gan-v1beta1/LinksResourceInsertRole.html">LinksResourceInsertRole</a> role, <a href="../dart_core/String.html">String</a> roleId, <a href="../gan-v1beta1/Link.html">Link</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Link.html">Link</a>&gt; <strong>insert</strong>(<a href="../gan-v1beta1/LinksResourceInsertRole.html">LinksResourceInsertRole</a> role, <a href="../core/String.html">String</a> roleId, <a href="../gan-v1beta1/Link.html">Link</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to LinksResource.insert">#</a></h4>
 <div class="doc">
 <p>Inserts a new link.</p><ul><li>
@@ -77,7 +89,7 @@ Future&lt;Link&gt; get(LinksResourceGetRole role, String roleId, String linkId) 
 <span class="param">role</span> The role of the requester. Valid values: 'advertisers' or 'publishers'.</li><li>
 <span class="param">roleId</span> The ID of the requesting advertiser or publisher.</li></ul>
 <pre class="source">
-Future&lt;Link&gt; insert(LinksResourceInsertRole role, String roleId, Link content) {
+core.Future&lt;Link&gt; insert(LinksResourceInsertRole role, core.String roleId, Link content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -97,7 +109,7 @@ Future&lt;Link&gt; insert(LinksResourceInsertRole role, String roleId, Link cont
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -108,7 +120,7 @@ Future&lt;Link&gt; insert(LinksResourceInsertRole role, String roleId, Link cont
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../gan-v1beta1/LinksResourceListRole.html">LinksResourceListRole</a> role, <a href="../dart_core/String.html">String</a> roleId, [<a href="../gan-v1beta1/LinksResourceListLinkType.html">LinksResourceListLinkType</a> linkType = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startDateMin = UNSPECIFIED, <a href="../dart_core/List.html">List</a> assetSize = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListRelationshipStatus.html">LinksResourceListRelationshipStatus</a> relationshipStatus = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAdvertiserCategory.html">LinksResourceListAdvertiserCategory</a> advertiserCategory = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/List.html">List</a> advertiserId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startDateMax = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListPromotionType.html">LinksResourceListPromotionType</a> promotionType = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAuthorship.html">LinksResourceListAuthorship</a> authorship = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Links.html">Links</a>&gt; <strong>list</strong>(<a href="../gan-v1beta1/LinksResourceListRole.html">LinksResourceListRole</a> role, <a href="../core/String.html">String</a> roleId, [<a href="../gan-v1beta1/LinksResourceListLinkType.html">LinksResourceListLinkType</a> linkType = UNSPECIFIED, <a href="../core/String.html">String</a> startDateMin = UNSPECIFIED, <a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; assetSize = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListRelationshipStatus.html">LinksResourceListRelationshipStatus</a> relationshipStatus = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAdvertiserCategory.html">LinksResourceListAdvertiserCategory</a> advertiserCategory = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; advertiserId = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/String.html">String</a> startDateMax = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListPromotionType.html">LinksResourceListPromotionType</a> promotionType = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAuthorship.html">LinksResourceListAuthorship</a> authorship = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to LinksResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves all links that match the query parameters.</p><ul><li>
@@ -133,7 +145,7 @@ Maximum: 100.
    * 
 <span class="param">authorship</span> The role of the author of the link.</p>
 <pre class="source">
-Future&lt;Links&gt; list(LinksResourceListRole role, String roleId, [LinksResourceListLinkType linkType = UNSPECIFIED, String startDateMin = UNSPECIFIED, List&lt;String&gt; assetSize = UNSPECIFIED, LinksResourceListRelationshipStatus relationshipStatus = UNSPECIFIED, LinksResourceListAdvertiserCategory advertiserCategory = UNSPECIFIED, int maxResults = UNSPECIFIED, List&lt;String&gt; advertiserId = UNSPECIFIED, String pageToken = UNSPECIFIED, String startDateMax = UNSPECIFIED, LinksResourceListPromotionType promotionType = UNSPECIFIED, LinksResourceListAuthorship authorship = UNSPECIFIED]) {
+core.Future&lt;Links&gt; list(LinksResourceListRole role, core.String roleId, [LinksResourceListLinkType linkType = UNSPECIFIED, core.String startDateMin = UNSPECIFIED, core.List&lt;core.String&gt; assetSize = UNSPECIFIED, LinksResourceListRelationshipStatus relationshipStatus = UNSPECIFIED, LinksResourceListAdvertiserCategory advertiserCategory = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.List&lt;core.String&gt; advertiserId = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String startDateMax = UNSPECIFIED, LinksResourceListPromotionType promotionType = UNSPECIFIED, LinksResourceListAuthorship authorship = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -162,7 +174,7 @@ Future&lt;Links&gt; list(LinksResourceListRole role, String roleId, [LinksResour
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

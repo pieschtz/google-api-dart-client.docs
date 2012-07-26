@@ -26,15 +26,27 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="UserinfoV2ResourceUserinfoV2MeResourceResourceResourceResource">
+<span class="show-code">Code</span>
+new <strong>UserinfoV2ResourceUserinfoV2MeResourceResourceResourceResource</strong>._internal(<a href="../oauth2-v2/Oauth2Api.html">Oauth2Api</a> $service) <a class="anchor-link" href="#UserinfoV2ResourceUserinfoV2MeResourceResourceResourceResource"
+              title="Permalink to UserinfoV2ResourceUserinfoV2MeResourceResourceResourceResource.UserinfoV2ResourceUserinfoV2MeResourceResourceResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+UserinfoV2ResourceUserinfoV2MeResourceResourceResourceResource._internal(Oauth2Api $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>() <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../oauth2-v2/Userinfo.html">Userinfo</a>&gt; <strong>get</strong>() <a class="anchor-link" href="#get"
               title="Permalink to UserinfoV2ResourceUserinfoV2MeResourceResourceResourceResource.get">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-Future&lt;Userinfo&gt; get() {
+core.Future&lt;Userinfo&gt; get() {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -50,7 +62,7 @@ Future&lt;Userinfo&gt; get() {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

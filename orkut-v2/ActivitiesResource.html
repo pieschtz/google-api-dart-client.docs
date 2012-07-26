@@ -26,16 +26,28 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ActivitiesResource">
+<span class="show-code">Code</span>
+new <strong>ActivitiesResource</strong>._internal(<a href="../orkut-v2/OrkutApi.html">OrkutApi</a> $service) <a class="anchor-link" href="#ActivitiesResource"
+              title="Permalink to ActivitiesResource.ActivitiesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ActivitiesResource._internal(OrkutApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> activityId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> activityId) <a class="anchor-link" href="#delete"
               title="Permalink to ActivitiesResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes an existing activity, if the access controls allow it.</p><ul><li>
 <span class="param">activityId</span> ID of the activity to remove.</li></ul>
 <pre class="source">
-Future delete(String activityId) {
+core.Future delete(core.String activityId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +64,7 @@ Future delete(String activityId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -63,7 +75,7 @@ Future delete(String activityId) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> userId, <a href="../orkut-v2/ActivitiesResourceListCollection.html">ActivitiesResourceListCollection</a> collection, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../orkut-v2/ActivityList.html">ActivityList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> userId, <a href="../orkut-v2/ActivitiesResourceListCollection.html">ActivitiesResourceListCollection</a> collection, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ActivitiesResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of activities.</p><ul><li>
@@ -78,7 +90,7 @@ Maximum: 100.
    * 
 <span class="param">hl</span> Specifies the interface language (host language) of your user interface.</p>
 <pre class="source">
-Future&lt;ActivityList&gt; list(String userId, ActivitiesResourceListCollection collection, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, String hl = UNSPECIFIED]) {
+core.Future&lt;ActivityList&gt; list(core.String userId, ActivitiesResourceListCollection collection, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String hl = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -99,7 +111,7 @@ Future&lt;ActivityList&gt; list(String userId, ActivitiesResourceListCollection 
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

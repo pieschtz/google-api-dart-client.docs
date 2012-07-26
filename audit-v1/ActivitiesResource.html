@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ActivitiesResource">
+<span class="show-code">Code</span>
+new <strong>ActivitiesResource</strong>._internal(<a href="../audit-v1/AuditApi.html">AuditApi</a> $service) <a class="anchor-link" href="#ActivitiesResource"
+              title="Permalink to ActivitiesResource.ActivitiesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ActivitiesResource._internal(AuditApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> customerId, <a href="../dart_core/String.html">String</a> applicationId, [<a href="../dart_core/String.html">String</a> actorEmail = UNSPECIFIED, <a href="../dart_core/String.html">String</a> actorApplicationId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> actorIpAddress = UNSPECIFIED, <a href="../audit-v1/ActivitiesResourceListCaller.html">ActivitiesResourceListCaller</a> caller = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> eventName = UNSPECIFIED, <a href="../dart_core/String.html">String</a> parameters = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startTime = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endTime = UNSPECIFIED, <a href="../dart_core/String.html">String</a> continuationToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../audit-v1/Activities.html">Activities</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> customerId, <a href="../core/String.html">String</a> applicationId, [<a href="../core/String.html">String</a> actorEmail = UNSPECIFIED, <a href="../core/String.html">String</a> actorApplicationId = UNSPECIFIED, <a href="../core/String.html">String</a> actorIpAddress = UNSPECIFIED, <a href="../audit-v1/ActivitiesResourceListCaller.html">ActivitiesResourceListCaller</a> caller = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> eventName = UNSPECIFIED, <a href="../core/String.html">String</a> parameters = UNSPECIFIED, <a href="../core/String.html">String</a> startTime = UNSPECIFIED, <a href="../core/String.html">String</a> endTime = UNSPECIFIED, <a href="../core/String.html">String</a> continuationToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ActivitiesResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of activities for a specific customer and application.</p><ul><li>
@@ -52,7 +64,7 @@ Maximum: 1000.
 <span class="param">endTime</span> Return events which occured at or before this time.</li><li>
 <span class="param">continuationToken</span> Next page URL.</li></ul>
 <pre class="source">
-Future&lt;Activities&gt; list(String customerId, String applicationId, [String actorEmail = UNSPECIFIED, String actorApplicationId = UNSPECIFIED, String actorIpAddress = UNSPECIFIED, ActivitiesResourceListCaller caller = UNSPECIFIED, int maxResults = UNSPECIFIED, String eventName = UNSPECIFIED, String parameters = UNSPECIFIED, String startTime = UNSPECIFIED, String endTime = UNSPECIFIED, String continuationToken = UNSPECIFIED]) {
+core.Future&lt;Activities&gt; list(core.String customerId, core.String applicationId, [core.String actorEmail = UNSPECIFIED, core.String actorApplicationId = UNSPECIFIED, core.String actorIpAddress = UNSPECIFIED, ActivitiesResourceListCaller caller = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String eventName = UNSPECIFIED, core.String parameters = UNSPECIFIED, core.String startTime = UNSPECIFIED, core.String endTime = UNSPECIFIED, core.String continuationToken = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -80,7 +92,7 @@ Future&lt;Activities&gt; list(String customerId, String applicationId, [String a
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

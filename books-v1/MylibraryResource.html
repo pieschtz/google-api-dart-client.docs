@@ -26,6 +26,21 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="MylibraryResource">
+<span class="show-code">Code</span>
+new <strong>MylibraryResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MylibraryResource"
+              title="Permalink to MylibraryResource.MylibraryResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+MylibraryResource._internal(BooksApi $service) : _$service = $service,
+  bookshelves = new MylibraryBookshelvesResourceResource._internal($service),
+  readingpositions = new MylibraryReadingpositionsResourceResource._internal($service),
+  annotations = new MylibraryAnnotationsResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Fields</h3>
 <div class="field"><h4 id="annotations">
 <span class="show-code">Code</span>

@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="CalendarsResource">
+<span class="show-code">Code</span>
+new <strong>CalendarsResource</strong>._internal(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#CalendarsResource"
+              title="Permalink to CalendarsResource.CalendarsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CalendarsResource._internal(CalendarApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="clear">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>clear</strong>(<a href="../dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#clear"
+<a href="../core/Future.html">Future</a> <strong>clear</strong>(<a href="../core/String.html">String</a> calendarId) <a class="anchor-link" href="#clear"
               title="Permalink to CalendarsResource.clear">#</a></h4>
 <div class="doc">
 <p>Clears a primary calendar. This operation deletes all data associated with the primary calendar
 of an account and cannot be undone.</p><ul><li>
 <span class="param">calendarId</span> Calendar identifier.</li></ul>
 <pre class="source">
-Future clear(String calendarId) {
+core.Future clear(core.String calendarId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -53,7 +65,7 @@ Future clear(String calendarId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -64,13 +76,13 @@ Future clear(String calendarId) {
 </div>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> calendarId) <a class="anchor-link" href="#delete"
               title="Permalink to CalendarsResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes a secondary calendar.</p><ul><li>
 <span class="param">calendarId</span> Calendar identifier.</li></ul>
 <pre class="source">
-Future delete(String calendarId) {
+core.Future delete(core.String calendarId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -87,7 +99,7 @@ Future delete(String calendarId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -98,13 +110,13 @@ Future delete(String calendarId) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Calendar.html">Calendar</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> calendarId) <a class="anchor-link" href="#get"
               title="Permalink to CalendarsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns metadata for a calendar.</p><ul><li>
 <span class="param">calendarId</span> Calendar identifier.</li></ul>
 <pre class="source">
-Future&lt;Calendar&gt; get(String calendarId) {
+core.Future&lt;Calendar&gt; get(core.String calendarId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -121,7 +133,7 @@ Future&lt;Calendar&gt; get(String calendarId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -132,13 +144,13 @@ Future&lt;Calendar&gt; get(String calendarId) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../calendar-v3/Calendar.html">Calendar</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Calendar.html">Calendar</a>&gt; <strong>insert</strong>(<a href="../calendar-v3/Calendar.html">Calendar</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CalendarsResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a secondary calendar.</p><ul><li>
 <span class="param">content</span> the Calendar</li></ul>
 <pre class="source">
-Future&lt;Calendar&gt; insert(Calendar content) {
+core.Future&lt;Calendar&gt; insert(Calendar content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -156,7 +168,7 @@ Future&lt;Calendar&gt; insert(Calendar content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -167,14 +179,14 @@ Future&lt;Calendar&gt; insert(Calendar content) {
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/Calendar.html">Calendar</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Calendar.html">Calendar</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../calendar-v3/Calendar.html">Calendar</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to CalendarsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates metadata for a calendar. This method supports patch semantics.</p><ul><li>
 <span class="param">content</span> the Calendar</li><li>
 <span class="param">calendarId</span> Calendar identifier.</li></ul>
 <pre class="source">
-Future&lt;Calendar&gt; patch(String calendarId, Calendar content) {
+core.Future&lt;Calendar&gt; patch(core.String calendarId, Calendar content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -193,7 +205,7 @@ Future&lt;Calendar&gt; patch(String calendarId, Calendar content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -204,14 +216,14 @@ Future&lt;Calendar&gt; patch(String calendarId, Calendar content) {
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/Calendar.html">Calendar</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Calendar.html">Calendar</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../calendar-v3/Calendar.html">Calendar</a> content) <a class="anchor-link" href="#update"
               title="Permalink to CalendarsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates metadata for a calendar.</p><ul><li>
 <span class="param">content</span> the Calendar</li><li>
 <span class="param">calendarId</span> Calendar identifier.</li></ul>
 <pre class="source">
-Future&lt;Calendar&gt; update(String calendarId, Calendar content) {
+core.Future&lt;Calendar&gt; update(core.String calendarId, Calendar content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -230,7 +242,7 @@ Future&lt;Calendar&gt; update(String calendarId, Calendar content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

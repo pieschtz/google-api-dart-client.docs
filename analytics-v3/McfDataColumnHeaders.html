@@ -1,0 +1,131 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>McfDataColumnHeaders Class / analytics-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="analytics-v3" data-type="McfDataColumnHeaders">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/McfDataColumnHeaders.html">McfDataColumnHeaders</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>McfDataColumnHeaders</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>McfDataColumnHeaders</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../analytics-v3/McfDataColumnHeaders.html">McfDataColumnHeaders</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to McfDataColumnHeaders.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static McfDataColumnHeaders parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new McfDataColumnHeaders();
+  result.dataType = identity(json["dataType"]);
+  result.columnType = identity(json["columnType"]);
+  result.name = identity(json["name"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../analytics-v3/McfDataColumnHeaders.html">McfDataColumnHeaders</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to McfDataColumnHeaders.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(McfDataColumnHeaders value) {
+  if (value == null) return null;
+  final result = {};
+  result["dataType"] = identity(value.dataType);
+  result["columnType"] = identity(value.columnType);
+  result["name"] = identity(value.name);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to McfDataColumnHeaders.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="columnType">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>columnType</strong> <a class="anchor-link"
+            href="#columnType"
+            title="Permalink to McfDataColumnHeaders.columnType">#</a>
+        </h4>
+        <div class="doc">
+<p>Column Type. Either DIMENSION or METRIC.</p>
+<pre class="source">
+core.String columnType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="dataType">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>dataType</strong> <a class="anchor-link"
+            href="#dataType"
+            title="Permalink to McfDataColumnHeaders.dataType">#</a>
+        </h4>
+        <div class="doc">
+<p>Data type. Dimension and metric values data types such as INTEGER, DOUBLE, CURRENCY, MCF_SEQUENCE
+etc.</p>
+<pre class="source">
+core.String dataType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to McfDataColumnHeaders.name">#</a>
+        </h4>
+        <div class="doc">
+<p>Column name.</p>
+<pre class="source">
+core.String name;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

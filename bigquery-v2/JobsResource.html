@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="JobsResource">
+<span class="show-code">Code</span>
+new <strong>JobsResource</strong>._internal(<a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a> $service) <a class="anchor-link" href="#JobsResource"
+              title="Permalink to JobsResource.JobsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+JobsResource._internal(BigqueryApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> jobId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Job.html">Job</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> jobId) <a class="anchor-link" href="#get"
               title="Permalink to JobsResource.get">#</a></h4>
 <div class="doc">
 <p>Retrieves the specified job by ID.</p><ul><li>
 <span class="param">projectId</span> Project ID of the requested job</li><li>
 <span class="param">jobId</span> Job ID of the requested job</li></ul>
 <pre class="source">
-Future&lt;Job&gt; get(String projectId, String jobId) {
+core.Future&lt;Job&gt; get(core.String projectId, core.String jobId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future&lt;Job&gt; get(String projectId, String jobId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,7 +77,7 @@ Future&lt;Job&gt; get(String projectId, String jobId) {
 </div>
 <div class="method"><h4 id="getQueryResults">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>getQueryResults</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> jobId, [<a href="../dart_core/int.html">int</a> timeoutMs = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startIndex = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#getQueryResults"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/GetQueryResultsResponse.html">GetQueryResultsResponse</a>&gt; <strong>getQueryResults</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> jobId, [<a href="../core/int.html">int</a> timeoutMs = UNSPECIFIED, <a href="../core/String.html">String</a> startIndex = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#getQueryResults"
               title="Permalink to JobsResource.getQueryResults">#</a></h4>
 <div class="doc">
 <p>Retrieves the results of a query job.</p><ul><li>
@@ -78,7 +90,7 @@ Future&lt;Job&gt; get(String projectId, String jobId) {
 <span class="param">startIndex</span> Zero-based index of the starting row</li><li>
 <span class="param">maxResults</span> Maximum number of results to read</li></ul>
 <pre class="source">
-Future&lt;GetQueryResultsResponse&gt; getQueryResults(String projectId, String jobId, [int timeoutMs = UNSPECIFIED, String startIndex = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;GetQueryResultsResponse&gt; getQueryResults(core.String projectId, core.String jobId, [core.int timeoutMs = UNSPECIFIED, core.String startIndex = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -99,7 +111,7 @@ Future&lt;GetQueryResultsResponse&gt; getQueryResults(String projectId, String j
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -110,14 +122,14 @@ Future&lt;GetQueryResultsResponse&gt; getQueryResults(String projectId, String j
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../bigquery-v2/Job.html">Job</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Job.html">Job</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> projectId, <a href="../bigquery-v2/Job.html">Job</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to JobsResource.insert">#</a></h4>
 <div class="doc">
 <p>Starts a new asynchronous job.</p><ul><li>
 <span class="param">content</span> the Job</li><li>
 <span class="param">projectId</span> Project ID of the project that will be billed for the job</li></ul>
 <pre class="source">
-Future&lt;Job&gt; insert(String projectId, Job content) {
+core.Future&lt;Job&gt; insert(core.String projectId, Job content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -136,7 +148,7 @@ Future&lt;Job&gt; insert(String projectId, Job content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -147,7 +159,7 @@ Future&lt;Job&gt; insert(String projectId, Job content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, [<a href="../bigquery-v2/JobsResourceListProjection.html">JobsResourceListProjection</a> projection = UNSPECIFIED, <a href="../bigquery-v2/JobsResourceListStateFilter.html">JobsResourceListStateFilter</a> stateFilter = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> allUsers = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/JobList.html">JobList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> projectId, [<a href="../bigquery-v2/JobsResourceListProjection.html">JobsResourceListProjection</a> projection = UNSPECIFIED, <a href="../bigquery-v2/JobsResourceListStateFilter.html">JobsResourceListStateFilter</a> stateFilter = UNSPECIFIED, <a href="../core/bool.html">bool</a> allUsers = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to JobsResource.list">#</a></h4>
 <div class="doc">
 <p>Lists all the Jobs in the specified project that were started by the user.</p><ul><li>
@@ -158,7 +170,7 @@ Future&lt;Job&gt; insert(String projectId, Job content) {
 <span class="param">maxResults</span> Maximum number of results to return</li><li>
 <span class="param">pageToken</span> Page token, returned by a previous call, to request the next page of results</li></ul>
 <pre class="source">
-Future&lt;JobList&gt; list(String projectId, [JobsResourceListProjection projection = UNSPECIFIED, JobsResourceListStateFilter stateFilter = UNSPECIFIED, bool allUsers = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED]) {
+core.Future&lt;JobList&gt; list(core.String projectId, [JobsResourceListProjection projection = UNSPECIFIED, JobsResourceListStateFilter stateFilter = UNSPECIFIED, core.bool allUsers = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -180,7 +192,7 @@ Future&lt;JobList&gt; list(String projectId, [JobsResourceListProjection project
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -191,7 +203,7 @@ Future&lt;JobList&gt; list(String projectId, [JobsResourceListProjection project
 </div>
 <div class="method"><h4 id="query">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>query</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../bigquery-v2/QueryRequest.html">QueryRequest</a> content) <a class="anchor-link" href="#query"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/QueryResponse.html">QueryResponse</a>&gt; <strong>query</strong>(<a href="../core/String.html">String</a> projectId, <a href="../bigquery-v2/QueryRequest.html">QueryRequest</a> content) <a class="anchor-link" href="#query"
               title="Permalink to JobsResource.query">#</a></h4>
 <div class="doc">
 <p>Runs a BigQuery SQL query synchronously and returns query results if the query completes within a
@@ -199,7 +211,7 @@ specified timeout.</p><ul><li>
 <span class="param">content</span> the QueryRequest</li><li>
 <span class="param">projectId</span> Project ID of the project billed for the query</li></ul>
 <pre class="source">
-Future&lt;QueryResponse&gt; query(String projectId, QueryRequest content) {
+core.Future&lt;QueryResponse&gt; query(core.String projectId, QueryRequest content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -218,7 +230,7 @@ Future&lt;QueryResponse&gt; query(String projectId, QueryRequest content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

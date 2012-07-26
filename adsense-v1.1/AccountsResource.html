@@ -26,17 +26,34 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AccountsResource">
+<span class="show-code">Code</span>
+new <strong>AccountsResource</strong>._internal(<a href="../adsense-v1.1/AdsenseApi.html">AdsenseApi</a> $service) <a class="anchor-link" href="#AccountsResource"
+              title="Permalink to AccountsResource.AccountsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AccountsResource._internal(AdsenseApi $service) : _$service = $service,
+  urlchannels = new AccountsUrlchannelsResourceResource._internal($service),
+  adunits = new AccountsAdunitsResourceResource._internal($service),
+  adclients = new AccountsAdclientsResourceResource._internal($service),
+  reports = new AccountsReportsResourceResource._internal($service),
+  customchannels = new AccountsCustomchannelsResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> accountId, [<a href="../dart_core/bool.html">bool</a> tree = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adsense-v1.1/Account.html">Account</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> accountId, [<a href="../core/bool.html">bool</a> tree = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to AccountsResource.get">#</a></h4>
 <div class="doc">
 <p>Get information about the selected AdSense account.</p><ul><li>
 <span class="param">accountId</span> Account to get information about.</li><li>
 <span class="param">tree</span> Whether the tree of sub accounts should be returned.</li></ul>
 <pre class="source">
-Future&lt;Account&gt; get(String accountId, [bool tree = UNSPECIFIED]) {
+core.Future&lt;Account&gt; get(core.String accountId, [core.bool tree = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +71,7 @@ Future&lt;Account&gt; get(String accountId, [bool tree = UNSPECIFIED]) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,7 +82,7 @@ Future&lt;Account&gt; get(String accountId, [bool tree = UNSPECIFIED]) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adsense-v1.1/Accounts.html">Accounts</a>&gt; <strong>list</strong>([<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to AccountsResource.list">#</a></h4>
 <div class="doc">
 <p>List all accounts available to this AdSense account.</p><ul><li>
@@ -78,7 +95,7 @@ Maximum:</p>
 <pre><code>   10000.
 </code></pre>
 <pre class="source">
-Future&lt;Accounts&gt; list([String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;Accounts&gt; list([core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -96,7 +113,7 @@ Future&lt;Accounts&gt; list([String pageToken = UNSPECIFIED, int maxResults = UN
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

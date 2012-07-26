@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../latitude-v1/Location.html">Location</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../latitude-v1/Location.html">Location</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Location.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Location parse(Map&lt;String, Object&gt; json) {
+static Location parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Location();
   result.kind = identity(json["kind"]);
@@ -57,12 +57,12 @@ static Location parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../latitude-v1/Location.html">Location</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../latitude-v1/Location.html">Location</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Location.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Location value) {
+static core.Object serialize(Location value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -95,20 +95,20 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="accuracy">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>accuracy</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>accuracy</strong> <a class="anchor-link"
             href="#accuracy"
             title="Permalink to Location.accuracy">#</a>
         </h4>
         <div class="doc">
 <p>Accuracy of the latitude and longitude coordinates, in non-negative meters. Optional.</p>
 <pre class="source">
-Object accuracy;
+core.Object accuracy;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="activityId">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>activityId</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>activityId</strong> <a class="anchor-link"
             href="#activityId"
             title="Permalink to Location.activityId">#</a>
         </h4>
@@ -116,39 +116,39 @@ Object accuracy;
 <p>Unique ID of the Buzz message that corresponds to the check-in associated with this location.
 Available only for check-in locations. Optional.</p>
 <pre class="source">
-Object activityId;
+core.Object activityId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="altitude">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>altitude</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>altitude</strong> <a class="anchor-link"
             href="#altitude"
             title="Permalink to Location.altitude">#</a>
         </h4>
         <div class="doc">
 <p>Altitude of the location, in meters. Optional.</p>
 <pre class="source">
-Object altitude;
+core.Object altitude;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="altitudeAccuracy">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>altitudeAccuracy</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>altitudeAccuracy</strong> <a class="anchor-link"
             href="#altitudeAccuracy"
             title="Permalink to Location.altitudeAccuracy">#</a>
         </h4>
         <div class="doc">
 <p>Accuracy of the altitude value, in meters. Optional.</p>
 <pre class="source">
-Object altitudeAccuracy;
+core.Object altitudeAccuracy;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="heading">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>heading</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>heading</strong> <a class="anchor-link"
             href="#heading"
             title="Permalink to Location.heading">#</a>
         </h4>
@@ -156,52 +156,52 @@ Object altitudeAccuracy;
 <p>Direction of travel of the user when this location was recorded. In degrees, clockwise relative
 to true north. Optional.</p>
 <pre class="source">
-Object heading;
+core.Object heading;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Location.kind">#</a>
         </h4>
         <div class="doc">
 <p>Kind of this item.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="latitude">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>latitude</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>latitude</strong> <a class="anchor-link"
             href="#latitude"
             title="Permalink to Location.latitude">#</a>
         </h4>
         <div class="doc">
 <p>Latitude of the location, in decimal degrees.</p>
 <pre class="source">
-Object latitude;
+core.Object latitude;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="longitude">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>longitude</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>longitude</strong> <a class="anchor-link"
             href="#longitude"
             title="Permalink to Location.longitude">#</a>
         </h4>
         <div class="doc">
 <p>Longitude of the location, in decimal degrees.</p>
 <pre class="source">
-Object longitude;
+core.Object longitude;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="speed">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>speed</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>speed</strong> <a class="anchor-link"
             href="#speed"
             title="Permalink to Location.speed">#</a>
         </h4>
@@ -209,13 +209,13 @@ Object longitude;
 <p>Ground speed of the user at the time this location was recorded, in meters per second. Non-
 negative. Optional.</p>
 <pre class="source">
-Object speed;
+core.Object speed;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="timestampMs">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>timestampMs</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>timestampMs</strong> <a class="anchor-link"
             href="#timestampMs"
             title="Permalink to Location.timestampMs">#</a>
         </h4>
@@ -223,7 +223,7 @@ Object speed;
 <p>Timestamp of the Location Resource, in milliseconds since the epoch (UTC). This is also the
 Location Resource's unique id.</p>
 <pre class="source">
-Object timestampMs;
+core.Object timestampMs;
 </pre>
 </div>
 </div>

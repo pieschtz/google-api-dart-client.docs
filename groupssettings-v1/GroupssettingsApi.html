@@ -24,17 +24,21 @@
         </h2>
         
 <div class="doc">
-<p>Lets you manage permission levels and related settings of a group</p>
+<p>Lets you manage permission levels and related settings of a group.</p>
 </div>
 <h3>Constructors</h3>
 <div class="method"><h4 id="GroupssettingsApi">
 <span class="show-code">Code</span>
-new <strong>GroupssettingsApi</strong>([baseUrl = "https://www.googleapis.com/groups/v1/groups/", applicationName, authenticator]) <a class="anchor-link" href="#GroupssettingsApi"
+new <strong>GroupssettingsApi</strong>([<a href="../core/String.html">String</a> baseUrl = "https://www.googleapis.com/groups/v1/groups/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#GroupssettingsApi"
               title="Permalink to GroupssettingsApi.GroupssettingsApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-GroupssettingsApi([this.baseUrl = "https://www.googleapis.com/groups/v1/groups/", this.applicationName, this.authenticator]) { 
+GroupssettingsApi([this.baseUrl = "https://www.googleapis.com/groups/v1/groups/", applicationName, this.authenticator]) :
+    this.applicationName = applicationName
+        .replaceAll(const RegExp(@'\s+'), '_')
+        .replaceAll(const RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+{ 
   _groups = new GroupsResource._internal(this);
 }
 </pre>
@@ -43,21 +47,21 @@ GroupssettingsApi([this.baseUrl = "https://www.googleapis.com/groups/v1/groups/"
 <h3>Static Fields</h3>
 <div class="field"><h4 id="APPS_GROUPS_SETTINGS_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>APPS_GROUPS_SETTINGS_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>APPS_GROUPS_SETTINGS_SCOPE</strong> <a class="anchor-link"
             href="#APPS_GROUPS_SETTINGS_SCOPE"
             title="Permalink to GroupssettingsApi.APPS_GROUPS_SETTINGS_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: View and manage the settings of a Google Apps Group</p>
 <pre class="source">
-static final String APPS_GROUPS_SETTINGS_SCOPE = "https://www.googleapis.com/auth/apps.groups.settings";
+static final core.String APPS_GROUPS_SETTINGS_SCOPE = "https://www.googleapis.com/auth/apps.groups.settings";
 </pre>
 </div>
 </div>
 <h3>Methods</h3>
-<div class="method"><h4 id="get:groups">
+<div class="method"><h4 id="groups">
 <span class="show-code">Code</span>
-<a href="../groupssettings-v1/GroupsResource.html">GroupsResource</a> <strong>get groups</strong>() <a class="anchor-link" href="#get:groups"
+<a href="../groupssettings-v1/GroupsResource.html">GroupsResource</a> <strong>get groups</strong>() <a class="anchor-link" href="#groups"
               title="Permalink to GroupssettingsApi.get groups">#</a></h4>
 <div class="doc">
 
@@ -66,16 +70,16 @@ GroupsResource get groups() =&gt; _groups;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:userAgent">
+<div class="method"><h4 id="userAgent">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+<a href="../core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
               title="Permalink to GroupssettingsApi.get userAgent">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-String get userAgent() {
+core.String get userAgent() {
   var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
-  return "${uaPrefix}groupssettings/v1/20120516 google-api-dart-client/${clientVersion}";
+  return "${uaPrefix}groupssettings/v1/20120724 google-api-dart-client/${clientVersion}";
 }
 </pre>
 </div>
@@ -96,14 +100,14 @@ GroupssettingsApiAlt alt;
 </div>
 <div class="field"><h4 id="applicationName">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to GroupssettingsApi.applicationName">#</a>
         </h4>
         <div class="doc">
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
-final String applicationName;
+final core.String applicationName;
 </pre>
 </div>
 </div>
@@ -122,46 +126,46 @@ Authenticator authenticator;
 </div>
 <div class="field"><h4 id="baseUrl">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to GroupssettingsApi.baseUrl">#</a>
         </h4>
         <div class="doc">
 <p>The API root, such as <code>https://www.googleapis.com</code></p>
 <pre class="source">
-final String baseUrl;
+final core.String baseUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="clientVersion">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to GroupssettingsApi.clientVersion">#</a>
         </h4>
         <div class="doc">
 <p>The client library version</p>
 <pre class="source">
-final String clientVersion = "0.1";
+final core.String clientVersion = "0.1";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fields">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to GroupssettingsApi.fields">#</a>
         </h4>
         <div class="doc">
 <p>Selector specifying which fields to include in a partial response.</p>
 <pre class="source">
-String fields;
+core.String fields;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="key">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to GroupssettingsApi.key">#</a>
         </h4>
@@ -169,39 +173,39 @@ String fields;
 <p>API key. Your API key identifies your project and provides you with API access, quota, and
 reports. Required unless you provide an OAuth 2.0 token.</p>
 <pre class="source">
-String key;
+core.String key;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to GroupssettingsApi.oauthToken">#</a>
         </h4>
         <div class="doc">
 <p>OAuth 2.0 token for the current user.</p>
 <pre class="source">
-String oauthToken;
+core.String oauthToken;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="prettyPrint">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to GroupssettingsApi.prettyPrint">#</a>
         </h4>
         <div class="doc">
 <p>Returns response with indentations and line breaks.</p>
 <pre class="source">
-bool prettyPrint;
+core.bool prettyPrint;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="quotaUser">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to GroupssettingsApi.quotaUser">#</a>
         </h4>
@@ -209,13 +213,13 @@ bool prettyPrint;
 <p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
 assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
 <pre class="source">
-String quotaUser;
+core.String quotaUser;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="userIp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to GroupssettingsApi.userIp">#</a>
         </h4>
@@ -223,7 +227,7 @@ String quotaUser;
 <p>IP address of the site where the request originates. Use this if you want to enforce per-user
 limits.</p>
 <pre class="source">
-String userIp;
+core.String userIp;
 </pre>
 </div>
 </div>

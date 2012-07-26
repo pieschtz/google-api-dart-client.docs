@@ -29,12 +29,16 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="AdexchangebuyerApi">
 <span class="show-code">Code</span>
-new <strong>AdexchangebuyerApi</strong>([baseUrl = "https://www.googleapis.com/adexchangebuyer/v1/", applicationName, authenticator]) <a class="anchor-link" href="#AdexchangebuyerApi"
+new <strong>AdexchangebuyerApi</strong>([<a href="../core/String.html">String</a> baseUrl = "https://www.googleapis.com/adexchangebuyer/v1/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#AdexchangebuyerApi"
               title="Permalink to AdexchangebuyerApi.AdexchangebuyerApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-AdexchangebuyerApi([this.baseUrl = "https://www.googleapis.com/adexchangebuyer/v1/", this.applicationName, this.authenticator]) { 
+AdexchangebuyerApi([this.baseUrl = "https://www.googleapis.com/adexchangebuyer/v1/", applicationName, this.authenticator]) :
+    this.applicationName = applicationName
+        .replaceAll(const RegExp(@'\s+'), '_')
+        .replaceAll(const RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+{ 
   _directDeals = new DirectDealsResource._internal(this);
   _accounts = new AccountsResource._internal(this);
   _creatives = new CreativesResource._internal(this);
@@ -45,21 +49,21 @@ AdexchangebuyerApi([this.baseUrl = "https://www.googleapis.com/adexchangebuyer/v
 <h3>Static Fields</h3>
 <div class="field"><h4 id="ADEXCHANGE_BUYER_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>ADEXCHANGE_BUYER_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>ADEXCHANGE_BUYER_SCOPE</strong> <a class="anchor-link"
             href="#ADEXCHANGE_BUYER_SCOPE"
             title="Permalink to AdexchangebuyerApi.ADEXCHANGE_BUYER_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: Manage your Ad Exchange buyer account configuration</p>
 <pre class="source">
-static final String ADEXCHANGE_BUYER_SCOPE = "https://www.googleapis.com/auth/adexchange.buyer";
+static final core.String ADEXCHANGE_BUYER_SCOPE = "https://www.googleapis.com/auth/adexchange.buyer";
 </pre>
 </div>
 </div>
 <h3>Methods</h3>
-<div class="method"><h4 id="get:accounts">
+<div class="method"><h4 id="accounts">
 <span class="show-code">Code</span>
-<a href="../adexchangebuyer-v1/AccountsResource.html">AccountsResource</a> <strong>get accounts</strong>() <a class="anchor-link" href="#get:accounts"
+<a href="../adexchangebuyer-v1/AccountsResource.html">AccountsResource</a> <strong>get accounts</strong>() <a class="anchor-link" href="#accounts"
               title="Permalink to AdexchangebuyerApi.get accounts">#</a></h4>
 <div class="doc">
 
@@ -68,9 +72,9 @@ AccountsResource get accounts() =&gt; _accounts;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:creatives">
+<div class="method"><h4 id="creatives">
 <span class="show-code">Code</span>
-<a href="../adexchangebuyer-v1/CreativesResource.html">CreativesResource</a> <strong>get creatives</strong>() <a class="anchor-link" href="#get:creatives"
+<a href="../adexchangebuyer-v1/CreativesResource.html">CreativesResource</a> <strong>get creatives</strong>() <a class="anchor-link" href="#creatives"
               title="Permalink to AdexchangebuyerApi.get creatives">#</a></h4>
 <div class="doc">
 
@@ -79,9 +83,9 @@ CreativesResource get creatives() =&gt; _creatives;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:directDeals">
+<div class="method"><h4 id="directDeals">
 <span class="show-code">Code</span>
-<a href="../adexchangebuyer-v1/DirectDealsResource.html">DirectDealsResource</a> <strong>get directDeals</strong>() <a class="anchor-link" href="#get:directDeals"
+<a href="../adexchangebuyer-v1/DirectDealsResource.html">DirectDealsResource</a> <strong>get directDeals</strong>() <a class="anchor-link" href="#directDeals"
               title="Permalink to AdexchangebuyerApi.get directDeals">#</a></h4>
 <div class="doc">
 
@@ -90,14 +94,14 @@ DirectDealsResource get directDeals() =&gt; _directDeals;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:userAgent">
+<div class="method"><h4 id="userAgent">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+<a href="../core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
               title="Permalink to AdexchangebuyerApi.get userAgent">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-String get userAgent() {
+core.String get userAgent() {
   var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
   return "${uaPrefix}adexchangebuyer/v1/20120508 google-api-dart-client/${clientVersion}";
 }
@@ -120,14 +124,14 @@ AdexchangebuyerApiAlt alt;
 </div>
 <div class="field"><h4 id="applicationName">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to AdexchangebuyerApi.applicationName">#</a>
         </h4>
         <div class="doc">
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
-final String applicationName;
+final core.String applicationName;
 </pre>
 </div>
 </div>
@@ -146,46 +150,46 @@ Authenticator authenticator;
 </div>
 <div class="field"><h4 id="baseUrl">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to AdexchangebuyerApi.baseUrl">#</a>
         </h4>
         <div class="doc">
 <p>The API root, such as <code>https://www.googleapis.com</code></p>
 <pre class="source">
-final String baseUrl;
+final core.String baseUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="clientVersion">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to AdexchangebuyerApi.clientVersion">#</a>
         </h4>
         <div class="doc">
 <p>The client library version</p>
 <pre class="source">
-final String clientVersion = "0.1";
+final core.String clientVersion = "0.1";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fields">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to AdexchangebuyerApi.fields">#</a>
         </h4>
         <div class="doc">
 <p>Selector specifying which fields to include in a partial response.</p>
 <pre class="source">
-String fields;
+core.String fields;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="key">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to AdexchangebuyerApi.key">#</a>
         </h4>
@@ -193,39 +197,39 @@ String fields;
 <p>API key. Your API key identifies your project and provides you with API access, quota, and
 reports. Required unless you provide an OAuth 2.0 token.</p>
 <pre class="source">
-String key;
+core.String key;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to AdexchangebuyerApi.oauthToken">#</a>
         </h4>
         <div class="doc">
 <p>OAuth 2.0 token for the current user.</p>
 <pre class="source">
-String oauthToken;
+core.String oauthToken;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="prettyPrint">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to AdexchangebuyerApi.prettyPrint">#</a>
         </h4>
         <div class="doc">
 <p>Returns response with indentations and line breaks.</p>
 <pre class="source">
-bool prettyPrint;
+core.bool prettyPrint;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="quotaUser">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to AdexchangebuyerApi.quotaUser">#</a>
         </h4>
@@ -233,13 +237,13 @@ bool prettyPrint;
 <p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
 assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
 <pre class="source">
-String quotaUser;
+core.String quotaUser;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="userIp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to AdexchangebuyerApi.userIp">#</a>
         </h4>
@@ -247,7 +251,7 @@ String quotaUser;
 <p>IP address of the site where the request originates. Use this if you want to enforce per-user
 limits.</p>
 <pre class="source">
-String userIp;
+core.String userIp;
 </pre>
 </div>
 </div>

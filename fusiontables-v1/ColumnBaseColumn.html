@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../fusiontables-v1/ColumnBaseColumn.html">ColumnBaseColumn</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../fusiontables-v1/ColumnBaseColumn.html">ColumnBaseColumn</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to ColumnBaseColumn.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static ColumnBaseColumn parse(Map&lt;String, Object&gt; json) {
+static ColumnBaseColumn parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new ColumnBaseColumn();
   result.tableIndex = identity(json["tableIndex"]);
@@ -49,12 +49,12 @@ static ColumnBaseColumn parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../fusiontables-v1/ColumnBaseColumn.html">ColumnBaseColumn</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../fusiontables-v1/ColumnBaseColumn.html">ColumnBaseColumn</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to ColumnBaseColumn.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(ColumnBaseColumn value) {
+static core.Object serialize(ColumnBaseColumn value) {
   if (value == null) return null;
   final result = {};
   result["tableIndex"] = identity(value.tableIndex);
@@ -79,27 +79,27 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="columnId">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>columnId</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>columnId</strong> <a class="anchor-link"
             href="#columnId"
             title="Permalink to ColumnBaseColumn.columnId">#</a>
         </h4>
         <div class="doc">
 <p>The id of the column in the base table from which this column is derived.</p>
 <pre class="source">
-int columnId;
+core.int columnId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="tableIndex">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>tableIndex</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>tableIndex</strong> <a class="anchor-link"
             href="#tableIndex"
             title="Permalink to ColumnBaseColumn.tableIndex">#</a>
         </h4>
         <div class="doc">
 <p>Offset to the entry in the list of base tables in the table definition.</p>
 <pre class="source">
-int tableIndex;
+core.int tableIndex;
 </pre>
 </div>
 </div>

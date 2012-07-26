@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="MachineTypesResource">
+<span class="show-code">Code</span>
+new <strong>MachineTypesResource</strong>._internal(<a href="../compute-v1beta12/ComputeApi.html">ComputeApi</a> $service) <a class="anchor-link" href="#MachineTypesResource"
+              title="Permalink to MachineTypesResource.MachineTypesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+MachineTypesResource._internal(ComputeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> machineType) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/MachineType.html">MachineType</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> machineType) <a class="anchor-link" href="#get"
               title="Permalink to MachineTypesResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the specified machine type resource.</p><ul><li>
 <span class="param">project</span> Name of the project scoping this request.</li><li>
 <span class="param">machineType</span> Name of the machine type resource to return.</li></ul>
 <pre class="source">
-Future&lt;MachineType&gt; get(String project, String machineType) {
+core.Future&lt;MachineType&gt; get(core.String project, core.String machineType) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future&lt;MachineType&gt; get(String project, String machineType) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,7 +77,7 @@ Future&lt;MachineType&gt; get(String project, String machineType) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> project, [<a href="../dart_core/String.html">String</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/MachineTypeList.html">MachineTypeList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> project, [<a href="../core/String.html">String</a> filter = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to MachineTypesResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the list of machine type resources available to the specified project.</p><ul><li>
@@ -76,7 +88,7 @@ Future&lt;MachineType&gt; get(String project, String machineType) {
    previous list request.</p></li><li>
 <span class="param">maxResults</span> Optional. Maximum count of results to be returned. Maximum and default value is 100.</li></ul>
 <pre class="source">
-Future&lt;MachineTypeList&gt; list(String project, [String filter = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;MachineTypeList&gt; list(core.String project, [core.String filter = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -96,7 +108,7 @@ Future&lt;MachineTypeList&gt; list(String project, [String filter = UNSPECIFIED,
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

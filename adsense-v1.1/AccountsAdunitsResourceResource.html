@@ -26,10 +26,23 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AccountsAdunitsResourceResource">
+<span class="show-code">Code</span>
+new <strong>AccountsAdunitsResourceResource</strong>._internal(<a href="../adsense-v1.1/AdsenseApi.html">AdsenseApi</a> $service) <a class="anchor-link" href="#AccountsAdunitsResourceResource"
+              title="Permalink to AccountsAdunitsResourceResource.AccountsAdunitsResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AccountsAdunitsResourceResource._internal(AdsenseApi $service) : _$service = $service,
+  customchannels = new AccountsAdunitsResourceAccountsAdunitsCustomchannelsResourceResourceResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> accountId, <a href="../dart_core/String.html">String</a> adClientId, <a href="../dart_core/String.html">String</a> adUnitId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adsense-v1.1/AdUnit.html">AdUnit</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> accountId, <a href="../core/String.html">String</a> adClientId, <a href="../core/String.html">String</a> adUnitId) <a class="anchor-link" href="#get"
               title="Permalink to AccountsAdunitsResourceResource.get">#</a></h4>
 <div class="doc">
 <p>Gets the specified ad unit in the specified ad client for the specified account.</p><ul><li>
@@ -37,7 +50,7 @@
 <span class="param">adClientId</span> Ad client for which to get the ad unit.</li><li>
 <span class="param">adUnitId</span> Ad unit to retrieve.</li></ul>
 <pre class="source">
-Future&lt;AdUnit&gt; get(String accountId, String adClientId, String adUnitId) {
+core.Future&lt;AdUnit&gt; get(core.String accountId, core.String adClientId, core.String adUnitId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -56,7 +69,7 @@ Future&lt;AdUnit&gt; get(String accountId, String adClientId, String adUnitId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -67,7 +80,7 @@ Future&lt;AdUnit&gt; get(String accountId, String adClientId, String adUnitId) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> accountId, <a href="../dart_core/String.html">String</a> adClientId, [<a href="../dart_core/bool.html">bool</a> includeInactive = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adsense-v1.1/AdUnits.html">AdUnits</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> accountId, <a href="../core/String.html">String</a> adClientId, [<a href="../core/bool.html">bool</a> includeInactive = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to AccountsAdunitsResourceResource.list">#</a></h4>
 <div class="doc">
 <p>List all ad units in the specified ad client for the specified account.</p><ul><li>
@@ -83,7 +96,7 @@ Maximum:</p>
 <pre><code>   10000.
 </code></pre>
 <pre class="source">
-Future&lt;AdUnits&gt; list(String accountId, String adClientId, [bool includeInactive = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;AdUnits&gt; list(core.String accountId, core.String adClientId, [core.bool includeInactive = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -104,7 +117,7 @@ Future&lt;AdUnits&gt; list(String accountId, String adClientId, [bool includeIna
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

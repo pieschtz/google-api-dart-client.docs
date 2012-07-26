@@ -26,17 +26,30 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ReportsResource">
+<span class="show-code">Code</span>
+new <strong>ReportsResource</strong>._internal(<a href="../dfareporting-v1/DfareportingApi.html">DfareportingApi</a> $service) <a class="anchor-link" href="#ReportsResource"
+              title="Permalink to ReportsResource.ReportsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ReportsResource._internal(DfareportingApi $service) : _$service = $service,
+  files = new ReportsFilesResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> profileId, <a href="../core/String.html">String</a> reportId) <a class="anchor-link" href="#delete"
               title="Permalink to ReportsResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes a report by its id.</p><ul><li>
 <span class="param">profileId</span> The DFA user profile id.</li><li>
 <span class="param">reportId</span> The id of the report.</li></ul>
 <pre class="source">
-Future delete(String profileId, String reportId) {
+core.Future delete(core.String profileId, core.String reportId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +67,7 @@ Future delete(String profileId, String reportId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,14 +78,14 @@ Future delete(String profileId, String reportId) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/Report.html">Report</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> profileId, <a href="../core/String.html">String</a> reportId) <a class="anchor-link" href="#get"
               title="Permalink to ReportsResource.get">#</a></h4>
 <div class="doc">
 <p>Retrieves a report by its id.</p><ul><li>
 <span class="param">profileId</span> The DFA user profile id.</li><li>
 <span class="param">reportId</span> The id of the report.</li></ul>
 <pre class="source">
-Future&lt;Report&gt; get(String profileId, String reportId) {
+core.Future&lt;Report&gt; get(core.String profileId, core.String reportId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -90,7 +103,7 @@ Future&lt;Report&gt; get(String profileId, String reportId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -101,14 +114,14 @@ Future&lt;Report&gt; get(String profileId, String reportId) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dfareporting-v1/Report.html">Report</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/Report.html">Report</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> profileId, <a href="../dfareporting-v1/Report.html">Report</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to ReportsResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a report.</p><ul><li>
 <span class="param">content</span> the Report</li><li>
 <span class="param">profileId</span> The DFA user profile id.</li></ul>
 <pre class="source">
-Future&lt;Report&gt; insert(String profileId, Report content) {
+core.Future&lt;Report&gt; insert(core.String profileId, Report content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -127,7 +140,7 @@ Future&lt;Report&gt; insert(String profileId, Report content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -138,7 +151,7 @@ Future&lt;Report&gt; insert(String profileId, Report content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> profileId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dfareporting-v1/ReportsResourceListSortField.html">ReportsResourceListSortField</a> sortField = UNSPECIFIED, <a href="../dfareporting-v1/ReportsResourceListSortOrder.html">ReportsResourceListSortOrder</a> sortOrder = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/ReportList.html">ReportList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> profileId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dfareporting-v1/ReportsResourceListSortField.html">ReportsResourceListSortField</a> sortField = UNSPECIFIED, <a href="../dfareporting-v1/ReportsResourceListSortOrder.html">ReportsResourceListSortOrder</a> sortOrder = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ReportsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves list of reports.</p><ul><li>
@@ -154,7 +167,7 @@ Default: DESCENDING.</p></li><li>
 <p>Minimum: 0.
 Maximum: 10.</p>
 <pre class="source">
-Future&lt;ReportList&gt; list(String profileId, [String pageToken = UNSPECIFIED, ReportsResourceListSortField sortField = UNSPECIFIED, ReportsResourceListSortOrder sortOrder = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;ReportList&gt; list(core.String profileId, [core.String pageToken = UNSPECIFIED, ReportsResourceListSortField sortField = UNSPECIFIED, ReportsResourceListSortOrder sortOrder = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -175,7 +188,7 @@ Future&lt;ReportList&gt; list(String profileId, [String pageToken = UNSPECIFIED,
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -186,7 +199,7 @@ Future&lt;ReportList&gt; list(String profileId, [String pageToken = UNSPECIFIED,
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, <a href="../dfareporting-v1/Report.html">Report</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/Report.html">Report</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> profileId, <a href="../core/String.html">String</a> reportId, <a href="../dfareporting-v1/Report.html">Report</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to ReportsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates a report. This method supports patch semantics.</p><ul><li>
@@ -194,7 +207,7 @@ Future&lt;ReportList&gt; list(String profileId, [String pageToken = UNSPECIFIED,
 <span class="param">profileId</span> The DFA user profile id.</li><li>
 <span class="param">reportId</span> The id of the report.</li></ul>
 <pre class="source">
-Future&lt;Report&gt; patch(String profileId, String reportId, Report content) {
+core.Future&lt;Report&gt; patch(core.String profileId, core.String reportId, Report content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -214,7 +227,7 @@ Future&lt;Report&gt; patch(String profileId, String reportId, Report content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -225,7 +238,7 @@ Future&lt;Report&gt; patch(String profileId, String reportId, Report content) {
 </div>
 <div class="method"><h4 id="run">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>run</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, [<a href="../dart_core/bool.html">bool</a> synchronous = UNSPECIFIED]) <a class="anchor-link" href="#run"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/File.html">File</a>&gt; <strong>run</strong>(<a href="../core/String.html">String</a> profileId, <a href="../core/String.html">String</a> reportId, [<a href="../core/bool.html">bool</a> synchronous = UNSPECIFIED]) <a class="anchor-link" href="#run"
               title="Permalink to ReportsResource.run">#</a></h4>
 <div class="doc">
 <p>Runs a report.</p><ul><li>
@@ -233,7 +246,7 @@ Future&lt;Report&gt; patch(String profileId, String reportId, Report content) {
 <span class="param">reportId</span> The id of the report.</li><li>
 <span class="param">synchronous</span> If set and true, tries to run the report synchronously.</li></ul>
 <pre class="source">
-Future&lt;File&gt; run(String profileId, String reportId, [bool synchronous = UNSPECIFIED]) {
+core.Future&lt;File&gt; run(core.String profileId, core.String reportId, [core.bool synchronous = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -252,7 +265,7 @@ Future&lt;File&gt; run(String profileId, String reportId, [bool synchronous = UN
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -263,7 +276,7 @@ Future&lt;File&gt; run(String profileId, String reportId, [bool synchronous = UN
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dart_core/String.html">String</a> reportId, <a href="../dfareporting-v1/Report.html">Report</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/Report.html">Report</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> profileId, <a href="../core/String.html">String</a> reportId, <a href="../dfareporting-v1/Report.html">Report</a> content) <a class="anchor-link" href="#update"
               title="Permalink to ReportsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates a report.</p><ul><li>
@@ -271,7 +284,7 @@ Future&lt;File&gt; run(String profileId, String reportId, [bool synchronous = UN
 <span class="param">profileId</span> The DFA user profile id.</li><li>
 <span class="param">reportId</span> The id of the report.</li></ul>
 <pre class="source">
-Future&lt;Report&gt; update(String profileId, String reportId, Report content) {
+core.Future&lt;Report&gt; update(core.String profileId, core.String reportId, Report content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -291,7 +304,7 @@ Future&lt;Report&gt; update(String profileId, String reportId, Report content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

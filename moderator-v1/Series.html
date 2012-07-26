@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../moderator-v1/Series.html">Series</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../moderator-v1/Series.html">Series</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Series.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Series parse(Map&lt;String, Object&gt; json) {
+static Series parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Series();
   result.kind = identity(json["kind"]);
@@ -58,12 +58,12 @@ static Series parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../moderator-v1/Series.html">Series</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../moderator-v1/Series.html">Series</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Series.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Series value) {
+static core.Object serialize(Series value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -97,14 +97,14 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="anonymousSubmissionAllowed">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>anonymousSubmissionAllowed</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>anonymousSubmissionAllowed</strong> <a class="anchor-link"
             href="#anonymousSubmissionAllowed"
             title="Permalink to Series.anonymousSubmissionAllowed">#</a>
         </h4>
         <div class="doc">
 
 <pre class="source">
-bool anonymousSubmissionAllowed;
+core.bool anonymousSubmissionAllowed;
 </pre>
 </div>
 </div>
@@ -123,14 +123,14 @@ SeriesCounters counters;
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Series.description">#</a>
         </h4>
         <div class="doc">
 
 <pre class="source">
-String description;
+core.String description;
 </pre>
 </div>
 </div>
@@ -149,40 +149,40 @@ SeriesId id;
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Series.kind">#</a>
         </h4>
         <div class="doc">
 
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Series.name">#</a>
         </h4>
         <div class="doc">
 
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="numTopics">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>numTopics</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>numTopics</strong> <a class="anchor-link"
             href="#numTopics"
             title="Permalink to Series.numTopics">#</a>
         </h4>
         <div class="doc">
 
 <pre class="source">
-int numTopics;
+core.int numTopics;
 </pre>
 </div>
 </div>
@@ -201,40 +201,40 @@ SeriesRules rules;
 </div>
 <div class="field"><h4 id="unauthSubmissionAllowed">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>unauthSubmissionAllowed</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>unauthSubmissionAllowed</strong> <a class="anchor-link"
             href="#unauthSubmissionAllowed"
             title="Permalink to Series.unauthSubmissionAllowed">#</a>
         </h4>
         <div class="doc">
 
 <pre class="source">
-bool unauthSubmissionAllowed;
+core.bool unauthSubmissionAllowed;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="unauthVotingAllowed">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>unauthVotingAllowed</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>unauthVotingAllowed</strong> <a class="anchor-link"
             href="#unauthVotingAllowed"
             title="Permalink to Series.unauthVotingAllowed">#</a>
         </h4>
         <div class="doc">
 
 <pre class="source">
-bool unauthVotingAllowed;
+core.bool unauthVotingAllowed;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="videoSubmissionAllowed">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>videoSubmissionAllowed</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>videoSubmissionAllowed</strong> <a class="anchor-link"
             href="#videoSubmissionAllowed"
             title="Permalink to Series.videoSubmissionAllowed">#</a>
         </h4>
         <div class="doc">
 
 <pre class="source">
-bool videoSubmissionAllowed;
+core.bool videoSubmissionAllowed;
 </pre>
 </div>
 </div>

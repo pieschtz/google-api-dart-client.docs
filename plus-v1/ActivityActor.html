@@ -1,0 +1,160 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ActivityActor Class / plus-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="plus-v1" data-type="ActivityActor">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/ActivityActor.html">ActivityActor</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ActivityActor</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ActivityActor</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../plus-v1/ActivityActor.html">ActivityActor</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to ActivityActor.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ActivityActor parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new ActivityActor();
+  result.url = identity(json["url"]);
+  result.image = ActivityActorImage.parse(json["image"]);
+  result.displayName = identity(json["displayName"]);
+  result.id = identity(json["id"]);
+  result.name = ActivityActorName.parse(json["name"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../plus-v1/ActivityActor.html">ActivityActor</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ActivityActor.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(ActivityActor value) {
+  if (value == null) return null;
+  final result = {};
+  result["url"] = identity(value.url);
+  result["image"] = ActivityActorImage.serialize(value.image);
+  result["displayName"] = identity(value.displayName);
+  result["id"] = identity(value.id);
+  result["name"] = ActivityActorName.serialize(value.name);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ActivityActor.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="displayName">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>displayName</strong> <a class="anchor-link"
+            href="#displayName"
+            title="Permalink to ActivityActor.displayName">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of the actor, suitable for display.</p>
+<pre class="source">
+core.String displayName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to ActivityActor.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The ID of the actor's person resource.</p>
+<pre class="source">
+core.String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="image">
+<span class="show-code">Code</span>
+<a href="../plus-v1/ActivityActorImage.html">ActivityActorImage</a>         <strong>image</strong> <a class="anchor-link"
+            href="#image"
+            title="Permalink to ActivityActor.image">#</a>
+        </h4>
+        <div class="doc">
+<p>The image representation of the actor.</p>
+<pre class="source">
+ActivityActorImage image;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../plus-v1/ActivityActorName.html">ActivityActorName</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to ActivityActor.name">#</a>
+        </h4>
+        <div class="doc">
+<p>An object representation of the individual components of name.</p>
+<pre class="source">
+ActivityActorName name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="url">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>url</strong> <a class="anchor-link"
+            href="#url"
+            title="Permalink to ActivityActor.url">#</a>
+        </h4>
+        <div class="doc">
+<p>The link to the actor's Google profile.</p>
+<pre class="source">
+core.String url;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

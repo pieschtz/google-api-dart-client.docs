@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../shopping-v1/ShoppingModelProductJsonV1.html">ShoppingModelProductJsonV1</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../shopping-v1/ShoppingModelProductJsonV1.html">ShoppingModelProductJsonV1</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to ShoppingModelProductJsonV1.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static ShoppingModelProductJsonV1 parse(Map&lt;String, Object&gt; json) {
+static ShoppingModelProductJsonV1 parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new ShoppingModelProductJsonV1();
   result.queryMatched = identity(json["queryMatched"]);
@@ -82,12 +82,12 @@ static ShoppingModelProductJsonV1 parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ShoppingModelProductJsonV1.html">ShoppingModelProductJsonV1</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ShoppingModelProductJsonV1.html">ShoppingModelProductJsonV1</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to ShoppingModelProductJsonV1.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(ShoppingModelProductJsonV1 value) {
+static core.Object serialize(ShoppingModelProductJsonV1 value) {
   if (value == null) return null;
   final result = {};
   result["queryMatched"] = identity(value.queryMatched);
@@ -145,14 +145,14 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="attributes">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>attributes</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Attributes.html">ShoppingModelProductJsonV1Attributes</a>&gt;         <strong>attributes</strong> <a class="anchor-link"
             href="#attributes"
             title="Permalink to ShoppingModelProductJsonV1.attributes">#</a>
         </h4>
         <div class="doc">
 <p>Attributes of product (available only with a cx source).</p>
 <pre class="source">
-List&lt;ShoppingModelProductJsonV1Attributes&gt; attributes;
+core.List&lt;ShoppingModelProductJsonV1Attributes&gt; attributes;
 </pre>
 </div>
 </div>
@@ -171,371 +171,371 @@ ShoppingModelProductJsonV1Author author;
 </div>
 <div class="field"><h4 id="brand">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>brand</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>brand</strong> <a class="anchor-link"
             href="#brand"
             title="Permalink to ShoppingModelProductJsonV1.brand">#</a>
         </h4>
         <div class="doc">
 <p>Brand of product.</p>
 <pre class="source">
-String brand;
+core.String brand;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="categories">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>categories</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>categories</strong> <a class="anchor-link"
             href="#categories"
             title="Permalink to ShoppingModelProductJsonV1.categories">#</a>
         </h4>
         <div class="doc">
 <p>Categories of product according to the selected taxonomy, omitted if no taxonomy is selected.</p>
 <pre class="source">
-List&lt;String&gt; categories;
+core.List&lt;core.String&gt; categories;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="condition">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>condition</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>condition</strong> <a class="anchor-link"
             href="#condition"
             title="Permalink to ShoppingModelProductJsonV1.condition">#</a>
         </h4>
         <div class="doc">
 <p>Condition of product (one of: new, refurbished, used).</p>
 <pre class="source">
-String condition;
+core.String condition;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="country">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>country</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>country</strong> <a class="anchor-link"
             href="#country"
             title="Permalink to ShoppingModelProductJsonV1.country">#</a>
         </h4>
         <div class="doc">
 <p>ISO 3166 code of target country of product.</p>
 <pre class="source">
-String country;
+core.String country;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="creationTime">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>creationTime</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>creationTime</strong> <a class="anchor-link"
             href="#creationTime"
             title="Permalink to ShoppingModelProductJsonV1.creationTime">#</a>
         </h4>
         <div class="doc">
 <p>RFC 3339 formatted creation time and date of product.</p>
 <pre class="source">
-String creationTime;
+core.String creationTime;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to ShoppingModelProductJsonV1.description">#</a>
         </h4>
         <div class="doc">
 <p>Description of product.</p>
 <pre class="source">
-String description;
+core.String description;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="googleId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>googleId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>googleId</strong> <a class="anchor-link"
             href="#googleId"
             title="Permalink to ShoppingModelProductJsonV1.googleId">#</a>
         </h4>
         <div class="doc">
 <p>Google id of product.</p>
 <pre class="source">
-String googleId;
+core.String googleId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="gtin">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>gtin</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>gtin</strong> <a class="anchor-link"
             href="#gtin"
             title="Permalink to ShoppingModelProductJsonV1.gtin">#</a>
         </h4>
         <div class="doc">
 <p>The first GTIN of the product. Deprecated in favor of "gtins".</p>
 <pre class="source">
-String gtin;
+core.String gtin;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="gtins">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>gtins</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>gtins</strong> <a class="anchor-link"
             href="#gtins"
             title="Permalink to ShoppingModelProductJsonV1.gtins">#</a>
         </h4>
         <div class="doc">
 <p>List of all the product's GTINs (in GTIN-14 format).</p>
 <pre class="source">
-List&lt;String&gt; gtins;
+core.List&lt;core.String&gt; gtins;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="images">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>images</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Images.html">ShoppingModelProductJsonV1Images</a>&gt;         <strong>images</strong> <a class="anchor-link"
             href="#images"
             title="Permalink to ShoppingModelProductJsonV1.images">#</a>
         </h4>
         <div class="doc">
 <p>Images of product.</p>
 <pre class="source">
-List&lt;ShoppingModelProductJsonV1Images&gt; images;
+core.List&lt;ShoppingModelProductJsonV1Images&gt; images;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal1">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>internal1</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>internal1</strong> <a class="anchor-link"
             href="#internal1"
             title="Permalink to ShoppingModelProductJsonV1.internal1">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-List&lt;String&gt; internal1;
+core.List&lt;core.String&gt; internal1;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal10">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>internal10</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>internal10</strong> <a class="anchor-link"
             href="#internal10"
             title="Permalink to ShoppingModelProductJsonV1.internal10">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-List&lt;String&gt; internal10;
+core.List&lt;core.String&gt; internal10;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal12">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>internal12</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>internal12</strong> <a class="anchor-link"
             href="#internal12"
             title="Permalink to ShoppingModelProductJsonV1.internal12">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-String internal12;
+core.String internal12;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal13">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>internal13</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>internal13</strong> <a class="anchor-link"
             href="#internal13"
             title="Permalink to ShoppingModelProductJsonV1.internal13">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-double internal13;
+core.double internal13;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal14">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>internal14</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>internal14</strong> <a class="anchor-link"
             href="#internal14"
             title="Permalink to ShoppingModelProductJsonV1.internal14">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-double internal14;
+core.double internal14;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal15">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>internal15</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>internal15</strong> <a class="anchor-link"
             href="#internal15"
             title="Permalink to ShoppingModelProductJsonV1.internal15">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-double internal15;
+core.double internal15;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal3">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>internal3</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>internal3</strong> <a class="anchor-link"
             href="#internal3"
             title="Permalink to ShoppingModelProductJsonV1.internal3">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-String internal3;
+core.String internal3;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal4">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>internal4</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Internal4.html">ShoppingModelProductJsonV1Internal4</a>&gt;         <strong>internal4</strong> <a class="anchor-link"
             href="#internal4"
             title="Permalink to ShoppingModelProductJsonV1.internal4">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-List&lt;ShoppingModelProductJsonV1Internal4&gt; internal4;
+core.List&lt;ShoppingModelProductJsonV1Internal4&gt; internal4;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal6">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>internal6</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>internal6</strong> <a class="anchor-link"
             href="#internal6"
             title="Permalink to ShoppingModelProductJsonV1.internal6">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-String internal6;
+core.String internal6;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal7">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>internal7</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>internal7</strong> <a class="anchor-link"
             href="#internal7"
             title="Permalink to ShoppingModelProductJsonV1.internal7">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-bool internal7;
+core.bool internal7;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="internal8">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>internal8</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>internal8</strong> <a class="anchor-link"
             href="#internal8"
             title="Permalink to ShoppingModelProductJsonV1.internal8">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal.</p>
 <pre class="source">
-List&lt;String&gt; internal8;
+core.List&lt;core.String&gt; internal8;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="inventories">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>inventories</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Inventories.html">ShoppingModelProductJsonV1Inventories</a>&gt;         <strong>inventories</strong> <a class="anchor-link"
             href="#inventories"
             title="Permalink to ShoppingModelProductJsonV1.inventories">#</a>
         </h4>
         <div class="doc">
 <p>Inventories of product.</p>
 <pre class="source">
-List&lt;ShoppingModelProductJsonV1Inventories&gt; inventories;
+core.List&lt;ShoppingModelProductJsonV1Inventories&gt; inventories;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="language">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>language</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>language</strong> <a class="anchor-link"
             href="#language"
             title="Permalink to ShoppingModelProductJsonV1.language">#</a>
         </h4>
         <div class="doc">
 <p>BCP 47 language tag of language of product.</p>
 <pre class="source">
-String language;
+core.String language;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="link">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
             href="#link"
             title="Permalink to ShoppingModelProductJsonV1.link">#</a>
         </h4>
         <div class="doc">
 <p>Link to product.</p>
 <pre class="source">
-String link;
+core.String link;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="modificationTime">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>modificationTime</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>modificationTime</strong> <a class="anchor-link"
             href="#modificationTime"
             title="Permalink to ShoppingModelProductJsonV1.modificationTime">#</a>
         </h4>
         <div class="doc">
 <p>RFC 3339 formatted modification time and date of product.</p>
 <pre class="source">
-String modificationTime;
+core.String modificationTime;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="mpns">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>mpns</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>mpns</strong> <a class="anchor-link"
             href="#mpns"
             title="Permalink to ShoppingModelProductJsonV1.mpns">#</a>
         </h4>
         <div class="doc">
 <p>List of all the product's MPNs.</p>
 <pre class="source">
-List&lt;String&gt; mpns;
+core.List&lt;core.String&gt; mpns;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="plusOne">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>plusOne</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>plusOne</strong> <a class="anchor-link"
             href="#plusOne"
             title="Permalink to ShoppingModelProductJsonV1.plusOne">#</a>
         </h4>
         <div class="doc">
 <p>Code to add to the page to render the +1 content.</p>
 <pre class="source">
-String plusOne;
+core.String plusOne;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="providedId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>providedId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>providedId</strong> <a class="anchor-link"
             href="#providedId"
             title="Permalink to ShoppingModelProductJsonV1.providedId">#</a>
         </h4>
         <div class="doc">
 <p>Merchant-provided id of product (available only with a cx source).</p>
 <pre class="source">
-String providedId;
+core.String providedId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="queryMatched">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>queryMatched</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>queryMatched</strong> <a class="anchor-link"
             href="#queryMatched"
             title="Permalink to ShoppingModelProductJsonV1.queryMatched">#</a>
         </h4>
@@ -543,59 +543,59 @@ String providedId;
 <p>Whether this product matched the user query. Only set for the variant offers (if any) attached to
 a product offer.</p>
 <pre class="source">
-bool queryMatched;
+core.bool queryMatched;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="score">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>score</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>score</strong> <a class="anchor-link"
             href="#score"
             title="Permalink to ShoppingModelProductJsonV1.score">#</a>
         </h4>
         <div class="doc">
 <p>Google Internal</p>
 <pre class="source">
-double score;
+core.double score;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="title">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to ShoppingModelProductJsonV1.title">#</a>
         </h4>
         <div class="doc">
 <p>Title of product.</p>
 <pre class="source">
-String title;
+core.String title;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="totalMatchingVariants">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>totalMatchingVariants</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>totalMatchingVariants</strong> <a class="anchor-link"
             href="#totalMatchingVariants"
             title="Permalink to ShoppingModelProductJsonV1.totalMatchingVariants">#</a>
         </h4>
         <div class="doc">
 <p>The number of variant offers returned that matched the query.</p>
 <pre class="source">
-int totalMatchingVariants;
+core.int totalMatchingVariants;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="variants">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>variants</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Variants.html">ShoppingModelProductJsonV1Variants</a>&gt;         <strong>variants</strong> <a class="anchor-link"
             href="#variants"
             title="Permalink to ShoppingModelProductJsonV1.variants">#</a>
         </h4>
         <div class="doc">
 <p>A list of variant offers associated with this product.</p>
 <pre class="source">
-List&lt;ShoppingModelProductJsonV1Variants&gt; variants;
+core.List&lt;ShoppingModelProductJsonV1Variants&gt; variants;
 </pre>
 </div>
 </div>

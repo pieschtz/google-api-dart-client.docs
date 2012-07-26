@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ProjectsResource">
+<span class="show-code">Code</span>
+new <strong>ProjectsResource</strong>._internal(<a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a> $service) <a class="anchor-link" href="#ProjectsResource"
+              title="Permalink to ProjectsResource.ProjectsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ProjectsResource._internal(BigqueryApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/ProjectList.html">ProjectList</a>&gt; <strong>list</strong>([<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ProjectsResource.list">#</a></h4>
 <div class="doc">
 <p>Lists the projects to which you have at least read access.</p><ul><li>
 <span class="param">pageToken</span> Page token, returned by a previous call, to request the next page of results</li><li>
 <span class="param">maxResults</span> Maximum number of results to return</li></ul>
 <pre class="source">
-Future&lt;ProjectList&gt; list([String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;ProjectList&gt; list([core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future&lt;ProjectList&gt; list([String pageToken = UNSPECIFIED, int maxResults =
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

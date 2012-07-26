@@ -1,0 +1,280 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>PlusApi Class / plus-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="plus-v1" data-type="PlusApi">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/PlusApi.html">PlusApi</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>PlusApi</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>The Google+ API enables developers to build on top of the Google+ platform.</p>
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="PlusApi">
+<span class="show-code">Code</span>
+new <strong>PlusApi</strong>([<a href="../core/String.html">String</a> baseUrl = "https://www.googleapis.com/plus/v1/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#PlusApi"
+              title="Permalink to PlusApi.PlusApi">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+PlusApi([this.baseUrl = "https://www.googleapis.com/plus/v1/", applicationName, this.authenticator]) :
+    this.applicationName = applicationName
+        .replaceAll(const RegExp(@'\s+'), '_')
+        .replaceAll(const RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+{ 
+  _activities = new ActivitiesResource._internal(this);
+  _comments = new CommentsResource._internal(this);
+  _people = new PeopleResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<h3>Static Fields</h3>
+<div class="field"><h4 id="PLUS_ME_SCOPE">
+<span class="show-code">Code</span>
+final <a href="../core/String.html">String</a>         <strong>PLUS_ME_SCOPE</strong> <a class="anchor-link"
+            href="#PLUS_ME_SCOPE"
+            title="Permalink to PlusApi.PLUS_ME_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: Know who you are on Google</p>
+<pre class="source">
+static final core.String PLUS_ME_SCOPE = "https://www.googleapis.com/auth/plus.me";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="USERINFO_EMAIL_SCOPE">
+<span class="show-code">Code</span>
+final <a href="../core/String.html">String</a>         <strong>USERINFO_EMAIL_SCOPE</strong> <a class="anchor-link"
+            href="#USERINFO_EMAIL_SCOPE"
+            title="Permalink to PlusApi.USERINFO_EMAIL_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View your email address</p>
+<pre class="source">
+static final core.String USERINFO_EMAIL_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="activities">
+<span class="show-code">Code</span>
+<a href="../plus-v1/ActivitiesResource.html">ActivitiesResource</a> <strong>get activities</strong>() <a class="anchor-link" href="#activities"
+              title="Permalink to PlusApi.get activities">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ActivitiesResource get activities() =&gt; _activities;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="comments">
+<span class="show-code">Code</span>
+<a href="../plus-v1/CommentsResource.html">CommentsResource</a> <strong>get comments</strong>() <a class="anchor-link" href="#comments"
+              title="Permalink to PlusApi.get comments">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CommentsResource get comments() =&gt; _comments;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="people">
+<span class="show-code">Code</span>
+<a href="../plus-v1/PeopleResource.html">PeopleResource</a> <strong>get people</strong>() <a class="anchor-link" href="#people"
+              title="Permalink to PlusApi.get people">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+PeopleResource get people() =&gt; _people;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="userAgent">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
+              title="Permalink to PlusApi.get userAgent">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+core.String get userAgent() {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}plus/v1/20120723 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="alt">
+<span class="show-code">Code</span>
+<a href="../plus-v1/PlusApiAlt.html">PlusApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
+            href="#alt"
+            title="Permalink to PlusApi.alt">#</a>
+        </h4>
+        <div class="doc">
+<p>Data format for the response.</p>
+<pre class="source">
+PlusApiAlt alt;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="applicationName">
+<span class="show-code">Code</span>
+final <a href="../core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+            href="#applicationName"
+            title="Permalink to PlusApi.applicationName">#</a>
+        </h4>
+        <div class="doc">
+<p>The application name, used in the user-agent header</p>
+<pre class="source">
+final core.String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<span class="show-code">Code</span>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to PlusApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+Authenticator authenticator;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="baseUrl">
+<span class="show-code">Code</span>
+final <a href="../core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+            href="#baseUrl"
+            title="Permalink to PlusApi.baseUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The API root, such as <code>https://www.googleapis.com</code></p>
+<pre class="source">
+final core.String baseUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clientVersion">
+<span class="show-code">Code</span>
+final <a href="../core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+            href="#clientVersion"
+            title="Permalink to PlusApi.clientVersion">#</a>
+        </h4>
+        <div class="doc">
+<p>The client library version</p>
+<pre class="source">
+final core.String clientVersion = "0.1";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fields">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+            href="#fields"
+            title="Permalink to PlusApi.fields">#</a>
+        </h4>
+        <div class="doc">
+<p>Selector specifying which fields to include in a partial response.</p>
+<pre class="source">
+core.String fields;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="key">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+            href="#key"
+            title="Permalink to PlusApi.key">#</a>
+        </h4>
+        <div class="doc">
+<p>API key. Your API key identifies your project and provides you with API access, quota, and
+reports. Required unless you provide an OAuth 2.0 token.</p>
+<pre class="source">
+core.String key;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="oauthToken">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+            href="#oauthToken"
+            title="Permalink to PlusApi.oauthToken">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth 2.0 token for the current user.</p>
+<pre class="source">
+core.String oauthToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prettyPrint">
+<span class="show-code">Code</span>
+<a href="../core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+            href="#prettyPrint"
+            title="Permalink to PlusApi.prettyPrint">#</a>
+        </h4>
+        <div class="doc">
+<p>Returns response with indentations and line breaks.</p>
+<pre class="source">
+core.bool prettyPrint;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaUser">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+            href="#quotaUser"
+            title="Permalink to PlusApi.quotaUser">#</a>
+        </h4>
+        <div class="doc">
+<p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
+<pre class="source">
+core.String quotaUser;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userIp">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+            href="#userIp"
+            title="Permalink to PlusApi.userIp">#</a>
+        </h4>
+        <div class="doc">
+<p>IP address of the site where the request originates. Use this if you want to enforce per-user
+limits.</p>
+<pre class="source">
+core.String userIp;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

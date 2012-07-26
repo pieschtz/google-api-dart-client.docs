@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="InstancesResource">
+<span class="show-code">Code</span>
+new <strong>InstancesResource</strong>._internal(<a href="../compute-v1beta12/ComputeApi.html">ComputeApi</a> $service) <a class="anchor-link" href="#InstancesResource"
+              title="Permalink to InstancesResource.InstancesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+InstancesResource._internal(ComputeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="addAccessConfig">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>addAccessConfig</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> instance, <a href="../dart_core/String.html">String</a> networkInterface, <a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a> content) <a class="anchor-link" href="#addAccessConfig"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Operation.html">Operation</a>&gt; <strong>addAccessConfig</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> instance, <a href="../core/String.html">String</a> networkInterface, <a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a> content) <a class="anchor-link" href="#addAccessConfig"
               title="Permalink to InstancesResource.addAccessConfig">#</a></h4>
 <div class="doc">
 <p>Adds an access config to an instance's network interface.</p><ul><li>
@@ -38,7 +50,7 @@
 <span class="param">instance</span> Instance name.</li><li>
 <span class="param">networkInterface</span> Network interface name.</li></ul>
 <pre class="source">
-Future&lt;Operation&gt; addAccessConfig(String project, String instance, String networkInterface, AccessConfig content) {
+core.Future&lt;Operation&gt; addAccessConfig(core.String project, core.String instance, core.String networkInterface, AccessConfig content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -59,7 +71,7 @@ Future&lt;Operation&gt; addAccessConfig(String project, String instance, String 
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -70,14 +82,14 @@ Future&lt;Operation&gt; addAccessConfig(String project, String instance, String 
 </div>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> instance) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Operation.html">Operation</a>&gt; <strong>delete</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> instance) <a class="anchor-link" href="#delete"
               title="Permalink to InstancesResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes the specified instance resource.</p><ul><li>
 <span class="param">project</span> Name of the project scoping this request.</li><li>
 <span class="param">instance</span> Name of the instance resource to delete.</li></ul>
 <pre class="source">
-Future&lt;Operation&gt; delete(String project, String instance) {
+core.Future&lt;Operation&gt; delete(core.String project, core.String instance) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -95,7 +107,7 @@ Future&lt;Operation&gt; delete(String project, String instance) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -106,7 +118,7 @@ Future&lt;Operation&gt; delete(String project, String instance) {
 </div>
 <div class="method"><h4 id="deleteAccessConfig">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>deleteAccessConfig</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> instance, <a href="../dart_core/String.html">String</a> accessConfig, <a href="../dart_core/String.html">String</a> networkInterface) <a class="anchor-link" href="#deleteAccessConfig"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Operation.html">Operation</a>&gt; <strong>deleteAccessConfig</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> instance, <a href="../core/String.html">String</a> accessConfig, <a href="../core/String.html">String</a> networkInterface) <a class="anchor-link" href="#deleteAccessConfig"
               title="Permalink to InstancesResource.deleteAccessConfig">#</a></h4>
 <div class="doc">
 <p>Deletes an access config from an instance's network interface.</p><ul><li>
@@ -115,7 +127,7 @@ Future&lt;Operation&gt; delete(String project, String instance) {
 <span class="param">accessConfig</span> Access config name.</li><li>
 <span class="param">networkInterface</span> Network interface name.</li></ul>
 <pre class="source">
-Future&lt;Operation&gt; deleteAccessConfig(String project, String instance, String accessConfig, String networkInterface) {
+core.Future&lt;Operation&gt; deleteAccessConfig(core.String project, core.String instance, core.String accessConfig, core.String networkInterface) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -135,7 +147,7 @@ Future&lt;Operation&gt; deleteAccessConfig(String project, String instance, Stri
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -146,14 +158,14 @@ Future&lt;Operation&gt; deleteAccessConfig(String project, String instance, Stri
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> instance) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Instance.html">Instance</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> instance) <a class="anchor-link" href="#get"
               title="Permalink to InstancesResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the specified instance resource.</p><ul><li>
 <span class="param">project</span> Name of the project scoping this request.</li><li>
 <span class="param">instance</span> Name of the instance resource to return.</li></ul>
 <pre class="source">
-Future&lt;Instance&gt; get(String project, String instance) {
+core.Future&lt;Instance&gt; get(core.String project, core.String instance) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -171,7 +183,7 @@ Future&lt;Instance&gt; get(String project, String instance) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -182,14 +194,14 @@ Future&lt;Instance&gt; get(String project, String instance) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../compute-v1beta12/Instance.html">Instance</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Operation.html">Operation</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> project, <a href="../compute-v1beta12/Instance.html">Instance</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to InstancesResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates an instance resource in the specified project using the data included in the request.</p><ul><li>
 <span class="param">content</span> the Instance</li><li>
 <span class="param">project</span> Name of the project scoping this request.</li></ul>
 <pre class="source">
-Future&lt;Operation&gt; insert(String project, Instance content) {
+core.Future&lt;Operation&gt; insert(core.String project, Instance content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -208,7 +220,7 @@ Future&lt;Operation&gt; insert(String project, Instance content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -219,7 +231,7 @@ Future&lt;Operation&gt; insert(String project, Instance content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> project, [<a href="../dart_core/String.html">String</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/InstanceList.html">InstanceList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> project, [<a href="../core/String.html">String</a> filter = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to InstancesResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the list of instance resources contained within the specified project.</p><ul><li>
@@ -230,7 +242,7 @@ Future&lt;Operation&gt; insert(String project, Instance content) {
    previous list request.</p></li><li>
 <span class="param">maxResults</span> Optional. Maximum count of results to be returned. Maximum and default value is 100.</li></ul>
 <pre class="source">
-Future&lt;InstanceList&gt; list(String project, [String filter = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;InstanceList&gt; list(core.String project, [core.String filter = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -250,7 +262,7 @@ Future&lt;InstanceList&gt; list(String project, [String filter = UNSPECIFIED, St
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="CommunityPollCommentsResource">
+<span class="show-code">Code</span>
+new <strong>CommunityPollCommentsResource</strong>._internal(<a href="../orkut-v2/OrkutApi.html">OrkutApi</a> $service) <a class="anchor-link" href="#CommunityPollCommentsResource"
+              title="Permalink to CommunityPollCommentsResource.CommunityPollCommentsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CommunityPollCommentsResource._internal(OrkutApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> pollId, <a href="../orkut-v2/CommunityPollComment.html">CommunityPollComment</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../orkut-v2/CommunityPollComment.html">CommunityPollComment</a>&gt; <strong>insert</strong>(<a href="../core/int.html">int</a> communityId, <a href="../core/String.html">String</a> pollId, <a href="../orkut-v2/CommunityPollComment.html">CommunityPollComment</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CommunityPollCommentsResource.insert">#</a></h4>
 <div class="doc">
 <p>Adds a comment on a community poll.</p><ul><li>
@@ -37,7 +49,7 @@
 <span class="param">communityId</span> The ID of the community whose poll is being commented.</li><li>
 <span class="param">pollId</span> The ID of the poll being commented.</li></ul>
 <pre class="source">
-Future&lt;CommunityPollComment&gt; insert(int communityId, String pollId, CommunityPollComment content) {
+core.Future&lt;CommunityPollComment&gt; insert(core.int communityId, core.String pollId, CommunityPollComment content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -57,7 +69,7 @@ Future&lt;CommunityPollComment&gt; insert(int communityId, String pollId, Commun
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -68,7 +80,7 @@ Future&lt;CommunityPollComment&gt; insert(int communityId, String pollId, Commun
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> pollId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../orkut-v2/CommunityPollCommentList.html">CommunityPollCommentList</a>&gt; <strong>list</strong>(<a href="../core/int.html">int</a> communityId, <a href="../core/String.html">String</a> pollId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CommunityPollCommentsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the comments of a community poll.</p><ul><li>
@@ -80,7 +92,7 @@ Future&lt;CommunityPollComment&gt; insert(int communityId, String pollId, Commun
    * 
 <span class="param">hl</span> Specifies the interface language (host language) of your user interface.</p>
 <pre class="source">
-Future&lt;CommunityPollCommentList&gt; list(int communityId, String pollId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED, String hl = UNSPECIFIED]) {
+core.Future&lt;CommunityPollCommentList&gt; list(core.int communityId, core.String pollId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String hl = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -101,7 +113,7 @@ Future&lt;CommunityPollCommentList&gt; list(int communityId, String pollId, [Str
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

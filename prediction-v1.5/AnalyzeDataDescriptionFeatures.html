@@ -1,0 +1,145 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AnalyzeDataDescriptionFeatures Class / prediction-v1.5 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="prediction-v1.5" data-type="AnalyzeDataDescriptionFeatures">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../prediction-v1.5.html">prediction-v1.5</a> &rsaquo; <a href="../prediction-v1.5/AnalyzeDataDescriptionFeatures.html">AnalyzeDataDescriptionFeatures</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AnalyzeDataDescriptionFeatures</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>AnalyzeDataDescriptionFeatures</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../prediction-v1.5/AnalyzeDataDescriptionFeatures.html">AnalyzeDataDescriptionFeatures</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to AnalyzeDataDescriptionFeatures.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static AnalyzeDataDescriptionFeatures parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new AnalyzeDataDescriptionFeatures();
+  result.index = identity(json["index"]);
+  result.text = AnalyzeDataDescriptionFeaturesText.parse(json["text"]);
+  result.numeric = AnalyzeDataDescriptionFeaturesNumeric.parse(json["numeric"]);
+  result.categorical = AnalyzeDataDescriptionFeaturesCategorical.parse(json["categorical"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../prediction-v1.5/AnalyzeDataDescriptionFeatures.html">AnalyzeDataDescriptionFeatures</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to AnalyzeDataDescriptionFeatures.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(AnalyzeDataDescriptionFeatures value) {
+  if (value == null) return null;
+  final result = {};
+  result["index"] = identity(value.index);
+  result["text"] = AnalyzeDataDescriptionFeaturesText.serialize(value.text);
+  result["numeric"] = AnalyzeDataDescriptionFeaturesNumeric.serialize(value.numeric);
+  result["categorical"] = AnalyzeDataDescriptionFeaturesCategorical.serialize(value.categorical);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to AnalyzeDataDescriptionFeatures.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="categorical">
+<span class="show-code">Code</span>
+<a href="../prediction-v1.5/AnalyzeDataDescriptionFeaturesCategorical.html">AnalyzeDataDescriptionFeaturesCategorical</a>         <strong>categorical</strong> <a class="anchor-link"
+            href="#categorical"
+            title="Permalink to AnalyzeDataDescriptionFeatures.categorical">#</a>
+        </h4>
+        <div class="doc">
+<p>Description of the categorical values of this feature.</p>
+<pre class="source">
+AnalyzeDataDescriptionFeaturesCategorical categorical;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="index">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>index</strong> <a class="anchor-link"
+            href="#index"
+            title="Permalink to AnalyzeDataDescriptionFeatures.index">#</a>
+        </h4>
+        <div class="doc">
+<p>The feature index.</p>
+<pre class="source">
+core.String index;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="numeric">
+<span class="show-code">Code</span>
+<a href="../prediction-v1.5/AnalyzeDataDescriptionFeaturesNumeric.html">AnalyzeDataDescriptionFeaturesNumeric</a>         <strong>numeric</strong> <a class="anchor-link"
+            href="#numeric"
+            title="Permalink to AnalyzeDataDescriptionFeatures.numeric">#</a>
+        </h4>
+        <div class="doc">
+<p>Description of the numeric values of this feature.</p>
+<pre class="source">
+AnalyzeDataDescriptionFeaturesNumeric numeric;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="text">
+<span class="show-code">Code</span>
+<a href="../prediction-v1.5/AnalyzeDataDescriptionFeaturesText.html">AnalyzeDataDescriptionFeaturesText</a>         <strong>text</strong> <a class="anchor-link"
+            href="#text"
+            title="Permalink to AnalyzeDataDescriptionFeatures.text">#</a>
+        </h4>
+        <div class="doc">
+<p>Description of multiple-word text values of this feature.</p>
+<pre class="source">
+AnalyzeDataDescriptionFeaturesText text;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="PagespeedapiResource">
+<span class="show-code">Code</span>
+new <strong>PagespeedapiResource</strong>._internal(<a href="../pagespeedonline-v1/PagespeedonlineApi.html">PagespeedonlineApi</a> $service) <a class="anchor-link" href="#PagespeedapiResource"
+              title="Permalink to PagespeedapiResource.PagespeedapiResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+PagespeedapiResource._internal(PagespeedonlineApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="runpagespeed">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>runpagespeed</strong>(<a href="../dart_core/String.html">String</a> url, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/List.html">List</a> rule = UNSPECIFIED, <a href="../pagespeedonline-v1/PagespeedapiResourceRunpagespeedStrategy.html">PagespeedapiResourceRunpagespeedStrategy</a> strategy = UNSPECIFIED]) <a class="anchor-link" href="#runpagespeed"
+<a href="../core/Future.html">Future</a>&lt;<a href="../pagespeedonline-v1/Result.html">Result</a>&gt; <strong>runpagespeed</strong>(<a href="../core/String.html">String</a> url, [<a href="../core/String.html">String</a> locale = UNSPECIFIED, <a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; rule = UNSPECIFIED, <a href="../pagespeedonline-v1/PagespeedapiResourceRunpagespeedStrategy.html">PagespeedapiResourceRunpagespeedStrategy</a> strategy = UNSPECIFIED]) <a class="anchor-link" href="#runpagespeed"
               title="Permalink to PagespeedapiResource.runpagespeed">#</a></h4>
 <div class="doc">
 <p>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list
@@ -39,7 +51,7 @@ of suggestions to make that page faster, and other information.</p><ul><li>
 <span class="param">rule</span> A Page Speed rule to run; if none are given, all rules are run</li><li>
 <span class="param">strategy</span> The analysis strategy to use</li></ul>
 <pre class="source">
-Future&lt;Result&gt; runpagespeed(String url, [String locale = UNSPECIFIED, List&lt;String&gt; rule = UNSPECIFIED, PagespeedapiResourceRunpagespeedStrategy strategy = UNSPECIFIED]) {
+core.Future&lt;Result&gt; runpagespeed(core.String url, [core.String locale = UNSPECIFIED, core.List&lt;core.String&gt; rule = UNSPECIFIED, PagespeedapiResourceRunpagespeedStrategy strategy = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -59,7 +71,7 @@ Future&lt;Result&gt; runpagespeed(String url, [String locale = UNSPECIFIED, List
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ResponsesResource">
+<span class="show-code">Code</span>
+new <strong>ResponsesResource</strong>._internal(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#ResponsesResource"
+              title="Permalink to ResponsesResource.ResponsesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ResponsesResource._internal(ModeratorApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> topicId, <a href="../dart_core/int.html">int</a> parentSubmissionId, <a href="../moderator-v1/Submission.html">Submission</a> content, [<a href="../dart_core/String.html">String</a> unauthToken = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> anonymous = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../moderator-v1/Submission.html">Submission</a>&gt; <strong>insert</strong>(<a href="../core/int.html">int</a> seriesId, <a href="../core/int.html">int</a> topicId, <a href="../core/int.html">int</a> parentSubmissionId, <a href="../moderator-v1/Submission.html">Submission</a> content, [<a href="../core/String.html">String</a> unauthToken = UNSPECIFIED, <a href="../core/bool.html">bool</a> anonymous = UNSPECIFIED]) <a class="anchor-link" href="#insert"
               title="Permalink to ResponsesResource.insert">#</a></h4>
 <div class="doc">
 <p>Inserts a response for the specified submission in the specified topic within the specified
@@ -41,7 +53,7 @@ series.</p><ul><li>
 <span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li><li>
 <span class="param">anonymous</span> Set to true to mark the new submission as anonymous.</li></ul>
 <pre class="source">
-Future&lt;Submission&gt; insert(int seriesId, int topicId, int parentSubmissionId, Submission content, [String unauthToken = UNSPECIFIED, bool anonymous = UNSPECIFIED]) {
+core.Future&lt;Submission&gt; insert(core.int seriesId, core.int topicId, core.int parentSubmissionId, Submission content, [core.String unauthToken = UNSPECIFIED, core.bool anonymous = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -64,7 +76,7 @@ Future&lt;Submission&gt; insert(int seriesId, int topicId, int parentSubmissionI
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -75,7 +87,7 @@ Future&lt;Submission&gt; insert(int seriesId, int topicId, int parentSubmissionI
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> submissionId, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sort = UNSPECIFIED, <a href="../dart_core/String.html">String</a> author = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> hasAttachedVideo = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../moderator-v1/SubmissionList.html">SubmissionList</a>&gt; <strong>list</strong>(<a href="../core/int.html">int</a> seriesId, <a href="../core/int.html">int</a> submissionId, [<a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> sort = UNSPECIFIED, <a href="../core/String.html">String</a> author = UNSPECIFIED, <a href="../core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../core/String.html">String</a> q = UNSPECIFIED, <a href="../core/bool.html">bool</a> hasAttachedVideo = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ResponsesResource.list">#</a></h4>
 <div class="doc">
 <p>Lists or searches the responses for the specified submission within the specified series and
@@ -89,7 +101,7 @@ returns the search results.</p><ul><li>
 <span class="param">q</span> Search query.</li><li>
 <span class="param">hasAttachedVideo</span> Specifies whether to restrict to submissions that have videos attached.</li></ul>
 <pre class="source">
-Future&lt;SubmissionList&gt; list(int seriesId, int submissionId, [int maxResults = UNSPECIFIED, String sort = UNSPECIFIED, String author = UNSPECIFIED, int startIndex = UNSPECIFIED, String q = UNSPECIFIED, bool hasAttachedVideo = UNSPECIFIED]) {
+core.Future&lt;SubmissionList&gt; list(core.int seriesId, core.int submissionId, [core.int maxResults = UNSPECIFIED, core.String sort = UNSPECIFIED, core.String author = UNSPECIFIED, core.int startIndex = UNSPECIFIED, core.String q = UNSPECIFIED, core.bool hasAttachedVideo = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -113,7 +125,7 @@ Future&lt;SubmissionList&gt; list(int seriesId, int submissionId, [int maxResult
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

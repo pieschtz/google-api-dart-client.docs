@@ -26,16 +26,28 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="SettingsResource">
+<span class="show-code">Code</span>
+new <strong>SettingsResource</strong>._internal(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#SettingsResource"
+              title="Permalink to SettingsResource.SettingsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+SettingsResource._internal(CalendarApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> setting) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Setting.html">Setting</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> setting) <a class="anchor-link" href="#get"
               title="Permalink to SettingsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns a single user setting.</p><ul><li>
 <span class="param">setting</span> Name of the user setting.</li></ul>
 <pre class="source">
-Future&lt;Setting&gt; get(String setting) {
+core.Future&lt;Setting&gt; get(core.String setting) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +64,7 @@ Future&lt;Setting&gt; get(String setting) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -63,12 +75,12 @@ Future&lt;Setting&gt; get(String setting) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>() <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Settings.html">Settings</a>&gt; <strong>list</strong>() <a class="anchor-link" href="#list"
               title="Permalink to SettingsResource.list">#</a></h4>
 <div class="doc">
 <p>Returns all user settings for the authenticated user.</p>
 <pre class="source">
-Future&lt;Settings&gt; list() {
+core.Future&lt;Settings&gt; list() {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -84,7 +96,7 @@ Future&lt;Settings&gt; list() {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

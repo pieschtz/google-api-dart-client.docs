@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../books-v1/VolumeUserInfo.html">VolumeUserInfo</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../books-v1/VolumeUserInfo.html">VolumeUserInfo</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to VolumeUserInfo.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static VolumeUserInfo parse(Map&lt;String, Object&gt; json) {
+static VolumeUserInfo parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new VolumeUserInfo();
   result.isInMyBooks = identity(json["isInMyBooks"]);
@@ -53,12 +53,12 @@ static VolumeUserInfo parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/VolumeUserInfo.html">VolumeUserInfo</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/VolumeUserInfo.html">VolumeUserInfo</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to VolumeUserInfo.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(VolumeUserInfo value) {
+static core.Object serialize(VolumeUserInfo value) {
   if (value == null) return null;
   final result = {};
   result["isInMyBooks"] = identity(value.isInMyBooks);
@@ -87,20 +87,20 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="isInMyBooks">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>isInMyBooks</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>isInMyBooks</strong> <a class="anchor-link"
             href="#isInMyBooks"
             title="Permalink to VolumeUserInfo.isInMyBooks">#</a>
         </h4>
         <div class="doc">
 <p>Whether or not this volume is currently in "my books."</p>
 <pre class="source">
-bool isInMyBooks;
+core.bool isInMyBooks;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="isPreordered">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>isPreordered</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>isPreordered</strong> <a class="anchor-link"
             href="#isPreordered"
             title="Permalink to VolumeUserInfo.isPreordered">#</a>
         </h4>
@@ -108,13 +108,13 @@ bool isInMyBooks;
 <p>Whether or not this volume was pre-ordered by the authenticated user making the request. (In LITE
 projection.)</p>
 <pre class="source">
-bool isPreordered;
+core.bool isPreordered;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="isPurchased">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>isPurchased</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>isPurchased</strong> <a class="anchor-link"
             href="#isPurchased"
             title="Permalink to VolumeUserInfo.isPurchased">#</a>
         </h4>
@@ -122,7 +122,7 @@ bool isPreordered;
 <p>Whether or not this volume was purchased by the authenticated user making the request. (In LITE
 projection.)</p>
 <pre class="source">
-bool isPurchased;
+core.bool isPurchased;
 </pre>
 </div>
 </div>
@@ -154,7 +154,7 @@ Review review;
 </div>
 <div class="field"><h4 id="updated">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
             href="#updated"
             title="Permalink to VolumeUserInfo.updated">#</a>
         </h4>
@@ -162,7 +162,7 @@ Review review;
 <p>Timestamp when this volume was last modified by a user action, such as a reading position update,
 volume purchase or writing a review. (RFC 3339 UTC date-time format).</p>
 <pre class="source">
-String updated;
+core.String updated;
 </pre>
 </div>
 </div>

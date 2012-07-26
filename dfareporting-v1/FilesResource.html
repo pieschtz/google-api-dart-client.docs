@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="FilesResource">
+<span class="show-code">Code</span>
+new <strong>FilesResource</strong>._internal(<a href="../dfareporting-v1/DfareportingApi.html">DfareportingApi</a> $service) <a class="anchor-link" href="#FilesResource"
+              title="Permalink to FilesResource.FilesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+FilesResource._internal(DfareportingApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> profileId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dfareporting-v1/FilesResourceListSortField.html">FilesResourceListSortField</a> sortField = UNSPECIFIED, <a href="../dfareporting-v1/FilesResourceListSortOrder.html">FilesResourceListSortOrder</a> sortOrder = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/FileList.html">FileList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> profileId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dfareporting-v1/FilesResourceListSortField.html">FilesResourceListSortField</a> sortField = UNSPECIFIED, <a href="../dfareporting-v1/FilesResourceListSortOrder.html">FilesResourceListSortOrder</a> sortOrder = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to FilesResource.list">#</a></h4>
 <div class="doc">
 <p>Lists files for a user profile.</p><ul><li>
@@ -45,7 +57,7 @@ Default: DESCENDING.</p></li><li>
 <p>Minimum: 0.
 Maximum: 10.</p>
 <pre class="source">
-Future&lt;FileList&gt; list(String profileId, [String pageToken = UNSPECIFIED, FilesResourceListSortField sortField = UNSPECIFIED, FilesResourceListSortOrder sortOrder = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;FileList&gt; list(core.String profileId, [core.String pageToken = UNSPECIFIED, FilesResourceListSortField sortField = UNSPECIFIED, FilesResourceListSortOrder sortOrder = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -66,7 +78,7 @@ Future&lt;FileList&gt; list(String profileId, [String pageToken = UNSPECIFIED, F
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

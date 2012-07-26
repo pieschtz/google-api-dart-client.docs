@@ -29,12 +29,16 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="ComputeApi">
 <span class="show-code">Code</span>
-new <strong>ComputeApi</strong>([baseUrl = "https://www.googleapis.com/compute/v1beta12/projects/", applicationName, authenticator]) <a class="anchor-link" href="#ComputeApi"
+new <strong>ComputeApi</strong>([<a href="../core/String.html">String</a> baseUrl = "https://www.googleapis.com/compute/v1beta12/projects/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#ComputeApi"
               title="Permalink to ComputeApi.ComputeApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-ComputeApi([this.baseUrl = "https://www.googleapis.com/compute/v1beta12/projects/", this.applicationName, this.authenticator]) { 
+ComputeApi([this.baseUrl = "https://www.googleapis.com/compute/v1beta12/projects/", applicationName, this.authenticator]) :
+    this.applicationName = applicationName
+        .replaceAll(const RegExp(@'\s+'), '_')
+        .replaceAll(const RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+{ 
   _operations = new OperationsResource._internal(this);
   _kernels = new KernelsResource._internal(this);
   _disks = new DisksResource._internal(this);
@@ -53,47 +57,47 @@ ComputeApi([this.baseUrl = "https://www.googleapis.com/compute/v1beta12/projects
 <h3>Static Fields</h3>
 <div class="field"><h4 id="COMPUTE_READONLY_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>COMPUTE_READONLY_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>COMPUTE_READONLY_SCOPE</strong> <a class="anchor-link"
             href="#COMPUTE_READONLY_SCOPE"
             title="Permalink to ComputeApi.COMPUTE_READONLY_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: View your Google Compute Engine resources</p>
 <pre class="source">
-static final String COMPUTE_READONLY_SCOPE = "https://www.googleapis.com/auth/compute.readonly";
+static final core.String COMPUTE_READONLY_SCOPE = "https://www.googleapis.com/auth/compute.readonly";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="COMPUTE_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>COMPUTE_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>COMPUTE_SCOPE</strong> <a class="anchor-link"
             href="#COMPUTE_SCOPE"
             title="Permalink to ComputeApi.COMPUTE_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: View and manage your Google Compute Engine resources</p>
 <pre class="source">
-static final String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
+static final core.String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="DEVSTORAGE_READ_ONLY_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>DEVSTORAGE_READ_ONLY_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>DEVSTORAGE_READ_ONLY_SCOPE</strong> <a class="anchor-link"
             href="#DEVSTORAGE_READ_ONLY_SCOPE"
             title="Permalink to ComputeApi.DEVSTORAGE_READ_ONLY_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: View your data in Google Cloud Storage</p>
 <pre class="source">
-static final String DEVSTORAGE_READ_ONLY_SCOPE = "https://www.googleapis.com/auth/devstorage.read_only";
+static final core.String DEVSTORAGE_READ_ONLY_SCOPE = "https://www.googleapis.com/auth/devstorage.read_only";
 </pre>
 </div>
 </div>
 <h3>Methods</h3>
-<div class="method"><h4 id="get:disks">
+<div class="method"><h4 id="disks">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/DisksResource.html">DisksResource</a> <strong>get disks</strong>() <a class="anchor-link" href="#get:disks"
+<a href="../compute-v1beta12/DisksResource.html">DisksResource</a> <strong>get disks</strong>() <a class="anchor-link" href="#disks"
               title="Permalink to ComputeApi.get disks">#</a></h4>
 <div class="doc">
 
@@ -102,9 +106,9 @@ DisksResource get disks() =&gt; _disks;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:firewalls">
+<div class="method"><h4 id="firewalls">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/FirewallsResource.html">FirewallsResource</a> <strong>get firewalls</strong>() <a class="anchor-link" href="#get:firewalls"
+<a href="../compute-v1beta12/FirewallsResource.html">FirewallsResource</a> <strong>get firewalls</strong>() <a class="anchor-link" href="#firewalls"
               title="Permalink to ComputeApi.get firewalls">#</a></h4>
 <div class="doc">
 
@@ -113,9 +117,9 @@ FirewallsResource get firewalls() =&gt; _firewalls;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:images">
+<div class="method"><h4 id="images">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/ImagesResource.html">ImagesResource</a> <strong>get images</strong>() <a class="anchor-link" href="#get:images"
+<a href="../compute-v1beta12/ImagesResource.html">ImagesResource</a> <strong>get images</strong>() <a class="anchor-link" href="#images"
               title="Permalink to ComputeApi.get images">#</a></h4>
 <div class="doc">
 
@@ -124,9 +128,9 @@ ImagesResource get images() =&gt; _images;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:instances">
+<div class="method"><h4 id="instances">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/InstancesResource.html">InstancesResource</a> <strong>get instances</strong>() <a class="anchor-link" href="#get:instances"
+<a href="../compute-v1beta12/InstancesResource.html">InstancesResource</a> <strong>get instances</strong>() <a class="anchor-link" href="#instances"
               title="Permalink to ComputeApi.get instances">#</a></h4>
 <div class="doc">
 
@@ -135,9 +139,9 @@ InstancesResource get instances() =&gt; _instances;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:kernels">
+<div class="method"><h4 id="kernels">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/KernelsResource.html">KernelsResource</a> <strong>get kernels</strong>() <a class="anchor-link" href="#get:kernels"
+<a href="../compute-v1beta12/KernelsResource.html">KernelsResource</a> <strong>get kernels</strong>() <a class="anchor-link" href="#kernels"
               title="Permalink to ComputeApi.get kernels">#</a></h4>
 <div class="doc">
 
@@ -146,9 +150,9 @@ KernelsResource get kernels() =&gt; _kernels;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:machineTypes">
+<div class="method"><h4 id="machineTypes">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/MachineTypesResource.html">MachineTypesResource</a> <strong>get machineTypes</strong>() <a class="anchor-link" href="#get:machineTypes"
+<a href="../compute-v1beta12/MachineTypesResource.html">MachineTypesResource</a> <strong>get machineTypes</strong>() <a class="anchor-link" href="#machineTypes"
               title="Permalink to ComputeApi.get machineTypes">#</a></h4>
 <div class="doc">
 
@@ -157,9 +161,9 @@ MachineTypesResource get machineTypes() =&gt; _machineTypes;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:networks">
+<div class="method"><h4 id="networks">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/NetworksResource.html">NetworksResource</a> <strong>get networks</strong>() <a class="anchor-link" href="#get:networks"
+<a href="../compute-v1beta12/NetworksResource.html">NetworksResource</a> <strong>get networks</strong>() <a class="anchor-link" href="#networks"
               title="Permalink to ComputeApi.get networks">#</a></h4>
 <div class="doc">
 
@@ -168,9 +172,9 @@ NetworksResource get networks() =&gt; _networks;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:operations">
+<div class="method"><h4 id="operations">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/OperationsResource.html">OperationsResource</a> <strong>get operations</strong>() <a class="anchor-link" href="#get:operations"
+<a href="../compute-v1beta12/OperationsResource.html">OperationsResource</a> <strong>get operations</strong>() <a class="anchor-link" href="#operations"
               title="Permalink to ComputeApi.get operations">#</a></h4>
 <div class="doc">
 
@@ -179,9 +183,9 @@ OperationsResource get operations() =&gt; _operations;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:projects">
+<div class="method"><h4 id="projects">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/ProjectsResource.html">ProjectsResource</a> <strong>get projects</strong>() <a class="anchor-link" href="#get:projects"
+<a href="../compute-v1beta12/ProjectsResource.html">ProjectsResource</a> <strong>get projects</strong>() <a class="anchor-link" href="#projects"
               title="Permalink to ComputeApi.get projects">#</a></h4>
 <div class="doc">
 
@@ -190,9 +194,9 @@ ProjectsResource get projects() =&gt; _projects;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:snapshots">
+<div class="method"><h4 id="snapshots">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/SnapshotsResource.html">SnapshotsResource</a> <strong>get snapshots</strong>() <a class="anchor-link" href="#get:snapshots"
+<a href="../compute-v1beta12/SnapshotsResource.html">SnapshotsResource</a> <strong>get snapshots</strong>() <a class="anchor-link" href="#snapshots"
               title="Permalink to ComputeApi.get snapshots">#</a></h4>
 <div class="doc">
 
@@ -201,23 +205,23 @@ SnapshotsResource get snapshots() =&gt; _snapshots;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:userAgent">
+<div class="method"><h4 id="userAgent">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+<a href="../core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
               title="Permalink to ComputeApi.get userAgent">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-String get userAgent() {
+core.String get userAgent() {
   var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
-  return "${uaPrefix}compute/v1beta12/20120614 google-api-dart-client/${clientVersion}";
+  return "${uaPrefix}compute/v1beta12/20120712 google-api-dart-client/${clientVersion}";
 }
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:zones">
+<div class="method"><h4 id="zones">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/ZonesResource.html">ZonesResource</a> <strong>get zones</strong>() <a class="anchor-link" href="#get:zones"
+<a href="../compute-v1beta12/ZonesResource.html">ZonesResource</a> <strong>get zones</strong>() <a class="anchor-link" href="#zones"
               title="Permalink to ComputeApi.get zones">#</a></h4>
 <div class="doc">
 
@@ -242,14 +246,14 @@ ComputeApiAlt alt;
 </div>
 <div class="field"><h4 id="applicationName">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to ComputeApi.applicationName">#</a>
         </h4>
         <div class="doc">
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
-final String applicationName;
+final core.String applicationName;
 </pre>
 </div>
 </div>
@@ -268,46 +272,46 @@ Authenticator authenticator;
 </div>
 <div class="field"><h4 id="baseUrl">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to ComputeApi.baseUrl">#</a>
         </h4>
         <div class="doc">
 <p>The API root, such as <code>https://www.googleapis.com</code></p>
 <pre class="source">
-final String baseUrl;
+final core.String baseUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="clientVersion">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to ComputeApi.clientVersion">#</a>
         </h4>
         <div class="doc">
 <p>The client library version</p>
 <pre class="source">
-final String clientVersion = "0.1";
+final core.String clientVersion = "0.1";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fields">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to ComputeApi.fields">#</a>
         </h4>
         <div class="doc">
 <p>Selector specifying which fields to include in a partial response.</p>
 <pre class="source">
-String fields;
+core.String fields;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="key">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to ComputeApi.key">#</a>
         </h4>
@@ -315,39 +319,39 @@ String fields;
 <p>API key. Your API key identifies your project and provides you with API access, quota, and
 reports. Required unless you provide an OAuth 2.0 token.</p>
 <pre class="source">
-String key;
+core.String key;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to ComputeApi.oauthToken">#</a>
         </h4>
         <div class="doc">
 <p>OAuth 2.0 token for the current user.</p>
 <pre class="source">
-String oauthToken;
+core.String oauthToken;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="prettyPrint">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to ComputeApi.prettyPrint">#</a>
         </h4>
         <div class="doc">
 <p>Returns response with indentations and line breaks.</p>
 <pre class="source">
-bool prettyPrint;
+core.bool prettyPrint;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="quotaUser">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to ComputeApi.quotaUser">#</a>
         </h4>
@@ -355,13 +359,13 @@ bool prettyPrint;
 <p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
 assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
 <pre class="source">
-String quotaUser;
+core.String quotaUser;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="userIp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to ComputeApi.userIp">#</a>
         </h4>
@@ -369,7 +373,7 @@ String quotaUser;
 <p>IP address of the site where the request originates. Use this if you want to enforce per-user
 limits.</p>
 <pre class="source">
-String userIp;
+core.String userIp;
 </pre>
 </div>
 </div>

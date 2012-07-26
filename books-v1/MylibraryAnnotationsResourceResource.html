@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="MylibraryAnnotationsResourceResource">
+<span class="show-code">Code</span>
+new <strong>MylibraryAnnotationsResourceResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MylibraryAnnotationsResourceResource"
+              title="Permalink to MylibraryAnnotationsResourceResource.MylibraryAnnotationsResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+MylibraryAnnotationsResourceResource._internal(BooksApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> annotationId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> annotationId, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#delete"
               title="Permalink to MylibraryAnnotationsResourceResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes an annotation.</p><ul><li>
 <span class="param">annotationId</span> The ID for the annotation to delete.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future delete(String annotationId, [String source = UNSPECIFIED]) {
+core.Future delete(core.String annotationId, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future delete(String annotationId, [String source = UNSPECIFIED]) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,14 +77,14 @@ Future delete(String annotationId, [String source = UNSPECIFIED]) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> annotationId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Annotation.html">Annotation</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> annotationId, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to MylibraryAnnotationsResourceResource.get">#</a></h4>
 <div class="doc">
 <p>Gets an annotation by its ID.</p><ul><li>
 <span class="param">annotationId</span> The ID for the annotation to retrieve.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future&lt;Annotation&gt; get(String annotationId, [String source = UNSPECIFIED]) {
+core.Future&lt;Annotation&gt; get(core.String annotationId, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -90,7 +102,7 @@ Future&lt;Annotation&gt; get(String annotationId, [String source = UNSPECIFIED])
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -101,14 +113,14 @@ Future&lt;Annotation&gt; get(String annotationId, [String source = UNSPECIFIED])
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../books-v1/Annotation.html">Annotation</a> content, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Annotation.html">Annotation</a>&gt; <strong>insert</strong>(<a href="../books-v1/Annotation.html">Annotation</a> content, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#insert"
               title="Permalink to MylibraryAnnotationsResourceResource.insert">#</a></h4>
 <div class="doc">
 <p>Inserts a new annotation.</p><ul><li>
 <span class="param">content</span> the Annotation</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future&lt;Annotation&gt; insert(Annotation content, [String source = UNSPECIFIED]) {
+core.Future&lt;Annotation&gt; insert(Annotation content, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -127,7 +139,7 @@ Future&lt;Annotation&gt; insert(Annotation content, [String source = UNSPECIFIED
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -138,7 +150,7 @@ Future&lt;Annotation&gt; insert(Annotation content, [String source = UNSPECIFIED
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../dart_core/String.html">String</a> volumeId = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/List.html">List</a> pageIds = UNSPECIFIED, <a href="../dart_core/String.html">String</a> contentVersion = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> layerId = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Annotations.html">Annotations</a>&gt; <strong>list</strong>([<a href="../core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="../core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../core/String.html">String</a> volumeId = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; pageIds = UNSPECIFIED, <a href="../core/String.html">String</a> contentVersion = UNSPECIFIED, <a href="../core/String.html">String</a> source = UNSPECIFIED, <a href="../core/String.html">String</a> layerId = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to MylibraryAnnotationsResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of annotations, possibly filtered.</p><ul><li>
@@ -162,7 +174,7 @@ Maximum: 40.
    * 
 <span class="param">layerId</span> The layer ID to limit annotation by.</p>
 <pre class="source">
-Future&lt;Annotations&gt; list([bool showDeleted = UNSPECIFIED, String updatedMin = UNSPECIFIED, String updatedMax = UNSPECIFIED, String volumeId = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, List&lt;String&gt; pageIds = UNSPECIFIED, String contentVersion = UNSPECIFIED, String source = UNSPECIFIED, String layerId = UNSPECIFIED]) {
+core.Future&lt;Annotations&gt; list([core.bool showDeleted = UNSPECIFIED, core.String updatedMin = UNSPECIFIED, core.String updatedMax = UNSPECIFIED, core.String volumeId = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.List&lt;core.String&gt; pageIds = UNSPECIFIED, core.String contentVersion = UNSPECIFIED, core.String source = UNSPECIFIED, core.String layerId = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -188,7 +200,7 @@ Future&lt;Annotations&gt; list([bool showDeleted = UNSPECIFIED, String updatedMi
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -199,7 +211,7 @@ Future&lt;Annotations&gt; list([bool showDeleted = UNSPECIFIED, String updatedMi
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> annotationId, <a href="../books-v1/Annotation.html">Annotation</a> content, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Annotation.html">Annotation</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> annotationId, <a href="../books-v1/Annotation.html">Annotation</a> content, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#update"
               title="Permalink to MylibraryAnnotationsResourceResource.update">#</a></h4>
 <div class="doc">
 <p>Updates an existing annotation.</p><ul><li>
@@ -207,7 +219,7 @@ Future&lt;Annotations&gt; list([bool showDeleted = UNSPECIFIED, String updatedMi
 <span class="param">annotationId</span> The ID for the annotation to update.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future&lt;Annotation&gt; update(String annotationId, Annotation content, [String source = UNSPECIFIED]) {
+core.Future&lt;Annotation&gt; update(core.String annotationId, Annotation content, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -227,7 +239,7 @@ Future&lt;Annotation&gt; update(String annotationId, Annotation content, [String
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

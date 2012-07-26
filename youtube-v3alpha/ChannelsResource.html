@@ -26,21 +26,35 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ChannelsResource">
+<span class="show-code">Code</span>
+new <strong>ChannelsResource</strong>._internal(<a href="../youtube-v3alpha/YoutubeApi.html">YoutubeApi</a> $service) <a class="anchor-link" href="#ChannelsResource"
+              title="Permalink to ChannelsResource.ChannelsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ChannelsResource._internal(YoutubeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> part, [<a href="../dart_core/String.html">String</a> mine = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../youtube-v3alpha/ChannelListResponse.html">ChannelListResponse</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> part, [<a href="../core/String.html">String</a> id = UNSPECIFIED, <a href="../core/String.html">String</a> mine = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ChannelsResource.list">#</a></h4>
 <div class="doc">
-<p>Browse the YouTube channel collection.</p><ul><li>
+<p>Browse the YouTube channel collection. Either the 'id' or 'mine' parameter must be set.</p><ul><li>
 <span class="param">part</span> Parts of the channel resource to be returned.</li><li>
+<span class="param">id</span> YouTube IDs of the channels to be returned.</li><li>
 <span class="param">mine</span> Flag indicating only return the channel ids of the authenticated user.</li></ul>
 <pre class="source">
-Future&lt;ChannelListResponse&gt; list(String part, [String mine = UNSPECIFIED]) {
+core.Future&lt;ChannelListResponse&gt; list(core.String part, [core.String id = UNSPECIFIED, core.String mine = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["part"] = part;
+  if (UNSPECIFIED != id) $queryParams["id"] = id;
   if (UNSPECIFIED != mine) $queryParams["mine"] = mine;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
@@ -54,7 +68,7 @@ Future&lt;ChannelListResponse&gt; list(String part, [String mine = UNSPECIFIED])
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

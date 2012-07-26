@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="TopicsSubmissionsResourceResource">
+<span class="show-code">Code</span>
+new <strong>TopicsSubmissionsResourceResource</strong>._internal(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#TopicsSubmissionsResourceResource"
+              title="Permalink to TopicsSubmissionsResourceResource.TopicsSubmissionsResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TopicsSubmissionsResourceResource._internal(ModeratorApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../dart_core/int.html">int</a> topicId, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> includeVotes = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/String.html">String</a> author = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sort = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> hasAttachedVideo = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../moderator-v1/SubmissionList.html">SubmissionList</a>&gt; <strong>list</strong>(<a href="../core/int.html">int</a> seriesId, <a href="../core/int.html">int</a> topicId, [<a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/bool.html">bool</a> includeVotes = UNSPECIFIED, <a href="../core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../core/String.html">String</a> author = UNSPECIFIED, <a href="../core/String.html">String</a> sort = UNSPECIFIED, <a href="../core/String.html">String</a> q = UNSPECIFIED, <a href="../core/bool.html">bool</a> hasAttachedVideo = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to TopicsSubmissionsResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Searches the submissions for the specified topic within the specified series and returns the
@@ -44,7 +56,7 @@ search results.</p><ul><li>
 <span class="param">q</span> Search query.</li><li>
 <span class="param">hasAttachedVideo</span> Specifies whether to restrict to submissions that have videos attached.</li></ul>
 <pre class="source">
-Future&lt;SubmissionList&gt; list(int seriesId, int topicId, [int maxResults = UNSPECIFIED, bool includeVotes = UNSPECIFIED, int startIndex = UNSPECIFIED, String author = UNSPECIFIED, String sort = UNSPECIFIED, String q = UNSPECIFIED, bool hasAttachedVideo = UNSPECIFIED]) {
+core.Future&lt;SubmissionList&gt; list(core.int seriesId, core.int topicId, [core.int maxResults = UNSPECIFIED, core.bool includeVotes = UNSPECIFIED, core.int startIndex = UNSPECIFIED, core.String author = UNSPECIFIED, core.String sort = UNSPECIFIED, core.String q = UNSPECIFIED, core.bool hasAttachedVideo = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -69,7 +81,7 @@ Future&lt;SubmissionList&gt; list(int seriesId, int topicId, [int maxResults = U
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

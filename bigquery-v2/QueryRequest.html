@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../bigquery-v2/QueryRequest.html">QueryRequest</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../bigquery-v2/QueryRequest.html">QueryRequest</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to QueryRequest.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static QueryRequest parse(Map&lt;String, Object&gt; json) {
+static QueryRequest parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new QueryRequest();
   result.timeoutMs = identity(json["timeoutMs"]);
@@ -52,12 +52,12 @@ static QueryRequest parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/QueryRequest.html">QueryRequest</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/QueryRequest.html">QueryRequest</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to QueryRequest.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(QueryRequest value) {
+static core.Object serialize(QueryRequest value) {
   if (value == null) return null;
   final result = {};
   result["timeoutMs"] = identity(value.timeoutMs);
@@ -100,20 +100,20 @@ DatasetReference defaultDataset;
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to QueryRequest.kind">#</a>
         </h4>
         <div class="doc">
 <p>The resource type of the request.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="maxResults">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>maxResults</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>maxResults</strong> <a class="anchor-link"
             href="#maxResults"
             title="Permalink to QueryRequest.maxResults">#</a>
         </h4>
@@ -122,13 +122,13 @@ String kind;
 exceeds the maximum response size for a single response, you will have to page through the
 results. Default is to return the maximum response size.</p>
 <pre class="source">
-int maxResults;
+core.int maxResults;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="query">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>query</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>query</strong> <a class="anchor-link"
             href="#query"
             title="Permalink to QueryRequest.query">#</a>
         </h4>
@@ -138,13 +138,13 @@ names should be qualified by dataset name in the format projectId:datasetId.tabl
 specify the defaultDataset value. If the table is in the same project as the job, you can omit
 the project ID. Example: SELECT f1 FROM myProjectId:myDatasetId.myTableId.</p>
 <pre class="source">
-String query;
+core.String query;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="timeoutMs">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>timeoutMs</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>timeoutMs</strong> <a class="anchor-link"
             href="#timeoutMs"
             title="Permalink to QueryRequest.timeoutMs">#</a>
         </h4>
@@ -153,7 +153,7 @@ String query;
 is to return immediately. If the timeout passes before the job completes, the request will fail
 with a TIMEOUT error.</p>
 <pre class="source">
-int timeoutMs;
+core.int timeoutMs;
 </pre>
 </div>
 </div>

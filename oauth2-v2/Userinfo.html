@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../oauth2-v2/Userinfo.html">Userinfo</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../oauth2-v2/Userinfo.html">Userinfo</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Userinfo.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Userinfo parse(Map&lt;String, Object&gt; json) {
+static Userinfo parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Userinfo();
   result.familyName = identity(json["family_name"]);
@@ -59,12 +59,12 @@ static Userinfo parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../oauth2-v2/Userinfo.html">Userinfo</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../oauth2-v2/Userinfo.html">Userinfo</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Userinfo.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Userinfo value) {
+static core.Object serialize(Userinfo value) {
   if (value == null) return null;
   final result = {};
   result["family_name"] = identity(value.familyName);
@@ -99,157 +99,157 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="birthday">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>birthday</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>birthday</strong> <a class="anchor-link"
             href="#birthday"
             title="Permalink to Userinfo.birthday">#</a>
         </h4>
         <div class="doc">
 <p>The user's birthday. The year is not present.</p>
 <pre class="source">
-String birthday;
+core.String birthday;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="email">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>email</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>email</strong> <a class="anchor-link"
             href="#email"
             title="Permalink to Userinfo.email">#</a>
         </h4>
         <div class="doc">
 <p>The user's email address.</p>
 <pre class="source">
-String email;
+core.String email;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="familyName">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>familyName</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>familyName</strong> <a class="anchor-link"
             href="#familyName"
             title="Permalink to Userinfo.familyName">#</a>
         </h4>
         <div class="doc">
 <p>The user's last name.</p>
 <pre class="source">
-String familyName;
+core.String familyName;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="gender">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>gender</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>gender</strong> <a class="anchor-link"
             href="#gender"
             title="Permalink to Userinfo.gender">#</a>
         </h4>
         <div class="doc">
 <p>The user's gender.</p>
 <pre class="source">
-String gender;
+core.String gender;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="givenName">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>givenName</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>givenName</strong> <a class="anchor-link"
             href="#givenName"
             title="Permalink to Userinfo.givenName">#</a>
         </h4>
         <div class="doc">
 <p>The user's first name.</p>
 <pre class="source">
-String givenName;
+core.String givenName;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Userinfo.id">#</a>
         </h4>
         <div class="doc">
 <p>The focus obfuscated gaia id of the user.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="link">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
             href="#link"
             title="Permalink to Userinfo.link">#</a>
         </h4>
         <div class="doc">
 <p>URL of the profile page.</p>
 <pre class="source">
-String link;
+core.String link;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="locale">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>locale</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>locale</strong> <a class="anchor-link"
             href="#locale"
             title="Permalink to Userinfo.locale">#</a>
         </h4>
         <div class="doc">
 <p>The user's default locale.</p>
 <pre class="source">
-String locale;
+core.String locale;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Userinfo.name">#</a>
         </h4>
         <div class="doc">
 <p>The user's full name.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="picture">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>picture</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>picture</strong> <a class="anchor-link"
             href="#picture"
             title="Permalink to Userinfo.picture">#</a>
         </h4>
         <div class="doc">
 <p>URL of the user's picture image.</p>
 <pre class="source">
-String picture;
+core.String picture;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="timezone">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>timezone</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>timezone</strong> <a class="anchor-link"
             href="#timezone"
             title="Permalink to Userinfo.timezone">#</a>
         </h4>
         <div class="doc">
 <p>The user's default timezone.</p>
 <pre class="source">
-String timezone;
+core.String timezone;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="verifiedEmail">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>verifiedEmail</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>verifiedEmail</strong> <a class="anchor-link"
             href="#verifiedEmail"
             title="Permalink to Userinfo.verifiedEmail">#</a>
         </h4>
         <div class="doc">
 <p>Boolean flag which is true if the email address is verified.</p>
 <pre class="source">
-bool verifiedEmail;
+core.bool verifiedEmail;
 </pre>
 </div>
 </div>

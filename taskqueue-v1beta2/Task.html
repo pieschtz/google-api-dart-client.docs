@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../taskqueue-v1beta2/Task.html">Task</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../taskqueue-v1beta2/Task.html">Task</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Task.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Task parse(Map&lt;String, Object&gt; json) {
+static Task parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Task();
   result.kind = identity(json["kind"]);
@@ -54,12 +54,12 @@ static Task parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../taskqueue-v1beta2/Task.html">Task</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../taskqueue-v1beta2/Task.html">Task</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Task.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Task value) {
+static core.Object serialize(Task value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -89,46 +89,46 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="enqueueTimestamp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>enqueueTimestamp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>enqueueTimestamp</strong> <a class="anchor-link"
             href="#enqueueTimestamp"
             title="Permalink to Task.enqueueTimestamp">#</a>
         </h4>
         <div class="doc">
 <p>Time (in seconds since the epoch) at which the task was enqueued.</p>
 <pre class="source">
-String enqueueTimestamp;
+core.String enqueueTimestamp;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Task.id">#</a>
         </h4>
         <div class="doc">
 <p>Name of the task.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Task.kind">#</a>
         </h4>
         <div class="doc">
 <p>The kind of object returned, in this case set to task.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="leaseTimestamp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>leaseTimestamp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>leaseTimestamp</strong> <a class="anchor-link"
             href="#leaseTimestamp"
             title="Permalink to Task.leaseTimestamp">#</a>
         </h4>
@@ -136,46 +136,46 @@ String kind;
 <p>Time (in seconds since the epoch) at which the task lease will expire. This value is 0 if the
 task isnt currently leased out to a worker.</p>
 <pre class="source">
-String leaseTimestamp;
+core.String leaseTimestamp;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="payloadBase64">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>payloadBase64</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>payloadBase64</strong> <a class="anchor-link"
             href="#payloadBase64"
             title="Permalink to Task.payloadBase64">#</a>
         </h4>
         <div class="doc">
 <p>A bag of bytes which is the task payload. The payload on the JSON side is always Base64 encoded.</p>
 <pre class="source">
-String payloadBase64;
+core.String payloadBase64;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="queueName">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>queueName</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>queueName</strong> <a class="anchor-link"
             href="#queueName"
             title="Permalink to Task.queueName">#</a>
         </h4>
         <div class="doc">
 <p>Name of the queue that the task is in.</p>
 <pre class="source">
-String queueName;
+core.String queueName;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="tag">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>tag</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>tag</strong> <a class="anchor-link"
             href="#tag"
             title="Permalink to Task.tag">#</a>
         </h4>
         <div class="doc">
 <p>Tag for the task, could be used later to lease tasks grouped by a specific tag.</p>
 <pre class="source">
-String tag;
+core.String tag;
 </pre>
 </div>
 </div>

@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ReportsResource">
+<span class="show-code">Code</span>
+new <strong>ReportsResource</strong>._internal(<a href="../adsense-v1.1/AdsenseApi.html">AdsenseApi</a> $service) <a class="anchor-link" href="#ReportsResource"
+              title="Permalink to ReportsResource.ReportsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ReportsResource._internal(AdsenseApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="generate">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>generate</strong>(<a href="../dart_core/String.html">String</a> startDate, <a href="../dart_core/String.html">String</a> endDate, [<a href="../dart_core/List.html">List</a> sort = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/List.html">List</a> metric = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/List.html">List</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> currency = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../dart_core/List.html">List</a> dimension = UNSPECIFIED, <a href="../dart_core/List.html">List</a> accountId = UNSPECIFIED]) <a class="anchor-link" href="#generate"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adsense-v1.1/AdsenseReportsGenerateResponse.html">AdsenseReportsGenerateResponse</a>&gt; <strong>generate</strong>(<a href="../core/String.html">String</a> startDate, <a href="../core/String.html">String</a> endDate, [<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; sort = UNSPECIFIED, <a href="../core/String.html">String</a> locale = UNSPECIFIED, <a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; metric = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; filter = UNSPECIFIED, <a href="../core/String.html">String</a> currency = UNSPECIFIED, <a href="../core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; dimension = UNSPECIFIED, <a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; accountId = UNSPECIFIED]) <a class="anchor-link" href="#generate"
               title="Permalink to ReportsResource.generate">#</a></h4>
 <div class="doc">
 <p>Generate an AdSense report based on the report request sent in the query parameters. Returns the
@@ -61,7 +73,7 @@ Maximum: 5000.
    * 
 <span class="param">accountId</span> Accounts upon which to report.</p>
 <pre class="source">
-Future&lt;AdsenseReportsGenerateResponse&gt; generate(String startDate, String endDate, [List&lt;String&gt; sort = UNSPECIFIED, String locale = UNSPECIFIED, List&lt;String&gt; metric = UNSPECIFIED, int maxResults = UNSPECIFIED, List&lt;String&gt; filter = UNSPECIFIED, String currency = UNSPECIFIED, int startIndex = UNSPECIFIED, List&lt;String&gt; dimension = UNSPECIFIED, List&lt;String&gt; accountId = UNSPECIFIED]) {
+core.Future&lt;AdsenseReportsGenerateResponse&gt; generate(core.String startDate, core.String endDate, [core.List&lt;core.String&gt; sort = UNSPECIFIED, core.String locale = UNSPECIFIED, core.List&lt;core.String&gt; metric = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.List&lt;core.String&gt; filter = UNSPECIFIED, core.String currency = UNSPECIFIED, core.int startIndex = UNSPECIFIED, core.List&lt;core.String&gt; dimension = UNSPECIFIED, core.List&lt;core.String&gt; accountId = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -88,7 +100,7 @@ Future&lt;AdsenseReportsGenerateResponse&gt; generate(String startDate, String e
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

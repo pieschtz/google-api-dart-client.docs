@@ -32,15 +32,15 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../youtube-v3alpha/ResourceId.html">ResourceId</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../youtube-v3alpha/ResourceId.html">ResourceId</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to ResourceId.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static ResourceId parse(Map&lt;String, Object&gt; json) {
+static ResourceId parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new ResourceId();
-  result.type = identity(json["type"]);
+  result.kind = identity(json["kind"]);
   result.channelId = identity(json["channelId"]);
   result.playlistId = identity(json["playlistId"]);
   result.videoId = identity(json["videoId"]);
@@ -51,15 +51,15 @@ static ResourceId parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../youtube-v3alpha/ResourceId.html">ResourceId</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../youtube-v3alpha/ResourceId.html">ResourceId</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to ResourceId.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(ResourceId value) {
+static core.Object serialize(ResourceId value) {
   if (value == null) return null;
   final result = {};
-  result["type"] = identity(value.type);
+  result["kind"] = identity(value.kind);
   result["channelId"] = identity(value.channelId);
   result["playlistId"] = identity(value.playlistId);
   result["videoId"] = identity(value.videoId);
@@ -83,53 +83,53 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="channelId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>channelId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>channelId</strong> <a class="anchor-link"
             href="#channelId"
             title="Permalink to ResourceId.channelId">#</a>
         </h4>
         <div class="doc">
-<p>Only set if type == CHANNEL.</p>
+<p>ID of the referred channel. Present only when type is "CHANNEL".</p>
 <pre class="source">
-String channelId;
+core.String channelId;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to ResourceId.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>The kind of the referred resource.</p>
+<pre class="source">
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="playlistId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>playlistId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>playlistId</strong> <a class="anchor-link"
             href="#playlistId"
             title="Permalink to ResourceId.playlistId">#</a>
         </h4>
         <div class="doc">
-<p>Only set if type == PLAYLIST.</p>
+<p>ID of the referred playlist. Present only when type is "PLAYLIST".</p>
 <pre class="source">
-String playlistId;
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="type">
-<span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
-            href="#type"
-            title="Permalink to ResourceId.type">#</a>
-        </h4>
-        <div class="doc">
-<p>Type of the resource.</p>
-<pre class="source">
-String type;
+core.String playlistId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="videoId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>videoId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>videoId</strong> <a class="anchor-link"
             href="#videoId"
             title="Permalink to ResourceId.videoId">#</a>
         </h4>
         <div class="doc">
-<p>Only set if type == VIDEO.</p>
+<p>ID of the referred video. Present only when type is "VIDEO".</p>
 <pre class="source">
-String videoId;
+core.String videoId;
 </pre>
 </div>
 </div>

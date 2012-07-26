@@ -26,16 +26,28 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="UsersResource">
+<span class="show-code">Code</span>
+new <strong>UsersResource</strong>._internal(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#UsersResource"
+              title="Permalink to UsersResource.UsersResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+UsersResource._internal(BloggerApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> userId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../blogger-v3/User.html">User</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> userId) <a class="anchor-link" href="#get"
               title="Permalink to UsersResource.get">#</a></h4>
 <div class="doc">
 <p>Gets one user by id.</p><ul><li>
 <span class="param">userId</span> The ID of the user to get.</li></ul>
 <pre class="source">
-Future&lt;User&gt; get(String userId) {
+core.Future&lt;User&gt; get(core.String userId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +64,7 @@ Future&lt;User&gt; get(String userId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

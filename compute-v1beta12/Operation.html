@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/Operation.html">Operation</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../compute-v1beta12/Operation.html">Operation</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Operation.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Operation parse(Map&lt;String, Object&gt; json) {
+static Operation parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Operation();
   result.status = identity(json["status"]);
@@ -66,12 +66,12 @@ static Operation parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/Operation.html">Operation</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/Operation.html">Operation</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Operation.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Operation value) {
+static core.Object serialize(Operation value) {
   if (value == null) return null;
   final result = {};
   result["status"] = identity(value.status);
@@ -113,7 +113,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="clientOperationId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>clientOperationId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>clientOperationId</strong> <a class="anchor-link"
             href="#clientOperationId"
             title="Permalink to Operation.clientOperationId">#</a>
         </h4>
@@ -121,33 +121,33 @@ toString() =&gt; serialize(this).toString();
 <p>An optional identifier specified by the client when the mutation was initiated. Must be unique
 for all operation resources in the project (output only).</p>
 <pre class="source">
-String clientOperationId;
+core.String clientOperationId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="creationTimestamp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
             href="#creationTimestamp"
             title="Permalink to Operation.creationTimestamp">#</a>
         </h4>
         <div class="doc">
 <p>Creation timestamp in RFC3339 text format (output only).</p>
 <pre class="source">
-String creationTimestamp;
+core.String creationTimestamp;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="endTime">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>endTime</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>endTime</strong> <a class="anchor-link"
             href="#endTime"
             title="Permalink to Operation.endTime">#</a>
         </h4>
         <div class="doc">
 <p>The time that this operation was completed. This is in RFC 3339 format (output only).</p>
 <pre class="source">
-String endTime;
+core.String endTime;
 </pre>
 </div>
 </div>
@@ -167,98 +167,98 @@ OperationError error;
 </div>
 <div class="field"><h4 id="httpErrorMessage">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>httpErrorMessage</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>httpErrorMessage</strong> <a class="anchor-link"
             href="#httpErrorMessage"
             title="Permalink to Operation.httpErrorMessage">#</a>
         </h4>
         <div class="doc">
 <p>If operation fails, the HTTP error message returned, e.g. NOT FOUND. (output only).</p>
 <pre class="source">
-String httpErrorMessage;
+core.String httpErrorMessage;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="httpErrorStatusCode">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>httpErrorStatusCode</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>httpErrorStatusCode</strong> <a class="anchor-link"
             href="#httpErrorStatusCode"
             title="Permalink to Operation.httpErrorStatusCode">#</a>
         </h4>
         <div class="doc">
 <p>If operation fails, the HTTP error status code returned, e.g. 404. (output only).</p>
 <pre class="source">
-int httpErrorStatusCode;
+core.int httpErrorStatusCode;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Operation.id">#</a>
         </h4>
         <div class="doc">
 <p>Unique identifier for the resource; defined by the server (output only).</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="insertTime">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>insertTime</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>insertTime</strong> <a class="anchor-link"
             href="#insertTime"
             title="Permalink to Operation.insertTime">#</a>
         </h4>
         <div class="doc">
 <p>The time that this operation was requested. This is in RFC 3339 format (output only).</p>
 <pre class="source">
-String insertTime;
+core.String insertTime;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Operation.kind">#</a>
         </h4>
         <div class="doc">
 <p>Type of the resource.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Operation.name">#</a>
         </h4>
         <div class="doc">
 <p>Name of the resource.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="operationType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>operationType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>operationType</strong> <a class="anchor-link"
             href="#operationType"
             title="Permalink to Operation.operationType">#</a>
         </h4>
         <div class="doc">
 <p>Type of the operation. Examples include "insert", "update", and "delete" (output only).</p>
 <pre class="source">
-String operationType;
+core.String operationType;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="progress">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>progress</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>progress</strong> <a class="anchor-link"
             href="#progress"
             title="Permalink to Operation.progress">#</a>
         </h4>
@@ -268,39 +268,39 @@ linear or support any granularity of operations. This should not be used to gues
 operation will be complete. This number should be monotonically increasing as the operation
 progresses (output only).</p>
 <pre class="source">
-int progress;
+core.int progress;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="selfLink">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Operation.selfLink">#</a>
         </h4>
         <div class="doc">
 <p>Server defined URL for the resource (output only).</p>
 <pre class="source">
-String selfLink;
+core.String selfLink;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="startTime">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>startTime</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>startTime</strong> <a class="anchor-link"
             href="#startTime"
             title="Permalink to Operation.startTime">#</a>
         </h4>
         <div class="doc">
 <p>The time that this operation was started by the server. This is in RFC 3339 format (output only).</p>
 <pre class="source">
-String startTime;
+core.String startTime;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="status">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Operation.status">#</a>
         </h4>
@@ -308,59 +308,59 @@ String startTime;
 <p>Status of the operation. Can be one of the following: "PENDING", "RUNNING", or "DONE" (output
 only).</p>
 <pre class="source">
-String status;
+core.String status;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="statusMessage">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>statusMessage</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>statusMessage</strong> <a class="anchor-link"
             href="#statusMessage"
             title="Permalink to Operation.statusMessage">#</a>
         </h4>
         <div class="doc">
 <p>An optional textual description of the current status of the operation (output only).</p>
 <pre class="source">
-String statusMessage;
+core.String statusMessage;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="targetId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>targetId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>targetId</strong> <a class="anchor-link"
             href="#targetId"
             title="Permalink to Operation.targetId">#</a>
         </h4>
         <div class="doc">
 <p>Unique target id which identifies a particular incarnation of the target (output only).</p>
 <pre class="source">
-String targetId;
+core.String targetId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="targetLink">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>targetLink</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>targetLink</strong> <a class="anchor-link"
             href="#targetLink"
             title="Permalink to Operation.targetLink">#</a>
         </h4>
         <div class="doc">
 <p>URL of the resource the operation is mutating (output only).</p>
 <pre class="source">
-String targetLink;
+core.String targetLink;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="user">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>user</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>user</strong> <a class="anchor-link"
             href="#user"
             title="Permalink to Operation.user">#</a>
         </h4>
         <div class="doc">
 <p>User who requested the operation, for example "user@example.com" (output only).</p>
 <pre class="source">
-String user;
+core.String user;
 </pre>
 </div>
 </div>

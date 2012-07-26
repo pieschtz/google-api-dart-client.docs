@@ -21,11 +21,11 @@
 <div class="content">
 <h2><strong>utils</strong> library</h2>
 <div class="doc"></div>
-<h3>Functions</h3>
+<h3>Methods</h3>
 <div class="method"><h4 id="identity">
 <span class="show-code">Code</span>
 <strong>identity</strong>(t) <a class="anchor-link" href="#identity"
-              title="Permalink to null.identity">#</a></h4>
+              title="Permalink to identity">#</a></h4>
 <div class="doc">
 <p>The identity transform.</p>
 <pre class="source">
@@ -35,8 +35,8 @@ identity(t) =&gt; t;
 </div>
 <div class="method"><h4 id="map">
 <span class="show-code">Code</span>
-<a href="utils/Transform.html">Transform</a> <strong>map</strong>(transform(value)) <a class="anchor-link" href="#map"
-              title="Permalink to null.map">#</a></h4>
+<a href="utils/Transform.html">Transform</a> <strong>map</strong>(<a href="utils/Transform.html">Transform</a> transform) <a class="anchor-link" href="#map"
+              title="Permalink to map">#</a></h4>
 <div class="doc">
 <p>Returns a Transform&lt;List> that applies <code>transform</code> to every element.</p>
 <pre class="source">
@@ -53,8 +53,8 @@ Transform&lt;List&gt; map(Transform&lt;Object&gt; transform) {
 </div>
 <div class="method"><h4 id="mapValues">
 <span class="show-code">Code</span>
-<a href="utils/Transform.html">Transform</a> <strong>mapValues</strong>(transform(value)) <a class="anchor-link" href="#mapValues"
-              title="Permalink to null.mapValues">#</a></h4>
+<a href="utils/Transform.html">Transform</a> <strong>mapValues</strong>(<a href="utils/Transform.html">Transform</a> transform) <a class="anchor-link" href="#mapValues"
+              title="Permalink to mapValues">#</a></h4>
 <div class="doc">
 <p>Returns a Transform&lt;List> that applies <code>transform</code> to every value, and preserves keys.</p>
 <pre class="source">
@@ -69,12 +69,27 @@ Transform&lt;Map&gt; mapValues(Transform&lt;Object&gt; transform) {
 </pre>
 </div>
 </div>
-<h3>Variables</h3>
+<div class="method"><h4 id="random">
+<span class="show-code">Code</span>
+<a href="core/int.html">int</a> <strong>random</strong>() <a class="anchor-link" href="#random"
+              title="Permalink to random">#</a></h4>
+<div class="doc">
+<p>Returns a random unsigned 32-bit integer. </p>
+<pre class="source">
+int random() {
+  final ary = new Uint32Array(1);
+  window.crypto.getRandomValues(ary);
+  return ary[0];
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
 <div class="field"><h4 id="UNSPECIFIED">
 <span class="show-code">Code</span>
 final         <strong>UNSPECIFIED</strong> <a class="anchor-link"
             href="#UNSPECIFIED"
-            title="Permalink to null.UNSPECIFIED">#</a>
+            title="Permalink to UNSPECIFIED">#</a>
         </h4>
         <div class="doc">
 <p>A sentinel to be used as a default parameter value.</p>
@@ -99,7 +114,7 @@ final UNSPECIFIED = const _Unspecified._internal();
 <h3>Interfaces</h3>
           <div class="type">
           <h4>
-            <a href="utils/Transform.html"><strong>Transform&lt;T&gt;</strong></a>
+            <a href="utils/Transform.html"><strong>Transform</strong></a>
           </h4>
           </div>
           

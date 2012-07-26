@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../webfonts-v1/Webfont.html">Webfont</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../webfonts-v1/Webfont.html">Webfont</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Webfont.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Webfont parse(Map&lt;String, Object&gt; json) {
+static Webfont parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Webfont();
   result.kind = identity(json["kind"]);
@@ -51,12 +51,12 @@ static Webfont parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../webfonts-v1/Webfont.html">Webfont</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../webfonts-v1/Webfont.html">Webfont</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Webfont.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Webfont value) {
+static core.Object serialize(Webfont value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -83,53 +83,53 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="family">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>family</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>family</strong> <a class="anchor-link"
             href="#family"
             title="Permalink to Webfont.family">#</a>
         </h4>
         <div class="doc">
 <p>The name of the font.</p>
 <pre class="source">
-Object family;
+core.Object family;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Webfont.kind">#</a>
         </h4>
         <div class="doc">
 <p>This kind represents a webfont object in the webfonts service.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="subsets">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>subsets</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>subsets</strong> <a class="anchor-link"
             href="#subsets"
             title="Permalink to Webfont.subsets">#</a>
         </h4>
         <div class="doc">
 <p>The scripts supported by the font.</p>
 <pre class="source">
-Object subsets;
+core.Object subsets;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="variants">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a>         <strong>variants</strong> <a class="anchor-link"
+<a href="../core/Object.html">Object</a>         <strong>variants</strong> <a class="anchor-link"
             href="#variants"
             title="Permalink to Webfont.variants">#</a>
         </h4>
         <div class="doc">
 <p>The available variants for the font.</p>
 <pre class="source">
-Object variants;
+core.Object variants;
 </pre>
 </div>
 </div>

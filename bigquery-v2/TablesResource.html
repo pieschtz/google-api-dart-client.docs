@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="TablesResource">
+<span class="show-code">Code</span>
+new <strong>TablesResource</strong>._internal(<a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a> $service) <a class="anchor-link" href="#TablesResource"
+              title="Permalink to TablesResource.TablesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TablesResource._internal(BigqueryApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId, <a href="../core/String.html">String</a> tableId) <a class="anchor-link" href="#delete"
               title="Permalink to TablesResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes the table specified by tableId from the dataset. If the table contains data, all the data
@@ -38,7 +50,7 @@ will be deleted.</p><ul><li>
 <span class="param">datasetId</span> Dataset ID of the table to delete</li><li>
 <span class="param">tableId</span> Table ID of the table to delete</li></ul>
 <pre class="source">
-Future delete(String projectId, String datasetId, String tableId) {
+core.Future delete(core.String projectId, core.String datasetId, core.String tableId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -57,7 +69,7 @@ Future delete(String projectId, String datasetId, String tableId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -68,7 +80,7 @@ Future delete(String projectId, String datasetId, String tableId) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Table.html">Table</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId, <a href="../core/String.html">String</a> tableId) <a class="anchor-link" href="#get"
               title="Permalink to TablesResource.get">#</a></h4>
 <div class="doc">
 <p>Gets the specified table resource by table ID. This method does not return the data in the table,
@@ -77,7 +89,7 @@ it only returns the table resource, which describes the structure of this table.
 <span class="param">datasetId</span> Dataset ID of the requested table</li><li>
 <span class="param">tableId</span> Table ID of the requested table</li></ul>
 <pre class="source">
-Future&lt;Table&gt; get(String projectId, String datasetId, String tableId) {
+core.Future&lt;Table&gt; get(core.String projectId, core.String datasetId, core.String tableId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -96,7 +108,7 @@ Future&lt;Table&gt; get(String projectId, String datasetId, String tableId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -107,7 +119,7 @@ Future&lt;Table&gt; get(String projectId, String datasetId, String tableId) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Table.html">Table</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to TablesResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a new, empty table in the dataset.</p><ul><li>
@@ -115,7 +127,7 @@ Future&lt;Table&gt; get(String projectId, String datasetId, String tableId) {
 <span class="param">projectId</span> Project ID of the new table</li><li>
 <span class="param">datasetId</span> Dataset ID of the new table</li></ul>
 <pre class="source">
-Future&lt;Table&gt; insert(String projectId, String datasetId, Table content) {
+core.Future&lt;Table&gt; insert(core.String projectId, core.String datasetId, Table content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -135,7 +147,7 @@ Future&lt;Table&gt; insert(String projectId, String datasetId, Table content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -146,7 +158,7 @@ Future&lt;Table&gt; insert(String projectId, String datasetId, Table content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/TableList.html">TableList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to TablesResource.list">#</a></h4>
 <div class="doc">
 <p>Lists all tables in the specified dataset.</p><ul><li>
@@ -155,7 +167,7 @@ Future&lt;Table&gt; insert(String projectId, String datasetId, Table content) {
 <span class="param">pageToken</span> Page token, returned by a previous call, to request the next page of results</li><li>
 <span class="param">maxResults</span> Maximum number of results to return</li></ul>
 <pre class="source">
-Future&lt;TableList&gt; list(String projectId, String datasetId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;TableList&gt; list(core.String projectId, core.String datasetId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -175,7 +187,7 @@ Future&lt;TableList&gt; list(String projectId, String datasetId, [String pageTok
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -186,7 +198,7 @@ Future&lt;TableList&gt; list(String projectId, String datasetId, [String pageTok
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Table.html">Table</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId, <a href="../core/String.html">String</a> tableId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to TablesResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates information in an existing table, specified by tableId. This method supports patch
@@ -196,7 +208,7 @@ semantics.</p><ul><li>
 <span class="param">datasetId</span> Dataset ID of the table to update</li><li>
 <span class="param">tableId</span> Table ID of the table to update</li></ul>
 <pre class="source">
-Future&lt;Table&gt; patch(String projectId, String datasetId, String tableId, Table content) {
+core.Future&lt;Table&gt; patch(core.String projectId, core.String datasetId, core.String tableId, Table content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -217,7 +229,7 @@ Future&lt;Table&gt; patch(String projectId, String datasetId, String tableId, Ta
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -228,7 +240,7 @@ Future&lt;Table&gt; patch(String projectId, String datasetId, String tableId, Ta
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../dart_core/String.html">String</a> tableId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Table.html">Table</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId, <a href="../core/String.html">String</a> tableId, <a href="../bigquery-v2/Table.html">Table</a> content) <a class="anchor-link" href="#update"
               title="Permalink to TablesResource.update">#</a></h4>
 <div class="doc">
 <p>Updates information in an existing table, specified by tableId.</p><ul><li>
@@ -237,7 +249,7 @@ Future&lt;Table&gt; patch(String projectId, String datasetId, String tableId, Ta
 <span class="param">datasetId</span> Dataset ID of the table to update</li><li>
 <span class="param">tableId</span> Table ID of the table to update</li></ul>
 <pre class="source">
-Future&lt;Table&gt; update(String projectId, String datasetId, String tableId, Table content) {
+core.Future&lt;Table&gt; update(core.String projectId, core.String datasetId, core.String tableId, Table content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -258,7 +270,7 @@ Future&lt;Table&gt; update(String projectId, String datasetId, String tableId, T
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

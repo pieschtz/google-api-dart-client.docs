@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/Image.html">Image</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../compute-v1beta12/Image.html">Image</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Image.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Image parse(Map&lt;String, Object&gt; json) {
+static Image parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Image();
   result.kind = identity(json["kind"]);
@@ -57,12 +57,12 @@ static Image parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/Image.html">Image</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/Image.html">Image</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Image.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Image value) {
+static core.Object serialize(Image value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -95,27 +95,27 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="creationTimestamp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
             href="#creationTimestamp"
             title="Permalink to Image.creationTimestamp">#</a>
         </h4>
         <div class="doc">
 <p>Creation timestamp in RFC3339 text format (output only).</p>
 <pre class="source">
-String creationTimestamp;
+core.String creationTimestamp;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Image.description">#</a>
         </h4>
         <div class="doc">
 <p>Textual description of the resource; provided by the client when the resource is created.</p>
 <pre class="source">
-String description;
+core.String description;
 </pre>
 </div>
 </div>
@@ -134,33 +134,33 @@ ImageDiskSnapshot diskSnapshot;
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Image.id">#</a>
         </h4>
         <div class="doc">
 <p>Unique identifier for the resource; defined by the server (output only).</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Image.kind">#</a>
         </h4>
         <div class="doc">
 <p>Type of the resource.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Image.name">#</a>
         </h4>
@@ -168,13 +168,13 @@ String kind;
 <p>Name of the resource; provided by the client when the resource is created. The name must be 1-63
 characters long, and comply with RFC1035.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="preferredKernel">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>preferredKernel</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>preferredKernel</strong> <a class="anchor-link"
             href="#preferredKernel"
             title="Permalink to Image.preferredKernel">#</a>
         </h4>
@@ -182,7 +182,7 @@ String name;
 <p>An optional URL of the preferred kernel for use with this disk image. If not specified, a server
 defined default kernel will be used.</p>
 <pre class="source">
-String preferredKernel;
+core.String preferredKernel;
 </pre>
 </div>
 </div>
@@ -201,27 +201,27 @@ ImageRawDisk rawDisk;
 </div>
 <div class="field"><h4 id="selfLink">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Image.selfLink">#</a>
         </h4>
         <div class="doc">
 <p>Server defined URL for the resource (output only).</p>
 <pre class="source">
-String selfLink;
+core.String selfLink;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="sourceType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>sourceType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>sourceType</strong> <a class="anchor-link"
             href="#sourceType"
             title="Permalink to Image.sourceType">#</a>
         </h4>
         <div class="doc">
 <p>Must be "RAW"; provided by the client when the disk image is created.</p>
 <pre class="source">
-String sourceType;
+core.String sourceType;
 </pre>
 </div>
 </div>

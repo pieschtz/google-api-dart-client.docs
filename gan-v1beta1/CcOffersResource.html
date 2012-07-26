@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="CcOffersResource">
+<span class="show-code">Code</span>
+new <strong>CcOffersResource</strong>._internal(<a href="../gan-v1beta1/GanApi.html">GanApi</a> $service) <a class="anchor-link" href="#CcOffersResource"
+              title="Permalink to CcOffersResource.CcOffersResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CcOffersResource._internal(GanApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> publisher, [<a href="../dart_core/List.html">List</a> advertiser = UNSPECIFIED, <a href="../gan-v1beta1/CcOffersResourceListProjection.html">CcOffersResourceListProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/CcOffers.html">CcOffers</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> publisher, [<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; advertiser = UNSPECIFIED, <a href="../gan-v1beta1/CcOffersResourceListProjection.html">CcOffersResourceListProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CcOffersResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves credit card offers for the given publisher.</p><ul><li>
@@ -37,7 +49,7 @@
 <span class="param">advertiser</span> The advertiser ID of a card issuer whose offers to include. Optional, may be repeated.</li><li>
 <span class="param">projection</span> The set of fields to return.</li></ul>
 <pre class="source">
-Future&lt;CcOffers&gt; list(String publisher, [List&lt;String&gt; advertiser = UNSPECIFIED, CcOffersResourceListProjection projection = UNSPECIFIED]) {
+core.Future&lt;CcOffers&gt; list(core.String publisher, [core.List&lt;core.String&gt; advertiser = UNSPECIFIED, CcOffersResourceListProjection projection = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -56,7 +68,7 @@ Future&lt;CcOffers&gt; list(String publisher, [List&lt;String&gt; advertiser = U
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

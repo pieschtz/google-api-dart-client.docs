@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="TaskqueuesResource">
+<span class="show-code">Code</span>
+new <strong>TaskqueuesResource</strong>._internal(<a href="../taskqueue-v1beta2/TaskqueueApi.html">TaskqueueApi</a> $service) <a class="anchor-link" href="#TaskqueuesResource"
+              title="Permalink to TaskqueuesResource.TaskqueuesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TaskqueuesResource._internal(TaskqueueApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, [<a href="../dart_core/bool.html">bool</a> getStats = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/TaskQueue.html">TaskQueue</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> taskqueue, [<a href="../core/bool.html">bool</a> getStats = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to TaskqueuesResource.get">#</a></h4>
 <div class="doc">
 <p>Get detailed information about a TaskQueue.</p><ul><li>
@@ -37,7 +49,7 @@
 <span class="param">taskqueue</span> The id of the taskqueue to get the properties of.</li><li>
 <span class="param">getStats</span> Whether to get stats. Optional.</li></ul>
 <pre class="source">
-Future&lt;TaskQueue&gt; get(String project, String taskqueue, [bool getStats = UNSPECIFIED]) {
+core.Future&lt;TaskQueue&gt; get(core.String project, core.String taskqueue, [core.bool getStats = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -56,7 +68,7 @@ Future&lt;TaskQueue&gt; get(String project, String taskqueue, [bool getStats = U
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

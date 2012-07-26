@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="BadgesResource">
+<span class="show-code">Code</span>
+new <strong>BadgesResource</strong>._internal(<a href="../orkut-v2/OrkutApi.html">OrkutApi</a> $service) <a class="anchor-link" href="#BadgesResource"
+              title="Permalink to BadgesResource.BadgesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+BadgesResource._internal(OrkutApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> userId, <a href="../dart_core/String.html">String</a> badgeId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../orkut-v2/Badge.html">Badge</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> userId, <a href="../core/String.html">String</a> badgeId) <a class="anchor-link" href="#get"
               title="Permalink to BadgesResource.get">#</a></h4>
 <div class="doc">
 <p>Retrieves a badge from a user.</p><ul><li>
 <span class="param">userId</span> The ID of the user whose badges will be listed. Can be me to refer to caller.</li><li>
 <span class="param">badgeId</span> The ID of the badge that will be retrieved.</li></ul>
 <pre class="source">
-Future&lt;Badge&gt; get(String userId, String badgeId) {
+core.Future&lt;Badge&gt; get(core.String userId, core.String badgeId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future&lt;Badge&gt; get(String userId, String badgeId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,13 +77,13 @@ Future&lt;Badge&gt; get(String userId, String badgeId) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> userId) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../orkut-v2/BadgeList.html">BadgeList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> userId) <a class="anchor-link" href="#list"
               title="Permalink to BadgesResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the list of visible badges of a user.</p><ul><li>
 <span class="param">userId</span> The id of the user whose badges will be listed. Can be me to refer to caller.</li></ul>
 <pre class="source">
-Future&lt;BadgeList&gt; list(String userId) {
+core.Future&lt;BadgeList&gt; list(core.String userId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -88,7 +100,7 @@ Future&lt;BadgeList&gt; list(String userId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../dfareporting-v1/Report.html">Report</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../dfareporting-v1/Report.html">Report</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Report.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Report parse(Map&lt;String, Object&gt; json) {
+static Report parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Report();
   result.kind = identity(json["kind"]);
@@ -59,12 +59,12 @@ static Report parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1/Report.html">Report</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1/Report.html">Report</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Report.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Report value) {
+static core.Object serialize(Report value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -99,14 +99,14 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="accountId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>accountId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>accountId</strong> <a class="anchor-link"
             href="#accountId"
             title="Permalink to Report.accountId">#</a>
         </h4>
         <div class="doc">
 <p>The account id this report belongs to.</p>
 <pre class="source">
-String accountId;
+core.String accountId;
 </pre>
 </div>
 </div>
@@ -125,92 +125,92 @@ ReportCriteria criteria;
 </div>
 <div class="field"><h4 id="etag">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to Report.etag">#</a>
         </h4>
         <div class="doc">
 <p>ETag of this response for caching purposes.</p>
 <pre class="source">
-String etag;
+core.String etag;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fileName">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fileName</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fileName</strong> <a class="anchor-link"
             href="#fileName"
             title="Permalink to Report.fileName">#</a>
         </h4>
         <div class="doc">
 <p>The file name used when generating report files for this report.</p>
 <pre class="source">
-String fileName;
+core.String fileName;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Report.id">#</a>
         </h4>
         <div class="doc">
 <p>The unique ID identifying this report resource.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Report.kind">#</a>
         </h4>
         <div class="doc">
 <p>Kind of resource this is, in this case dfareporting#report.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="lastModifiedTime">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>lastModifiedTime</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>lastModifiedTime</strong> <a class="anchor-link"
             href="#lastModifiedTime"
             title="Permalink to Report.lastModifiedTime">#</a>
         </h4>
         <div class="doc">
 <p>The timestamp (in milliseconds since epoch) of when this report was last modified.</p>
 <pre class="source">
-String lastModifiedTime;
+core.String lastModifiedTime;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Report.name">#</a>
         </h4>
         <div class="doc">
 <p>The name of the report.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="ownerProfileId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>ownerProfileId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>ownerProfileId</strong> <a class="anchor-link"
             href="#ownerProfileId"
             title="Permalink to Report.ownerProfileId">#</a>
         </h4>
         <div class="doc">
 <p>The user profile id of the owner of this report.</p>
 <pre class="source">
-String ownerProfileId;
+core.String ownerProfileId;
 </pre>
 </div>
 </div>
@@ -230,27 +230,27 @@ ReportSchedule schedule;
 </div>
 <div class="field"><h4 id="subAccountId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>subAccountId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>subAccountId</strong> <a class="anchor-link"
             href="#subAccountId"
             title="Permalink to Report.subAccountId">#</a>
         </h4>
         <div class="doc">
 <p>The subbaccount id this report belongs to if applicable.</p>
 <pre class="source">
-String subAccountId;
+core.String subAccountId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="type">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
             href="#type"
             title="Permalink to Report.type">#</a>
         </h4>
         <div class="doc">
 <p>The type of the report, currently only "STANDARD" is supported.</p>
 <pre class="source">
-String type;
+core.String type;
 </pre>
 </div>
 </div>

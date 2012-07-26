@@ -26,19 +26,28 @@
 <div class="doc">
 
 </div>
-<h3>Extends</h3>
-<p>
-<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><a href="../storage-v1beta1/Object.html">Object</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>BucketsResource</strong></span></p>
+<h3>Constructors</h3>
+<div class="method"><h4 id="BucketsResource">
+<span class="show-code">Code</span>
+new <strong>BucketsResource</strong>._internal(<a href="../storage-v1beta1/StorageApi.html">StorageApi</a> $service) <a class="anchor-link" href="#BucketsResource"
+              title="Permalink to BucketsResource.BucketsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+BucketsResource._internal(StorageApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> bucket) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> bucket) <a class="anchor-link" href="#delete"
               title="Permalink to BucketsResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes an empty bucket.</p><ul><li>
 <span class="param">bucket</span> Name of a bucket.</li></ul>
 <pre class="source">
-Future delete(String bucket) {
+core.Future delete(core.String bucket) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -55,7 +64,7 @@ Future delete(String bucket) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -66,14 +75,14 @@ Future delete(String bucket) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> bucket, [<a href="../storage-v1beta1/BucketsResourceGetProjection.html">BucketsResourceGetProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> bucket, [<a href="../storage-v1beta1/BucketsResourceGetProjection.html">BucketsResourceGetProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to BucketsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns metadata for the specified bucket.</p><ul><li>
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">projection</span> Set of properties to return. Defaults to no_acl.</li></ul>
 <pre class="source">
-Future&lt;Bucket&gt; get(String bucket, [BucketsResourceGetProjection projection = UNSPECIFIED]) {
+core.Future&lt;Bucket&gt; get(core.String bucket, [BucketsResourceGetProjection projection = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -91,7 +100,7 @@ Future&lt;Bucket&gt; get(String bucket, [BucketsResourceGetProjection projection
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -102,7 +111,7 @@ Future&lt;Bucket&gt; get(String bucket, [BucketsResourceGetProjection projection
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourceInsertProjection.html">BucketsResourceInsertProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>insert</strong>(<a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourceInsertProjection.html">BucketsResourceInsertProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#insert"
               title="Permalink to BucketsResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a new bucket.</p><ul><li>
@@ -111,7 +120,7 @@ Future&lt;Bucket&gt; get(String bucket, [BucketsResourceGetProjection projection
 <span class="param">projection</span> Set of properties to return. Defaults to no_acl, unless the bucket resource specifies acl or
    defaultObjectAcl properties, when it defaults to full.</p></li></ul>
 <pre class="source">
-Future&lt;Bucket&gt; insert(Bucket content, [BucketsResourceInsertProjection projection = UNSPECIFIED]) {
+core.Future&lt;Bucket&gt; insert(Bucket content, [BucketsResourceInsertProjection projection = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -130,7 +139,7 @@ Future&lt;Bucket&gt; insert(Bucket content, [BucketsResourceInsertProjection pro
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -141,7 +150,7 @@ Future&lt;Bucket&gt; insert(Bucket content, [BucketsResourceInsertProjection pro
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../storage-v1beta1/BucketsResourceListProjection.html">BucketsResourceListProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Buckets.html">Buckets</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> projectId, [<a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../storage-v1beta1/BucketsResourceListProjection.html">BucketsResourceListProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to BucketsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of buckets for a given project.</p><ul><li>
@@ -153,7 +162,7 @@ Future&lt;Bucket&gt; insert(Bucket content, [BucketsResourceInsertProjection pro
    * 
 <span class="param">projection</span> Set of properties to return. Defaults to no_acl.</p>
 <pre class="source">
-Future&lt;Buckets&gt; list(String projectId, [int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, BucketsResourceListProjection projection = UNSPECIFIED]) {
+core.Future&lt;Buckets&gt; list(core.String projectId, [core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED, BucketsResourceListProjection projection = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -173,7 +182,7 @@ Future&lt;Buckets&gt; list(String projectId, [int maxResults = UNSPECIFIED, Stri
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -184,7 +193,7 @@ Future&lt;Buckets&gt; list(String projectId, [int maxResults = UNSPECIFIED, Stri
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourcePatchProjection.html">BucketsResourcePatchProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> bucket, <a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourcePatchProjection.html">BucketsResourcePatchProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#patch"
               title="Permalink to BucketsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates a bucket. This method supports patch semantics.</p><ul><li>
@@ -192,7 +201,7 @@ Future&lt;Buckets&gt; list(String projectId, [int maxResults = UNSPECIFIED, Stri
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">projection</span> Set of properties to return. Defaults to full.</li></ul>
 <pre class="source">
-Future&lt;Bucket&gt; patch(String bucket, Bucket content, [BucketsResourcePatchProjection projection = UNSPECIFIED]) {
+core.Future&lt;Bucket&gt; patch(core.String bucket, Bucket content, [BucketsResourcePatchProjection projection = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -212,7 +221,7 @@ Future&lt;Bucket&gt; patch(String bucket, Bucket content, [BucketsResourcePatchP
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -223,7 +232,7 @@ Future&lt;Bucket&gt; patch(String bucket, Bucket content, [BucketsResourcePatchP
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourceUpdateProjection.html">BucketsResourceUpdateProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> bucket, <a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourceUpdateProjection.html">BucketsResourceUpdateProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#update"
               title="Permalink to BucketsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates a bucket.</p><ul><li>
@@ -231,7 +240,7 @@ Future&lt;Bucket&gt; patch(String bucket, Bucket content, [BucketsResourcePatchP
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">projection</span> Set of properties to return. Defaults to full.</li></ul>
 <pre class="source">
-Future&lt;Bucket&gt; update(String bucket, Bucket content, [BucketsResourceUpdateProjection projection = UNSPECIFIED]) {
+core.Future&lt;Bucket&gt; update(core.String bucket, Bucket content, [BucketsResourceUpdateProjection projection = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -251,7 +260,7 @@ Future&lt;Bucket&gt; update(String bucket, Bucket content, [BucketsResourceUpdat
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

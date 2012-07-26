@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="MyconfigResource">
+<span class="show-code">Code</span>
+new <strong>MyconfigResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MyconfigResource"
+              title="Permalink to MyconfigResource.MyconfigResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+MyconfigResource._internal(BooksApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="releaseDownloadAccess">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>releaseDownloadAccess</strong>(<a href="../dart_core/List.html">List</a> volumeIds, <a href="../dart_core/String.html">String</a> cpksver, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#releaseDownloadAccess"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/DownloadAccesses.html">DownloadAccesses</a>&gt; <strong>releaseDownloadAccess</strong>(<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; volumeIds, <a href="../core/String.html">String</a> cpksver, [<a href="../core/String.html">String</a> locale = UNSPECIFIED, <a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#releaseDownloadAccess"
               title="Permalink to MyconfigResource.releaseDownloadAccess">#</a></h4>
 <div class="doc">
 <p>Release downloaded content access restriction.</p><ul><li>
@@ -38,7 +50,7 @@
 <span class="param">locale</span> ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future&lt;DownloadAccesses&gt; releaseDownloadAccess(List&lt;String&gt; volumeIds, String cpksver, [String locale = UNSPECIFIED, String source = UNSPECIFIED]) {
+core.Future&lt;DownloadAccesses&gt; releaseDownloadAccess(core.List&lt;core.String&gt; volumeIds, core.String cpksver, [core.String locale = UNSPECIFIED, core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -58,7 +70,7 @@ Future&lt;DownloadAccesses&gt; releaseDownloadAccess(List&lt;String&gt; volumeId
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -69,7 +81,7 @@ Future&lt;DownloadAccesses&gt; releaseDownloadAccess(List&lt;String&gt; volumeId
 </div>
 <div class="method"><h4 id="requestAccess">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>requestAccess</strong>(<a href="../dart_core/String.html">String</a> source, <a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> nonce, <a href="../dart_core/String.html">String</a> cpksver, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED]) <a class="anchor-link" href="#requestAccess"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/RequestAccess.html">RequestAccess</a>&gt; <strong>requestAccess</strong>(<a href="../core/String.html">String</a> source, <a href="../core/String.html">String</a> volumeId, <a href="../core/String.html">String</a> nonce, <a href="../core/String.html">String</a> cpksver, [<a href="../core/String.html">String</a> locale = UNSPECIFIED]) <a class="anchor-link" href="#requestAccess"
               title="Permalink to MyconfigResource.requestAccess">#</a></h4>
 <div class="doc">
 <p>Request concurrent and download access restrictions.</p><ul><li>
@@ -79,7 +91,7 @@ Future&lt;DownloadAccesses&gt; releaseDownloadAccess(List&lt;String&gt; volumeId
 <span class="param">cpksver</span> The device/version ID from which to request the restrictions.</li><li>
 <span class="param">locale</span> ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</li></ul>
 <pre class="source">
-Future&lt;RequestAccess&gt; requestAccess(String source, String volumeId, String nonce, String cpksver, [String locale = UNSPECIFIED]) {
+core.Future&lt;RequestAccess&gt; requestAccess(core.String source, core.String volumeId, core.String nonce, core.String cpksver, [core.String locale = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -100,7 +112,7 @@ Future&lt;RequestAccess&gt; requestAccess(String source, String volumeId, String
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -111,7 +123,7 @@ Future&lt;RequestAccess&gt; requestAccess(String source, String volumeId, String
 </div>
 <div class="method"><h4 id="syncVolumeLicenses">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>syncVolumeLicenses</strong>(<a href="../dart_core/String.html">String</a> source, <a href="../dart_core/String.html">String</a> nonce, <a href="../dart_core/String.html">String</a> cpksver, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> showPreorders = UNSPECIFIED, <a href="../dart_core/List.html">List</a> volumeIds = UNSPECIFIED]) <a class="anchor-link" href="#syncVolumeLicenses"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Volumes.html">Volumes</a>&gt; <strong>syncVolumeLicenses</strong>(<a href="../core/String.html">String</a> source, <a href="../core/String.html">String</a> nonce, <a href="../core/String.html">String</a> cpksver, [<a href="../core/String.html">String</a> locale = UNSPECIFIED, <a href="../core/bool.html">bool</a> showPreorders = UNSPECIFIED, <a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; volumeIds = UNSPECIFIED]) <a class="anchor-link" href="#syncVolumeLicenses"
               title="Permalink to MyconfigResource.syncVolumeLicenses">#</a></h4>
 <div class="doc">
 <p>Request downloaded content access for specified volumes on the My eBooks shelf.</p><ul><li>
@@ -122,7 +134,7 @@ Future&lt;RequestAccess&gt; requestAccess(String source, String volumeId, String
 <span class="param">showPreorders</span> Set to true to show pre-ordered books. Defaults to false.</li><li>
 <span class="param">volumeIds</span> The volume(s) to request download restrictions for.</li></ul>
 <pre class="source">
-Future&lt;Volumes&gt; syncVolumeLicenses(String source, String nonce, String cpksver, [String locale = UNSPECIFIED, bool showPreorders = UNSPECIFIED, List&lt;String&gt; volumeIds = UNSPECIFIED]) {
+core.Future&lt;Volumes&gt; syncVolumeLicenses(core.String source, core.String nonce, core.String cpksver, [core.String locale = UNSPECIFIED, core.bool showPreorders = UNSPECIFIED, core.List&lt;core.String&gt; volumeIds = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -144,7 +156,7 @@ Future&lt;Volumes&gt; syncVolumeLicenses(String source, String nonce, String cpk
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

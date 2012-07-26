@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../books-v1/Review.html">Review</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../books-v1/Review.html">Review</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Review.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Review parse(Map&lt;String, Object&gt; json) {
+static Review parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Review();
   result.rating = identity(json["rating"]);
@@ -57,12 +57,12 @@ static Review parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/Review.html">Review</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/Review.html">Review</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Review.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Review value) {
+static core.Object serialize(Review value) {
   if (value == null) return null;
   final result = {};
   result["rating"] = identity(value.rating);
@@ -108,66 +108,66 @@ ReviewAuthor author;
 </div>
 <div class="field"><h4 id="content">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>content</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>content</strong> <a class="anchor-link"
             href="#content"
             title="Permalink to Review.content">#</a>
         </h4>
         <div class="doc">
 <p>Review text.</p>
 <pre class="source">
-String content;
+core.String content;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="date">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>date</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>date</strong> <a class="anchor-link"
             href="#date"
             title="Permalink to Review.date">#</a>
         </h4>
         <div class="doc">
 <p>Date of this review.</p>
 <pre class="source">
-String date;
+core.String date;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fullTextUrl">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fullTextUrl</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fullTextUrl</strong> <a class="anchor-link"
             href="#fullTextUrl"
             title="Permalink to Review.fullTextUrl">#</a>
         </h4>
         <div class="doc">
 <p>URL for the full review text, for reviews gathered from the web.</p>
 <pre class="source">
-String fullTextUrl;
+core.String fullTextUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Review.kind">#</a>
         </h4>
         <div class="doc">
 <p>Resource type for a review.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="rating">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>rating</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>rating</strong> <a class="anchor-link"
             href="#rating"
             title="Permalink to Review.rating">#</a>
         </h4>
         <div class="doc">
 <p>Star rating for this review. Possible values are ONE, TWO, THREE, FOUR, FIVE or NOT_RATED.</p>
 <pre class="source">
-String rating;
+core.String rating;
 </pre>
 </div>
 </div>
@@ -186,40 +186,40 @@ ReviewSource source;
 </div>
 <div class="field"><h4 id="title">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to Review.title">#</a>
         </h4>
         <div class="doc">
 <p>Title for this review.</p>
 <pre class="source">
-String title;
+core.String title;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="type">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
             href="#type"
             title="Permalink to Review.type">#</a>
         </h4>
         <div class="doc">
 <p>Source type for this review. Possible values are EDITORIAL, WEB<em>USER or GOOGLE</em>USER.</p>
 <pre class="source">
-String type;
+core.String type;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="volumeId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>volumeId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>volumeId</strong> <a class="anchor-link"
             href="#volumeId"
             title="Permalink to Review.volumeId">#</a>
         </h4>
         <div class="doc">
 <p>Volume that this review is for.</p>
 <pre class="source">
-String volumeId;
+core.String volumeId;
 </pre>
 </div>
 </div>

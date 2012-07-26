@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/OperationErrorErrors.html">OperationErrorErrors</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../compute-v1beta12/OperationErrorErrors.html">OperationErrorErrors</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to OperationErrorErrors.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static OperationErrorErrors parse(Map&lt;String, Object&gt; json) {
+static OperationErrorErrors parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new OperationErrorErrors();
   result.message = identity(json["message"]);
@@ -50,12 +50,12 @@ static OperationErrorErrors parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/OperationErrorErrors.html">OperationErrorErrors</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/OperationErrorErrors.html">OperationErrorErrors</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to OperationErrorErrors.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(OperationErrorErrors value) {
+static core.Object serialize(OperationErrorErrors value) {
   if (value == null) return null;
   final result = {};
   result["message"] = identity(value.message);
@@ -81,40 +81,40 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="code">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>code</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>code</strong> <a class="anchor-link"
             href="#code"
             title="Permalink to OperationErrorErrors.code">#</a>
         </h4>
         <div class="doc">
 <p>The error type identifier for this error.</p>
 <pre class="source">
-String code;
+core.String code;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="location">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
             href="#location"
             title="Permalink to OperationErrorErrors.location">#</a>
         </h4>
         <div class="doc">
 <p>Indicates the field in the request which caused the error. This property is optional.</p>
 <pre class="source">
-String location;
+core.String location;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="message">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>message</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>message</strong> <a class="anchor-link"
             href="#message"
             title="Permalink to OperationErrorErrors.message">#</a>
         </h4>
         <div class="doc">
 <p>An optional, human-readable error message.</p>
 <pre class="source">
-String message;
+core.String message;
 </pre>
 </div>
 </div>

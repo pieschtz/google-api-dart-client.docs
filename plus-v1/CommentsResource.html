@@ -1,0 +1,134 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>CommentsResource Class / plus-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="plus-v1" data-type="CommentsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/CommentsResource.html">CommentsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>CommentsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="CommentsResource">
+<span class="show-code">Code</span>
+new <strong>CommentsResource</strong>._internal(<a href="../plus-v1/PlusApi.html">PlusApi</a> $service) <a class="anchor-link" href="#CommentsResource"
+              title="Permalink to CommentsResource.CommentsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CommentsResource._internal(PlusApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="../core/Future.html">Future</a>&lt;<a href="../plus-v1/Comment.html">Comment</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> commentId) <a class="anchor-link" href="#get"
+              title="Permalink to CommentsResource.get">#</a></h4>
+<div class="doc">
+<p>Get a comment.</p><ul><li>
+<span class="param">commentId</span> The ID of the comment to get.</li></ul>
+<pre class="source">
+core.Future&lt;Comment&gt; get(core.String commentId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["commentId"] = commentId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "comments/{commentId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; Comment.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<span class="show-code">Code</span>
+<a href="../core/Future.html">Future</a>&lt;<a href="../plus-v1/CommentFeed.html">CommentFeed</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> activityId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../plus-v1/CommentsResourceListSortOrder.html">CommentsResourceListSortOrder</a> sortOrder = UNSPECIFIED]) <a class="anchor-link" href="#list"
+              title="Permalink to CommentsResource.list">#</a></h4>
+<div class="doc">
+<p>List all of the comments for an activity.</p><ul><li>
+<span class="param">activityId</span> The ID of the activity to get comments for.</li><li>
+<p>
+<span class="param">pageToken</span> The continuation token, used to page through large result sets. To get the next page of results, set
+   this parameter to the value of "nextPageToken" from the previous response.</p></li><li>
+<p>
+<span class="param">maxResults</span> The maximum number of comments to include in the response, used for paging. For any response, the
+   actual number returned may be less than the specified maxResults.
+Default: 20.
+Minimum: 0.
+   Maximum: 100.</p></li><li>
+<p>
+<span class="param">sortOrder</span> The order in which to sort the list of comments.
+Default: ascending.</p></li></ul>
+<pre class="source">
+core.Future&lt;CommentFeed&gt; list(core.String activityId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED, CommentsResourceListSortOrder sortOrder = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["activityId"] = activityId;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != sortOrder) $queryParams["sortOrder"] = sortOrder;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "activities/{activityId}/comments";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; CommentFeed.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

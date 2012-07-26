@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="KernelsResource">
+<span class="show-code">Code</span>
+new <strong>KernelsResource</strong>._internal(<a href="../compute-v1beta12/ComputeApi.html">ComputeApi</a> $service) <a class="anchor-link" href="#KernelsResource"
+              title="Permalink to KernelsResource.KernelsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+KernelsResource._internal(ComputeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> kernel) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Kernel.html">Kernel</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> kernel) <a class="anchor-link" href="#get"
               title="Permalink to KernelsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the specified kernel resource.</p><ul><li>
 <span class="param">project</span> Name of the project scoping this request.</li><li>
 <span class="param">kernel</span> Name of the kernel resource to return.</li></ul>
 <pre class="source">
-Future&lt;Kernel&gt; get(String project, String kernel) {
+core.Future&lt;Kernel&gt; get(core.String project, core.String kernel) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future&lt;Kernel&gt; get(String project, String kernel) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,7 +77,7 @@ Future&lt;Kernel&gt; get(String project, String kernel) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> project, [<a href="../dart_core/String.html">String</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/KernelList.html">KernelList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> project, [<a href="../core/String.html">String</a> filter = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to KernelsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the list of kernel resources available to the specified project.</p><ul><li>
@@ -76,7 +88,7 @@ Future&lt;Kernel&gt; get(String project, String kernel) {
    previous list request.</p></li><li>
 <span class="param">maxResults</span> Optional. Maximum count of results to be returned. Maximum and default value is 100.</li></ul>
 <pre class="source">
-Future&lt;KernelList&gt; list(String project, [String filter = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;KernelList&gt; list(core.String project, [core.String filter = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -96,7 +108,7 @@ Future&lt;KernelList&gt; list(String project, [String filter = UNSPECIFIED, Stri
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

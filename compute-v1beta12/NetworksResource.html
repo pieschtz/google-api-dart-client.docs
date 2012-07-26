@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="NetworksResource">
+<span class="show-code">Code</span>
+new <strong>NetworksResource</strong>._internal(<a href="../compute-v1beta12/ComputeApi.html">ComputeApi</a> $service) <a class="anchor-link" href="#NetworksResource"
+              title="Permalink to NetworksResource.NetworksResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+NetworksResource._internal(ComputeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> network) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Operation.html">Operation</a>&gt; <strong>delete</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> network) <a class="anchor-link" href="#delete"
               title="Permalink to NetworksResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes the specified network resource.</p><ul><li>
 <span class="param">project</span> Name of the project scoping this request.</li><li>
 <span class="param">network</span> Name of the network resource to delete.</li></ul>
 <pre class="source">
-Future&lt;Operation&gt; delete(String project, String network) {
+core.Future&lt;Operation&gt; delete(core.String project, core.String network) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future&lt;Operation&gt; delete(String project, String network) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,14 +77,14 @@ Future&lt;Operation&gt; delete(String project, String network) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> network) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Network.html">Network</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> network) <a class="anchor-link" href="#get"
               title="Permalink to NetworksResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the specified network resource.</p><ul><li>
 <span class="param">project</span> Name of the project scoping this request.</li><li>
 <span class="param">network</span> Name of the network resource to return.</li></ul>
 <pre class="source">
-Future&lt;Network&gt; get(String project, String network) {
+core.Future&lt;Network&gt; get(core.String project, core.String network) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -90,7 +102,7 @@ Future&lt;Network&gt; get(String project, String network) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -101,14 +113,14 @@ Future&lt;Network&gt; get(String project, String network) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../compute-v1beta12/Network.html">Network</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Operation.html">Operation</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> project, <a href="../compute-v1beta12/Network.html">Network</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to NetworksResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a network resource in the specified project using the data included in the request.</p><ul><li>
 <span class="param">content</span> the Network</li><li>
 <span class="param">project</span> Name of the project scoping this request.</li></ul>
 <pre class="source">
-Future&lt;Operation&gt; insert(String project, Network content) {
+core.Future&lt;Operation&gt; insert(core.String project, Network content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -127,7 +139,7 @@ Future&lt;Operation&gt; insert(String project, Network content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -138,7 +150,7 @@ Future&lt;Operation&gt; insert(String project, Network content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> project, [<a href="../dart_core/String.html">String</a> filter = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/NetworkList.html">NetworkList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> project, [<a href="../core/String.html">String</a> filter = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to NetworksResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the list of network resources available to the specified project.</p><ul><li>
@@ -149,7 +161,7 @@ Future&lt;Operation&gt; insert(String project, Network content) {
    previous list request.</p></li><li>
 <span class="param">maxResults</span> Optional. Maximum count of results to be returned. Maximum and default value is 100.</li></ul>
 <pre class="source">
-Future&lt;NetworkList&gt; list(String project, [String filter = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;NetworkList&gt; list(core.String project, [core.String filter = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -169,7 +181,7 @@ Future&lt;NetworkList&gt; list(String project, [String filter = UNSPECIFIED, Str
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

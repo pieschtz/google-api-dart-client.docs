@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../bigquery-v2/TableFieldSchema.html">TableFieldSchema</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../bigquery-v2/TableFieldSchema.html">TableFieldSchema</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to TableFieldSchema.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static TableFieldSchema parse(Map&lt;String, Object&gt; json) {
+static TableFieldSchema parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new TableFieldSchema();
   result.fields = map(TableFieldSchema.parse)(json["fields"]);
@@ -51,12 +51,12 @@ static TableFieldSchema parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/TableFieldSchema.html">TableFieldSchema</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/TableFieldSchema.html">TableFieldSchema</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to TableFieldSchema.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(TableFieldSchema value) {
+static core.Object serialize(TableFieldSchema value) {
   if (value == null) return null;
   final result = {};
   result["fields"] = map(TableFieldSchema.serialize)(value.fields);
@@ -83,53 +83,53 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="fields">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>fields</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../bigquery-v2/TableFieldSchema.html">TableFieldSchema</a>&gt;         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to TableFieldSchema.fields">#</a>
         </h4>
         <div class="doc">
 <p><code>Optional</code> Describes nested fields when type is RECORD.</p>
 <pre class="source">
-List&lt;TableFieldSchema&gt; fields;
+core.List&lt;TableFieldSchema&gt; fields;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="mode">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>mode</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>mode</strong> <a class="anchor-link"
             href="#mode"
             title="Permalink to TableFieldSchema.mode">#</a>
         </h4>
         <div class="doc">
 <p><code>Optional</code> Mode of the field (whether or not it can be null. Default is NULLABLE.</p>
 <pre class="source">
-String mode;
+core.String mode;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to TableFieldSchema.name">#</a>
         </h4>
         <div class="doc">
 <p><code>Required</code> Name of the field.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="type">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
             href="#type"
             title="Permalink to TableFieldSchema.type">#</a>
         </h4>
         <div class="doc">
 <p><code>Required</code> Data type of the field.</p>
 <pre class="source">
-String type;
+core.String type;
 </pre>
 </div>
 </div>

@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/Instance.html">Instance</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../compute-v1beta12/Instance.html">Instance</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Instance.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Instance parse(Map&lt;String, Object&gt; json) {
+static Instance parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Instance();
   result.status = identity(json["status"]);
@@ -63,12 +63,12 @@ static Instance parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/Instance.html">Instance</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/Instance.html">Instance</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Instance.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Instance value) {
+static core.Object serialize(Instance value) {
   if (value == null) return null;
   final result = {};
   result["status"] = identity(value.status);
@@ -107,20 +107,20 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="creationTimestamp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
             href="#creationTimestamp"
             title="Permalink to Instance.creationTimestamp">#</a>
         </h4>
         <div class="doc">
 <p>Creation timestamp in RFC3339 text format (output only).</p>
 <pre class="source">
-String creationTimestamp;
+core.String creationTimestamp;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Instance.description">#</a>
         </h4>
@@ -128,13 +128,13 @@ String creationTimestamp;
 <p>An optional textual description of the resource; provided by the client when the resource is
 created.</p>
 <pre class="source">
-String description;
+core.String description;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="disks">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>disks</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../compute-v1beta12/AttachedDisk.html">AttachedDisk</a>&gt;         <strong>disks</strong> <a class="anchor-link"
             href="#disks"
             title="Permalink to Instance.disks">#</a>
         </h4>
@@ -142,26 +142,26 @@ String description;
 <p>Array of disks associated with this instance. Persistent disks must be created before you can
 assign them.</p>
 <pre class="source">
-List&lt;AttachedDisk&gt; disks;
+core.List&lt;AttachedDisk&gt; disks;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Instance.id">#</a>
         </h4>
         <div class="doc">
 <p>Unique identifier for the resource; defined by the server (output only).</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="image">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>image</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>image</strong> <a class="anchor-link"
             href="#image"
             title="Permalink to Instance.image">#</a>
         </h4>
@@ -170,26 +170,26 @@ String id;
 the client when the instance is created. If not specified, the server will choose a default
 image.</p>
 <pre class="source">
-String image;
+core.String image;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Instance.kind">#</a>
         </h4>
         <div class="doc">
 <p>Type of the resource.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="machineType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>machineType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>machineType</strong> <a class="anchor-link"
             href="#machineType"
             title="Permalink to Instance.machineType">#</a>
         </h4>
@@ -197,7 +197,7 @@ String kind;
 <p>URL of the machine type resource describing which machine type to use to host the instance;
 provided by the client when the instance is created.</p>
 <pre class="source">
-String machineType;
+core.String machineType;
 </pre>
 </div>
 </div>
@@ -217,7 +217,7 @@ Metadata metadata;
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Instance.name">#</a>
         </h4>
@@ -225,13 +225,13 @@ Metadata metadata;
 <p>Name of the resource; provided by the client when the resource is created. The name must be 1-63
 characters long, and comply with RFC1035.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="networkInterfaces">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>networkInterfaces</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../compute-v1beta12/NetworkInterface.html">NetworkInterface</a>&gt;         <strong>networkInterfaces</strong> <a class="anchor-link"
             href="#networkInterfaces"
             title="Permalink to Instance.networkInterfaces">#</a>
         </h4>
@@ -241,26 +241,26 @@ interact with other network services, such as connecting to the internet. Curren
 ONE<em>TO</em>ONE_NAT is the only access config supported. If there are no accessConfigs specified, then
 this instance will have no external internet access.</p>
 <pre class="source">
-List&lt;NetworkInterface&gt; networkInterfaces;
+core.List&lt;NetworkInterface&gt; networkInterfaces;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="selfLink">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Instance.selfLink">#</a>
         </h4>
         <div class="doc">
 <p>Server defined URL for the resource (output only).</p>
 <pre class="source">
-String selfLink;
+core.String selfLink;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="serviceAccounts">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>serviceAccounts</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../compute-v1beta12/ServiceAccount.html">ServiceAccount</a>&gt;         <strong>serviceAccounts</strong> <a class="anchor-link"
             href="#serviceAccounts"
             title="Permalink to Instance.serviceAccounts">#</a>
         </h4>
@@ -268,39 +268,39 @@ String selfLink;
 <p>A list of service accounts each with specified scopes, for which access tokens are to be made
 available to the instance through metadata queries.</p>
 <pre class="source">
-List&lt;ServiceAccount&gt; serviceAccounts;
+core.List&lt;ServiceAccount&gt; serviceAccounts;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="status">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Instance.status">#</a>
         </h4>
         <div class="doc">
 <p>Instance status. One of the following values: "PROVISIONING", "STAGING", "RUNNING" (output only).</p>
 <pre class="source">
-String status;
+core.String status;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="statusMessage">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>statusMessage</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>statusMessage</strong> <a class="anchor-link"
             href="#statusMessage"
             title="Permalink to Instance.statusMessage">#</a>
         </h4>
         <div class="doc">
 <p>An optional, human-readable explanation of the status (output only).</p>
 <pre class="source">
-String statusMessage;
+core.String statusMessage;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="tags">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>tags</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>tags</strong> <a class="anchor-link"
             href="#tags"
             title="Permalink to Instance.tags">#</a>
         </h4>
@@ -309,13 +309,13 @@ String statusMessage;
 network firewalls. Provided by the client when the instance is created. Each tag must be 1-63
 characters long, and comply with RFC1035.</p>
 <pre class="source">
-List&lt;String&gt; tags;
+core.List&lt;core.String&gt; tags;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="zone">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>zone</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>zone</strong> <a class="anchor-link"
             href="#zone"
             title="Permalink to Instance.zone">#</a>
         </h4>
@@ -323,7 +323,7 @@ List&lt;String&gt; tags;
 <p>URL of the zone resource describing where this instance should be hosted; provided by the client
 when the instance is created.</p>
 <pre class="source">
-String zone;
+core.String zone;
 </pre>
 </div>
 </div>

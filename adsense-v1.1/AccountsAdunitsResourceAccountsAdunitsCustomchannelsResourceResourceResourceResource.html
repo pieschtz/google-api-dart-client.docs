@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AccountsAdunitsResourceAccountsAdunitsCustomchannelsResourceResourceResourceResource">
+<span class="show-code">Code</span>
+new <strong>AccountsAdunitsResourceAccountsAdunitsCustomchannelsResourceResourceResourceResource</strong>._internal(<a href="../adsense-v1.1/AdsenseApi.html">AdsenseApi</a> $service) <a class="anchor-link" href="#AccountsAdunitsResourceAccountsAdunitsCustomchannelsResourceResourceResourceResource"
+              title="Permalink to AccountsAdunitsResourceAccountsAdunitsCustomchannelsResourceResourceResourceResource.AccountsAdunitsResourceAccountsAdunitsCustomchannelsResourceResourceResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AccountsAdunitsResourceAccountsAdunitsCustomchannelsResourceResourceResourceResource._internal(AdsenseApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> accountId, <a href="../dart_core/String.html">String</a> adClientId, <a href="../dart_core/String.html">String</a> adUnitId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adsense-v1.1/CustomChannels.html">CustomChannels</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> accountId, <a href="../core/String.html">String</a> adClientId, <a href="../core/String.html">String</a> adUnitId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to AccountsAdunitsResourceAccountsAdunitsCustomchannelsResourceResourceResourceResource.list">#</a></h4>
 <div class="doc">
 <p>List all custom channels which the specified ad unit belongs to.</p><ul><li>
@@ -44,7 +56,7 @@
 <pre><code>   Maximum: 10000.
 </code></pre>
 <pre class="source">
-Future&lt;CustomChannels&gt; list(String accountId, String adClientId, String adUnitId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;CustomChannels&gt; list(core.String accountId, core.String adClientId, core.String adUnitId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -65,7 +77,7 @@ Future&lt;CustomChannels&gt; list(String accountId, String adClientId, String ad
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

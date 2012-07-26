@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="QueryResource">
+<span class="show-code">Code</span>
+new <strong>QueryResource</strong>._internal(<a href="../fusiontables-v1/FusiontablesApi.html">FusiontablesApi</a> $service) <a class="anchor-link" href="#QueryResource"
+              title="Permalink to QueryResource.QueryResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+QueryResource._internal(FusiontablesApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="sql">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>sql</strong>(<a href="../dart_core/String.html">String</a> sql, [<a href="../dart_core/bool.html">bool</a> typed = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> hdrs = UNSPECIFIED]) <a class="anchor-link" href="#sql"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/Sqlresponse.html">Sqlresponse</a>&gt; <strong>sql</strong>(<a href="../core/String.html">String</a> sql, [<a href="../core/bool.html">bool</a> typed = UNSPECIFIED, <a href="../core/bool.html">bool</a> hdrs = UNSPECIFIED]) <a class="anchor-link" href="#sql"
               title="Permalink to QueryResource.sql">#</a></h4>
 <div class="doc">
 <p>Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE statement.</p><ul><li>
@@ -39,7 +51,7 @@
    geometries for KML values? Default is true.</p></li><li>
 <span class="param">hdrs</span> Should column names be included (in the first row)?. Default is true.</li></ul>
 <pre class="source">
-Future&lt;Sqlresponse&gt; sql(String sql, [bool typed = UNSPECIFIED, bool hdrs = UNSPECIFIED]) {
+core.Future&lt;Sqlresponse&gt; sql(core.String sql, [core.bool typed = UNSPECIFIED, core.bool hdrs = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -58,7 +70,7 @@ Future&lt;Sqlresponse&gt; sql(String sql, [bool typed = UNSPECIFIED, bool hdrs =
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -69,7 +81,7 @@ Future&lt;Sqlresponse&gt; sql(String sql, [bool typed = UNSPECIFIED, bool hdrs =
 </div>
 <div class="method"><h4 id="sqlGet">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>sqlGet</strong>(<a href="../dart_core/String.html">String</a> sql, [<a href="../dart_core/bool.html">bool</a> typed = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> hdrs = UNSPECIFIED]) <a class="anchor-link" href="#sqlGet"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/Sqlresponse.html">Sqlresponse</a>&gt; <strong>sqlGet</strong>(<a href="../core/String.html">String</a> sql, [<a href="../core/bool.html">bool</a> typed = UNSPECIFIED, <a href="../core/bool.html">bool</a> hdrs = UNSPECIFIED]) <a class="anchor-link" href="#sqlGet"
               title="Permalink to QueryResource.sqlGet">#</a></h4>
 <div class="doc">
 <p>Executes an SQL SELECT/SHOW/DESCRIBE statement.</p><ul><li>
@@ -79,7 +91,7 @@ Future&lt;Sqlresponse&gt; sql(String sql, [bool typed = UNSPECIFIED, bool hdrs =
    geometries for KML values? Default is true.</p></li><li>
 <span class="param">hdrs</span> Should column names be included (in the first row)?. Default is true.</li></ul>
 <pre class="source">
-Future&lt;Sqlresponse&gt; sqlGet(String sql, [bool typed = UNSPECIFIED, bool hdrs = UNSPECIFIED]) {
+core.Future&lt;Sqlresponse&gt; sqlGet(core.String sql, [core.bool typed = UNSPECIFIED, core.bool hdrs = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -98,7 +110,7 @@ Future&lt;Sqlresponse&gt; sqlGet(String sql, [bool typed = UNSPECIFIED, bool hdr
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

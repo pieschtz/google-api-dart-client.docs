@@ -1,0 +1,175 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>PersonName Class / plus-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="plus-v1" data-type="PersonName">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/PersonName.html">PersonName</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>PersonName</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>PersonName</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../plus-v1/PersonName.html">PersonName</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to PersonName.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static PersonName parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new PersonName();
+  result.honorificPrefix = identity(json["honorificPrefix"]);
+  result.middleName = identity(json["middleName"]);
+  result.familyName = identity(json["familyName"]);
+  result.formatted = identity(json["formatted"]);
+  result.givenName = identity(json["givenName"]);
+  result.honorificSuffix = identity(json["honorificSuffix"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../plus-v1/PersonName.html">PersonName</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to PersonName.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(PersonName value) {
+  if (value == null) return null;
+  final result = {};
+  result["honorificPrefix"] = identity(value.honorificPrefix);
+  result["middleName"] = identity(value.middleName);
+  result["familyName"] = identity(value.familyName);
+  result["formatted"] = identity(value.formatted);
+  result["givenName"] = identity(value.givenName);
+  result["honorificSuffix"] = identity(value.honorificSuffix);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to PersonName.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="familyName">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>familyName</strong> <a class="anchor-link"
+            href="#familyName"
+            title="Permalink to PersonName.familyName">#</a>
+        </h4>
+        <div class="doc">
+<p>The family name (last name) of this person.</p>
+<pre class="source">
+core.String familyName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="formatted">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>formatted</strong> <a class="anchor-link"
+            href="#formatted"
+            title="Permalink to PersonName.formatted">#</a>
+        </h4>
+        <div class="doc">
+<p>The full name of this person, including middle names, suffixes, etc.</p>
+<pre class="source">
+core.String formatted;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="givenName">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>givenName</strong> <a class="anchor-link"
+            href="#givenName"
+            title="Permalink to PersonName.givenName">#</a>
+        </h4>
+        <div class="doc">
+<p>The given name (first name) of this person.</p>
+<pre class="source">
+core.String givenName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="honorificPrefix">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>honorificPrefix</strong> <a class="anchor-link"
+            href="#honorificPrefix"
+            title="Permalink to PersonName.honorificPrefix">#</a>
+        </h4>
+        <div class="doc">
+<p>The honorific prefixes (such as "Dr." or "Mrs.") for this person.</p>
+<pre class="source">
+core.String honorificPrefix;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="honorificSuffix">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>honorificSuffix</strong> <a class="anchor-link"
+            href="#honorificSuffix"
+            title="Permalink to PersonName.honorificSuffix">#</a>
+        </h4>
+        <div class="doc">
+<p>The honorific suffixes (such as "Jr.") for this person.</p>
+<pre class="source">
+core.String honorificSuffix;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="middleName">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>middleName</strong> <a class="anchor-link"
+            href="#middleName"
+            title="Permalink to PersonName.middleName">#</a>
+        </h4>
+        <div class="doc">
+<p>The middle name of this person.</p>
+<pre class="source">
+core.String middleName;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

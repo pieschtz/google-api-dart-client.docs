@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../gan-v1beta1/Event.html">Event</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../gan-v1beta1/Event.html">Event</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Event.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Event parse(Map&lt;String, Object&gt; json) {
+static Event parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Event();
   result.networkFee = Money.parse(json["networkFee"]);
@@ -65,12 +65,12 @@ static Event parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/Event.html">Event</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/Event.html">Event</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Event.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Event value) {
+static core.Object serialize(Event value) {
   if (value == null) return null;
   final result = {};
   result["networkFee"] = Money.serialize(value.networkFee);
@@ -111,46 +111,46 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="advertiserId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>advertiserId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>advertiserId</strong> <a class="anchor-link"
             href="#advertiserId"
             title="Permalink to Event.advertiserId">#</a>
         </h4>
         <div class="doc">
 <p>The ID of advertiser for this event.</p>
 <pre class="source">
-String advertiserId;
+core.String advertiserId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="advertiserName">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>advertiserName</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>advertiserName</strong> <a class="anchor-link"
             href="#advertiserName"
             title="Permalink to Event.advertiserName">#</a>
         </h4>
         <div class="doc">
 <p>The name of the advertiser for this event.</p>
 <pre class="source">
-String advertiserName;
+core.String advertiserName;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="chargeId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>chargeId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>chargeId</strong> <a class="anchor-link"
             href="#chargeId"
             title="Permalink to Event.chargeId">#</a>
         </h4>
         <div class="doc">
 <p>The charge ID for this event. Only returned for charge events.</p>
 <pre class="source">
-String chargeId;
+core.String chargeId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="chargeType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>chargeType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>chargeType</strong> <a class="anchor-link"
             href="#chargeType"
             title="Permalink to Event.chargeType">#</a>
         </h4>
@@ -158,7 +158,7 @@ String chargeId;
 <p>Charge type of the event (other|slotting<em>fee|monthly</em>minimum|tier_bonus|debit|credit). Only
 returned for charge events.</p>
 <pre class="source">
-String chargeType;
+core.String chargeType;
 </pre>
 </div>
 </div>
@@ -190,53 +190,53 @@ Money earnings;
 </div>
 <div class="field"><h4 id="eventDate">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>eventDate</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>eventDate</strong> <a class="anchor-link"
             href="#eventDate"
             title="Permalink to Event.eventDate">#</a>
         </h4>
         <div class="doc">
 <p>The date-time this event was initiated as a RFC 3339 date-time value.</p>
 <pre class="source">
-String eventDate;
+core.String eventDate;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Event.kind">#</a>
         </h4>
         <div class="doc">
 <p>The kind for one event.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="memberId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>memberId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>memberId</strong> <a class="anchor-link"
             href="#memberId"
             title="Permalink to Event.memberId">#</a>
         </h4>
         <div class="doc">
 <p>The ID of the member attached to this event. Only returned for conversion events.</p>
 <pre class="source">
-String memberId;
+core.String memberId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="modifyDate">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>modifyDate</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>modifyDate</strong> <a class="anchor-link"
             href="#modifyDate"
             title="Permalink to Event.modifyDate">#</a>
         </h4>
         <div class="doc">
 <p>The date-time this event was last modified as a RFC 3339 date-time value.</p>
 <pre class="source">
-String modifyDate;
+core.String modifyDate;
 </pre>
 </div>
 </div>
@@ -255,27 +255,27 @@ Money networkFee;
 </div>
 <div class="field"><h4 id="orderId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>orderId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>orderId</strong> <a class="anchor-link"
             href="#orderId"
             title="Permalink to Event.orderId">#</a>
         </h4>
         <div class="doc">
 <p>The order ID for this event. Only returned for conversion events.</p>
 <pre class="source">
-String orderId;
+core.String orderId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="products">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>products</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../gan-v1beta1/EventProducts.html">EventProducts</a>&gt;         <strong>products</strong> <a class="anchor-link"
             href="#products"
             title="Permalink to Event.products">#</a>
         </h4>
         <div class="doc">
 <p>Products associated with the event.</p>
 <pre class="source">
-List&lt;EventProducts&gt; products;
+core.List&lt;EventProducts&gt; products;
 </pre>
 </div>
 </div>
@@ -294,53 +294,53 @@ Money publisherFee;
 </div>
 <div class="field"><h4 id="publisherId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>publisherId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>publisherId</strong> <a class="anchor-link"
             href="#publisherId"
             title="Permalink to Event.publisherId">#</a>
         </h4>
         <div class="doc">
 <p>The ID of the publisher for this event.</p>
 <pre class="source">
-String publisherId;
+core.String publisherId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="publisherName">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>publisherName</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>publisherName</strong> <a class="anchor-link"
             href="#publisherName"
             title="Permalink to Event.publisherName">#</a>
         </h4>
         <div class="doc">
 <p>The name of the publisher for this event.</p>
 <pre class="source">
-String publisherName;
+core.String publisherName;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="status">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Event.status">#</a>
         </h4>
         <div class="doc">
 <p>Status of the event (active|canceled). Only returned for charge and conversion events.</p>
 <pre class="source">
-String status;
+core.String status;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="type">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
             href="#type"
             title="Permalink to Event.type">#</a>
         </h4>
         <div class="doc">
 <p>Type of the event (action|transaction|charge).</p>
 <pre class="source">
-String type;
+core.String type;
 </pre>
 </div>
 </div>

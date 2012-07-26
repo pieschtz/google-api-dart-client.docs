@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../shopping-v1/ProductsSpelling.html">ProductsSpelling</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../shopping-v1/ProductsSpelling.html">ProductsSpelling</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to ProductsSpelling.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static ProductsSpelling parse(Map&lt;String, Object&gt; json) {
+static ProductsSpelling parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new ProductsSpelling();
   result.suggestion = identity(json["suggestion"]);
@@ -48,12 +48,12 @@ static ProductsSpelling parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ProductsSpelling.html">ProductsSpelling</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ProductsSpelling.html">ProductsSpelling</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to ProductsSpelling.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(ProductsSpelling value) {
+static core.Object serialize(ProductsSpelling value) {
   if (value == null) return null;
   final result = {};
   result["suggestion"] = identity(value.suggestion);
@@ -77,14 +77,14 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="suggestion">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>suggestion</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>suggestion</strong> <a class="anchor-link"
             href="#suggestion"
             title="Permalink to ProductsSpelling.suggestion">#</a>
         </h4>
         <div class="doc">
 <p>Suggestion for spelling.</p>
 <pre class="source">
-String suggestion;
+core.String suggestion;
 </pre>
 </div>
 </div>

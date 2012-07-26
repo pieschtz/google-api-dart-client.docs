@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AclResource">
+<span class="show-code">Code</span>
+new <strong>AclResource</strong>._internal(<a href="../orkut-v2/OrkutApi.html">OrkutApi</a> $service) <a class="anchor-link" href="#AclResource"
+              title="Permalink to AclResource.AclResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AclResource._internal(OrkutApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> activityId, <a href="../dart_core/String.html">String</a> userId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> activityId, <a href="../core/String.html">String</a> userId) <a class="anchor-link" href="#delete"
               title="Permalink to AclResource.delete">#</a></h4>
 <div class="doc">
 <p>Excludes an element from the ACL of the activity.</p><ul><li>
 <span class="param">activityId</span> ID of the activity.</li><li>
 <span class="param">userId</span> ID of the user to be removed from the activity.</li></ul>
 <pre class="source">
-Future delete(String activityId, String userId) {
+core.Future delete(core.String activityId, core.String userId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future delete(String activityId, String userId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

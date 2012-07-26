@@ -26,10 +26,23 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="MylibraryBookshelvesResourceResource">
+<span class="show-code">Code</span>
+new <strong>MylibraryBookshelvesResourceResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MylibraryBookshelvesResourceResource"
+              title="Permalink to MylibraryBookshelvesResourceResource.MylibraryBookshelvesResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+MylibraryBookshelvesResourceResource._internal(BooksApi $service) : _$service = $service,
+  volumes = new MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="addVolume">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>addVolume</strong>(<a href="../dart_core/String.html">String</a> shelf, <a href="../dart_core/String.html">String</a> volumeId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#addVolume"
+<a href="../core/Future.html">Future</a> <strong>addVolume</strong>(<a href="../core/String.html">String</a> shelf, <a href="../core/String.html">String</a> volumeId, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#addVolume"
               title="Permalink to MylibraryBookshelvesResourceResource.addVolume">#</a></h4>
 <div class="doc">
 <p>Adds a volume to a bookshelf.</p><ul><li>
@@ -37,7 +50,7 @@
 <span class="param">volumeId</span> ID of volume to add.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future addVolume(String shelf, String volumeId, [String source = UNSPECIFIED]) {
+core.Future addVolume(core.String shelf, core.String volumeId, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -56,7 +69,7 @@ Future addVolume(String shelf, String volumeId, [String source = UNSPECIFIED]) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -67,14 +80,14 @@ Future addVolume(String shelf, String volumeId, [String source = UNSPECIFIED]) {
 </div>
 <div class="method"><h4 id="clearVolumes">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>clearVolumes</strong>(<a href="../dart_core/String.html">String</a> shelf, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#clearVolumes"
+<a href="../core/Future.html">Future</a> <strong>clearVolumes</strong>(<a href="../core/String.html">String</a> shelf, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#clearVolumes"
               title="Permalink to MylibraryBookshelvesResourceResource.clearVolumes">#</a></h4>
 <div class="doc">
 <p>Clears all volumes from a bookshelf.</p><ul><li>
 <span class="param">shelf</span> ID of bookshelf from which to remove a volume.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future clearVolumes(String shelf, [String source = UNSPECIFIED]) {
+core.Future clearVolumes(core.String shelf, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -92,7 +105,7 @@ Future clearVolumes(String shelf, [String source = UNSPECIFIED]) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -103,14 +116,14 @@ Future clearVolumes(String shelf, [String source = UNSPECIFIED]) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> shelf, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Bookshelf.html">Bookshelf</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> shelf, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to MylibraryBookshelvesResourceResource.get">#</a></h4>
 <div class="doc">
 <p>Retrieves metadata for a specific bookshelf belonging to the authenticated user.</p><ul><li>
 <span class="param">shelf</span> ID of bookshelf to retrieve.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future&lt;Bookshelf&gt; get(String shelf, [String source = UNSPECIFIED]) {
+core.Future&lt;Bookshelf&gt; get(core.String shelf, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -128,7 +141,7 @@ Future&lt;Bookshelf&gt; get(String shelf, [String source = UNSPECIFIED]) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -139,13 +152,13 @@ Future&lt;Bookshelf&gt; get(String shelf, [String source = UNSPECIFIED]) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Bookshelves.html">Bookshelves</a>&gt; <strong>list</strong>([<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to MylibraryBookshelvesResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of bookshelves belonging to the authenticated user.</p><ul><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future&lt;Bookshelves&gt; list([String source = UNSPECIFIED]) {
+core.Future&lt;Bookshelves&gt; list([core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -162,7 +175,7 @@ Future&lt;Bookshelves&gt; list([String source = UNSPECIFIED]) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -173,7 +186,7 @@ Future&lt;Bookshelves&gt; list([String source = UNSPECIFIED]) {
 </div>
 <div class="method"><h4 id="moveVolume">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>moveVolume</strong>(<a href="../dart_core/String.html">String</a> shelf, <a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/int.html">int</a> volumePosition, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#moveVolume"
+<a href="../core/Future.html">Future</a> <strong>moveVolume</strong>(<a href="../core/String.html">String</a> shelf, <a href="../core/String.html">String</a> volumeId, <a href="../core/int.html">int</a> volumePosition, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#moveVolume"
               title="Permalink to MylibraryBookshelvesResourceResource.moveVolume">#</a></h4>
 <div class="doc">
 <p>Moves a volume within a bookshelf.</p><ul><li>
@@ -184,7 +197,7 @@ Future&lt;Bookshelves&gt; list([String source = UNSPECIFIED]) {
    the first and the second and so on.)</p></li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future moveVolume(String shelf, String volumeId, int volumePosition, [String source = UNSPECIFIED]) {
+core.Future moveVolume(core.String shelf, core.String volumeId, core.int volumePosition, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -204,7 +217,7 @@ Future moveVolume(String shelf, String volumeId, int volumePosition, [String sou
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -215,7 +228,7 @@ Future moveVolume(String shelf, String volumeId, int volumePosition, [String sou
 </div>
 <div class="method"><h4 id="removeVolume">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>removeVolume</strong>(<a href="../dart_core/String.html">String</a> shelf, <a href="../dart_core/String.html">String</a> volumeId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#removeVolume"
+<a href="../core/Future.html">Future</a> <strong>removeVolume</strong>(<a href="../core/String.html">String</a> shelf, <a href="../core/String.html">String</a> volumeId, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#removeVolume"
               title="Permalink to MylibraryBookshelvesResourceResource.removeVolume">#</a></h4>
 <div class="doc">
 <p>Removes a volume from a bookshelf.</p><ul><li>
@@ -223,7 +236,7 @@ Future moveVolume(String shelf, String volumeId, int volumePosition, [String sou
 <span class="param">volumeId</span> ID of volume to remove.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future removeVolume(String shelf, String volumeId, [String source = UNSPECIFIED]) {
+core.Future removeVolume(core.String shelf, core.String volumeId, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -242,7 +255,7 @@ Future removeVolume(String shelf, String volumeId, [String source = UNSPECIFIED]
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../discovery-v1/RestMethod.html">RestMethod</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../discovery-v1/RestMethod.html">RestMethod</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to RestMethod.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static RestMethod parse(Map&lt;String, Object&gt; json) {
+static RestMethod parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new RestMethod();
   result.scopes = map(identity)(json["scopes"]);
@@ -60,12 +60,12 @@ static RestMethod parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../discovery-v1/RestMethod.html">RestMethod</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../discovery-v1/RestMethod.html">RestMethod</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to RestMethod.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(RestMethod value) {
+static core.Object serialize(RestMethod value) {
   if (value == null) return null;
   final result = {};
   result["scopes"] = map(identity)(value.scopes);
@@ -101,33 +101,33 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to RestMethod.description">#</a>
         </h4>
         <div class="doc">
 <p>Description of this method.</p>
 <pre class="source">
-String description;
+core.String description;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="httpMethod">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>httpMethod</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>httpMethod</strong> <a class="anchor-link"
             href="#httpMethod"
             title="Permalink to RestMethod.httpMethod">#</a>
         </h4>
         <div class="doc">
 <p>HTTP method used by this method.</p>
 <pre class="source">
-String httpMethod;
+core.String httpMethod;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to RestMethod.id">#</a>
         </h4>
@@ -135,7 +135,7 @@ String httpMethod;
 <p>A unique ID for this method. This property can be used to match methods between different
 versions of Discovery.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
@@ -154,7 +154,7 @@ RestMethodMediaUpload mediaUpload;
 </div>
 <div class="field"><h4 id="parameterOrder">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>parameterOrder</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>parameterOrder</strong> <a class="anchor-link"
             href="#parameterOrder"
             title="Permalink to RestMethod.parameterOrder">#</a>
         </h4>
@@ -162,26 +162,26 @@ RestMethodMediaUpload mediaUpload;
 <p>Ordered list of required parameters, serves as a hint to clients on how to structure their method
 signatures. The array is ordered such that the "most-significant" parameter appears first.</p>
 <pre class="source">
-List&lt;String&gt; parameterOrder;
+core.List&lt;core.String&gt; parameterOrder;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="parameters">
 <span class="show-code">Code</span>
-<a href="../dart_core/Map.html">Map</a>         <strong>parameters</strong> <a class="anchor-link"
+<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../discovery-v1/JsonSchema.html">JsonSchema</a>&gt;         <strong>parameters</strong> <a class="anchor-link"
             href="#parameters"
             title="Permalink to RestMethod.parameters">#</a>
         </h4>
         <div class="doc">
 <p>Details for all parameters in this method.</p>
 <pre class="source">
-Map&lt;String, JsonSchema&gt; parameters;
+core.Map&lt;core.String, JsonSchema&gt; parameters;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="path">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>path</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>path</strong> <a class="anchor-link"
             href="#path"
             title="Permalink to RestMethod.path">#</a>
         </h4>
@@ -189,7 +189,7 @@ Map&lt;String, JsonSchema&gt; parameters;
 <p>The URI path of this REST method. Should be used in conjunction with the basePath property at the
 api-level.</p>
 <pre class="source">
-String path;
+core.String path;
 </pre>
 </div>
 </div>
@@ -221,53 +221,53 @@ RestMethodResponse response;
 </div>
 <div class="field"><h4 id="scopes">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>scopes</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/Object.html">Object</a>&gt;         <strong>scopes</strong> <a class="anchor-link"
             href="#scopes"
             title="Permalink to RestMethod.scopes">#</a>
         </h4>
         <div class="doc">
 <p>OAuth 2.0 scopes applicable to this method.</p>
 <pre class="source">
-List&lt;Object&gt; scopes;
+core.List&lt;core.Object&gt; scopes;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="supportsMediaDownload">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>supportsMediaDownload</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>supportsMediaDownload</strong> <a class="anchor-link"
             href="#supportsMediaDownload"
             title="Permalink to RestMethod.supportsMediaDownload">#</a>
         </h4>
         <div class="doc">
 <p>Whether this method supports media downloads.</p>
 <pre class="source">
-bool supportsMediaDownload;
+core.bool supportsMediaDownload;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="supportsMediaUpload">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>supportsMediaUpload</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>supportsMediaUpload</strong> <a class="anchor-link"
             href="#supportsMediaUpload"
             title="Permalink to RestMethod.supportsMediaUpload">#</a>
         </h4>
         <div class="doc">
 <p>Whether this method supports media uploads.</p>
 <pre class="source">
-bool supportsMediaUpload;
+core.bool supportsMediaUpload;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="supportsSubscription">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>supportsSubscription</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>supportsSubscription</strong> <a class="anchor-link"
             href="#supportsSubscription"
             title="Permalink to RestMethod.supportsSubscription">#</a>
         </h4>
         <div class="doc">
 <p>Whether this method supports subscriptions.</p>
 <pre class="source">
-bool supportsSubscription;
+core.bool supportsSubscription;
 </pre>
 </div>
 </div>

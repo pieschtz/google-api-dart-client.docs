@@ -26,13 +26,22 @@
 <div class="doc">
 
 </div>
-<h3>Extends</h3>
-<p>
-<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><a href="../storage-v1beta1/Object.html">Object</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ObjectAccessControlsResource</strong></span></p>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ObjectAccessControlsResource">
+<span class="show-code">Code</span>
+new <strong>ObjectAccessControlsResource</strong>._internal(<a href="../storage-v1beta1/StorageApi.html">StorageApi</a> $service) <a class="anchor-link" href="#ObjectAccessControlsResource"
+              title="Permalink to ObjectAccessControlsResource.ObjectAccessControlsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ObjectAccessControlsResource._internal(StorageApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object, <a href="../dart_core/String.html">String</a> entity) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> bucket, <a href="../core/String.html">String</a> object, <a href="../core/String.html">String</a> entity) <a class="anchor-link" href="#delete"
               title="Permalink to ObjectAccessControlsResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes the ACL entry for the specified entity on the specified object.</p><ul><li>
@@ -42,7 +51,7 @@
 <span class="param">entity</span> The entity holding the permission. Can be user-userId, group-groupId, allUsers, or
    allAuthenticatedUsers.</p></li></ul>
 <pre class="source">
-Future delete(String bucket, String object, String entity) {
+core.Future delete(core.String bucket, core.String object, core.String entity) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -61,7 +70,7 @@ Future delete(String bucket, String object, String entity) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -72,7 +81,7 @@ Future delete(String bucket, String object, String entity) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object, <a href="../dart_core/String.html">String</a> entity) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/ObjectAccessControl.html">ObjectAccessControl</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> bucket, <a href="../core/String.html">String</a> object, <a href="../core/String.html">String</a> entity) <a class="anchor-link" href="#get"
               title="Permalink to ObjectAccessControlsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the ACL entry for the specified entity on the specified object.</p><ul><li>
@@ -82,7 +91,7 @@ Future delete(String bucket, String object, String entity) {
 <span class="param">entity</span> The entity holding the permission. Can be user-userId, group-groupId, allUsers, or
    allAuthenticatedUsers.</p></li></ul>
 <pre class="source">
-Future&lt;Objectaccesscontrol&gt; get(String bucket, String object, String entity) {
+core.Future&lt;ObjectAccessControl&gt; get(core.String bucket, core.String object, core.String entity) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -101,26 +110,26 @@ Future&lt;Objectaccesscontrol&gt; get(String bucket, String object, String entit
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
-      .transform((final $text) =&gt; Objectaccesscontrol.parse(JSON.parse($text)));
+      .transform((final $text) =&gt; ObjectAccessControl.parse(JSON.parse($text)));
 }
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object, <a href="../storage-v1beta1/Objectaccesscontrol.html">Objectaccesscontrol</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/ObjectAccessControl.html">ObjectAccessControl</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> bucket, <a href="../core/String.html">String</a> object, <a href="../storage-v1beta1/ObjectAccessControl.html">ObjectAccessControl</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to ObjectAccessControlsResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a new ACL entry on the specified object.</p><ul><li>
-<span class="param">content</span> the Objectaccesscontrol</li><li>
+<span class="param">content</span> the ObjectAccessControl</li><li>
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">object</span> Name of the object.</li></ul>
 <pre class="source">
-Future&lt;Objectaccesscontrol&gt; insert(String bucket, String object, Objectaccesscontrol content) {
+core.Future&lt;ObjectAccessControl&gt; insert(core.String bucket, core.String object, ObjectAccessControl content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -135,30 +144,30 @@ Future&lt;Objectaccesscontrol&gt; insert(String bucket, String object, Objectacc
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
-  final $body = JSON.stringify(Objectaccesscontrol.serialize(content));
+  final $body = JSON.stringify(ObjectAccessControl.serialize(content));
   final $path = "b/{bucket}/o/{object}/acl";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
-      .transform((final $text) =&gt; Objectaccesscontrol.parse(JSON.parse($text)));
+      .transform((final $text) =&gt; ObjectAccessControl.parse(JSON.parse($text)));
 }
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/ObjectAccessControls.html">ObjectAccessControls</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> bucket, <a href="../core/String.html">String</a> object) <a class="anchor-link" href="#list"
               title="Permalink to ObjectAccessControlsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves ACL entries on the specified object.</p><ul><li>
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">object</span> Name of the object.</li></ul>
 <pre class="source">
-Future&lt;Objectaccesscontrols&gt; list(String bucket, String object) {
+core.Future&lt;ObjectAccessControls&gt; list(core.String bucket, core.String object) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -176,29 +185,29 @@ Future&lt;Objectaccesscontrols&gt; list(String bucket, String object) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
-      .transform((final $text) =&gt; Objectaccesscontrols.parse(JSON.parse($text)));
+      .transform((final $text) =&gt; ObjectAccessControls.parse(JSON.parse($text)));
 }
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object, <a href="../dart_core/String.html">String</a> entity, <a href="../storage-v1beta1/Objectaccesscontrol.html">Objectaccesscontrol</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/ObjectAccessControl.html">ObjectAccessControl</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> bucket, <a href="../core/String.html">String</a> object, <a href="../core/String.html">String</a> entity, <a href="../storage-v1beta1/ObjectAccessControl.html">ObjectAccessControl</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to ObjectAccessControlsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates an ACL entry on the specified object. This method supports patch semantics.</p><ul><li>
-<span class="param">content</span> the Objectaccesscontrol</li><li>
+<span class="param">content</span> the ObjectAccessControl</li><li>
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">object</span> Name of the object.</li><li>
 <p>
 <span class="param">entity</span> The entity holding the permission. Can be user-userId, group-groupId, allUsers, or
    allAuthenticatedUsers.</p></li></ul>
 <pre class="source">
-Future&lt;Objectaccesscontrol&gt; patch(String bucket, String object, String entity, Objectaccesscontrol content) {
+core.Future&lt;ObjectAccessControl&gt; patch(core.String bucket, core.String object, core.String entity, ObjectAccessControl content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -214,34 +223,34 @@ Future&lt;Objectaccesscontrol&gt; patch(String bucket, String object, String ent
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
-  final $body = JSON.stringify(Objectaccesscontrol.serialize(content));
+  final $body = JSON.stringify(ObjectAccessControl.serialize(content));
   final $path = "b/{bucket}/o/{object}/acl/{entity}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
-      .transform((final $text) =&gt; Objectaccesscontrol.parse(JSON.parse($text)));
+      .transform((final $text) =&gt; ObjectAccessControl.parse(JSON.parse($text)));
 }
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> bucket, <a href="../dart_core/String.html">String</a> object, <a href="../dart_core/String.html">String</a> entity, <a href="../storage-v1beta1/Objectaccesscontrol.html">Objectaccesscontrol</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/ObjectAccessControl.html">ObjectAccessControl</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> bucket, <a href="../core/String.html">String</a> object, <a href="../core/String.html">String</a> entity, <a href="../storage-v1beta1/ObjectAccessControl.html">ObjectAccessControl</a> content) <a class="anchor-link" href="#update"
               title="Permalink to ObjectAccessControlsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates an ACL entry on the specified object.</p><ul><li>
-<span class="param">content</span> the Objectaccesscontrol</li><li>
+<span class="param">content</span> the ObjectAccessControl</li><li>
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">object</span> Name of the object.</li><li>
 <p>
 <span class="param">entity</span> The entity holding the permission. Can be user-userId, group-groupId, allUsers, or
    allAuthenticatedUsers.</p></li></ul>
 <pre class="source">
-Future&lt;Objectaccesscontrol&gt; update(String bucket, String object, String entity, Objectaccesscontrol content) {
+core.Future&lt;ObjectAccessControl&gt; update(core.String bucket, core.String object, core.String entity, ObjectAccessControl content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -257,16 +266,16 @@ Future&lt;Objectaccesscontrol&gt; update(String bucket, String object, String en
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   $headers["Content-Type"] = "application/json";
-  final $body = JSON.stringify(Objectaccesscontrol.serialize(content));
+  final $body = JSON.stringify(ObjectAccessControl.serialize(content));
   final $path = "b/{bucket}/o/{object}/acl/{entity}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
-      .transform((final $text) =&gt; Objectaccesscontrol.parse(JSON.parse($text)));
+      .transform((final $text) =&gt; ObjectAccessControl.parse(JSON.parse($text)));
 }
 </pre>
 </div>

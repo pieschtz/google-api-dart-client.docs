@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="BookshelvesVolumesResourceResource">
+<span class="show-code">Code</span>
+new <strong>BookshelvesVolumesResourceResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#BookshelvesVolumesResourceResource"
+              title="Permalink to BookshelvesVolumesResourceResource.BookshelvesVolumesResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+BookshelvesVolumesResourceResource._internal(BooksApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> userId, <a href="../dart_core/String.html">String</a> shelf, [<a href="../dart_core/bool.html">bool</a> showPreorders = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Volumes.html">Volumes</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> userId, <a href="../core/String.html">String</a> shelf, [<a href="../core/bool.html">bool</a> showPreorders = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> source = UNSPECIFIED, <a href="../core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to BookshelvesVolumesResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves volumes in a specific bookshelf for the specified user.</p><ul><li>
@@ -44,7 +56,7 @@
 <span class="param">startIndex</span> Index of the first element to return (starts at 0)</p>
 <p>Minimum: 0.</p>
 <pre class="source">
-Future&lt;Volumes&gt; list(String userId, String shelf, [bool showPreorders = UNSPECIFIED, int maxResults = UNSPECIFIED, String source = UNSPECIFIED, int startIndex = UNSPECIFIED]) {
+core.Future&lt;Volumes&gt; list(core.String userId, core.String shelf, [core.bool showPreorders = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String source = UNSPECIFIED, core.int startIndex = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -66,7 +78,7 @@ Future&lt;Volumes&gt; list(String userId, String shelf, [bool showPreorders = UN
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

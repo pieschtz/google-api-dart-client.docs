@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../shopping-v1/ShoppingModelProductJsonV1ImagesThumbnails.html">ShoppingModelProductJsonV1ImagesThumbnails</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../shopping-v1/ShoppingModelProductJsonV1ImagesThumbnails.html">ShoppingModelProductJsonV1ImagesThumbnails</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to ShoppingModelProductJsonV1ImagesThumbnails.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static ShoppingModelProductJsonV1ImagesThumbnails parse(Map&lt;String, Object&gt; json) {
+static ShoppingModelProductJsonV1ImagesThumbnails parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new ShoppingModelProductJsonV1ImagesThumbnails();
   result.content = identity(json["content"]);
@@ -51,12 +51,12 @@ static ShoppingModelProductJsonV1ImagesThumbnails parse(Map&lt;String, Object&gt
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ShoppingModelProductJsonV1ImagesThumbnails.html">ShoppingModelProductJsonV1ImagesThumbnails</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ShoppingModelProductJsonV1ImagesThumbnails.html">ShoppingModelProductJsonV1ImagesThumbnails</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to ShoppingModelProductJsonV1ImagesThumbnails.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(ShoppingModelProductJsonV1ImagesThumbnails value) {
+static core.Object serialize(ShoppingModelProductJsonV1ImagesThumbnails value) {
   if (value == null) return null;
   final result = {};
   result["content"] = identity(value.content);
@@ -83,7 +83,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="content">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>content</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>content</strong> <a class="anchor-link"
             href="#content"
             title="Permalink to ShoppingModelProductJsonV1ImagesThumbnails.content">#</a>
         </h4>
@@ -91,46 +91,46 @@ toString() =&gt; serialize(this).toString();
 <p>Content of thumbnail (only available for the first thumbnail of the top results if SAYT is
 enabled).</p>
 <pre class="source">
-String content;
+core.String content;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="height">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>height</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>height</strong> <a class="anchor-link"
             href="#height"
             title="Permalink to ShoppingModelProductJsonV1ImagesThumbnails.height">#</a>
         </h4>
         <div class="doc">
 <p>Height of thumbnail (omitted if not specified in the request).</p>
 <pre class="source">
-int height;
+core.int height;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="link">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
             href="#link"
             title="Permalink to ShoppingModelProductJsonV1ImagesThumbnails.link">#</a>
         </h4>
         <div class="doc">
 <p>Link to thumbnail.</p>
 <pre class="source">
-String link;
+core.String link;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="width">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>width</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>width</strong> <a class="anchor-link"
             href="#width"
             title="Permalink to ShoppingModelProductJsonV1ImagesThumbnails.width">#</a>
         </h4>
         <div class="doc">
 <p>Width of thumbnail (omitted if not specified in the request).</p>
 <pre class="source">
-int width;
+core.int width;
 </pre>
 </div>
 </div>

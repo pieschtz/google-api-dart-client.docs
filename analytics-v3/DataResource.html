@@ -26,6 +26,20 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="DataResource">
+<span class="show-code">Code</span>
+new <strong>DataResource</strong>._internal(<a href="../analytics-v3/AnalyticsApi.html">AnalyticsApi</a> $service) <a class="anchor-link" href="#DataResource"
+              title="Permalink to DataResource.DataResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+DataResource._internal(AnalyticsApi $service) : _$service = $service,
+  mcf = new DataMcfResourceResource._internal($service),
+  ga = new DataGaResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Fields</h3>
 <div class="field"><h4 id="ga">
 <span class="show-code">Code</span>
@@ -37,6 +51,19 @@ final <a href="../analytics-v3/DataGaResourceResource.html">DataGaResourceResour
 
 <pre class="source">
 final DataGaResourceResource ga;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="mcf">
+<span class="show-code">Code</span>
+final <a href="../analytics-v3/DataMcfResourceResource.html">DataMcfResourceResource</a>         <strong>mcf</strong> <a class="anchor-link"
+            href="#mcf"
+            title="Permalink to DataResource.mcf">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+final DataMcfResourceResource mcf;
 </pre>
 </div>
 </div>

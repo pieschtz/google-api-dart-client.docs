@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../books-v1/VolumeAccessInfo.html">VolumeAccessInfo</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../books-v1/VolumeAccessInfo.html">VolumeAccessInfo</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to VolumeAccessInfo.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static VolumeAccessInfo parse(Map&lt;String, Object&gt; json) {
+static VolumeAccessInfo parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new VolumeAccessInfo();
   result.webReaderLink = identity(json["webReaderLink"]);
@@ -58,12 +58,12 @@ static VolumeAccessInfo parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/VolumeAccessInfo.html">VolumeAccessInfo</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/VolumeAccessInfo.html">VolumeAccessInfo</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to VolumeAccessInfo.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(VolumeAccessInfo value) {
+static core.Object serialize(VolumeAccessInfo value) {
   if (value == null) return null;
   final result = {};
   result["webReaderLink"] = identity(value.webReaderLink);
@@ -97,7 +97,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="accessViewStatus">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>accessViewStatus</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>accessViewStatus</strong> <a class="anchor-link"
             href="#accessViewStatus"
             title="Permalink to VolumeAccessInfo.accessViewStatus">#</a>
         </h4>
@@ -105,13 +105,13 @@ toString() =&gt; serialize(this).toString();
 <p>Combines the access and viewability of this volume into a single status field for this user.
 Values can be FULL<em>PURCHASED, FULL</em>PUBLIC_DOMAIN, SAMPLE or NONE. (In LITE projection.)</p>
 <pre class="source">
-String accessViewStatus;
+core.String accessViewStatus;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="country">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>country</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>country</strong> <a class="anchor-link"
             href="#country"
             title="Permalink to VolumeAccessInfo.country">#</a>
         </h4>
@@ -119,7 +119,7 @@ String accessViewStatus;
 <p>The two-letter ISO_3166-1 country code for which this access information is valid. (In LITE
 projection.)</p>
 <pre class="source">
-String country;
+core.String country;
 </pre>
 </div>
 </div>
@@ -138,14 +138,14 @@ DownloadAccessRestriction downloadAccess;
 </div>
 <div class="field"><h4 id="embeddable">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>embeddable</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>embeddable</strong> <a class="anchor-link"
             href="#embeddable"
             title="Permalink to VolumeAccessInfo.embeddable">#</a>
         </h4>
         <div class="doc">
 <p>Whether this volume can be embedded in a viewport using the Embedded Viewer API.</p>
 <pre class="source">
-bool embeddable;
+core.bool embeddable;
 </pre>
 </div>
 </div>
@@ -177,20 +177,20 @@ VolumeAccessInfoPdf pdf;
 </div>
 <div class="field"><h4 id="publicDomain">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>publicDomain</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>publicDomain</strong> <a class="anchor-link"
             href="#publicDomain"
             title="Permalink to VolumeAccessInfo.publicDomain">#</a>
         </h4>
         <div class="doc">
 <p>Whether or not this book is public domain in the country listed above.</p>
 <pre class="source">
-bool publicDomain;
+core.bool publicDomain;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="textToSpeechPermission">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>textToSpeechPermission</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>textToSpeechPermission</strong> <a class="anchor-link"
             href="#textToSpeechPermission"
             title="Permalink to VolumeAccessInfo.textToSpeechPermission">#</a>
         </h4>
@@ -198,13 +198,27 @@ bool publicDomain;
 <p>Whether text-to-speech is permitted for this volume. Values can be ALLOWED,
 ALLOWED<em>FOR</em>ACCESSIBILITY, or NOT_ALLOWED.</p>
 <pre class="source">
-String textToSpeechPermission;
+core.String textToSpeechPermission;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="viewOrderUrl">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>viewOrderUrl</strong> <a class="anchor-link"
+            href="#viewOrderUrl"
+            title="Permalink to VolumeAccessInfo.viewOrderUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>For ordered but not yet processed orders, we give a URL that can be used to go to the appropriate
+Google Wallet page.</p>
+<pre class="source">
+core.String viewOrderUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="viewability">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>viewability</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>viewability</strong> <a class="anchor-link"
             href="#viewability"
             title="Permalink to VolumeAccessInfo.viewability">#</a>
         </h4>
@@ -214,27 +228,13 @@ value depends on the country listed above. A value of PARTIAL means that the pub
 allowed some portion of the volume to be viewed publicly, without purchase. This can apply to
 eBooks as well as non-eBooks. Public domain books will always have a value of ALL_PAGES.</p>
 <pre class="source">
-String viewability;
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="viewOrderUrl">
-<span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>viewOrderUrl</strong> <a class="anchor-link"
-            href="#viewOrderUrl"
-            title="Permalink to VolumeAccessInfo.viewOrderUrl">#</a>
-        </h4>
-        <div class="doc">
-<p>For ordered but not yet processed orders, we give a URL that can be used to go to the appropriate
-Google Wallet page.</p>
-<pre class="source">
-String viewOrderUrl;
+core.String viewability;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="webReaderLink">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>webReaderLink</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>webReaderLink</strong> <a class="anchor-link"
             href="#webReaderLink"
             title="Permalink to VolumeAccessInfo.webReaderLink">#</a>
         </h4>
@@ -242,7 +242,7 @@ String viewOrderUrl;
 <p>URL to read this volume on the Google Books site. Link will not allow users to read non-viewable
 volumes.</p>
 <pre class="source">
-String webReaderLink;
+core.String webReaderLink;
 </pre>
 </div>
 </div>

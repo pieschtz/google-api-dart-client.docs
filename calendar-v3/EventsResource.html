@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="EventsResource">
+<span class="show-code">Code</span>
+new <strong>EventsResource</strong>._internal(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#EventsResource"
+              title="Permalink to EventsResource.EventsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+EventsResource._internal(CalendarApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> eventId, [<a href="../dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../core/String.html">String</a> eventId, [<a href="../core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#delete"
               title="Permalink to EventsResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes an event.</p><ul><li>
@@ -37,7 +49,7 @@
 <span class="param">eventId</span> Event identifier.</li><li>
 <span class="param">sendNotifications</span> Whether to send notifications about the deletion of the event. Optional. The default is False.</li></ul>
 <pre class="source">
-Future delete(String calendarId, String eventId, [bool sendNotifications = UNSPECIFIED]) {
+core.Future delete(core.String calendarId, core.String eventId, [core.bool sendNotifications = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -56,7 +68,7 @@ Future delete(String calendarId, String eventId, [bool sendNotifications = UNSPE
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -67,7 +79,7 @@ Future delete(String calendarId, String eventId, [bool sendNotifications = UNSPE
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> eventId, [<a href="../dart_core/String.html">String</a> timeZone = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxAttendees = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../core/String.html">String</a> eventId, [<a href="../core/String.html">String</a> timeZone = UNSPECIFIED, <a href="../core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../core/int.html">int</a> maxAttendees = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to EventsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns an event.</p><ul><li>
@@ -85,7 +97,7 @@ Future delete(String calendarId, String eventId, [bool sendNotifications = UNSPE
    number of attendees, only the participant is returned. Optional.</p></li></ul>
 <p>Minimum: 1.</p>
 <pre class="source">
-Future&lt;Event&gt; get(String calendarId, String eventId, [String timeZone = UNSPECIFIED, bool alwaysIncludeEmail = UNSPECIFIED, int maxAttendees = UNSPECIFIED]) {
+core.Future&lt;Event&gt; get(core.String calendarId, core.String eventId, [core.String timeZone = UNSPECIFIED, core.bool alwaysIncludeEmail = UNSPECIFIED, core.int maxAttendees = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -106,7 +118,7 @@ Future&lt;Event&gt; get(String calendarId, String eventId, [String timeZone = UN
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -117,14 +129,14 @@ Future&lt;Event&gt; get(String calendarId, String eventId, [String timeZone = UN
 </div>
 <div class="method"><h4 id="import">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>import</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/Event.html">Event</a> content) <a class="anchor-link" href="#import"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>import</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../calendar-v3/Event.html">Event</a> content) <a class="anchor-link" href="#import"
               title="Permalink to EventsResource.import">#</a></h4>
 <div class="doc">
 <p>Imports an event.</p><ul><li>
 <span class="param">content</span> the Event</li><li>
 <span class="param">calendarId</span> Calendar identifier.</li></ul>
 <pre class="source">
-Future&lt;Event&gt; import(String calendarId, Event content) {
+core.Future&lt;Event&gt; import(core.String calendarId, Event content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -143,7 +155,7 @@ Future&lt;Event&gt; import(String calendarId, Event content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -154,7 +166,7 @@ Future&lt;Event&gt; import(String calendarId, Event content) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="../dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="../core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#insert"
               title="Permalink to EventsResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates an event.</p><ul><li>
@@ -162,7 +174,7 @@ Future&lt;Event&gt; import(String calendarId, Event content) {
 <span class="param">calendarId</span> Calendar identifier.</li><li>
 <span class="param">sendNotifications</span> Whether to send notifications about the creation of the new event. Optional. The default is False.</li></ul>
 <pre class="source">
-Future&lt;Event&gt; insert(String calendarId, Event content, [bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; insert(core.String calendarId, Event content, [core.bool sendNotifications = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -182,7 +194,7 @@ Future&lt;Event&gt; insert(String calendarId, Event content, [bool sendNotificat
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -193,7 +205,7 @@ Future&lt;Event&gt; insert(String calendarId, Event content, [bool sendNotificat
 </div>
 <div class="method"><h4 id="instances">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>instances</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> eventId, [<a href="../dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timeZone = UNSPECIFIED, <a href="../dart_core/String.html">String</a> originalStart = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxAttendees = UNSPECIFIED]) <a class="anchor-link" href="#instances"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Events.html">Events</a>&gt; <strong>instances</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../core/String.html">String</a> eventId, [<a href="../core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/String.html">String</a> timeZone = UNSPECIFIED, <a href="../core/String.html">String</a> originalStart = UNSPECIFIED, <a href="../core/int.html">int</a> maxAttendees = UNSPECIFIED]) <a class="anchor-link" href="#instances"
               title="Permalink to EventsResource.instances">#</a></h4>
 <div class="doc">
 <p>Returns instances of the specified recurring event.</p><ul><li>
@@ -222,7 +234,7 @@ Future&lt;Event&gt; insert(String calendarId, Event content, [bool sendNotificat
 </code></pre>
 <p>Minimum: 1.</p>
 <pre class="source">
-Future&lt;Events&gt; instances(String calendarId, String eventId, [bool showDeleted = UNSPECIFIED, bool alwaysIncludeEmail = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, String timeZone = UNSPECIFIED, String originalStart = UNSPECIFIED, int maxAttendees = UNSPECIFIED]) {
+core.Future&lt;Events&gt; instances(core.String calendarId, core.String eventId, [core.bool showDeleted = UNSPECIFIED, core.bool alwaysIncludeEmail = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String timeZone = UNSPECIFIED, core.String originalStart = UNSPECIFIED, core.int maxAttendees = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -247,7 +259,7 @@ Future&lt;Events&gt; instances(String calendarId, String eventId, [bool showDele
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -258,7 +270,7 @@ Future&lt;Events&gt; instances(String calendarId, String eventId, [bool showDele
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> calendarId, [<a href="../calendar-v3/EventsResourceListOrderBy.html">EventsResourceListOrderBy</a> orderBy = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> showHiddenInvitations = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../dart_core/String.html">String</a> iCalUID = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> singleEvents = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timeMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timeZone = UNSPECIFIED, <a href="../dart_core/String.html">String</a> timeMax = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxAttendees = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Events.html">Events</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> calendarId, [<a href="../calendar-v3/EventsResourceListOrderBy.html">EventsResourceListOrderBy</a> orderBy = UNSPECIFIED, <a href="../core/bool.html">bool</a> showHiddenInvitations = UNSPECIFIED, <a href="../core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../core/String.html">String</a> iCalUID = UNSPECIFIED, <a href="../core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="../core/bool.html">bool</a> singleEvents = UNSPECIFIED, <a href="../core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> q = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/String.html">String</a> timeMin = UNSPECIFIED, <a href="../core/String.html">String</a> timeZone = UNSPECIFIED, <a href="../core/String.html">String</a> timeMax = UNSPECIFIED, <a href="../core/int.html">int</a> maxAttendees = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to EventsResource.list">#</a></h4>
 <div class="doc">
 <p>Returns events on the specified calendar.</p><ul><li>
@@ -303,7 +315,7 @@ Future&lt;Events&gt; instances(String calendarId, String eventId, [bool showDele
    number of attendees, only the participant is returned. Optional.</p></li></ul>
 <p>Minimum: 1.</p>
 <pre class="source">
-Future&lt;Events&gt; list(String calendarId, [EventsResourceListOrderBy orderBy = UNSPECIFIED, bool showHiddenInvitations = UNSPECIFIED, bool showDeleted = UNSPECIFIED, String iCalUID = UNSPECIFIED, String updatedMin = UNSPECIFIED, bool singleEvents = UNSPECIFIED, bool alwaysIncludeEmail = UNSPECIFIED, int maxResults = UNSPECIFIED, String q = UNSPECIFIED, String pageToken = UNSPECIFIED, String timeMin = UNSPECIFIED, String timeZone = UNSPECIFIED, String timeMax = UNSPECIFIED, int maxAttendees = UNSPECIFIED]) {
+core.Future&lt;Events&gt; list(core.String calendarId, [EventsResourceListOrderBy orderBy = UNSPECIFIED, core.bool showHiddenInvitations = UNSPECIFIED, core.bool showDeleted = UNSPECIFIED, core.String iCalUID = UNSPECIFIED, core.String updatedMin = UNSPECIFIED, core.bool singleEvents = UNSPECIFIED, core.bool alwaysIncludeEmail = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String q = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String timeMin = UNSPECIFIED, core.String timeZone = UNSPECIFIED, core.String timeMax = UNSPECIFIED, core.int maxAttendees = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -334,7 +346,7 @@ Future&lt;Events&gt; list(String calendarId, [EventsResourceListOrderBy orderBy 
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -345,7 +357,7 @@ Future&lt;Events&gt; list(String calendarId, [EventsResourceListOrderBy orderBy 
 </div>
 <div class="method"><h4 id="move">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>move</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> eventId, <a href="../dart_core/String.html">String</a> destination, [<a href="../dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#move"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>move</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../core/String.html">String</a> eventId, <a href="../core/String.html">String</a> destination, [<a href="../core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#move"
               title="Permalink to EventsResource.move">#</a></h4>
 <div class="doc">
 <p>Moves an event to another calendar, i.e. changes an event's organizer.</p><ul><li>
@@ -356,7 +368,7 @@ Future&lt;Events&gt; list(String calendarId, [EventsResourceListOrderBy orderBy 
 <span class="param">sendNotifications</span> Whether to send notifications about the change of the event's organizer. Optional. The default is
    False.</p></li></ul>
 <pre class="source">
-Future&lt;Event&gt; move(String calendarId, String eventId, String destination, [bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; move(core.String calendarId, core.String eventId, core.String destination, [core.bool sendNotifications = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -376,7 +388,7 @@ Future&lt;Event&gt; move(String calendarId, String eventId, String destination, 
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -387,7 +399,7 @@ Future&lt;Event&gt; move(String calendarId, String eventId, String destination, 
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> eventId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="../dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../core/String.html">String</a> eventId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="../core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#patch"
               title="Permalink to EventsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates an event. This method supports patch semantics.</p><ul><li>
@@ -404,7 +416,7 @@ Future&lt;Event&gt; move(String calendarId, String eventId, String destination, 
 <span class="param">sendNotifications</span> Whether to send notifications about the event update (e.g. attendee's responses, title changes,
    etc.). Optional. The default is False.</p></li></ul>
 <pre class="source">
-Future&lt;Event&gt; patch(String calendarId, String eventId, Event content, [bool alwaysIncludeEmail = UNSPECIFIED, bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; patch(core.String calendarId, core.String eventId, Event content, [core.bool alwaysIncludeEmail = UNSPECIFIED, core.bool sendNotifications = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -426,7 +438,7 @@ Future&lt;Event&gt; patch(String calendarId, String eventId, Event content, [boo
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -437,7 +449,7 @@ Future&lt;Event&gt; patch(String calendarId, String eventId, Event content, [boo
 </div>
 <div class="method"><h4 id="quickAdd">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>quickAdd</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> text, [<a href="../dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#quickAdd"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>quickAdd</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../core/String.html">String</a> text, [<a href="../core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#quickAdd"
               title="Permalink to EventsResource.quickAdd">#</a></h4>
 <div class="doc">
 <p>Creates an event based on a simple text string.</p><ul><li>
@@ -445,7 +457,7 @@ Future&lt;Event&gt; patch(String calendarId, String eventId, Event content, [boo
 <span class="param">text</span> The text describing the event to be created.</li><li>
 <span class="param">sendNotifications</span> Whether to send notifications about the creation of the event. Optional. The default is False.</li></ul>
 <pre class="source">
-Future&lt;Event&gt; quickAdd(String calendarId, String text, [bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; quickAdd(core.String calendarId, core.String text, [core.bool sendNotifications = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -464,7 +476,7 @@ Future&lt;Event&gt; quickAdd(String calendarId, String text, [bool sendNotificat
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -475,7 +487,7 @@ Future&lt;Event&gt; quickAdd(String calendarId, String text, [bool sendNotificat
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> calendarId, <a href="../dart_core/String.html">String</a> eventId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="../dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../core/String.html">String</a> eventId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="../core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="../core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#update"
               title="Permalink to EventsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates an event.</p><ul><li>
@@ -492,7 +504,7 @@ Future&lt;Event&gt; quickAdd(String calendarId, String text, [bool sendNotificat
 <span class="param">sendNotifications</span> Whether to send notifications about the event update (e.g. attendee's responses, title changes,
    etc.). Optional. The default is False.</p></li></ul>
 <pre class="source">
-Future&lt;Event&gt; update(String calendarId, String eventId, Event content, [bool alwaysIncludeEmail = UNSPECIFIED, bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; update(core.String calendarId, core.String eventId, Event content, [core.bool alwaysIncludeEmail = UNSPECIFIED, core.bool sendNotifications = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -514,7 +526,7 @@ Future&lt;Event&gt; update(String calendarId, String eventId, Event content, [bo
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

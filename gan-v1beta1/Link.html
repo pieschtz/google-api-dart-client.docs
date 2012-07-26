@@ -32,14 +32,15 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../gan-v1beta1/Link.html">Link</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../gan-v1beta1/Link.html">Link</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Link.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Link parse(Map&lt;String, Object&gt; json) {
+static Link parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Link();
+  result.isActive = identity(json["isActive"]);
   result.startDate = identity(json["startDate"]);
   result.kind = identity(json["kind"]);
   result.endDate = identity(json["endDate"]);
@@ -50,11 +51,12 @@ static Link parse(Map&lt;String, Object&gt; json) {
   result.id = identity(json["id"]);
   result.advertiserId = identity(json["advertiserId"]);
   result.creativeType = identity(json["creativeType"]);
+  result.impressionTrackingUrl = identity(json["impressionTrackingUrl"]);
   result.promotionType = identity(json["promotionType"]);
   result.duration = identity(json["duration"]);
   result.authorship = identity(json["authorship"]);
   result.availability = identity(json["availability"]);
-  result.isActive = identity(json["isActive"]);
+  result.clickTrackingUrl = identity(json["clickTrackingUrl"]);
   result.destinationUrl = identity(json["destinationUrl"]);
   return result;
 }
@@ -63,14 +65,15 @@ static Link parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/Link.html">Link</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/Link.html">Link</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Link.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Link value) {
+static core.Object serialize(Link value) {
   if (value == null) return null;
   final result = {};
+  result["isActive"] = identity(value.isActive);
   result["startDate"] = identity(value.startDate);
   result["kind"] = identity(value.kind);
   result["endDate"] = identity(value.endDate);
@@ -81,11 +84,12 @@ static Object serialize(Link value) {
   result["id"] = identity(value.id);
   result["advertiserId"] = identity(value.advertiserId);
   result["creativeType"] = identity(value.creativeType);
+  result["impressionTrackingUrl"] = identity(value.impressionTrackingUrl);
   result["promotionType"] = identity(value.promotionType);
   result["duration"] = identity(value.duration);
   result["authorship"] = identity(value.authorship);
   result["availability"] = identity(value.availability);
-  result["isActive"] = identity(value.isActive);
+  result["clickTrackingUrl"] = identity(value.clickTrackingUrl);
   result["destinationUrl"] = identity(value.destinationUrl);
   return result;
 }
@@ -107,209 +111,235 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="advertiserId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>advertiserId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>advertiserId</strong> <a class="anchor-link"
             href="#advertiserId"
             title="Permalink to Link.advertiserId">#</a>
         </h4>
         <div class="doc">
 <p>The advertiser id for the advertiser who owns this link.</p>
 <pre class="source">
-String advertiserId;
+core.String advertiserId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="authorship">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>authorship</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>authorship</strong> <a class="anchor-link"
             href="#authorship"
             title="Permalink to Link.authorship">#</a>
         </h4>
         <div class="doc">
 <p>Authorship</p>
 <pre class="source">
-String authorship;
+core.String authorship;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="availability">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>availability</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>availability</strong> <a class="anchor-link"
             href="#availability"
             title="Permalink to Link.availability">#</a>
         </h4>
         <div class="doc">
 <p>Availability.</p>
 <pre class="source">
-String availability;
+core.String availability;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clickTrackingUrl">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>clickTrackingUrl</strong> <a class="anchor-link"
+            href="#clickTrackingUrl"
+            title="Permalink to Link.clickTrackingUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>Tracking url for clicks.</p>
+<pre class="source">
+core.String clickTrackingUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="createDate">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>createDate</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>createDate</strong> <a class="anchor-link"
             href="#createDate"
             title="Permalink to Link.createDate">#</a>
         </h4>
         <div class="doc">
 <p>Date that this link was created.</p>
 <pre class="source">
-String createDate;
+core.String createDate;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="creativeType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>creativeType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>creativeType</strong> <a class="anchor-link"
             href="#creativeType"
             title="Permalink to Link.creativeType">#</a>
         </h4>
         <div class="doc">
 <p>Creative Type.</p>
 <pre class="source">
-String creativeType;
+core.String creativeType;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Link.description">#</a>
         </h4>
         <div class="doc">
 <p>Description.</p>
 <pre class="source">
-String description;
+core.String description;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="destinationUrl">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>destinationUrl</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>destinationUrl</strong> <a class="anchor-link"
             href="#destinationUrl"
             title="Permalink to Link.destinationUrl">#</a>
         </h4>
         <div class="doc">
 <p>The destination URL for the link.</p>
 <pre class="source">
-String destinationUrl;
+core.String destinationUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="duration">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>duration</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>duration</strong> <a class="anchor-link"
             href="#duration"
             title="Permalink to Link.duration">#</a>
         </h4>
         <div class="doc">
 <p>Duration</p>
 <pre class="source">
-String duration;
+core.String duration;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="endDate">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>endDate</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>endDate</strong> <a class="anchor-link"
             href="#endDate"
             title="Permalink to Link.endDate">#</a>
         </h4>
         <div class="doc">
 <p>Date that this link becomes inactive.</p>
 <pre class="source">
-String endDate;
+core.String endDate;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Link.id">#</a>
         </h4>
         <div class="doc">
 <p>The ID of this link.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="imageAltText">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>imageAltText</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>imageAltText</strong> <a class="anchor-link"
             href="#imageAltText"
             title="Permalink to Link.imageAltText">#</a>
         </h4>
         <div class="doc">
 <p>image alt text.</p>
 <pre class="source">
-String imageAltText;
+core.String imageAltText;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="impressionTrackingUrl">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>impressionTrackingUrl</strong> <a class="anchor-link"
+            href="#impressionTrackingUrl"
+            title="Permalink to Link.impressionTrackingUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>Tracking url for impressions.</p>
+<pre class="source">
+core.String impressionTrackingUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="isActive">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>isActive</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>isActive</strong> <a class="anchor-link"
             href="#isActive"
             title="Permalink to Link.isActive">#</a>
         </h4>
         <div class="doc">
 <p>Flag for if this link is active.</p>
 <pre class="source">
-bool isActive;
+core.bool isActive;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Link.kind">#</a>
         </h4>
         <div class="doc">
 <p>The kind for one entity.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Link.name">#</a>
         </h4>
         <div class="doc">
 <p>The logical name for this link.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="promotionType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>promotionType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>promotionType</strong> <a class="anchor-link"
             href="#promotionType"
             title="Permalink to Link.promotionType">#</a>
         </h4>
         <div class="doc">
 <p>Promotion Type</p>
 <pre class="source">
-String promotionType;
+core.String promotionType;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="startDate">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>startDate</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>startDate</strong> <a class="anchor-link"
             href="#startDate"
             title="Permalink to Link.startDate">#</a>
         </h4>
         <div class="doc">
 <p>Date that this link becomes active.</p>
 <pre class="source">
-String startDate;
+core.String startDate;
 </pre>
 </div>
 </div>

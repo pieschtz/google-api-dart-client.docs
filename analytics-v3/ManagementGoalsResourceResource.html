@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ManagementGoalsResourceResource">
+<span class="show-code">Code</span>
+new <strong>ManagementGoalsResourceResource</strong>._internal(<a href="../analytics-v3/AnalyticsApi.html">AnalyticsApi</a> $service) <a class="anchor-link" href="#ManagementGoalsResourceResource"
+              title="Permalink to ManagementGoalsResourceResource.ManagementGoalsResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ManagementGoalsResourceResource._internal(AnalyticsApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> accountId, <a href="../dart_core/String.html">String</a> webPropertyId, <a href="../dart_core/String.html">String</a> profileId, [<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../analytics-v3/Goals.html">Goals</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> accountId, <a href="../core/String.html">String</a> webPropertyId, <a href="../core/String.html">String</a> profileId, [<a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ManagementGoalsResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Lists goals to which the user has access.</p><ul><li>
@@ -48,7 +60,7 @@
    max-results parameter.</p></li></ul>
 <p>Minimum: 1.</p>
 <pre class="source">
-Future&lt;Goals&gt; list(String accountId, String webPropertyId, String profileId, [int maxResults = UNSPECIFIED, int startIndex = UNSPECIFIED]) {
+core.Future&lt;Goals&gt; list(core.String accountId, core.String webPropertyId, core.String profileId, [core.int maxResults = UNSPECIFIED, core.int startIndex = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -69,7 +81,7 @@ Future&lt;Goals&gt; list(String accountId, String webPropertyId, String profileI
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

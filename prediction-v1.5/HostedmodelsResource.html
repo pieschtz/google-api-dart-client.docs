@@ -1,0 +1,88 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>HostedmodelsResource Class / prediction-v1.5 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="prediction-v1.5" data-type="HostedmodelsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../prediction-v1.5.html">prediction-v1.5</a> &rsaquo; <a href="../prediction-v1.5/HostedmodelsResource.html">HostedmodelsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>HostedmodelsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="HostedmodelsResource">
+<span class="show-code">Code</span>
+new <strong>HostedmodelsResource</strong>._internal(<a href="../prediction-v1.5/PredictionApi.html">PredictionApi</a> $service) <a class="anchor-link" href="#HostedmodelsResource"
+              title="Permalink to HostedmodelsResource.HostedmodelsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+HostedmodelsResource._internal(PredictionApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="predict">
+<span class="show-code">Code</span>
+<a href="../core/Future.html">Future</a>&lt;<a href="../prediction-v1.5/Output.html">Output</a>&gt; <strong>predict</strong>(<a href="../core/String.html">String</a> hostedModelName, <a href="../prediction-v1.5/Input.html">Input</a> content) <a class="anchor-link" href="#predict"
+              title="Permalink to HostedmodelsResource.predict">#</a></h4>
+<div class="doc">
+<p>Submit input and request an output against a hosted model.</p><ul><li>
+<span class="param">content</span> the Input</li><li>
+<span class="param">hostedModelName</span> The name of a hosted model.</li></ul>
+<pre class="source">
+core.Future&lt;Output&gt; predict(core.String hostedModelName, Input content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["hostedModelName"] = hostedModelName;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Input.serialize(content));
+  final $path = "hostedmodels/{hostedModelName}/predict";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Output.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

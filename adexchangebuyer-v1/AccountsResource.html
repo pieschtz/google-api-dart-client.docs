@@ -26,16 +26,28 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AccountsResource">
+<span class="show-code">Code</span>
+new <strong>AccountsResource</strong>._internal(<a href="../adexchangebuyer-v1/AdexchangebuyerApi.html">AdexchangebuyerApi</a> $service) <a class="anchor-link" href="#AccountsResource"
+              title="Permalink to AccountsResource.AccountsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AccountsResource._internal(AdexchangebuyerApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> id) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adexchangebuyer-v1/Account.html">Account</a>&gt; <strong>get</strong>(<a href="../core/int.html">int</a> id) <a class="anchor-link" href="#get"
               title="Permalink to AccountsResource.get">#</a></h4>
 <div class="doc">
 <p>Gets one account by ID.</p><ul><li>
 <span class="param">id</span> The account id</li></ul>
 <pre class="source">
-Future&lt;Account&gt; get(int id) {
+core.Future&lt;Account&gt; get(core.int id) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +64,7 @@ Future&lt;Account&gt; get(int id) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -63,12 +75,12 @@ Future&lt;Account&gt; get(int id) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>() <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adexchangebuyer-v1/AccountsList.html">AccountsList</a>&gt; <strong>list</strong>() <a class="anchor-link" href="#list"
               title="Permalink to AccountsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the authenticated user's list of accounts.</p>
 <pre class="source">
-Future&lt;AccountsList&gt; list() {
+core.Future&lt;AccountsList&gt; list() {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -84,7 +96,7 @@ Future&lt;AccountsList&gt; list() {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -95,14 +107,14 @@ Future&lt;AccountsList&gt; list() {
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/int.html">int</a> id, <a href="../adexchangebuyer-v1/Account.html">Account</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adexchangebuyer-v1/Account.html">Account</a>&gt; <strong>patch</strong>(<a href="../core/int.html">int</a> id, <a href="../adexchangebuyer-v1/Account.html">Account</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to AccountsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates an existing account. This method supports patch semantics.</p><ul><li>
 <span class="param">content</span> the Account</li><li>
 <span class="param">id</span> The account id</li></ul>
 <pre class="source">
-Future&lt;Account&gt; patch(int id, Account content) {
+core.Future&lt;Account&gt; patch(core.int id, Account content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -121,7 +133,7 @@ Future&lt;Account&gt; patch(int id, Account content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -132,14 +144,14 @@ Future&lt;Account&gt; patch(int id, Account content) {
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/int.html">int</a> id, <a href="../adexchangebuyer-v1/Account.html">Account</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adexchangebuyer-v1/Account.html">Account</a>&gt; <strong>update</strong>(<a href="../core/int.html">int</a> id, <a href="../adexchangebuyer-v1/Account.html">Account</a> content) <a class="anchor-link" href="#update"
               title="Permalink to AccountsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates an existing account.</p><ul><li>
 <span class="param">content</span> the Account</li><li>
 <span class="param">id</span> The account id</li></ul>
 <pre class="source">
-Future&lt;Account&gt; update(int id, Account content) {
+core.Future&lt;Account&gt; update(core.int id, Account content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -158,7 +170,7 @@ Future&lt;Account&gt; update(int id, Account content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

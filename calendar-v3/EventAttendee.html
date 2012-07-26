@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../calendar-v3/EventAttendee.html">EventAttendee</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../calendar-v3/EventAttendee.html">EventAttendee</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to EventAttendee.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static EventAttendee parse(Map&lt;String, Object&gt; json) {
+static EventAttendee parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new EventAttendee();
   result.comment = identity(json["comment"]);
@@ -57,12 +57,12 @@ static EventAttendee parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/EventAttendee.html">EventAttendee</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/EventAttendee.html">EventAttendee</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to EventAttendee.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(EventAttendee value) {
+static core.Object serialize(EventAttendee value) {
   if (value == null) return null;
   final result = {};
   result["comment"] = identity(value.comment);
@@ -95,111 +95,111 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="additionalGuests">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>additionalGuests</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>additionalGuests</strong> <a class="anchor-link"
             href="#additionalGuests"
             title="Permalink to EventAttendee.additionalGuests">#</a>
         </h4>
         <div class="doc">
 <p>Number of additional guests. Optional. The default is 0.</p>
 <pre class="source">
-int additionalGuests;
+core.int additionalGuests;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="comment">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>comment</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>comment</strong> <a class="anchor-link"
             href="#comment"
             title="Permalink to EventAttendee.comment">#</a>
         </h4>
         <div class="doc">
 <p>The attendee's response comment. Optional.</p>
 <pre class="source">
-String comment;
+core.String comment;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="displayName">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>displayName</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>displayName</strong> <a class="anchor-link"
             href="#displayName"
             title="Permalink to EventAttendee.displayName">#</a>
         </h4>
         <div class="doc">
 <p>The attendee's name, if available. Optional.</p>
 <pre class="source">
-String displayName;
+core.String displayName;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="email">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>email</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>email</strong> <a class="anchor-link"
             href="#email"
             title="Permalink to EventAttendee.email">#</a>
         </h4>
         <div class="doc">
 <p>The attendee's email address, if available. This field must be present when adding an attendee.</p>
 <pre class="source">
-String email;
+core.String email;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to EventAttendee.id">#</a>
         </h4>
         <div class="doc">
 <p>The attendee's Profile ID, if available.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="optional">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>optional</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>optional</strong> <a class="anchor-link"
             href="#optional"
             title="Permalink to EventAttendee.optional">#</a>
         </h4>
         <div class="doc">
 <p>Whether this is an optional attendee. Optional. The default is False.</p>
 <pre class="source">
-bool optional;
+core.bool optional;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="organizer">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>organizer</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>organizer</strong> <a class="anchor-link"
             href="#organizer"
             title="Permalink to EventAttendee.organizer">#</a>
         </h4>
         <div class="doc">
 <p>Whether the attendee is the organizer of the event. Read-only. The default is False.</p>
 <pre class="source">
-bool organizer;
+core.bool organizer;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="resource">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>resource</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>resource</strong> <a class="anchor-link"
             href="#resource"
             title="Permalink to EventAttendee.resource">#</a>
         </h4>
         <div class="doc">
 <p>Whether the attendee is a resource. Read-only. The default is False.</p>
 <pre class="source">
-bool resource;
+core.bool resource;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="responseStatus">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>responseStatus</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>responseStatus</strong> <a class="anchor-link"
             href="#responseStatus"
             title="Permalink to EventAttendee.responseStatus">#</a>
         </h4>
@@ -209,13 +209,13 @@ responded to the invitation. - "declined" - The attendee has declined the invita
 "tentative" - The attendee has tentatively accepted the invitation. - "accepted" - The attendee
 has accepted the invitation.</p>
 <pre class="source">
-String responseStatus;
+core.String responseStatus;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="self">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>self</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>self</strong> <a class="anchor-link"
             href="#self"
             title="Permalink to EventAttendee.self">#</a>
         </h4>
@@ -223,7 +223,7 @@ String responseStatus;
 <p>Whether this entry represents the calendar on which this copy of the event appears. Read-only.
 The default is False.</p>
 <pre class="source">
-bool self;
+core.bool self;
 </pre>
 </div>
 </div>

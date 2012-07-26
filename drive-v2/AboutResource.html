@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AboutResource">
+<span class="show-code">Code</span>
+new <strong>AboutResource</strong>._internal(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#AboutResource"
+              title="Permalink to AboutResource.AboutResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AboutResource._internal(DriveApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>([<a href="../dart_core/bool.html">bool</a> includeSubscribed = UNSPECIFIED, <a href="../dart_core/String.html">String</a> maxChangeIdCount = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startChangeId = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../drive-v2/About.html">About</a>&gt; <strong>get</strong>([<a href="../core/bool.html">bool</a> includeSubscribed = UNSPECIFIED, <a href="../core/String.html">String</a> maxChangeIdCount = UNSPECIFIED, <a href="../core/String.html">String</a> startChangeId = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to AboutResource.get">#</a></h4>
 <div class="doc">
 <p>Gets the information about the current user along with Drive API settings</p><ul><li>
@@ -42,7 +54,7 @@ Default:
 Default: 1.</p></li><li>
 <span class="param">startChangeId</span> Change ID to start counting from when calculating number of remaining change IDs</li></ul>
 <pre class="source">
-Future&lt;About&gt; get([bool includeSubscribed = UNSPECIFIED, String maxChangeIdCount = UNSPECIFIED, String startChangeId = UNSPECIFIED]) {
+core.Future&lt;About&gt; get([core.bool includeSubscribed = UNSPECIFIED, core.String maxChangeIdCount = UNSPECIFIED, core.String startChangeId = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -61,7 +73,7 @@ Future&lt;About&gt; get([bool includeSubscribed = UNSPECIFIED, String maxChangeI
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

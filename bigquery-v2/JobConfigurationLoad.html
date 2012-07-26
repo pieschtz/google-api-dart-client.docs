@@ -32,21 +32,22 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../bigquery-v2/JobConfigurationLoad.html">JobConfigurationLoad</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../bigquery-v2/JobConfigurationLoad.html">JobConfigurationLoad</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to JobConfigurationLoad.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static JobConfigurationLoad parse(Map&lt;String, Object&gt; json) {
+static JobConfigurationLoad parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new JobConfigurationLoad();
   result.encoding = identity(json["encoding"]);
   result.fieldDelimiter = identity(json["fieldDelimiter"]);
   result.destinationTable = TableReference.parse(json["destinationTable"]);
-  result.maxBadRecords = identity(json["maxBadRecords"]);
   result.writeDisposition = identity(json["writeDisposition"]);
-  result.sourceUris = map(identity)(json["sourceUris"]);
+  result.maxBadRecords = identity(json["maxBadRecords"]);
   result.skipLeadingRows = identity(json["skipLeadingRows"]);
+  result.sourceUris = map(identity)(json["sourceUris"]);
+  result.quote = identity(json["quote"]);
   result.createDisposition = identity(json["createDisposition"]);
   result.schemaInlineFormat = identity(json["schemaInlineFormat"]);
   result.schemaInline = identity(json["schemaInline"]);
@@ -58,21 +59,22 @@ static JobConfigurationLoad parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/JobConfigurationLoad.html">JobConfigurationLoad</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/JobConfigurationLoad.html">JobConfigurationLoad</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to JobConfigurationLoad.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(JobConfigurationLoad value) {
+static core.Object serialize(JobConfigurationLoad value) {
   if (value == null) return null;
   final result = {};
   result["encoding"] = identity(value.encoding);
   result["fieldDelimiter"] = identity(value.fieldDelimiter);
   result["destinationTable"] = TableReference.serialize(value.destinationTable);
-  result["maxBadRecords"] = identity(value.maxBadRecords);
   result["writeDisposition"] = identity(value.writeDisposition);
-  result["sourceUris"] = map(identity)(value.sourceUris);
+  result["maxBadRecords"] = identity(value.maxBadRecords);
   result["skipLeadingRows"] = identity(value.skipLeadingRows);
+  result["sourceUris"] = map(identity)(value.sourceUris);
+  result["quote"] = identity(value.quote);
   result["createDisposition"] = identity(value.createDisposition);
   result["schemaInlineFormat"] = identity(value.schemaInlineFormat);
   result["schemaInline"] = identity(value.schemaInline);
@@ -97,7 +99,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="createDisposition">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>createDisposition</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>createDisposition</strong> <a class="anchor-link"
             href="#createDisposition"
             title="Permalink to JobConfigurationLoad.createDisposition">#</a>
         </h4>
@@ -105,7 +107,7 @@ toString() =&gt; serialize(this).toString();
 <p><code>Optional</code> Whether to create the table if it doesn't already exist (CREATE<em>IF</em>NEEDED) or to
 require the table already exist (CREATE<em>NEVER). Default is CREATE</em>IF_NEEDED.</p>
 <pre class="source">
-String createDisposition;
+core.String createDisposition;
 </pre>
 </div>
 </div>
@@ -124,33 +126,34 @@ TableReference destinationTable;
 </div>
 <div class="field"><h4 id="encoding">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>encoding</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>encoding</strong> <a class="anchor-link"
             href="#encoding"
             title="Permalink to JobConfigurationLoad.encoding">#</a>
         </h4>
         <div class="doc">
 <p><code>Optional</code> Character encoding of the input data. May be UTF-8 or ISO-8859-1. Default is UTF-8.</p>
 <pre class="source">
-String encoding;
+core.String encoding;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fieldDelimiter">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fieldDelimiter</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fieldDelimiter</strong> <a class="anchor-link"
             href="#fieldDelimiter"
             title="Permalink to JobConfigurationLoad.fieldDelimiter">#</a>
         </h4>
         <div class="doc">
-<p><code>Optional</code> Delimiter to use between fields in the import data. Default is ','</p>
+<p><code>Optional</code> Delimiter to use between fields in the import data. Default is ','. Note that
+delimiters are applied to the raw, binary data before the encoding is applied.</p>
 <pre class="source">
-String fieldDelimiter;
+core.String fieldDelimiter;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="maxBadRecords">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>maxBadRecords</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>maxBadRecords</strong> <a class="anchor-link"
             href="#maxBadRecords"
             title="Permalink to JobConfigurationLoad.maxBadRecords">#</a>
         </h4>
@@ -158,7 +161,21 @@ String fieldDelimiter;
 <p><code>Optional</code> Maximum number of bad records that should be ignored before the entire job is aborted
 and no updates are performed.</p>
 <pre class="source">
-int maxBadRecords;
+core.int maxBadRecords;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quote">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>quote</strong> <a class="anchor-link"
+            href="#quote"
+            title="Permalink to JobConfigurationLoad.quote">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> Quote character to use. Default is '"'. Note that quoting is done on the raw, binary
+data before the encoding is applied.</p>
+<pre class="source">
+core.String quote;
 </pre>
 </div>
 </div>
@@ -177,7 +194,7 @@ TableSchema schema;
 </div>
 <div class="field"><h4 id="schemaInline">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>schemaInline</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>schemaInline</strong> <a class="anchor-link"
             href="#schemaInline"
             title="Permalink to JobConfigurationLoad.schemaInline">#</a>
         </h4>
@@ -185,52 +202,52 @@ TableSchema schema;
 <p><code>Experimental</code> Inline schema. For CSV schemas, specify as "Field1:Type1<code>,Field2:Type2</code>*". For
 example, "foo:STRING, bar:INTEGER, baz:FLOAT"</p>
 <pre class="source">
-String schemaInline;
+core.String schemaInline;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="schemaInlineFormat">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>schemaInlineFormat</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>schemaInlineFormat</strong> <a class="anchor-link"
             href="#schemaInlineFormat"
             title="Permalink to JobConfigurationLoad.schemaInlineFormat">#</a>
         </h4>
         <div class="doc">
 <p><code>Experimental</code> Format of inlineSchema field.</p>
 <pre class="source">
-String schemaInlineFormat;
+core.String schemaInlineFormat;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="skipLeadingRows">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>skipLeadingRows</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>skipLeadingRows</strong> <a class="anchor-link"
             href="#skipLeadingRows"
             title="Permalink to JobConfigurationLoad.skipLeadingRows">#</a>
         </h4>
         <div class="doc">
 <p><code>Optional</code> Number of rows of initial data to skip in the data being imported.</p>
 <pre class="source">
-int skipLeadingRows;
+core.int skipLeadingRows;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="sourceUris">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>sourceUris</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>sourceUris</strong> <a class="anchor-link"
             href="#sourceUris"
             title="Permalink to JobConfigurationLoad.sourceUris">#</a>
         </h4>
         <div class="doc">
 <p><code>Required</code> Source URIs describing Google Cloud Storage locations of data to load.</p>
 <pre class="source">
-List&lt;String&gt; sourceUris;
+core.List&lt;core.String&gt; sourceUris;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="writeDisposition">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>writeDisposition</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>writeDisposition</strong> <a class="anchor-link"
             href="#writeDisposition"
             title="Permalink to JobConfigurationLoad.writeDisposition">#</a>
         </h4>
@@ -238,7 +255,7 @@ List&lt;String&gt; sourceUris;
 <p><code>Optional</code> Whether to overwrite an existing table (WRITE<em>TRUNCATE), append to an existing table
 (WRITE</em>APPEND), or require that the the table is empty (WRITE<em>EMPTY). Default is WRITE</em>APPEND.</p>
 <pre class="source">
-String writeDisposition;
+core.String writeDisposition;
 </pre>
 </div>
 </div>

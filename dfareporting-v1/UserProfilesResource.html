@@ -26,16 +26,28 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="UserProfilesResource">
+<span class="show-code">Code</span>
+new <strong>UserProfilesResource</strong>._internal(<a href="../dfareporting-v1/DfareportingApi.html">DfareportingApi</a> $service) <a class="anchor-link" href="#UserProfilesResource"
+              title="Permalink to UserProfilesResource.UserProfilesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+UserProfilesResource._internal(DfareportingApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> profileId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/UserProfile.html">UserProfile</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> profileId) <a class="anchor-link" href="#get"
               title="Permalink to UserProfilesResource.get">#</a></h4>
 <div class="doc">
 <p>Gets one user profile by id.</p><ul><li>
 <span class="param">profileId</span> The user profile id.</li></ul>
 <pre class="source">
-Future&lt;UserProfile&gt; get(String profileId) {
+core.Future&lt;UserProfile&gt; get(core.String profileId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +64,7 @@ Future&lt;UserProfile&gt; get(String profileId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -63,12 +75,12 @@ Future&lt;UserProfile&gt; get(String profileId) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>() <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/UserProfileList.html">UserProfileList</a>&gt; <strong>list</strong>() <a class="anchor-link" href="#list"
               title="Permalink to UserProfilesResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves list of user profiles for a user.</p>
 <pre class="source">
-Future&lt;UserProfileList&gt; list() {
+core.Future&lt;UserProfileList&gt; list() {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -84,7 +96,7 @@ Future&lt;UserProfileList&gt; list() {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

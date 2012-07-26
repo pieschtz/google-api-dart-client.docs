@@ -26,16 +26,30 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="SeriesResource">
+<span class="show-code">Code</span>
+new <strong>SeriesResource</strong>._internal(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#SeriesResource"
+              title="Permalink to SeriesResource.SeriesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+SeriesResource._internal(ModeratorApi $service) : _$service = $service,
+  submissions = new SeriesSubmissionsResourceResource._internal($service),
+  responses = new SeriesResponsesResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> seriesId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../moderator-v1/Series.html">Series</a>&gt; <strong>get</strong>(<a href="../core/int.html">int</a> seriesId) <a class="anchor-link" href="#get"
               title="Permalink to SeriesResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the specified series.</p><ul><li>
 <span class="param">seriesId</span> The decimal ID of the Series.</li></ul>
 <pre class="source">
-Future&lt;Series&gt; get(int seriesId) {
+core.Future&lt;Series&gt; get(core.int seriesId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +66,7 @@ Future&lt;Series&gt; get(int seriesId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -63,13 +77,13 @@ Future&lt;Series&gt; get(int seriesId) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../moderator-v1/Series.html">Series</a>&gt; <strong>insert</strong>(<a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to SeriesResource.insert">#</a></h4>
 <div class="doc">
 <p>Inserts a new series.</p><ul><li>
 <span class="param">content</span> the Series</li></ul>
 <pre class="source">
-Future&lt;Series&gt; insert(Series content) {
+core.Future&lt;Series&gt; insert(Series content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -87,7 +101,7 @@ Future&lt;Series&gt; insert(Series content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -98,7 +112,7 @@ Future&lt;Series&gt; insert(Series content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../moderator-v1/SeriesList.html">SeriesList</a>&gt; <strong>list</strong>([<a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> q = UNSPECIFIED, <a href="../core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to SeriesResource.list">#</a></h4>
 <div class="doc">
 <p>Searches the series and returns the search results.</p><ul><li>
@@ -106,7 +120,7 @@ Future&lt;Series&gt; insert(Series content) {
 <span class="param">q</span> Search query.</li><li>
 <span class="param">startIndex</span> Index of the first result to be retrieved.</li></ul>
 <pre class="source">
-Future&lt;SeriesList&gt; list([int maxResults = UNSPECIFIED, String q = UNSPECIFIED, int startIndex = UNSPECIFIED]) {
+core.Future&lt;SeriesList&gt; list([core.int maxResults = UNSPECIFIED, core.String q = UNSPECIFIED, core.int startIndex = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -125,7 +139,7 @@ Future&lt;SeriesList&gt; list([int maxResults = UNSPECIFIED, String q = UNSPECIF
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -136,14 +150,14 @@ Future&lt;SeriesList&gt; list([int maxResults = UNSPECIFIED, String q = UNSPECIF
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../moderator-v1/Series.html">Series</a>&gt; <strong>patch</strong>(<a href="../core/int.html">int</a> seriesId, <a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to SeriesResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates the specified series. This method supports patch semantics.</p><ul><li>
 <span class="param">content</span> the Series</li><li>
 <span class="param">seriesId</span> The decimal ID of the Series.</li></ul>
 <pre class="source">
-Future&lt;Series&gt; patch(int seriesId, Series content) {
+core.Future&lt;Series&gt; patch(core.int seriesId, Series content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -162,7 +176,7 @@ Future&lt;Series&gt; patch(int seriesId, Series content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -173,14 +187,14 @@ Future&lt;Series&gt; patch(int seriesId, Series content) {
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/int.html">int</a> seriesId, <a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../moderator-v1/Series.html">Series</a>&gt; <strong>update</strong>(<a href="../core/int.html">int</a> seriesId, <a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#update"
               title="Permalink to SeriesResource.update">#</a></h4>
 <div class="doc">
 <p>Updates the specified series.</p><ul><li>
 <span class="param">content</span> the Series</li><li>
 <span class="param">seriesId</span> The decimal ID of the Series.</li></ul>
 <pre class="source">
-Future&lt;Series&gt; update(int seriesId, Series content) {
+core.Future&lt;Series&gt; update(core.int seriesId, Series content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -199,7 +213,7 @@ Future&lt;Series&gt; update(int seriesId, Series content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

@@ -29,12 +29,16 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="BooksApi">
 <span class="show-code">Code</span>
-new <strong>BooksApi</strong>([baseUrl = "https://www.googleapis.com/books/v1/", applicationName, authenticator]) <a class="anchor-link" href="#BooksApi"
+new <strong>BooksApi</strong>([<a href="../core/String.html">String</a> baseUrl = "https://www.googleapis.com/books/v1/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#BooksApi"
               title="Permalink to BooksApi.BooksApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-BooksApi([this.baseUrl = "https://www.googleapis.com/books/v1/", this.applicationName, this.authenticator]) { 
+BooksApi([this.baseUrl = "https://www.googleapis.com/books/v1/", applicationName, this.authenticator]) :
+    this.applicationName = applicationName
+        .replaceAll(const RegExp(@'\s+'), '_')
+        .replaceAll(const RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+{ 
   _layers = new LayersResource._internal(this);
   _bookshelves = new BookshelvesResource._internal(this);
   _myconfig = new MyconfigResource._internal(this);
@@ -47,21 +51,21 @@ BooksApi([this.baseUrl = "https://www.googleapis.com/books/v1/", this.applicatio
 <h3>Static Fields</h3>
 <div class="field"><h4 id="BOOKS_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>BOOKS_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>BOOKS_SCOPE</strong> <a class="anchor-link"
             href="#BOOKS_SCOPE"
             title="Permalink to BooksApi.BOOKS_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: Manage your books</p>
 <pre class="source">
-static final String BOOKS_SCOPE = "https://www.googleapis.com/auth/books";
+static final core.String BOOKS_SCOPE = "https://www.googleapis.com/auth/books";
 </pre>
 </div>
 </div>
 <h3>Methods</h3>
-<div class="method"><h4 id="get:bookshelves">
+<div class="method"><h4 id="bookshelves">
 <span class="show-code">Code</span>
-<a href="../books-v1/BookshelvesResource.html">BookshelvesResource</a> <strong>get bookshelves</strong>() <a class="anchor-link" href="#get:bookshelves"
+<a href="../books-v1/BookshelvesResource.html">BookshelvesResource</a> <strong>get bookshelves</strong>() <a class="anchor-link" href="#bookshelves"
               title="Permalink to BooksApi.get bookshelves">#</a></h4>
 <div class="doc">
 
@@ -70,9 +74,9 @@ BookshelvesResource get bookshelves() =&gt; _bookshelves;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:layers">
+<div class="method"><h4 id="layers">
 <span class="show-code">Code</span>
-<a href="../books-v1/LayersResource.html">LayersResource</a> <strong>get layers</strong>() <a class="anchor-link" href="#get:layers"
+<a href="../books-v1/LayersResource.html">LayersResource</a> <strong>get layers</strong>() <a class="anchor-link" href="#layers"
               title="Permalink to BooksApi.get layers">#</a></h4>
 <div class="doc">
 
@@ -81,9 +85,9 @@ LayersResource get layers() =&gt; _layers;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:myconfig">
+<div class="method"><h4 id="myconfig">
 <span class="show-code">Code</span>
-<a href="../books-v1/MyconfigResource.html">MyconfigResource</a> <strong>get myconfig</strong>() <a class="anchor-link" href="#get:myconfig"
+<a href="../books-v1/MyconfigResource.html">MyconfigResource</a> <strong>get myconfig</strong>() <a class="anchor-link" href="#myconfig"
               title="Permalink to BooksApi.get myconfig">#</a></h4>
 <div class="doc">
 
@@ -92,9 +96,9 @@ MyconfigResource get myconfig() =&gt; _myconfig;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:mylibrary">
+<div class="method"><h4 id="mylibrary">
 <span class="show-code">Code</span>
-<a href="../books-v1/MylibraryResource.html">MylibraryResource</a> <strong>get mylibrary</strong>() <a class="anchor-link" href="#get:mylibrary"
+<a href="../books-v1/MylibraryResource.html">MylibraryResource</a> <strong>get mylibrary</strong>() <a class="anchor-link" href="#mylibrary"
               title="Permalink to BooksApi.get mylibrary">#</a></h4>
 <div class="doc">
 
@@ -103,23 +107,23 @@ MylibraryResource get mylibrary() =&gt; _mylibrary;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:userAgent">
+<div class="method"><h4 id="userAgent">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+<a href="../core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
               title="Permalink to BooksApi.get userAgent">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-String get userAgent() {
+core.String get userAgent() {
   var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
   return "${uaPrefix}books/v1/20120614 google-api-dart-client/${clientVersion}";
 }
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:volumes">
+<div class="method"><h4 id="volumes">
 <span class="show-code">Code</span>
-<a href="../books-v1/VolumesResource.html">VolumesResource</a> <strong>get volumes</strong>() <a class="anchor-link" href="#get:volumes"
+<a href="../books-v1/VolumesResource.html">VolumesResource</a> <strong>get volumes</strong>() <a class="anchor-link" href="#volumes"
               title="Permalink to BooksApi.get volumes">#</a></h4>
 <div class="doc">
 
@@ -144,14 +148,14 @@ BooksApiAlt alt;
 </div>
 <div class="field"><h4 id="applicationName">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to BooksApi.applicationName">#</a>
         </h4>
         <div class="doc">
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
-final String applicationName;
+final core.String applicationName;
 </pre>
 </div>
 </div>
@@ -170,46 +174,46 @@ Authenticator authenticator;
 </div>
 <div class="field"><h4 id="baseUrl">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to BooksApi.baseUrl">#</a>
         </h4>
         <div class="doc">
 <p>The API root, such as <code>https://www.googleapis.com</code></p>
 <pre class="source">
-final String baseUrl;
+final core.String baseUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="clientVersion">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to BooksApi.clientVersion">#</a>
         </h4>
         <div class="doc">
 <p>The client library version</p>
 <pre class="source">
-final String clientVersion = "0.1";
+final core.String clientVersion = "0.1";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fields">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to BooksApi.fields">#</a>
         </h4>
         <div class="doc">
 <p>Selector specifying which fields to include in a partial response.</p>
 <pre class="source">
-String fields;
+core.String fields;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="key">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to BooksApi.key">#</a>
         </h4>
@@ -217,39 +221,39 @@ String fields;
 <p>API key. Your API key identifies your project and provides you with API access, quota, and
 reports. Required unless you provide an OAuth 2.0 token.</p>
 <pre class="source">
-String key;
+core.String key;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to BooksApi.oauthToken">#</a>
         </h4>
         <div class="doc">
 <p>OAuth 2.0 token for the current user.</p>
 <pre class="source">
-String oauthToken;
+core.String oauthToken;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="prettyPrint">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to BooksApi.prettyPrint">#</a>
         </h4>
         <div class="doc">
 <p>Returns response with indentations and line breaks.</p>
 <pre class="source">
-bool prettyPrint;
+core.bool prettyPrint;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="quotaUser">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to BooksApi.quotaUser">#</a>
         </h4>
@@ -257,13 +261,13 @@ bool prettyPrint;
 <p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
 assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
 <pre class="source">
-String quotaUser;
+core.String quotaUser;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="userIp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to BooksApi.userIp">#</a>
         </h4>
@@ -271,7 +275,7 @@ String quotaUser;
 <p>IP address of the site where the request originates. Use this if you want to enforce per-user
 limits.</p>
 <pre class="source">
-String userIp;
+core.String userIp;
 </pre>
 </div>
 </div>

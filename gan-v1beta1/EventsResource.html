@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="EventsResource">
+<span class="show-code">Code</span>
+new <strong>EventsResource</strong>._internal(<a href="../gan-v1beta1/GanApi.html">GanApi</a> $service) <a class="anchor-link" href="#EventsResource"
+              title="Permalink to EventsResource.EventsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+EventsResource._internal(GanApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../gan-v1beta1/EventsResourceListRole.html">EventsResourceListRole</a> role, <a href="../dart_core/String.html">String</a> roleId, [<a href="../dart_core/String.html">String</a> orderId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> sku = UNSPECIFIED, <a href="../dart_core/String.html">String</a> eventDateMax = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListType.html">EventsResourceListType</a> type = UNSPECIFIED, <a href="../dart_core/String.html">String</a> linkId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> modifyDateMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> eventDateMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> memberId = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> advertiserId = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> productCategory = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListChargeType.html">EventsResourceListChargeType</a> chargeType = UNSPECIFIED, <a href="../dart_core/String.html">String</a> modifyDateMax = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListStatus.html">EventsResourceListStatus</a> status = UNSPECIFIED, <a href="../dart_core/String.html">String</a> publisherId = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Events.html">Events</a>&gt; <strong>list</strong>(<a href="../gan-v1beta1/EventsResourceListRole.html">EventsResourceListRole</a> role, <a href="../core/String.html">String</a> roleId, [<a href="../core/String.html">String</a> orderId = UNSPECIFIED, <a href="../core/String.html">String</a> sku = UNSPECIFIED, <a href="../core/String.html">String</a> eventDateMax = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListType.html">EventsResourceListType</a> type = UNSPECIFIED, <a href="../core/String.html">String</a> linkId = UNSPECIFIED, <a href="../core/String.html">String</a> modifyDateMin = UNSPECIFIED, <a href="../core/String.html">String</a> eventDateMin = UNSPECIFIED, <a href="../core/String.html">String</a> memberId = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> advertiserId = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/String.html">String</a> productCategory = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListChargeType.html">EventsResourceListChargeType</a> chargeType = UNSPECIFIED, <a href="../core/String.html">String</a> modifyDateMax = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListStatus.html">EventsResourceListStatus</a> status = UNSPECIFIED, <a href="../core/String.html">String</a> publisherId = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to EventsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves event data for a given advertiser/publisher.</p><ul><li>
@@ -81,7 +93,7 @@ Maximum: 100.
 <span class="param">publisherId</span> Caret(^) delimited list of publisher IDs. Filters out all events that do not reference one of the
    given publishers IDs. Only used when under advertiser role. Optional.</p></li></ul>
 <pre class="source">
-Future&lt;Events&gt; list(EventsResourceListRole role, String roleId, [String orderId = UNSPECIFIED, String sku = UNSPECIFIED, String eventDateMax = UNSPECIFIED, EventsResourceListType type = UNSPECIFIED, String linkId = UNSPECIFIED, String modifyDateMin = UNSPECIFIED, String eventDateMin = UNSPECIFIED, String memberId = UNSPECIFIED, int maxResults = UNSPECIFIED, String advertiserId = UNSPECIFIED, String pageToken = UNSPECIFIED, String productCategory = UNSPECIFIED, EventsResourceListChargeType chargeType = UNSPECIFIED, String modifyDateMax = UNSPECIFIED, EventsResourceListStatus status = UNSPECIFIED, String publisherId = UNSPECIFIED]) {
+core.Future&lt;Events&gt; list(EventsResourceListRole role, core.String roleId, [core.String orderId = UNSPECIFIED, core.String sku = UNSPECIFIED, core.String eventDateMax = UNSPECIFIED, EventsResourceListType type = UNSPECIFIED, core.String linkId = UNSPECIFIED, core.String modifyDateMin = UNSPECIFIED, core.String eventDateMin = UNSPECIFIED, core.String memberId = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String advertiserId = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String productCategory = UNSPECIFIED, EventsResourceListChargeType chargeType = UNSPECIFIED, core.String modifyDateMax = UNSPECIFIED, EventsResourceListStatus status = UNSPECIFIED, core.String publisherId = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -115,7 +127,7 @@ Future&lt;Events&gt; list(EventsResourceListRole role, String roleId, [String or
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

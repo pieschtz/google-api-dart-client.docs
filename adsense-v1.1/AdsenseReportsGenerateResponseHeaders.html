@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../adsense-v1.1/AdsenseReportsGenerateResponseHeaders.html">AdsenseReportsGenerateResponseHeaders</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../adsense-v1.1/AdsenseReportsGenerateResponseHeaders.html">AdsenseReportsGenerateResponseHeaders</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to AdsenseReportsGenerateResponseHeaders.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static AdsenseReportsGenerateResponseHeaders parse(Map&lt;String, Object&gt; json) {
+static AdsenseReportsGenerateResponseHeaders parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new AdsenseReportsGenerateResponseHeaders();
   result.currency = identity(json["currency"]);
@@ -50,12 +50,12 @@ static AdsenseReportsGenerateResponseHeaders parse(Map&lt;String, Object&gt; jso
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adsense-v1.1/AdsenseReportsGenerateResponseHeaders.html">AdsenseReportsGenerateResponseHeaders</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adsense-v1.1/AdsenseReportsGenerateResponseHeaders.html">AdsenseReportsGenerateResponseHeaders</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to AdsenseReportsGenerateResponseHeaders.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(AdsenseReportsGenerateResponseHeaders value) {
+static core.Object serialize(AdsenseReportsGenerateResponseHeaders value) {
   if (value == null) return null;
   final result = {};
   result["currency"] = identity(value.currency);
@@ -81,40 +81,40 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="currency">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>currency</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>currency</strong> <a class="anchor-link"
             href="#currency"
             title="Permalink to AdsenseReportsGenerateResponseHeaders.currency">#</a>
         </h4>
         <div class="doc">
 <p>The currency of this column. Only present if the header type is METRIC_CURRENCY.</p>
 <pre class="source">
-String currency;
+core.String currency;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to AdsenseReportsGenerateResponseHeaders.name">#</a>
         </h4>
         <div class="doc">
 <p>The name of the header.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="type">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
             href="#type"
             title="Permalink to AdsenseReportsGenerateResponseHeaders.type">#</a>
         </h4>
         <div class="doc">
 <p>The type of the header; one of DIMENSION, METRIC<em>TALLY, METRIC</em>RATIO, or METRIC_CURRENCY.</p>
 <pre class="source">
-String type;
+core.String type;
 </pre>
 </div>
 </div>

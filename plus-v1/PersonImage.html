@@ -1,0 +1,101 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>PersonImage Class / plus-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="plus-v1" data-type="PersonImage">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/PersonImage.html">PersonImage</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>PersonImage</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>PersonImage</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../plus-v1/PersonImage.html">PersonImage</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to PersonImage.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static PersonImage parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new PersonImage();
+  result.url = identity(json["url"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../plus-v1/PersonImage.html">PersonImage</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to PersonImage.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(PersonImage value) {
+  if (value == null) return null;
+  final result = {};
+  result["url"] = identity(value.url);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to PersonImage.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="url">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>url</strong> <a class="anchor-link"
+            href="#url"
+            title="Permalink to PersonImage.url">#</a>
+        </h4>
+        <div class="doc">
+<p>The URL of the person's profile photo. To re-size the image and crop it to a square, append the
+query string ?sz=x, where x is the dimension in pixels of each side.</p>
+<pre class="source">
+core.String url;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../urlshortener-v1/Url.html">Url</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../urlshortener-v1/Url.html">Url</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Url.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Url parse(Map&lt;String, Object&gt; json) {
+static Url parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Url();
   result.status = identity(json["status"]);
@@ -53,12 +53,12 @@ static Url parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../urlshortener-v1/Url.html">Url</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../urlshortener-v1/Url.html">Url</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Url.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Url value) {
+static core.Object serialize(Url value) {
   if (value == null) return null;
   final result = {};
   result["status"] = identity(value.status);
@@ -101,7 +101,7 @@ AnalyticsSummary analytics;
 </div>
 <div class="field"><h4 id="created">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
             href="#created"
             title="Permalink to Url.created">#</a>
         </h4>
@@ -109,52 +109,52 @@ AnalyticsSummary analytics;
 <p>Time the short URL was created; ISO 8601 representation using the yyyy-MM-dd'T'HH:mm:ss.SSSZZ
 format, e.g. "2010-10-14T19:01:24.944+00:00".</p>
 <pre class="source">
-String created;
+core.String created;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Url.id">#</a>
         </h4>
         <div class="doc">
 <p>Short URL, e.g. "http://goo.gl/l6MS".</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Url.kind">#</a>
         </h4>
         <div class="doc">
 <p>The fixed string "urlshortener#url".</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="longUrl">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>longUrl</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>longUrl</strong> <a class="anchor-link"
             href="#longUrl"
             title="Permalink to Url.longUrl">#</a>
         </h4>
         <div class="doc">
 <p>Long URL, e.g. "http://www.google.com/". Might not be present if the status is "REMOVED".</p>
 <pre class="source">
-String longUrl;
+core.String longUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="status">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Url.status">#</a>
         </h4>
@@ -162,7 +162,7 @@ String longUrl;
 <p>Status of the target URL. Possible values: "OK", "MALWARE", "PHISHING", or "REMOVED". A URL might
 be marked "REMOVED" if it was flagged as spam, for example.</p>
 <pre class="source">
-String status;
+core.String status;
 </pre>
 </div>
 </div>

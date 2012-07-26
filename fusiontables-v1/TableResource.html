@@ -26,16 +26,28 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="TableResource">
+<span class="show-code">Code</span>
+new <strong>TableResource</strong>._internal(<a href="../fusiontables-v1/FusiontablesApi.html">FusiontablesApi</a> $service) <a class="anchor-link" href="#TableResource"
+              title="Permalink to TableResource.TableResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TableResource._internal(FusiontablesApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> tableId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> tableId) <a class="anchor-link" href="#delete"
               title="Permalink to TableResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes a table.</p><ul><li>
 <span class="param">tableId</span> Id of the table that is being deleted.</li></ul>
 <pre class="source">
-Future delete(String tableId) {
+core.Future delete(core.String tableId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +64,7 @@ Future delete(String tableId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -63,13 +75,13 @@ Future delete(String tableId) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> tableId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/Table.html">Table</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> tableId) <a class="anchor-link" href="#get"
               title="Permalink to TableResource.get">#</a></h4>
 <div class="doc">
 <p>Retrieves a specific table by its id.</p><ul><li>
 <span class="param">tableId</span> Identifier(ID) for the table being requested.</li></ul>
 <pre class="source">
-Future&lt;Table&gt; get(String tableId) {
+core.Future&lt;Table&gt; get(core.String tableId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -86,7 +98,7 @@ Future&lt;Table&gt; get(String tableId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -97,13 +109,13 @@ Future&lt;Table&gt; get(String tableId) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../fusiontables-v1/Table.html">Table</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/Table.html">Table</a>&gt; <strong>insert</strong>(<a href="../fusiontables-v1/Table.html">Table</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to TableResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a new table.</p><ul><li>
 <span class="param">content</span> the Table</li></ul>
 <pre class="source">
-Future&lt;Table&gt; insert(Table content) {
+core.Future&lt;Table&gt; insert(Table content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -121,7 +133,7 @@ Future&lt;Table&gt; insert(Table content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -132,7 +144,7 @@ Future&lt;Table&gt; insert(Table content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/TableList.html">TableList</a>&gt; <strong>list</strong>([<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to TableResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of tables a user owns.</p><ul><li>
@@ -140,7 +152,7 @@ Future&lt;Table&gt; insert(Table content) {
 <span class="param">maxResults</span> Maximum number of styles to return. Optional. Default is 5.</li></ul>
 <p>Minimum: 0.</p>
 <pre class="source">
-Future&lt;TableList&gt; list([String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;TableList&gt; list([core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -158,7 +170,7 @@ Future&lt;TableList&gt; list([String pageToken = UNSPECIFIED, int maxResults = U
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -169,7 +181,7 @@ Future&lt;TableList&gt; list([String pageToken = UNSPECIFIED, int maxResults = U
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> tableId, <a href="../fusiontables-v1/Table.html">Table</a> content, [<a href="../dart_core/bool.html">bool</a> replaceViewDefinition = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/Table.html">Table</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> tableId, <a href="../fusiontables-v1/Table.html">Table</a> content, [<a href="../core/bool.html">bool</a> replaceViewDefinition = UNSPECIFIED]) <a class="anchor-link" href="#patch"
               title="Permalink to TableResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates an existing table. Unless explicitly requested, only the name, description, and
@@ -180,7 +192,7 @@ attribution will be updated. This method supports patch semantics.</p><ul><li>
 <span class="param">replaceViewDefinition</span> Should the view definition also be updated? The specified view definition replaces the existing one.
    Only a view can be updated with a new definition.</p></li></ul>
 <pre class="source">
-Future&lt;Table&gt; patch(String tableId, Table content, [bool replaceViewDefinition = UNSPECIFIED]) {
+core.Future&lt;Table&gt; patch(core.String tableId, Table content, [core.bool replaceViewDefinition = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -200,7 +212,7 @@ Future&lt;Table&gt; patch(String tableId, Table content, [bool replaceViewDefini
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -211,7 +223,7 @@ Future&lt;Table&gt; patch(String tableId, Table content, [bool replaceViewDefini
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> tableId, <a href="../fusiontables-v1/Table.html">Table</a> content, [<a href="../dart_core/bool.html">bool</a> replaceViewDefinition = UNSPECIFIED]) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/Table.html">Table</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> tableId, <a href="../fusiontables-v1/Table.html">Table</a> content, [<a href="../core/bool.html">bool</a> replaceViewDefinition = UNSPECIFIED]) <a class="anchor-link" href="#update"
               title="Permalink to TableResource.update">#</a></h4>
 <div class="doc">
 <p>Updates an existing table. Unless explicitly requested, only the name, description, and
@@ -222,7 +234,7 @@ attribution will be updated.</p><ul><li>
 <span class="param">replaceViewDefinition</span> Should the view definition also be updated? The specified view definition replaces the existing one.
    Only a view can be updated with a new definition.</p></li></ul>
 <pre class="source">
-Future&lt;Table&gt; update(String tableId, Table content, [bool replaceViewDefinition = UNSPECIFIED]) {
+core.Future&lt;Table&gt; update(core.String tableId, Table content, [core.bool replaceViewDefinition = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -242,7 +254,7 @@ Future&lt;Table&gt; update(String tableId, Table content, [bool replaceViewDefin
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

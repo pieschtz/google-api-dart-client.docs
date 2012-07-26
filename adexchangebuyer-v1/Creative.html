@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../adexchangebuyer-v1/Creative.html">Creative</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../adexchangebuyer-v1/Creative.html">Creative</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Creative.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Creative parse(Map&lt;String, Object&gt; json) {
+static Creative parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Creative();
   result.productCategories = map(identity)(json["productCategories"]);
@@ -64,12 +64,12 @@ static Creative parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adexchangebuyer-v1/Creative.html">Creative</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adexchangebuyer-v1/Creative.html">Creative</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Creative.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Creative value) {
+static core.Object serialize(Creative value) {
   if (value == null) return null;
   final result = {};
   result["productCategories"] = map(identity)(value.productCategories);
@@ -109,98 +109,98 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="accountId">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>accountId</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>accountId</strong> <a class="anchor-link"
             href="#accountId"
             title="Permalink to Creative.accountId">#</a>
         </h4>
         <div class="doc">
 <p>Account id.</p>
 <pre class="source">
-int accountId;
+core.int accountId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="adgroupId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>adgroupId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>adgroupId</strong> <a class="anchor-link"
             href="#adgroupId"
             title="Permalink to Creative.adgroupId">#</a>
         </h4>
         <div class="doc">
 <p>The pretargeting adgroup id that this creative will be associated with.</p>
 <pre class="source">
-String adgroupId;
+core.String adgroupId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="advertiserId">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>advertiserId</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>advertiserId</strong> <a class="anchor-link"
             href="#advertiserId"
             title="Permalink to Creative.advertiserId">#</a>
         </h4>
         <div class="doc">
 <p>Detected advertiser id, if any. Read-only. This field should not be set in requests.</p>
 <pre class="source">
-List&lt;String&gt; advertiserId;
+core.List&lt;core.String&gt; advertiserId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="advertiserName">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>advertiserName</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>advertiserName</strong> <a class="anchor-link"
             href="#advertiserName"
             title="Permalink to Creative.advertiserName">#</a>
         </h4>
         <div class="doc">
 <p>The name of the company being advertised in the creative.</p>
 <pre class="source">
-String advertiserName;
+core.String advertiserName;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="attribute">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>attribute</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/int.html">int</a>&gt;         <strong>attribute</strong> <a class="anchor-link"
             href="#attribute"
             title="Permalink to Creative.attribute">#</a>
         </h4>
         <div class="doc">
 <p>All attributes for the ads that may be shown from this snippet.</p>
 <pre class="source">
-List&lt;int&gt; attribute;
+core.List&lt;core.int&gt; attribute;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="buyerCreativeId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>buyerCreativeId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>buyerCreativeId</strong> <a class="anchor-link"
             href="#buyerCreativeId"
             title="Permalink to Creative.buyerCreativeId">#</a>
         </h4>
         <div class="doc">
 <p>A buyer-specific id identifying the creative in this ad.</p>
 <pre class="source">
-String buyerCreativeId;
+core.String buyerCreativeId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="clickThroughUrl">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>clickThroughUrl</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>clickThroughUrl</strong> <a class="anchor-link"
             href="#clickThroughUrl"
             title="Permalink to Creative.clickThroughUrl">#</a>
         </h4>
         <div class="doc">
 <p>The set of destination urls for the snippet.</p>
 <pre class="source">
-List&lt;String&gt; clickThroughUrl;
+core.List&lt;core.String&gt; clickThroughUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="disapprovalReasons">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>disapprovalReasons</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>disapprovalReasons</strong> <a class="anchor-link"
             href="#disapprovalReasons"
             title="Permalink to Creative.disapprovalReasons">#</a>
         </h4>
@@ -210,26 +210,13 @@ it is possible for the creative to have a status of DISAPPROVED with an empty li
 disapproval_reasons. In this case, please reach out to your TAM to help debug the issue. Read-
 only. This field should not be set in requests.</p>
 <pre class="source">
-List&lt;String&gt; disapprovalReasons;
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="height">
-<span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>height</strong> <a class="anchor-link"
-            href="#height"
-            title="Permalink to Creative.height">#</a>
-        </h4>
-        <div class="doc">
-<p>Ad height.</p>
-<pre class="source">
-int height;
+core.List&lt;core.String&gt; disapprovalReasons;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="hTMLSnippet">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>hTMLSnippet</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>hTMLSnippet</strong> <a class="anchor-link"
             href="#hTMLSnippet"
             title="Permalink to Creative.hTMLSnippet">#</a>
         </h4>
@@ -237,98 +224,111 @@ int height;
 <p>The HTML snippet that displays the ad when inserted in the web page. If set, videoURL should not
 be set.</p>
 <pre class="source">
-String hTMLSnippet;
+core.String hTMLSnippet;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="height">
+<span class="show-code">Code</span>
+<a href="../core/int.html">int</a>         <strong>height</strong> <a class="anchor-link"
+            href="#height"
+            title="Permalink to Creative.height">#</a>
+        </h4>
+        <div class="doc">
+<p>Ad height.</p>
+<pre class="source">
+core.int height;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Creative.kind">#</a>
         </h4>
         <div class="doc">
 <p>Resource type.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="productCategories">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>productCategories</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/int.html">int</a>&gt;         <strong>productCategories</strong> <a class="anchor-link"
             href="#productCategories"
             title="Permalink to Creative.productCategories">#</a>
         </h4>
         <div class="doc">
 <p>Detected product categories, if any. Read-only. This field should not be set in requests.</p>
 <pre class="source">
-List&lt;int&gt; productCategories;
+core.List&lt;core.int&gt; productCategories;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="sensitiveCategories">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>sensitiveCategories</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/int.html">int</a>&gt;         <strong>sensitiveCategories</strong> <a class="anchor-link"
             href="#sensitiveCategories"
             title="Permalink to Creative.sensitiveCategories">#</a>
         </h4>
         <div class="doc">
 <p>Detected sensitive categories, if any. Read-only. This field should not be set in requests.</p>
 <pre class="source">
-List&lt;int&gt; sensitiveCategories;
+core.List&lt;core.int&gt; sensitiveCategories;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="status">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Creative.status">#</a>
         </h4>
         <div class="doc">
 <p>Creative serving status. Read-only. This field should not be set in requests.</p>
 <pre class="source">
-String status;
+core.String status;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="vendorType">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>vendorType</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/int.html">int</a>&gt;         <strong>vendorType</strong> <a class="anchor-link"
             href="#vendorType"
             title="Permalink to Creative.vendorType">#</a>
         </h4>
         <div class="doc">
 <p>All vendor types for the ads that may be shown from this snippet.</p>
 <pre class="source">
-List&lt;int&gt; vendorType;
+core.List&lt;core.int&gt; vendorType;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="videoURL">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>videoURL</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>videoURL</strong> <a class="anchor-link"
             href="#videoURL"
             title="Permalink to Creative.videoURL">#</a>
         </h4>
         <div class="doc">
 <p>The url to fetch a video ad. If set, HTMLSnippet should not be set.</p>
 <pre class="source">
-String videoURL;
+core.String videoURL;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="width">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>width</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>width</strong> <a class="anchor-link"
             href="#width"
             title="Permalink to Creative.width">#</a>
         </h4>
         <div class="doc">
 <p>Ad width.</p>
 <pre class="source">
-int width;
+core.int width;
 </pre>
 </div>
 </div>

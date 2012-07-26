@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="LayersVolumeAnnotationsResourceResource">
+<span class="show-code">Code</span>
+new <strong>LayersVolumeAnnotationsResourceResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#LayersVolumeAnnotationsResourceResource"
+              title="Permalink to LayersVolumeAnnotationsResourceResource.LayersVolumeAnnotationsResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+LayersVolumeAnnotationsResourceResource._internal(BooksApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> annotationId, [<a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Volumeannotation.html">Volumeannotation</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> volumeId, <a href="../core/String.html">String</a> layerId, <a href="../core/String.html">String</a> annotationId, [<a href="../core/String.html">String</a> locale = UNSPECIFIED, <a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to LayersVolumeAnnotationsResourceResource.get">#</a></h4>
 <div class="doc">
 <p>Gets the volume annotation.</p><ul><li>
@@ -39,7 +51,7 @@
 <span class="param">locale</span> The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future&lt;Volumeannotation&gt; get(String volumeId, String layerId, String annotationId, [String locale = UNSPECIFIED, String source = UNSPECIFIED]) {
+core.Future&lt;Volumeannotation&gt; get(core.String volumeId, core.String layerId, core.String annotationId, [core.String locale = UNSPECIFIED, core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -60,7 +72,7 @@ Future&lt;Volumeannotation&gt; get(String volumeId, String layerId, String annot
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -71,7 +83,7 @@ Future&lt;Volumeannotation&gt; get(String volumeId, String layerId, String annot
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> volumeId, <a href="../dart_core/String.html">String</a> layerId, <a href="../dart_core/String.html">String</a> contentVersion, [<a href="../dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endPosition = UNSPECIFIED, <a href="../dart_core/String.html">String</a> endOffset = UNSPECIFIED, <a href="../dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="../dart_core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> source = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startOffset = UNSPECIFIED, <a href="../dart_core/String.html">String</a> startPosition = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Volumeannotations.html">Volumeannotations</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> volumeId, <a href="../core/String.html">String</a> layerId, <a href="../core/String.html">String</a> contentVersion, [<a href="../core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="../core/String.html">String</a> endPosition = UNSPECIFIED, <a href="../core/String.html">String</a> endOffset = UNSPECIFIED, <a href="../core/String.html">String</a> locale = UNSPECIFIED, <a href="../core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="../core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/String.html">String</a> source = UNSPECIFIED, <a href="../core/String.html">String</a> startOffset = UNSPECIFIED, <a href="../core/String.html">String</a> startPosition = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to LayersVolumeAnnotationsResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Gets the volume annotations for a volume and layer.</p><ul><li>
@@ -98,7 +110,7 @@ Maximum: 200.
    * 
 <span class="param">startPosition</span> The start position to start retrieving data from.</p>
 <pre class="source">
-Future&lt;Volumeannotations&gt; list(String volumeId, String layerId, String contentVersion, [bool showDeleted = UNSPECIFIED, String endPosition = UNSPECIFIED, String endOffset = UNSPECIFIED, String locale = UNSPECIFIED, String updatedMin = UNSPECIFIED, String updatedMax = UNSPECIFIED, int maxResults = UNSPECIFIED, String pageToken = UNSPECIFIED, String source = UNSPECIFIED, String startOffset = UNSPECIFIED, String startPosition = UNSPECIFIED]) {
+core.Future&lt;Volumeannotations&gt; list(core.String volumeId, core.String layerId, core.String contentVersion, [core.bool showDeleted = UNSPECIFIED, core.String endPosition = UNSPECIFIED, core.String endOffset = UNSPECIFIED, core.String locale = UNSPECIFIED, core.String updatedMin = UNSPECIFIED, core.String updatedMax = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String source = UNSPECIFIED, core.String startOffset = UNSPECIFIED, core.String startPosition = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -128,7 +140,7 @@ Future&lt;Volumeannotations&gt; list(String volumeId, String layerId, String con
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

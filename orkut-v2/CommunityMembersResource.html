@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="CommunityMembersResource">
+<span class="show-code">Code</span>
+new <strong>CommunityMembersResource</strong>._internal(<a href="../orkut-v2/OrkutApi.html">OrkutApi</a> $service) <a class="anchor-link" href="#CommunityMembersResource"
+              title="Permalink to CommunityMembersResource.CommunityMembersResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CommunityMembersResource._internal(OrkutApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> userId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/int.html">int</a> communityId, <a href="../core/String.html">String</a> userId) <a class="anchor-link" href="#delete"
               title="Permalink to CommunityMembersResource.delete">#</a></h4>
 <div class="doc">
 <p>Makes the user leave a community.</p><ul><li>
 <span class="param">communityId</span> ID of the community.</li><li>
 <span class="param">userId</span> ID of the user.</li></ul>
 <pre class="source">
-Future delete(int communityId, String userId) {
+core.Future delete(core.int communityId, core.String userId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future delete(int communityId, String userId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,7 +77,7 @@ Future delete(int communityId, String userId) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> userId, [<a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../orkut-v2/CommunityMembers.html">CommunityMembers</a>&gt; <strong>get</strong>(<a href="../core/int.html">int</a> communityId, <a href="../core/String.html">String</a> userId, [<a href="../core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to CommunityMembersResource.get">#</a></h4>
 <div class="doc">
 <p>Retrieves the relationship between a user and a community.</p><ul><li>
@@ -73,7 +85,7 @@ Future delete(int communityId, String userId) {
 <span class="param">userId</span> ID of the user.</li><li>
 <span class="param">hl</span> Specifies the interface language (host language) of your user interface.</li></ul>
 <pre class="source">
-Future&lt;CommunityMembers&gt; get(int communityId, String userId, [String hl = UNSPECIFIED]) {
+core.Future&lt;CommunityMembers&gt; get(core.int communityId, core.String userId, [core.String hl = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -92,7 +104,7 @@ Future&lt;CommunityMembers&gt; get(int communityId, String userId, [String hl = 
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -103,14 +115,14 @@ Future&lt;CommunityMembers&gt; get(int communityId, String userId, [String hl = 
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/int.html">int</a> communityId, <a href="../dart_core/String.html">String</a> userId) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../orkut-v2/CommunityMembers.html">CommunityMembers</a>&gt; <strong>insert</strong>(<a href="../core/int.html">int</a> communityId, <a href="../core/String.html">String</a> userId) <a class="anchor-link" href="#insert"
               title="Permalink to CommunityMembersResource.insert">#</a></h4>
 <div class="doc">
 <p>Makes the user join a community.</p><ul><li>
 <span class="param">communityId</span> ID of the community.</li><li>
 <span class="param">userId</span> ID of the user.</li></ul>
 <pre class="source">
-Future&lt;CommunityMembers&gt; insert(int communityId, String userId) {
+core.Future&lt;CommunityMembers&gt; insert(core.int communityId, core.String userId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -128,7 +140,7 @@ Future&lt;CommunityMembers&gt; insert(int communityId, String userId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -139,7 +151,7 @@ Future&lt;CommunityMembers&gt; insert(int communityId, String userId) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> communityId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/bool.html">bool</a> friendsOnly = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../orkut-v2/CommunityMembersList.html">CommunityMembersList</a>&gt; <strong>list</strong>(<a href="../core/int.html">int</a> communityId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/bool.html">bool</a> friendsOnly = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CommunityMembersResource.list">#</a></h4>
 <div class="doc">
 <p>Lists members of a community. Use the pagination tokens to retrieve the full list; do not rely on
@@ -153,7 +165,7 @@ as that count may be approximate.</p><ul><li>
    * 
 <span class="param">hl</span> Specifies the interface language (host language) of your user interface.</p>
 <pre class="source">
-Future&lt;CommunityMembersList&gt; list(int communityId, [String pageToken = UNSPECIFIED, bool friendsOnly = UNSPECIFIED, int maxResults = UNSPECIFIED, String hl = UNSPECIFIED]) {
+core.Future&lt;CommunityMembersList&gt; list(core.int communityId, [core.String pageToken = UNSPECIFIED, core.bool friendsOnly = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String hl = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -174,7 +186,7 @@ Future&lt;CommunityMembersList&gt; list(int communityId, [String pageToken = UNS
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

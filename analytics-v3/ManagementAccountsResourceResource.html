@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ManagementAccountsResourceResource">
+<span class="show-code">Code</span>
+new <strong>ManagementAccountsResourceResource</strong>._internal(<a href="../analytics-v3/AnalyticsApi.html">AnalyticsApi</a> $service) <a class="anchor-link" href="#ManagementAccountsResourceResource"
+              title="Permalink to ManagementAccountsResourceResource.ManagementAccountsResourceResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ManagementAccountsResourceResource._internal(AnalyticsApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../analytics-v3/Accounts.html">Accounts</a>&gt; <strong>list</strong>([<a href="../core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ManagementAccountsResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Lists all accounts to which the user has access.</p><ul><li>
@@ -39,7 +51,7 @@
    the max-results parameter.</p></li></ul>
 <p>Minimum: 1.</p>
 <pre class="source">
-Future&lt;Accounts&gt; list([int maxResults = UNSPECIFIED, int startIndex = UNSPECIFIED]) {
+core.Future&lt;Accounts&gt; list([core.int maxResults = UNSPECIFIED, core.int startIndex = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -57,7 +69,7 @@ Future&lt;Accounts&gt; list([int maxResults = UNSPECIFIED, int startIndex = UNSP
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

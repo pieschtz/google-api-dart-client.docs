@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="CreativesResource">
+<span class="show-code">Code</span>
+new <strong>CreativesResource</strong>._internal(<a href="../adexchangebuyer-v1/AdexchangebuyerApi.html">AdexchangebuyerApi</a> $service) <a class="anchor-link" href="#CreativesResource"
+              title="Permalink to CreativesResource.CreativesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CreativesResource._internal(AdexchangebuyerApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/int.html">int</a> accountId, <a href="../dart_core/String.html">String</a> buyerCreativeId, <a href="../dart_core/String.html">String</a> adgroupId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adexchangebuyer-v1/Creative.html">Creative</a>&gt; <strong>get</strong>(<a href="../core/int.html">int</a> accountId, <a href="../core/String.html">String</a> buyerCreativeId, <a href="../core/String.html">String</a> adgroupId) <a class="anchor-link" href="#get"
               title="Permalink to CreativesResource.get">#</a></h4>
 <div class="doc">
 <p>Gets the status for a single creative.</p><ul><li>
@@ -37,7 +49,7 @@
 <span class="param">buyerCreativeId</span> The buyer-specific id for this creative.</li><li>
 <span class="param">adgroupId</span> The adgroup this creative belongs to.</li></ul>
 <pre class="source">
-Future&lt;Creative&gt; get(int accountId, String buyerCreativeId, String adgroupId) {
+core.Future&lt;Creative&gt; get(core.int accountId, core.String buyerCreativeId, core.String adgroupId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -56,7 +68,7 @@ Future&lt;Creative&gt; get(int accountId, String buyerCreativeId, String adgroup
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -67,13 +79,13 @@ Future&lt;Creative&gt; get(int accountId, String buyerCreativeId, String adgroup
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../adexchangebuyer-v1/Creative.html">Creative</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adexchangebuyer-v1/Creative.html">Creative</a>&gt; <strong>insert</strong>(<a href="../adexchangebuyer-v1/Creative.html">Creative</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CreativesResource.insert">#</a></h4>
 <div class="doc">
 <p>Submit a new creative.</p><ul><li>
 <span class="param">content</span> the Creative</li></ul>
 <pre class="source">
-Future&lt;Creative&gt; insert(Creative content) {
+core.Future&lt;Creative&gt; insert(Creative content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -91,7 +103,7 @@ Future&lt;Creative&gt; insert(Creative content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -102,7 +114,7 @@ Future&lt;Creative&gt; insert(Creative content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adexchangebuyer-v1/CreativesList.html">CreativesList</a>&gt; <strong>list</strong>([<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CreativesResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of the authenticated user's active creatives.</p><ul><li>
@@ -114,7 +126,7 @@ Future&lt;Creative&gt; insert(Creative content) {
    Minimum: 1.
 Maximum: 1000.</p></li></ul>
 <pre class="source">
-Future&lt;CreativesList&gt; list([String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;CreativesList&gt; list([core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -132,7 +144,7 @@ Future&lt;CreativesList&gt; list([String pageToken = UNSPECIFIED, int maxResults
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

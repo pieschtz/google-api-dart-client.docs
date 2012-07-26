@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../bigquery-v2/JobConfigurationQuery.html">JobConfigurationQuery</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../bigquery-v2/JobConfigurationQuery.html">JobConfigurationQuery</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to JobConfigurationQuery.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static JobConfigurationQuery parse(Map&lt;String, Object&gt; json) {
+static JobConfigurationQuery parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new JobConfigurationQuery();
   result.defaultDataset = DatasetReference.parse(json["defaultDataset"]);
@@ -53,12 +53,12 @@ static JobConfigurationQuery parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/JobConfigurationQuery.html">JobConfigurationQuery</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/JobConfigurationQuery.html">JobConfigurationQuery</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to JobConfigurationQuery.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(JobConfigurationQuery value) {
+static core.Object serialize(JobConfigurationQuery value) {
   if (value == null) return null;
   final result = {};
   result["defaultDataset"] = DatasetReference.serialize(value.defaultDataset);
@@ -87,7 +87,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="createDisposition">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>createDisposition</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>createDisposition</strong> <a class="anchor-link"
             href="#createDisposition"
             title="Permalink to JobConfigurationQuery.createDisposition">#</a>
         </h4>
@@ -95,7 +95,7 @@ toString() =&gt; serialize(this).toString();
 <p><code>Optional</code> Whether to create the table if it doesn't already exist (CREATE<em>IF</em>NEEDED) or to
 require the table already exist (CREATE<em>NEVER). Default is CREATE</em>IF_NEEDED.</p>
 <pre class="source">
-String createDisposition;
+core.String createDisposition;
 </pre>
 </div>
 </div>
@@ -128,7 +128,7 @@ TableReference destinationTable;
 </div>
 <div class="field"><h4 id="priority">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>priority</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>priority</strong> <a class="anchor-link"
             href="#priority"
             title="Permalink to JobConfigurationQuery.priority">#</a>
         </h4>
@@ -136,26 +136,26 @@ TableReference destinationTable;
 <p><code>Experimental</code> Specifies a priority for the query. Default is INTERACTIVE. Alternative is BATCH,
 which may be subject to looser quota restrictions.</p>
 <pre class="source">
-String priority;
+core.String priority;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="query">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>query</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>query</strong> <a class="anchor-link"
             href="#query"
             title="Permalink to JobConfigurationQuery.query">#</a>
         </h4>
         <div class="doc">
 <p><code>Required</code> BigQuery SQL query to execute.</p>
 <pre class="source">
-String query;
+core.String query;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="writeDisposition">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>writeDisposition</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>writeDisposition</strong> <a class="anchor-link"
             href="#writeDisposition"
             title="Permalink to JobConfigurationQuery.writeDisposition">#</a>
         </h4>
@@ -163,7 +163,7 @@ String query;
 <p><code>Optional</code> Whether to overwrite an existing table (WRITE<em>TRUNCATE), append to an existing table
 (WRITE</em>APPEND), or require that the the table is empty (WRITE<em>EMPTY). Default is WRITE</em>EMPTY.</p>
 <pre class="source">
-String writeDisposition;
+core.String writeDisposition;
 </pre>
 </div>
 </div>

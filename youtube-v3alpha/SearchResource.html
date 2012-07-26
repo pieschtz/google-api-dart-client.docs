@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="SearchResource">
+<span class="show-code">Code</span>
+new <strong>SearchResource</strong>._internal(<a href="../youtube-v3alpha/YoutubeApi.html">YoutubeApi</a> $service) <a class="anchor-link" href="#SearchResource"
+              title="Permalink to SearchResource.SearchResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+SearchResource._internal(YoutubeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../youtube-v3alpha/SearchResourceListType.html">SearchResourceListType</a> type = UNSPECIFIED, <a href="../youtube-v3alpha/SearchResourceListOrder.html">SearchResourceListOrder</a> order = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../youtube-v3alpha/SearchListResponse.html">SearchListResponse</a>&gt; <strong>list</strong>([<a href="../core/String.html">String</a> q = UNSPECIFIED, <a href="../core/int.html">int</a> startIndex = UNSPECIFIED, <a href="../youtube-v3alpha/SearchResourceListType.html">SearchResourceListType</a> type = UNSPECIFIED, <a href="../youtube-v3alpha/SearchResourceListOrder.html">SearchResourceListOrder</a> order = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to SearchResource.list">#</a></h4>
 <div class="doc">
 <p>Universal search for youtube.</p><ul><li>
@@ -49,7 +61,7 @@ Default: 25.
 Minimum: 0.
 Maximum: 50.</p></li></ul>
 <pre class="source">
-Future&lt;SearchListResponse&gt; list([String q = UNSPECIFIED, int startIndex = UNSPECIFIED, SearchResourceListType type = UNSPECIFIED, SearchResourceListOrder order = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;SearchListResponse&gt; list([core.String q = UNSPECIFIED, core.int startIndex = UNSPECIFIED, SearchResourceListType type = UNSPECIFIED, SearchResourceListOrder order = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -70,7 +82,7 @@ Future&lt;SearchListResponse&gt; list([String q = UNSPECIFIED, int startIndex = 
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

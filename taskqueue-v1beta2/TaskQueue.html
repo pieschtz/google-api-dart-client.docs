@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../taskqueue-v1beta2/TaskQueue.html">TaskQueue</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../taskqueue-v1beta2/TaskQueue.html">TaskQueue</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to TaskQueue.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static TaskQueue parse(Map&lt;String, Object&gt; json) {
+static TaskQueue parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new TaskQueue();
   result.kind = identity(json["kind"]);
@@ -52,12 +52,12 @@ static TaskQueue parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../taskqueue-v1beta2/TaskQueue.html">TaskQueue</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../taskqueue-v1beta2/TaskQueue.html">TaskQueue</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to TaskQueue.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(TaskQueue value) {
+static core.Object serialize(TaskQueue value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -98,33 +98,33 @@ TaskQueueAcl acl;
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to TaskQueue.id">#</a>
         </h4>
         <div class="doc">
 <p>Name of the taskqueue.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to TaskQueue.kind">#</a>
         </h4>
         <div class="doc">
 <p>The kind of REST object returned, in this case taskqueue.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="maxLeases">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>maxLeases</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>maxLeases</strong> <a class="anchor-link"
             href="#maxLeases"
             title="Permalink to TaskQueue.maxLeases">#</a>
         </h4>
@@ -132,7 +132,7 @@ String kind;
 <p>The number of times we should lease out tasks before giving up on them. If unset we lease them
 out forever until a worker deletes the task.</p>
 <pre class="source">
-int maxLeases;
+core.int maxLeases;
 </pre>
 </div>
 </div>

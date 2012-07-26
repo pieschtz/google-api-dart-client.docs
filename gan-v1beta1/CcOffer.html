@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../gan-v1beta1/CcOffer.html">CcOffer</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../gan-v1beta1/CcOffer.html">CcOffer</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to CcOffer.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static CcOffer parse(Map&lt;String, Object&gt; json) {
+static CcOffer parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new CcOffer();
   result.luggageInsurance = identity(json["luggageInsurance"]);
@@ -110,12 +110,12 @@ static CcOffer parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/CcOffer.html">CcOffer</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/CcOffer.html">CcOffer</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to CcOffer.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(CcOffer value) {
+static core.Object serialize(CcOffer value) {
   if (value == null) return null;
   final result = {};
   result["luggageInsurance"] = identity(value.luggageInsurance);
@@ -201,163 +201,176 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="additionalCardBenefits">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>additionalCardBenefits</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>additionalCardBenefits</strong> <a class="anchor-link"
             href="#additionalCardBenefits"
             title="Permalink to CcOffer.additionalCardBenefits">#</a>
         </h4>
         <div class="doc">
 <p>More marketing copy about the card's benefits. A summary field.</p>
 <pre class="source">
-List&lt;String&gt; additionalCardBenefits;
+core.List&lt;core.String&gt; additionalCardBenefits;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="additionalCardHolderFee">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>additionalCardHolderFee</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>additionalCardHolderFee</strong> <a class="anchor-link"
             href="#additionalCardHolderFee"
             title="Permalink to CcOffer.additionalCardHolderFee">#</a>
         </h4>
         <div class="doc">
 <p>Any extra fees levied on card holders.</p>
 <pre class="source">
-String additionalCardHolderFee;
+core.String additionalCardHolderFee;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="ageMinimum">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>ageMinimum</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>ageMinimum</strong> <a class="anchor-link"
             href="#ageMinimum"
             title="Permalink to CcOffer.ageMinimum">#</a>
         </h4>
         <div class="doc">
 <p>The youngest a recipient of this card may be.</p>
 <pre class="source">
-double ageMinimum;
+core.double ageMinimum;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="ageMinimumDetails">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>ageMinimumDetails</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>ageMinimumDetails</strong> <a class="anchor-link"
             href="#ageMinimumDetails"
             title="Permalink to CcOffer.ageMinimumDetails">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the details of the age minimum restriction.</p>
 <pre class="source">
-String ageMinimumDetails;
+core.String ageMinimumDetails;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="annualFee">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>annualFee</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>annualFee</strong> <a class="anchor-link"
             href="#annualFee"
             title="Permalink to CcOffer.annualFee">#</a>
         </h4>
         <div class="doc">
 <p>The ongoing annual fee, in dollars.</p>
 <pre class="source">
-double annualFee;
+core.double annualFee;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="annualFeeDisplay">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>annualFeeDisplay</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>annualFeeDisplay</strong> <a class="anchor-link"
             href="#annualFeeDisplay"
             title="Permalink to CcOffer.annualFeeDisplay">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the annual fee, including any difference for the first year. A summary field.</p>
 <pre class="source">
-String annualFeeDisplay;
+core.String annualFeeDisplay;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="annualRewardMaximum">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>annualRewardMaximum</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>annualRewardMaximum</strong> <a class="anchor-link"
             href="#annualRewardMaximum"
             title="Permalink to CcOffer.annualRewardMaximum">#</a>
         </h4>
         <div class="doc">
 <p>The largest number of units you may accumulate in a year.</p>
 <pre class="source">
-double annualRewardMaximum;
+core.double annualRewardMaximum;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="approvedCategories">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>approvedCategories</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>approvedCategories</strong> <a class="anchor-link"
             href="#approvedCategories"
             title="Permalink to CcOffer.approvedCategories">#</a>
         </h4>
         <div class="doc">
 <p>Possible categories for this card, eg "Low Interest" or "Good." A summary field.</p>
 <pre class="source">
-List&lt;String&gt; approvedCategories;
+core.List&lt;core.String&gt; approvedCategories;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="aprDisplay">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>aprDisplay</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>aprDisplay</strong> <a class="anchor-link"
             href="#aprDisplay"
             title="Permalink to CcOffer.aprDisplay">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the purchase APR. A summary field.</p>
 <pre class="source">
-String aprDisplay;
+core.String aprDisplay;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="balanceComputationMethod">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>balanceComputationMethod</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>balanceComputationMethod</strong> <a class="anchor-link"
             href="#balanceComputationMethod"
             title="Permalink to CcOffer.balanceComputationMethod">#</a>
         </h4>
         <div class="doc">
 <p>Text describing how the balance is computed. A summary field.</p>
 <pre class="source">
-String balanceComputationMethod;
+core.String balanceComputationMethod;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="balanceTransferTerms">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>balanceTransferTerms</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>balanceTransferTerms</strong> <a class="anchor-link"
             href="#balanceTransferTerms"
             title="Permalink to CcOffer.balanceTransferTerms">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the terms for balance transfers. A summary field.</p>
 <pre class="source">
-String balanceTransferTerms;
+core.String balanceTransferTerms;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="bonusRewards">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>bonusRewards</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../gan-v1beta1/CcOfferBonusRewards.html">CcOfferBonusRewards</a>&gt;         <strong>bonusRewards</strong> <a class="anchor-link"
             href="#bonusRewards"
             title="Permalink to CcOffer.bonusRewards">#</a>
         </h4>
         <div class="doc">
 <p>For cards with rewards programs, extra circumstances whereby additional rewards may be granted.</p>
 <pre class="source">
-List&lt;CcOfferBonusRewards&gt; bonusRewards;
+core.List&lt;CcOfferBonusRewards&gt; bonusRewards;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="carRentalInsurance">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>carRentalInsurance</strong> <a class="anchor-link"
+            href="#carRentalInsurance"
+            title="Permalink to CcOffer.carRentalInsurance">#</a>
+        </h4>
+        <div class="doc">
+<p>If you get coverage when you use the card for the given activity, this field describes it.</p>
+<pre class="source">
+core.String carRentalInsurance;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="cardBenefits">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>cardBenefits</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>cardBenefits</strong> <a class="anchor-link"
             href="#cardBenefits"
             title="Permalink to CcOffer.cardBenefits">#</a>
         </h4>
@@ -365,13 +378,13 @@ List&lt;CcOfferBonusRewards&gt; bonusRewards;
 <p>A list of what the issuer thinks are the most important benefits of the card. Usually summarizes
 the rewards program, if there is one. A summary field.</p>
 <pre class="source">
-List&lt;String&gt; cardBenefits;
+core.List&lt;core.String&gt; cardBenefits;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="cardName">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>cardName</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>cardName</strong> <a class="anchor-link"
             href="#cardName"
             title="Permalink to CcOffer.cardName">#</a>
         </h4>
@@ -379,78 +392,65 @@ List&lt;String&gt; cardBenefits;
 <p>The issuer's name for the card, including any trademark or service mark designators. A summary
 field.</p>
 <pre class="source">
-String cardName;
+core.String cardName;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="cardType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>cardType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>cardType</strong> <a class="anchor-link"
             href="#cardType"
             title="Permalink to CcOffer.cardType">#</a>
         </h4>
         <div class="doc">
 <p>What kind of credit card this is, for example secured or unsecured.</p>
 <pre class="source">
-String cardType;
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="carRentalInsurance">
-<span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>carRentalInsurance</strong> <a class="anchor-link"
-            href="#carRentalInsurance"
-            title="Permalink to CcOffer.carRentalInsurance">#</a>
-        </h4>
-        <div class="doc">
-<p>If you get coverage when you use the card for the given activity, this field describes it.</p>
-<pre class="source">
-String carRentalInsurance;
+core.String cardType;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="cashAdvanceTerms">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>cashAdvanceTerms</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>cashAdvanceTerms</strong> <a class="anchor-link"
             href="#cashAdvanceTerms"
             title="Permalink to CcOffer.cashAdvanceTerms">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the terms for cash advances. A summary field.</p>
 <pre class="source">
-String cashAdvanceTerms;
+core.String cashAdvanceTerms;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="creditLimitMax">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>creditLimitMax</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>creditLimitMax</strong> <a class="anchor-link"
             href="#creditLimitMax"
             title="Permalink to CcOffer.creditLimitMax">#</a>
         </h4>
         <div class="doc">
 <p>The high end for credit limits the issuer imposes on recipients of this card.</p>
 <pre class="source">
-double creditLimitMax;
+core.double creditLimitMax;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="creditLimitMin">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>creditLimitMin</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>creditLimitMin</strong> <a class="anchor-link"
             href="#creditLimitMin"
             title="Permalink to CcOffer.creditLimitMin">#</a>
         </h4>
         <div class="doc">
 <p>The low end for credit limits the issuer imposes on recipients of this card.</p>
 <pre class="source">
-double creditLimitMin;
+core.double creditLimitMin;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="creditRatingDisplay">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>creditRatingDisplay</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>creditRatingDisplay</strong> <a class="anchor-link"
             href="#creditRatingDisplay"
             title="Permalink to CcOffer.creditRatingDisplay">#</a>
         </h4>
@@ -458,26 +458,26 @@ double creditLimitMin;
 <p>Text describing the credit ratings required for recipients of this card, for example
 "Excellent/Good." A summary field.</p>
 <pre class="source">
-String creditRatingDisplay;
+core.String creditRatingDisplay;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="defaultFees">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>defaultFees</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../gan-v1beta1/CcOfferDefaultFees.html">CcOfferDefaultFees</a>&gt;         <strong>defaultFees</strong> <a class="anchor-link"
             href="#defaultFees"
             title="Permalink to CcOffer.defaultFees">#</a>
         </h4>
         <div class="doc">
 <p>Fees for defaulting on your payments.</p>
 <pre class="source">
-List&lt;CcOfferDefaultFees&gt; defaultFees;
+core.List&lt;CcOfferDefaultFees&gt; defaultFees;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="disclaimer">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>disclaimer</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>disclaimer</strong> <a class="anchor-link"
             href="#disclaimer"
             title="Permalink to CcOffer.disclaimer">#</a>
         </h4>
@@ -486,273 +486,273 @@ List&lt;CcOfferDefaultFees&gt; defaultFees;
 this field is present, it will always start with an asterisk ("*"), and must be prominently
 displayed with the offer. A summary field.</p>
 <pre class="source">
-String disclaimer;
+core.String disclaimer;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="emergencyInsurance">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>emergencyInsurance</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>emergencyInsurance</strong> <a class="anchor-link"
             href="#emergencyInsurance"
             title="Permalink to CcOffer.emergencyInsurance">#</a>
         </h4>
         <div class="doc">
 <p>If you get coverage when you use the card for the given activity, this field describes it.</p>
 <pre class="source">
-String emergencyInsurance;
+core.String emergencyInsurance;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="existingCustomerOnly">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>existingCustomerOnly</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>existingCustomerOnly</strong> <a class="anchor-link"
             href="#existingCustomerOnly"
             title="Permalink to CcOffer.existingCustomerOnly">#</a>
         </h4>
         <div class="doc">
 <p>Whether this card is only available to existing customers of the issuer.</p>
 <pre class="source">
-bool existingCustomerOnly;
+core.bool existingCustomerOnly;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="extendedWarranty">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>extendedWarranty</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>extendedWarranty</strong> <a class="anchor-link"
             href="#extendedWarranty"
             title="Permalink to CcOffer.extendedWarranty">#</a>
         </h4>
         <div class="doc">
 <p>If you get coverage when you use the card for the given activity, this field describes it.</p>
 <pre class="source">
-String extendedWarranty;
+core.String extendedWarranty;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="firstYearAnnualFee">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>firstYearAnnualFee</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>firstYearAnnualFee</strong> <a class="anchor-link"
             href="#firstYearAnnualFee"
             title="Permalink to CcOffer.firstYearAnnualFee">#</a>
         </h4>
         <div class="doc">
 <p>The annual fee for the first year, if different from the ongoing fee. Optional.</p>
 <pre class="source">
-double firstYearAnnualFee;
+core.double firstYearAnnualFee;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="flightAccidentInsurance">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>flightAccidentInsurance</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>flightAccidentInsurance</strong> <a class="anchor-link"
             href="#flightAccidentInsurance"
             title="Permalink to CcOffer.flightAccidentInsurance">#</a>
         </h4>
         <div class="doc">
 <p>If you get coverage when you use the card for the given activity, this field describes it.</p>
 <pre class="source">
-String flightAccidentInsurance;
+core.String flightAccidentInsurance;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="foreignCurrencyTransactionFee">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>foreignCurrencyTransactionFee</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>foreignCurrencyTransactionFee</strong> <a class="anchor-link"
             href="#foreignCurrencyTransactionFee"
             title="Permalink to CcOffer.foreignCurrencyTransactionFee">#</a>
         </h4>
         <div class="doc">
 <p>Fee for each transaction involving a foreign currency.</p>
 <pre class="source">
-String foreignCurrencyTransactionFee;
+core.String foreignCurrencyTransactionFee;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fraudLiability">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fraudLiability</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fraudLiability</strong> <a class="anchor-link"
             href="#fraudLiability"
             title="Permalink to CcOffer.fraudLiability">#</a>
         </h4>
         <div class="doc">
 <p>If you get coverage when you use the card for the given activity, this field describes it.</p>
 <pre class="source">
-String fraudLiability;
+core.String fraudLiability;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="gracePeriodDisplay">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>gracePeriodDisplay</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>gracePeriodDisplay</strong> <a class="anchor-link"
             href="#gracePeriodDisplay"
             title="Permalink to CcOffer.gracePeriodDisplay">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the grace period before finance charges apply. A summary field.</p>
 <pre class="source">
-String gracePeriodDisplay;
+core.String gracePeriodDisplay;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="imageUrl">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>imageUrl</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>imageUrl</strong> <a class="anchor-link"
             href="#imageUrl"
             title="Permalink to CcOffer.imageUrl">#</a>
         </h4>
         <div class="doc">
 <p>The link to the image of the card that is shown on Connect Commerce. A summary field.</p>
 <pre class="source">
-String imageUrl;
+core.String imageUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="initialSetupAndProcessingFee">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>initialSetupAndProcessingFee</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>initialSetupAndProcessingFee</strong> <a class="anchor-link"
             href="#initialSetupAndProcessingFee"
             title="Permalink to CcOffer.initialSetupAndProcessingFee">#</a>
         </h4>
         <div class="doc">
 <p>Fee for setting up the card.</p>
 <pre class="source">
-String initialSetupAndProcessingFee;
+core.String initialSetupAndProcessingFee;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="introBalanceTransferTerms">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>introBalanceTransferTerms</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>introBalanceTransferTerms</strong> <a class="anchor-link"
             href="#introBalanceTransferTerms"
             title="Permalink to CcOffer.introBalanceTransferTerms">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the terms for introductory period balance transfers. A summary field.</p>
 <pre class="source">
-String introBalanceTransferTerms;
+core.String introBalanceTransferTerms;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="introCashAdvanceTerms">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>introCashAdvanceTerms</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>introCashAdvanceTerms</strong> <a class="anchor-link"
             href="#introCashAdvanceTerms"
             title="Permalink to CcOffer.introCashAdvanceTerms">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the terms for introductory period cash advances. A summary field.</p>
 <pre class="source">
-String introCashAdvanceTerms;
+core.String introCashAdvanceTerms;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="introPurchaseTerms">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>introPurchaseTerms</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>introPurchaseTerms</strong> <a class="anchor-link"
             href="#introPurchaseTerms"
             title="Permalink to CcOffer.introPurchaseTerms">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the terms for introductory period purchases. A summary field.</p>
 <pre class="source">
-String introPurchaseTerms;
+core.String introPurchaseTerms;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="issuer">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>issuer</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>issuer</strong> <a class="anchor-link"
             href="#issuer"
             title="Permalink to CcOffer.issuer">#</a>
         </h4>
         <div class="doc">
 <p>Name of card issuer. A summary field.</p>
 <pre class="source">
-String issuer;
+core.String issuer;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="issuerId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>issuerId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>issuerId</strong> <a class="anchor-link"
             href="#issuerId"
             title="Permalink to CcOffer.issuerId">#</a>
         </h4>
         <div class="doc">
 <p>The Google Affiliate Network ID of the advertiser making this offer.</p>
 <pre class="source">
-String issuerId;
+core.String issuerId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="issuerWebsite">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>issuerWebsite</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>issuerWebsite</strong> <a class="anchor-link"
             href="#issuerWebsite"
             title="Permalink to CcOffer.issuerWebsite">#</a>
         </h4>
         <div class="doc">
 <p>The generic link to the issuer's site.</p>
 <pre class="source">
-String issuerWebsite;
+core.String issuerWebsite;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to CcOffer.kind">#</a>
         </h4>
         <div class="doc">
 <p>The kind for one credit card offer. A summary field.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="landingPageUrl">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>landingPageUrl</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>landingPageUrl</strong> <a class="anchor-link"
             href="#landingPageUrl"
             title="Permalink to CcOffer.landingPageUrl">#</a>
         </h4>
         <div class="doc">
 <p>The link to the issuer's page for this card. A summary field.</p>
 <pre class="source">
-String landingPageUrl;
+core.String landingPageUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="latePaymentFee">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>latePaymentFee</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>latePaymentFee</strong> <a class="anchor-link"
             href="#latePaymentFee"
             title="Permalink to CcOffer.latePaymentFee">#</a>
         </h4>
         <div class="doc">
 <p>Text describing how much a late payment will cost, eg "up to $35." A summary field.</p>
 <pre class="source">
-String latePaymentFee;
+core.String latePaymentFee;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="luggageInsurance">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>luggageInsurance</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>luggageInsurance</strong> <a class="anchor-link"
             href="#luggageInsurance"
             title="Permalink to CcOffer.luggageInsurance">#</a>
         </h4>
         <div class="doc">
 <p>If you get coverage when you use the card for the given activity, this field describes it.</p>
 <pre class="source">
-String luggageInsurance;
+core.String luggageInsurance;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="maxPurchaseRate">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>maxPurchaseRate</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>maxPurchaseRate</strong> <a class="anchor-link"
             href="#maxPurchaseRate"
             title="Permalink to CcOffer.maxPurchaseRate">#</a>
         </h4>
@@ -760,26 +760,13 @@ String luggageInsurance;
 <p>The highest interest rate the issuer charges on this card. Expressed as an absolute number, not
 as a percentage.</p>
 <pre class="source">
-double maxPurchaseRate;
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="minimumFinanceCharge">
-<span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>minimumFinanceCharge</strong> <a class="anchor-link"
-            href="#minimumFinanceCharge"
-            title="Permalink to CcOffer.minimumFinanceCharge">#</a>
-        </h4>
-        <div class="doc">
-<p>Text describing how much missing the grace period will cost.</p>
-<pre class="source">
-String minimumFinanceCharge;
+core.double maxPurchaseRate;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="minPurchaseRate">
 <span class="show-code">Code</span>
-<a href="../dart_core/double.html">double</a>         <strong>minPurchaseRate</strong> <a class="anchor-link"
+<a href="../core/double.html">double</a>         <strong>minPurchaseRate</strong> <a class="anchor-link"
             href="#minPurchaseRate"
             title="Permalink to CcOffer.minPurchaseRate">#</a>
         </h4>
@@ -787,39 +774,52 @@ String minimumFinanceCharge;
 <p>The lowest interest rate the issuer charges on this card. Expressed as an absolute number, not as
 a percentage.</p>
 <pre class="source">
-double minPurchaseRate;
+core.double minPurchaseRate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="minimumFinanceCharge">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>minimumFinanceCharge</strong> <a class="anchor-link"
+            href="#minimumFinanceCharge"
+            title="Permalink to CcOffer.minimumFinanceCharge">#</a>
+        </h4>
+        <div class="doc">
+<p>Text describing how much missing the grace period will cost.</p>
+<pre class="source">
+core.String minimumFinanceCharge;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="network">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>network</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>network</strong> <a class="anchor-link"
             href="#network"
             title="Permalink to CcOffer.network">#</a>
         </h4>
         <div class="doc">
 <p>Which network (eg Visa) the card belongs to. A summary field.</p>
 <pre class="source">
-String network;
+core.String network;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="offerId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>offerId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>offerId</strong> <a class="anchor-link"
             href="#offerId"
             title="Permalink to CcOffer.offerId">#</a>
         </h4>
         <div class="doc">
 <p>This offer's ID. A summary field.</p>
 <pre class="source">
-String offerId;
+core.String offerId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="offersImmediateCashReward">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>offersImmediateCashReward</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>offersImmediateCashReward</strong> <a class="anchor-link"
             href="#offersImmediateCashReward"
             title="Permalink to CcOffer.offersImmediateCashReward">#</a>
         </h4>
@@ -827,202 +827,202 @@ String offerId;
 <p>Whether a cash reward program lets you get cash back sooner than end of year or other longish
 period.</p>
 <pre class="source">
-bool offersImmediateCashReward;
+core.bool offersImmediateCashReward;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="overLimitFee">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>overLimitFee</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>overLimitFee</strong> <a class="anchor-link"
             href="#overLimitFee"
             title="Permalink to CcOffer.overLimitFee">#</a>
         </h4>
         <div class="doc">
 <p>Fee for exceeding the card's charge limit.</p>
 <pre class="source">
-String overLimitFee;
+core.String overLimitFee;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="prohibitedCategories">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>prohibitedCategories</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>prohibitedCategories</strong> <a class="anchor-link"
             href="#prohibitedCategories"
             title="Permalink to CcOffer.prohibitedCategories">#</a>
         </h4>
         <div class="doc">
 <p>Categories in which the issuer does not wish the card to be displayed. A summary field.</p>
 <pre class="source">
-List&lt;String&gt; prohibitedCategories;
+core.List&lt;core.String&gt; prohibitedCategories;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="purchaseRateAdditionalDetails">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>purchaseRateAdditionalDetails</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>purchaseRateAdditionalDetails</strong> <a class="anchor-link"
             href="#purchaseRateAdditionalDetails"
             title="Permalink to CcOffer.purchaseRateAdditionalDetails">#</a>
         </h4>
         <div class="doc">
 <p>Text describing any additional details for the purchase rate. A summary field.</p>
 <pre class="source">
-String purchaseRateAdditionalDetails;
+core.String purchaseRateAdditionalDetails;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="purchaseRateType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>purchaseRateType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>purchaseRateType</strong> <a class="anchor-link"
             href="#purchaseRateType"
             title="Permalink to CcOffer.purchaseRateType">#</a>
         </h4>
         <div class="doc">
 <p>Fixed or variable.</p>
 <pre class="source">
-String purchaseRateType;
+core.String purchaseRateType;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="returnedPaymentFee">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>returnedPaymentFee</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>returnedPaymentFee</strong> <a class="anchor-link"
             href="#returnedPaymentFee"
             title="Permalink to CcOffer.returnedPaymentFee">#</a>
         </h4>
         <div class="doc">
 <p>Text describing the fee for a payment that doesn't clear. A summary field.</p>
 <pre class="source">
-String returnedPaymentFee;
+core.String returnedPaymentFee;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="rewardPartner">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>rewardPartner</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>rewardPartner</strong> <a class="anchor-link"
             href="#rewardPartner"
             title="Permalink to CcOffer.rewardPartner">#</a>
         </h4>
         <div class="doc">
 <p>The company that redeems the rewards, if different from the issuer.</p>
 <pre class="source">
-String rewardPartner;
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="rewards">
-<span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>rewards</strong> <a class="anchor-link"
-            href="#rewards"
-            title="Permalink to CcOffer.rewards">#</a>
-        </h4>
-        <div class="doc">
-<p>For cards with rewards programs, detailed rules about how the program works.</p>
-<pre class="source">
-List&lt;CcOfferRewards&gt; rewards;
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="rewardsExpire">
-<span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>rewardsExpire</strong> <a class="anchor-link"
-            href="#rewardsExpire"
-            title="Permalink to CcOffer.rewardsExpire">#</a>
-        </h4>
-        <div class="doc">
-<p>Whether accumulated rewards ever expire.</p>
-<pre class="source">
-bool rewardsExpire;
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="rewardsHaveBlackoutDates">
-<span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>rewardsHaveBlackoutDates</strong> <a class="anchor-link"
-            href="#rewardsHaveBlackoutDates"
-            title="Permalink to CcOffer.rewardsHaveBlackoutDates">#</a>
-        </h4>
-        <div class="doc">
-<p>For airline miles rewards, tells whether blackout dates apply to the miles.</p>
-<pre class="source">
-bool rewardsHaveBlackoutDates;
+core.String rewardPartner;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="rewardUnit">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>rewardUnit</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>rewardUnit</strong> <a class="anchor-link"
             href="#rewardUnit"
             title="Permalink to CcOffer.rewardUnit">#</a>
         </h4>
         <div class="doc">
 <p>For cards with rewards programs, the unit of reward. For example, miles, cash back, points.</p>
 <pre class="source">
-String rewardUnit;
+core.String rewardUnit;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rewards">
+<span class="show-code">Code</span>
+<a href="../core/List.html">List</a>&lt;<a href="../gan-v1beta1/CcOfferRewards.html">CcOfferRewards</a>&gt;         <strong>rewards</strong> <a class="anchor-link"
+            href="#rewards"
+            title="Permalink to CcOffer.rewards">#</a>
+        </h4>
+        <div class="doc">
+<p>For cards with rewards programs, detailed rules about how the program works.</p>
+<pre class="source">
+core.List&lt;CcOfferRewards&gt; rewards;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rewardsExpire">
+<span class="show-code">Code</span>
+<a href="../core/bool.html">bool</a>         <strong>rewardsExpire</strong> <a class="anchor-link"
+            href="#rewardsExpire"
+            title="Permalink to CcOffer.rewardsExpire">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether accumulated rewards ever expire.</p>
+<pre class="source">
+core.bool rewardsExpire;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rewardsHaveBlackoutDates">
+<span class="show-code">Code</span>
+<a href="../core/bool.html">bool</a>         <strong>rewardsHaveBlackoutDates</strong> <a class="anchor-link"
+            href="#rewardsHaveBlackoutDates"
+            title="Permalink to CcOffer.rewardsHaveBlackoutDates">#</a>
+        </h4>
+        <div class="doc">
+<p>For airline miles rewards, tells whether blackout dates apply to the miles.</p>
+<pre class="source">
+core.bool rewardsHaveBlackoutDates;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="statementCopyFee">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>statementCopyFee</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>statementCopyFee</strong> <a class="anchor-link"
             href="#statementCopyFee"
             title="Permalink to CcOffer.statementCopyFee">#</a>
         </h4>
         <div class="doc">
 <p>Fee for requesting a copy of your statement.</p>
 <pre class="source">
-String statementCopyFee;
+core.String statementCopyFee;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="trackingUrl">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>trackingUrl</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>trackingUrl</strong> <a class="anchor-link"
             href="#trackingUrl"
             title="Permalink to CcOffer.trackingUrl">#</a>
         </h4>
         <div class="doc">
 <p>The link to ping to register a click on this offer. A summary field.</p>
 <pre class="source">
-String trackingUrl;
+core.String trackingUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="travelInsurance">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>travelInsurance</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>travelInsurance</strong> <a class="anchor-link"
             href="#travelInsurance"
             title="Permalink to CcOffer.travelInsurance">#</a>
         </h4>
         <div class="doc">
 <p>If you get coverage when you use the card for the given activity, this field describes it.</p>
 <pre class="source">
-String travelInsurance;
+core.String travelInsurance;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="variableRatesLastUpdated">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>variableRatesLastUpdated</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>variableRatesLastUpdated</strong> <a class="anchor-link"
             href="#variableRatesLastUpdated"
             title="Permalink to CcOffer.variableRatesLastUpdated">#</a>
         </h4>
         <div class="doc">
 <p>When variable rates were last updated.</p>
 <pre class="source">
-String variableRatesLastUpdated;
+core.String variableRatesLastUpdated;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="variableRatesUpdateFrequency">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>variableRatesUpdateFrequency</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>variableRatesUpdateFrequency</strong> <a class="anchor-link"
             href="#variableRatesUpdateFrequency"
             title="Permalink to CcOffer.variableRatesUpdateFrequency">#</a>
         </h4>
         <div class="doc">
 <p>How often variable rates are updated.</p>
 <pre class="source">
-String variableRatesUpdateFrequency;
+core.String variableRatesUpdateFrequency;
 </pre>
 </div>
 </div>

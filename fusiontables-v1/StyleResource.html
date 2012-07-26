@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="StyleResource">
+<span class="show-code">Code</span>
+new <strong>StyleResource</strong>._internal(<a href="../fusiontables-v1/FusiontablesApi.html">FusiontablesApi</a> $service) <a class="anchor-link" href="#StyleResource"
+              title="Permalink to StyleResource.StyleResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+StyleResource._internal(FusiontablesApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> tableId, <a href="../dart_core/int.html">int</a> styleId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> tableId, <a href="../core/int.html">int</a> styleId) <a class="anchor-link" href="#delete"
               title="Permalink to StyleResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes a style.</p><ul><li>
 <span class="param">tableId</span> Table from which the style is being deleted</li><li>
 <span class="param">styleId</span> Identifier (within a table) for the style being deleted</li></ul>
 <pre class="source">
-Future delete(String tableId, int styleId) {
+core.Future delete(core.String tableId, core.int styleId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future delete(String tableId, int styleId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,14 +77,14 @@ Future delete(String tableId, int styleId) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> tableId, <a href="../dart_core/int.html">int</a> styleId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> tableId, <a href="../core/int.html">int</a> styleId) <a class="anchor-link" href="#get"
               title="Permalink to StyleResource.get">#</a></h4>
 <div class="doc">
 <p>Gets a specific style.</p><ul><li>
 <span class="param">tableId</span> Table to which the requested style belongs</li><li>
 <span class="param">styleId</span> Identifier (integer) for a specific style in a table</li></ul>
 <pre class="source">
-Future&lt;StyleSetting&gt; get(String tableId, int styleId) {
+core.Future&lt;StyleSetting&gt; get(core.String tableId, core.int styleId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -90,7 +102,7 @@ Future&lt;StyleSetting&gt; get(String tableId, int styleId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -101,14 +113,14 @@ Future&lt;StyleSetting&gt; get(String tableId, int styleId) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> tableId, <a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> tableId, <a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to StyleResource.insert">#</a></h4>
 <div class="doc">
 <p>Adds a new style for the table.</p><ul><li>
 <span class="param">content</span> the StyleSetting</li><li>
 <span class="param">tableId</span> Table for which a new style is being added</li></ul>
 <pre class="source">
-Future&lt;StyleSetting&gt; insert(String tableId, StyleSetting content) {
+core.Future&lt;StyleSetting&gt; insert(core.String tableId, StyleSetting content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -127,7 +139,7 @@ Future&lt;StyleSetting&gt; insert(String tableId, StyleSetting content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -138,7 +150,7 @@ Future&lt;StyleSetting&gt; insert(String tableId, StyleSetting content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> tableId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSettingList.html">StyleSettingList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> tableId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to StyleResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of styles.</p><ul><li>
@@ -147,7 +159,7 @@ Future&lt;StyleSetting&gt; insert(String tableId, StyleSetting content) {
 <span class="param">maxResults</span> Maximum number of styles to return. Optional. Default is 5.</li></ul>
 <p>Minimum: 0.</p>
 <pre class="source">
-Future&lt;StyleSettingList&gt; list(String tableId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;StyleSettingList&gt; list(core.String tableId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -166,7 +178,7 @@ Future&lt;StyleSettingList&gt; list(String tableId, [String pageToken = UNSPECIF
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -177,7 +189,7 @@ Future&lt;StyleSettingList&gt; list(String tableId, [String pageToken = UNSPECIF
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> tableId, <a href="../dart_core/int.html">int</a> styleId, <a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> tableId, <a href="../core/int.html">int</a> styleId, <a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to StyleResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates an existing style. This method supports patch semantics.</p><ul><li>
@@ -185,7 +197,7 @@ Future&lt;StyleSettingList&gt; list(String tableId, [String pageToken = UNSPECIF
 <span class="param">tableId</span> Table whose style is being updated.</li><li>
 <span class="param">styleId</span> Identifier (within a table) for the style being updated.</li></ul>
 <pre class="source">
-Future&lt;StyleSetting&gt; patch(String tableId, int styleId, StyleSetting content) {
+core.Future&lt;StyleSetting&gt; patch(core.String tableId, core.int styleId, StyleSetting content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -205,7 +217,7 @@ Future&lt;StyleSetting&gt; patch(String tableId, int styleId, StyleSetting conte
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -216,7 +228,7 @@ Future&lt;StyleSetting&gt; patch(String tableId, int styleId, StyleSetting conte
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> tableId, <a href="../dart_core/int.html">int</a> styleId, <a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> tableId, <a href="../core/int.html">int</a> styleId, <a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a> content) <a class="anchor-link" href="#update"
               title="Permalink to StyleResource.update">#</a></h4>
 <div class="doc">
 <p>Updates an existing style.</p><ul><li>
@@ -224,7 +236,7 @@ Future&lt;StyleSetting&gt; patch(String tableId, int styleId, StyleSetting conte
 <span class="param">tableId</span> Table whose style is being updated.</li><li>
 <span class="param">styleId</span> Identifier (within a table) for the style being updated.</li></ul>
 <pre class="source">
-Future&lt;StyleSetting&gt; update(String tableId, int styleId, StyleSetting content) {
+core.Future&lt;StyleSetting&gt; update(core.String tableId, core.int styleId, StyleSetting content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -244,7 +256,7 @@ Future&lt;StyleSetting&gt; update(String tableId, int styleId, StyleSetting cont
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

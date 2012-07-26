@@ -26,6 +26,23 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ManagementResource">
+<span class="show-code">Code</span>
+new <strong>ManagementResource</strong>._internal(<a href="../analytics-v3/AnalyticsApi.html">AnalyticsApi</a> $service) <a class="anchor-link" href="#ManagementResource"
+              title="Permalink to ManagementResource.ManagementResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ManagementResource._internal(AnalyticsApi $service) : _$service = $service,
+  webproperties = new ManagementWebpropertiesResourceResource._internal($service),
+  segments = new ManagementSegmentsResourceResource._internal($service),
+  accounts = new ManagementAccountsResourceResource._internal($service),
+  goals = new ManagementGoalsResourceResource._internal($service),
+  profiles = new ManagementProfilesResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Fields</h3>
 <div class="field"><h4 id="accounts">
 <span class="show-code">Code</span>

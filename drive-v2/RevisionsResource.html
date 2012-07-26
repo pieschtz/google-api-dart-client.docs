@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="RevisionsResource">
+<span class="show-code">Code</span>
+new <strong>RevisionsResource</strong>._internal(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#RevisionsResource"
+              title="Permalink to RevisionsResource.RevisionsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+RevisionsResource._internal(DriveApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> fileId, <a href="../dart_core/String.html">String</a> revisionId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> fileId, <a href="../core/String.html">String</a> revisionId) <a class="anchor-link" href="#delete"
               title="Permalink to RevisionsResource.delete">#</a></h4>
 <div class="doc">
 <p>Removes a revision.</p><ul><li>
 <span class="param">fileId</span> The ID of the file.</li><li>
 <span class="param">revisionId</span> The ID of the revision.</li></ul>
 <pre class="source">
-Future delete(String fileId, String revisionId) {
+core.Future delete(core.String fileId, core.String revisionId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future delete(String fileId, String revisionId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,14 +77,14 @@ Future delete(String fileId, String revisionId) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> fileId, <a href="../dart_core/String.html">String</a> revisionId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../drive-v2/Revision.html">Revision</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> fileId, <a href="../core/String.html">String</a> revisionId) <a class="anchor-link" href="#get"
               title="Permalink to RevisionsResource.get">#</a></h4>
 <div class="doc">
 <p>Gets a specific revision.</p><ul><li>
 <span class="param">fileId</span> The ID of the file.</li><li>
 <span class="param">revisionId</span> The ID of the revision.</li></ul>
 <pre class="source">
-Future&lt;Revision&gt; get(String fileId, String revisionId) {
+core.Future&lt;Revision&gt; get(core.String fileId, core.String revisionId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -90,7 +102,7 @@ Future&lt;Revision&gt; get(String fileId, String revisionId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -101,13 +113,13 @@ Future&lt;Revision&gt; get(String fileId, String revisionId) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> fileId) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../drive-v2/RevisionList.html">RevisionList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> fileId) <a class="anchor-link" href="#list"
               title="Permalink to RevisionsResource.list">#</a></h4>
 <div class="doc">
 <p>Lists a file's revisions.</p><ul><li>
 <span class="param">fileId</span> The ID of the file.</li></ul>
 <pre class="source">
-Future&lt;RevisionList&gt; list(String fileId) {
+core.Future&lt;RevisionList&gt; list(core.String fileId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -124,7 +136,7 @@ Future&lt;RevisionList&gt; list(String fileId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -135,7 +147,7 @@ Future&lt;RevisionList&gt; list(String fileId) {
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> fileId, <a href="../dart_core/String.html">String</a> revisionId, <a href="../drive-v2/Revision.html">Revision</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../drive-v2/Revision.html">Revision</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> fileId, <a href="../core/String.html">String</a> revisionId, <a href="../drive-v2/Revision.html">Revision</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to RevisionsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates a revision. This method supports patch semantics.</p><ul><li>
@@ -143,7 +155,7 @@ Future&lt;RevisionList&gt; list(String fileId) {
 <span class="param">fileId</span> The ID for the file.</li><li>
 <span class="param">revisionId</span> The ID for the revision.</li></ul>
 <pre class="source">
-Future&lt;Revision&gt; patch(String fileId, String revisionId, Revision content) {
+core.Future&lt;Revision&gt; patch(core.String fileId, core.String revisionId, Revision content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -163,7 +175,7 @@ Future&lt;Revision&gt; patch(String fileId, String revisionId, Revision content)
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -174,7 +186,7 @@ Future&lt;Revision&gt; patch(String fileId, String revisionId, Revision content)
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> fileId, <a href="../dart_core/String.html">String</a> revisionId, <a href="../drive-v2/Revision.html">Revision</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../drive-v2/Revision.html">Revision</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> fileId, <a href="../core/String.html">String</a> revisionId, <a href="../drive-v2/Revision.html">Revision</a> content) <a class="anchor-link" href="#update"
               title="Permalink to RevisionsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates a revision.</p><ul><li>
@@ -182,7 +194,7 @@ Future&lt;Revision&gt; patch(String fileId, String revisionId, Revision content)
 <span class="param">fileId</span> The ID for the file.</li><li>
 <span class="param">revisionId</span> The ID for the revision.</li></ul>
 <pre class="source">
-Future&lt;Revision&gt; update(String fileId, String revisionId, Revision content) {
+core.Future&lt;Revision&gt; update(core.String fileId, core.String revisionId, Revision content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -202,7 +214,7 @@ Future&lt;Revision&gt; update(String fileId, String revisionId, Revision content
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

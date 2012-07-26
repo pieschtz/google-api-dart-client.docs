@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="CommunityRelatedResource">
+<span class="show-code">Code</span>
+new <strong>CommunityRelatedResource</strong>._internal(<a href="../orkut-v2/OrkutApi.html">OrkutApi</a> $service) <a class="anchor-link" href="#CommunityRelatedResource"
+              title="Permalink to CommunityRelatedResource.CommunityRelatedResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CommunityRelatedResource._internal(OrkutApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/int.html">int</a> communityId, [<a href="../dart_core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../orkut-v2/CommunityList.html">CommunityList</a>&gt; <strong>list</strong>(<a href="../core/int.html">int</a> communityId, [<a href="../core/String.html">String</a> hl = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CommunityRelatedResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the communities related to another one.</p><ul><li>
 <span class="param">communityId</span> The ID of the community whose related communities will be listed.</li><li>
 <span class="param">hl</span> Specifies the interface language (host language) of your user interface.</li></ul>
 <pre class="source">
-Future&lt;CommunityList&gt; list(int communityId, [String hl = UNSPECIFIED]) {
+core.Future&lt;CommunityList&gt; list(core.int communityId, [core.String hl = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future&lt;CommunityList&gt; list(int communityId, [String hl = UNSPECIFIED]) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

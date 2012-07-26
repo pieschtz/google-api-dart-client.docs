@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../discovery-v1/JsonSchema.html">JsonSchema</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../discovery-v1/JsonSchema.html">JsonSchema</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to JsonSchema.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static JsonSchema parse(Map&lt;String, Object&gt; json) {
+static JsonSchema parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new JsonSchema();
   result.properties = mapValues(JsonSchema.parse)(json["properties"]);
@@ -65,12 +65,12 @@ static JsonSchema parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../discovery-v1/JsonSchema.html">JsonSchema</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../discovery-v1/JsonSchema.html">JsonSchema</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to JsonSchema.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(JsonSchema value) {
+static core.Object serialize(JsonSchema value) {
   if (value == null) return null;
   final result = {};
   result["properties"] = mapValues(JsonSchema.serialize)(value.properties);
@@ -111,14 +111,14 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="$ref">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>$ref</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>$ref</strong> <a class="anchor-link"
             href="#$ref"
             title="Permalink to JsonSchema.$ref">#</a>
         </h4>
         <div class="doc">
 <p>A reference to another schema. The value of this property is the "id" of another schema.</p>
 <pre class="source">
-String $ref;
+core.String $ref;
 </pre>
 </div>
 </div>
@@ -151,46 +151,46 @@ JsonSchemaAnnotations annotations;
 </div>
 <div class="field"><h4 id="default_">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>default_</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>default_</strong> <a class="anchor-link"
             href="#default_"
             title="Permalink to JsonSchema.default_">#</a>
         </h4>
         <div class="doc">
 <p>The default value of this property (if one exists).</p>
 <pre class="source">
-String default_;
+core.String default_;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to JsonSchema.description">#</a>
         </h4>
         <div class="doc">
 <p>A description of this object.</p>
 <pre class="source">
-String description;
+core.String description;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="enum">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>enum</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>enum</strong> <a class="anchor-link"
             href="#enum"
             title="Permalink to JsonSchema.enum">#</a>
         </h4>
         <div class="doc">
 <p>Values this parameter may take (if it is an enum).</p>
 <pre class="source">
-List&lt;String&gt; enum;
+core.List&lt;core.String&gt; enum;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="enumDescriptions">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>enumDescriptions</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>enumDescriptions</strong> <a class="anchor-link"
             href="#enumDescriptions"
             title="Permalink to JsonSchema.enumDescriptions">#</a>
         </h4>
@@ -198,13 +198,13 @@ List&lt;String&gt; enum;
 <p>The descriptions for the enums. Each position maps to the corresponding value in the "enum"
 array.</p>
 <pre class="source">
-List&lt;String&gt; enumDescriptions;
+core.List&lt;core.String&gt; enumDescriptions;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="format">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>format</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>format</strong> <a class="anchor-link"
             href="#format"
             title="Permalink to JsonSchema.format">#</a>
         </h4>
@@ -212,20 +212,20 @@ List&lt;String&gt; enumDescriptions;
 <p>An additional regular expression or key that helps constrain the value. For more details see:
 http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.23</p>
 <pre class="source">
-String format;
+core.String format;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to JsonSchema.id">#</a>
         </h4>
         <div class="doc">
 <p>Unique identifier for this schema.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
@@ -244,98 +244,98 @@ JsonSchema items;
 </div>
 <div class="field"><h4 id="location">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
             href="#location"
             title="Permalink to JsonSchema.location">#</a>
         </h4>
         <div class="doc">
 <p>Whether this parameter goes in the query or the path for REST requests.</p>
 <pre class="source">
-String location;
+core.String location;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="maximum">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>maximum</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>maximum</strong> <a class="anchor-link"
             href="#maximum"
             title="Permalink to JsonSchema.maximum">#</a>
         </h4>
         <div class="doc">
 <p>The maximum value of this parameter.</p>
 <pre class="source">
-String maximum;
+core.String maximum;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="minimum">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>minimum</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>minimum</strong> <a class="anchor-link"
             href="#minimum"
             title="Permalink to JsonSchema.minimum">#</a>
         </h4>
         <div class="doc">
 <p>The minimum value of this parameter.</p>
 <pre class="source">
-String minimum;
+core.String minimum;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="pattern">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>pattern</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>pattern</strong> <a class="anchor-link"
             href="#pattern"
             title="Permalink to JsonSchema.pattern">#</a>
         </h4>
         <div class="doc">
 <p>The regular expression this parameter must conform to.</p>
 <pre class="source">
-String pattern;
+core.String pattern;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="properties">
 <span class="show-code">Code</span>
-<a href="../dart_core/Map.html">Map</a>         <strong>properties</strong> <a class="anchor-link"
+<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../discovery-v1/JsonSchema.html">JsonSchema</a>&gt;         <strong>properties</strong> <a class="anchor-link"
             href="#properties"
             title="Permalink to JsonSchema.properties">#</a>
         </h4>
         <div class="doc">
 <p>If this is a schema for an object, list the schema for each property of this object.</p>
 <pre class="source">
-Map&lt;String, JsonSchema&gt; properties;
+core.Map&lt;core.String, JsonSchema&gt; properties;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="repeated">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>repeated</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>repeated</strong> <a class="anchor-link"
             href="#repeated"
             title="Permalink to JsonSchema.repeated">#</a>
         </h4>
         <div class="doc">
 <p>Whether this parameter may appear multiple times.</p>
 <pre class="source">
-bool repeated;
+core.bool repeated;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="required">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>required</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>required</strong> <a class="anchor-link"
             href="#required"
             title="Permalink to JsonSchema.required">#</a>
         </h4>
         <div class="doc">
 <p>Whether the parameter is required.</p>
 <pre class="source">
-bool required;
+core.bool required;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="type">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
             href="#type"
             title="Permalink to JsonSchema.type">#</a>
         </h4>
@@ -343,7 +343,7 @@ bool required;
 <p>The value type for this schema. A list of values can be found here: http://tools.ietf.org/html
 /draft-zyp-json-schema-03#section-5.1</p>
 <pre class="source">
-String type;
+core.String type;
 </pre>
 </div>
 </div>

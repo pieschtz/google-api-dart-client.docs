@@ -29,12 +29,16 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="OrkutApi">
 <span class="show-code">Code</span>
-new <strong>OrkutApi</strong>([baseUrl = "https://www.googleapis.com/orkut/v2/", applicationName, authenticator]) <a class="anchor-link" href="#OrkutApi"
+new <strong>OrkutApi</strong>([<a href="../core/String.html">String</a> baseUrl = "https://www.googleapis.com/orkut/v2/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#OrkutApi"
               title="Permalink to OrkutApi.OrkutApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-OrkutApi([this.baseUrl = "https://www.googleapis.com/orkut/v2/", this.applicationName, this.authenticator]) { 
+OrkutApi([this.baseUrl = "https://www.googleapis.com/orkut/v2/", applicationName, this.authenticator]) :
+    this.applicationName = applicationName
+        .replaceAll(const RegExp(@'\s+'), '_')
+        .replaceAll(const RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+{ 
   _communityMembers = new CommunityMembersResource._internal(this);
   _activities = new ActivitiesResource._internal(this);
   _communityPollComments = new CommunityPollCommentsResource._internal(this);
@@ -58,34 +62,34 @@ OrkutApi([this.baseUrl = "https://www.googleapis.com/orkut/v2/", this.applicatio
 <h3>Static Fields</h3>
 <div class="field"><h4 id="ORKUT_READONLY_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>ORKUT_READONLY_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>ORKUT_READONLY_SCOPE</strong> <a class="anchor-link"
             href="#ORKUT_READONLY_SCOPE"
             title="Permalink to OrkutApi.ORKUT_READONLY_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: View your Orkut data</p>
 <pre class="source">
-static final String ORKUT_READONLY_SCOPE = "https://www.googleapis.com/auth/orkut.readonly";
+static final core.String ORKUT_READONLY_SCOPE = "https://www.googleapis.com/auth/orkut.readonly";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="ORKUT_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>ORKUT_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>ORKUT_SCOPE</strong> <a class="anchor-link"
             href="#ORKUT_SCOPE"
             title="Permalink to OrkutApi.ORKUT_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: Manage your Orkut activity</p>
 <pre class="source">
-static final String ORKUT_SCOPE = "https://www.googleapis.com/auth/orkut";
+static final core.String ORKUT_SCOPE = "https://www.googleapis.com/auth/orkut";
 </pre>
 </div>
 </div>
 <h3>Methods</h3>
-<div class="method"><h4 id="get:acl">
+<div class="method"><h4 id="acl">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/AclResource.html">AclResource</a> <strong>get acl</strong>() <a class="anchor-link" href="#get:acl"
+<a href="../orkut-v2/AclResource.html">AclResource</a> <strong>get acl</strong>() <a class="anchor-link" href="#acl"
               title="Permalink to OrkutApi.get acl">#</a></h4>
 <div class="doc">
 
@@ -94,9 +98,9 @@ AclResource get acl() =&gt; _acl;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:activities">
+<div class="method"><h4 id="activities">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/ActivitiesResource.html">ActivitiesResource</a> <strong>get activities</strong>() <a class="anchor-link" href="#get:activities"
+<a href="../orkut-v2/ActivitiesResource.html">ActivitiesResource</a> <strong>get activities</strong>() <a class="anchor-link" href="#activities"
               title="Permalink to OrkutApi.get activities">#</a></h4>
 <div class="doc">
 
@@ -105,9 +109,9 @@ ActivitiesResource get activities() =&gt; _activities;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:activityVisibility">
+<div class="method"><h4 id="activityVisibility">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/ActivityVisibilityResource.html">ActivityVisibilityResource</a> <strong>get activityVisibility</strong>() <a class="anchor-link" href="#get:activityVisibility"
+<a href="../orkut-v2/ActivityVisibilityResource.html">ActivityVisibilityResource</a> <strong>get activityVisibility</strong>() <a class="anchor-link" href="#activityVisibility"
               title="Permalink to OrkutApi.get activityVisibility">#</a></h4>
 <div class="doc">
 
@@ -116,9 +120,9 @@ ActivityVisibilityResource get activityVisibility() =&gt; _activityVisibility;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:badges">
+<div class="method"><h4 id="badges">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/BadgesResource.html">BadgesResource</a> <strong>get badges</strong>() <a class="anchor-link" href="#get:badges"
+<a href="../orkut-v2/BadgesResource.html">BadgesResource</a> <strong>get badges</strong>() <a class="anchor-link" href="#badges"
               title="Permalink to OrkutApi.get badges">#</a></h4>
 <div class="doc">
 
@@ -127,9 +131,9 @@ BadgesResource get badges() =&gt; _badges;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:comments">
+<div class="method"><h4 id="comments">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CommentsResource.html">CommentsResource</a> <strong>get comments</strong>() <a class="anchor-link" href="#get:comments"
+<a href="../orkut-v2/CommentsResource.html">CommentsResource</a> <strong>get comments</strong>() <a class="anchor-link" href="#comments"
               title="Permalink to OrkutApi.get comments">#</a></h4>
 <div class="doc">
 
@@ -138,9 +142,9 @@ CommentsResource get comments() =&gt; _comments;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:communities">
+<div class="method"><h4 id="communities">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CommunitiesResource.html">CommunitiesResource</a> <strong>get communities</strong>() <a class="anchor-link" href="#get:communities"
+<a href="../orkut-v2/CommunitiesResource.html">CommunitiesResource</a> <strong>get communities</strong>() <a class="anchor-link" href="#communities"
               title="Permalink to OrkutApi.get communities">#</a></h4>
 <div class="doc">
 
@@ -149,9 +153,9 @@ CommunitiesResource get communities() =&gt; _communities;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:communityFollow">
+<div class="method"><h4 id="communityFollow">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityFollowResource.html">CommunityFollowResource</a> <strong>get communityFollow</strong>() <a class="anchor-link" href="#get:communityFollow"
+<a href="../orkut-v2/CommunityFollowResource.html">CommunityFollowResource</a> <strong>get communityFollow</strong>() <a class="anchor-link" href="#communityFollow"
               title="Permalink to OrkutApi.get communityFollow">#</a></h4>
 <div class="doc">
 
@@ -160,9 +164,9 @@ CommunityFollowResource get communityFollow() =&gt; _communityFollow;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:communityMembers">
+<div class="method"><h4 id="communityMembers">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityMembersResource.html">CommunityMembersResource</a> <strong>get communityMembers</strong>() <a class="anchor-link" href="#get:communityMembers"
+<a href="../orkut-v2/CommunityMembersResource.html">CommunityMembersResource</a> <strong>get communityMembers</strong>() <a class="anchor-link" href="#communityMembers"
               title="Permalink to OrkutApi.get communityMembers">#</a></h4>
 <div class="doc">
 
@@ -171,9 +175,9 @@ CommunityMembersResource get communityMembers() =&gt; _communityMembers;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:communityMessages">
+<div class="method"><h4 id="communityMessages">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityMessagesResource.html">CommunityMessagesResource</a> <strong>get communityMessages</strong>() <a class="anchor-link" href="#get:communityMessages"
+<a href="../orkut-v2/CommunityMessagesResource.html">CommunityMessagesResource</a> <strong>get communityMessages</strong>() <a class="anchor-link" href="#communityMessages"
               title="Permalink to OrkutApi.get communityMessages">#</a></h4>
 <div class="doc">
 
@@ -182,9 +186,9 @@ CommunityMessagesResource get communityMessages() =&gt; _communityMessages;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:communityPollComments">
+<div class="method"><h4 id="communityPollComments">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityPollCommentsResource.html">CommunityPollCommentsResource</a> <strong>get communityPollComments</strong>() <a class="anchor-link" href="#get:communityPollComments"
+<a href="../orkut-v2/CommunityPollCommentsResource.html">CommunityPollCommentsResource</a> <strong>get communityPollComments</strong>() <a class="anchor-link" href="#communityPollComments"
               title="Permalink to OrkutApi.get communityPollComments">#</a></h4>
 <div class="doc">
 
@@ -193,20 +197,9 @@ CommunityPollCommentsResource get communityPollComments() =&gt; _communityPollCo
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:communityPolls">
+<div class="method"><h4 id="communityPollVotes">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityPollsResource.html">CommunityPollsResource</a> <strong>get communityPolls</strong>() <a class="anchor-link" href="#get:communityPolls"
-              title="Permalink to OrkutApi.get communityPolls">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunityPollsResource get communityPolls() =&gt; _communityPolls;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="get:communityPollVotes">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityPollVotesResource.html">CommunityPollVotesResource</a> <strong>get communityPollVotes</strong>() <a class="anchor-link" href="#get:communityPollVotes"
+<a href="../orkut-v2/CommunityPollVotesResource.html">CommunityPollVotesResource</a> <strong>get communityPollVotes</strong>() <a class="anchor-link" href="#communityPollVotes"
               title="Permalink to OrkutApi.get communityPollVotes">#</a></h4>
 <div class="doc">
 
@@ -215,9 +208,20 @@ CommunityPollVotesResource get communityPollVotes() =&gt; _communityPollVotes;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:communityRelated">
+<div class="method"><h4 id="communityPolls">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityRelatedResource.html">CommunityRelatedResource</a> <strong>get communityRelated</strong>() <a class="anchor-link" href="#get:communityRelated"
+<a href="../orkut-v2/CommunityPollsResource.html">CommunityPollsResource</a> <strong>get communityPolls</strong>() <a class="anchor-link" href="#communityPolls"
+              title="Permalink to OrkutApi.get communityPolls">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CommunityPollsResource get communityPolls() =&gt; _communityPolls;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="communityRelated">
+<span class="show-code">Code</span>
+<a href="../orkut-v2/CommunityRelatedResource.html">CommunityRelatedResource</a> <strong>get communityRelated</strong>() <a class="anchor-link" href="#communityRelated"
               title="Permalink to OrkutApi.get communityRelated">#</a></h4>
 <div class="doc">
 
@@ -226,9 +230,9 @@ CommunityRelatedResource get communityRelated() =&gt; _communityRelated;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:communityTopics">
+<div class="method"><h4 id="communityTopics">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityTopicsResource.html">CommunityTopicsResource</a> <strong>get communityTopics</strong>() <a class="anchor-link" href="#get:communityTopics"
+<a href="../orkut-v2/CommunityTopicsResource.html">CommunityTopicsResource</a> <strong>get communityTopics</strong>() <a class="anchor-link" href="#communityTopics"
               title="Permalink to OrkutApi.get communityTopics">#</a></h4>
 <div class="doc">
 
@@ -237,9 +241,9 @@ CommunityTopicsResource get communityTopics() =&gt; _communityTopics;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:counters">
+<div class="method"><h4 id="counters">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/CountersResource.html">CountersResource</a> <strong>get counters</strong>() <a class="anchor-link" href="#get:counters"
+<a href="../orkut-v2/CountersResource.html">CountersResource</a> <strong>get counters</strong>() <a class="anchor-link" href="#counters"
               title="Permalink to OrkutApi.get counters">#</a></h4>
 <div class="doc">
 
@@ -248,9 +252,9 @@ CountersResource get counters() =&gt; _counters;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:scraps">
+<div class="method"><h4 id="scraps">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/ScrapsResource.html">ScrapsResource</a> <strong>get scraps</strong>() <a class="anchor-link" href="#get:scraps"
+<a href="../orkut-v2/ScrapsResource.html">ScrapsResource</a> <strong>get scraps</strong>() <a class="anchor-link" href="#scraps"
               title="Permalink to OrkutApi.get scraps">#</a></h4>
 <div class="doc">
 
@@ -259,14 +263,14 @@ ScrapsResource get scraps() =&gt; _scraps;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:userAgent">
+<div class="method"><h4 id="userAgent">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+<a href="../core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
               title="Permalink to OrkutApi.get userAgent">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-String get userAgent() {
+core.String get userAgent() {
   var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
   return "${uaPrefix}orkut/v2/20120223 google-api-dart-client/${clientVersion}";
 }
@@ -289,14 +293,14 @@ OrkutApiAlt alt;
 </div>
 <div class="field"><h4 id="applicationName">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to OrkutApi.applicationName">#</a>
         </h4>
         <div class="doc">
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
-final String applicationName;
+final core.String applicationName;
 </pre>
 </div>
 </div>
@@ -315,46 +319,46 @@ Authenticator authenticator;
 </div>
 <div class="field"><h4 id="baseUrl">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to OrkutApi.baseUrl">#</a>
         </h4>
         <div class="doc">
 <p>The API root, such as <code>https://www.googleapis.com</code></p>
 <pre class="source">
-final String baseUrl;
+final core.String baseUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="clientVersion">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to OrkutApi.clientVersion">#</a>
         </h4>
         <div class="doc">
 <p>The client library version</p>
 <pre class="source">
-final String clientVersion = "0.1";
+final core.String clientVersion = "0.1";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fields">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to OrkutApi.fields">#</a>
         </h4>
         <div class="doc">
 <p>Selector specifying which fields to include in a partial response.</p>
 <pre class="source">
-String fields;
+core.String fields;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="key">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to OrkutApi.key">#</a>
         </h4>
@@ -362,39 +366,39 @@ String fields;
 <p>API key. Your API key identifies your project and provides you with API access, quota, and
 reports. Required unless you provide an OAuth 2.0 token.</p>
 <pre class="source">
-String key;
+core.String key;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to OrkutApi.oauthToken">#</a>
         </h4>
         <div class="doc">
 <p>OAuth 2.0 token for the current user.</p>
 <pre class="source">
-String oauthToken;
+core.String oauthToken;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="prettyPrint">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to OrkutApi.prettyPrint">#</a>
         </h4>
         <div class="doc">
 <p>Returns response with indentations and line breaks.</p>
 <pre class="source">
-bool prettyPrint;
+core.bool prettyPrint;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="quotaUser">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to OrkutApi.quotaUser">#</a>
         </h4>
@@ -402,13 +406,13 @@ bool prettyPrint;
 <p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
 assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
 <pre class="source">
-String quotaUser;
+core.String quotaUser;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="userIp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to OrkutApi.userIp">#</a>
         </h4>
@@ -416,7 +420,7 @@ String quotaUser;
 <p>IP address of the site where the request originates. Use this if you want to enforce per-user
 limits.</p>
 <pre class="source">
-String userIp;
+core.String userIp;
 </pre>
 </div>
 </div>

@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../adsense-v1.1/CustomChannelTargetingInfo.html">CustomChannelTargetingInfo</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../adsense-v1.1/CustomChannelTargetingInfo.html">CustomChannelTargetingInfo</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to CustomChannelTargetingInfo.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static CustomChannelTargetingInfo parse(Map&lt;String, Object&gt; json) {
+static CustomChannelTargetingInfo parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new CustomChannelTargetingInfo();
   result.location = identity(json["location"]);
@@ -51,12 +51,12 @@ static CustomChannelTargetingInfo parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adsense-v1.1/CustomChannelTargetingInfo.html">CustomChannelTargetingInfo</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adsense-v1.1/CustomChannelTargetingInfo.html">CustomChannelTargetingInfo</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to CustomChannelTargetingInfo.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(CustomChannelTargetingInfo value) {
+static core.Object serialize(CustomChannelTargetingInfo value) {
   if (value == null) return null;
   final result = {};
   result["location"] = identity(value.location);
@@ -83,33 +83,33 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="adsAppearOn">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>adsAppearOn</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>adsAppearOn</strong> <a class="anchor-link"
             href="#adsAppearOn"
             title="Permalink to CustomChannelTargetingInfo.adsAppearOn">#</a>
         </h4>
         <div class="doc">
 <p>The name used to describe this channel externally.</p>
 <pre class="source">
-String adsAppearOn;
+core.String adsAppearOn;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to CustomChannelTargetingInfo.description">#</a>
         </h4>
         <div class="doc">
 <p>The external description of the channel.</p>
 <pre class="source">
-String description;
+core.String description;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="location">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
             href="#location"
             title="Permalink to CustomChannelTargetingInfo.location">#</a>
         </h4>
@@ -119,20 +119,20 @@ values for content ads are: TOP<em>LEFT, TOP</em>CENTER, TOP<em>RIGHT, MIDDLE</e
 MIDDLE</em>RIGHT, BOTTOM<em>LEFT, BOTTOM</em>CENTER, BOTTOM<em>RIGHT, MULTIPLE</em>LOCATIONS. Acceptable values for
 mobile content ads are: TOP, MIDDLE, BOTTOM, MULTIPLE_LOCATIONS.</p>
 <pre class="source">
-String location;
+core.String location;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="siteLanguage">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>siteLanguage</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>siteLanguage</strong> <a class="anchor-link"
             href="#siteLanguage"
             title="Permalink to CustomChannelTargetingInfo.siteLanguage">#</a>
         </h4>
         <div class="doc">
 <p>The language of the sites ads will be displayed on.</p>
 <pre class="source">
-String siteLanguage;
+core.String siteLanguage;
 </pre>
 </div>
 </div>

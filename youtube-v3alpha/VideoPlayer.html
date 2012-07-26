@@ -32,15 +32,15 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../youtube-v3alpha/VideoPlayer.html">VideoPlayer</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../youtube-v3alpha/VideoPlayer.html">VideoPlayer</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to VideoPlayer.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static VideoPlayer parse(Map&lt;String, Object&gt; json) {
+static VideoPlayer parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new VideoPlayer();
-  result.embed = identity(json["embed"]);
+  result.embedHtml = identity(json["embedHtml"]);
   return result;
 }
 </pre>
@@ -48,15 +48,15 @@ static VideoPlayer parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../youtube-v3alpha/VideoPlayer.html">VideoPlayer</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../youtube-v3alpha/VideoPlayer.html">VideoPlayer</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to VideoPlayer.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(VideoPlayer value) {
+static core.Object serialize(VideoPlayer value) {
   if (value == null) return null;
   final result = {};
-  result["embed"] = identity(value.embed);
+  result["embedHtml"] = identity(value.embedHtml);
   return result;
 }
 </pre>
@@ -75,16 +75,16 @@ toString() =&gt; serialize(this).toString();
 </div>
 </div>
 <h3>Fields</h3>
-<div class="field"><h4 id="embed">
+<div class="field"><h4 id="embedHtml">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>embed</strong> <a class="anchor-link"
-            href="#embed"
-            title="Permalink to VideoPlayer.embed">#</a>
+<a href="../core/String.html">String</a>         <strong>embedHtml</strong> <a class="anchor-link"
+            href="#embedHtml"
+            title="Permalink to VideoPlayer.embedHtml">#</a>
         </h4>
         <div class="doc">
 <p>Iframe embed for the video.</p>
 <pre class="source">
-String embed;
+core.String embedHtml;
 </pre>
 </div>
 </div>

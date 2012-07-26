@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../orkut-v2/ActivityObject.html">ActivityObject</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../orkut-v2/ActivityObject.html">ActivityObject</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to ActivityObject.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static ActivityObject parse(Map&lt;String, Object&gt; json) {
+static ActivityObject parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new ActivityObject();
   result.content = identity(json["content"]);
@@ -51,12 +51,12 @@ static ActivityObject parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../orkut-v2/ActivityObject.html">ActivityObject</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../orkut-v2/ActivityObject.html">ActivityObject</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to ActivityObject.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(ActivityObject value) {
+static core.Object serialize(ActivityObject value) {
   if (value == null) return null;
   final result = {};
   result["content"] = identity(value.content);
@@ -83,7 +83,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="content">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>content</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>content</strong> <a class="anchor-link"
             href="#content"
             title="Permalink to ActivityObject.content">#</a>
         </h4>
@@ -92,26 +92,26 @@ toString() =&gt; serialize(this).toString();
 changes to this property, using the value of originalContent as a starting point. If the update
 is successful, the server adds HTML formatting and responds with this formatted content.</p>
 <pre class="source">
-String content;
+core.String content;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="items">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>items</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../orkut-v2/OrkutActivityobjectsResource.html">OrkutActivityobjectsResource</a>&gt;         <strong>items</strong> <a class="anchor-link"
             href="#items"
             title="Permalink to ActivityObject.items">#</a>
         </h4>
         <div class="doc">
 <p>The list of additional items.</p>
 <pre class="source">
-List&lt;OrkutActivityobjectsResource&gt; items;
+core.List&lt;OrkutActivityobjectsResource&gt; items;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="objectType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
             href="#objectType"
             title="Permalink to ActivityObject.objectType">#</a>
         </h4>
@@ -119,7 +119,7 @@ List&lt;OrkutActivityobjectsResource&gt; items;
 <p>The type of the object affected by the activity. Clients can use this information to style the
 rendered activity object differently depending on the content.</p>
 <pre class="source">
-String objectType;
+core.String objectType;
 </pre>
 </div>
 </div>

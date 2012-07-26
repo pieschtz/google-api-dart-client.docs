@@ -1,0 +1,177 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>PeopleFeed Class / plus-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="plus-v1" data-type="PeopleFeed">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/PeopleFeed.html">PeopleFeed</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>PeopleFeed</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>PeopleFeed</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../plus-v1/PeopleFeed.html">PeopleFeed</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to PeopleFeed.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static PeopleFeed parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new PeopleFeed();
+  result.nextPageToken = identity(json["nextPageToken"]);
+  result.kind = identity(json["kind"]);
+  result.title = identity(json["title"]);
+  result.items = map(Person.parse)(json["items"]);
+  result.etag = identity(json["etag"]);
+  result.selfLink = identity(json["selfLink"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../plus-v1/PeopleFeed.html">PeopleFeed</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to PeopleFeed.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(PeopleFeed value) {
+  if (value == null) return null;
+  final result = {};
+  result["nextPageToken"] = identity(value.nextPageToken);
+  result["kind"] = identity(value.kind);
+  result["title"] = identity(value.title);
+  result["items"] = map(Person.serialize)(value.items);
+  result["etag"] = identity(value.etag);
+  result["selfLink"] = identity(value.selfLink);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to PeopleFeed.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to PeopleFeed.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>ETag of this response for caching purposes.</p>
+<pre class="source">
+core.String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="items">
+<span class="show-code">Code</span>
+<a href="../core/List.html">List</a>&lt;<a href="../plus-v1/Person.html">Person</a>&gt;         <strong>items</strong> <a class="anchor-link"
+            href="#items"
+            title="Permalink to PeopleFeed.items">#</a>
+        </h4>
+        <div class="doc">
+<p>The people in this page of results. Each item will include the id, displayName, image, and url
+for the person. To retrieve additional profile data, see the people.get method.</p>
+<pre class="source">
+core.List&lt;Person&gt; items;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to PeopleFeed.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Identifies this resource as a collection of people. Value: "plus#peopleFeed".</p>
+<pre class="source">
+core.String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="nextPageToken">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>nextPageToken</strong> <a class="anchor-link"
+            href="#nextPageToken"
+            title="Permalink to PeopleFeed.nextPageToken">#</a>
+        </h4>
+        <div class="doc">
+<p>The continuation token, used to page through large result sets. Provide this value in a
+subsequent request to return the next page of results.</p>
+<pre class="source">
+core.String nextPageToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="selfLink">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+            href="#selfLink"
+            title="Permalink to PeopleFeed.selfLink">#</a>
+        </h4>
+        <div class="doc">
+<p>Link to this resource.</p>
+<pre class="source">
+core.String selfLink;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="title">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+            href="#title"
+            title="Permalink to PeopleFeed.title">#</a>
+        </h4>
+        <div class="doc">
+<p>The title of this collection of people.</p>
+<pre class="source">
+core.String title;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

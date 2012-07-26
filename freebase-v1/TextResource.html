@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="TextResource">
+<span class="show-code">Code</span>
+new <strong>TextResource</strong>._internal(<a href="../freebase-v1/FreebaseApi.html">FreebaseApi</a> $service) <a class="anchor-link" href="#TextResource"
+              title="Permalink to TextResource.TextResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TextResource._internal(FreebaseApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/List.html">List</a> id, [<a href="../dart_core/int.html">int</a> maxlength = UNSPECIFIED, <a href="../freebase-v1/TextResourceGetFormat.html">TextResourceGetFormat</a> format = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../freebase-v1/ContentserviceGet.html">ContentserviceGet</a>&gt; <strong>get</strong>(<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt; id, [<a href="../core/int.html">int</a> maxlength = UNSPECIFIED, <a href="../freebase-v1/TextResourceGetFormat.html">TextResourceGetFormat</a> format = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to TextResource.get">#</a></h4>
 <div class="doc">
 <p>Returns blob attached to node at specified id as HTML</p><ul><li>
@@ -39,7 +51,7 @@
 <span class="param">format</span> Sanitizing transformation.
 Default: plain.</p></li></ul>
 <pre class="source">
-Future&lt;ContentserviceGet&gt; get(List&lt;String&gt; id, [int maxlength = UNSPECIFIED, TextResourceGetFormat format = UNSPECIFIED]) {
+core.Future&lt;ContentserviceGet&gt; get(core.List&lt;core.String&gt; id, [core.int maxlength = UNSPECIFIED, TextResourceGetFormat format = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -58,7 +70,7 @@ Future&lt;ContentserviceGet&gt; get(List&lt;String&gt; id, [int maxlength = UNSP
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

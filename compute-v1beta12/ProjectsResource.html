@@ -26,16 +26,28 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ProjectsResource">
+<span class="show-code">Code</span>
+new <strong>ProjectsResource</strong>._internal(<a href="../compute-v1beta12/ComputeApi.html">ComputeApi</a> $service) <a class="anchor-link" href="#ProjectsResource"
+              title="Permalink to ProjectsResource.ProjectsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ProjectsResource._internal(ComputeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../compute-v1beta12/Project.html">Project</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> project) <a class="anchor-link" href="#get"
               title="Permalink to ProjectsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the specified project resource.</p><ul><li>
 <span class="param">project</span> Name of the project resource to retrieve.</li></ul>
 <pre class="source">
-Future&lt;Project&gt; get(String project) {
+core.Future&lt;Project&gt; get(core.String project) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +64,7 @@ Future&lt;Project&gt; get(String project) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -63,7 +75,7 @@ Future&lt;Project&gt; get(String project) {
 </div>
 <div class="method"><h4 id="setCommonInstanceMetadata">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>setCommonInstanceMetadata</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../compute-v1beta12/Metadata.html">Metadata</a> content) <a class="anchor-link" href="#setCommonInstanceMetadata"
+<a href="../core/Future.html">Future</a> <strong>setCommonInstanceMetadata</strong>(<a href="../core/String.html">String</a> project, <a href="../compute-v1beta12/Metadata.html">Metadata</a> content) <a class="anchor-link" href="#setCommonInstanceMetadata"
               title="Permalink to ProjectsResource.setCommonInstanceMetadata">#</a></h4>
 <div class="doc">
 <p>Sets metadata common to all instances within the specified project using the data included in the
@@ -71,7 +83,7 @@ request.</p><ul><li>
 <span class="param">content</span> the Metadata</li><li>
 <span class="param">project</span> Name of the project scoping this request.</li></ul>
 <pre class="source">
-Future setCommonInstanceMetadata(String project, Metadata content) {
+core.Future setCommonInstanceMetadata(core.String project, Metadata content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -90,7 +102,7 @@ Future setCommonInstanceMetadata(String project, Metadata content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

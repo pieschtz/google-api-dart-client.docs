@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="TasksResource">
+<span class="show-code">Code</span>
+new <strong>TasksResource</strong>._internal(<a href="../taskqueue-v1beta2/TaskqueueApi.html">TaskqueueApi</a> $service) <a class="anchor-link" href="#TasksResource"
+              title="Permalink to TasksResource.TasksResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TasksResource._internal(TaskqueueApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> taskqueue, <a href="../core/String.html">String</a> task) <a class="anchor-link" href="#delete"
               title="Permalink to TasksResource.delete">#</a></h4>
 <div class="doc">
 <p>Delete a task from a TaskQueue.</p><ul><li>
@@ -37,7 +49,7 @@
 <span class="param">taskqueue</span> The taskqueue to delete a task from.</li><li>
 <span class="param">task</span> The id of the task to delete.</li></ul>
 <pre class="source">
-Future delete(String project, String taskqueue, String task) {
+core.Future delete(core.String project, core.String taskqueue, core.String task) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -56,7 +68,7 @@ Future delete(String project, String taskqueue, String task) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -67,7 +79,7 @@ Future delete(String project, String taskqueue, String task) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Task.html">Task</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> taskqueue, <a href="../core/String.html">String</a> task) <a class="anchor-link" href="#get"
               title="Permalink to TasksResource.get">#</a></h4>
 <div class="doc">
 <p>Get a particular task from a TaskQueue.</p><ul><li>
@@ -75,7 +87,7 @@ Future delete(String project, String taskqueue, String task) {
 <span class="param">taskqueue</span> The taskqueue in which the task belongs.</li><li>
 <span class="param">task</span> The task to get properties of.</li></ul>
 <pre class="source">
-Future&lt;Task&gt; get(String project, String taskqueue, String task) {
+core.Future&lt;Task&gt; get(core.String project, core.String taskqueue, core.String task) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -94,7 +106,7 @@ Future&lt;Task&gt; get(String project, String taskqueue, String task) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -105,7 +117,7 @@ Future&lt;Task&gt; get(String project, String taskqueue, String task) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Task.html">Task</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> taskqueue, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to TasksResource.insert">#</a></h4>
 <div class="doc">
 <p>Insert a new task in a TaskQueue</p><ul><li>
@@ -113,7 +125,7 @@ Future&lt;Task&gt; get(String project, String taskqueue, String task) {
 <span class="param">project</span> The project under which the queue lies</li><li>
 <span class="param">taskqueue</span> The taskqueue to insert the task into</li></ul>
 <pre class="source">
-Future&lt;Task&gt; insert(String project, String taskqueue, Task content) {
+core.Future&lt;Task&gt; insert(core.String project, core.String taskqueue, Task content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -133,7 +145,7 @@ Future&lt;Task&gt; insert(String project, String taskqueue, Task content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -144,7 +156,7 @@ Future&lt;Task&gt; insert(String project, String taskqueue, Task content) {
 </div>
 <div class="method"><h4 id="lease">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>lease</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/int.html">int</a> numTasks, <a href="../dart_core/int.html">int</a> leaseSecs, [<a href="../dart_core/bool.html">bool</a> groupByTag = UNSPECIFIED, <a href="../dart_core/String.html">String</a> tag = UNSPECIFIED]) <a class="anchor-link" href="#lease"
+<a href="../core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Tasks.html">Tasks</a>&gt; <strong>lease</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> taskqueue, <a href="../core/int.html">int</a> numTasks, <a href="../core/int.html">int</a> leaseSecs, [<a href="../core/bool.html">bool</a> groupByTag = UNSPECIFIED, <a href="../core/String.html">String</a> tag = UNSPECIFIED]) <a class="anchor-link" href="#lease"
               title="Permalink to TasksResource.lease">#</a></h4>
 <div class="doc">
 <p>Lease 1 or more tasks from a TaskQueue.</p><ul><li>
@@ -158,7 +170,7 @@ Future&lt;Task&gt; insert(String project, String taskqueue, Task content) {
    group<em>by</em>tag is true and tag is not specified the tag will be that of the oldest task by
    eta, i.e. the first available tag</p></li></ul>
 <pre class="source">
-Future&lt;Tasks&gt; lease(String project, String taskqueue, int numTasks, int leaseSecs, [bool groupByTag = UNSPECIFIED, String tag = UNSPECIFIED]) {
+core.Future&lt;Tasks&gt; lease(core.String project, core.String taskqueue, core.int numTasks, core.int leaseSecs, [core.bool groupByTag = UNSPECIFIED, core.String tag = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -180,7 +192,7 @@ Future&lt;Tasks&gt; lease(String project, String taskqueue, int numTasks, int le
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -191,14 +203,14 @@ Future&lt;Tasks&gt; lease(String project, String taskqueue, int numTasks, int le
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Tasks2.html">Tasks2</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> taskqueue) <a class="anchor-link" href="#list"
               title="Permalink to TasksResource.list">#</a></h4>
 <div class="doc">
 <p>List Tasks in a TaskQueue</p><ul><li>
 <span class="param">project</span> The project under which the queue lies.</li><li>
 <span class="param">taskqueue</span> The id of the taskqueue to list tasks from.</li></ul>
 <pre class="source">
-Future&lt;Tasks2&gt; list(String project, String taskqueue) {
+core.Future&lt;Tasks2&gt; list(core.String project, core.String taskqueue) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -216,7 +228,7 @@ Future&lt;Tasks2&gt; list(String project, String taskqueue) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -227,7 +239,7 @@ Future&lt;Tasks2&gt; list(String project, String taskqueue) {
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task, <a href="../dart_core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Task.html">Task</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> taskqueue, <a href="../core/String.html">String</a> task, <a href="../core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to TasksResource.patch">#</a></h4>
 <div class="doc">
 <p>Update tasks that are leased out of a TaskQueue. This method supports patch semantics.</p><ul><li>
@@ -237,7 +249,7 @@ Future&lt;Tasks2&gt; list(String project, String taskqueue) {
 <span class="param">task</span></li><li>
 <span class="param">newLeaseSeconds</span> The new lease in seconds.</li></ul>
 <pre class="source">
-Future&lt;Task&gt; patch(String project, String taskqueue, String task, int newLeaseSeconds, Task content) {
+core.Future&lt;Task&gt; patch(core.String project, core.String taskqueue, core.String task, core.int newLeaseSeconds, Task content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -259,7 +271,7 @@ Future&lt;Task&gt; patch(String project, String taskqueue, String task, int newL
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -270,7 +282,7 @@ Future&lt;Task&gt; patch(String project, String taskqueue, String task, int newL
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> project, <a href="../dart_core/String.html">String</a> taskqueue, <a href="../dart_core/String.html">String</a> task, <a href="../dart_core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Task.html">Task</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> project, <a href="../core/String.html">String</a> taskqueue, <a href="../core/String.html">String</a> task, <a href="../core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#update"
               title="Permalink to TasksResource.update">#</a></h4>
 <div class="doc">
 <p>Update tasks that are leased out of a TaskQueue.</p><ul><li>
@@ -280,7 +292,7 @@ Future&lt;Task&gt; patch(String project, String taskqueue, String task, int newL
 <span class="param">task</span></li><li>
 <span class="param">newLeaseSeconds</span> The new lease in seconds.</li></ul>
 <pre class="source">
-Future&lt;Task&gt; update(String project, String taskqueue, String task, int newLeaseSeconds, Task content) {
+core.Future&lt;Task&gt; update(core.String project, core.String taskqueue, core.String task, core.int newLeaseSeconds, Task content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -302,7 +314,7 @@ Future&lt;Task&gt; update(String project, String taskqueue, String task, int new
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

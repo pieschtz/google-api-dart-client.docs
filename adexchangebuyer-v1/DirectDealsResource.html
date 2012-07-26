@@ -26,16 +26,28 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="DirectDealsResource">
+<span class="show-code">Code</span>
+new <strong>DirectDealsResource</strong>._internal(<a href="../adexchangebuyer-v1/AdexchangebuyerApi.html">AdexchangebuyerApi</a> $service) <a class="anchor-link" href="#DirectDealsResource"
+              title="Permalink to DirectDealsResource.DirectDealsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+DirectDealsResource._internal(AdexchangebuyerApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> id) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adexchangebuyer-v1/DirectDeal.html">DirectDeal</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> id) <a class="anchor-link" href="#get"
               title="Permalink to DirectDealsResource.get">#</a></h4>
 <div class="doc">
 <p>Gets one direct deal by ID.</p><ul><li>
 <span class="param">id</span> The direct deal id</li></ul>
 <pre class="source">
-Future&lt;DirectDeal&gt; get(String id) {
+core.Future&lt;DirectDeal&gt; get(core.String id) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +64,7 @@ Future&lt;DirectDeal&gt; get(String id) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -63,12 +75,12 @@ Future&lt;DirectDeal&gt; get(String id) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>() <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adexchangebuyer-v1/DirectDealsList.html">DirectDealsList</a>&gt; <strong>list</strong>() <a class="anchor-link" href="#list"
               title="Permalink to DirectDealsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the authenticated user's list of direct deals.</p>
 <pre class="source">
-Future&lt;DirectDealsList&gt; list() {
+core.Future&lt;DirectDealsList&gt; list() {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -84,7 +96,7 @@ Future&lt;DirectDealsList&gt; list() {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

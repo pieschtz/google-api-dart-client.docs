@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../calendar-v3/Events.html">Events</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../calendar-v3/Events.html">Events</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Events.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Events parse(Map&lt;String, Object&gt; json) {
+static Events parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Events();
   result.nextPageToken = identity(json["nextPageToken"]);
@@ -57,12 +57,12 @@ static Events parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/Events.html">Events</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/Events.html">Events</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Events.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Events value) {
+static core.Object serialize(Events value) {
   if (value == null) return null;
   final result = {};
   result["nextPageToken"] = identity(value.nextPageToken);
@@ -95,7 +95,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="accessRole">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>accessRole</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>accessRole</strong> <a class="anchor-link"
             href="#accessRole"
             title="Permalink to Events.accessRole">#</a>
         </h4>
@@ -108,13 +108,13 @@ calendar. Private events will appear to users with writer access, and event deta
 visible. - "owner" - The user has ownership of the calendar. This role has all of the permissions
 of the writer role with the additional ability to see and manipulate ACLs.</p>
 <pre class="source">
-String accessRole;
+core.String accessRole;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="defaultReminders">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>defaultReminders</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../calendar-v3/EventReminder.html">EventReminder</a>&gt;         <strong>defaultReminders</strong> <a class="anchor-link"
             href="#defaultReminders"
             title="Permalink to Events.defaultReminders">#</a>
         </h4>
@@ -123,111 +123,111 @@ String accessRole;
 events on this calendar that do not explicitly override them (i.e. do not have
 'reminders.useDefault' set to 'true').</p>
 <pre class="source">
-List&lt;EventReminder&gt; defaultReminders;
+core.List&lt;EventReminder&gt; defaultReminders;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Events.description">#</a>
         </h4>
         <div class="doc">
 <p>Description of the calendar. Read-only.</p>
 <pre class="source">
-String description;
+core.String description;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="etag">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to Events.etag">#</a>
         </h4>
         <div class="doc">
 <p>ETag of the collection.</p>
 <pre class="source">
-String etag;
+core.String etag;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="items">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>items</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt;         <strong>items</strong> <a class="anchor-link"
             href="#items"
             title="Permalink to Events.items">#</a>
         </h4>
         <div class="doc">
 <p>List of events on the calendar.</p>
 <pre class="source">
-List&lt;Event&gt; items;
+core.List&lt;Event&gt; items;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Events.kind">#</a>
         </h4>
         <div class="doc">
 <p>Type of the collection ("calendar#events").</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="nextPageToken">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>nextPageToken</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>nextPageToken</strong> <a class="anchor-link"
             href="#nextPageToken"
             title="Permalink to Events.nextPageToken">#</a>
         </h4>
         <div class="doc">
 <p>Token used to access the next page of this result. Omitted if no further results are available.</p>
 <pre class="source">
-String nextPageToken;
+core.String nextPageToken;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="summary">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>summary</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>summary</strong> <a class="anchor-link"
             href="#summary"
             title="Permalink to Events.summary">#</a>
         </h4>
         <div class="doc">
 <p>Title of the calendar. Read-only.</p>
 <pre class="source">
-String summary;
+core.String summary;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="timeZone">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>timeZone</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>timeZone</strong> <a class="anchor-link"
             href="#timeZone"
             title="Permalink to Events.timeZone">#</a>
         </h4>
         <div class="doc">
 <p>The time zone of the calendar. Read-only.</p>
 <pre class="source">
-String timeZone;
+core.String timeZone;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="updated">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
             href="#updated"
             title="Permalink to Events.updated">#</a>
         </h4>
         <div class="doc">
 <p>Last modification time of the calendar (as a RFC 3339 timestamp). Read-only.</p>
 <pre class="source">
-String updated;
+core.String updated;
 </pre>
 </div>
 </div>

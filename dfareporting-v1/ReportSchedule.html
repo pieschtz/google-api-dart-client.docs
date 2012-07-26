@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../dfareporting-v1/ReportSchedule.html">ReportSchedule</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../dfareporting-v1/ReportSchedule.html">ReportSchedule</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to ReportSchedule.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static ReportSchedule parse(Map&lt;String, Object&gt; json) {
+static ReportSchedule parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new ReportSchedule();
   result.startDate = identity(json["startDate"]);
@@ -54,12 +54,12 @@ static ReportSchedule parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1/ReportSchedule.html">ReportSchedule</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1/ReportSchedule.html">ReportSchedule</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to ReportSchedule.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(ReportSchedule value) {
+static core.Object serialize(ReportSchedule value) {
   if (value == null) return null;
   final result = {};
   result["startDate"] = identity(value.startDate);
@@ -89,20 +89,20 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="active">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>active</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>active</strong> <a class="anchor-link"
             href="#active"
             title="Permalink to ReportSchedule.active">#</a>
         </h4>
         <div class="doc">
 <p>Whether the schedule is active or not. Must be set to either true or false.</p>
 <pre class="source">
-bool active;
+core.bool active;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="every">
 <span class="show-code">Code</span>
-<a href="../dart_core/int.html">int</a>         <strong>every</strong> <a class="anchor-link"
+<a href="../core/int.html">int</a>         <strong>every</strong> <a class="anchor-link"
             href="#every"
             title="Permalink to ReportSchedule.every">#</a>
         </h4>
@@ -110,26 +110,26 @@ bool active;
 <p>Defines every how many days, weeks or months the report should be run. Needs to be set when
 "repeats" is either "DAILY", "WEEKLY" or "MONTHLY".</p>
 <pre class="source">
-int every;
+core.int every;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="expirationDate">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>expirationDate</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>expirationDate</strong> <a class="anchor-link"
             href="#expirationDate"
             title="Permalink to ReportSchedule.expirationDate">#</a>
         </h4>
         <div class="doc">
 <p>The expiration date when the scheduled report stops running.</p>
 <pre class="source">
-String expirationDate;
+core.String expirationDate;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="repeats">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>repeats</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>repeats</strong> <a class="anchor-link"
             href="#repeats"
             title="Permalink to ReportSchedule.repeats">#</a>
         </h4>
@@ -139,26 +139,26 @@ set. - "WEEKLY", also requires fields "every" and "repeatsOnWeekDays" to be set.
 "TWICE<em>A</em>MONTH" - "MONTHLY", also requires fields "every" and "runsOnDayOfMonth" to be set. -
 "QUARTERLY" - "YEARLY"</p>
 <pre class="source">
-String repeats;
+core.String repeats;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="repeatsOnWeekDays">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>repeatsOnWeekDays</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>repeatsOnWeekDays</strong> <a class="anchor-link"
             href="#repeatsOnWeekDays"
             title="Permalink to ReportSchedule.repeatsOnWeekDays">#</a>
         </h4>
         <div class="doc">
 <p>List of week days "WEEKLY" scheduled reports should run on.</p>
 <pre class="source">
-List&lt;String&gt; repeatsOnWeekDays;
+core.List&lt;core.String&gt; repeatsOnWeekDays;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="runsOnDayOfMonth">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>runsOnDayOfMonth</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>runsOnDayOfMonth</strong> <a class="anchor-link"
             href="#runsOnDayOfMonth"
             title="Permalink to ReportSchedule.runsOnDayOfMonth">#</a>
         </h4>
@@ -169,20 +169,20 @@ DAY<em>OF</em>MONTH - WEEK<em>OF</em>MONTH Example: If 'startDate' is Monday, Ap
 "DAY<em>OF</em>MONTH" would run subsequent reports on the 2nd of every Month, and "WEEK<em>OF</em>MONTH" would
 run subsequent reports on the first Monday of the month.</p>
 <pre class="source">
-String runsOnDayOfMonth;
+core.String runsOnDayOfMonth;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="startDate">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>startDate</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>startDate</strong> <a class="anchor-link"
             href="#startDate"
             title="Permalink to ReportSchedule.startDate">#</a>
         </h4>
         <div class="doc">
 <p>Start date of date range for which scheduled reports should be run.</p>
 <pre class="source">
-String startDate;
+core.String startDate;
 </pre>
 </div>
 </div>

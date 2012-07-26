@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../books-v1/Annotation.html">Annotation</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../books-v1/Annotation.html">Annotation</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Annotation.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Annotation parse(Map&lt;String, Object&gt; json) {
+static Annotation parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Annotation();
   result.kind = identity(json["kind"]);
@@ -63,12 +63,12 @@ static Annotation parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/Annotation.html">Annotation</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/Annotation.html">Annotation</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Annotation.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Annotation value) {
+static core.Object serialize(Annotation value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -107,27 +107,27 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="afterSelectedText">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>afterSelectedText</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>afterSelectedText</strong> <a class="anchor-link"
             href="#afterSelectedText"
             title="Permalink to Annotation.afterSelectedText">#</a>
         </h4>
         <div class="doc">
 <p>Anchor text after excerpt.</p>
 <pre class="source">
-String afterSelectedText;
+core.String afterSelectedText;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="beforeSelectedText">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>beforeSelectedText</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>beforeSelectedText</strong> <a class="anchor-link"
             href="#beforeSelectedText"
             title="Permalink to Annotation.beforeSelectedText">#</a>
         </h4>
         <div class="doc">
 <p>Anchor text before excerpt.</p>
 <pre class="source">
-String beforeSelectedText;
+core.String beforeSelectedText;
 </pre>
 </div>
 </div>
@@ -146,14 +146,14 @@ AnnotationClientVersionRanges clientVersionRanges;
 </div>
 <div class="field"><h4 id="created">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
             href="#created"
             title="Permalink to Annotation.created">#</a>
         </h4>
         <div class="doc">
 <p>Timestamp for the created time of this annotation.</p>
 <pre class="source">
-String created;
+core.String created;
 </pre>
 </div>
 </div>
@@ -172,144 +172,144 @@ AnnotationCurrentVersionRanges currentVersionRanges;
 </div>
 <div class="field"><h4 id="data">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>data</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>data</strong> <a class="anchor-link"
             href="#data"
             title="Permalink to Annotation.data">#</a>
         </h4>
         <div class="doc">
 <p>User-created data for this annotation.</p>
 <pre class="source">
-String data;
+core.String data;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="deleted">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>deleted</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>deleted</strong> <a class="anchor-link"
             href="#deleted"
             title="Permalink to Annotation.deleted">#</a>
         </h4>
         <div class="doc">
 <p>Indicates that this annotation is deleted.</p>
 <pre class="source">
-bool deleted;
+core.bool deleted;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="highlightStyle">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>highlightStyle</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>highlightStyle</strong> <a class="anchor-link"
             href="#highlightStyle"
             title="Permalink to Annotation.highlightStyle">#</a>
         </h4>
         <div class="doc">
 <p>The highlight style for this annotation.</p>
 <pre class="source">
-String highlightStyle;
+core.String highlightStyle;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Annotation.id">#</a>
         </h4>
         <div class="doc">
 <p>Id of this annotation, in the form of a GUID.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Annotation.kind">#</a>
         </h4>
         <div class="doc">
 <p>Resource type.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="layerId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>layerId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>layerId</strong> <a class="anchor-link"
             href="#layerId"
             title="Permalink to Annotation.layerId">#</a>
         </h4>
         <div class="doc">
 <p>The layer this annotation is for.</p>
 <pre class="source">
-String layerId;
+core.String layerId;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="pageIds">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>pageIds</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>pageIds</strong> <a class="anchor-link"
             href="#pageIds"
             title="Permalink to Annotation.pageIds">#</a>
         </h4>
         <div class="doc">
 <p>Pages that this annotation spans.</p>
 <pre class="source">
-List&lt;String&gt; pageIds;
+core.List&lt;core.String&gt; pageIds;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="selectedText">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>selectedText</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>selectedText</strong> <a class="anchor-link"
             href="#selectedText"
             title="Permalink to Annotation.selectedText">#</a>
         </h4>
         <div class="doc">
 <p>Excerpt from the volume.</p>
 <pre class="source">
-String selectedText;
+core.String selectedText;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="selfLink">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Annotation.selfLink">#</a>
         </h4>
         <div class="doc">
 <p>URL to this resource.</p>
 <pre class="source">
-String selfLink;
+core.String selfLink;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="updated">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
             href="#updated"
             title="Permalink to Annotation.updated">#</a>
         </h4>
         <div class="doc">
 <p>Timestamp for the last time this annotation was modified.</p>
 <pre class="source">
-String updated;
+core.String updated;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="volumeId">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>volumeId</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>volumeId</strong> <a class="anchor-link"
             href="#volumeId"
             title="Permalink to Annotation.volumeId">#</a>
         </h4>
         <div class="doc">
 <p>The volume that this annotation belongs to.</p>
 <pre class="source">
-String volumeId;
+core.String volumeId;
 </pre>
 </div>
 </div>

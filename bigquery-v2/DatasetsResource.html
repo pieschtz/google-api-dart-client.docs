@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="DatasetsResource">
+<span class="show-code">Code</span>
+new <strong>DatasetsResource</strong>._internal(<a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a> $service) <a class="anchor-link" href="#DatasetsResource"
+              title="Permalink to DatasetsResource.DatasetsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+DatasetsResource._internal(BigqueryApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, [<a href="../dart_core/bool.html">bool</a> deleteContents = UNSPECIFIED]) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId, [<a href="../core/bool.html">bool</a> deleteContents = UNSPECIFIED]) <a class="anchor-link" href="#delete"
               title="Permalink to DatasetsResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes the dataset specified by datasetId value. Before you can delete a dataset, you must
@@ -41,7 +53,7 @@ deletion, you can create another dataset with the same name.</p><ul><li>
 <span class="param">deleteContents</span> If True, delete all the tables in the dataset. If False and the dataset contains tables, the request
    will fail. Default is False</p></li></ul>
 <pre class="source">
-Future delete(String projectId, String datasetId, [bool deleteContents = UNSPECIFIED]) {
+core.Future delete(core.String projectId, core.String datasetId, [core.bool deleteContents = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -60,7 +72,7 @@ Future delete(String projectId, String datasetId, [bool deleteContents = UNSPECI
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -71,14 +83,14 @@ Future delete(String projectId, String datasetId, [bool deleteContents = UNSPECI
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Dataset.html">Dataset</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId) <a class="anchor-link" href="#get"
               title="Permalink to DatasetsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the dataset specified by datasetID.</p><ul><li>
 <span class="param">projectId</span> Project ID of the requested dataset</li><li>
 <span class="param">datasetId</span> Dataset ID of the requested dataset</li></ul>
 <pre class="source">
-Future&lt;Dataset&gt; get(String projectId, String datasetId) {
+core.Future&lt;Dataset&gt; get(core.String projectId, core.String datasetId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -96,7 +108,7 @@ Future&lt;Dataset&gt; get(String projectId, String datasetId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -107,14 +119,14 @@ Future&lt;Dataset&gt; get(String projectId, String datasetId) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../bigquery-v2/Dataset.html">Dataset</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Dataset.html">Dataset</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> projectId, <a href="../bigquery-v2/Dataset.html">Dataset</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to DatasetsResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a new empty dataset.</p><ul><li>
 <span class="param">content</span> the Dataset</li><li>
 <span class="param">projectId</span> Project ID of the new dataset</li></ul>
 <pre class="source">
-Future&lt;Dataset&gt; insert(String projectId, Dataset content) {
+core.Future&lt;Dataset&gt; insert(core.String projectId, Dataset content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -133,7 +145,7 @@ Future&lt;Dataset&gt; insert(String projectId, Dataset content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -144,7 +156,7 @@ Future&lt;Dataset&gt; insert(String projectId, Dataset content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> projectId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/DatasetList.html">DatasetList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> projectId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to DatasetsResource.list">#</a></h4>
 <div class="doc">
 <p>Lists all the datasets in the specified project to which the caller has read access; however, a
@@ -153,7 +165,7 @@ project owner can list (but not necessarily get) all datasets in his project.</p
 <span class="param">pageToken</span> Page token, returned by a previous call, to request the next page of results</li><li>
 <span class="param">maxResults</span> The maximum number of results to return</li></ul>
 <pre class="source">
-Future&lt;DatasetList&gt; list(String projectId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;DatasetList&gt; list(core.String projectId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -172,7 +184,7 @@ Future&lt;DatasetList&gt; list(String projectId, [String pageToken = UNSPECIFIED
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -183,7 +195,7 @@ Future&lt;DatasetList&gt; list(String projectId, [String pageToken = UNSPECIFIED
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../bigquery-v2/Dataset.html">Dataset</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Dataset.html">Dataset</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId, <a href="../bigquery-v2/Dataset.html">Dataset</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to DatasetsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates information in an existing dataset, specified by datasetId. Properties not included in
@@ -194,7 +206,7 @@ supports patch semantics.</p><ul><li>
 <span class="param">projectId</span> Project ID of the dataset being updated</li><li>
 <span class="param">datasetId</span> Dataset ID of the dataset being updated</li></ul>
 <pre class="source">
-Future&lt;Dataset&gt; patch(String projectId, String datasetId, Dataset content) {
+core.Future&lt;Dataset&gt; patch(core.String projectId, core.String datasetId, Dataset content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -214,7 +226,7 @@ Future&lt;Dataset&gt; patch(String projectId, String datasetId, Dataset content)
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -225,7 +237,7 @@ Future&lt;Dataset&gt; patch(String projectId, String datasetId, Dataset content)
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> projectId, <a href="../dart_core/String.html">String</a> datasetId, <a href="../bigquery-v2/Dataset.html">Dataset</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Dataset.html">Dataset</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> projectId, <a href="../core/String.html">String</a> datasetId, <a href="../bigquery-v2/Dataset.html">Dataset</a> content) <a class="anchor-link" href="#update"
               title="Permalink to DatasetsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates information in an existing dataset, specified by datasetId. Properties not included in
@@ -235,7 +247,7 @@ assigned, the request will fail as you must specify at least one owner for a dat
 <span class="param">projectId</span> Project ID of the dataset being updated</li><li>
 <span class="param">datasetId</span> Dataset ID of the dataset being updated</li></ul>
 <pre class="source">
-Future&lt;Dataset&gt; update(String projectId, String datasetId, Dataset content) {
+core.Future&lt;Dataset&gt; update(core.String projectId, core.String datasetId, Dataset content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -255,7 +267,7 @@ Future&lt;Dataset&gt; update(String projectId, String datasetId, Dataset content
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

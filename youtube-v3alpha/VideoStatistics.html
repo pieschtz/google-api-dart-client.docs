@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../youtube-v3alpha/VideoStatistics.html">VideoStatistics</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../youtube-v3alpha/VideoStatistics.html">VideoStatistics</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to VideoStatistics.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static VideoStatistics parse(Map&lt;String, Object&gt; json) {
+static VideoStatistics parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new VideoStatistics();
   result.commentCount = identity(json["commentCount"]);
@@ -52,12 +52,12 @@ static VideoStatistics parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../youtube-v3alpha/VideoStatistics.html">VideoStatistics</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../youtube-v3alpha/VideoStatistics.html">VideoStatistics</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to VideoStatistics.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(VideoStatistics value) {
+static core.Object serialize(VideoStatistics value) {
   if (value == null) return null;
   final result = {};
   result["commentCount"] = identity(value.commentCount);
@@ -85,66 +85,66 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="commentCount">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>commentCount</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>commentCount</strong> <a class="anchor-link"
             href="#commentCount"
             title="Permalink to VideoStatistics.commentCount">#</a>
         </h4>
         <div class="doc">
 <p>Number of comments for this video.</p>
 <pre class="source">
-String commentCount;
+core.String commentCount;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="dislikeCount">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>dislikeCount</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>dislikeCount</strong> <a class="anchor-link"
             href="#dislikeCount"
             title="Permalink to VideoStatistics.dislikeCount">#</a>
         </h4>
         <div class="doc">
 <p>Number of times the video was disliked.</p>
 <pre class="source">
-String dislikeCount;
+core.String dislikeCount;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="favoriteCount">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>favoriteCount</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>favoriteCount</strong> <a class="anchor-link"
             href="#favoriteCount"
             title="Permalink to VideoStatistics.favoriteCount">#</a>
         </h4>
         <div class="doc">
 <p>Number of times the video was added to a user's favorites list.</p>
 <pre class="source">
-String favoriteCount;
+core.String favoriteCount;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="likeCount">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>likeCount</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>likeCount</strong> <a class="anchor-link"
             href="#likeCount"
             title="Permalink to VideoStatistics.likeCount">#</a>
         </h4>
         <div class="doc">
 <p>Number of times the video was liked.</p>
 <pre class="source">
-String likeCount;
+core.String likeCount;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="viewCount">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>viewCount</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>viewCount</strong> <a class="anchor-link"
             href="#viewCount"
             title="Permalink to VideoStatistics.viewCount">#</a>
         </h4>
         <div class="doc">
 <p>Number of times the video was viewed.</p>
 <pre class="source">
-String viewCount;
+core.String viewCount;
 </pre>
 </div>
 </div>

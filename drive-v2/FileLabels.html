@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../drive-v2/FileLabels.html">FileLabels</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../drive-v2/FileLabels.html">FileLabels</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to FileLabels.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static FileLabels parse(Map&lt;String, Object&gt; json) {
+static FileLabels parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new FileLabels();
   result.restricted = identity(json["restricted"]);
@@ -52,12 +52,12 @@ static FileLabels parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/FileLabels.html">FileLabels</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/FileLabels.html">FileLabels</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to FileLabels.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(FileLabels value) {
+static core.Object serialize(FileLabels value) {
   if (value == null) return null;
   final result = {};
   result["restricted"] = identity(value.restricted);
@@ -85,66 +85,66 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="hidden">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>hidden</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>hidden</strong> <a class="anchor-link"
             href="#hidden"
             title="Permalink to FileLabels.hidden">#</a>
         </h4>
         <div class="doc">
 <p>Whether this file is hidden from the user.</p>
 <pre class="source">
-bool hidden;
+core.bool hidden;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="restricted">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>restricted</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>restricted</strong> <a class="anchor-link"
             href="#restricted"
             title="Permalink to FileLabels.restricted">#</a>
         </h4>
         <div class="doc">
 <p>Whether viewers are prevented from downloading this file.</p>
 <pre class="source">
-bool restricted;
+core.bool restricted;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="starred">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>starred</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>starred</strong> <a class="anchor-link"
             href="#starred"
             title="Permalink to FileLabels.starred">#</a>
         </h4>
         <div class="doc">
 <p>Whether this file is starred by the user.</p>
 <pre class="source">
-bool starred;
+core.bool starred;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="trashed">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>trashed</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>trashed</strong> <a class="anchor-link"
             href="#trashed"
             title="Permalink to FileLabels.trashed">#</a>
         </h4>
         <div class="doc">
 <p>Whether this file has been trashed.</p>
 <pre class="source">
-bool trashed;
+core.bool trashed;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="viewed">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>viewed</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>viewed</strong> <a class="anchor-link"
             href="#viewed"
             title="Permalink to FileLabels.viewed">#</a>
         </h4>
         <div class="doc">
 <p>Whether this file has been viewed by this user.</p>
 <pre class="source">
-bool viewed;
+core.bool viewed;
 </pre>
 </div>
 </div>

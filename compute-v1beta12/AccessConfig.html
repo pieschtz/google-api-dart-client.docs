@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to AccessConfig.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static AccessConfig parse(Map&lt;String, Object&gt; json) {
+static AccessConfig parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new AccessConfig();
   result.kind = identity(json["kind"]);
@@ -51,12 +51,12 @@ static AccessConfig parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/AccessConfig.html">AccessConfig</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to AccessConfig.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(AccessConfig value) {
+static core.Object serialize(AccessConfig value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -83,33 +83,33 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to AccessConfig.kind">#</a>
         </h4>
         <div class="doc">
 <p>Type of the resource.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to AccessConfig.name">#</a>
         </h4>
         <div class="doc">
 <p>Name of this access configuration.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="natIP">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>natIP</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>natIP</strong> <a class="anchor-link"
             href="#natIP"
             title="Permalink to AccessConfig.natIP">#</a>
         </h4>
@@ -118,13 +118,13 @@ String name;
 available to the project. If left blank, the external IP will be drawn from a shared ephemeral
 pool.</p>
 <pre class="source">
-String natIP;
+core.String natIP;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="type">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
             href="#type"
             title="Permalink to AccessConfig.type">#</a>
         </h4>
@@ -132,7 +132,7 @@ String natIP;
 <p>Type of configuration. Must be set to "ONE<em>TO</em>ONE_NAT". This configures port-for-port NAT to the
 internet.</p>
 <pre class="source">
-String type;
+core.String type;
 </pre>
 </div>
 </div>

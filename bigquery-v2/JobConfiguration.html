@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../bigquery-v2/JobConfiguration.html">JobConfiguration</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../bigquery-v2/JobConfiguration.html">JobConfiguration</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to JobConfiguration.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static JobConfiguration parse(Map&lt;String, Object&gt; json) {
+static JobConfiguration parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new JobConfiguration();
   result.load = JobConfigurationLoad.parse(json["load"]);
@@ -53,12 +53,12 @@ static JobConfiguration parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/JobConfiguration.html">JobConfiguration</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/JobConfiguration.html">JobConfiguration</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to JobConfiguration.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(JobConfiguration value) {
+static core.Object serialize(JobConfiguration value) {
   if (value == null) return null;
   final result = {};
   result["load"] = JobConfigurationLoad.serialize(value.load);
@@ -139,7 +139,7 @@ JobConfigurationLoad load;
 </div>
 <div class="field"><h4 id="properties">
 <span class="show-code">Code</span>
-<a href="../dart_core/Map.html">Map</a>         <strong>properties</strong> <a class="anchor-link"
+<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/String.html">String</a>&gt;         <strong>properties</strong> <a class="anchor-link"
             href="#properties"
             title="Permalink to JobConfiguration.properties">#</a>
         </h4>
@@ -147,7 +147,7 @@ JobConfigurationLoad load;
 <p><code>Optional</code> Properties providing extra details about how the job should be run. Not used for most
 jobs.</p>
 <pre class="source">
-Map&lt;String, String&gt; properties;
+core.Map&lt;core.String, core.String&gt; properties;
 </pre>
 </div>
 </div>

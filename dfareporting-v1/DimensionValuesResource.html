@@ -26,10 +26,22 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="DimensionValuesResource">
+<span class="show-code">Code</span>
+new <strong>DimensionValuesResource</strong>._internal(<a href="../dfareporting-v1/DfareportingApi.html">DfareportingApi</a> $service) <a class="anchor-link" href="#DimensionValuesResource"
+              title="Permalink to DimensionValuesResource.DimensionValuesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+DimensionValuesResource._internal(DfareportingApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="query">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>query</strong>(<a href="../dart_core/String.html">String</a> profileId, <a href="../dfareporting-v1/DimensionValueRequest.html">DimensionValueRequest</a> content, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#query"
+<a href="../core/Future.html">Future</a>&lt;<a href="../dfareporting-v1/DimensionValueList.html">DimensionValueList</a>&gt; <strong>query</strong>(<a href="../core/String.html">String</a> profileId, <a href="../dfareporting-v1/DimensionValueRequest.html">DimensionValueRequest</a> content, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#query"
               title="Permalink to DimensionValuesResource.query">#</a></h4>
 <div class="doc">
 <p>Retrieves list of report dimension values for a list of filters.</p><ul><li>
@@ -40,7 +52,7 @@
 <p>Minimum: 0.
 Maximum: 100.</p>
 <pre class="source">
-Future&lt;DimensionValueList&gt; query(String profileId, DimensionValueRequest content, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;DimensionValueList&gt; query(core.String profileId, DimensionValueRequest content, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -61,7 +73,7 @@ Future&lt;DimensionValueList&gt; query(String profileId, DimensionValueRequest c
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

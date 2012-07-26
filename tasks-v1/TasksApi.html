@@ -29,12 +29,16 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="TasksApi">
 <span class="show-code">Code</span>
-new <strong>TasksApi</strong>([baseUrl = "https://www.googleapis.com/tasks/v1/", applicationName, authenticator]) <a class="anchor-link" href="#TasksApi"
+new <strong>TasksApi</strong>([<a href="../core/String.html">String</a> baseUrl = "https://www.googleapis.com/tasks/v1/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#TasksApi"
               title="Permalink to TasksApi.TasksApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-TasksApi([this.baseUrl = "https://www.googleapis.com/tasks/v1/", this.applicationName, this.authenticator]) { 
+TasksApi([this.baseUrl = "https://www.googleapis.com/tasks/v1/", applicationName, this.authenticator]) :
+    this.applicationName = applicationName
+        .replaceAll(const RegExp(@'\s+'), '_')
+        .replaceAll(const RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+{ 
   _tasks = new TasksResource._internal(this);
   _tasklists = new TasklistsResource._internal(this);
 }
@@ -44,34 +48,34 @@ TasksApi([this.baseUrl = "https://www.googleapis.com/tasks/v1/", this.applicatio
 <h3>Static Fields</h3>
 <div class="field"><h4 id="TASKS_READONLY_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>TASKS_READONLY_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>TASKS_READONLY_SCOPE</strong> <a class="anchor-link"
             href="#TASKS_READONLY_SCOPE"
             title="Permalink to TasksApi.TASKS_READONLY_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: View your tasks</p>
 <pre class="source">
-static final String TASKS_READONLY_SCOPE = "https://www.googleapis.com/auth/tasks.readonly";
+static final core.String TASKS_READONLY_SCOPE = "https://www.googleapis.com/auth/tasks.readonly";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="TASKS_SCOPE">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>TASKS_SCOPE</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>TASKS_SCOPE</strong> <a class="anchor-link"
             href="#TASKS_SCOPE"
             title="Permalink to TasksApi.TASKS_SCOPE">#</a>
         </h4>
         <div class="doc">
 <p>OAuth2 scope: Manage your tasks</p>
 <pre class="source">
-static final String TASKS_SCOPE = "https://www.googleapis.com/auth/tasks";
+static final core.String TASKS_SCOPE = "https://www.googleapis.com/auth/tasks";
 </pre>
 </div>
 </div>
 <h3>Methods</h3>
-<div class="method"><h4 id="get:tasklists">
+<div class="method"><h4 id="tasklists">
 <span class="show-code">Code</span>
-<a href="../tasks-v1/TasklistsResource.html">TasklistsResource</a> <strong>get tasklists</strong>() <a class="anchor-link" href="#get:tasklists"
+<a href="../tasks-v1/TasklistsResource.html">TasklistsResource</a> <strong>get tasklists</strong>() <a class="anchor-link" href="#tasklists"
               title="Permalink to TasksApi.get tasklists">#</a></h4>
 <div class="doc">
 
@@ -80,9 +84,9 @@ TasklistsResource get tasklists() =&gt; _tasklists;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:tasks">
+<div class="method"><h4 id="tasks">
 <span class="show-code">Code</span>
-<a href="../tasks-v1/TasksResource.html">TasksResource</a> <strong>get tasks</strong>() <a class="anchor-link" href="#get:tasks"
+<a href="../tasks-v1/TasksResource.html">TasksResource</a> <strong>get tasks</strong>() <a class="anchor-link" href="#tasks"
               title="Permalink to TasksApi.get tasks">#</a></h4>
 <div class="doc">
 
@@ -91,14 +95,14 @@ TasksResource get tasks() =&gt; _tasks;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="get:userAgent">
+<div class="method"><h4 id="userAgent">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#get:userAgent"
+<a href="../core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
               title="Permalink to TasksApi.get userAgent">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-String get userAgent() {
+core.String get userAgent() {
   var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
   return "${uaPrefix}tasks/v1/20111027 google-api-dart-client/${clientVersion}";
 }
@@ -121,14 +125,14 @@ TasksApiAlt alt;
 </div>
 <div class="field"><h4 id="applicationName">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to TasksApi.applicationName">#</a>
         </h4>
         <div class="doc">
 <p>The application name, used in the user-agent header</p>
 <pre class="source">
-final String applicationName;
+final core.String applicationName;
 </pre>
 </div>
 </div>
@@ -147,46 +151,46 @@ Authenticator authenticator;
 </div>
 <div class="field"><h4 id="baseUrl">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to TasksApi.baseUrl">#</a>
         </h4>
         <div class="doc">
 <p>The API root, such as <code>https://www.googleapis.com</code></p>
 <pre class="source">
-final String baseUrl;
+final core.String baseUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="clientVersion">
 <span class="show-code">Code</span>
-final <a href="../dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+final <a href="../core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to TasksApi.clientVersion">#</a>
         </h4>
         <div class="doc">
 <p>The client library version</p>
 <pre class="source">
-final String clientVersion = "0.1";
+final core.String clientVersion = "0.1";
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="fields">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to TasksApi.fields">#</a>
         </h4>
         <div class="doc">
 <p>Selector specifying which fields to include in a partial response.</p>
 <pre class="source">
-String fields;
+core.String fields;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="key">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to TasksApi.key">#</a>
         </h4>
@@ -194,39 +198,39 @@ String fields;
 <p>API key. Your API key identifies your project and provides you with API access, quota, and
 reports. Required unless you provide an OAuth 2.0 token.</p>
 <pre class="source">
-String key;
+core.String key;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to TasksApi.oauthToken">#</a>
         </h4>
         <div class="doc">
 <p>OAuth 2.0 token for the current user.</p>
 <pre class="source">
-String oauthToken;
+core.String oauthToken;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="prettyPrint">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to TasksApi.prettyPrint">#</a>
         </h4>
         <div class="doc">
 <p>Returns response with indentations and line breaks.</p>
 <pre class="source">
-bool prettyPrint;
+core.bool prettyPrint;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="quotaUser">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to TasksApi.quotaUser">#</a>
         </h4>
@@ -234,13 +238,13 @@ bool prettyPrint;
 <p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
 assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
 <pre class="source">
-String quotaUser;
+core.String quotaUser;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="userIp">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to TasksApi.userIp">#</a>
         </h4>
@@ -248,7 +252,7 @@ String quotaUser;
 <p>IP address of the site where the request originates. Use this if you want to enforce per-user
 limits.</p>
 <pre class="source">
-String userIp;
+core.String userIp;
 </pre>
 </div>
 </div>

@@ -1,0 +1,409 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Person Class / plus-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="plus-v1" data-type="Person">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/Person.html">Person</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Person</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Person</strong></span></p>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<span class="show-code">Code</span>
+<a href="../plus-v1/Person.html">Person</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to Person.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Person parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new Person();
+  result.relationshipStatus = identity(json["relationshipStatus"]);
+  result.organizations = map(PersonOrganizations.parse)(json["organizations"]);
+  result.kind = identity(json["kind"]);
+  result.displayName = identity(json["displayName"]);
+  result.name = PersonName.parse(json["name"]);
+  result.url = identity(json["url"]);
+  result.gender = identity(json["gender"]);
+  result.aboutMe = identity(json["aboutMe"]);
+  result.tagline = identity(json["tagline"]);
+  result.urls = map(PersonUrls.parse)(json["urls"]);
+  result.placesLived = map(PersonPlacesLived.parse)(json["placesLived"]);
+  result.emails = map(PersonEmails.parse)(json["emails"]);
+  result.nickname = identity(json["nickname"]);
+  result.birthday = identity(json["birthday"]);
+  result.etag = identity(json["etag"]);
+  result.image = PersonImage.parse(json["image"]);
+  result.hasApp = identity(json["hasApp"]);
+  result.id = identity(json["id"]);
+  result.languagesSpoken = map(identity)(json["languagesSpoken"]);
+  result.currentLocation = identity(json["currentLocation"]);
+  result.objectType = identity(json["objectType"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<span class="show-code">Code</span>
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../plus-v1/Person.html">Person</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Person.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(Person value) {
+  if (value == null) return null;
+  final result = {};
+  result["relationshipStatus"] = identity(value.relationshipStatus);
+  result["organizations"] = map(PersonOrganizations.serialize)(value.organizations);
+  result["kind"] = identity(value.kind);
+  result["displayName"] = identity(value.displayName);
+  result["name"] = PersonName.serialize(value.name);
+  result["url"] = identity(value.url);
+  result["gender"] = identity(value.gender);
+  result["aboutMe"] = identity(value.aboutMe);
+  result["tagline"] = identity(value.tagline);
+  result["urls"] = map(PersonUrls.serialize)(value.urls);
+  result["placesLived"] = map(PersonPlacesLived.serialize)(value.placesLived);
+  result["emails"] = map(PersonEmails.serialize)(value.emails);
+  result["nickname"] = identity(value.nickname);
+  result["birthday"] = identity(value.birthday);
+  result["etag"] = identity(value.etag);
+  result["image"] = PersonImage.serialize(value.image);
+  result["hasApp"] = identity(value.hasApp);
+  result["id"] = identity(value.id);
+  result["languagesSpoken"] = map(identity)(value.languagesSpoken);
+  result["currentLocation"] = identity(value.currentLocation);
+  result["objectType"] = identity(value.objectType);
+  return result;
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<span class="show-code">Code</span>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Person.toString">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="aboutMe">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>aboutMe</strong> <a class="anchor-link"
+            href="#aboutMe"
+            title="Permalink to Person.aboutMe">#</a>
+        </h4>
+        <div class="doc">
+<p>A short biography for this person.</p>
+<pre class="source">
+core.String aboutMe;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="birthday">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>birthday</strong> <a class="anchor-link"
+            href="#birthday"
+            title="Permalink to Person.birthday">#</a>
+        </h4>
+        <div class="doc">
+<p>The person's date of birth, represented as YYYY-MM-DD.</p>
+<pre class="source">
+core.String birthday;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="currentLocation">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>currentLocation</strong> <a class="anchor-link"
+            href="#currentLocation"
+            title="Permalink to Person.currentLocation">#</a>
+        </h4>
+        <div class="doc">
+<p>The current location for this person.</p>
+<pre class="source">
+core.String currentLocation;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="displayName">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>displayName</strong> <a class="anchor-link"
+            href="#displayName"
+            title="Permalink to Person.displayName">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of this person, suitable for display.</p>
+<pre class="source">
+core.String displayName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="emails">
+<span class="show-code">Code</span>
+<a href="../core/List.html">List</a>&lt;<a href="../plus-v1/PersonEmails.html">PersonEmails</a>&gt;         <strong>emails</strong> <a class="anchor-link"
+            href="#emails"
+            title="Permalink to Person.emails">#</a>
+        </h4>
+        <div class="doc">
+<p>A list of email addresses for this person.</p>
+<pre class="source">
+core.List&lt;PersonEmails&gt; emails;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="etag">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+            href="#etag"
+            title="Permalink to Person.etag">#</a>
+        </h4>
+        <div class="doc">
+<p>ETag of this response for caching purposes.</p>
+<pre class="source">
+core.String etag;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="gender">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>gender</strong> <a class="anchor-link"
+            href="#gender"
+            title="Permalink to Person.gender">#</a>
+        </h4>
+        <div class="doc">
+<p>The person's gender. Possible values are: - "male" - Male gender. - "female" - Female gender. -
+"other" - Other.</p>
+<pre class="source">
+core.String gender;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="hasApp">
+<span class="show-code">Code</span>
+<a href="../core/bool.html">bool</a>         <strong>hasApp</strong> <a class="anchor-link"
+            href="#hasApp"
+            title="Permalink to Person.hasApp">#</a>
+        </h4>
+        <div class="doc">
+<p>If "true", indicates that the person has installed the app that is making the request and has
+chosen to expose this install state to the caller. A value of "false" indicates that the install
+state cannot be determined (it is either not installed or the person has chosen to keep this
+information private).</p>
+<pre class="source">
+core.bool hasApp;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Person.id">#</a>
+        </h4>
+        <div class="doc">
+<p>The ID of this person.</p>
+<pre class="source">
+core.String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="image">
+<span class="show-code">Code</span>
+<a href="../plus-v1/PersonImage.html">PersonImage</a>         <strong>image</strong> <a class="anchor-link"
+            href="#image"
+            title="Permalink to Person.image">#</a>
+        </h4>
+        <div class="doc">
+<p>The representation of the person's profile photo.</p>
+<pre class="source">
+PersonImage image;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Person.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Identifies this resource as a person. Value: "plus#person".</p>
+<pre class="source">
+core.String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="languagesSpoken">
+<span class="show-code">Code</span>
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>languagesSpoken</strong> <a class="anchor-link"
+            href="#languagesSpoken"
+            title="Permalink to Person.languagesSpoken">#</a>
+        </h4>
+        <div class="doc">
+<p>The languages spoken by this person.</p>
+<pre class="source">
+core.List&lt;core.String&gt; languagesSpoken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="../plus-v1/PersonName.html">PersonName</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to Person.name">#</a>
+        </h4>
+        <div class="doc">
+<p>An object representation of the individual components of a person's name.</p>
+<pre class="source">
+PersonName name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="nickname">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>nickname</strong> <a class="anchor-link"
+            href="#nickname"
+            title="Permalink to Person.nickname">#</a>
+        </h4>
+        <div class="doc">
+<p>The nickname of this person.</p>
+<pre class="source">
+core.String nickname;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="objectType">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
+            href="#objectType"
+            title="Permalink to Person.objectType">#</a>
+        </h4>
+        <div class="doc">
+<p>Type of person within Google+. Possible values are: - "person" - represents an actual person. -
+"page" - represents a page.</p>
+<pre class="source">
+core.String objectType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="organizations">
+<span class="show-code">Code</span>
+<a href="../core/List.html">List</a>&lt;<a href="../plus-v1/PersonOrganizations.html">PersonOrganizations</a>&gt;         <strong>organizations</strong> <a class="anchor-link"
+            href="#organizations"
+            title="Permalink to Person.organizations">#</a>
+        </h4>
+        <div class="doc">
+<p>A list of current or past organizations with which this person is associated.</p>
+<pre class="source">
+core.List&lt;PersonOrganizations&gt; organizations;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="placesLived">
+<span class="show-code">Code</span>
+<a href="../core/List.html">List</a>&lt;<a href="../plus-v1/PersonPlacesLived.html">PersonPlacesLived</a>&gt;         <strong>placesLived</strong> <a class="anchor-link"
+            href="#placesLived"
+            title="Permalink to Person.placesLived">#</a>
+        </h4>
+        <div class="doc">
+<p>A list of places where this person has lived.</p>
+<pre class="source">
+core.List&lt;PersonPlacesLived&gt; placesLived;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="relationshipStatus">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>relationshipStatus</strong> <a class="anchor-link"
+            href="#relationshipStatus"
+            title="Permalink to Person.relationshipStatus">#</a>
+        </h4>
+        <div class="doc">
+<p>The person's relationship status. Possible values are: - "single" - Person is single. -
+"in<em>a</em>relationship" - Person is in a relationship. - "engaged" - Person is engaged. - "married" -
+Person is married. - "its<em>complicated" - The relationship is complicated. - "open</em>relationship" -
+Person is in an open relationship. - "widowed" - Person is widowed. - "in<em>domestic</em>partnership" -
+Person is in a domestic partnership. - "in<em>civil</em>union" - Person is in a civil union.</p>
+<pre class="source">
+core.String relationshipStatus;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="tagline">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>tagline</strong> <a class="anchor-link"
+            href="#tagline"
+            title="Permalink to Person.tagline">#</a>
+        </h4>
+        <div class="doc">
+<p>The brief description (tagline) of this person.</p>
+<pre class="source">
+core.String tagline;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="url">
+<span class="show-code">Code</span>
+<a href="../core/String.html">String</a>         <strong>url</strong> <a class="anchor-link"
+            href="#url"
+            title="Permalink to Person.url">#</a>
+        </h4>
+        <div class="doc">
+<p>The URL of this person's profile.</p>
+<pre class="source">
+core.String url;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="urls">
+<span class="show-code">Code</span>
+<a href="../core/List.html">List</a>&lt;<a href="../plus-v1/PersonUrls.html">PersonUrls</a>&gt;         <strong>urls</strong> <a class="anchor-link"
+            href="#urls"
+            title="Permalink to Person.urls">#</a>
+        </h4>
+        <div class="doc">
+<p>A list of URLs for this person.</p>
+<pre class="source">
+core.List&lt;PersonUrls&gt; urls;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

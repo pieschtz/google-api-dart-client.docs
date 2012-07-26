@@ -26,10 +26,23 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="BookshelvesResource">
+<span class="show-code">Code</span>
+new <strong>BookshelvesResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#BookshelvesResource"
+              title="Permalink to BookshelvesResource.BookshelvesResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+BookshelvesResource._internal(BooksApi $service) : _$service = $service,
+  volumes = new BookshelvesVolumesResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> userId, <a href="../dart_core/String.html">String</a> shelf, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Bookshelf.html">Bookshelf</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> userId, <a href="../core/String.html">String</a> shelf, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to BookshelvesResource.get">#</a></h4>
 <div class="doc">
 <p>Retrieves metadata for a specific bookshelf for the specified user.</p><ul><li>
@@ -37,7 +50,7 @@
 <span class="param">shelf</span> ID of bookshelf to retrieve.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future&lt;Bookshelf&gt; get(String userId, String shelf, [String source = UNSPECIFIED]) {
+core.Future&lt;Bookshelf&gt; get(core.String userId, core.String shelf, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -56,7 +69,7 @@ Future&lt;Bookshelf&gt; get(String userId, String shelf, [String source = UNSPEC
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -67,14 +80,14 @@ Future&lt;Bookshelf&gt; get(String userId, String shelf, [String source = UNSPEC
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> userId, [<a href="../dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../books-v1/Bookshelves.html">Bookshelves</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> userId, [<a href="../core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to BookshelvesResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of public bookshelves for the specified user.</p><ul><li>
 <span class="param">userId</span> ID of user for whom to retrieve bookshelves.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-Future&lt;Bookshelves&gt; list(String userId, [String source = UNSPECIFIED]) {
+core.Future&lt;Bookshelves&gt; list(core.String userId, [core.String source = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -92,7 +105,7 @@ Future&lt;Bookshelves&gt; list(String userId, [String source = UNSPECIFIED]) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="PlaylistsResource">
+<span class="show-code">Code</span>
+new <strong>PlaylistsResource</strong>._internal(<a href="../youtube-v3alpha/YoutubeApi.html">YoutubeApi</a> $service) <a class="anchor-link" href="#PlaylistsResource"
+              title="Permalink to PlaylistsResource.PlaylistsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+PlaylistsResource._internal(YoutubeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> id, <a href="../dart_core/String.html">String</a> part) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../youtube-v3alpha/PlaylistListResponse.html">PlaylistListResponse</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> id, <a href="../core/String.html">String</a> part) <a class="anchor-link" href="#list"
               title="Permalink to PlaylistsResource.list">#</a></h4>
 <div class="doc">
 <p>Browse the YouTube playlist collection.</p><ul><li>
 <span class="param">id</span> YouTube IDs of the playlists to be returned.</li><li>
 <span class="param">part</span> Parts of the playlist resource to be returned.</li></ul>
 <pre class="source">
-Future&lt;PlaylistListResponse&gt; list(String id, String part) {
+core.Future&lt;PlaylistListResponse&gt; list(core.String id, core.String part) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future&lt;PlaylistListResponse&gt; list(String id, String part) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

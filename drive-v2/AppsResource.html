@@ -26,15 +26,27 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AppsResource">
+<span class="show-code">Code</span>
+new <strong>AppsResource</strong>._internal(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#AppsResource"
+              title="Permalink to AppsResource.AppsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+AppsResource._internal(DriveApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>() <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../drive-v2/AppList.html">AppList</a>&gt; <strong>list</strong>() <a class="anchor-link" href="#list"
               title="Permalink to AppsResource.list">#</a></h4>
 <div class="doc">
 <p>Lists a user's apps.</p>
 <pre class="source">
-Future&lt;AppList&gt; list() {
+core.Future&lt;AppList&gt; list() {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -50,7 +62,7 @@ Future&lt;AppList&gt; list() {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

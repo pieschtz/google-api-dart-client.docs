@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../dfareporting-v1/ReportCriteriaDateRange.html">ReportCriteriaDateRange</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../dfareporting-v1/ReportCriteriaDateRange.html">ReportCriteriaDateRange</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to ReportCriteriaDateRange.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static ReportCriteriaDateRange parse(Map&lt;String, Object&gt; json) {
+static ReportCriteriaDateRange parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new ReportCriteriaDateRange();
   result.startDate = identity(json["startDate"]);
@@ -50,12 +50,12 @@ static ReportCriteriaDateRange parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1/ReportCriteriaDateRange.html">ReportCriteriaDateRange</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1/ReportCriteriaDateRange.html">ReportCriteriaDateRange</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to ReportCriteriaDateRange.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(ReportCriteriaDateRange value) {
+static core.Object serialize(ReportCriteriaDateRange value) {
   if (value == null) return null;
   final result = {};
   result["startDate"] = identity(value.startDate);
@@ -81,20 +81,20 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="endDate">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>endDate</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>endDate</strong> <a class="anchor-link"
             href="#endDate"
             title="Permalink to ReportCriteriaDateRange.endDate">#</a>
         </h4>
         <div class="doc">
 <p>The end date of the date range, inclusive. A string of the format: "yyyy-MM-dd".</p>
 <pre class="source">
-String endDate;
+core.String endDate;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="relativeDateRange">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>relativeDateRange</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>relativeDateRange</strong> <a class="anchor-link"
             href="#relativeDateRange"
             title="Permalink to ReportCriteriaDateRange.relativeDateRange">#</a>
         </h4>
@@ -104,20 +104,20 @@ String endDate;
 "PREVIOUS</em>MONTH" - "PREVIOUS<em>QUARTER" - "PREVIOUS</em>YEAR" - "LAST<em>7</em>DAYS" - "LAST<em>30</em>DAYS" -
 "LAST<em>90</em>DAYS" - "LAST<em>365</em>DAYS" - "LAST<em>24</em>MONTHS"</p>
 <pre class="source">
-String relativeDateRange;
+core.String relativeDateRange;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="startDate">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>startDate</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>startDate</strong> <a class="anchor-link"
             href="#startDate"
             title="Permalink to ReportCriteriaDateRange.startDate">#</a>
         </h4>
         <div class="doc">
 <p>The start date of the date range, inclusive. A string of the format: "yyyy-MM-dd".</p>
 <pre class="source">
-String startDate;
+core.String startDate;
 </pre>
 </div>
 </div>

@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../drive-v2/AboutAdditionalRoleInfoRoleSets.html">AboutAdditionalRoleInfoRoleSets</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../drive-v2/AboutAdditionalRoleInfoRoleSets.html">AboutAdditionalRoleInfoRoleSets</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to AboutAdditionalRoleInfoRoleSets.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static AboutAdditionalRoleInfoRoleSets parse(Map&lt;String, Object&gt; json) {
+static AboutAdditionalRoleInfoRoleSets parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new AboutAdditionalRoleInfoRoleSets();
   result.primaryRole = identity(json["primaryRole"]);
@@ -49,12 +49,12 @@ static AboutAdditionalRoleInfoRoleSets parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/AboutAdditionalRoleInfoRoleSets.html">AboutAdditionalRoleInfoRoleSets</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/AboutAdditionalRoleInfoRoleSets.html">AboutAdditionalRoleInfoRoleSets</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to AboutAdditionalRoleInfoRoleSets.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(AboutAdditionalRoleInfoRoleSets value) {
+static core.Object serialize(AboutAdditionalRoleInfoRoleSets value) {
   if (value == null) return null;
   final result = {};
   result["primaryRole"] = identity(value.primaryRole);
@@ -79,27 +79,27 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="additionalRoles">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>additionalRoles</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>additionalRoles</strong> <a class="anchor-link"
             href="#additionalRoles"
             title="Permalink to AboutAdditionalRoleInfoRoleSets.additionalRoles">#</a>
         </h4>
         <div class="doc">
-<p>The list of additional roles for this role set.</p>
+<p>The supported additional roles with the primary role.</p>
 <pre class="source">
-List&lt;String&gt; additionalRoles;
+core.List&lt;core.String&gt; additionalRoles;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="primaryRole">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>primaryRole</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>primaryRole</strong> <a class="anchor-link"
             href="#primaryRole"
             title="Permalink to AboutAdditionalRoleInfoRoleSets.primaryRole">#</a>
         </h4>
         <div class="doc">
-<p>The primary role for this role set.</p>
+<p>A primary permission role.</p>
 <pre class="source">
-String primaryRole;
+core.String primaryRole;
 </pre>
 </div>
 </div>

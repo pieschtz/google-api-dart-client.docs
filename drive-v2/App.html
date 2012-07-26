@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../drive-v2/App.html">App</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../drive-v2/App.html">App</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to App.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static App parse(Map&lt;String, Object&gt; json) {
+static App parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new App();
   result.kind = identity(json["kind"]);
@@ -61,12 +61,12 @@ static App parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/App.html">App</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/App.html">App</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to App.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(App value) {
+static core.Object serialize(App value) {
   if (value == null) return null;
   final result = {};
   result["kind"] = identity(value.kind);
@@ -103,183 +103,183 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="authorized">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>authorized</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>authorized</strong> <a class="anchor-link"
             href="#authorized"
             title="Permalink to App.authorized">#</a>
         </h4>
         <div class="doc">
 <p>Whether the app is authorized to access data on the user's Drive.</p>
 <pre class="source">
-bool authorized;
+core.bool authorized;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="icons">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>icons</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../drive-v2/AppIcons.html">AppIcons</a>&gt;         <strong>icons</strong> <a class="anchor-link"
             href="#icons"
             title="Permalink to App.icons">#</a>
         </h4>
         <div class="doc">
 <p>The various icons for the app.</p>
 <pre class="source">
-List&lt;AppIcons&gt; icons;
+core.List&lt;AppIcons&gt; icons;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to App.id">#</a>
         </h4>
         <div class="doc">
 <p>The ID of the app.</p>
 <pre class="source">
-String id;
+core.String id;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="installed">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>installed</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>installed</strong> <a class="anchor-link"
             href="#installed"
             title="Permalink to App.installed">#</a>
         </h4>
         <div class="doc">
 <p>Whether the app is installed.</p>
 <pre class="source">
-bool installed;
+core.bool installed;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to App.kind">#</a>
         </h4>
         <div class="doc">
 <p>This is always drive#app.</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to App.name">#</a>
         </h4>
         <div class="doc">
 <p>The name of the app.</p>
 <pre class="source">
-String name;
+core.String name;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="objectType">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
             href="#objectType"
             title="Permalink to App.objectType">#</a>
         </h4>
         <div class="doc">
 <p>The name of the type of object this app creates.</p>
 <pre class="source">
-String objectType;
+core.String objectType;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="primaryFileExtensions">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>primaryFileExtensions</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>primaryFileExtensions</strong> <a class="anchor-link"
             href="#primaryFileExtensions"
             title="Permalink to App.primaryFileExtensions">#</a>
         </h4>
         <div class="doc">
 <p>The list of primary file extensions.</p>
 <pre class="source">
-List&lt;String&gt; primaryFileExtensions;
+core.List&lt;core.String&gt; primaryFileExtensions;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="primaryMimeTypes">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>primaryMimeTypes</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>primaryMimeTypes</strong> <a class="anchor-link"
             href="#primaryMimeTypes"
             title="Permalink to App.primaryMimeTypes">#</a>
         </h4>
         <div class="doc">
 <p>The list of primary mime types.</p>
 <pre class="source">
-List&lt;String&gt; primaryMimeTypes;
+core.List&lt;core.String&gt; primaryMimeTypes;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="productUrl">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>productUrl</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>productUrl</strong> <a class="anchor-link"
             href="#productUrl"
             title="Permalink to App.productUrl">#</a>
         </h4>
         <div class="doc">
 <p>The product URL.</p>
 <pre class="source">
-String productUrl;
+core.String productUrl;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="secondaryFileExtensions">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>secondaryFileExtensions</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>secondaryFileExtensions</strong> <a class="anchor-link"
             href="#secondaryFileExtensions"
             title="Permalink to App.secondaryFileExtensions">#</a>
         </h4>
         <div class="doc">
 <p>The list of secondary file extensions.</p>
 <pre class="source">
-List&lt;String&gt; secondaryFileExtensions;
+core.List&lt;core.String&gt; secondaryFileExtensions;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="secondaryMimeTypes">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>secondaryMimeTypes</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>secondaryMimeTypes</strong> <a class="anchor-link"
             href="#secondaryMimeTypes"
             title="Permalink to App.secondaryMimeTypes">#</a>
         </h4>
         <div class="doc">
 <p>The list of secondary mime types.</p>
 <pre class="source">
-List&lt;String&gt; secondaryMimeTypes;
+core.List&lt;core.String&gt; secondaryMimeTypes;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="supportsCreate">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>supportsCreate</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>supportsCreate</strong> <a class="anchor-link"
             href="#supportsCreate"
             title="Permalink to App.supportsCreate">#</a>
         </h4>
         <div class="doc">
 <p>Whether this app supports creating new objects.</p>
 <pre class="source">
-bool supportsCreate;
+core.bool supportsCreate;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="supportsImport">
 <span class="show-code">Code</span>
-<a href="../dart_core/bool.html">bool</a>         <strong>supportsImport</strong> <a class="anchor-link"
+<a href="../core/bool.html">bool</a>         <strong>supportsImport</strong> <a class="anchor-link"
             href="#supportsImport"
             title="Permalink to App.supportsImport">#</a>
         </h4>
         <div class="doc">
 <p>Whether this app supports importing Google Docs.</p>
 <pre class="source">
-bool supportsImport;
+core.bool supportsImport;
 </pre>
 </div>
 </div>

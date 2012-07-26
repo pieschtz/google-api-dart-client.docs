@@ -26,17 +26,29 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ChildrenResource">
+<span class="show-code">Code</span>
+new <strong>ChildrenResource</strong>._internal(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#ChildrenResource"
+              title="Permalink to ChildrenResource.ChildrenResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ChildrenResource._internal(DriveApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> folderId, <a href="../dart_core/String.html">String</a> childId) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> folderId, <a href="../core/String.html">String</a> childId) <a class="anchor-link" href="#delete"
               title="Permalink to ChildrenResource.delete">#</a></h4>
 <div class="doc">
 <p>Removes a child from a folder.</p><ul><li>
 <span class="param">folderId</span> The ID of the folder.</li><li>
 <span class="param">childId</span> The ID of the child.</li></ul>
 <pre class="source">
-Future delete(String folderId, String childId) {
+core.Future delete(core.String folderId, core.String childId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +66,7 @@ Future delete(String folderId, String childId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,14 +77,14 @@ Future delete(String folderId, String childId) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> folderId, <a href="../dart_core/String.html">String</a> childId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../drive-v2/ChildReference.html">ChildReference</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> folderId, <a href="../core/String.html">String</a> childId) <a class="anchor-link" href="#get"
               title="Permalink to ChildrenResource.get">#</a></h4>
 <div class="doc">
 <p>Gets a specific child reference.</p><ul><li>
 <span class="param">folderId</span> The ID of the folder.</li><li>
 <span class="param">childId</span> The ID of the child.</li></ul>
 <pre class="source">
-Future&lt;ChildReference&gt; get(String folderId, String childId) {
+core.Future&lt;ChildReference&gt; get(core.String folderId, core.String childId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -90,7 +102,7 @@ Future&lt;ChildReference&gt; get(String folderId, String childId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -101,14 +113,14 @@ Future&lt;ChildReference&gt; get(String folderId, String childId) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../dart_core/String.html">String</a> folderId, <a href="../drive-v2/ChildReference.html">ChildReference</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../drive-v2/ChildReference.html">ChildReference</a>&gt; <strong>insert</strong>(<a href="../core/String.html">String</a> folderId, <a href="../drive-v2/ChildReference.html">ChildReference</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to ChildrenResource.insert">#</a></h4>
 <div class="doc">
 <p>Inserts a file into a folder.</p><ul><li>
 <span class="param">content</span> the ChildReference</li><li>
 <span class="param">folderId</span> The ID of the folder.</li></ul>
 <pre class="source">
-Future&lt;ChildReference&gt; insert(String folderId, ChildReference content) {
+core.Future&lt;ChildReference&gt; insert(core.String folderId, ChildReference content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -127,7 +139,7 @@ Future&lt;ChildReference&gt; insert(String folderId, ChildReference content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -138,7 +150,7 @@ Future&lt;ChildReference&gt; insert(String folderId, ChildReference content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> folderId, [<a href="../dart_core/String.html">String</a> q = UNSPECIFIED, <a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../drive-v2/ChildList.html">ChildList</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> folderId, [<a href="../core/String.html">String</a> q = UNSPECIFIED, <a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to ChildrenResource.list">#</a></h4>
 <div class="doc">
 <p>Lists a folder's children.</p><ul><li>
@@ -150,7 +162,7 @@ Future&lt;ChildReference&gt; insert(String folderId, ChildReference content) {
 Default: 100.
 Minimum: 0.</p></li></ul>
 <pre class="source">
-Future&lt;ChildList&gt; list(String folderId, [String q = UNSPECIFIED, String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;ChildList&gt; list(core.String folderId, [core.String q = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -170,7 +182,7 @@ Future&lt;ChildList&gt; list(String folderId, [String q = UNSPECIFIED, String pa
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())

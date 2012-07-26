@@ -26,15 +26,27 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="CurrentLocationResource">
+<span class="show-code">Code</span>
+new <strong>CurrentLocationResource</strong>._internal(<a href="../latitude-v1/LatitudeApi.html">LatitudeApi</a> $service) <a class="anchor-link" href="#CurrentLocationResource"
+              title="Permalink to CurrentLocationResource.CurrentLocationResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CurrentLocationResource._internal(LatitudeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>() <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>() <a class="anchor-link" href="#delete"
               title="Permalink to CurrentLocationResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes the authenticated user's current location.</p>
 <pre class="source">
-Future delete() {
+core.Future delete() {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -50,7 +62,7 @@ Future delete() {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -61,7 +73,7 @@ Future delete() {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>([<a href="../latitude-v1/CurrentLocationResourceGetGranularity.html">CurrentLocationResourceGetGranularity</a> granularity = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../latitude-v1/Location.html">Location</a>&gt; <strong>get</strong>([<a href="../latitude-v1/CurrentLocationResourceGetGranularity.html">CurrentLocationResourceGetGranularity</a> granularity = UNSPECIFIED]) <a class="anchor-link" href="#get"
               title="Permalink to CurrentLocationResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the authenticated user's current location.</p><ul><li>
@@ -69,7 +81,7 @@ Future delete() {
 <span class="param">granularity</span> Granularity of the requested location.
 Default: city.</p></li></ul>
 <pre class="source">
-Future&lt;Location&gt; get([CurrentLocationResourceGetGranularity granularity = UNSPECIFIED]) {
+core.Future&lt;Location&gt; get([CurrentLocationResourceGetGranularity granularity = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -86,7 +98,7 @@ Future&lt;Location&gt; get([CurrentLocationResourceGetGranularity granularity = 
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -97,13 +109,13 @@ Future&lt;Location&gt; get([CurrentLocationResourceGetGranularity granularity = 
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../latitude-v1/Location.html">Location</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../latitude-v1/Location.html">Location</a>&gt; <strong>insert</strong>(<a href="../latitude-v1/Location.html">Location</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CurrentLocationResource.insert">#</a></h4>
 <div class="doc">
 <p>Updates or creates the user's current location.</p><ul><li>
 <span class="param">content</span> the Location</li></ul>
 <pre class="source">
-Future&lt;Location&gt; insert(Location content) {
+core.Future&lt;Location&gt; insert(Location content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -121,7 +133,7 @@ Future&lt;Location&gt; insert(Location content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

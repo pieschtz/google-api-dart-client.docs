@@ -26,16 +26,28 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="TasklistsResource">
+<span class="show-code">Code</span>
+new <strong>TasklistsResource</strong>._internal(<a href="../tasks-v1/TasksApi.html">TasksApi</a> $service) <a class="anchor-link" href="#TasklistsResource"
+              title="Permalink to TasklistsResource.TasklistsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TasklistsResource._internal(TasksApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="../dart_core/String.html">String</a> tasklist) <a class="anchor-link" href="#delete"
+<a href="../core/Future.html">Future</a> <strong>delete</strong>(<a href="../core/String.html">String</a> tasklist) <a class="anchor-link" href="#delete"
               title="Permalink to TasklistsResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes the authenticated user's specified task list.</p><ul><li>
 <span class="param">tasklist</span> Task list identifier.</li></ul>
 <pre class="source">
-Future delete(String tasklist) {
+core.Future delete(core.String tasklist) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -52,7 +64,7 @@ Future delete(String tasklist) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -63,13 +75,13 @@ Future delete(String tasklist) {
 </div>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> tasklist) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskList.html">TaskList</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> tasklist) <a class="anchor-link" href="#get"
               title="Permalink to TasklistsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the authenticated user's specified task list.</p><ul><li>
 <span class="param">tasklist</span> Task list identifier.</li></ul>
 <pre class="source">
-Future&lt;TaskList&gt; get(String tasklist) {
+core.Future&lt;TaskList&gt; get(core.String tasklist) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -86,7 +98,7 @@ Future&lt;TaskList&gt; get(String tasklist) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -97,13 +109,13 @@ Future&lt;TaskList&gt; get(String tasklist) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>insert</strong>(<a href="../tasks-v1/TaskList.html">TaskList</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskList.html">TaskList</a>&gt; <strong>insert</strong>(<a href="../tasks-v1/TaskList.html">TaskList</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to TasklistsResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a new task list and adds it to the authenticated user's task lists.</p><ul><li>
 <span class="param">content</span> the TaskList</li></ul>
 <pre class="source">
-Future&lt;TaskList&gt; insert(TaskList content) {
+core.Future&lt;TaskList&gt; insert(TaskList content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -121,7 +133,7 @@ Future&lt;TaskList&gt; insert(TaskList content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -132,14 +144,14 @@ Future&lt;TaskList&gt; insert(TaskList content) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>([<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/String.html">String</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskLists.html">TaskLists</a>&gt; <strong>list</strong>([<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/String.html">String</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to TasklistsResource.list">#</a></h4>
 <div class="doc">
 <p>Returns all the authenticated user's task lists.</p><ul><li>
 <span class="param">pageToken</span> Token specifying the result page to return. Optional.</li><li>
 <span class="param">maxResults</span> Maximum number of task lists returned on one page. Optional. The default is 100.</li></ul>
 <pre class="source">
-Future&lt;TaskLists&gt; list([String pageToken = UNSPECIFIED, String maxResults = UNSPECIFIED]) {
+core.Future&lt;TaskLists&gt; list([core.String pageToken = UNSPECIFIED, core.String maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -157,7 +169,7 @@ Future&lt;TaskLists&gt; list([String pageToken = UNSPECIFIED, String maxResults 
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -168,14 +180,14 @@ Future&lt;TaskLists&gt; list([String pageToken = UNSPECIFIED, String maxResults 
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>patch</strong>(<a href="../dart_core/String.html">String</a> tasklist, <a href="../tasks-v1/TaskList.html">TaskList</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskList.html">TaskList</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> tasklist, <a href="../tasks-v1/TaskList.html">TaskList</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to TasklistsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates the authenticated user's specified task list. This method supports patch semantics.</p><ul><li>
 <span class="param">content</span> the TaskList</li><li>
 <span class="param">tasklist</span> Task list identifier.</li></ul>
 <pre class="source">
-Future&lt;TaskList&gt; patch(String tasklist, TaskList content) {
+core.Future&lt;TaskList&gt; patch(core.String tasklist, TaskList content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -194,7 +206,7 @@ Future&lt;TaskList&gt; patch(String tasklist, TaskList content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))
@@ -205,14 +217,14 @@ Future&lt;TaskList&gt; patch(String tasklist, TaskList content) {
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>update</strong>(<a href="../dart_core/String.html">String</a> tasklist, <a href="../tasks-v1/TaskList.html">TaskList</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskList.html">TaskList</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> tasklist, <a href="../tasks-v1/TaskList.html">TaskList</a> content) <a class="anchor-link" href="#update"
               title="Permalink to TasklistsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates the authenticated user's specified task list.</p><ul><li>
 <span class="param">content</span> the TaskList</li><li>
 <span class="param">tasklist</span> Task list identifier.</li></ul>
 <pre class="source">
-Future&lt;TaskList&gt; update(String tasklist, TaskList content) {
+core.Future&lt;TaskList&gt; update(core.String tasklist, TaskList content) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -231,7 +243,7 @@ Future&lt;TaskList&gt; update(String tasklist, TaskList content) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request($body))

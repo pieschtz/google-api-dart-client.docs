@@ -32,12 +32,12 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../calendar-v3/Acl.html">Acl</a> <strong>parse</strong>(<a href="../dart_core/Map.html">Map</a> json) <a class="anchor-link" href="#parse"
+<a href="../calendar-v3/Acl.html">Acl</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Acl.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
 <pre class="source">
-static Acl parse(Map&lt;String, Object&gt; json) {
+static Acl parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new Acl();
   result.nextPageToken = identity(json["nextPageToken"]);
@@ -51,12 +51,12 @@ static Acl parse(Map&lt;String, Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/Acl.html">Acl</a> value) <a class="anchor-link" href="#serialize"
+<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/Acl.html">Acl</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Acl.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
 <pre class="source">
-static Object serialize(Acl value) {
+static core.Object serialize(Acl value) {
   if (value == null) return null;
   final result = {};
   result["nextPageToken"] = identity(value.nextPageToken);
@@ -83,53 +83,53 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="etag">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to Acl.etag">#</a>
         </h4>
         <div class="doc">
 <p>ETag of the collection.</p>
 <pre class="source">
-String etag;
+core.String etag;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="items">
 <span class="show-code">Code</span>
-<a href="../dart_core/List.html">List</a>         <strong>items</strong> <a class="anchor-link"
+<a href="../core/List.html">List</a>&lt;<a href="../calendar-v3/AclRule.html">AclRule</a>&gt;         <strong>items</strong> <a class="anchor-link"
             href="#items"
             title="Permalink to Acl.items">#</a>
         </h4>
         <div class="doc">
 <p>List of rules on the access control list.</p>
 <pre class="source">
-List&lt;AclRule&gt; items;
+core.List&lt;AclRule&gt; items;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Acl.kind">#</a>
         </h4>
         <div class="doc">
 <p>Type of the collection ("calendar#acl").</p>
 <pre class="source">
-String kind;
+core.String kind;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="nextPageToken">
 <span class="show-code">Code</span>
-<a href="../dart_core/String.html">String</a>         <strong>nextPageToken</strong> <a class="anchor-link"
+<a href="../core/String.html">String</a>         <strong>nextPageToken</strong> <a class="anchor-link"
             href="#nextPageToken"
             title="Permalink to Acl.nextPageToken">#</a>
         </h4>
         <div class="doc">
 <p>Token used to access the next page of this result. Omitted if no further results are available.</p>
 <pre class="source">
-String nextPageToken;
+core.String nextPageToken;
 </pre>
 </div>
 </div>

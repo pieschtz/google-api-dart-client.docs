@@ -26,17 +26,30 @@
 <div class="doc">
 
 </div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="CustomchannelsResource">
+<span class="show-code">Code</span>
+new <strong>CustomchannelsResource</strong>._internal(<a href="../adsense-v1.1/AdsenseApi.html">AdsenseApi</a> $service) <a class="anchor-link" href="#CustomchannelsResource"
+              title="Permalink to CustomchannelsResource.CustomchannelsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+CustomchannelsResource._internal(AdsenseApi $service) : _$service = $service,
+  adunits = new CustomchannelsAdunitsResourceResource._internal($service);
+</pre>
+</div>
+</div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>get</strong>(<a href="../dart_core/String.html">String</a> adClientId, <a href="../dart_core/String.html">String</a> customChannelId) <a class="anchor-link" href="#get"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adsense-v1.1/CustomChannel.html">CustomChannel</a>&gt; <strong>get</strong>(<a href="../core/String.html">String</a> adClientId, <a href="../core/String.html">String</a> customChannelId) <a class="anchor-link" href="#get"
               title="Permalink to CustomchannelsResource.get">#</a></h4>
 <div class="doc">
 <p>Get the specified custom channel from the specified ad client.</p><ul><li>
 <span class="param">adClientId</span> Ad client which contains the custom channel.</li><li>
 <span class="param">customChannelId</span> Custom channel to retrieve.</li></ul>
 <pre class="source">
-Future&lt;CustomChannel&gt; get(String adClientId, String customChannelId) {
+core.Future&lt;CustomChannel&gt; get(core.String adClientId, core.String customChannelId) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -54,7 +67,7 @@ Future&lt;CustomChannel&gt; get(String adClientId, String customChannelId) {
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
@@ -65,7 +78,7 @@ Future&lt;CustomChannel&gt; get(String adClientId, String customChannelId) {
 </div>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="../dart_core/Future.html">Future</a> <strong>list</strong>(<a href="../dart_core/String.html">String</a> adClientId, [<a href="../dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="../core/Future.html">Future</a>&lt;<a href="../adsense-v1.1/CustomChannels.html">CustomChannels</a>&gt; <strong>list</strong>(<a href="../core/String.html">String</a> adClientId, [<a href="../core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to CustomchannelsResource.list">#</a></h4>
 <div class="doc">
 <p>List all custom channels in the specified ad client for this AdSense account.</p><ul><li>
@@ -78,7 +91,7 @@ Future&lt;CustomChannel&gt; get(String adClientId, String customChannelId) {
 <pre><code>   Maximum: 10000.
 </code></pre>
 <pre class="source">
-Future&lt;CustomChannels&gt; list(String adClientId, [String pageToken = UNSPECIFIED, int maxResults = UNSPECIFIED]) {
+core.Future&lt;CustomChannels&gt; list(core.String adClientId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
@@ -97,7 +110,7 @@ Future&lt;CustomChannels&gt; list(String adClientId, [String pageToken = UNSPECI
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
   final $http = new HttpRequest($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
-      ? new Future.immediate($http)
+      ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
