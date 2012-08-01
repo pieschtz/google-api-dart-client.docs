@@ -29,12 +29,12 @@
 <h3>Constructors</h3>
 <div class="method"><h4 id="Oauth2Api">
 <span class="show-code">Code</span>
-new <strong>Oauth2Api</strong>([<a href="../core/String.html">String</a> baseUrl = "https://www.googleapis.com//", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#Oauth2Api"
+new <strong>Oauth2Api</strong>([<a href="../core/String.html">String</a> baseUrl = "https://www.googleapis.com/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#Oauth2Api"
               title="Permalink to Oauth2Api.Oauth2Api">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-Oauth2Api([this.baseUrl = "https://www.googleapis.com//", applicationName, this.authenticator]) :
+Oauth2Api([this.baseUrl = "https://www.googleapis.com/", applicationName, this.authenticator]) :
     this.applicationName = applicationName
         .replaceAll(const RegExp(@'\s+'), '_')
         .replaceAll(const RegExp(@'[^-_.,0-9a-zA-Z]'), '')
@@ -117,7 +117,7 @@ core.Future&lt;Tokeninfo&gt; tokeninfo([core.String accessToken = UNSPECIFIED, c
 <pre class="source">
 core.String get userAgent() {
   var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
-  return "${uaPrefix}oauth2/v2/20120712 google-api-dart-client/${clientVersion}";
+  return "${uaPrefix}oauth2/v2/20120723 google-api-dart-client/${clientVersion}";
 }
 </pre>
 </div>

@@ -109,16 +109,21 @@ core.Future&lt;CalendarListEntry&gt; get(core.String calendarId) {
 </div>
 <div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>insert</strong>(<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content) <a class="anchor-link" href="#insert"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>insert</strong>(<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content, [<a href="../core/bool.html">bool</a> colorRgbFormat = UNSPECIFIED]) <a class="anchor-link" href="#insert"
               title="Permalink to CalendarListResource.insert">#</a></h4>
 <div class="doc">
 <p>Adds an entry to the user's calendar list.</p><ul><li>
-<span class="param">content</span> the CalendarListEntry</li></ul>
+<span class="param">content</span> the CalendarListEntry</li><li>
+<p>
+<span class="param">colorRgbFormat</span> Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB).
+   If this feature is used, the index-based 'color' field will be set to the best matching
+   option automatically. Optional. The default is False.</p></li></ul>
 <pre class="source">
-core.Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content) {
+core.Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content, [core.bool colorRgbFormat = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
+  if (UNSPECIFIED != colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -188,18 +193,23 @@ core.Future&lt;CalendarList&gt; list([core.String pageToken = UNSPECIFIED, core.
 </div>
 <div class="method"><h4 id="patch">
 <span class="show-code">Code</span>
-<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content) <a class="anchor-link" href="#patch"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>patch</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content, [<a href="../core/bool.html">bool</a> colorRgbFormat = UNSPECIFIED]) <a class="anchor-link" href="#patch"
               title="Permalink to CalendarListResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates an entry on the user's calendar list. This method supports patch semantics.</p><ul><li>
 <span class="param">content</span> the CalendarListEntry</li><li>
-<span class="param">calendarId</span> Calendar identifier.</li></ul>
+<span class="param">calendarId</span> Calendar identifier.</li><li>
+<p>
+<span class="param">colorRgbFormat</span> Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB).
+   If this feature is used, the index-based 'color' field will be set to the best matching
+   option automatically. Optional. The default is False.</p></li></ul>
 <pre class="source">
-core.Future&lt;CalendarListEntry&gt; patch(core.String calendarId, CalendarListEntry content) {
+core.Future&lt;CalendarListEntry&gt; patch(core.String calendarId, CalendarListEntry content, [core.bool colorRgbFormat = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
+  if (UNSPECIFIED != colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -225,18 +235,23 @@ core.Future&lt;CalendarListEntry&gt; patch(core.String calendarId, CalendarListE
 </div>
 <div class="method"><h4 id="update">
 <span class="show-code">Code</span>
-<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content) <a class="anchor-link" href="#update"
+<a href="../core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>update</strong>(<a href="../core/String.html">String</a> calendarId, <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content, [<a href="../core/bool.html">bool</a> colorRgbFormat = UNSPECIFIED]) <a class="anchor-link" href="#update"
               title="Permalink to CalendarListResource.update">#</a></h4>
 <div class="doc">
 <p>Updates an entry on the user's calendar list.</p><ul><li>
 <span class="param">content</span> the CalendarListEntry</li><li>
-<span class="param">calendarId</span> Calendar identifier.</li></ul>
+<span class="param">calendarId</span> Calendar identifier.</li><li>
+<p>
+<span class="param">colorRgbFormat</span> Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB).
+   If this feature is used, the index-based 'color' field will be set to the best matching
+   option automatically. Optional. The default is False.</p></li></ul>
 <pre class="source">
-core.Future&lt;CalendarListEntry&gt; update(core.String calendarId, CalendarListEntry content) {
+core.Future&lt;CalendarListEntry&gt; update(core.String calendarId, CalendarListEntry content, [core.bool colorRgbFormat = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
+  if (UNSPECIFIED != colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
