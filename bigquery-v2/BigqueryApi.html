@@ -35,7 +35,7 @@ new <strong>BigqueryApi</strong>([<a href="http://api.dartlang.org/dart_core/Str
 
 <pre class="source">
 BigqueryApi([this.baseUrl = "https://www.googleapis.com/bigquery/v2/", applicationName, this.authenticator]) :
-    this.applicationName = applicationName
+    this.applicationName = (applicationName == null) ? null : applicationName
         .replaceAll(const core.RegExp(@'\s+'), '_')
         .replaceAll(const core.RegExp(@'[^-_.,0-9a-zA-Z]'), '')
 { 

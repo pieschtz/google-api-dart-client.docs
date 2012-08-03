@@ -35,7 +35,7 @@ new <strong>TasksApi</strong>([<a href="http://api.dartlang.org/dart_core/String
 
 <pre class="source">
 TasksApi([this.baseUrl = "https://www.googleapis.com/tasks/v1/", applicationName, this.authenticator]) :
-    this.applicationName = applicationName
+    this.applicationName = (applicationName == null) ? null : applicationName
         .replaceAll(const core.RegExp(@'\s+'), '_')
         .replaceAll(const core.RegExp(@'[^-_.,0-9a-zA-Z]'), '')
 { 

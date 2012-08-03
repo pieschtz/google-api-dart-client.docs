@@ -35,7 +35,7 @@ new <strong>DriveApi</strong>([<a href="http://api.dartlang.org/dart_core/String
 
 <pre class="source">
 DriveApi([this.baseUrl = "https://www.googleapis.com/drive/v2/", applicationName, this.authenticator]) :
-    this.applicationName = applicationName
+    this.applicationName = (applicationName == null) ? null : applicationName
         .replaceAll(const core.RegExp(@'\s+'), '_')
         .replaceAll(const core.RegExp(@'[^-_.,0-9a-zA-Z]'), '')
 { 

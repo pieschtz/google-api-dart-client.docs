@@ -36,7 +36,7 @@ new <strong>PagespeedonlineApi</strong>([<a href="http://api.dartlang.org/dart_c
 
 <pre class="source">
 PagespeedonlineApi([this.baseUrl = "https://www.googleapis.com/pagespeedonline/v1/", applicationName, this.authenticator]) :
-    this.applicationName = applicationName
+    this.applicationName = (applicationName == null) ? null : applicationName
         .replaceAll(const core.RegExp(@'\s+'), '_')
         .replaceAll(const core.RegExp(@'[^-_.,0-9a-zA-Z]'), '')
 { 
