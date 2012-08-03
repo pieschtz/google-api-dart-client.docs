@@ -32,7 +32,7 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../drive-v2/App.html">App</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+<a href="../drive-v2/App.html">App</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to App.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
@@ -42,6 +42,7 @@ static App parse(core.Map&lt;core.String, core.Object&gt; json) {
   final result = new App();
   result.kind = identity(json["kind"]);
   result.primaryFileExtensions = map(identity)(json["primaryFileExtensions"]);
+  result.useByDefault = identity(json["useByDefault"]);
   result.name = identity(json["name"]);
   result.icons = map(AppIcons.parse)(json["icons"]);
   result.secondaryFileExtensions = map(identity)(json["secondaryFileExtensions"]);
@@ -61,7 +62,7 @@ static App parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/App.html">App</a> value) <a class="anchor-link" href="#serialize"
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/App.html">App</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to App.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
@@ -71,6 +72,7 @@ static core.Object serialize(App value) {
   final result = {};
   result["kind"] = identity(value.kind);
   result["primaryFileExtensions"] = map(identity)(value.primaryFileExtensions);
+  result["useByDefault"] = identity(value.useByDefault);
   result["name"] = identity(value.name);
   result["icons"] = map(AppIcons.serialize)(value.icons);
   result["secondaryFileExtensions"] = map(identity)(value.secondaryFileExtensions);
@@ -103,7 +105,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="authorized">
 <span class="show-code">Code</span>
-<a href="../core/bool.html">bool</a>         <strong>authorized</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>authorized</strong> <a class="anchor-link"
             href="#authorized"
             title="Permalink to App.authorized">#</a>
         </h4>
@@ -116,7 +118,7 @@ core.bool authorized;
 </div>
 <div class="field"><h4 id="icons">
 <span class="show-code">Code</span>
-<a href="../core/List.html">List</a>&lt;<a href="../drive-v2/AppIcons.html">AppIcons</a>&gt;         <strong>icons</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../drive-v2/AppIcons.html">AppIcons</a>&gt;         <strong>icons</strong> <a class="anchor-link"
             href="#icons"
             title="Permalink to App.icons">#</a>
         </h4>
@@ -129,7 +131,7 @@ core.List&lt;AppIcons&gt; icons;
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to App.id">#</a>
         </h4>
@@ -142,7 +144,7 @@ core.String id;
 </div>
 <div class="field"><h4 id="installed">
 <span class="show-code">Code</span>
-<a href="../core/bool.html">bool</a>         <strong>installed</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>installed</strong> <a class="anchor-link"
             href="#installed"
             title="Permalink to App.installed">#</a>
         </h4>
@@ -155,7 +157,7 @@ core.bool installed;
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to App.kind">#</a>
         </h4>
@@ -168,7 +170,7 @@ core.String kind;
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to App.name">#</a>
         </h4>
@@ -181,7 +183,7 @@ core.String name;
 </div>
 <div class="field"><h4 id="objectType">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
             href="#objectType"
             title="Permalink to App.objectType">#</a>
         </h4>
@@ -194,7 +196,7 @@ core.String objectType;
 </div>
 <div class="field"><h4 id="primaryFileExtensions">
 <span class="show-code">Code</span>
-<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>primaryFileExtensions</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>primaryFileExtensions</strong> <a class="anchor-link"
             href="#primaryFileExtensions"
             title="Permalink to App.primaryFileExtensions">#</a>
         </h4>
@@ -207,7 +209,7 @@ core.List&lt;core.String&gt; primaryFileExtensions;
 </div>
 <div class="field"><h4 id="primaryMimeTypes">
 <span class="show-code">Code</span>
-<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>primaryMimeTypes</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>primaryMimeTypes</strong> <a class="anchor-link"
             href="#primaryMimeTypes"
             title="Permalink to App.primaryMimeTypes">#</a>
         </h4>
@@ -220,7 +222,7 @@ core.List&lt;core.String&gt; primaryMimeTypes;
 </div>
 <div class="field"><h4 id="productUrl">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>productUrl</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>productUrl</strong> <a class="anchor-link"
             href="#productUrl"
             title="Permalink to App.productUrl">#</a>
         </h4>
@@ -233,7 +235,7 @@ core.String productUrl;
 </div>
 <div class="field"><h4 id="secondaryFileExtensions">
 <span class="show-code">Code</span>
-<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>secondaryFileExtensions</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>secondaryFileExtensions</strong> <a class="anchor-link"
             href="#secondaryFileExtensions"
             title="Permalink to App.secondaryFileExtensions">#</a>
         </h4>
@@ -246,7 +248,7 @@ core.List&lt;core.String&gt; secondaryFileExtensions;
 </div>
 <div class="field"><h4 id="secondaryMimeTypes">
 <span class="show-code">Code</span>
-<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>secondaryMimeTypes</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>secondaryMimeTypes</strong> <a class="anchor-link"
             href="#secondaryMimeTypes"
             title="Permalink to App.secondaryMimeTypes">#</a>
         </h4>
@@ -259,7 +261,7 @@ core.List&lt;core.String&gt; secondaryMimeTypes;
 </div>
 <div class="field"><h4 id="supportsCreate">
 <span class="show-code">Code</span>
-<a href="../core/bool.html">bool</a>         <strong>supportsCreate</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>supportsCreate</strong> <a class="anchor-link"
             href="#supportsCreate"
             title="Permalink to App.supportsCreate">#</a>
         </h4>
@@ -272,7 +274,7 @@ core.bool supportsCreate;
 </div>
 <div class="field"><h4 id="supportsImport">
 <span class="show-code">Code</span>
-<a href="../core/bool.html">bool</a>         <strong>supportsImport</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>supportsImport</strong> <a class="anchor-link"
             href="#supportsImport"
             title="Permalink to App.supportsImport">#</a>
         </h4>
@@ -280,6 +282,19 @@ core.bool supportsCreate;
 <p>Whether this app supports importing Google Docs.</p>
 <pre class="source">
 core.bool supportsImport;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="useByDefault">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>useByDefault</strong> <a class="anchor-link"
+            href="#useByDefault"
+            title="Permalink to App.useByDefault">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether the app is selected as the default handler for the types it supports.</p>
+<pre class="source">
+core.bool useByDefault;
 </pre>
 </div>
 </div>

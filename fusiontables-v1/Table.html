@@ -32,7 +32,7 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../fusiontables-v1/Table.html">Table</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+<a href="../fusiontables-v1/Table.html">Table</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Table.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
@@ -46,6 +46,7 @@ static Table parse(core.Map&lt;core.String, core.Object&gt; json) {
   result.isExportable = identity(json["isExportable"]);
   result.baseTableIds = map(identity)(json["baseTableIds"]);
   result.attributionLink = identity(json["attributionLink"]);
+  result.sql = identity(json["sql"]);
   result.tableId = identity(json["tableId"]);
   result.columns = map(Column.parse)(json["columns"]);
   result.name = identity(json["name"]);
@@ -56,7 +57,7 @@ static Table parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../fusiontables-v1/Table.html">Table</a> value) <a class="anchor-link" href="#serialize"
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../fusiontables-v1/Table.html">Table</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Table.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
@@ -70,6 +71,7 @@ static core.Object serialize(Table value) {
   result["isExportable"] = identity(value.isExportable);
   result["baseTableIds"] = map(identity)(value.baseTableIds);
   result["attributionLink"] = identity(value.attributionLink);
+  result["sql"] = identity(value.sql);
   result["tableId"] = identity(value.tableId);
   result["columns"] = map(Column.serialize)(value.columns);
   result["name"] = identity(value.name);
@@ -93,7 +95,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="attribution">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>attribution</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>attribution</strong> <a class="anchor-link"
             href="#attribution"
             title="Permalink to Table.attribution">#</a>
         </h4>
@@ -106,7 +108,7 @@ core.String attribution;
 </div>
 <div class="field"><h4 id="attributionLink">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>attributionLink</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>attributionLink</strong> <a class="anchor-link"
             href="#attributionLink"
             title="Permalink to Table.attributionLink">#</a>
         </h4>
@@ -119,7 +121,7 @@ core.String attributionLink;
 </div>
 <div class="field"><h4 id="baseTableIds">
 <span class="show-code">Code</span>
-<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>baseTableIds</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>baseTableIds</strong> <a class="anchor-link"
             href="#baseTableIds"
             title="Permalink to Table.baseTableIds">#</a>
         </h4>
@@ -132,7 +134,7 @@ core.List&lt;core.String&gt; baseTableIds;
 </div>
 <div class="field"><h4 id="columns">
 <span class="show-code">Code</span>
-<a href="../core/List.html">List</a>&lt;<a href="../fusiontables-v1/Column.html">Column</a>&gt;         <strong>columns</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../fusiontables-v1/Column.html">Column</a>&gt;         <strong>columns</strong> <a class="anchor-link"
             href="#columns"
             title="Permalink to Table.columns">#</a>
         </h4>
@@ -145,7 +147,7 @@ core.List&lt;Column&gt; columns;
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Table.description">#</a>
         </h4>
@@ -158,7 +160,7 @@ core.String description;
 </div>
 <div class="field"><h4 id="isExportable">
 <span class="show-code">Code</span>
-<a href="../core/bool.html">bool</a>         <strong>isExportable</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isExportable</strong> <a class="anchor-link"
             href="#isExportable"
             title="Permalink to Table.isExportable">#</a>
         </h4>
@@ -171,7 +173,7 @@ core.bool isExportable;
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Table.kind">#</a>
         </h4>
@@ -184,7 +186,7 @@ core.String kind;
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Table.name">#</a>
         </h4>
@@ -195,9 +197,22 @@ core.String name;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="sql">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>sql</strong> <a class="anchor-link"
+            href="#sql"
+            title="Permalink to Table.sql">#</a>
+        </h4>
+        <div class="doc">
+<p>Optional sql that encodes the table definition for derived tables.</p>
+<pre class="source">
+core.String sql;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="tableId">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>tableId</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>tableId</strong> <a class="anchor-link"
             href="#tableId"
             title="Permalink to Table.tableId">#</a>
         </h4>

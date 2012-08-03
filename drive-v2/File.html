@@ -32,7 +32,7 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../drive-v2/File.html">File</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+<a href="../drive-v2/File.html">File</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to File.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
@@ -44,6 +44,7 @@ static File parse(core.Map&lt;core.String, core.Object&gt; json) {
   result.thumbnailLink = identity(json["thumbnailLink"]);
   result.labels = FileLabels.parse(json["labels"]);
   result.indexableText = FileIndexableText.parse(json["indexableText"]);
+  result.explicitlyTrashed = identity(json["explicitlyTrashed"]);
   result.etag = identity(json["etag"]);
   result.lastModifyingUserName = identity(json["lastModifyingUserName"]);
   result.writersCanShare = identity(json["writersCanShare"]);
@@ -79,7 +80,7 @@ static File parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/File.html">File</a> value) <a class="anchor-link" href="#serialize"
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/File.html">File</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to File.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
@@ -91,6 +92,7 @@ static core.Object serialize(File value) {
   result["thumbnailLink"] = identity(value.thumbnailLink);
   result["labels"] = FileLabels.serialize(value.labels);
   result["indexableText"] = FileIndexableText.serialize(value.indexableText);
+  result["explicitlyTrashed"] = identity(value.explicitlyTrashed);
   result["etag"] = identity(value.etag);
   result["lastModifyingUserName"] = identity(value.lastModifyingUserName);
   result["writersCanShare"] = identity(value.writersCanShare);
@@ -139,7 +141,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="alternateLink">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>alternateLink</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>alternateLink</strong> <a class="anchor-link"
             href="#alternateLink"
             title="Permalink to File.alternateLink">#</a>
         </h4>
@@ -152,7 +154,7 @@ core.String alternateLink;
 </div>
 <div class="field"><h4 id="createdDate">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>createdDate</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>createdDate</strong> <a class="anchor-link"
             href="#createdDate"
             title="Permalink to File.createdDate">#</a>
         </h4>
@@ -165,7 +167,7 @@ core.String createdDate;
 </div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to File.description">#</a>
         </h4>
@@ -178,7 +180,7 @@ core.String description;
 </div>
 <div class="field"><h4 id="downloadUrl">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>downloadUrl</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>downloadUrl</strong> <a class="anchor-link"
             href="#downloadUrl"
             title="Permalink to File.downloadUrl">#</a>
         </h4>
@@ -192,7 +194,7 @@ core.String downloadUrl;
 </div>
 <div class="field"><h4 id="editable">
 <span class="show-code">Code</span>
-<a href="../core/bool.html">bool</a>         <strong>editable</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>editable</strong> <a class="anchor-link"
             href="#editable"
             title="Permalink to File.editable">#</a>
         </h4>
@@ -205,7 +207,7 @@ core.bool editable;
 </div>
 <div class="field"><h4 id="embedLink">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>embedLink</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>embedLink</strong> <a class="anchor-link"
             href="#embedLink"
             title="Permalink to File.embedLink">#</a>
         </h4>
@@ -218,7 +220,7 @@ core.String embedLink;
 </div>
 <div class="field"><h4 id="etag">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to File.etag">#</a>
         </h4>
@@ -229,9 +231,23 @@ core.String etag;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="explicitlyTrashed">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>explicitlyTrashed</strong> <a class="anchor-link"
+            href="#explicitlyTrashed"
+            title="Permalink to File.explicitlyTrashed">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether this file has been explicitly trashed, as opposed to recursively trashed. This will only
+be populated if the file is trashed.</p>
+<pre class="source">
+core.bool explicitlyTrashed;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="exportLinks">
 <span class="show-code">Code</span>
-<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/String.html">String</a>&gt;         <strong>exportLinks</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>exportLinks</strong> <a class="anchor-link"
             href="#exportLinks"
             title="Permalink to File.exportLinks">#</a>
         </h4>
@@ -244,7 +260,7 @@ core.Map&lt;core.String, core.String&gt; exportLinks;
 </div>
 <div class="field"><h4 id="fileExtension">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>fileExtension</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fileExtension</strong> <a class="anchor-link"
             href="#fileExtension"
             title="Permalink to File.fileExtension">#</a>
         </h4>
@@ -259,7 +275,7 @@ core.String fileExtension;
 </div>
 <div class="field"><h4 id="fileSize">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>fileSize</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fileSize</strong> <a class="anchor-link"
             href="#fileSize"
             title="Permalink to File.fileSize">#</a>
         </h4>
@@ -272,7 +288,7 @@ core.String fileSize;
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to File.id">#</a>
         </h4>
@@ -312,7 +328,7 @@ FileIndexableText indexableText;
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to File.kind">#</a>
         </h4>
@@ -338,7 +354,7 @@ FileLabels labels;
 </div>
 <div class="field"><h4 id="lastModifyingUserName">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>lastModifyingUserName</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>lastModifyingUserName</strong> <a class="anchor-link"
             href="#lastModifyingUserName"
             title="Permalink to File.lastModifyingUserName">#</a>
         </h4>
@@ -352,7 +368,7 @@ core.String lastModifyingUserName;
 </div>
 <div class="field"><h4 id="lastViewedByMeDate">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>lastViewedByMeDate</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>lastViewedByMeDate</strong> <a class="anchor-link"
             href="#lastViewedByMeDate"
             title="Permalink to File.lastViewedByMeDate">#</a>
         </h4>
@@ -365,7 +381,7 @@ core.String lastViewedByMeDate;
 </div>
 <div class="field"><h4 id="md5Checksum">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>md5Checksum</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>md5Checksum</strong> <a class="anchor-link"
             href="#md5Checksum"
             title="Permalink to File.md5Checksum">#</a>
         </h4>
@@ -379,7 +395,7 @@ core.String md5Checksum;
 </div>
 <div class="field"><h4 id="mimeType">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>mimeType</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>mimeType</strong> <a class="anchor-link"
             href="#mimeType"
             title="Permalink to File.mimeType">#</a>
         </h4>
@@ -393,7 +409,7 @@ core.String mimeType;
 </div>
 <div class="field"><h4 id="modifiedByMeDate">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>modifiedByMeDate</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>modifiedByMeDate</strong> <a class="anchor-link"
             href="#modifiedByMeDate"
             title="Permalink to File.modifiedByMeDate">#</a>
         </h4>
@@ -407,7 +423,7 @@ core.String modifiedByMeDate;
 </div>
 <div class="field"><h4 id="modifiedDate">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>modifiedDate</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>modifiedDate</strong> <a class="anchor-link"
             href="#modifiedDate"
             title="Permalink to File.modifiedDate">#</a>
         </h4>
@@ -421,7 +437,7 @@ core.String modifiedDate;
 </div>
 <div class="field"><h4 id="originalFilename">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>originalFilename</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>originalFilename</strong> <a class="anchor-link"
             href="#originalFilename"
             title="Permalink to File.originalFilename">#</a>
         </h4>
@@ -436,7 +452,7 @@ core.String originalFilename;
 </div>
 <div class="field"><h4 id="ownerNames">
 <span class="show-code">Code</span>
-<a href="../core/List.html">List</a>&lt;<a href="../core/String.html">String</a>&gt;         <strong>ownerNames</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>ownerNames</strong> <a class="anchor-link"
             href="#ownerNames"
             title="Permalink to File.ownerNames">#</a>
         </h4>
@@ -449,7 +465,7 @@ core.List&lt;core.String&gt; ownerNames;
 </div>
 <div class="field"><h4 id="parents">
 <span class="show-code">Code</span>
-<a href="../core/List.html">List</a>&lt;<a href="../drive-v2/ParentReference.html">ParentReference</a>&gt;         <strong>parents</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../drive-v2/ParentReference.html">ParentReference</a>&gt;         <strong>parents</strong> <a class="anchor-link"
             href="#parents"
             title="Permalink to File.parents">#</a>
         </h4>
@@ -464,7 +480,7 @@ core.List&lt;ParentReference&gt; parents;
 </div>
 <div class="field"><h4 id="quotaBytesUsed">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>quotaBytesUsed</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaBytesUsed</strong> <a class="anchor-link"
             href="#quotaBytesUsed"
             title="Permalink to File.quotaBytesUsed">#</a>
         </h4>
@@ -477,7 +493,7 @@ core.String quotaBytesUsed;
 </div>
 <div class="field"><h4 id="selfLink">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to File.selfLink">#</a>
         </h4>
@@ -490,7 +506,7 @@ core.String selfLink;
 </div>
 <div class="field"><h4 id="sharedWithMeDate">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>sharedWithMeDate</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>sharedWithMeDate</strong> <a class="anchor-link"
             href="#sharedWithMeDate"
             title="Permalink to File.sharedWithMeDate">#</a>
         </h4>
@@ -503,7 +519,7 @@ core.String sharedWithMeDate;
 </div>
 <div class="field"><h4 id="thumbnailLink">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>thumbnailLink</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>thumbnailLink</strong> <a class="anchor-link"
             href="#thumbnailLink"
             title="Permalink to File.thumbnailLink">#</a>
         </h4>
@@ -516,7 +532,7 @@ core.String thumbnailLink;
 </div>
 <div class="field"><h4 id="title">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to File.title">#</a>
         </h4>
@@ -542,7 +558,7 @@ Permission userPermission;
 </div>
 <div class="field"><h4 id="webContentLink">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>webContentLink</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>webContentLink</strong> <a class="anchor-link"
             href="#webContentLink"
             title="Permalink to File.webContentLink">#</a>
         </h4>
@@ -557,7 +573,7 @@ core.String webContentLink;
 </div>
 <div class="field"><h4 id="writersCanShare">
 <span class="show-code">Code</span>
-<a href="../core/bool.html">bool</a>         <strong>writersCanShare</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>writersCanShare</strong> <a class="anchor-link"
             href="#writersCanShare"
             title="Permalink to File.writersCanShare">#</a>
         </h4>

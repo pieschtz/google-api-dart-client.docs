@@ -32,7 +32,7 @@
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
 <span class="show-code">Code</span>
-<a href="../gan-v1beta1/Advertiser.html">Advertiser</a> <strong>parse</strong>(<a href="../core/Map.html">Map</a>&lt;<a href="../core/String.html">String</a>, <a href="../core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+<a href="../gan-v1beta1/Advertiser.html">Advertiser</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Advertiser.parse">#</a></h4>
 <div class="doc">
 <p>Parses an instance from its JSON representation.</p>
@@ -47,6 +47,7 @@ static Advertiser parse(core.Map&lt;core.String, core.Object&gt; json) {
   result.contactPhone = identity(json["contactPhone"]);
   result.description = identity(json["description"]);
   result.payoutRank = identity(json["payoutRank"]);
+  result.defaultLinkId = identity(json["defaultLinkId"]);
   result.epcSevenDayAverage = Money.parse(json["epcSevenDayAverage"]);
   result.commissionDuration = identity(json["commissionDuration"]);
   result.status = identity(json["status"]);
@@ -65,7 +66,7 @@ static Advertiser parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 <div class="method"><h4 id="serialize">
 <span class="show-code">Code</span>
-<a href="../core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/Advertiser.html">Advertiser</a> value) <a class="anchor-link" href="#serialize"
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/Advertiser.html">Advertiser</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Advertiser.serialize">#</a></h4>
 <div class="doc">
 <p>Converts an instance to its JSON representation.</p>
@@ -80,6 +81,7 @@ static core.Object serialize(Advertiser value) {
   result["contactPhone"] = identity(value.contactPhone);
   result["description"] = identity(value.description);
   result["payoutRank"] = identity(value.payoutRank);
+  result["defaultLinkId"] = identity(value.defaultLinkId);
   result["epcSevenDayAverage"] = Money.serialize(value.epcSevenDayAverage);
   result["commissionDuration"] = identity(value.commissionDuration);
   result["status"] = identity(value.status);
@@ -111,7 +113,7 @@ toString() =&gt; serialize(this).toString();
 <h3>Fields</h3>
 <div class="field"><h4 id="allowPublisherCreatedLinks">
 <span class="show-code">Code</span>
-<a href="../core/bool.html">bool</a>         <strong>allowPublisherCreatedLinks</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>allowPublisherCreatedLinks</strong> <a class="anchor-link"
             href="#allowPublisherCreatedLinks"
             title="Permalink to Advertiser.allowPublisherCreatedLinks">#</a>
         </h4>
@@ -124,7 +126,7 @@ core.bool allowPublisherCreatedLinks;
 </div>
 <div class="field"><h4 id="category">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>category</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>category</strong> <a class="anchor-link"
             href="#category"
             title="Permalink to Advertiser.category">#</a>
         </h4>
@@ -138,7 +140,7 @@ core.String category;
 </div>
 <div class="field"><h4 id="commissionDuration">
 <span class="show-code">Code</span>
-<a href="../core/int.html">int</a>         <strong>commissionDuration</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>commissionDuration</strong> <a class="anchor-link"
             href="#commissionDuration"
             title="Permalink to Advertiser.commissionDuration">#</a>
         </h4>
@@ -152,7 +154,7 @@ core.int commissionDuration;
 </div>
 <div class="field"><h4 id="contactEmail">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>contactEmail</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>contactEmail</strong> <a class="anchor-link"
             href="#contactEmail"
             title="Permalink to Advertiser.contactEmail">#</a>
         </h4>
@@ -165,7 +167,7 @@ core.String contactEmail;
 </div>
 <div class="field"><h4 id="contactPhone">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>contactPhone</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>contactPhone</strong> <a class="anchor-link"
             href="#contactPhone"
             title="Permalink to Advertiser.contactPhone">#</a>
         </h4>
@@ -176,9 +178,22 @@ core.String contactPhone;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="defaultLinkId">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>defaultLinkId</strong> <a class="anchor-link"
+            href="#defaultLinkId"
+            title="Permalink to Advertiser.defaultLinkId">#</a>
+        </h4>
+        <div class="doc">
+<p>The default link id for this advertiser.</p>
+<pre class="source">
+core.String defaultLinkId;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="description">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Advertiser.description">#</a>
         </h4>
@@ -219,7 +234,7 @@ Money epcSevenDayAverage;
 </div>
 <div class="field"><h4 id="id">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Advertiser.id">#</a>
         </h4>
@@ -245,7 +260,7 @@ Advertiser item;
 </div>
 <div class="field"><h4 id="joinDate">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>joinDate</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>joinDate</strong> <a class="anchor-link"
             href="#joinDate"
             title="Permalink to Advertiser.joinDate">#</a>
         </h4>
@@ -258,7 +273,7 @@ core.String joinDate;
 </div>
 <div class="field"><h4 id="kind">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Advertiser.kind">#</a>
         </h4>
@@ -271,7 +286,7 @@ core.String kind;
 </div>
 <div class="field"><h4 id="logoUrl">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>logoUrl</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>logoUrl</strong> <a class="anchor-link"
             href="#logoUrl"
             title="Permalink to Advertiser.logoUrl">#</a>
         </h4>
@@ -284,7 +299,7 @@ core.String logoUrl;
 </div>
 <div class="field"><h4 id="name">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Advertiser.name">#</a>
         </h4>
@@ -297,7 +312,7 @@ core.String name;
 </div>
 <div class="field"><h4 id="payoutRank">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>payoutRank</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>payoutRank</strong> <a class="anchor-link"
             href="#payoutRank"
             title="Permalink to Advertiser.payoutRank">#</a>
         </h4>
@@ -312,7 +327,7 @@ core.String payoutRank;
 </div>
 <div class="field"><h4 id="productFeedsEnabled">
 <span class="show-code">Code</span>
-<a href="../core/bool.html">bool</a>         <strong>productFeedsEnabled</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>productFeedsEnabled</strong> <a class="anchor-link"
             href="#productFeedsEnabled"
             title="Permalink to Advertiser.productFeedsEnabled">#</a>
         </h4>
@@ -325,7 +340,7 @@ core.bool productFeedsEnabled;
 </div>
 <div class="field"><h4 id="siteUrl">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>siteUrl</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>siteUrl</strong> <a class="anchor-link"
             href="#siteUrl"
             title="Permalink to Advertiser.siteUrl">#</a>
         </h4>
@@ -338,7 +353,7 @@ core.String siteUrl;
 </div>
 <div class="field"><h4 id="status">
 <span class="show-code">Code</span>
-<a href="../core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Advertiser.status">#</a>
         </h4>
