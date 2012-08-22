@@ -2,112 +2,85 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>SiteVerificationApi Class / siteVerification-v1 Library / Dart Documentation</title>
+        <title>LicensingApi Class / licensing-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="../favicon.ico">
         
         </head>
-        <body data-library="siteVerification-v1" data-type="SiteVerificationApi">
+        <body data-library="licensing-v1" data-type="LicensingApi">
         <div class="page">
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../siteVerification-v1.html">siteVerification-v1</a> &rsaquo; <a href="../siteVerification-v1/SiteVerificationApi.html">SiteVerificationApi</a></div>
+         &rsaquo; <a href="../licensing-v1.html">licensing-v1</a> &rsaquo; <a href="../licensing-v1/LicensingApi.html">LicensingApi</a></div>
         <div class="nav">
         
 </div>
 <div class="content">
-        <h2><strong>SiteVerificationApi</strong>
+        <h2><strong>LicensingApi</strong>
           Class
         </h2>
         
 <div class="doc">
-<p>Lets you programatically verify ownership of websites or domains with Google.</p>
+<p>Licensing API to view and manage license for your domain.</p>
 </div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="SiteVerificationApi">
+<div class="method"><h4 id="LicensingApi">
 <span class="show-code">Code</span>
-new <strong>SiteVerificationApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/siteVerification/v1/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#SiteVerificationApi"
-              title="Permalink to SiteVerificationApi.SiteVerificationApi">#</a></h4>
+new <strong>LicensingApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/apps/licensing/v1/product/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#LicensingApi"
+              title="Permalink to LicensingApi.LicensingApi">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-SiteVerificationApi([this.baseUrl = "https://www.googleapis.com/siteVerification/v1/", applicationName, this.authenticator]) :
+LicensingApi([this.baseUrl = "https://www.googleapis.com/apps/licensing/v1/product/", applicationName, this.authenticator]) :
     this.applicationName = (applicationName == null) ? null : applicationName
         .replaceAll(const core.RegExp(@'\s+'), '_')
         .replaceAll(const core.RegExp(@'[^-_.,0-9a-zA-Z]'), '')
 { 
-  _webResource = new WebResourceResource._internal(this);
+  _licenseAssignments = new LicenseAssignmentsResource._internal(this);
 }
 </pre>
 </div>
 </div>
-<h3>Static Fields</h3>
-<div class="field"><h4 id="SITEVERIFICATION_SCOPE">
-<span class="show-code">Code</span>
-final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>SITEVERIFICATION_SCOPE</strong> <a class="anchor-link"
-            href="#SITEVERIFICATION_SCOPE"
-            title="Permalink to SiteVerificationApi.SITEVERIFICATION_SCOPE">#</a>
-        </h4>
-        <div class="doc">
-<p>OAuth2 scope: Manage the list of sites and domains you control</p>
-<pre class="source">
-static final core.String SITEVERIFICATION_SCOPE = "https://www.googleapis.com/auth/siteverification";
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="SITEVERIFICATION_VERIFY_ONLY_SCOPE">
-<span class="show-code">Code</span>
-final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>SITEVERIFICATION_VERIFY_ONLY_SCOPE</strong> <a class="anchor-link"
-            href="#SITEVERIFICATION_VERIFY_ONLY_SCOPE"
-            title="Permalink to SiteVerificationApi.SITEVERIFICATION_VERIFY_ONLY_SCOPE">#</a>
-        </h4>
-        <div class="doc">
-<p>OAuth2 scope: Manage your new site verifications with Google</p>
-<pre class="source">
-static final core.String SITEVERIFICATION_VERIFY_ONLY_SCOPE = "https://www.googleapis.com/auth/siteverification.verify_only";
-</pre>
-</div>
-</div>
 <h3>Methods</h3>
+<div class="method"><h4 id="licenseAssignments">
+<span class="show-code">Code</span>
+<a href="../licensing-v1/LicenseAssignmentsResource.html">LicenseAssignmentsResource</a> <strong>get licenseAssignments</strong>() <a class="anchor-link" href="#licenseAssignments"
+              title="Permalink to LicensingApi.get licenseAssignments">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+LicenseAssignmentsResource get licenseAssignments() =&gt; _licenseAssignments;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="userAgent">
 <span class="show-code">Code</span>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
-              title="Permalink to SiteVerificationApi.get userAgent">#</a></h4>
+              title="Permalink to LicensingApi.get userAgent">#</a></h4>
 <div class="doc">
 
 <pre class="source">
 core.String get userAgent() {
   var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
-  return "${uaPrefix}siteVerification/v1/20120806 google-api-dart-client/${clientVersion}";
+  return "${uaPrefix}licensing/v1/20120724 google-api-dart-client/${clientVersion}";
 }
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="webResource">
-<span class="show-code">Code</span>
-<a href="../siteVerification-v1/WebResourceResource.html">WebResourceResource</a> <strong>get webResource</strong>() <a class="anchor-link" href="#webResource"
-              title="Permalink to SiteVerificationApi.get webResource">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-WebResourceResource get webResource() =&gt; _webResource;
 </pre>
 </div>
 </div>
 <h3>Fields</h3>
 <div class="field"><h4 id="alt">
 <span class="show-code">Code</span>
-<a href="../siteVerification-v1/SiteVerificationApiAlt.html">SiteVerificationApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
+<a href="../licensing-v1/LicensingApiAlt.html">LicensingApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
             href="#alt"
-            title="Permalink to SiteVerificationApi.alt">#</a>
+            title="Permalink to LicensingApi.alt">#</a>
         </h4>
         <div class="doc">
 <p>Data format for the response.</p>
 <pre class="source">
-SiteVerificationApiAlt alt;
+LicensingApiAlt alt;
 </pre>
 </div>
 </div>
@@ -115,7 +88,7 @@ SiteVerificationApiAlt alt;
 <span class="show-code">Code</span>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
-            title="Permalink to SiteVerificationApi.applicationName">#</a>
+            title="Permalink to LicensingApi.applicationName">#</a>
         </h4>
         <div class="doc">
 <p>The application name, used in the user-agent header</p>
@@ -128,7 +101,7 @@ final core.String applicationName;
 <span class="show-code">Code</span>
 <a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
             href="#authenticator"
-            title="Permalink to SiteVerificationApi.authenticator">#</a>
+            title="Permalink to LicensingApi.authenticator">#</a>
         </h4>
         <div class="doc">
 <p>How we should identify ourselves to the service.</p>
@@ -141,7 +114,7 @@ Authenticator authenticator;
 <span class="show-code">Code</span>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
-            title="Permalink to SiteVerificationApi.baseUrl">#</a>
+            title="Permalink to LicensingApi.baseUrl">#</a>
         </h4>
         <div class="doc">
 <p>The API root, such as <code>https://www.googleapis.com</code></p>
@@ -154,7 +127,7 @@ final core.String baseUrl;
 <span class="show-code">Code</span>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
-            title="Permalink to SiteVerificationApi.clientVersion">#</a>
+            title="Permalink to LicensingApi.clientVersion">#</a>
         </h4>
         <div class="doc">
 <p>The client library version</p>
@@ -167,7 +140,7 @@ final core.String clientVersion = "0.1";
 <span class="show-code">Code</span>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
-            title="Permalink to SiteVerificationApi.fields">#</a>
+            title="Permalink to LicensingApi.fields">#</a>
         </h4>
         <div class="doc">
 <p>Selector specifying which fields to include in a partial response.</p>
@@ -180,7 +153,7 @@ core.String fields;
 <span class="show-code">Code</span>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
-            title="Permalink to SiteVerificationApi.key">#</a>
+            title="Permalink to LicensingApi.key">#</a>
         </h4>
         <div class="doc">
 <p>API key. Your API key identifies your project and provides you with API access, quota, and
@@ -194,7 +167,7 @@ core.String key;
 <span class="show-code">Code</span>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
-            title="Permalink to SiteVerificationApi.oauthToken">#</a>
+            title="Permalink to LicensingApi.oauthToken">#</a>
         </h4>
         <div class="doc">
 <p>OAuth 2.0 token for the current user.</p>
@@ -207,7 +180,7 @@ core.String oauthToken;
 <span class="show-code">Code</span>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
-            title="Permalink to SiteVerificationApi.prettyPrint">#</a>
+            title="Permalink to LicensingApi.prettyPrint">#</a>
         </h4>
         <div class="doc">
 <p>Returns response with indentations and line breaks.</p>
@@ -220,7 +193,7 @@ core.bool prettyPrint;
 <span class="show-code">Code</span>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
-            title="Permalink to SiteVerificationApi.quotaUser">#</a>
+            title="Permalink to LicensingApi.quotaUser">#</a>
         </h4>
         <div class="doc">
 <p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
@@ -234,7 +207,7 @@ core.String quotaUser;
 <span class="show-code">Code</span>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
-            title="Permalink to SiteVerificationApi.userIp">#</a>
+            title="Permalink to LicensingApi.userIp">#</a>
         </h4>
         <div class="doc">
 <p>IP address of the site where the request originates. Use this if you want to enforce per-user

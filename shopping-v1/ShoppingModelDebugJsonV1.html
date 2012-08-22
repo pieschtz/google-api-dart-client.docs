@@ -40,11 +40,13 @@
 static ShoppingModelDebugJsonV1 parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new ShoppingModelDebugJsonV1();
+  result.recommendedItemsRequest = identity(json["recommendedItemsRequest"]);
   result.searchRequest = identity(json["searchRequest"]);
   result.rdcResponse = identity(json["rdcResponse"]);
   result.facetsRequest = identity(json["facetsRequest"]);
   result.searchResponse = identity(json["searchResponse"]);
   result.elapsedMillis = identity(json["elapsedMillis"]);
+  result.recommendedItemsResponse = identity(json["recommendedItemsResponse"]);
   result.facetsResponse = identity(json["facetsResponse"]);
   result.backendTimes = map(ShoppingModelDebugJsonV1BackendTimes.parse)(json["backendTimes"]);
   return result;
@@ -62,11 +64,13 @@ static ShoppingModelDebugJsonV1 parse(core.Map&lt;core.String, core.Object&gt; j
 static core.Object serialize(ShoppingModelDebugJsonV1 value) {
   if (value == null) return null;
   final result = {};
+  result["recommendedItemsRequest"] = identity(value.recommendedItemsRequest);
   result["searchRequest"] = identity(value.searchRequest);
   result["rdcResponse"] = identity(value.rdcResponse);
   result["facetsRequest"] = identity(value.facetsRequest);
   result["searchResponse"] = identity(value.searchResponse);
   result["elapsedMillis"] = identity(value.elapsedMillis);
+  result["recommendedItemsResponse"] = identity(value.recommendedItemsResponse);
   result["facetsResponse"] = identity(value.facetsResponse);
   result["backendTimes"] = map(ShoppingModelDebugJsonV1BackendTimes.serialize)(value.backendTimes);
   return result;
@@ -149,6 +153,32 @@ core.String facetsResponse;
 <p>Google internal.</p>
 <pre class="source">
 core.String rdcResponse;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="recommendedItemsRequest">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>recommendedItemsRequest</strong> <a class="anchor-link"
+            href="#recommendedItemsRequest"
+            title="Permalink to ShoppingModelDebugJsonV1.recommendedItemsRequest">#</a>
+        </h4>
+        <div class="doc">
+<p>Google internal.</p>
+<pre class="source">
+core.String recommendedItemsRequest;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="recommendedItemsResponse">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>recommendedItemsResponse</strong> <a class="anchor-link"
+            href="#recommendedItemsResponse"
+            title="Permalink to ShoppingModelDebugJsonV1.recommendedItemsResponse">#</a>
+        </h4>
+        <div class="doc">
+<p>Google internal.</p>
+<pre class="source">
+core.String recommendedItemsResponse;
 </pre>
 </div>
 </div>

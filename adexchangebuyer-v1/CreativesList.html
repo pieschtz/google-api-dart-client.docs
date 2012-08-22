@@ -40,6 +40,7 @@
 static CreativesList parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new CreativesList();
+  result.nextPageToken = identity(json["nextPageToken"]);
   result.items = map(Creative.parse)(json["items"]);
   result.kind = identity(json["kind"]);
   return result;
@@ -57,6 +58,7 @@ static CreativesList parse(core.Map&lt;core.String, core.Object&gt; json) {
 static core.Object serialize(CreativesList value) {
   if (value == null) return null;
   final result = {};
+  result["nextPageToken"] = identity(value.nextPageToken);
   result["items"] = map(Creative.serialize)(value.items);
   result["kind"] = identity(value.kind);
   return result;
@@ -100,6 +102,20 @@ core.List&lt;Creative&gt; items;
 <p>Resource type.</p>
 <pre class="source">
 core.String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="nextPageToken">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>nextPageToken</strong> <a class="anchor-link"
+            href="#nextPageToken"
+            title="Permalink to CreativesList.nextPageToken">#</a>
+        </h4>
+        <div class="doc">
+<p>Continuation token used to page through creatives. To retrieve the next page of results, set the
+next request's "pageToken" value to this.</p>
+<pre class="source">
+core.String nextPageToken;
 </pre>
 </div>
 </div>

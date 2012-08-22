@@ -114,7 +114,7 @@ core.Future&lt;Volumes&gt; list(core.String q, [VolumesResourceListOrderBy order
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["q"] = q;
+  if (UNSPECIFIED != q) $queryParams["q"] = q;
   if (UNSPECIFIED != orderBy) $queryParams["orderBy"] = orderBy;
   if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
   if (UNSPECIFIED != libraryRestrict) $queryParams["libraryRestrict"] = libraryRestrict;

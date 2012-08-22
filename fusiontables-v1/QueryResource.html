@@ -44,8 +44,8 @@ QueryResource._internal(FusiontablesApi $service) : _$service = $service;
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/Sqlresponse.html">Sqlresponse</a>&gt; <strong>sql</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> sql, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> typed = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> hdrs = UNSPECIFIED]) <a class="anchor-link" href="#sql"
               title="Permalink to QueryResource.sql">#</a></h4>
 <div class="doc">
-<p>Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE statement.</p><ul><li>
-<span class="param">sql</span> An SQL SELECT/SHOW/DESCRIBE/INSERT/UPDATE/DELETE statement.</li><li>
+<p>Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE/CREATE statement.</p><ul><li>
+<span class="param">sql</span> An SQL SELECT/SHOW/DESCRIBE/INSERT/UPDATE/DELETE/CREATE statement.</li><li>
 <p>
 <span class="param">typed</span> Should typed values be returned in the (JSON) response -- numbers for numeric values and parsed
    geometries for KML values? Default is true.</p></li><li>
@@ -55,7 +55,7 @@ core.Future&lt;Sqlresponse&gt; sql(core.String sql, [core.bool typed = UNSPECIFI
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["sql"] = sql;
+  if (UNSPECIFIED != sql) $queryParams["sql"] = sql;
   if (UNSPECIFIED != typed) $queryParams["typed"] = typed;
   if (UNSPECIFIED != hdrs) $queryParams["hdrs"] = hdrs;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
@@ -95,7 +95,7 @@ core.Future&lt;Sqlresponse&gt; sqlGet(core.String sql, [core.bool typed = UNSPEC
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["sql"] = sql;
+  if (UNSPECIFIED != sql) $queryParams["sql"] = sql;
   if (UNSPECIFIED != typed) $queryParams["typed"] = typed;
   if (UNSPECIFIED != hdrs) $queryParams["hdrs"] = hdrs;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;

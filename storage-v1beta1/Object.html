@@ -42,6 +42,7 @@ static Object parse(core.Map&lt;core.String, core.Object&gt; json) {
   final result = new Object();
   result.kind = identity(json["kind"]);
   result.name = identity(json["name"]);
+  result.contentLanguage = identity(json["contentLanguage"]);
   result.media = ObjectMedia.parse(json["media"]);
   result.bucket = identity(json["bucket"]);
   result.contentEncoding = identity(json["contentEncoding"]);
@@ -69,6 +70,7 @@ static core.Object serialize(Object value) {
   final result = {};
   result["kind"] = identity(value.kind);
   result["name"] = identity(value.name);
+  result["contentLanguage"] = identity(value.contentLanguage);
   result["media"] = ObjectMedia.serialize(value.media);
   result["bucket"] = identity(value.bucket);
   result["contentEncoding"] = identity(value.contentEncoding);
@@ -159,6 +161,19 @@ core.String contentDisposition;
 <p>Content-Encoding of the object data.</p>
 <pre class="source">
 core.String contentEncoding;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="contentLanguage">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>contentLanguage</strong> <a class="anchor-link"
+            href="#contentLanguage"
+            title="Permalink to Object.contentLanguage">#</a>
+        </h4>
+        <div class="doc">
+<p>Content-Language of the object data.</p>
+<pre class="source">
+core.String contentLanguage;
 </pre>
 </div>
 </div>

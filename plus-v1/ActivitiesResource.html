@@ -148,7 +148,7 @@ core.Future&lt;ActivityFeed&gt; search(core.String query, [ActivitiesResourceSea
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["query"] = query;
+  if (UNSPECIFIED != query) $queryParams["query"] = query;
   if (UNSPECIFIED != orderBy) $queryParams["orderBy"] = orderBy;
   if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
   if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;

@@ -97,7 +97,7 @@ core.Future&lt;Search&gt; list(core.String q, [core.String sort = UNSPECIFIED, c
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["q"] = q;
+  if (UNSPECIFIED != q) $queryParams["q"] = q;
   if (UNSPECIFIED != sort) $queryParams["sort"] = sort;
   if (UNSPECIFIED != orTerms) $queryParams["orTerms"] = orTerms;
   if (UNSPECIFIED != highRange) $queryParams["highRange"] = highRange;

@@ -54,8 +54,8 @@ core.Future&lt;DownloadAccesses&gt; releaseDownloadAccess(core.List&lt;core.Stri
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["volumeIds"] = volumeIds;
-  $pathParams["cpksver"] = cpksver;
+  if (UNSPECIFIED != volumeIds) $queryParams["volumeIds"] = volumeIds;
+  if (UNSPECIFIED != cpksver) $queryParams["cpksver"] = cpksver;
   if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
   if (UNSPECIFIED != source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
@@ -95,10 +95,10 @@ core.Future&lt;RequestAccess&gt; requestAccess(core.String source, core.String v
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["source"] = source;
-  $pathParams["volumeId"] = volumeId;
-  $pathParams["nonce"] = nonce;
-  $pathParams["cpksver"] = cpksver;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (UNSPECIFIED != volumeId) $queryParams["volumeId"] = volumeId;
+  if (UNSPECIFIED != nonce) $queryParams["nonce"] = nonce;
+  if (UNSPECIFIED != cpksver) $queryParams["cpksver"] = cpksver;
   if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
@@ -138,9 +138,9 @@ core.Future&lt;Volumes&gt; syncVolumeLicenses(core.String source, core.String no
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["source"] = source;
-  $pathParams["nonce"] = nonce;
-  $pathParams["cpksver"] = cpksver;
+  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (UNSPECIFIED != nonce) $queryParams["nonce"] = nonce;
+  if (UNSPECIFIED != cpksver) $queryParams["cpksver"] = cpksver;
   if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
   if (UNSPECIFIED != showPreorders) $queryParams["showPreorders"] = showPreorders;
   if (UNSPECIFIED != volumeIds) $queryParams["volumeIds"] = volumeIds;

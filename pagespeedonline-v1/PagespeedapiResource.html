@@ -55,7 +55,7 @@ core.Future&lt;Result&gt; runpagespeed(core.String url, [core.String locale = UN
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["url"] = url;
+  if (UNSPECIFIED != url) $queryParams["url"] = url;
   if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
   if (UNSPECIFIED != rule) $queryParams["rule"] = rule;
   if (UNSPECIFIED != strategy) $queryParams["strategy"] = strategy;

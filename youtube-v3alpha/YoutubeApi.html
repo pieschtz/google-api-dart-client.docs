@@ -49,6 +49,19 @@ YoutubeApi([this.baseUrl = "https://www.googleapis.com/youtube/v3alpha/", applic
 </div>
 </div>
 <h3>Static Fields</h3>
+<div class="field"><h4 id="YOUTUBEPARTNER_SCOPE">
+<span class="show-code">Code</span>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>YOUTUBEPARTNER_SCOPE</strong> <a class="anchor-link"
+            href="#YOUTUBEPARTNER_SCOPE"
+            title="Permalink to YoutubeApi.YOUTUBEPARTNER_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View and manage your assets and associated content on YouTube</p>
+<pre class="source">
+static final core.String YOUTUBEPARTNER_SCOPE = "https://www.googleapis.com/auth/youtubepartner";
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="YOUTUBE_SCOPE">
 <span class="show-code">Code</span>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>YOUTUBE_SCOPE</strong> <a class="anchor-link"
@@ -116,7 +129,7 @@ SearchResource get search() =&gt; _search;
 <pre class="source">
 core.String get userAgent() {
   var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
-  return "${uaPrefix}youtube/v3alpha/20120727 google-api-dart-client/${clientVersion}";
+  return "${uaPrefix}youtube/v3alpha/20120816 google-api-dart-client/${clientVersion}";
 }
 </pre>
 </div>

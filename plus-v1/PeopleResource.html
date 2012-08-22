@@ -145,7 +145,7 @@ core.Future&lt;PeopleFeed&gt; search(core.String query, [core.String pageToken =
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["query"] = query;
+  if (UNSPECIFIED != query) $queryParams["query"] = query;
   if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
   if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
   if (UNSPECIFIED != language) $queryParams["language"] = language;

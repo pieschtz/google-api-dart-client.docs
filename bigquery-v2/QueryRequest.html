@@ -41,10 +41,11 @@ static QueryRequest parse(core.Map&lt;core.String, core.Object&gt; json) {
   if (json == null) return null;
   final result = new QueryRequest();
   result.timeoutMs = identity(json["timeoutMs"]);
-  result.query = identity(json["query"]);
   result.kind = identity(json["kind"]);
-  result.maxResults = identity(json["maxResults"]);
+  result.dryRun = identity(json["dryRun"]);
   result.defaultDataset = DatasetReference.parse(json["defaultDataset"]);
+  result.maxResults = identity(json["maxResults"]);
+  result.query = identity(json["query"]);
   return result;
 }
 </pre>
@@ -61,10 +62,11 @@ static core.Object serialize(QueryRequest value) {
   if (value == null) return null;
   final result = {};
   result["timeoutMs"] = identity(value.timeoutMs);
-  result["query"] = identity(value.query);
   result["kind"] = identity(value.kind);
-  result["maxResults"] = identity(value.maxResults);
+  result["dryRun"] = identity(value.dryRun);
   result["defaultDataset"] = DatasetReference.serialize(value.defaultDataset);
+  result["maxResults"] = identity(value.maxResults);
+  result["query"] = identity(value.query);
   return result;
 }
 </pre>
@@ -95,6 +97,20 @@ names in the query. If not set, all table names in the query string must be full
 the format projectId:datasetId.tableid.</p>
 <pre class="source">
 DatasetReference defaultDataset;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="dryRun">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>dryRun</strong> <a class="anchor-link"
+            href="#dryRun"
+            title="Permalink to QueryRequest.dryRun">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Optional</code> If set, don't actually run the query. A valid query will return an empty response,
+while an invalid query will return the same error it would if it wasn't a dry run.</p>
+<pre class="source">
+core.bool dryRun;
 </pre>
 </div>
 </div>

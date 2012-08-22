@@ -55,7 +55,7 @@ core.Future&lt;Creative&gt; get(core.int accountId, core.String buyerCreativeId,
   final $pathParams = {};
   $pathParams["accountId"] = accountId;
   $pathParams["buyerCreativeId"] = buyerCreativeId;
-  $pathParams["adgroupId"] = adgroupId;
+  if (UNSPECIFIED != adgroupId) $queryParams["adgroupId"] = adgroupId;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;

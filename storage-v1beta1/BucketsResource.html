@@ -166,7 +166,7 @@ core.Future&lt;Buckets&gt; list(core.String projectId, [core.int maxResults = UN
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["projectId"] = projectId;
+  if (UNSPECIFIED != projectId) $queryParams["projectId"] = projectId;
   if (UNSPECIFIED != maxResults) $queryParams["max-results"] = maxResults;
   if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
   if (UNSPECIFIED != projection) $queryParams["projection"] = projection;

@@ -155,7 +155,7 @@ core.Future&lt;SiteVerificationWebResourceResource&gt; insert(core.String verifi
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["verificationMethod"] = verificationMethod;
+  if (UNSPECIFIED != verificationMethod) $queryParams["verificationMethod"] = verificationMethod;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;

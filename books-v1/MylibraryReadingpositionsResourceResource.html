@@ -95,8 +95,8 @@ core.Future setPosition(core.String volumeId, core.String timestamp, core.String
   final $headers = {};
   final $pathParams = {};
   $pathParams["volumeId"] = volumeId;
-  $pathParams["timestamp"] = timestamp;
-  $pathParams["position"] = position;
+  if (UNSPECIFIED != timestamp) $queryParams["timestamp"] = timestamp;
+  if (UNSPECIFIED != position) $queryParams["position"] = position;
   if (UNSPECIFIED != source) $queryParams["source"] = source;
   if (UNSPECIFIED != contentVersion) $queryParams["contentVersion"] = contentVersion;
   if (UNSPECIFIED != action) $queryParams["action"] = action;

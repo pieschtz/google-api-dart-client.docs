@@ -77,8 +77,8 @@ core.Future&lt;AdsenseReportsGenerateResponse&gt; generate(core.String accountId
   final $headers = {};
   final $pathParams = {};
   $pathParams["accountId"] = accountId;
-  $pathParams["startDate"] = startDate;
-  $pathParams["endDate"] = endDate;
+  if (UNSPECIFIED != startDate) $queryParams["startDate"] = startDate;
+  if (UNSPECIFIED != endDate) $queryParams["endDate"] = endDate;
   if (UNSPECIFIED != sort) $queryParams["sort"] = sort;
   if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
   if (UNSPECIFIED != metric) $queryParams["metric"] = metric;

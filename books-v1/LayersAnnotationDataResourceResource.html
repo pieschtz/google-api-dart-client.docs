@@ -67,7 +67,7 @@ core.Future&lt;Annotationdata&gt; get(core.String volumeId, core.String layerId,
   $pathParams["volumeId"] = volumeId;
   $pathParams["layerId"] = layerId;
   $pathParams["annotationDataId"] = annotationDataId;
-  $pathParams["contentVersion"] = contentVersion;
+  if (UNSPECIFIED != contentVersion) $queryParams["contentVersion"] = contentVersion;
   if (UNSPECIFIED != scale) $queryParams["scale"] = scale;
   if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
   if (UNSPECIFIED != h) $queryParams["h"] = h;
@@ -132,7 +132,7 @@ core.Future&lt;Annotationsdata&gt; list(core.String volumeId, core.String layerI
   final $pathParams = {};
   $pathParams["volumeId"] = volumeId;
   $pathParams["layerId"] = layerId;
-  $pathParams["contentVersion"] = contentVersion;
+  if (UNSPECIFIED != contentVersion) $queryParams["contentVersion"] = contentVersion;
   if (UNSPECIFIED != scale) $queryParams["scale"] = scale;
   if (UNSPECIFIED != source) $queryParams["source"] = source;
   if (UNSPECIFIED != locale) $queryParams["locale"] = locale;

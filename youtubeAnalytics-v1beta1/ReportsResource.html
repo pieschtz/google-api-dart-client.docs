@@ -77,10 +77,10 @@ core.Future&lt;ResultTable&gt; query(core.String ids, core.String startDate, cor
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["ids"] = ids;
-  $pathParams["start-date"] = startDate;
-  $pathParams["end-date"] = endDate;
-  $pathParams["metrics"] = metrics;
+  if (UNSPECIFIED != ids) $queryParams["ids"] = ids;
+  if (UNSPECIFIED != startDate) $queryParams["start-date"] = startDate;
+  if (UNSPECIFIED != endDate) $queryParams["end-date"] = endDate;
+  if (UNSPECIFIED != metrics) $queryParams["metrics"] = metrics;
   if (UNSPECIFIED != maxResults) $queryParams["max-results"] = maxResults;
   if (UNSPECIFIED != sort) $queryParams["sort"] = sort;
   if (UNSPECIFIED != dimensions) $queryParams["dimensions"] = dimensions;

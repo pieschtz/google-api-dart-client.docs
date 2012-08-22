@@ -135,7 +135,7 @@ core.Future mqlread(core.String query, [core.String lang = UNSPECIFIED, core.boo
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["query"] = query;
+  if (UNSPECIFIED != query) $queryParams["query"] = query;
   if (UNSPECIFIED != lang) $queryParams["lang"] = lang;
   if (UNSPECIFIED != htmlEscape) $queryParams["html_escape"] = htmlEscape;
   if (UNSPECIFIED != indent) $queryParams["indent"] = indent;

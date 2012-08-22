@@ -374,7 +374,7 @@ core.Future&lt;Event&gt; move(core.String calendarId, core.String eventId, core.
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
   $pathParams["eventId"] = eventId;
-  $pathParams["destination"] = destination;
+  if (UNSPECIFIED != destination) $queryParams["destination"] = destination;
   if (UNSPECIFIED != sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
@@ -462,7 +462,7 @@ core.Future&lt;Event&gt; quickAdd(core.String calendarId, core.String text, [cor
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
-  $pathParams["text"] = text;
+  if (UNSPECIFIED != text) $queryParams["text"] = text;
   if (UNSPECIFIED != sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;

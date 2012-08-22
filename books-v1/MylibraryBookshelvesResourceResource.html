@@ -55,7 +55,7 @@ core.Future addVolume(core.String shelf, core.String volumeId, [core.String sour
   final $headers = {};
   final $pathParams = {};
   $pathParams["shelf"] = shelf;
-  $pathParams["volumeId"] = volumeId;
+  if (UNSPECIFIED != volumeId) $queryParams["volumeId"] = volumeId;
   if (UNSPECIFIED != source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
@@ -202,8 +202,8 @@ core.Future moveVolume(core.String shelf, core.String volumeId, core.int volumeP
   final $headers = {};
   final $pathParams = {};
   $pathParams["shelf"] = shelf;
-  $pathParams["volumeId"] = volumeId;
-  $pathParams["volumePosition"] = volumePosition;
+  if (UNSPECIFIED != volumeId) $queryParams["volumeId"] = volumeId;
+  if (UNSPECIFIED != volumePosition) $queryParams["volumePosition"] = volumePosition;
   if (UNSPECIFIED != source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
@@ -241,7 +241,7 @@ core.Future removeVolume(core.String shelf, core.String volumeId, [core.String s
   final $headers = {};
   final $pathParams = {};
   $pathParams["shelf"] = shelf;
-  $pathParams["volumeId"] = volumeId;
+  if (UNSPECIFIED != volumeId) $queryParams["volumeId"] = volumeId;
   if (UNSPECIFIED != source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;

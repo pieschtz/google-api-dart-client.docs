@@ -41,12 +41,12 @@ static BooksLayerGeoDataGeo parse(core.Map&lt;core.String, core.Object&gt; json)
   if (json == null) return null;
   final result = new BooksLayerGeoDataGeo();
   result.countryCode = identity(json["countryCode"]);
+  result.title = identity(json["title"]);
   result.zoom = identity(json["zoom"]);
   result.longitude = identity(json["longitude"]);
   result.mapType = identity(json["mapType"]);
   result.latitude = identity(json["latitude"]);
   result.boundary = map(map(BooksLayerGeoDataGeoBoundary.parse))(json["boundary"]);
-  result.resolution = identity(json["resolution"]);
   result.viewport = BooksLayerGeoDataGeoViewport.parse(json["viewport"]);
   result.cachePolicy = identity(json["cachePolicy"]);
   return result;
@@ -65,12 +65,12 @@ static core.Object serialize(BooksLayerGeoDataGeo value) {
   if (value == null) return null;
   final result = {};
   result["countryCode"] = identity(value.countryCode);
+  result["title"] = identity(value.title);
   result["zoom"] = identity(value.zoom);
   result["longitude"] = identity(value.longitude);
   result["mapType"] = identity(value.mapType);
   result["latitude"] = identity(value.latitude);
   result["boundary"] = map(map(BooksLayerGeoDataGeoBoundary.serialize))(value.boundary);
-  result["resolution"] = identity(value.resolution);
   result["viewport"] = BooksLayerGeoDataGeoViewport.serialize(value.viewport);
   result["cachePolicy"] = identity(value.cachePolicy);
   return result;
@@ -170,16 +170,17 @@ core.String mapType;
 </pre>
 </div>
 </div>
-<div class="field"><h4 id="resolution">
+<div class="field"><h4 id="title">
 <span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>resolution</strong> <a class="anchor-link"
-            href="#resolution"
-            title="Permalink to BooksLayerGeoDataGeo.resolution">#</a>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
+            href="#title"
+            title="Permalink to BooksLayerGeoDataGeo.title">#</a>
         </h4>
         <div class="doc">
-<p>The resolution of the location. Ex: POI_LEVEL</p>
+<p>The display title and localized canonical name to use when searching for this entity on Google
+search.</p>
 <pre class="source">
-core.String resolution;
+core.String title;
 </pre>
 </div>
 </div>

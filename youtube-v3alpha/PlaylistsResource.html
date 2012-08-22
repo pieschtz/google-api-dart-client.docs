@@ -41,19 +41,21 @@ PlaylistsResource._internal(YoutubeApi $service) : _$service = $service;
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../youtube-v3alpha/PlaylistListResponse.html">PlaylistListResponse</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> id, <a href="http://api.dartlang.org/dart_core/String.html">String</a> part) <a class="anchor-link" href="#list"
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../youtube-v3alpha/PlaylistListResponse.html">PlaylistListResponse</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> id, <a href="http://api.dartlang.org/dart_core/String.html">String</a> part, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> contentOwnerId = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to PlaylistsResource.list">#</a></h4>
 <div class="doc">
 <p>Browse the YouTube playlist collection.</p><ul><li>
 <span class="param">id</span> YouTube IDs of the playlists to be returned.</li><li>
-<span class="param">part</span> Parts of the playlist resource to be returned.</li></ul>
+<span class="param">part</span> Parts of the playlist resource to be returned.</li><li>
+<span class="param">contentOwnerId</span> The authenticated user acts on behalf of this content owner.</li></ul>
 <pre class="source">
-core.Future&lt;PlaylistListResponse&gt; list(core.String id, core.String part) {
+core.Future&lt;PlaylistListResponse&gt; list(core.String id, core.String part, [core.String contentOwnerId = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["id"] = id;
-  $pathParams["part"] = part;
+  if (UNSPECIFIED != id) $queryParams["id"] = id;
+  if (UNSPECIFIED != part) $queryParams["part"] = part;
+  if (UNSPECIFIED != contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;

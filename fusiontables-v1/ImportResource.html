@@ -2,24 +2,24 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>VideosResource Class / youtube-v3alpha Library / Dart Documentation</title>
+        <title>ImportResource Class / fusiontables-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="../favicon.ico">
         
         </head>
-        <body data-library="youtube-v3alpha" data-type="VideosResource">
+        <body data-library="fusiontables-v1" data-type="ImportResource">
         <div class="page">
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../youtube-v3alpha.html">youtube-v3alpha</a> &rsaquo; <a href="../youtube-v3alpha/VideosResource.html">VideosResource</a></div>
+         &rsaquo; <a href="../fusiontables-v1.html">fusiontables-v1</a> &rsaquo; <a href="../fusiontables-v1/ImportResource.html">ImportResource</a></div>
         <div class="nav">
         
 </div>
 <div class="content">
-        <h2><strong>VideosResource</strong>
+        <h2><strong>ImportResource</strong>
           Class
         </h2>
         
@@ -27,35 +27,35 @@
 
 </div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="VideosResource">
+<div class="method"><h4 id="ImportResource">
 <span class="show-code">Code</span>
-new <strong>VideosResource</strong>._internal(<a href="../youtube-v3alpha/YoutubeApi.html">YoutubeApi</a> $service) <a class="anchor-link" href="#VideosResource"
-              title="Permalink to VideosResource.VideosResource">#</a></h4>
+new <strong>ImportResource</strong>._internal(<a href="../fusiontables-v1/FusiontablesApi.html">FusiontablesApi</a> $service) <a class="anchor-link" href="#ImportResource"
+              title="Permalink to ImportResource.ImportResource">#</a></h4>
 <div class="doc">
 
 <pre class="source">
-VideosResource._internal(YoutubeApi $service) : _$service = $service;
+ImportResource._internal(FusiontablesApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
 <h3>Methods</h3>
-<div class="method"><h4 id="list">
+<div class="method"><h4 id="insert">
 <span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../youtube-v3alpha/VideoListResponse.html">VideoListResponse</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> id, <a href="http://api.dartlang.org/dart_core/String.html">String</a> part, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> contentOwnerId = UNSPECIFIED]) <a class="anchor-link" href="#list"
-              title="Permalink to VideosResource.list">#</a></h4>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/Import.html">Import</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tableId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> delimiter = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> encoding = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+              title="Permalink to ImportResource.insert">#</a></h4>
 <div class="doc">
-<p>Browse the YouTube video collection.</p><ul><li>
-<span class="param">id</span> YouTube IDs of the videos to be returned.</li><li>
-<span class="param">part</span> Parts of the video resource to be returned.</li><li>
-<span class="param">contentOwnerId</span> The authenticated user acts on behalf of this content owner.</li></ul>
+<p>Import more rows into a table.</p><ul><li>
+<span class="param">tableId</span> The table into which new rows are being imported.</li><li>
+<span class="param">delimiter</span> The delimiter used to separate cell values. Default is ','.</li><li>
+<span class="param">encoding</span> The encoding of the content. Default is UTF-8.</li></ul>
 <pre class="source">
-core.Future&lt;VideoListResponse&gt; list(core.String id, core.String part, [core.String contentOwnerId = UNSPECIFIED]) {
+core.Future&lt;Import&gt; insert(core.String tableId, [core.String delimiter = UNSPECIFIED, core.String encoding = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != id) $queryParams["id"] = id;
-  if (UNSPECIFIED != part) $queryParams["part"] = part;
-  if (UNSPECIFIED != contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
+  $pathParams["tableId"] = tableId;
+  if (UNSPECIFIED != delimiter) $queryParams["delimiter"] = delimiter;
+  if (UNSPECIFIED != encoding) $queryParams["encoding"] = encoding;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -64,15 +64,15 @@ core.Future&lt;VideoListResponse&gt; list(core.String id, core.String part, [cor
   if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
   if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
-  final $path = "videos";
+  final $path = "tables/{tableId}/import";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new HttpRequest($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
   return $authenticatedHttp
       .chain((final $req) =&gt; $req.request())
-      .transform((final $text) =&gt; VideoListResponse.parse(JSON.parse($text)));
+      .transform((final $text) =&gt; Import.parse(JSON.parse($text)));
 }
 </pre>
 </div>

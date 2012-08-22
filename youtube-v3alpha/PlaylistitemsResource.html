@@ -41,31 +41,32 @@ PlaylistitemsResource._internal(YoutubeApi $service) : _$service = $service;
 <h3>Methods</h3>
 <div class="method"><h4 id="list">
 <span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../youtube-v3alpha/PlaylistItemListResponse.html">PlaylistItemListResponse</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> part, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> playlistId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> id = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../youtube-v3alpha/PlaylistItemListResponse.html">PlaylistItemListResponse</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> part, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> playlistId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> id = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> contentOwnerId = UNSPECIFIED]) <a class="anchor-link" href="#list"
               title="Permalink to PlaylistitemsResource.list">#</a></h4>
 <div class="doc">
 <p>Browse the YouTube playlist collection.</p><ul><li>
 <span class="param">part</span> Parts of the playlist resource to be returned.</li><li>
+<span class="param">playlistId</span> Retrieves playlist items from the given playlist id.</li><li>
+<p>
+<span class="param">maxResults</span> Maximum number of results to return
+Default: 50.
+Minimum: 0.</p></li><li>
+<span class="param">id</span> YouTube IDs of the playlists to be returned.</li><li>
 <span class="param">startIndex</span> Index of the first element to return (starts at 0)</li></ul>
 <p>Minimum: 0.
    * 
-<span class="param">playlistId</span> Retrieves playlist items from the given playlist id.
-   * 
-<span class="param">id</span> YouTube IDs of the playlists to be returned.
-   * 
-<span class="param">maxResults</span> Maximum number of results to return
-Default: 50.
-Minimum: 0.</p>
+<span class="param">contentOwnerId</span> The authenticated user acts on behalf of this content owner.</p>
 <pre class="source">
-core.Future&lt;PlaylistItemListResponse&gt; list(core.String part, [core.int startIndex = UNSPECIFIED, core.String playlistId = UNSPECIFIED, core.String id = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
+core.Future&lt;PlaylistItemListResponse&gt; list(core.String part, [core.String playlistId = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String id = UNSPECIFIED, core.int startIndex = UNSPECIFIED, core.String contentOwnerId = UNSPECIFIED]) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  $pathParams["part"] = part;
-  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
+  if (UNSPECIFIED != part) $queryParams["part"] = part;
   if (UNSPECIFIED != playlistId) $queryParams["playlistId"] = playlistId;
-  if (UNSPECIFIED != id) $queryParams["id"] = id;
   if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (UNSPECIFIED != id) $queryParams["id"] = id;
+  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
+  if (UNSPECIFIED != contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;

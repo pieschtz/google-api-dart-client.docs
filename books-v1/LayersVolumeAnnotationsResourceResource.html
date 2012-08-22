@@ -116,7 +116,7 @@ core.Future&lt;Volumeannotations&gt; list(core.String volumeId, core.String laye
   final $pathParams = {};
   $pathParams["volumeId"] = volumeId;
   $pathParams["layerId"] = layerId;
-  $pathParams["contentVersion"] = contentVersion;
+  if (UNSPECIFIED != contentVersion) $queryParams["contentVersion"] = contentVersion;
   if (UNSPECIFIED != showDeleted) $queryParams["showDeleted"] = showDeleted;
   if (UNSPECIFIED != endPosition) $queryParams["endPosition"] = endPosition;
   if (UNSPECIFIED != endOffset) $queryParams["endOffset"] = endOffset;

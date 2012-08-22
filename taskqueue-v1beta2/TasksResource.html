@@ -176,8 +176,8 @@ core.Future&lt;Tasks&gt; lease(core.String project, core.String taskqueue, core.
   final $pathParams = {};
   $pathParams["project"] = project;
   $pathParams["taskqueue"] = taskqueue;
-  $pathParams["numTasks"] = numTasks;
-  $pathParams["leaseSecs"] = leaseSecs;
+  if (UNSPECIFIED != numTasks) $queryParams["numTasks"] = numTasks;
+  if (UNSPECIFIED != leaseSecs) $queryParams["leaseSecs"] = leaseSecs;
   if (UNSPECIFIED != groupByTag) $queryParams["groupByTag"] = groupByTag;
   if (UNSPECIFIED != tag) $queryParams["tag"] = tag;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
@@ -256,7 +256,7 @@ core.Future&lt;Task&gt; patch(core.String project, core.String taskqueue, core.S
   $pathParams["project"] = project;
   $pathParams["taskqueue"] = taskqueue;
   $pathParams["task"] = task;
-  $pathParams["newLeaseSeconds"] = newLeaseSeconds;
+  if (UNSPECIFIED != newLeaseSeconds) $queryParams["newLeaseSeconds"] = newLeaseSeconds;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -299,7 +299,7 @@ core.Future&lt;Task&gt; update(core.String project, core.String taskqueue, core.
   $pathParams["project"] = project;
   $pathParams["taskqueue"] = taskqueue;
   $pathParams["task"] = task;
-  $pathParams["newLeaseSeconds"] = newLeaseSeconds;
+  if (UNSPECIFIED != newLeaseSeconds) $queryParams["newLeaseSeconds"] = newLeaseSeconds;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;

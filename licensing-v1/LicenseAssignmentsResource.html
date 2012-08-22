@@ -1,0 +1,338 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>LicenseAssignmentsResource Class / licensing-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="licensing-v1" data-type="LicenseAssignmentsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../licensing-v1.html">licensing-v1</a> &rsaquo; <a href="../licensing-v1/LicenseAssignmentsResource.html">LicenseAssignmentsResource</a></div>
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>LicenseAssignmentsResource</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="LicenseAssignmentsResource">
+<span class="show-code">Code</span>
+new <strong>LicenseAssignmentsResource</strong>._internal(<a href="../licensing-v1/LicensingApi.html">LicensingApi</a> $service) <a class="anchor-link" href="#LicenseAssignmentsResource"
+              title="Permalink to LicenseAssignmentsResource.LicenseAssignmentsResource">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+LicenseAssignmentsResource._internal(LicensingApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="delete">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> productId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> skuId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> userId) <a class="anchor-link" href="#delete"
+              title="Permalink to LicenseAssignmentsResource.delete">#</a></h4>
+<div class="doc">
+<p>Revoke License.</p><ul><li>
+<span class="param">productId</span> Name for product</li><li>
+<span class="param">skuId</span> Name for sku</li><li>
+<span class="param">userId</span> email id or unique Id of the user</li></ul>
+<pre class="source">
+core.Future delete(core.String productId, core.String skuId, core.String userId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["productId"] = productId;
+  $pathParams["skuId"] = skuId;
+  $pathParams["userId"] = userId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "{productId}/sku/{skuId}/user/{userId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="get">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../licensing-v1/LicenseAssignment.html">LicenseAssignment</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> productId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> skuId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> userId) <a class="anchor-link" href="#get"
+              title="Permalink to LicenseAssignmentsResource.get">#</a></h4>
+<div class="doc">
+<p>Get license assignment of a particular product and sku for a user</p><ul><li>
+<span class="param">productId</span> Name for product</li><li>
+<span class="param">skuId</span> Name for sku</li><li>
+<span class="param">userId</span> email id or unique Id of the user</li></ul>
+<pre class="source">
+core.Future&lt;LicenseAssignment&gt; get(core.String productId, core.String skuId, core.String userId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["productId"] = productId;
+  $pathParams["skuId"] = skuId;
+  $pathParams["userId"] = userId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "{productId}/sku/{skuId}/user/{userId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; LicenseAssignment.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../licensing-v1/LicenseAssignment.html">LicenseAssignment</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> productId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> skuId, <a href="../licensing-v1/LicenseAssignmentInsert.html">LicenseAssignmentInsert</a> content) <a class="anchor-link" href="#insert"
+              title="Permalink to LicenseAssignmentsResource.insert">#</a></h4>
+<div class="doc">
+<p>Assign License.</p><ul><li>
+<span class="param">content</span> the LicenseAssignmentInsert</li><li>
+<span class="param">productId</span> Name for product</li><li>
+<span class="param">skuId</span> Name for sku</li></ul>
+<pre class="source">
+core.Future&lt;LicenseAssignment&gt; insert(core.String productId, core.String skuId, LicenseAssignmentInsert content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["productId"] = productId;
+  $pathParams["skuId"] = skuId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(LicenseAssignmentInsert.serialize(content));
+  final $path = "{productId}/sku/{skuId}/user";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; LicenseAssignment.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="listForProduct">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../licensing-v1/LicenseAssignmentList.html">LicenseAssignmentList</a>&gt; <strong>listForProduct</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> productId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> customerId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#listForProduct"
+              title="Permalink to LicenseAssignmentsResource.listForProduct">#</a></h4>
+<div class="doc">
+<p>List license assignments for given product of the customer.</p><ul><li>
+<span class="param">productId</span> Name for product</li><li>
+<span class="param">customerId</span> CustomerId represents the customer for whom licenseassignments are queried</li><li>
+<span class="param">pageToken</span> Token to fetch the next page.Optional. By default server will return first page</li><li>
+<p>
+<span class="param">maxResults</span> Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.
+   Default: 100.
+Minimum: 1.
+Maximum: 1000.</p></li></ul>
+<pre class="source">
+core.Future&lt;LicenseAssignmentList&gt; listForProduct(core.String productId, core.String customerId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["productId"] = productId;
+  if (UNSPECIFIED != customerId) $queryParams["customerId"] = customerId;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "{productId}/users";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; LicenseAssignmentList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="listForProductAndSku">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../licensing-v1/LicenseAssignmentList.html">LicenseAssignmentList</a>&gt; <strong>listForProductAndSku</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> productId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> skuId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> customerId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#listForProductAndSku"
+              title="Permalink to LicenseAssignmentsResource.listForProductAndSku">#</a></h4>
+<div class="doc">
+<p>List license assignments for given product and sku of the customer.</p><ul><li>
+<span class="param">productId</span> Name for product</li><li>
+<span class="param">skuId</span> Name for sku</li><li>
+<span class="param">customerId</span> CustomerId represents the customer for whom licenseassignments are queried</li><li>
+<span class="param">pageToken</span> Token to fetch the next page.Optional. By default server will return first page</li><li>
+<p>
+<span class="param">maxResults</span> Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.
+   Default: 100.
+Minimum: 1.
+Maximum: 1000.</p></li></ul>
+<pre class="source">
+core.Future&lt;LicenseAssignmentList&gt; listForProductAndSku(core.String productId, core.String skuId, core.String customerId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["productId"] = productId;
+  $pathParams["skuId"] = skuId;
+  if (UNSPECIFIED != customerId) $queryParams["customerId"] = customerId;
+  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "{productId}/sku/{skuId}/users";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; LicenseAssignmentList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="patch">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../licensing-v1/LicenseAssignment.html">LicenseAssignment</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> productId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> skuId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> userId, <a href="../licensing-v1/LicenseAssignment.html">LicenseAssignment</a> content) <a class="anchor-link" href="#patch"
+              title="Permalink to LicenseAssignmentsResource.patch">#</a></h4>
+<div class="doc">
+<p>Assign License. This method supports patch semantics.</p><ul><li>
+<span class="param">content</span> the LicenseAssignment</li><li>
+<span class="param">productId</span> Name for product</li><li>
+<span class="param">skuId</span> Name for sku for which license would be revoked</li><li>
+<span class="param">userId</span> email id or unique Id of the user</li></ul>
+<pre class="source">
+core.Future&lt;LicenseAssignment&gt; patch(core.String productId, core.String skuId, core.String userId, LicenseAssignment content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["productId"] = productId;
+  $pathParams["skuId"] = skuId;
+  $pathParams["userId"] = userId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(LicenseAssignment.serialize(content));
+  final $path = "{productId}/sku/{skuId}/user/{userId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; LicenseAssignment.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="update">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../licensing-v1/LicenseAssignment.html">LicenseAssignment</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> productId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> skuId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> userId, <a href="../licensing-v1/LicenseAssignment.html">LicenseAssignment</a> content) <a class="anchor-link" href="#update"
+              title="Permalink to LicenseAssignmentsResource.update">#</a></h4>
+<div class="doc">
+<p>Assign License.</p><ul><li>
+<span class="param">content</span> the LicenseAssignment</li><li>
+<span class="param">productId</span> Name for product</li><li>
+<span class="param">skuId</span> Name for sku for which license would be revoked</li><li>
+<span class="param">userId</span> email id or unique Id of the user</li></ul>
+<pre class="source">
+core.Future&lt;LicenseAssignment&gt; update(core.String productId, core.String skuId, core.String userId, LicenseAssignment content) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["productId"] = productId;
+  $pathParams["skuId"] = skuId;
+  $pathParams["userId"] = userId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(LicenseAssignment.serialize(content));
+  final $path = "{productId}/sku/{skuId}/user/{userId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new HttpRequest($url, "PUT", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; LicenseAssignment.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        
