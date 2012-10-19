@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Blog Class / blogger-v3 Library / Dart Documentation</title>
+        <title>Blog class / blogger-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,109 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../blogger-v3.html">blogger-v3</a> &rsaquo; <a href="../blogger-v3/Blog.html">Blog</a></div>
+         &rsaquo; <a href="../blogger-v3.html">blogger-v3</a> &rsaquo; <a href="../blogger-v3/Blog.html">Blog</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Blog</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Blog extends IdentityHash {
+  /** The kind of this entry. Always blogger#blog */
+  core.String kind;
 
+  /** The description of this blog. This is displayed underneath the title. */
+  core.String description;
+
+  /** The locale this Blog is set to. */
+  BlogLocale locale;
+
+  /** The container of posts in this blog. */
+  BlogPosts posts;
+
+  /** The JSON custom meta-data for the Blog */
+  core.String customMetaData;
+
+  /** RFC 3339 date-time when this blog was last updated. */
+  core.String updated;
+
+  /** The container of pages in this blog. */
+  BlogPages pages;
+
+  /** The URL where this blog is published. */
+  core.String url;
+
+  /** RFC 3339 date-time when this blog was published. */
+  core.String published;
+
+  /** The identifier for this resource. */
+  core.String id;
+
+  /** The API REST URL to fetch this resource from. */
+  core.String selfLink;
+
+  /** The name of this blog. This is displayed as the title. */
+  core.String name;
+
+  /** Parses an instance from its JSON representation. */
+  static Blog parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Blog();
+    result.kind = identity(json["kind"]);
+    result.description = identity(json["description"]);
+    result.locale = BlogLocale.parse(json["locale"]);
+    result.posts = BlogPosts.parse(json["posts"]);
+    result.customMetaData = identity(json["customMetaData"]);
+    result.updated = identity(json["updated"]);
+    result.pages = BlogPages.parse(json["pages"]);
+    result.url = identity(json["url"]);
+    result.published = identity(json["published"]);
+    result.id = identity(json["id"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.name = identity(json["name"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Blog value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["description"] = identity(value.description);
+    result["locale"] = BlogLocale.serialize(value.locale);
+    result["posts"] = BlogPosts.serialize(value.posts);
+    result["customMetaData"] = identity(value.customMetaData);
+    result["updated"] = identity(value.updated);
+    result["pages"] = BlogPages.serialize(value.pages);
+    result["url"] = identity(value.url);
+    result["published"] = identity(value.published);
+    result["id"] = identity(value.id);
+    result["selfLink"] = identity(value.selfLink);
+    result["name"] = identity(value.name);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Blog</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../blogger-v3/Blog.html">Blog</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Blog.parse">#</a></h4>
 <div class="doc">
@@ -58,7 +143,7 @@ static Blog parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../blogger-v3/Blog.html">Blog</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Blog.serialize">#</a></h4>
 <div class="doc">
@@ -84,21 +169,11 @@ static core.Object serialize(Blog value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Blog.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="customMetaData">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>customMetaData</strong> <a class="anchor-link"
             href="#customMetaData"
             title="Permalink to Blog.customMetaData">#</a>
@@ -111,7 +186,7 @@ core.String customMetaData;
 </div>
 </div>
 <div class="field"><h4 id="description">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Blog.description">#</a>
@@ -124,7 +199,7 @@ core.String description;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Blog.id">#</a>
@@ -137,7 +212,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Blog.kind">#</a>
@@ -150,7 +225,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="locale">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../blogger-v3/BlogLocale.html">BlogLocale</a>         <strong>locale</strong> <a class="anchor-link"
             href="#locale"
             title="Permalink to Blog.locale">#</a>
@@ -163,7 +238,7 @@ BlogLocale locale;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Blog.name">#</a>
@@ -176,7 +251,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="pages">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../blogger-v3/BlogPages.html">BlogPages</a>         <strong>pages</strong> <a class="anchor-link"
             href="#pages"
             title="Permalink to Blog.pages">#</a>
@@ -189,7 +264,7 @@ BlogPages pages;
 </div>
 </div>
 <div class="field"><h4 id="posts">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../blogger-v3/BlogPosts.html">BlogPosts</a>         <strong>posts</strong> <a class="anchor-link"
             href="#posts"
             title="Permalink to Blog.posts">#</a>
@@ -202,7 +277,7 @@ BlogPosts posts;
 </div>
 </div>
 <div class="field"><h4 id="published">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>published</strong> <a class="anchor-link"
             href="#published"
             title="Permalink to Blog.published">#</a>
@@ -214,8 +289,21 @@ core.String published;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Blog.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Blog.selfLink">#</a>
@@ -228,7 +316,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="updated">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
             href="#updated"
             title="Permalink to Blog.updated">#</a>
@@ -241,7 +329,7 @@ core.String updated;
 </div>
 </div>
 <div class="field"><h4 id="url">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>url</strong> <a class="anchor-link"
             href="#url"
             title="Permalink to Blog.url">#</a>
@@ -251,6 +339,103 @@ core.String updated;
 <pre class="source">
 core.String url;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Blog.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Blog.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Blog.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Blog.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Blog.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Blog.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Bucket Class / storage-v1beta1 Library / Dart Documentation</title>
+        <title>Bucket class / storage-v1beta1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,102 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../storage-v1beta1.html">storage-v1beta1</a> &rsaquo; <a href="../storage-v1beta1/Bucket.html">Bucket</a></div>
+         &rsaquo; <a href="../storage-v1beta1.html">storage-v1beta1</a> &rsaquo; <a href="../storage-v1beta1/Bucket.html">Bucket</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Bucket</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Bucket extends IdentityHash {
+  /** The bucket's website configuration. */
+  BucketWebsite website;
 
+  /** The kind of item this is. For buckets, this is always storage#bucket. */
+  core.String kind;
+
+  /** Creation time of the bucket in RFC 3339 format. */
+  core.String timeCreated;
+
+  /** The project the bucket belongs to. */
+  core.String projectId;
+
+  /** Access controls on the bucket. */
+  core.List&lt;BucketAccessControl&gt; acl;
+
+  /** Default access controls to apply to new objects when no ACL is provided. */
+  core.List&lt;ObjectAccessControl&gt; defaultObjectAcl;
+
+  /**
+ * The location of the bucket. Object data for objects in the bucket resides in physical storage in
+ * this location. Can be US or EU. Defaults to US.
+ */
+  core.String location;
+
+  /** The owner of the bucket. This will always be the project team's owner group. */
+  BucketOwner owner;
+
+  /** The name of the bucket. */
+  core.String id;
+
+  /** The URI of this bucket. */
+  core.String selfLink;
+
+  /** Parses an instance from its JSON representation. */
+  static Bucket parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Bucket();
+    result.website = BucketWebsite.parse(json["website"]);
+    result.kind = identity(json["kind"]);
+    result.timeCreated = identity(json["timeCreated"]);
+    result.projectId = identity(json["projectId"]);
+    result.acl = map(BucketAccessControl.parse)(json["acl"]);
+    result.defaultObjectAcl = map(ObjectAccessControl.parse)(json["defaultObjectAcl"]);
+    result.location = identity(json["location"]);
+    result.owner = BucketOwner.parse(json["owner"]);
+    result.id = identity(json["id"]);
+    result.selfLink = identity(json["selfLink"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Bucket value) {
+    if (value == null) return null;
+    final result = {};
+    result["website"] = BucketWebsite.serialize(value.website);
+    result["kind"] = identity(value.kind);
+    result["timeCreated"] = identity(value.timeCreated);
+    result["projectId"] = identity(value.projectId);
+    result["acl"] = map(BucketAccessControl.serialize)(value.acl);
+    result["defaultObjectAcl"] = map(ObjectAccessControl.serialize)(value.defaultObjectAcl);
+    result["location"] = identity(value.location);
+    result["owner"] = BucketOwner.serialize(value.owner);
+    result["id"] = identity(value.id);
+    result["selfLink"] = identity(value.selfLink);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Bucket</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../storage-v1beta1/Bucket.html">Bucket</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Bucket.parse">#</a></h4>
 <div class="doc">
@@ -56,7 +134,7 @@ static Bucket parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../storage-v1beta1/Bucket.html">Bucket</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Bucket.serialize">#</a></h4>
 <div class="doc">
@@ -80,21 +158,11 @@ static core.Object serialize(Bucket value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Bucket.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="acl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../storage-v1beta1/BucketAccessControl.html">BucketAccessControl</a>&gt;         <strong>acl</strong> <a class="anchor-link"
             href="#acl"
             title="Permalink to Bucket.acl">#</a>
@@ -107,7 +175,7 @@ core.List&lt;BucketAccessControl&gt; acl;
 </div>
 </div>
 <div class="field"><h4 id="defaultObjectAcl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../storage-v1beta1/ObjectAccessControl.html">ObjectAccessControl</a>&gt;         <strong>defaultObjectAcl</strong> <a class="anchor-link"
             href="#defaultObjectAcl"
             title="Permalink to Bucket.defaultObjectAcl">#</a>
@@ -120,7 +188,7 @@ core.List&lt;ObjectAccessControl&gt; defaultObjectAcl;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Bucket.id">#</a>
@@ -133,7 +201,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Bucket.kind">#</a>
@@ -146,7 +214,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="location">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
             href="#location"
             title="Permalink to Bucket.location">#</a>
@@ -160,7 +228,7 @@ core.String location;
 </div>
 </div>
 <div class="field"><h4 id="owner">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../storage-v1beta1/BucketOwner.html">BucketOwner</a>         <strong>owner</strong> <a class="anchor-link"
             href="#owner"
             title="Permalink to Bucket.owner">#</a>
@@ -173,7 +241,7 @@ BucketOwner owner;
 </div>
 </div>
 <div class="field"><h4 id="projectId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>projectId</strong> <a class="anchor-link"
             href="#projectId"
             title="Permalink to Bucket.projectId">#</a>
@@ -185,8 +253,21 @@ core.String projectId;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Bucket.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Bucket.selfLink">#</a>
@@ -199,7 +280,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="timeCreated">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>timeCreated</strong> <a class="anchor-link"
             href="#timeCreated"
             title="Permalink to Bucket.timeCreated">#</a>
@@ -212,7 +293,7 @@ core.String timeCreated;
 </div>
 </div>
 <div class="field"><h4 id="website">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../storage-v1beta1/BucketWebsite.html">BucketWebsite</a>         <strong>website</strong> <a class="anchor-link"
             href="#website"
             title="Permalink to Bucket.website">#</a>
@@ -222,6 +303,103 @@ core.String timeCreated;
 <pre class="source">
 BucketWebsite website;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Bucket.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <a class="crossref" href="../storage-v1beta1/Object.html">Object</a>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Bucket.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Bucket.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Bucket.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Bucket.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <a class="crossref" href="../storage-v1beta1/Object.html">Object</a> instance.</p>
+<p><a class="crossref" href="../storage-v1beta1/Object.html">Object</a> instances have no meaningful state, and are only useful
+through their identity. An <a class="crossref" href="../storage-v1beta1/Object.html">Object</a> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Bucket.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

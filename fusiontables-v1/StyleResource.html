@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>StyleResource Class / fusiontables-v1 Library / Dart Documentation</title>
+        <title>StyleResource class / fusiontables-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,287 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../fusiontables-v1.html">fusiontables-v1</a> &rsaquo; <a href="../fusiontables-v1/StyleResource.html">StyleResource</a></div>
+         &rsaquo; <a href="../fusiontables-v1.html">fusiontables-v1</a> &rsaquo; <a href="../fusiontables-v1/StyleResource.html">StyleResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>StyleResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class StyleResource extends core.Object {
+  final FusiontablesApi _$service;
+  
+  StyleResource._internal(FusiontablesApi $service) : _$service = $service;
 
+  // Method StyleResource.Insert
+  /**
+   * Adds a new style for the table.
+   *
+   *    * [content] the StyleSetting
+   *    * [tableId] Table for which a new style is being added
+   */
+  core.Future&lt;StyleSetting&gt; insert(core.String tableId, StyleSetting content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tableId"] = tableId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(StyleSetting.serialize(content));
+    final $path = "tables/{tableId}/styles";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; StyleSetting.parse(JSON.parse($text)));
+  }
+
+  // Method StyleResource.Get
+  /**
+   * Gets a specific style.
+   *
+   *    * [tableId] Table to which the requested style belongs
+   *    * [styleId] Identifier (integer) for a specific style in a table
+   */
+  core.Future&lt;StyleSetting&gt; get(core.String tableId, core.int styleId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tableId"] = tableId;
+    $pathParams["styleId"] = styleId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "tables/{tableId}/styles/{styleId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; StyleSetting.parse(JSON.parse($text)));
+  }
+
+  // Method StyleResource.List
+  /**
+   * Retrieves a list of styles.
+   *
+   *    * [tableId] Table whose styles are being listed
+   *    * [pageToken] Continuation token specifying which result page to return. Optional.
+   *    * [maxResults] Maximum number of styles to return. Optional. Default is 5.
+
+  Minimum: 0.
+   */
+  core.Future&lt;StyleSettingList&gt; list(core.String tableId, {core.String pageToken, core.int maxResults}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tableId"] = tableId;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "tables/{tableId}/styles";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; StyleSettingList.parse(JSON.parse($text)));
+  }
+
+  // Method StyleResource.Update
+  /**
+   * Updates an existing style.
+   *
+   *    * [content] the StyleSetting
+   *    * [tableId] Table whose style is being updated.
+   *    * [styleId] Identifier (within a table) for the style being updated.
+   */
+  core.Future&lt;StyleSetting&gt; update(core.String tableId, core.int styleId, StyleSetting content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tableId"] = tableId;
+    $pathParams["styleId"] = styleId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(StyleSetting.serialize(content));
+    final $path = "tables/{tableId}/styles/{styleId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; StyleSetting.parse(JSON.parse($text)));
+  }
+
+  // Method StyleResource.Patch
+  /**
+   * Updates an existing style. This method supports patch semantics.
+   *
+   *    * [content] the StyleSetting
+   *    * [tableId] Table whose style is being updated.
+   *    * [styleId] Identifier (within a table) for the style being updated.
+   */
+  core.Future&lt;StyleSetting&gt; patch(core.String tableId, core.int styleId, StyleSetting content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tableId"] = tableId;
+    $pathParams["styleId"] = styleId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(StyleSetting.serialize(content));
+    final $path = "tables/{tableId}/styles/{styleId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; StyleSetting.parse(JSON.parse($text)));
+  }
+
+  // Method StyleResource.Delete
+  /**
+   * Deletes a style.
+   *
+   *    * [tableId] Table from which the style is being deleted
+   *    * [styleId] Identifier (within a table) for the style being deleted
+   */
+  core.Future delete(core.String tableId, core.int styleId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tableId"] = tableId;
+    $pathParams["styleId"] = styleId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "tables/{tableId}/styles/{styleId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="StyleResource">
-<span class="show-code">Code</span>
-new <strong>StyleResource</strong>._internal(<a href="../fusiontables-v1/FusiontablesApi.html">FusiontablesApi</a> $service) <a class="anchor-link" href="#StyleResource"
-              title="Permalink to StyleResource.StyleResource">#</a></h4>
+<div class="method"><h4 id="StyleResource._internal">
+<button class="show-code">Code</button>
+new <strong>StyleResource._internal</strong>(<a href="../fusiontables-v1/FusiontablesApi.html">FusiontablesApi</a> $service) <a class="anchor-link" href="#StyleResource._internal"
+              title="Permalink to StyleResource.StyleResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 StyleResource._internal(FusiontablesApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to StyleResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to StyleResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tableId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> styleId) <a class="anchor-link" href="#delete"
               title="Permalink to StyleResource.delete">#</a></h4>
 <div class="doc">
@@ -64,7 +318,7 @@ core.Future delete(core.String tableId, core.int styleId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "tables/{tableId}/styles/{styleId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $http = new http.Request($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -76,7 +330,7 @@ core.Future delete(core.String tableId, core.int styleId) {
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tableId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> styleId) <a class="anchor-link" href="#get"
               title="Permalink to StyleResource.get">#</a></h4>
 <div class="doc">
@@ -100,7 +354,7 @@ core.Future&lt;StyleSetting&gt; get(core.String tableId, core.int styleId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "tables/{tableId}/styles/{styleId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -111,8 +365,26 @@ core.Future&lt;StyleSetting&gt; get(core.String tableId, core.int styleId) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to StyleResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tableId, <a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to StyleResource.insert">#</a></h4>
 <div class="doc">
@@ -137,7 +409,7 @@ core.Future&lt;StyleSetting&gt; insert(core.String tableId, StyleSetting content
   final $body = JSON.stringify(StyleSetting.serialize(content));
   final $path = "tables/{tableId}/styles";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -149,8 +421,8 @@ core.Future&lt;StyleSetting&gt; insert(core.String tableId, StyleSetting content
 </div>
 </div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSettingList.html">StyleSettingList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tableId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSettingList.html">StyleSettingList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tableId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults]) <a class="anchor-link" href="#list"
               title="Permalink to StyleResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of styles.</p><ul><li>
@@ -159,13 +431,13 @@ core.Future&lt;StyleSetting&gt; insert(core.String tableId, StyleSetting content
 <span class="param">maxResults</span> Maximum number of styles to return. Optional. Default is 5.</li></ul>
 <p>Minimum: 0.</p>
 <pre class="source">
-core.Future&lt;StyleSettingList&gt; list(core.String tableId, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
+core.Future&lt;StyleSettingList&gt; list(core.String tableId, {core.String pageToken, core.int maxResults}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["tableId"] = tableId;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -176,7 +448,7 @@ core.Future&lt;StyleSettingList&gt; list(core.String tableId, [core.String pageT
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "tables/{tableId}/styles";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -187,8 +459,39 @@ core.Future&lt;StyleSettingList&gt; list(core.String tableId, [core.String pageT
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to StyleResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to StyleResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tableId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> styleId, <a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to StyleResource.patch">#</a></h4>
 <div class="doc">
@@ -215,7 +518,7 @@ core.Future&lt;StyleSetting&gt; patch(core.String tableId, core.int styleId, Sty
   final $body = JSON.stringify(StyleSetting.serialize(content));
   final $path = "tables/{tableId}/styles/{styleId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -226,8 +529,29 @@ core.Future&lt;StyleSetting&gt; patch(core.String tableId, core.int styleId, Sty
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="StyleResource._internal">
+<button class="show-code">Code</button>
+new <strong>StyleResource._internal</strong>(<a href="../fusiontables-v1/FusiontablesApi.html">FusiontablesApi</a> $service) <a class="anchor-link" href="#StyleResource._internal"
+              title="Permalink to StyleResource.StyleResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+StyleResource._internal(FusiontablesApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to StyleResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tableId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> styleId, <a href="../fusiontables-v1/StyleSetting.html">StyleSetting</a> content) <a class="anchor-link" href="#update"
               title="Permalink to StyleResource.update">#</a></h4>
 <div class="doc">
@@ -254,7 +578,7 @@ core.Future&lt;StyleSetting&gt; update(core.String tableId, core.int styleId, St
   final $body = JSON.stringify(StyleSetting.serialize(content));
   final $path = "tables/{tableId}/styles/{styleId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -263,6 +587,7 @@ core.Future&lt;StyleSetting&gt; update(core.String tableId, core.int styleId, St
       .transform((final $text) =&gt; StyleSetting.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Segments Class / analytics-v3 Library / Dart Documentation</title>
+        <title>Segments class / analytics-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,98 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/Segments.html">Segments</a></div>
+         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/Segments.html">Segments</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Segments</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Segments extends IdentityHash {
+  /** Email ID of the authenticated user */
+  core.String username;
 
+  /** Collection type for advanced segments. */
+  core.String kind;
+
+  /** A list of advanced segments. */
+  core.List&lt;Segment&gt; items;
+
+  /**
+ * The maximum number of resources the response can contain, regardless of the actual number of
+ * resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise
+ * specified by the max-results query parameter.
+ */
+  core.int itemsPerPage;
+
+  /** Link to previous page for this advanced segment collection. */
+  core.String previousLink;
+
+  /**
+ * The starting index of the resources, which is 1 by default or otherwise specified by the start-
+ * index query parameter.
+ */
+  core.int startIndex;
+
+  /** Link to next page for this advanced segment collection. */
+  core.String nextLink;
+
+  /**
+ * The total number of results for the query, regardless of the number of results in the response.
+ */
+  core.int totalResults;
+
+  /** Parses an instance from its JSON representation. */
+  static Segments parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Segments();
+    result.username = identity(json["username"]);
+    result.kind = identity(json["kind"]);
+    result.items = map(Segment.parse)(json["items"]);
+    result.itemsPerPage = identity(json["itemsPerPage"]);
+    result.previousLink = identity(json["previousLink"]);
+    result.startIndex = identity(json["startIndex"]);
+    result.nextLink = identity(json["nextLink"]);
+    result.totalResults = identity(json["totalResults"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Segments value) {
+    if (value == null) return null;
+    final result = {};
+    result["username"] = identity(value.username);
+    result["kind"] = identity(value.kind);
+    result["items"] = map(Segment.serialize)(value.items);
+    result["itemsPerPage"] = identity(value.itemsPerPage);
+    result["previousLink"] = identity(value.previousLink);
+    result["startIndex"] = identity(value.startIndex);
+    result["nextLink"] = identity(value.nextLink);
+    result["totalResults"] = identity(value.totalResults);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Segments</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/Segments.html">Segments</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Segments.parse">#</a></h4>
 <div class="doc">
@@ -54,7 +128,7 @@ static Segments parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../analytics-v3/Segments.html">Segments</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Segments.serialize">#</a></h4>
 <div class="doc">
@@ -76,21 +150,11 @@ static core.Object serialize(Segments value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Segments.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="items">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../analytics-v3/Segment.html">Segment</a>&gt;         <strong>items</strong> <a class="anchor-link"
             href="#items"
             title="Permalink to Segments.items">#</a>
@@ -103,22 +167,22 @@ core.List&lt;Segment&gt; items;
 </div>
 </div>
 <div class="field"><h4 id="itemsPerPage">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>itemsPerPage</strong> <a class="anchor-link"
             href="#itemsPerPage"
             title="Permalink to Segments.itemsPerPage">#</a>
         </h4>
         <div class="doc">
 <p>The maximum number of resources the response can contain, regardless of the actual number of
-resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or
-otherwise specified by the max-results query parameter.</p>
+resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise
+specified by the max-results query parameter.</p>
 <pre class="source">
 core.int itemsPerPage;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Segments.kind">#</a>
@@ -131,7 +195,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="nextLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>nextLink</strong> <a class="anchor-link"
             href="#nextLink"
             title="Permalink to Segments.nextLink">#</a>
@@ -144,7 +208,7 @@ core.String nextLink;
 </div>
 </div>
 <div class="field"><h4 id="previousLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>previousLink</strong> <a class="anchor-link"
             href="#previousLink"
             title="Permalink to Segments.previousLink">#</a>
@@ -156,8 +220,21 @@ core.String previousLink;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Segments.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="startIndex">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>startIndex</strong> <a class="anchor-link"
             href="#startIndex"
             title="Permalink to Segments.startIndex">#</a>
@@ -171,7 +248,7 @@ core.int startIndex;
 </div>
 </div>
 <div class="field"><h4 id="totalResults">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>totalResults</strong> <a class="anchor-link"
             href="#totalResults"
             title="Permalink to Segments.totalResults">#</a>
@@ -184,7 +261,7 @@ core.int totalResults;
 </div>
 </div>
 <div class="field"><h4 id="username">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>username</strong> <a class="anchor-link"
             href="#username"
             title="Permalink to Segments.username">#</a>
@@ -194,6 +271,103 @@ core.int totalResults;
 <pre class="source">
 core.String username;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Segments.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Segments.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Segments.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Segments.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Segments.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Segments.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

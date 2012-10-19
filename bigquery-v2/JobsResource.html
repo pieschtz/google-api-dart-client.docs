@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>JobsResource Class / bigquery-v2 Library / Dart Documentation</title>
+        <title>JobsResource class / bigquery-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,263 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/JobsResource.html">JobsResource</a></div>
+         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/JobsResource.html">JobsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>JobsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class JobsResource extends core.Object {
+  final BigqueryApi _$service;
+  
+  JobsResource._internal(BigqueryApi $service) : _$service = $service;
 
+  // Method JobsResource.Insert
+  /**
+   * Starts a new asynchronous job.
+   *
+   *    * [content] the Job
+   *    * [projectId] Project ID of the project that will be billed for the job
+   */
+  core.Future&lt;Job&gt; insert(core.String projectId, Job content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["projectId"] = projectId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Job.serialize(content));
+    final $path = "projects/{projectId}/jobs";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Job.parse(JSON.parse($text)));
+  }
+
+  // Method JobsResource.Query
+  /**
+   * Runs a BigQuery SQL query synchronously and returns query results if the query completes within a
+   * specified timeout.
+   *
+   *    * [content] the QueryRequest
+   *    * [projectId] Project ID of the project billed for the query
+   */
+  core.Future&lt;QueryResponse&gt; query(core.String projectId, QueryRequest content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["projectId"] = projectId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(QueryRequest.serialize(content));
+    final $path = "projects/{projectId}/queries";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; QueryResponse.parse(JSON.parse($text)));
+  }
+
+  // Method JobsResource.List
+  /**
+   * Lists all the Jobs in the specified project that were started by the user.
+   *
+   *    * [projectId] Project ID of the jobs to list
+   *    * [projection] Restrict information returned to a set of selected fields
+   *    * [stateFilter] Filter for job state
+   *    * [allUsers] Whether to display jobs owned by all users in the project. Default false
+   *    * [maxResults] Maximum number of results to return
+   *    * [pageToken] Page token, returned by a previous call, to request the next page of results
+   */
+  core.Future&lt;JobList&gt; list(core.String projectId, {JobsResourceListProjection projection, JobsResourceListStateFilter stateFilter, core.bool allUsers, core.int maxResults, core.String pageToken}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["projectId"] = projectId;
+    if (?projection) $queryParams["projection"] = projection;
+    if (?stateFilter) $queryParams["stateFilter"] = stateFilter;
+    if (?allUsers) $queryParams["allUsers"] = allUsers;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "projects/{projectId}/jobs";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; JobList.parse(JSON.parse($text)));
+  }
+
+  // Method JobsResource.GetQueryResults
+  /**
+   * Retrieves the results of a query job.
+   *
+   *    * [projectId] Project ID of the query job
+   *    * [jobId] Job ID of the query job
+   *    * [timeoutMs] How long to wait for the query to complete, in milliseconds, before returning. Default is to return
+   *        immediately. If the timeout passes before the job completes, the request will fail with a
+   *        TIMEOUT error
+   *    * [startIndex] Zero-based index of the starting row
+   *    * [maxResults] Maximum number of results to read
+   */
+  core.Future&lt;GetQueryResultsResponse&gt; getQueryResults(core.String projectId, core.String jobId, {core.int timeoutMs, core.String startIndex, core.int maxResults}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["projectId"] = projectId;
+    $pathParams["jobId"] = jobId;
+    if (?timeoutMs) $queryParams["timeoutMs"] = timeoutMs;
+    if (?startIndex) $queryParams["startIndex"] = startIndex;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "projects/{projectId}/queries/{jobId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; GetQueryResultsResponse.parse(JSON.parse($text)));
+  }
+
+  // Method JobsResource.Get
+  /**
+   * Retrieves the specified job by ID.
+   *
+   *    * [projectId] Project ID of the requested job
+   *    * [jobId] Job ID of the requested job
+   */
+  core.Future&lt;Job&gt; get(core.String projectId, core.String jobId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["projectId"] = projectId;
+    $pathParams["jobId"] = jobId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "projects/{projectId}/jobs/{jobId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Job.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="JobsResource">
-<span class="show-code">Code</span>
-new <strong>JobsResource</strong>._internal(<a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a> $service) <a class="anchor-link" href="#JobsResource"
-              title="Permalink to JobsResource.JobsResource">#</a></h4>
+<div class="method"><h4 id="JobsResource._internal">
+<button class="show-code">Code</button>
+new <strong>JobsResource._internal</strong>(<a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a> $service) <a class="anchor-link" href="#JobsResource._internal"
+              title="Permalink to JobsResource.JobsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 JobsResource._internal(BigqueryApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to JobsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to JobsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Job.html">Job</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> projectId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> jobId) <a class="anchor-link" href="#get"
               title="Permalink to JobsResource.get">#</a></h4>
 <div class="doc">
@@ -64,7 +294,7 @@ core.Future&lt;Job&gt; get(core.String projectId, core.String jobId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "projects/{projectId}/jobs/{jobId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -76,8 +306,8 @@ core.Future&lt;Job&gt; get(core.String projectId, core.String jobId) {
 </div>
 </div>
 <div class="method"><h4 id="getQueryResults">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../bigquery-v2/GetQueryResultsResponse.html">GetQueryResultsResponse</a>&gt; <strong>getQueryResults</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> projectId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> jobId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> timeoutMs = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startIndex = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#getQueryResults"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../bigquery-v2/GetQueryResultsResponse.html">GetQueryResultsResponse</a>&gt; <strong>getQueryResults</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> projectId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> jobId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> timeoutMs, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startIndex, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults]) <a class="anchor-link" href="#getQueryResults"
               title="Permalink to JobsResource.getQueryResults">#</a></h4>
 <div class="doc">
 <p>Retrieves the results of a query job.</p><ul><li>
@@ -90,15 +320,15 @@ core.Future&lt;Job&gt; get(core.String projectId, core.String jobId) {
 <span class="param">startIndex</span> Zero-based index of the starting row</li><li>
 <span class="param">maxResults</span> Maximum number of results to read</li></ul>
 <pre class="source">
-core.Future&lt;GetQueryResultsResponse&gt; getQueryResults(core.String projectId, core.String jobId, [core.int timeoutMs = UNSPECIFIED, core.String startIndex = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
+core.Future&lt;GetQueryResultsResponse&gt; getQueryResults(core.String projectId, core.String jobId, {core.int timeoutMs, core.String startIndex, core.int maxResults}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["projectId"] = projectId;
   $pathParams["jobId"] = jobId;
-  if (UNSPECIFIED != timeoutMs) $queryParams["timeoutMs"] = timeoutMs;
-  if (UNSPECIFIED != startIndex) $queryParams["startIndex"] = startIndex;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (?timeoutMs) $queryParams["timeoutMs"] = timeoutMs;
+  if (?startIndex) $queryParams["startIndex"] = startIndex;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -109,7 +339,7 @@ core.Future&lt;GetQueryResultsResponse&gt; getQueryResults(core.String projectId
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "projects/{projectId}/queries/{jobId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -120,8 +350,26 @@ core.Future&lt;GetQueryResultsResponse&gt; getQueryResults(core.String projectId
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to JobsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../bigquery-v2/Job.html">Job</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> projectId, <a href="../bigquery-v2/Job.html">Job</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to JobsResource.insert">#</a></h4>
 <div class="doc">
@@ -146,7 +394,7 @@ core.Future&lt;Job&gt; insert(core.String projectId, Job content) {
   final $body = JSON.stringify(Job.serialize(content));
   final $path = "projects/{projectId}/jobs";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -157,9 +405,19 @@ core.Future&lt;Job&gt; insert(core.String projectId, Job content) {
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="JobsResource._internal">
+<button class="show-code">Code</button>
+new <strong>JobsResource._internal</strong>(<a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a> $service) <a class="anchor-link" href="#JobsResource._internal"
+              title="Permalink to JobsResource.JobsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+JobsResource._internal(BigqueryApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../bigquery-v2/JobList.html">JobList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> projectId, [<a href="../bigquery-v2/JobsResourceListProjection.html">JobsResourceListProjection</a> projection = UNSPECIFIED, <a href="../bigquery-v2/JobsResourceListStateFilter.html">JobsResourceListStateFilter</a> stateFilter = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> allUsers = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../bigquery-v2/JobList.html">JobList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> projectId, [<a href="../bigquery-v2/JobsResourceListProjection.html">JobsResourceListProjection</a> projection, <a href="../bigquery-v2/JobsResourceListStateFilter.html">JobsResourceListStateFilter</a> stateFilter, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> allUsers, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken]) <a class="anchor-link" href="#list"
               title="Permalink to JobsResource.list">#</a></h4>
 <div class="doc">
 <p>Lists all the Jobs in the specified project that were started by the user.</p><ul><li>
@@ -170,16 +428,16 @@ core.Future&lt;Job&gt; insert(core.String projectId, Job content) {
 <span class="param">maxResults</span> Maximum number of results to return</li><li>
 <span class="param">pageToken</span> Page token, returned by a previous call, to request the next page of results</li></ul>
 <pre class="source">
-core.Future&lt;JobList&gt; list(core.String projectId, [JobsResourceListProjection projection = UNSPECIFIED, JobsResourceListStateFilter stateFilter = UNSPECIFIED, core.bool allUsers = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED]) {
+core.Future&lt;JobList&gt; list(core.String projectId, {JobsResourceListProjection projection, JobsResourceListStateFilter stateFilter, core.bool allUsers, core.int maxResults, core.String pageToken}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["projectId"] = projectId;
-  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
-  if (UNSPECIFIED != stateFilter) $queryParams["stateFilter"] = stateFilter;
-  if (UNSPECIFIED != allUsers) $queryParams["allUsers"] = allUsers;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (?projection) $queryParams["projection"] = projection;
+  if (?stateFilter) $queryParams["stateFilter"] = stateFilter;
+  if (?allUsers) $queryParams["allUsers"] = allUsers;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -190,7 +448,7 @@ core.Future&lt;JobList&gt; list(core.String projectId, [JobsResourceListProjecti
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "projects/{projectId}/jobs";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -201,8 +459,39 @@ core.Future&lt;JobList&gt; list(core.String projectId, [JobsResourceListProjecti
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to JobsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to JobsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="query">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../bigquery-v2/QueryResponse.html">QueryResponse</a>&gt; <strong>query</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> projectId, <a href="../bigquery-v2/QueryRequest.html">QueryRequest</a> content) <a class="anchor-link" href="#query"
               title="Permalink to JobsResource.query">#</a></h4>
 <div class="doc">
@@ -228,7 +517,7 @@ core.Future&lt;QueryResponse&gt; query(core.String projectId, QueryRequest conte
   final $body = JSON.stringify(QueryRequest.serialize(content));
   final $path = "projects/{projectId}/queries";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -237,6 +526,18 @@ core.Future&lt;QueryResponse&gt; query(core.String projectId, QueryRequest conte
       .transform((final $text) =&gt; QueryResponse.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to JobsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

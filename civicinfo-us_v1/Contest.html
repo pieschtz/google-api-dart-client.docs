@@ -1,0 +1,528 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Contest class / civicinfo-us_v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="civicinfo-us_v1" data-type="Contest">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../civicinfo-us_v1.html">civicinfo-us_v1</a> &rsaquo; <a href="../civicinfo-us_v1/Contest.html">Contest</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Contest</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class Contest extends IdentityHash {
+  /** The number of candidates that a voter may vote for in this contest. */
+  core.String numberVotingFor;
+
+  /** The name of the office for this contest. */
+  core.String office;
+
+  /** Information about the electoral district that this contest is in. */
+  ElectoralDistrict district;
+
+  /** The level of office for this contest. One of: federal, state, county, city, other */
+  core.String level;
+
+  /**
+ * The type of contest. Usually this will be 'General', 'Primary', or 'Run-off' for contests with
+ * candidates. For referenda this will be 'Referendum'.
+ */
+  core.String type;
+
+  /** A number specifying the position of this contest on the voter's ballot. */
+  core.String ballotPlacement;
+
+  /**
+ * A list of sources for this contest. If multiple sources are listed, the data has been aggregated
+ * from those sources.
+ */
+  core.List&lt;Source&gt; sources;
+
+  /**
+ * A brief description of the referendum. This field is only populated for contests of type
+ * 'Referendum'.
+ */
+  core.String referendumSubtitle;
+
+  /** If this is a partisan election, the name of the party it is for. */
+  core.String primaryParty;
+
+  /** The candidate choices for this contest. */
+  core.List&lt;Candidate&gt; candidates;
+
+  /** The number of candidates that will be elected to office in this contest. */
+  core.String numberElected;
+
+  /** A link the referendum. This field is only populated for contests of type 'Referendum'. */
+  core.String referendumUrl;
+
+  /** A description of any additional eligibility requirements for voting in this contest. */
+  core.String electorateSpecifications;
+
+  /**
+ * The title of the referendum. (e.g. 'Proposition 42') This field is only populated for contests of
+ * type 'Referendum'.
+ */
+  core.String referendumTitle;
+
+  /**
+ * "Yes" or "No" depending on whether this a contest being held outside the normal election cycle.
+ */
+  core.String special;
+
+  /** Parses an instance from its JSON representation. */
+  static Contest parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Contest();
+    result.numberVotingFor = identity(json["numberVotingFor"]);
+    result.office = identity(json["office"]);
+    result.district = ElectoralDistrict.parse(json["district"]);
+    result.level = identity(json["level"]);
+    result.type = identity(json["type"]);
+    result.ballotPlacement = identity(json["ballotPlacement"]);
+    result.sources = map(Source.parse)(json["sources"]);
+    result.referendumSubtitle = identity(json["referendumSubtitle"]);
+    result.primaryParty = identity(json["primaryParty"]);
+    result.candidates = map(Candidate.parse)(json["candidates"]);
+    result.numberElected = identity(json["numberElected"]);
+    result.referendumUrl = identity(json["referendumUrl"]);
+    result.electorateSpecifications = identity(json["electorateSpecifications"]);
+    result.referendumTitle = identity(json["referendumTitle"]);
+    result.special = identity(json["special"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Contest value) {
+    if (value == null) return null;
+    final result = {};
+    result["numberVotingFor"] = identity(value.numberVotingFor);
+    result["office"] = identity(value.office);
+    result["district"] = ElectoralDistrict.serialize(value.district);
+    result["level"] = identity(value.level);
+    result["type"] = identity(value.type);
+    result["ballotPlacement"] = identity(value.ballotPlacement);
+    result["sources"] = map(Source.serialize)(value.sources);
+    result["referendumSubtitle"] = identity(value.referendumSubtitle);
+    result["primaryParty"] = identity(value.primaryParty);
+    result["candidates"] = map(Candidate.serialize)(value.candidates);
+    result["numberElected"] = identity(value.numberElected);
+    result["referendumUrl"] = identity(value.referendumUrl);
+    result["electorateSpecifications"] = identity(value.electorateSpecifications);
+    result["referendumTitle"] = identity(value.referendumTitle);
+    result["special"] = identity(value.special);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Contest</strong></span></p>
+<div>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<button class="show-code">Code</button>
+<a href="../civicinfo-us_v1/Contest.html">Contest</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to Contest.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Contest parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new Contest();
+  result.numberVotingFor = identity(json["numberVotingFor"]);
+  result.office = identity(json["office"]);
+  result.district = ElectoralDistrict.parse(json["district"]);
+  result.level = identity(json["level"]);
+  result.type = identity(json["type"]);
+  result.ballotPlacement = identity(json["ballotPlacement"]);
+  result.sources = map(Source.parse)(json["sources"]);
+  result.referendumSubtitle = identity(json["referendumSubtitle"]);
+  result.primaryParty = identity(json["primaryParty"]);
+  result.candidates = map(Candidate.parse)(json["candidates"]);
+  result.numberElected = identity(json["numberElected"]);
+  result.referendumUrl = identity(json["referendumUrl"]);
+  result.electorateSpecifications = identity(json["electorateSpecifications"]);
+  result.referendumTitle = identity(json["referendumTitle"]);
+  result.special = identity(json["special"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../civicinfo-us_v1/Contest.html">Contest</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Contest.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(Contest value) {
+  if (value == null) return null;
+  final result = {};
+  result["numberVotingFor"] = identity(value.numberVotingFor);
+  result["office"] = identity(value.office);
+  result["district"] = ElectoralDistrict.serialize(value.district);
+  result["level"] = identity(value.level);
+  result["type"] = identity(value.type);
+  result["ballotPlacement"] = identity(value.ballotPlacement);
+  result["sources"] = map(Source.serialize)(value.sources);
+  result["referendumSubtitle"] = identity(value.referendumSubtitle);
+  result["primaryParty"] = identity(value.primaryParty);
+  result["candidates"] = map(Candidate.serialize)(value.candidates);
+  result["numberElected"] = identity(value.numberElected);
+  result["referendumUrl"] = identity(value.referendumUrl);
+  result["electorateSpecifications"] = identity(value.electorateSpecifications);
+  result["referendumTitle"] = identity(value.referendumTitle);
+  result["special"] = identity(value.special);
+  return result;
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="ballotPlacement">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>ballotPlacement</strong> <a class="anchor-link"
+            href="#ballotPlacement"
+            title="Permalink to Contest.ballotPlacement">#</a>
+        </h4>
+        <div class="doc">
+<p>A number specifying the position of this contest on the voter's ballot.</p>
+<pre class="source">
+core.String ballotPlacement;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="candidates">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../civicinfo-us_v1/Candidate.html">Candidate</a>&gt;         <strong>candidates</strong> <a class="anchor-link"
+            href="#candidates"
+            title="Permalink to Contest.candidates">#</a>
+        </h4>
+        <div class="doc">
+<p>The candidate choices for this contest.</p>
+<pre class="source">
+core.List&lt;Candidate&gt; candidates;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="district">
+<button class="show-code">Code</button>
+<a href="../civicinfo-us_v1/ElectoralDistrict.html">ElectoralDistrict</a>         <strong>district</strong> <a class="anchor-link"
+            href="#district"
+            title="Permalink to Contest.district">#</a>
+        </h4>
+        <div class="doc">
+<p>Information about the electoral district that this contest is in.</p>
+<pre class="source">
+ElectoralDistrict district;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="electorateSpecifications">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>electorateSpecifications</strong> <a class="anchor-link"
+            href="#electorateSpecifications"
+            title="Permalink to Contest.electorateSpecifications">#</a>
+        </h4>
+        <div class="doc">
+<p>A description of any additional eligibility requirements for voting in this contest.</p>
+<pre class="source">
+core.String electorateSpecifications;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="level">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>level</strong> <a class="anchor-link"
+            href="#level"
+            title="Permalink to Contest.level">#</a>
+        </h4>
+        <div class="doc">
+<p>The level of office for this contest. One of: federal, state, county, city, other</p>
+<pre class="source">
+core.String level;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="numberElected">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>numberElected</strong> <a class="anchor-link"
+            href="#numberElected"
+            title="Permalink to Contest.numberElected">#</a>
+        </h4>
+        <div class="doc">
+<p>The number of candidates that will be elected to office in this contest.</p>
+<pre class="source">
+core.String numberElected;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="numberVotingFor">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>numberVotingFor</strong> <a class="anchor-link"
+            href="#numberVotingFor"
+            title="Permalink to Contest.numberVotingFor">#</a>
+        </h4>
+        <div class="doc">
+<p>The number of candidates that a voter may vote for in this contest.</p>
+<pre class="source">
+core.String numberVotingFor;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="office">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>office</strong> <a class="anchor-link"
+            href="#office"
+            title="Permalink to Contest.office">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of the office for this contest.</p>
+<pre class="source">
+core.String office;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="primaryParty">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>primaryParty</strong> <a class="anchor-link"
+            href="#primaryParty"
+            title="Permalink to Contest.primaryParty">#</a>
+        </h4>
+        <div class="doc">
+<p>If this is a partisan election, the name of the party it is for.</p>
+<pre class="source">
+core.String primaryParty;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="referendumSubtitle">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>referendumSubtitle</strong> <a class="anchor-link"
+            href="#referendumSubtitle"
+            title="Permalink to Contest.referendumSubtitle">#</a>
+        </h4>
+        <div class="doc">
+<p>A brief description of the referendum. This field is only populated for contests of type
+'Referendum'.</p>
+<pre class="source">
+core.String referendumSubtitle;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="referendumTitle">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>referendumTitle</strong> <a class="anchor-link"
+            href="#referendumTitle"
+            title="Permalink to Contest.referendumTitle">#</a>
+        </h4>
+        <div class="doc">
+<p>The title of the referendum. (e.g. 'Proposition 42') This field is only populated for contests of
+type 'Referendum'.</p>
+<pre class="source">
+core.String referendumTitle;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="referendumUrl">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>referendumUrl</strong> <a class="anchor-link"
+            href="#referendumUrl"
+            title="Permalink to Contest.referendumUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>A link the referendum. This field is only populated for contests of type 'Referendum'.</p>
+<pre class="source">
+core.String referendumUrl;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Contest.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="sources">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../civicinfo-us_v1/Source.html">Source</a>&gt;         <strong>sources</strong> <a class="anchor-link"
+            href="#sources"
+            title="Permalink to Contest.sources">#</a>
+        </h4>
+        <div class="doc">
+<p>A list of sources for this contest. If multiple sources are listed, the data has been aggregated
+from those sources.</p>
+<pre class="source">
+core.List&lt;Source&gt; sources;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="special">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>special</strong> <a class="anchor-link"
+            href="#special"
+            title="Permalink to Contest.special">#</a>
+        </h4>
+        <div class="doc">
+<p>"Yes" or "No" depending on whether this a contest being held outside the normal election cycle.</p>
+<pre class="source">
+core.String special;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="type">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
+            href="#type"
+            title="Permalink to Contest.type">#</a>
+        </h4>
+        <div class="doc">
+<p>The type of contest. Usually this will be 'General', 'Primary', or 'Run-off' for contests with
+candidates. For referenda this will be 'Referendum'.</p>
+<pre class="source">
+core.String type;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Contest.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Contest.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Contest.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Contest.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Contest.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Contest.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

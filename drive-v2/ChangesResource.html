@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>ChangesResource Class / drive-v2 Library / Dart Documentation</title>
+        <title>ChangesResource class / drive-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,166 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/ChangesResource.html">ChangesResource</a></div>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/ChangesResource.html">ChangesResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>ChangesResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class ChangesResource extends core.Object {
+  final DriveApi _$service;
+  
+  ChangesResource._internal(DriveApi $service) : _$service = $service;
 
+  // Method ChangesResource.List
+  /**
+   * Lists the changes for a user.
+   *
+   *    * [includeSubscribed] Whether to include subscribed items.
+  Default: true.
+   *    * [startChangeId] Change ID to start listing changes from.
+   *    * [includeDeleted] Whether to include deleted items.
+  Default: true.
+   *    * [maxResults] Maximum number of changes to return.
+  Default: 100.
+  Minimum: 0.
+   *    * [pageToken] Page token for changes.
+   */
+  core.Future&lt;ChangeList&gt; list({core.bool includeSubscribed, core.String startChangeId, core.bool includeDeleted, core.int maxResults, core.String pageToken}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?includeSubscribed) $queryParams["includeSubscribed"] = includeSubscribed;
+    if (?startChangeId) $queryParams["startChangeId"] = startChangeId;
+    if (?includeDeleted) $queryParams["includeDeleted"] = includeDeleted;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "changes";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; ChangeList.parse(JSON.parse($text)));
+  }
+
+  // Method ChangesResource.Get
+  /**
+   * Gets a specific change.
+   *
+   *    * [changeId] The ID of the change.
+   */
+  core.Future&lt;Change&gt; get(core.String changeId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["changeId"] = changeId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "changes/{changeId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Change.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="ChangesResource">
-<span class="show-code">Code</span>
-new <strong>ChangesResource</strong>._internal(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#ChangesResource"
-              title="Permalink to ChangesResource.ChangesResource">#</a></h4>
+<div class="method"><h4 id="ChangesResource._internal">
+<button class="show-code">Code</button>
+new <strong>ChangesResource._internal</strong>(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#ChangesResource._internal"
+              title="Permalink to ChangesResource.ChangesResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 ChangesResource._internal(DriveApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to ChangesResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to ChangesResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method"><h4 id="ChangesResource._internal">
+<button class="show-code">Code</button>
+new <strong>ChangesResource._internal</strong>(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#ChangesResource._internal"
+              title="Permalink to ChangesResource.ChangesResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+ChangesResource._internal(DriveApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../drive-v2/Change.html">Change</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> changeId) <a class="anchor-link" href="#get"
               title="Permalink to ChangesResource.get">#</a></h4>
 <div class="doc">
@@ -62,7 +195,7 @@ core.Future&lt;Change&gt; get(core.String changeId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "changes/{changeId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -73,9 +206,27 @@ core.Future&lt;Change&gt; get(core.String changeId) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to ChangesResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../drive-v2/ChangeList.html">ChangeList</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> includeSubscribed = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startChangeId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> includeDeleted = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../drive-v2/ChangeList.html">ChangeList</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> includeSubscribed, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startChangeId, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> includeDeleted, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken]) <a class="anchor-link" href="#list"
               title="Permalink to ChangesResource.list">#</a></h4>
 <div class="doc">
 <p>Lists the changes for a user.</p><ul><li>
@@ -92,15 +243,15 @@ Default: 100.
 Minimum: 0.</p></li><li>
 <span class="param">pageToken</span> Page token for changes.</li></ul>
 <pre class="source">
-core.Future&lt;ChangeList&gt; list([core.bool includeSubscribed = UNSPECIFIED, core.String startChangeId = UNSPECIFIED, core.bool includeDeleted = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED]) {
+core.Future&lt;ChangeList&gt; list({core.bool includeSubscribed, core.String startChangeId, core.bool includeDeleted, core.int maxResults, core.String pageToken}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != includeSubscribed) $queryParams["includeSubscribed"] = includeSubscribed;
-  if (UNSPECIFIED != startChangeId) $queryParams["startChangeId"] = startChangeId;
-  if (UNSPECIFIED != includeDeleted) $queryParams["includeDeleted"] = includeDeleted;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (?includeSubscribed) $queryParams["includeSubscribed"] = includeSubscribed;
+  if (?startChangeId) $queryParams["startChangeId"] = startChangeId;
+  if (?includeDeleted) $queryParams["includeDeleted"] = includeDeleted;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -111,7 +262,7 @@ core.Future&lt;ChangeList&gt; list([core.bool includeSubscribed = UNSPECIFIED, c
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "changes";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -120,6 +271,49 @@ core.Future&lt;ChangeList&gt; list([core.bool includeSubscribed = UNSPECIFIED, c
       .transform((final $text) =&gt; ChangeList.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to ChangesResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to ChangesResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ChangesResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

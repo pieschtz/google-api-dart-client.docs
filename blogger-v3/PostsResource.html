@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>PostsResource Class / blogger-v3 Library / Dart Documentation</title>
+        <title>PostsResource class / blogger-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,361 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../blogger-v3.html">blogger-v3</a> &rsaquo; <a href="../blogger-v3/PostsResource.html">PostsResource</a></div>
+         &rsaquo; <a href="../blogger-v3.html">blogger-v3</a> &rsaquo; <a href="../blogger-v3/PostsResource.html">PostsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>PostsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class PostsResource extends core.Object {
+  final BloggerApi _$service;
+  
+  PostsResource._internal(BloggerApi $service) : _$service = $service;
 
+  // Method PostsResource.Insert
+  /**
+   * Add a post.
+   *
+   *    * [content] the Post
+   *    * [blogId] ID of the blog to fetch the post from.
+   */
+  core.Future&lt;Post&gt; insert(core.String blogId, Post content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Post.serialize(content));
+    final $path = "blogs/{blogId}/posts";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Post.parse(JSON.parse($text)));
+  }
+
+  // Method PostsResource.Search
+  /**
+   * Search for a post.
+   *
+   *    * [blogId] ID of the blog to fetch the post from.
+   *    * [q] Query terms to search this blog for matching posts.
+   */
+  core.Future&lt;PostList&gt; search(core.String blogId, {core.String q}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    if (?q) $queryParams["q"] = q;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "blogs/{blogId}/posts/search";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; PostList.parse(JSON.parse($text)));
+  }
+
+  // Method PostsResource.Get
+  /**
+   * Get a post by id.
+   *
+   *    * [blogId] ID of the blog to fetch the post from.
+   *    * [postId] The ID of the post
+   *    * [maxComments] Maximum number of comments to pull back on a post.
+   */
+  core.Future&lt;Post&gt; get(core.String blogId, core.String postId, {core.int maxComments}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    $pathParams["postId"] = postId;
+    if (?maxComments) $queryParams["maxComments"] = maxComments;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "blogs/{blogId}/posts/{postId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Post.parse(JSON.parse($text)));
+  }
+
+  // Method PostsResource.List
+  /**
+   * Retrieves a list of posts, possibly filtered.
+   *
+   *    * [blogId] ID of the blog to fetch posts from.
+   *    * [startDate] Earliest post date to fetch, a date-time with RFC 3339 formatting.
+   *    * [endDate] Latest post date to fetch, a date-time with RFC 3339 formatting.
+   *    * [labels] Comma-separated list of labels to search for.
+   *    * [maxResults] Maximum number of posts to fetch.
+   *    * [pageToken] Continuation token if the request is paged.
+   *    * [fetchBodies] Whether the body content of posts is included.
+   */
+  core.Future&lt;PostList&gt; list(core.String blogId, {core.String startDate, core.String endDate, core.String labels, core.int maxResults, core.String pageToken, core.bool fetchBodies}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    if (?startDate) $queryParams["startDate"] = startDate;
+    if (?endDate) $queryParams["endDate"] = endDate;
+    if (?labels) $queryParams["labels"] = labels;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?fetchBodies) $queryParams["fetchBodies"] = fetchBodies;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "blogs/{blogId}/posts";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; PostList.parse(JSON.parse($text)));
+  }
+
+  // Method PostsResource.Update
+  /**
+   * Update a post.
+   *
+   *    * [content] the Post
+   *    * [blogId] The ID of the Blog.
+   *    * [postId] The ID of the Post.
+   */
+  core.Future&lt;Post&gt; update(core.String blogId, core.String postId, Post content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    $pathParams["postId"] = postId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Post.serialize(content));
+    final $path = "blogs/{blogId}/posts/{postId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Post.parse(JSON.parse($text)));
+  }
+
+  // Method PostsResource.GetByPath
+  /**
+   * Retrieve a Post by Path.
+   *
+   *    * [blogId] ID of the blog to fetch the post from.
+   *    * [path] Path of the Post to retrieve.
+   *    * [maxComments] Maximum number of comments to pull back on a post.
+   */
+  core.Future&lt;Post&gt; getByPath(core.String blogId, {core.String path, core.int maxComments}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    if (?path) $queryParams["path"] = path;
+    if (?maxComments) $queryParams["maxComments"] = maxComments;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "blogs/{blogId}/posts/bypath";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Post.parse(JSON.parse($text)));
+  }
+
+  // Method PostsResource.Patch
+  /**
+   * Update a post. This method supports patch semantics.
+   *
+   *    * [content] the Post
+   *    * [blogId] The ID of the Blog.
+   *    * [postId] The ID of the Post.
+   */
+  core.Future&lt;Post&gt; patch(core.String blogId, core.String postId, Post content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    $pathParams["postId"] = postId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Post.serialize(content));
+    final $path = "blogs/{blogId}/posts/{postId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Post.parse(JSON.parse($text)));
+  }
+
+  // Method PostsResource.Delete
+  /**
+   * Delete a post by id.
+   *
+   *    * [blogId] The Id of the Blog.
+   *    * [postId] The ID of the Post.
+   */
+  core.Future delete(core.String blogId, core.String postId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    $pathParams["postId"] = postId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "blogs/{blogId}/posts/{postId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="PostsResource">
-<span class="show-code">Code</span>
-new <strong>PostsResource</strong>._internal(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#PostsResource"
-              title="Permalink to PostsResource.PostsResource">#</a></h4>
+<div class="method"><h4 id="PostsResource._internal">
+<button class="show-code">Code</button>
+new <strong>PostsResource._internal</strong>(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#PostsResource._internal"
+              title="Permalink to PostsResource.PostsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 PostsResource._internal(BloggerApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to PostsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to PostsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> postId) <a class="anchor-link" href="#delete"
               title="Permalink to PostsResource.delete">#</a></h4>
 <div class="doc">
@@ -64,7 +392,7 @@ core.Future delete(core.String blogId, core.String postId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "blogs/{blogId}/posts/{postId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $http = new http.Request($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -76,8 +404,8 @@ core.Future delete(core.String blogId, core.String postId) {
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Post.html">Post</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> postId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxComments = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Post.html">Post</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> postId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxComments]) <a class="anchor-link" href="#get"
               title="Permalink to PostsResource.get">#</a></h4>
 <div class="doc">
 <p>Get a post by id.</p><ul><li>
@@ -85,13 +413,13 @@ core.Future delete(core.String blogId, core.String postId) {
 <span class="param">postId</span> The ID of the post</li><li>
 <span class="param">maxComments</span> Maximum number of comments to pull back on a post.</li></ul>
 <pre class="source">
-core.Future&lt;Post&gt; get(core.String blogId, core.String postId, [core.int maxComments = UNSPECIFIED]) {
+core.Future&lt;Post&gt; get(core.String blogId, core.String postId, {core.int maxComments}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["blogId"] = blogId;
   $pathParams["postId"] = postId;
-  if (UNSPECIFIED != maxComments) $queryParams["maxComments"] = maxComments;
+  if (?maxComments) $queryParams["maxComments"] = maxComments;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -102,7 +430,7 @@ core.Future&lt;Post&gt; get(core.String blogId, core.String postId, [core.int ma
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "blogs/{blogId}/posts/{postId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -114,8 +442,8 @@ core.Future&lt;Post&gt; get(core.String blogId, core.String postId, [core.int ma
 </div>
 </div>
 <div class="method"><h4 id="getByPath">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Post.html">Post</a>&gt; <strong>getByPath</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> path = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxComments = UNSPECIFIED]) <a class="anchor-link" href="#getByPath"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Post.html">Post</a>&gt; <strong>getByPath</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> path, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxComments]) <a class="anchor-link" href="#getByPath"
               title="Permalink to PostsResource.getByPath">#</a></h4>
 <div class="doc">
 <p>Retrieve a Post by Path.</p><ul><li>
@@ -123,13 +451,13 @@ core.Future&lt;Post&gt; get(core.String blogId, core.String postId, [core.int ma
 <span class="param">path</span> Path of the Post to retrieve.</li><li>
 <span class="param">maxComments</span> Maximum number of comments to pull back on a post.</li></ul>
 <pre class="source">
-core.Future&lt;Post&gt; getByPath(core.String blogId, [core.String path = UNSPECIFIED, core.int maxComments = UNSPECIFIED]) {
+core.Future&lt;Post&gt; getByPath(core.String blogId, {core.String path, core.int maxComments}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["blogId"] = blogId;
-  if (UNSPECIFIED != path) $queryParams["path"] = path;
-  if (UNSPECIFIED != maxComments) $queryParams["maxComments"] = maxComments;
+  if (?path) $queryParams["path"] = path;
+  if (?maxComments) $queryParams["maxComments"] = maxComments;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -140,7 +468,7 @@ core.Future&lt;Post&gt; getByPath(core.String blogId, [core.String path = UNSPEC
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "blogs/{blogId}/posts/bypath";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -151,8 +479,26 @@ core.Future&lt;Post&gt; getByPath(core.String blogId, [core.String path = UNSPEC
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to PostsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Post.html">Post</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, <a href="../blogger-v3/Post.html">Post</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to PostsResource.insert">#</a></h4>
 <div class="doc">
@@ -177,7 +523,7 @@ core.Future&lt;Post&gt; insert(core.String blogId, Post content) {
   final $body = JSON.stringify(Post.serialize(content));
   final $path = "blogs/{blogId}/posts";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -189,8 +535,8 @@ core.Future&lt;Post&gt; insert(core.String blogId, Post content) {
 </div>
 </div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/PostList.html">PostList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> startDate = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> endDate = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> labels = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> fetchBodies = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/PostList.html">PostList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> startDate, <a href="http://api.dartlang.org/dart_core/String.html">String</a> endDate, <a href="http://api.dartlang.org/dart_core/String.html">String</a> labels, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> fetchBodies]) <a class="anchor-link" href="#list"
               title="Permalink to PostsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of posts, possibly filtered.</p><ul><li>
@@ -202,17 +548,17 @@ core.Future&lt;Post&gt; insert(core.String blogId, Post content) {
 <span class="param">pageToken</span> Continuation token if the request is paged.</li><li>
 <span class="param">fetchBodies</span> Whether the body content of posts is included.</li></ul>
 <pre class="source">
-core.Future&lt;PostList&gt; list(core.String blogId, [core.String startDate = UNSPECIFIED, core.String endDate = UNSPECIFIED, core.String labels = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.bool fetchBodies = UNSPECIFIED]) {
+core.Future&lt;PostList&gt; list(core.String blogId, {core.String startDate, core.String endDate, core.String labels, core.int maxResults, core.String pageToken, core.bool fetchBodies}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["blogId"] = blogId;
-  if (UNSPECIFIED != startDate) $queryParams["startDate"] = startDate;
-  if (UNSPECIFIED != endDate) $queryParams["endDate"] = endDate;
-  if (UNSPECIFIED != labels) $queryParams["labels"] = labels;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != fetchBodies) $queryParams["fetchBodies"] = fetchBodies;
+  if (?startDate) $queryParams["startDate"] = startDate;
+  if (?endDate) $queryParams["endDate"] = endDate;
+  if (?labels) $queryParams["labels"] = labels;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?fetchBodies) $queryParams["fetchBodies"] = fetchBodies;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -223,7 +569,7 @@ core.Future&lt;PostList&gt; list(core.String blogId, [core.String startDate = UN
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "blogs/{blogId}/posts";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -234,8 +580,39 @@ core.Future&lt;PostList&gt; list(core.String blogId, [core.String startDate = UN
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to PostsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to PostsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Post.html">Post</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> postId, <a href="../blogger-v3/Post.html">Post</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to PostsResource.patch">#</a></h4>
 <div class="doc">
@@ -262,7 +639,7 @@ core.Future&lt;Post&gt; patch(core.String blogId, core.String postId, Post conte
   final $body = JSON.stringify(Post.serialize(content));
   final $path = "blogs/{blogId}/posts/{postId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -273,21 +650,31 @@ core.Future&lt;Post&gt; patch(core.String blogId, core.String postId, Post conte
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="PostsResource._internal">
+<button class="show-code">Code</button>
+new <strong>PostsResource._internal</strong>(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#PostsResource._internal"
+              title="Permalink to PostsResource.PostsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+PostsResource._internal(BloggerApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="search">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/PostList.html">PostList</a>&gt; <strong>search</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> q = UNSPECIFIED]) <a class="anchor-link" href="#search"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/PostList.html">PostList</a>&gt; <strong>search</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> q]) <a class="anchor-link" href="#search"
               title="Permalink to PostsResource.search">#</a></h4>
 <div class="doc">
 <p>Search for a post.</p><ul><li>
 <span class="param">blogId</span> ID of the blog to fetch the post from.</li><li>
 <span class="param">q</span> Query terms to search this blog for matching posts.</li></ul>
 <pre class="source">
-core.Future&lt;PostList&gt; search(core.String blogId, [core.String q = UNSPECIFIED]) {
+core.Future&lt;PostList&gt; search(core.String blogId, {core.String q}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["blogId"] = blogId;
-  if (UNSPECIFIED != q) $queryParams["q"] = q;
+  if (?q) $queryParams["q"] = q;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -298,7 +685,7 @@ core.Future&lt;PostList&gt; search(core.String blogId, [core.String q = UNSPECIF
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "blogs/{blogId}/posts/search";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -309,8 +696,19 @@ core.Future&lt;PostList&gt; search(core.String blogId, [core.String q = UNSPECIF
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to PostsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Post.html">Post</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> postId, <a href="../blogger-v3/Post.html">Post</a> content) <a class="anchor-link" href="#update"
               title="Permalink to PostsResource.update">#</a></h4>
 <div class="doc">
@@ -337,7 +735,7 @@ core.Future&lt;Post&gt; update(core.String blogId, core.String postId, Post cont
   final $body = JSON.stringify(Post.serialize(content));
   final $path = "blogs/{blogId}/posts/{postId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -346,6 +744,7 @@ core.Future&lt;Post&gt; update(core.String blogId, core.String postId, Post cont
       .transform((final $text) =&gt; Post.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

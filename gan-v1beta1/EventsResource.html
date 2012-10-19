@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>EventsResource Class / gan-v1beta1 Library / Dart Documentation</title>
+        <title>EventsResource class / gan-v1beta1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,34 +14,193 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/EventsResource.html">EventsResource</a></div>
+         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/EventsResource.html">EventsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>EventsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class EventsResource extends core.Object {
+  final GanApi _$service;
+  
+  EventsResource._internal(GanApi $service) : _$service = $service;
 
+  // Method EventsResource.List
+  /**
+   * Retrieves event data for a given advertiser/publisher.
+   *
+   *    * [role] The role of the requester. Valid values: 'advertisers' or 'publishers'.
+   *    * [roleId] The ID of the requesting advertiser or publisher.
+   *    * [orderId] Caret(^) delimited list of order IDs. Filters out all events that do not reference one of the given
+   *        order IDs. Optional.
+   *    * [sku] Caret(^) delimited list of SKUs. Filters out all events that do not reference one of the given SKU.
+   *        Optional.
+   *    * [eventDateMax] Filters out all events later than given date. Optional. Defaults to 24 hours after eventMin.
+   *    * [type] Filters out all events that are not of the given type. Valid values: 'action', 'transaction',
+   *        'charge'. Optional.
+   *    * [linkId] Caret(^) delimited list of link IDs. Filters out all events that do not reference one of the given
+   *        link IDs. Optional.
+   *    * [modifyDateMin] Filters out all events modified earlier than given date. Optional. Defaults to 24 hours before the
+   *        current modifyDateMax, if modifyDateMax is explicitly set.
+   *    * [eventDateMin] Filters out all events earlier than given date. Optional. Defaults to 24 hours from current
+   *        date/time.
+   *    * [memberId] Caret(^) delimited list of member IDs. Filters out all events that do not reference one of the given
+   *        member IDs. Optional.
+   *    * [maxResults] Max number of offers to return in this page. Optional. Defaults to 20.
+
+  Minimum: 0.
+  Maximum: 100.
+   *    * [advertiserId] Caret(^) delimited list of advertiser IDs. Filters out all events that do not reference one of the
+   *        given advertiser IDs. Only used when under publishers role. Optional.
+   *    * [pageToken] The value of 'nextPageToken' from the previous page. Optional.
+   *    * [productCategory] Caret(^) delimited list of product categories. Filters out all events that do not reference a
+   *        product in one of the given product categories. Optional.
+   *    * [chargeType] Filters out all charge events that are not of the given charge type. Valid values: 'other',
+   *        'slotting_fee', 'monthly_minimum', 'tier_bonus', 'credit', 'debit'. Optional.
+   *    * [modifyDateMax] Filters out all events modified later than given date. Optional. Defaults to 24 hours after
+   *        modifyDateMin, if modifyDateMin is explicitly set.
+   *    * [status] Filters out all events that do not have the given status. Valid values: 'active', 'canceled'.
+   *        Optional.
+   *    * [publisherId] Caret(^) delimited list of publisher IDs. Filters out all events that do not reference one of the
+   *        given publishers IDs. Only used when under advertiser role. Optional.
+   */
+  core.Future&lt;Events&gt; list(EventsResourceListRole role, core.String roleId, {core.String orderId, core.String sku, core.String eventDateMax, EventsResourceListType type, core.String linkId, core.String modifyDateMin, core.String eventDateMin, core.String memberId, core.int maxResults, core.String advertiserId, core.String pageToken, core.String productCategory, EventsResourceListChargeType chargeType, core.String modifyDateMax, EventsResourceListStatus status, core.String publisherId}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["role"] = role;
+    $pathParams["roleId"] = roleId;
+    if (?orderId) $queryParams["orderId"] = orderId;
+    if (?sku) $queryParams["sku"] = sku;
+    if (?eventDateMax) $queryParams["eventDateMax"] = eventDateMax;
+    if (?type) $queryParams["type"] = type;
+    if (?linkId) $queryParams["linkId"] = linkId;
+    if (?modifyDateMin) $queryParams["modifyDateMin"] = modifyDateMin;
+    if (?eventDateMin) $queryParams["eventDateMin"] = eventDateMin;
+    if (?memberId) $queryParams["memberId"] = memberId;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?advertiserId) $queryParams["advertiserId"] = advertiserId;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?productCategory) $queryParams["productCategory"] = productCategory;
+    if (?chargeType) $queryParams["chargeType"] = chargeType;
+    if (?modifyDateMax) $queryParams["modifyDateMax"] = modifyDateMax;
+    if (?status) $queryParams["status"] = status;
+    if (?publisherId) $queryParams["publisherId"] = publisherId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{role}/{roleId}/events";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Events.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="EventsResource">
-<span class="show-code">Code</span>
-new <strong>EventsResource</strong>._internal(<a href="../gan-v1beta1/GanApi.html">GanApi</a> $service) <a class="anchor-link" href="#EventsResource"
-              title="Permalink to EventsResource.EventsResource">#</a></h4>
+<div class="method"><h4 id="EventsResource._internal">
+<button class="show-code">Code</button>
+new <strong>EventsResource._internal</strong>(<a href="../gan-v1beta1/GanApi.html">GanApi</a> $service) <a class="anchor-link" href="#EventsResource._internal"
+              title="Permalink to EventsResource.EventsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 EventsResource._internal(GanApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to EventsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to EventsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method"><h4 id="EventsResource._internal">
+<button class="show-code">Code</button>
+new <strong>EventsResource._internal</strong>(<a href="../gan-v1beta1/GanApi.html">GanApi</a> $service) <a class="anchor-link" href="#EventsResource._internal"
+              title="Permalink to EventsResource.EventsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+EventsResource._internal(GanApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to EventsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Events.html">Events</a>&gt; <strong>list</strong>(<a href="../gan-v1beta1/EventsResourceListRole.html">EventsResourceListRole</a> role, <a href="http://api.dartlang.org/dart_core/String.html">String</a> roleId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> orderId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> sku = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventDateMax = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListType.html">EventsResourceListType</a> type = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> linkId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> modifyDateMin = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventDateMin = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> memberId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> advertiserId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> productCategory = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListChargeType.html">EventsResourceListChargeType</a> chargeType = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> modifyDateMax = UNSPECIFIED, <a href="../gan-v1beta1/EventsResourceListStatus.html">EventsResourceListStatus</a> status = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> publisherId = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Events.html">Events</a>&gt; <strong>list</strong>(<a href="../gan-v1beta1/EventsResourceListRole.html">EventsResourceListRole</a> role, <a href="http://api.dartlang.org/dart_core/String.html">String</a> roleId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> orderId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> sku, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventDateMax, <a href="../gan-v1beta1/EventsResourceListType.html">EventsResourceListType</a> type, <a href="http://api.dartlang.org/dart_core/String.html">String</a> linkId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> modifyDateMin, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventDateMin, <a href="http://api.dartlang.org/dart_core/String.html">String</a> memberId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> advertiserId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/String.html">String</a> productCategory, <a href="../gan-v1beta1/EventsResourceListChargeType.html">EventsResourceListChargeType</a> chargeType, <a href="http://api.dartlang.org/dart_core/String.html">String</a> modifyDateMax, <a href="../gan-v1beta1/EventsResourceListStatus.html">EventsResourceListStatus</a> status, <a href="http://api.dartlang.org/dart_core/String.html">String</a> publisherId]) <a class="anchor-link" href="#list"
               title="Permalink to EventsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves event data for a given advertiser/publisher.</p><ul><li>
@@ -93,28 +252,28 @@ Maximum: 100.
 <span class="param">publisherId</span> Caret(^) delimited list of publisher IDs. Filters out all events that do not reference one of the
    given publishers IDs. Only used when under advertiser role. Optional.</p></li></ul>
 <pre class="source">
-core.Future&lt;Events&gt; list(EventsResourceListRole role, core.String roleId, [core.String orderId = UNSPECIFIED, core.String sku = UNSPECIFIED, core.String eventDateMax = UNSPECIFIED, EventsResourceListType type = UNSPECIFIED, core.String linkId = UNSPECIFIED, core.String modifyDateMin = UNSPECIFIED, core.String eventDateMin = UNSPECIFIED, core.String memberId = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String advertiserId = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String productCategory = UNSPECIFIED, EventsResourceListChargeType chargeType = UNSPECIFIED, core.String modifyDateMax = UNSPECIFIED, EventsResourceListStatus status = UNSPECIFIED, core.String publisherId = UNSPECIFIED]) {
+core.Future&lt;Events&gt; list(EventsResourceListRole role, core.String roleId, {core.String orderId, core.String sku, core.String eventDateMax, EventsResourceListType type, core.String linkId, core.String modifyDateMin, core.String eventDateMin, core.String memberId, core.int maxResults, core.String advertiserId, core.String pageToken, core.String productCategory, EventsResourceListChargeType chargeType, core.String modifyDateMax, EventsResourceListStatus status, core.String publisherId}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["role"] = role;
   $pathParams["roleId"] = roleId;
-  if (UNSPECIFIED != orderId) $queryParams["orderId"] = orderId;
-  if (UNSPECIFIED != sku) $queryParams["sku"] = sku;
-  if (UNSPECIFIED != eventDateMax) $queryParams["eventDateMax"] = eventDateMax;
-  if (UNSPECIFIED != type) $queryParams["type"] = type;
-  if (UNSPECIFIED != linkId) $queryParams["linkId"] = linkId;
-  if (UNSPECIFIED != modifyDateMin) $queryParams["modifyDateMin"] = modifyDateMin;
-  if (UNSPECIFIED != eventDateMin) $queryParams["eventDateMin"] = eventDateMin;
-  if (UNSPECIFIED != memberId) $queryParams["memberId"] = memberId;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != advertiserId) $queryParams["advertiserId"] = advertiserId;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != productCategory) $queryParams["productCategory"] = productCategory;
-  if (UNSPECIFIED != chargeType) $queryParams["chargeType"] = chargeType;
-  if (UNSPECIFIED != modifyDateMax) $queryParams["modifyDateMax"] = modifyDateMax;
-  if (UNSPECIFIED != status) $queryParams["status"] = status;
-  if (UNSPECIFIED != publisherId) $queryParams["publisherId"] = publisherId;
+  if (?orderId) $queryParams["orderId"] = orderId;
+  if (?sku) $queryParams["sku"] = sku;
+  if (?eventDateMax) $queryParams["eventDateMax"] = eventDateMax;
+  if (?type) $queryParams["type"] = type;
+  if (?linkId) $queryParams["linkId"] = linkId;
+  if (?modifyDateMin) $queryParams["modifyDateMin"] = modifyDateMin;
+  if (?eventDateMin) $queryParams["eventDateMin"] = eventDateMin;
+  if (?memberId) $queryParams["memberId"] = memberId;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?advertiserId) $queryParams["advertiserId"] = advertiserId;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?productCategory) $queryParams["productCategory"] = productCategory;
+  if (?chargeType) $queryParams["chargeType"] = chargeType;
+  if (?modifyDateMax) $queryParams["modifyDateMax"] = modifyDateMax;
+  if (?status) $queryParams["status"] = status;
+  if (?publisherId) $queryParams["publisherId"] = publisherId;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -125,7 +284,7 @@ core.Future&lt;Events&gt; list(EventsResourceListRole role, core.String roleId, 
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{role}/{roleId}/events";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -134,6 +293,49 @@ core.Future&lt;Events&gt; list(EventsResourceListRole role, core.String roleId, 
       .transform((final $text) =&gt; Events.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to EventsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to EventsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to EventsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

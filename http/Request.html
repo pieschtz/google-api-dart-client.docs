@@ -1,0 +1,268 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Request class / http Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="http" data-type="Request">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../http.html">http</a> &rsaquo; <a href="../http/Request.html">Request</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Request</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>A simple HTTP client request, wrapping html.HttpRequest.</p>
+<pre class="source">
+class Request {
+  final String url;
+  final String method;
+  final Map&lt;String, String&gt; headers;
+
+  Request(String this.url, String this.method, [headers = const {}]) : this.headers = new Map.from(headers);
+
+  /**
+   * Issues this request.
+   * Returns a future that provides the HTTP response body.
+   * The future throws a NetworkException or HttpException in case of error.
+   */
+  Future&lt;String&gt; request([String body]) {
+    final completer = new Completer&lt;String&gt;();
+    final req = new html.HttpRequest();
+    req.open(method, url, true, null, null);
+    headers.forEach(req.setRequestHeader);
+    req.on.error.add((html.Event event) {
+      completer.completeException(new NetworkException());
+    });
+    req.on.load.add((html.Event event) {
+      if (req.status &gt;= 400) {
+        completer.completeException(new HttpException(req.status));
+      } else {
+        completer.complete(req.responseText);
+      }
+    });
+    req.send(body);
+
+    return completer.future;
+  }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="Request">
+<button class="show-code">Code</button>
+new <strong>Request</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> url, <a href="http://api.dartlang.org/dart_core/String.html">String</a> method, [headers = const{}]) <a class="anchor-link" href="#Request"
+              title="Permalink to Request.Request">#</a></h4>
+<div class="doc">
+<pre class="source">
+Request(String this.url, String this.method, [headers = const {}]) : this.headers = new Map.from(headers);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="headers">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>headers</strong> <a class="anchor-link"
+            href="#headers"
+            title="Permalink to Request.headers">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+final Map&lt;String, String&gt; headers;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="method">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>method</strong> <a class="anchor-link"
+            href="#method"
+            title="Permalink to Request.method">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+final String method;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Request.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="url">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>url</strong> <a class="anchor-link"
+            href="#url"
+            title="Permalink to Request.url">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+final String url;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Request.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Request.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Request.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Request.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="request">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; <strong>request</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> body]) <a class="anchor-link" href="#request"
+              title="Permalink to Request.request">#</a></h4>
+<div class="doc">
+<p>Issues this request.
+Returns a future that provides the HTTP response body.
+The future throws a NetworkException or HttpException in case of error.</p>
+<pre class="source">
+Future&lt;String&gt; request([String body]) {
+  final completer = new Completer&lt;String&gt;();
+  final req = new html.HttpRequest();
+  req.open(method, url, true, null, null);
+  headers.forEach(req.setRequestHeader);
+  req.on.error.add((html.Event event) {
+    completer.completeException(new NetworkException());
+  });
+  req.on.load.add((html.Event event) {
+    if (req.status &gt;= 400) {
+      completer.completeException(new HttpException(req.status));
+    } else {
+      completer.complete(req.responseText);
+    }
+  });
+  req.send(body);
+
+  return completer.future;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="Request">
+<button class="show-code">Code</button>
+new <strong>Request</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> url, <a href="http://api.dartlang.org/dart_core/String.html">String</a> method, [headers = const{}]) <a class="anchor-link" href="#Request"
+              title="Permalink to Request.Request">#</a></h4>
+<div class="doc">
+<pre class="source">
+Request(String this.url, String this.method, [headers = const {}]) : this.headers = new Map.from(headers);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Request.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

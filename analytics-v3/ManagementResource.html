@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>ManagementResource Class / analytics-v3 Library / Dart Documentation</title>
+        <title>ManagementResource class / analytics-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,25 +14,49 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/ManagementResource.html">ManagementResource</a></div>
+         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/ManagementResource.html">ManagementResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>ManagementResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
-
+<pre class="source">
+class ManagementResource extends core.Object {
+  final AnalyticsApi _$service;
+  final ManagementWebpropertiesResourceResource webproperties;
+  final ManagementSegmentsResourceResource segments;
+  final ManagementAccountsResourceResource accounts;
+  final ManagementGoalsResourceResource goals;
+  final ManagementProfilesResourceResource profiles;
+  
+  ManagementResource._internal(AnalyticsApi $service) : _$service = $service,
+    webproperties = new ManagementWebpropertiesResourceResource._internal($service),
+    segments = new ManagementSegmentsResourceResource._internal($service),
+    accounts = new ManagementAccountsResourceResource._internal($service),
+    goals = new ManagementGoalsResourceResource._internal($service),
+    profiles = new ManagementProfilesResourceResource._internal($service);
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="ManagementResource">
-<span class="show-code">Code</span>
-new <strong>ManagementResource</strong>._internal(<a href="../analytics-v3/AnalyticsApi.html">AnalyticsApi</a> $service) <a class="anchor-link" href="#ManagementResource"
-              title="Permalink to ManagementResource.ManagementResource">#</a></h4>
+<div class="method"><h4 id="ManagementResource._internal">
+<button class="show-code">Code</button>
+new <strong>ManagementResource._internal</strong>(<a href="../analytics-v3/AnalyticsApi.html">AnalyticsApi</a> $service) <a class="anchor-link" href="#ManagementResource._internal"
+              title="Permalink to ManagementResource.ManagementResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 ManagementResource._internal(AnalyticsApi $service) : _$service = $service,
   webproperties = new ManagementWebpropertiesResourceResource._internal($service),
@@ -43,70 +67,178 @@ ManagementResource._internal(AnalyticsApi $service) : _$service = $service,
 </pre>
 </div>
 </div>
-<h3>Fields</h3>
+</div>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="accounts">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="../analytics-v3/ManagementAccountsResourceResource.html">ManagementAccountsResourceResource</a>         <strong>accounts</strong> <a class="anchor-link"
             href="#accounts"
             title="Permalink to ManagementResource.accounts">#</a>
         </h4>
         <div class="doc">
-
 <pre class="source">
 final ManagementAccountsResourceResource accounts;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="goals">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="../analytics-v3/ManagementGoalsResourceResource.html">ManagementGoalsResourceResource</a>         <strong>goals</strong> <a class="anchor-link"
             href="#goals"
             title="Permalink to ManagementResource.goals">#</a>
         </h4>
         <div class="doc">
-
 <pre class="source">
 final ManagementGoalsResourceResource goals;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="profiles">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="../analytics-v3/ManagementProfilesResourceResource.html">ManagementProfilesResourceResource</a>         <strong>profiles</strong> <a class="anchor-link"
             href="#profiles"
             title="Permalink to ManagementResource.profiles">#</a>
         </h4>
         <div class="doc">
-
 <pre class="source">
 final ManagementProfilesResourceResource profiles;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to ManagementResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="segments">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="../analytics-v3/ManagementSegmentsResourceResource.html">ManagementSegmentsResourceResource</a>         <strong>segments</strong> <a class="anchor-link"
             href="#segments"
             title="Permalink to ManagementResource.segments">#</a>
         </h4>
         <div class="doc">
-
 <pre class="source">
 final ManagementSegmentsResourceResource segments;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="webproperties">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="../analytics-v3/ManagementWebpropertiesResourceResource.html">ManagementWebpropertiesResourceResource</a>         <strong>webproperties</strong> <a class="anchor-link"
             href="#webproperties"
             title="Permalink to ManagementResource.webproperties">#</a>
         </h4>
         <div class="doc">
-
 <pre class="source">
 final ManagementWebpropertiesResourceResource webproperties;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to ManagementResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to ManagementResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ManagementResource._internal">
+<button class="show-code">Code</button>
+new <strong>ManagementResource._internal</strong>(<a href="../analytics-v3/AnalyticsApi.html">AnalyticsApi</a> $service) <a class="anchor-link" href="#ManagementResource._internal"
+              title="Permalink to ManagementResource.ManagementResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+ManagementResource._internal(AnalyticsApi $service) : _$service = $service,
+  webproperties = new ManagementWebpropertiesResourceResource._internal($service),
+  segments = new ManagementSegmentsResourceResource._internal($service),
+  accounts = new ManagementAccountsResourceResource._internal($service),
+  goals = new ManagementGoalsResourceResource._internal($service),
+  profiles = new ManagementProfilesResourceResource._internal($service);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to ManagementResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to ManagementResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ManagementResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

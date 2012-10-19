@@ -1,0 +1,384 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>PollingLocation class / civicinfo-us_v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="civicinfo-us_v1" data-type="PollingLocation">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../civicinfo-us_v1.html">civicinfo-us_v1</a> &rsaquo; <a href="../civicinfo-us_v1/PollingLocation.html">PollingLocation</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>PollingLocation</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class PollingLocation extends IdentityHash {
+  /**
+ * The first date that this early vote site may be used. This field is not populated for polling
+ * locations.
+ */
+  core.String startDate;
+
+  /** A description of when this location is open. */
+  core.String pollingHours;
+
+  /**
+ * The last date that this early vote site may be used. This field is not populated for polling
+ * locations.
+ */
+  core.String endDate;
+
+  /** The name of the early vote site. This field is not populated for polling locations. */
+  core.String name;
+
+  /** Notes about this location (e.g. accessibility ramp or entrance to use) */
+  core.String notes;
+
+  /**
+ * The services provided by this early vote site. This field is not populated for polling locations.
+ */
+  core.String voterServices;
+
+  /**
+ * A list of sources for this location. If multiple sources are listed the data has been aggregated
+ * from those sources.
+ */
+  core.List&lt;Source&gt; sources;
+
+  /** The address of the location */
+  SimpleAddressType address;
+
+  /** Parses an instance from its JSON representation. */
+  static PollingLocation parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new PollingLocation();
+    result.startDate = identity(json["startDate"]);
+    result.pollingHours = identity(json["pollingHours"]);
+    result.endDate = identity(json["endDate"]);
+    result.name = identity(json["name"]);
+    result.notes = identity(json["notes"]);
+    result.voterServices = identity(json["voterServices"]);
+    result.sources = map(Source.parse)(json["sources"]);
+    result.address = SimpleAddressType.parse(json["address"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(PollingLocation value) {
+    if (value == null) return null;
+    final result = {};
+    result["startDate"] = identity(value.startDate);
+    result["pollingHours"] = identity(value.pollingHours);
+    result["endDate"] = identity(value.endDate);
+    result["name"] = identity(value.name);
+    result["notes"] = identity(value.notes);
+    result["voterServices"] = identity(value.voterServices);
+    result["sources"] = map(Source.serialize)(value.sources);
+    result["address"] = SimpleAddressType.serialize(value.address);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>PollingLocation</strong></span></p>
+<div>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<button class="show-code">Code</button>
+<a href="../civicinfo-us_v1/PollingLocation.html">PollingLocation</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to PollingLocation.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static PollingLocation parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new PollingLocation();
+  result.startDate = identity(json["startDate"]);
+  result.pollingHours = identity(json["pollingHours"]);
+  result.endDate = identity(json["endDate"]);
+  result.name = identity(json["name"]);
+  result.notes = identity(json["notes"]);
+  result.voterServices = identity(json["voterServices"]);
+  result.sources = map(Source.parse)(json["sources"]);
+  result.address = SimpleAddressType.parse(json["address"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../civicinfo-us_v1/PollingLocation.html">PollingLocation</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to PollingLocation.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(PollingLocation value) {
+  if (value == null) return null;
+  final result = {};
+  result["startDate"] = identity(value.startDate);
+  result["pollingHours"] = identity(value.pollingHours);
+  result["endDate"] = identity(value.endDate);
+  result["name"] = identity(value.name);
+  result["notes"] = identity(value.notes);
+  result["voterServices"] = identity(value.voterServices);
+  result["sources"] = map(Source.serialize)(value.sources);
+  result["address"] = SimpleAddressType.serialize(value.address);
+  return result;
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="address">
+<button class="show-code">Code</button>
+<a href="../civicinfo-us_v1/SimpleAddressType.html">SimpleAddressType</a>         <strong>address</strong> <a class="anchor-link"
+            href="#address"
+            title="Permalink to PollingLocation.address">#</a>
+        </h4>
+        <div class="doc">
+<p>The address of the location</p>
+<pre class="source">
+SimpleAddressType address;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="endDate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>endDate</strong> <a class="anchor-link"
+            href="#endDate"
+            title="Permalink to PollingLocation.endDate">#</a>
+        </h4>
+        <div class="doc">
+<p>The last date that this early vote site may be used. This field is not populated for polling
+locations.</p>
+<pre class="source">
+core.String endDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to PollingLocation.name">#</a>
+        </h4>
+        <div class="doc">
+<p>The name of the early vote site. This field is not populated for polling locations.</p>
+<pre class="source">
+core.String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="notes">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>notes</strong> <a class="anchor-link"
+            href="#notes"
+            title="Permalink to PollingLocation.notes">#</a>
+        </h4>
+        <div class="doc">
+<p>Notes about this location (e.g. accessibility ramp or entrance to use)</p>
+<pre class="source">
+core.String notes;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="pollingHours">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>pollingHours</strong> <a class="anchor-link"
+            href="#pollingHours"
+            title="Permalink to PollingLocation.pollingHours">#</a>
+        </h4>
+        <div class="doc">
+<p>A description of when this location is open.</p>
+<pre class="source">
+core.String pollingHours;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to PollingLocation.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="sources">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../civicinfo-us_v1/Source.html">Source</a>&gt;         <strong>sources</strong> <a class="anchor-link"
+            href="#sources"
+            title="Permalink to PollingLocation.sources">#</a>
+        </h4>
+        <div class="doc">
+<p>A list of sources for this location. If multiple sources are listed the data has been aggregated
+from those sources.</p>
+<pre class="source">
+core.List&lt;Source&gt; sources;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="startDate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>startDate</strong> <a class="anchor-link"
+            href="#startDate"
+            title="Permalink to PollingLocation.startDate">#</a>
+        </h4>
+        <div class="doc">
+<p>The first date that this early vote site may be used. This field is not populated for polling
+locations.</p>
+<pre class="source">
+core.String startDate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="voterServices">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>voterServices</strong> <a class="anchor-link"
+            href="#voterServices"
+            title="Permalink to PollingLocation.voterServices">#</a>
+        </h4>
+        <div class="doc">
+<p>The services provided by this early vote site. This field is not populated for polling locations.</p>
+<pre class="source">
+core.String voterServices;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to PollingLocation.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to PollingLocation.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to PollingLocation.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to PollingLocation.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to PollingLocation.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to PollingLocation.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

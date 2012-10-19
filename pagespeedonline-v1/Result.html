@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Result Class / pagespeedonline-v1 Library / Dart Documentation</title>
+        <title>Result class / pagespeedonline-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,107 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../pagespeedonline-v1.html">pagespeedonline-v1</a> &rsaquo; <a href="../pagespeedonline-v1/Result.html">Result</a></div>
+         &rsaquo; <a href="../pagespeedonline-v1.html">pagespeedonline-v1</a> &rsaquo; <a href="../pagespeedonline-v1/Result.html">Result</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Result</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Result extends IdentityHash {
+  /** Kind of result. */
+  core.String kind;
 
+  /**
+ * Localized Page Speed results. Contains a ruleResults entry for each Page Speed rule instantiated
+ * and run by the server.
+ */
+  ResultFormattedResults formattedResults;
+
+  /** Title of the page, as displayed in the browser's title bar. */
+  core.String title;
+
+  /** The version of the Page Speed SDK used to generate these results. */
+  ResultVersion version;
+
+  /**
+ * The Page Speed Score (0-100), which indicates how much faster a page could be. A high score
+ * indicates little room for improvement, while a lower score indicates more room for improvement.
+ */
+  core.int score;
+
+  /**
+ * Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error.
+ */
+  core.int responseCode;
+
+  /**
+ * List of rules that were specified in the request, but which the server did not know how to
+ * instantiate.
+ */
+  core.List&lt;core.String&gt; invalidRules;
+
+  /**
+ * Summary statistics for the page, such as number of JavaScript bytes, number of HTML bytes, etc.
+ */
+  ResultPageStats pageStats;
+
+  /** Canonicalized and final URL for the document, after following page redirects (if any). */
+  core.String id;
+
+  /** Parses an instance from its JSON representation. */
+  static Result parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Result();
+    result.kind = identity(json["kind"]);
+    result.formattedResults = ResultFormattedResults.parse(json["formattedResults"]);
+    result.title = identity(json["title"]);
+    result.version = ResultVersion.parse(json["version"]);
+    result.score = identity(json["score"]);
+    result.responseCode = identity(json["responseCode"]);
+    result.invalidRules = map(identity)(json["invalidRules"]);
+    result.pageStats = ResultPageStats.parse(json["pageStats"]);
+    result.id = identity(json["id"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Result value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["formattedResults"] = ResultFormattedResults.serialize(value.formattedResults);
+    result["title"] = identity(value.title);
+    result["version"] = ResultVersion.serialize(value.version);
+    result["score"] = identity(value.score);
+    result["responseCode"] = identity(value.responseCode);
+    result["invalidRules"] = map(identity)(value.invalidRules);
+    result["pageStats"] = ResultPageStats.serialize(value.pageStats);
+    result["id"] = identity(value.id);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Result</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../pagespeedonline-v1/Result.html">Result</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Result.parse">#</a></h4>
 <div class="doc">
@@ -55,7 +138,7 @@ static Result parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../pagespeedonline-v1/Result.html">Result</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Result.serialize">#</a></h4>
 <div class="doc">
@@ -78,21 +161,11 @@ static core.Object serialize(Result value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Result.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="formattedResults">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../pagespeedonline-v1/ResultFormattedResults.html">ResultFormattedResults</a>         <strong>formattedResults</strong> <a class="anchor-link"
             href="#formattedResults"
             title="Permalink to Result.formattedResults">#</a>
@@ -106,7 +179,7 @@ ResultFormattedResults formattedResults;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Result.id">#</a>
@@ -119,7 +192,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="invalidRules">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>invalidRules</strong> <a class="anchor-link"
             href="#invalidRules"
             title="Permalink to Result.invalidRules">#</a>
@@ -133,7 +206,7 @@ core.List&lt;core.String&gt; invalidRules;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Result.kind">#</a>
@@ -146,7 +219,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="pageStats">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../pagespeedonline-v1/ResultPageStats.html">ResultPageStats</a>         <strong>pageStats</strong> <a class="anchor-link"
             href="#pageStats"
             title="Permalink to Result.pageStats">#</a>
@@ -159,7 +232,7 @@ ResultPageStats pageStats;
 </div>
 </div>
 <div class="field"><h4 id="responseCode">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>responseCode</strong> <a class="anchor-link"
             href="#responseCode"
             title="Permalink to Result.responseCode">#</a>
@@ -171,8 +244,21 @@ core.int responseCode;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Result.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="score">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>score</strong> <a class="anchor-link"
             href="#score"
             title="Permalink to Result.score">#</a>
@@ -186,7 +272,7 @@ core.int score;
 </div>
 </div>
 <div class="field"><h4 id="title">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to Result.title">#</a>
@@ -199,7 +285,7 @@ core.String title;
 </div>
 </div>
 <div class="field"><h4 id="version">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../pagespeedonline-v1/ResultVersion.html">ResultVersion</a>         <strong>version</strong> <a class="anchor-link"
             href="#version"
             title="Permalink to Result.version">#</a>
@@ -209,6 +295,103 @@ core.String title;
 <pre class="source">
 ResultVersion version;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Result.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Result.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Result.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Result.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Result.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Result.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

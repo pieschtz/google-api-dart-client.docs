@@ -14,45 +14,23 @@
         <div class="header">
           <a href="index.html"><div class="logo"></div></a>
           <a href="index.html">Dart Documentation</a>
-         &rsaquo; <a href="utils.html">utils</a></div>
+         &rsaquo; <a href="utils.html">utils</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
 <h2><strong>utils</strong> library</h2>
-<div class="doc"></div>
-<h3>Methods</h3>
-<div class="method"><h4 id="identity">
-<span class="show-code">Code</span>
-<strong>identity</strong>(t) <a class="anchor-link" href="#identity"
-              title="Permalink to identity">#</a></h4>
-<div class="doc">
-<p>The identity transform.</p>
-<pre class="source">
-identity(t) =&gt; t;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="map">
-<span class="show-code">Code</span>
-<a href="utils/Transform.html">Transform</a> <strong>map</strong>(<a href="utils/Transform.html">Transform</a> transform) <a class="anchor-link" href="#map"
-              title="Permalink to map">#</a></h4>
-<div class="doc">
-<p>Returns a Transform&lt;List> that applies <code>transform</code> to every element.</p>
-<pre class="source">
-Transform&lt;List&gt; map(Transform&lt;Object&gt; transform) {
-  return (List input) {
-    if (input == null) return null;
-    final result = new List();
-    input.forEach((value) =&gt; result.add(transform(value)));
-    return result;
-  };
-}
-</pre>
-</div>
-</div>
+<div>
+<h3>Functions</h3>
 <div class="method"><h4 id="mapValues">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="utils/Transform.html">Transform</a> <strong>mapValues</strong>(<a href="utils/Transform.html">Transform</a> transform) <a class="anchor-link" href="#mapValues"
               title="Permalink to mapValues">#</a></h4>
 <div class="doc">
@@ -69,8 +47,26 @@ Transform&lt;Map&gt; mapValues(Transform&lt;Object&gt; transform) {
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="map">
+<button class="show-code">Code</button>
+<a href="utils/Transform.html">Transform</a> <strong>map</strong>(<a href="utils/Transform.html">Transform</a> transform) <a class="anchor-link" href="#map"
+              title="Permalink to map">#</a></h4>
+<div class="doc">
+<p>Returns a Transform&lt;List> that applies <code>transform</code> to every element.</p>
+<pre class="source">
+Transform&lt;List&gt; map(Transform&lt;Object&gt; transform) {
+  return (List input) {
+    if (input == null) return null;
+    final result = new List();
+    input.forEach((value) =&gt; result.add(transform(value)));
+    return result;
+  };
+}
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="random">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>random</strong>() <a class="anchor-link" href="#random"
               title="Permalink to random">#</a></h4>
 <div class="doc">
@@ -84,20 +80,19 @@ int random() {
 </pre>
 </div>
 </div>
-<h3>Fields</h3>
-<div class="field"><h4 id="UNSPECIFIED">
-<span class="show-code">Code</span>
-final         <strong>UNSPECIFIED</strong> <a class="anchor-link"
-            href="#UNSPECIFIED"
-            title="Permalink to UNSPECIFIED">#</a>
-        </h4>
-        <div class="doc">
-<p>A sentinel to be used as a default parameter value.</p>
+<div class="method"><h4 id="identity">
+<button class="show-code">Code</button>
+<strong>identity</strong>(t) <a class="anchor-link" href="#identity"
+              title="Permalink to identity">#</a></h4>
+<div class="doc">
+<p>The identity transform.</p>
 <pre class="source">
-final UNSPECIFIED = const _Unspecified._internal();
+identity(t) =&gt; t;
 </pre>
 </div>
 </div>
+</div>
+<div>
 <h3>Classes</h3>
           <div class="type">
           <h4>
@@ -111,13 +106,16 @@ final UNSPECIFIED = const _Unspecified._internal();
           </h4>
           </div>
           
-<h3>Interfaces</h3>
+</div>
+<div>
+<h3>Typedefs</h3>
           <div class="type">
           <h4>
-            <a href="utils/Transform.html"><strong>Transform</strong></a>
+            <a href="utils/Transform.html"><strong>Transform&lt;T&gt;</strong></a>
           </h4>
           </div>
           
+</div>
         </div>
         <div class="clear"></div>
         </div>

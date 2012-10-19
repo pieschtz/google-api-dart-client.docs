@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>MyconfigResource Class / books-v1 Library / Dart Documentation</title>
+        <title>MyconfigResource class / books-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,34 +14,258 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/MyconfigResource.html">MyconfigResource</a></div>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/MyconfigResource.html">MyconfigResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>MyconfigResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class MyconfigResource extends core.Object {
+  final BooksApi _$service;
+  
+  MyconfigResource._internal(BooksApi $service) : _$service = $service;
 
+  // Method MyconfigResource.ReleaseDownloadAccess
+  /**
+   * Release downloaded content access restriction.
+   *
+   *    * [volumeIds] The volume(s) to release restrictions for.
+   *    * [cpksver] The device/version ID from which to release the restriction.
+   *    * [locale] ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
+   *    * [source] String to identify the originator of this request.
+   */
+  core.Future&lt;DownloadAccesses&gt; releaseDownloadAccess(core.List&lt;core.String&gt; volumeIds, core.String cpksver, {core.String locale, core.String source}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?volumeIds) $queryParams["volumeIds"] = volumeIds;
+    if (?cpksver) $queryParams["cpksver"] = cpksver;
+    if (?locale) $queryParams["locale"] = locale;
+    if (?source) $queryParams["source"] = source;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "myconfig/releaseDownloadAccess";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; DownloadAccesses.parse(JSON.parse($text)));
+  }
+
+  // Method MyconfigResource.RequestAccess
+  /**
+   * Request concurrent and download access restrictions.
+   *
+   *    * [source] String to identify the originator of this request.
+   *    * [volumeId] The volume to request concurrent/download restrictions for.
+   *    * [nonce] The client nonce value.
+   *    * [cpksver] The device/version ID from which to request the restrictions.
+   *    * [locale] ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
+   */
+  core.Future&lt;RequestAccess&gt; requestAccess(core.String source, core.String volumeId, core.String nonce, core.String cpksver, {core.String locale}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?source) $queryParams["source"] = source;
+    if (?volumeId) $queryParams["volumeId"] = volumeId;
+    if (?nonce) $queryParams["nonce"] = nonce;
+    if (?cpksver) $queryParams["cpksver"] = cpksver;
+    if (?locale) $queryParams["locale"] = locale;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "myconfig/requestAccess";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; RequestAccess.parse(JSON.parse($text)));
+  }
+
+  // Method MyconfigResource.SyncVolumeLicenses
+  /**
+   * Request downloaded content access for specified volumes on the My eBooks shelf.
+   *
+   *    * [source] String to identify the originator of this request.
+   *    * [nonce] The client nonce value.
+   *    * [cpksver] The device/version ID from which to release the restriction.
+   *    * [locale] ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
+   *    * [showPreorders] Set to true to show pre-ordered books. Defaults to false.
+   *    * [volumeIds] The volume(s) to request download restrictions for.
+   */
+  core.Future&lt;Volumes&gt; syncVolumeLicenses(core.String source, core.String nonce, core.String cpksver, {core.String locale, core.bool showPreorders, core.List&lt;core.String&gt; volumeIds}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?source) $queryParams["source"] = source;
+    if (?nonce) $queryParams["nonce"] = nonce;
+    if (?cpksver) $queryParams["cpksver"] = cpksver;
+    if (?locale) $queryParams["locale"] = locale;
+    if (?showPreorders) $queryParams["showPreorders"] = showPreorders;
+    if (?volumeIds) $queryParams["volumeIds"] = volumeIds;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "myconfig/syncVolumeLicenses";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Volumes.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="MyconfigResource">
-<span class="show-code">Code</span>
-new <strong>MyconfigResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MyconfigResource"
-              title="Permalink to MyconfigResource.MyconfigResource">#</a></h4>
+<div class="method"><h4 id="MyconfigResource._internal">
+<button class="show-code">Code</button>
+new <strong>MyconfigResource._internal</strong>(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MyconfigResource._internal"
+              title="Permalink to MyconfigResource.MyconfigResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 MyconfigResource._internal(BooksApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to MyconfigResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to MyconfigResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to MyconfigResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="MyconfigResource._internal">
+<button class="show-code">Code</button>
+new <strong>MyconfigResource._internal</strong>(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MyconfigResource._internal"
+              title="Permalink to MyconfigResource.MyconfigResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+MyconfigResource._internal(BooksApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to MyconfigResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to MyconfigResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="releaseDownloadAccess">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/DownloadAccesses.html">DownloadAccesses</a>&gt; <strong>releaseDownloadAccess</strong>(<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; volumeIds, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cpksver, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#releaseDownloadAccess"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/DownloadAccesses.html">DownloadAccesses</a>&gt; <strong>releaseDownloadAccess</strong>(<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; volumeIds, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cpksver, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale, <a href="http://api.dartlang.org/dart_core/String.html">String</a> source]) <a class="anchor-link" href="#releaseDownloadAccess"
               title="Permalink to MyconfigResource.releaseDownloadAccess">#</a></h4>
 <div class="doc">
 <p>Release downloaded content access restriction.</p><ul><li>
@@ -50,14 +274,14 @@ MyconfigResource._internal(BooksApi $service) : _$service = $service;
 <span class="param">locale</span> ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-core.Future&lt;DownloadAccesses&gt; releaseDownloadAccess(core.List&lt;core.String&gt; volumeIds, core.String cpksver, [core.String locale = UNSPECIFIED, core.String source = UNSPECIFIED]) {
+core.Future&lt;DownloadAccesses&gt; releaseDownloadAccess(core.List&lt;core.String&gt; volumeIds, core.String cpksver, {core.String locale, core.String source}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != volumeIds) $queryParams["volumeIds"] = volumeIds;
-  if (UNSPECIFIED != cpksver) $queryParams["cpksver"] = cpksver;
-  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (?volumeIds) $queryParams["volumeIds"] = volumeIds;
+  if (?cpksver) $queryParams["cpksver"] = cpksver;
+  if (?locale) $queryParams["locale"] = locale;
+  if (?source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -68,7 +292,7 @@ core.Future&lt;DownloadAccesses&gt; releaseDownloadAccess(core.List&lt;core.Stri
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "myconfig/releaseDownloadAccess";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -80,8 +304,8 @@ core.Future&lt;DownloadAccesses&gt; releaseDownloadAccess(core.List&lt;core.Stri
 </div>
 </div>
 <div class="method"><h4 id="requestAccess">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/RequestAccess.html">RequestAccess</a>&gt; <strong>requestAccess</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> source, <a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> nonce, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cpksver, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale = UNSPECIFIED]) <a class="anchor-link" href="#requestAccess"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/RequestAccess.html">RequestAccess</a>&gt; <strong>requestAccess</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> source, <a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> nonce, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cpksver, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale]) <a class="anchor-link" href="#requestAccess"
               title="Permalink to MyconfigResource.requestAccess">#</a></h4>
 <div class="doc">
 <p>Request concurrent and download access restrictions.</p><ul><li>
@@ -91,15 +315,15 @@ core.Future&lt;DownloadAccesses&gt; releaseDownloadAccess(core.List&lt;core.Stri
 <span class="param">cpksver</span> The device/version ID from which to request the restrictions.</li><li>
 <span class="param">locale</span> ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</li></ul>
 <pre class="source">
-core.Future&lt;RequestAccess&gt; requestAccess(core.String source, core.String volumeId, core.String nonce, core.String cpksver, [core.String locale = UNSPECIFIED]) {
+core.Future&lt;RequestAccess&gt; requestAccess(core.String source, core.String volumeId, core.String nonce, core.String cpksver, {core.String locale}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
-  if (UNSPECIFIED != volumeId) $queryParams["volumeId"] = volumeId;
-  if (UNSPECIFIED != nonce) $queryParams["nonce"] = nonce;
-  if (UNSPECIFIED != cpksver) $queryParams["cpksver"] = cpksver;
-  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
+  if (?source) $queryParams["source"] = source;
+  if (?volumeId) $queryParams["volumeId"] = volumeId;
+  if (?nonce) $queryParams["nonce"] = nonce;
+  if (?cpksver) $queryParams["cpksver"] = cpksver;
+  if (?locale) $queryParams["locale"] = locale;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -110,7 +334,7 @@ core.Future&lt;RequestAccess&gt; requestAccess(core.String source, core.String v
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "myconfig/requestAccess";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -122,8 +346,8 @@ core.Future&lt;RequestAccess&gt; requestAccess(core.String source, core.String v
 </div>
 </div>
 <div class="method"><h4 id="syncVolumeLicenses">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Volumes.html">Volumes</a>&gt; <strong>syncVolumeLicenses</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> source, <a href="http://api.dartlang.org/dart_core/String.html">String</a> nonce, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cpksver, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showPreorders = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; volumeIds = UNSPECIFIED]) <a class="anchor-link" href="#syncVolumeLicenses"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Volumes.html">Volumes</a>&gt; <strong>syncVolumeLicenses</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> source, <a href="http://api.dartlang.org/dart_core/String.html">String</a> nonce, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cpksver, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showPreorders, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; volumeIds]) <a class="anchor-link" href="#syncVolumeLicenses"
               title="Permalink to MyconfigResource.syncVolumeLicenses">#</a></h4>
 <div class="doc">
 <p>Request downloaded content access for specified volumes on the My eBooks shelf.</p><ul><li>
@@ -134,16 +358,16 @@ core.Future&lt;RequestAccess&gt; requestAccess(core.String source, core.String v
 <span class="param">showPreorders</span> Set to true to show pre-ordered books. Defaults to false.</li><li>
 <span class="param">volumeIds</span> The volume(s) to request download restrictions for.</li></ul>
 <pre class="source">
-core.Future&lt;Volumes&gt; syncVolumeLicenses(core.String source, core.String nonce, core.String cpksver, [core.String locale = UNSPECIFIED, core.bool showPreorders = UNSPECIFIED, core.List&lt;core.String&gt; volumeIds = UNSPECIFIED]) {
+core.Future&lt;Volumes&gt; syncVolumeLicenses(core.String source, core.String nonce, core.String cpksver, {core.String locale, core.bool showPreorders, core.List&lt;core.String&gt; volumeIds}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
-  if (UNSPECIFIED != nonce) $queryParams["nonce"] = nonce;
-  if (UNSPECIFIED != cpksver) $queryParams["cpksver"] = cpksver;
-  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
-  if (UNSPECIFIED != showPreorders) $queryParams["showPreorders"] = showPreorders;
-  if (UNSPECIFIED != volumeIds) $queryParams["volumeIds"] = volumeIds;
+  if (?source) $queryParams["source"] = source;
+  if (?nonce) $queryParams["nonce"] = nonce;
+  if (?cpksver) $queryParams["cpksver"] = cpksver;
+  if (?locale) $queryParams["locale"] = locale;
+  if (?showPreorders) $queryParams["showPreorders"] = showPreorders;
+  if (?volumeIds) $queryParams["volumeIds"] = volumeIds;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -154,7 +378,7 @@ core.Future&lt;Volumes&gt; syncVolumeLicenses(core.String source, core.String no
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "myconfig/syncVolumeLicenses";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -163,6 +387,18 @@ core.Future&lt;Volumes&gt; syncVolumeLicenses(core.String source, core.String no
       .transform((final $text) =&gt; Volumes.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to MyconfigResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

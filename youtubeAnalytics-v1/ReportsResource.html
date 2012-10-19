@@ -1,0 +1,299 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ReportsResource class / youtubeAnalytics-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="youtubeAnalytics-v1" data-type="ReportsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../youtubeAnalytics-v1.html">youtubeAnalytics-v1</a> &rsaquo; <a href="../youtubeAnalytics-v1/ReportsResource.html">ReportsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ReportsResource</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class ReportsResource extends core.Object {
+  final YoutubeAnalyticsApi _$service;
+  
+  ReportsResource._internal(YoutubeAnalyticsApi $service) : _$service = $service;
+
+  // Method ReportsResource.Query
+  /**
+   * Retrieve your YouTube Analytics reports.
+   *
+   *    * [ids] Unique channel or content owner ID for retrieving YouTube Analytics data. Either channel==C or
+   *        contentOwner==O where 'C' is the encrypted channel ID and 'O' is the content owner name.
+   *    * [startDate] Start date for fetching YouTube Analytics data. All requests should specify a start date formatted
+   *        as YYYY-MM-DD.
+   *    * [endDate] End date for fetching YouTube Analytics data. All requests should specify an end date formatted as
+   *        YYYY-MM-DD.
+   *    * [metrics] A comma-separated list of YouTube Analytics metrics. E.g., 'views' or 'likes,dislikes'
+   *    * [maxResults] The maximum number of rows to include in the response.
+
+  Minimum: 1.
+   *    * [sort] A comma-separated list of dimensions or metrics that determine the sort order for YouTube Analytics
+   *        data. By default the sort order is ascending, '-' prefix causes descending sort order.
+   *    * [dimensions] A comma-separated list of YouTube Analytics dimensions. E.g., 'video', or 'ageGroup,gender'.
+   *    * [startIndex] An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with
+   *        the max-results parameter (one-based, inclusive).
+
+  Minimum: 1.
+   *    * [filters] A list of dimension filters to be applied to YouTube Analytics data. Multiple filters can be joined
+   *        together with the ';' character. The returned result table will satisfy both filters.
+   *        E.g., video==dMH0bHeiRNg;country==IT will restrict the returned stats to the given video
+   *        and the country Italy.
+   */
+  core.Future&lt;ResultTable&gt; query(core.String ids, core.String startDate, core.String endDate, core.String metrics, {core.int maxResults, core.String sort, core.String dimensions, core.int startIndex, core.String filters}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?ids) $queryParams["ids"] = ids;
+    if (?startDate) $queryParams["start-date"] = startDate;
+    if (?endDate) $queryParams["end-date"] = endDate;
+    if (?metrics) $queryParams["metrics"] = metrics;
+    if (?maxResults) $queryParams["max-results"] = maxResults;
+    if (?sort) $queryParams["sort"] = sort;
+    if (?dimensions) $queryParams["dimensions"] = dimensions;
+    if (?startIndex) $queryParams["start-index"] = startIndex;
+    if (?filters) $queryParams["filters"] = filters;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "reports";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; ResultTable.parse(JSON.parse($text)));
+  }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ReportsResource._internal">
+<button class="show-code">Code</button>
+new <strong>ReportsResource._internal</strong>(<a href="../youtubeAnalytics-v1/YoutubeAnalyticsApi.html">YoutubeAnalyticsApi</a> $service) <a class="anchor-link" href="#ReportsResource._internal"
+              title="Permalink to ReportsResource.ReportsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+ReportsResource._internal(YoutubeAnalyticsApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to ReportsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to ReportsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to ReportsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to ReportsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to ReportsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="query">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../youtubeAnalytics-v1/ResultTable.html">ResultTable</a>&gt; <strong>query</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> ids, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startDate, <a href="http://api.dartlang.org/dart_core/String.html">String</a> endDate, <a href="http://api.dartlang.org/dart_core/String.html">String</a> metrics, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> sort, <a href="http://api.dartlang.org/dart_core/String.html">String</a> dimensions, <a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex, <a href="http://api.dartlang.org/dart_core/String.html">String</a> filters]) <a class="anchor-link" href="#query"
+              title="Permalink to ReportsResource.query">#</a></h4>
+<div class="doc">
+<p>Retrieve your YouTube Analytics reports.</p><ul><li>
+<p>
+<span class="param">ids</span> Unique channel or content owner ID for retrieving YouTube Analytics data. Either channel==C or
+   contentOwner==O where 'C' is the encrypted channel ID and 'O' is the content owner name.</p></li><li>
+<p>
+<span class="param">startDate</span> Start date for fetching YouTube Analytics data. All requests should specify a start date formatted
+   as YYYY-MM-DD.</p></li><li>
+<p>
+<span class="param">endDate</span> End date for fetching YouTube Analytics data. All requests should specify an end date formatted as
+   YYYY-MM-DD.</p></li><li>
+<span class="param">metrics</span> A comma-separated list of YouTube Analytics metrics. E.g., 'views' or 'likes,dislikes'</li><li>
+<span class="param">maxResults</span> The maximum number of rows to include in the response.</li></ul>
+<p>Minimum: 1.
+   * 
+<span class="param">sort</span> A comma-separated list of dimensions or metrics that determine the sort order for YouTube Analytics</p>
+<pre><code>   data. By default the sort order is ascending, '-' prefix causes descending sort order.
+</code></pre><ul><li>
+<span class="param">dimensions</span> A comma-separated list of YouTube Analytics dimensions. E.g., 'video', or 'ageGroup,gender'.</li><li>
+<p>
+<span class="param">startIndex</span> An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with
+   the max-results parameter (one-based, inclusive).</p></li></ul>
+<p>Minimum: 1.
+   * 
+<span class="param">filters</span> A list of dimension filters to be applied to YouTube Analytics data. Multiple filters can be joined</p>
+<pre><code>   together with the ';' character. The returned result table will satisfy both filters.
+   E.g., video==dMH0bHeiRNg;country==IT will restrict the returned stats to the given video
+   and the country Italy.
+</code></pre>
+<pre class="source">
+core.Future&lt;ResultTable&gt; query(core.String ids, core.String startDate, core.String endDate, core.String metrics, {core.int maxResults, core.String sort, core.String dimensions, core.int startIndex, core.String filters}) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (?ids) $queryParams["ids"] = ids;
+  if (?startDate) $queryParams["start-date"] = startDate;
+  if (?endDate) $queryParams["end-date"] = endDate;
+  if (?metrics) $queryParams["metrics"] = metrics;
+  if (?maxResults) $queryParams["max-results"] = maxResults;
+  if (?sort) $queryParams["sort"] = sort;
+  if (?dimensions) $queryParams["dimensions"] = dimensions;
+  if (?startIndex) $queryParams["start-index"] = startIndex;
+  if (?filters) $queryParams["filters"] = filters;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "reports";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; ResultTable.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ReportsResource._internal">
+<button class="show-code">Code</button>
+new <strong>ReportsResource._internal</strong>(<a href="../youtubeAnalytics-v1/YoutubeAnalyticsApi.html">YoutubeAnalyticsApi</a> $service) <a class="anchor-link" href="#ReportsResource._internal"
+              title="Permalink to ReportsResource.ReportsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+ReportsResource._internal(YoutubeAnalyticsApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ReportsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

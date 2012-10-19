@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>RevisionsResource Class / drive-v2 Library / Dart Documentation</title>
+        <title>RevisionsResource class / drive-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,248 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/RevisionsResource.html">RevisionsResource</a></div>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/RevisionsResource.html">RevisionsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>RevisionsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class RevisionsResource extends core.Object {
+  final DriveApi _$service;
+  
+  RevisionsResource._internal(DriveApi $service) : _$service = $service;
 
+  // Method RevisionsResource.Patch
+  /**
+   * Updates a revision. This method supports patch semantics.
+   *
+   *    * [content] the Revision
+   *    * [fileId] The ID for the file.
+   *    * [revisionId] The ID for the revision.
+   */
+  core.Future&lt;Revision&gt; patch(core.String fileId, core.String revisionId, Revision content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["fileId"] = fileId;
+    $pathParams["revisionId"] = revisionId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Revision.serialize(content));
+    final $path = "files/{fileId}/revisions/{revisionId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Revision.parse(JSON.parse($text)));
+  }
+
+  // Method RevisionsResource.Get
+  /**
+   * Gets a specific revision.
+   *
+   *    * [fileId] The ID of the file.
+   *    * [revisionId] The ID of the revision.
+   */
+  core.Future&lt;Revision&gt; get(core.String fileId, core.String revisionId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["fileId"] = fileId;
+    $pathParams["revisionId"] = revisionId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "files/{fileId}/revisions/{revisionId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Revision.parse(JSON.parse($text)));
+  }
+
+  // Method RevisionsResource.List
+  /**
+   * Lists a file's revisions.
+   *
+   *    * [fileId] The ID of the file.
+   */
+  core.Future&lt;RevisionList&gt; list(core.String fileId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["fileId"] = fileId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "files/{fileId}/revisions";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; RevisionList.parse(JSON.parse($text)));
+  }
+
+  // Method RevisionsResource.Update
+  /**
+   * Updates a revision.
+   *
+   *    * [content] the Revision
+   *    * [fileId] The ID for the file.
+   *    * [revisionId] The ID for the revision.
+   */
+  core.Future&lt;Revision&gt; update(core.String fileId, core.String revisionId, Revision content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["fileId"] = fileId;
+    $pathParams["revisionId"] = revisionId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Revision.serialize(content));
+    final $path = "files/{fileId}/revisions/{revisionId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Revision.parse(JSON.parse($text)));
+  }
+
+  // Method RevisionsResource.Delete
+  /**
+   * Removes a revision.
+   *
+   *    * [fileId] The ID of the file.
+   *    * [revisionId] The ID of the revision.
+   */
+  core.Future delete(core.String fileId, core.String revisionId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["fileId"] = fileId;
+    $pathParams["revisionId"] = revisionId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "files/{fileId}/revisions/{revisionId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="RevisionsResource">
-<span class="show-code">Code</span>
-new <strong>RevisionsResource</strong>._internal(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#RevisionsResource"
-              title="Permalink to RevisionsResource.RevisionsResource">#</a></h4>
+<div class="method"><h4 id="RevisionsResource._internal">
+<button class="show-code">Code</button>
+new <strong>RevisionsResource._internal</strong>(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#RevisionsResource._internal"
+              title="Permalink to RevisionsResource.RevisionsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 RevisionsResource._internal(DriveApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to RevisionsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to RevisionsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> fileId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> revisionId) <a class="anchor-link" href="#delete"
               title="Permalink to RevisionsResource.delete">#</a></h4>
 <div class="doc">
@@ -64,7 +279,7 @@ core.Future delete(core.String fileId, core.String revisionId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "files/{fileId}/revisions/{revisionId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $http = new http.Request($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -76,7 +291,7 @@ core.Future delete(core.String fileId, core.String revisionId) {
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../drive-v2/Revision.html">Revision</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> fileId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> revisionId) <a class="anchor-link" href="#get"
               title="Permalink to RevisionsResource.get">#</a></h4>
 <div class="doc">
@@ -100,7 +315,7 @@ core.Future&lt;Revision&gt; get(core.String fileId, core.String revisionId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "files/{fileId}/revisions/{revisionId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -111,8 +326,26 @@ core.Future&lt;Revision&gt; get(core.String fileId, core.String revisionId) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to RevisionsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../drive-v2/RevisionList.html">RevisionList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> fileId) <a class="anchor-link" href="#list"
               title="Permalink to RevisionsResource.list">#</a></h4>
 <div class="doc">
@@ -134,7 +367,7 @@ core.Future&lt;RevisionList&gt; list(core.String fileId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "files/{fileId}/revisions";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -145,8 +378,39 @@ core.Future&lt;RevisionList&gt; list(core.String fileId) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to RevisionsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to RevisionsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../drive-v2/Revision.html">Revision</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> fileId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> revisionId, <a href="../drive-v2/Revision.html">Revision</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to RevisionsResource.patch">#</a></h4>
 <div class="doc">
@@ -173,7 +437,7 @@ core.Future&lt;Revision&gt; patch(core.String fileId, core.String revisionId, Re
   final $body = JSON.stringify(Revision.serialize(content));
   final $path = "files/{fileId}/revisions/{revisionId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -184,8 +448,29 @@ core.Future&lt;Revision&gt; patch(core.String fileId, core.String revisionId, Re
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="RevisionsResource._internal">
+<button class="show-code">Code</button>
+new <strong>RevisionsResource._internal</strong>(<a href="../drive-v2/DriveApi.html">DriveApi</a> $service) <a class="anchor-link" href="#RevisionsResource._internal"
+              title="Permalink to RevisionsResource.RevisionsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+RevisionsResource._internal(DriveApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to RevisionsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../drive-v2/Revision.html">Revision</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> fileId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> revisionId, <a href="../drive-v2/Revision.html">Revision</a> content) <a class="anchor-link" href="#update"
               title="Permalink to RevisionsResource.update">#</a></h4>
 <div class="doc">
@@ -212,7 +497,7 @@ core.Future&lt;Revision&gt; update(core.String fileId, core.String revisionId, R
   final $body = JSON.stringify(Revision.serialize(content));
   final $path = "files/{fileId}/revisions/{revisionId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -221,6 +506,7 @@ core.Future&lt;Revision&gt; update(core.String fileId, core.String revisionId, R
       .transform((final $text) =&gt; Revision.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

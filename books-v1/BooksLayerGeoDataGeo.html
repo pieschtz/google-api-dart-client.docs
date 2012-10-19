@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>BooksLayerGeoDataGeo Class / books-v1 Library / Dart Documentation</title>
+        <title>BooksLayerGeoDataGeo class / books-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,98 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/BooksLayerGeoDataGeo.html">BooksLayerGeoDataGeo</a></div>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/BooksLayerGeoDataGeo.html">BooksLayerGeoDataGeo</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>BooksLayerGeoDataGeo</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class BooksLayerGeoDataGeo extends IdentityHash {
+  /** The country code of the location. */
+  core.String countryCode;
 
+  /**
+ * The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the
+ * entire world can be seen on one map) to 21+ (down to individual buildings). See:
+ * https://developers.google.com/maps/documentation/staticmaps/#Zoomlevels
+ */
+  core.int zoom;
+
+  /** The longitude of the location. */
+  core.double longitude;
+
+  /**
+ * The type of map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN
+ */
+  core.String mapType;
+
+  /** The latitude of the location. */
+  core.double latitude;
+
+  /**
+ * The boundary of the location as a set of loops containing pairs of latitude, longitude
+ * coordinates.
+ */
+  core.List&lt;core.List&lt;BooksLayerGeoDataGeoBoundary&gt;&gt; boundary;
+
+  /** The viewport for showing this location. This is a latitude, longitude rectangle. */
+  BooksLayerGeoDataGeoViewport viewport;
+
+  /** The cache policy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER */
+  core.String cachePolicy;
+
+  /** Parses an instance from its JSON representation. */
+  static BooksLayerGeoDataGeo parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new BooksLayerGeoDataGeo();
+    result.countryCode = identity(json["countryCode"]);
+    result.zoom = identity(json["zoom"]);
+    result.longitude = identity(json["longitude"]);
+    result.mapType = identity(json["mapType"]);
+    result.latitude = identity(json["latitude"]);
+    result.boundary = map(map(BooksLayerGeoDataGeoBoundary.parse))(json["boundary"]);
+    result.viewport = BooksLayerGeoDataGeoViewport.parse(json["viewport"]);
+    result.cachePolicy = identity(json["cachePolicy"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(BooksLayerGeoDataGeo value) {
+    if (value == null) return null;
+    final result = {};
+    result["countryCode"] = identity(value.countryCode);
+    result["zoom"] = identity(value.zoom);
+    result["longitude"] = identity(value.longitude);
+    result["mapType"] = identity(value.mapType);
+    result["latitude"] = identity(value.latitude);
+    result["boundary"] = map(map(BooksLayerGeoDataGeoBoundary.serialize))(value.boundary);
+    result["viewport"] = BooksLayerGeoDataGeoViewport.serialize(value.viewport);
+    result["cachePolicy"] = identity(value.cachePolicy);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>BooksLayerGeoDataGeo</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/BooksLayerGeoDataGeo.html">BooksLayerGeoDataGeo</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to BooksLayerGeoDataGeo.parse">#</a></h4>
 <div class="doc">
@@ -41,7 +115,6 @@ static BooksLayerGeoDataGeo parse(core.Map&lt;core.String, core.Object&gt; json)
   if (json == null) return null;
   final result = new BooksLayerGeoDataGeo();
   result.countryCode = identity(json["countryCode"]);
-  result.title = identity(json["title"]);
   result.zoom = identity(json["zoom"]);
   result.longitude = identity(json["longitude"]);
   result.mapType = identity(json["mapType"]);
@@ -55,7 +128,7 @@ static BooksLayerGeoDataGeo parse(core.Map&lt;core.String, core.Object&gt; json)
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/BooksLayerGeoDataGeo.html">BooksLayerGeoDataGeo</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to BooksLayerGeoDataGeo.serialize">#</a></h4>
 <div class="doc">
@@ -65,7 +138,6 @@ static core.Object serialize(BooksLayerGeoDataGeo value) {
   if (value == null) return null;
   final result = {};
   result["countryCode"] = identity(value.countryCode);
-  result["title"] = identity(value.title);
   result["zoom"] = identity(value.zoom);
   result["longitude"] = identity(value.longitude);
   result["mapType"] = identity(value.mapType);
@@ -78,21 +150,11 @@ static core.Object serialize(BooksLayerGeoDataGeo value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to BooksLayerGeoDataGeo.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="boundary">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../books-v1/BooksLayerGeoDataGeoBoundary.html">BooksLayerGeoDataGeoBoundary</a>&gt;&gt;         <strong>boundary</strong> <a class="anchor-link"
             href="#boundary"
             title="Permalink to BooksLayerGeoDataGeo.boundary">#</a>
@@ -106,7 +168,7 @@ core.List&lt;core.List&lt;BooksLayerGeoDataGeoBoundary&gt;&gt; boundary;
 </div>
 </div>
 <div class="field"><h4 id="cachePolicy">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>cachePolicy</strong> <a class="anchor-link"
             href="#cachePolicy"
             title="Permalink to BooksLayerGeoDataGeo.cachePolicy">#</a>
@@ -119,7 +181,7 @@ core.String cachePolicy;
 </div>
 </div>
 <div class="field"><h4 id="countryCode">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>countryCode</strong> <a class="anchor-link"
             href="#countryCode"
             title="Permalink to BooksLayerGeoDataGeo.countryCode">#</a>
@@ -132,7 +194,7 @@ core.String countryCode;
 </div>
 </div>
 <div class="field"><h4 id="latitude">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>latitude</strong> <a class="anchor-link"
             href="#latitude"
             title="Permalink to BooksLayerGeoDataGeo.latitude">#</a>
@@ -145,7 +207,7 @@ core.double latitude;
 </div>
 </div>
 <div class="field"><h4 id="longitude">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>longitude</strong> <a class="anchor-link"
             href="#longitude"
             title="Permalink to BooksLayerGeoDataGeo.longitude">#</a>
@@ -158,7 +220,7 @@ core.double longitude;
 </div>
 </div>
 <div class="field"><h4 id="mapType">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>mapType</strong> <a class="anchor-link"
             href="#mapType"
             title="Permalink to BooksLayerGeoDataGeo.mapType">#</a>
@@ -170,22 +232,21 @@ core.String mapType;
 </pre>
 </div>
 </div>
-<div class="field"><h4 id="title">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
-            href="#title"
-            title="Permalink to BooksLayerGeoDataGeo.title">#</a>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to BooksLayerGeoDataGeo.runtimeType">#</a>
         </h4>
-        <div class="doc">
-<p>The display title and localized canonical name to use when searching for this entity on Google
-search.</p>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
 <pre class="source">
-core.String title;
+external Type get runtimeType;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="viewport">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/BooksLayerGeoDataGeoViewport.html">BooksLayerGeoDataGeoViewport</a>         <strong>viewport</strong> <a class="anchor-link"
             href="#viewport"
             title="Permalink to BooksLayerGeoDataGeo.viewport">#</a>
@@ -198,7 +259,7 @@ BooksLayerGeoDataGeoViewport viewport;
 </div>
 </div>
 <div class="field"><h4 id="zoom">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>zoom</strong> <a class="anchor-link"
             href="#zoom"
             title="Permalink to BooksLayerGeoDataGeo.zoom">#</a>
@@ -210,6 +271,103 @@ https://developers.google.com/maps/documentation/staticmaps/#Zoomlevels</p>
 <pre class="source">
 core.int zoom;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to BooksLayerGeoDataGeo.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to BooksLayerGeoDataGeo.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to BooksLayerGeoDataGeo.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to BooksLayerGeoDataGeo.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to BooksLayerGeoDataGeo.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to BooksLayerGeoDataGeo.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

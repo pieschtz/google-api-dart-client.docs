@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>LayersVolumeAnnotationsResourceResource Class / books-v1 Library / Dart Documentation</title>
+        <title>LayersVolumeAnnotationsResourceResource class / books-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,34 +14,183 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/LayersVolumeAnnotationsResourceResource.html">LayersVolumeAnnotationsResourceResource</a></div>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/LayersVolumeAnnotationsResourceResource.html">LayersVolumeAnnotationsResourceResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>LayersVolumeAnnotationsResourceResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class LayersVolumeAnnotationsResourceResource extends core.Object {
+  final BooksApi _$service;
+  
+  LayersVolumeAnnotationsResourceResource._internal(BooksApi $service) : _$service = $service;
 
+  // Method LayersResource.LayersVolumeAnnotationsResourceResource.List
+  /**
+   * Gets the volume annotations for a volume and layer.
+   *
+   *    * [volumeId] The volume to retrieve annotations for.
+   *    * [layerId] The ID for the layer to get the annotations.
+   *    * [contentVersion] The content version for the requested volume.
+   *    * [showDeleted] Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults
+   *        to false.
+   *    * [endPosition] The end position to end retrieving data from.
+   *    * [endOffset] The end offset to end retrieving data from.
+   *    * [locale] The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
+   *    * [updatedMin] RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
+   *    * [updatedMax] RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
+   *    * [maxResults] Maximum number of results to return
+
+  Minimum: 0.
+  Maximum: 200.
+   *    * [pageToken] The value of the nextToken from the previous page.
+   *    * [source] String to identify the originator of this request.
+   *    * [startOffset] The start offset to start retrieving data from.
+   *    * [startPosition] The start position to start retrieving data from.
+   */
+  core.Future&lt;Volumeannotations&gt; list(core.String volumeId, core.String layerId, core.String contentVersion, {core.bool showDeleted, core.String endPosition, core.String endOffset, core.String locale, core.String updatedMin, core.String updatedMax, core.int maxResults, core.String pageToken, core.String source, core.String startOffset, core.String startPosition}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["volumeId"] = volumeId;
+    $pathParams["layerId"] = layerId;
+    if (?contentVersion) $queryParams["contentVersion"] = contentVersion;
+    if (?showDeleted) $queryParams["showDeleted"] = showDeleted;
+    if (?endPosition) $queryParams["endPosition"] = endPosition;
+    if (?endOffset) $queryParams["endOffset"] = endOffset;
+    if (?locale) $queryParams["locale"] = locale;
+    if (?updatedMin) $queryParams["updatedMin"] = updatedMin;
+    if (?updatedMax) $queryParams["updatedMax"] = updatedMax;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?source) $queryParams["source"] = source;
+    if (?startOffset) $queryParams["startOffset"] = startOffset;
+    if (?startPosition) $queryParams["startPosition"] = startPosition;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "volumes/{volumeId}/layers/{layerId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Volumeannotations.parse(JSON.parse($text)));
+  }
+
+  // Method LayersResource.LayersVolumeAnnotationsResourceResource.Get
+  /**
+   * Gets the volume annotation.
+   *
+   *    * [volumeId] The volume to retrieve annotations for.
+   *    * [layerId] The ID for the layer to get the annotations.
+   *    * [annotationId] The ID of the volume annotation to retrieve.
+   *    * [locale] The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
+   *    * [source] String to identify the originator of this request.
+   */
+  core.Future&lt;Volumeannotation&gt; get(core.String volumeId, core.String layerId, core.String annotationId, {core.String locale, core.String source}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["volumeId"] = volumeId;
+    $pathParams["layerId"] = layerId;
+    $pathParams["annotationId"] = annotationId;
+    if (?locale) $queryParams["locale"] = locale;
+    if (?source) $queryParams["source"] = source;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "volumes/{volumeId}/layers/{layerId}/annotations/{annotationId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Volumeannotation.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="LayersVolumeAnnotationsResourceResource">
-<span class="show-code">Code</span>
-new <strong>LayersVolumeAnnotationsResourceResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#LayersVolumeAnnotationsResourceResource"
-              title="Permalink to LayersVolumeAnnotationsResourceResource.LayersVolumeAnnotationsResourceResource">#</a></h4>
+<div class="method"><h4 id="LayersVolumeAnnotationsResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>LayersVolumeAnnotationsResourceResource._internal</strong>(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#LayersVolumeAnnotationsResourceResource._internal"
+              title="Permalink to LayersVolumeAnnotationsResourceResource.LayersVolumeAnnotationsResourceResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 LayersVolumeAnnotationsResourceResource._internal(BooksApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to LayersVolumeAnnotationsResourceResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to LayersVolumeAnnotationsResourceResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Volumeannotation.html">Volumeannotation</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> layerId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> annotationId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Volumeannotation.html">Volumeannotation</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> layerId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> annotationId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale, <a href="http://api.dartlang.org/dart_core/String.html">String</a> source]) <a class="anchor-link" href="#get"
               title="Permalink to LayersVolumeAnnotationsResourceResource.get">#</a></h4>
 <div class="doc">
 <p>Gets the volume annotation.</p><ul><li>
@@ -51,15 +200,15 @@ LayersVolumeAnnotationsResourceResource._internal(BooksApi $service) : _$service
 <span class="param">locale</span> The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-core.Future&lt;Volumeannotation&gt; get(core.String volumeId, core.String layerId, core.String annotationId, [core.String locale = UNSPECIFIED, core.String source = UNSPECIFIED]) {
+core.Future&lt;Volumeannotation&gt; get(core.String volumeId, core.String layerId, core.String annotationId, {core.String locale, core.String source}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["volumeId"] = volumeId;
   $pathParams["layerId"] = layerId;
   $pathParams["annotationId"] = annotationId;
-  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (?locale) $queryParams["locale"] = locale;
+  if (?source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -70,7 +219,7 @@ core.Future&lt;Volumeannotation&gt; get(core.String volumeId, core.String layerI
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "volumes/{volumeId}/layers/{layerId}/annotations/{annotationId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -81,9 +230,37 @@ core.Future&lt;Volumeannotation&gt; get(core.String volumeId, core.String layerI
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to LayersVolumeAnnotationsResourceResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="LayersVolumeAnnotationsResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>LayersVolumeAnnotationsResourceResource._internal</strong>(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#LayersVolumeAnnotationsResourceResource._internal"
+              title="Permalink to LayersVolumeAnnotationsResourceResource.LayersVolumeAnnotationsResourceResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+LayersVolumeAnnotationsResourceResource._internal(BooksApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Volumeannotations.html">Volumeannotations</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> layerId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> contentVersion, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> endPosition = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> endOffset = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> updatedMax = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> source = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startOffset = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startPosition = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Volumeannotations.html">Volumeannotations</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> layerId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> contentVersion, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showDeleted, <a href="http://api.dartlang.org/dart_core/String.html">String</a> endPosition, <a href="http://api.dartlang.org/dart_core/String.html">String</a> endOffset, <a href="http://api.dartlang.org/dart_core/String.html">String</a> locale, <a href="http://api.dartlang.org/dart_core/String.html">String</a> updatedMin, <a href="http://api.dartlang.org/dart_core/String.html">String</a> updatedMax, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/String.html">String</a> source, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startOffset, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startPosition]) <a class="anchor-link" href="#list"
               title="Permalink to LayersVolumeAnnotationsResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Gets the volume annotations for a volume and layer.</p><ul><li>
@@ -110,24 +287,24 @@ Maximum: 200.
    * 
 <span class="param">startPosition</span> The start position to start retrieving data from.</p>
 <pre class="source">
-core.Future&lt;Volumeannotations&gt; list(core.String volumeId, core.String layerId, core.String contentVersion, [core.bool showDeleted = UNSPECIFIED, core.String endPosition = UNSPECIFIED, core.String endOffset = UNSPECIFIED, core.String locale = UNSPECIFIED, core.String updatedMin = UNSPECIFIED, core.String updatedMax = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String source = UNSPECIFIED, core.String startOffset = UNSPECIFIED, core.String startPosition = UNSPECIFIED]) {
+core.Future&lt;Volumeannotations&gt; list(core.String volumeId, core.String layerId, core.String contentVersion, {core.bool showDeleted, core.String endPosition, core.String endOffset, core.String locale, core.String updatedMin, core.String updatedMax, core.int maxResults, core.String pageToken, core.String source, core.String startOffset, core.String startPosition}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["volumeId"] = volumeId;
   $pathParams["layerId"] = layerId;
-  if (UNSPECIFIED != contentVersion) $queryParams["contentVersion"] = contentVersion;
-  if (UNSPECIFIED != showDeleted) $queryParams["showDeleted"] = showDeleted;
-  if (UNSPECIFIED != endPosition) $queryParams["endPosition"] = endPosition;
-  if (UNSPECIFIED != endOffset) $queryParams["endOffset"] = endOffset;
-  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
-  if (UNSPECIFIED != updatedMin) $queryParams["updatedMin"] = updatedMin;
-  if (UNSPECIFIED != updatedMax) $queryParams["updatedMax"] = updatedMax;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
-  if (UNSPECIFIED != startOffset) $queryParams["startOffset"] = startOffset;
-  if (UNSPECIFIED != startPosition) $queryParams["startPosition"] = startPosition;
+  if (?contentVersion) $queryParams["contentVersion"] = contentVersion;
+  if (?showDeleted) $queryParams["showDeleted"] = showDeleted;
+  if (?endPosition) $queryParams["endPosition"] = endPosition;
+  if (?endOffset) $queryParams["endOffset"] = endOffset;
+  if (?locale) $queryParams["locale"] = locale;
+  if (?updatedMin) $queryParams["updatedMin"] = updatedMin;
+  if (?updatedMax) $queryParams["updatedMax"] = updatedMax;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?source) $queryParams["source"] = source;
+  if (?startOffset) $queryParams["startOffset"] = startOffset;
+  if (?startPosition) $queryParams["startPosition"] = startPosition;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -138,7 +315,7 @@ core.Future&lt;Volumeannotations&gt; list(core.String volumeId, core.String laye
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "volumes/{volumeId}/layers/{layerId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -147,6 +324,49 @@ core.Future&lt;Volumeannotations&gt; list(core.String volumeId, core.String laye
       .transform((final $text) =&gt; Volumeannotations.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to LayersVolumeAnnotationsResourceResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to LayersVolumeAnnotationsResourceResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to LayersVolumeAnnotationsResourceResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

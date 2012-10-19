@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>CalendarsResource Class / calendar-v3 Library / Dart Documentation</title>
+        <title>CalendarsResource class / calendar-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,282 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/CalendarsResource.html">CalendarsResource</a></div>
+         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/CalendarsResource.html">CalendarsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>CalendarsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class CalendarsResource extends core.Object {
+  final CalendarApi _$service;
+  
+  CalendarsResource._internal(CalendarApi $service) : _$service = $service;
 
+  // Method CalendarsResource.Insert
+  /**
+   * Creates a secondary calendar.
+   *
+   *    * [content] the Calendar
+   */
+  core.Future&lt;Calendar&gt; insert(Calendar content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Calendar.serialize(content));
+    final $path = "calendars";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Calendar.parse(JSON.parse($text)));
+  }
+
+  // Method CalendarsResource.Get
+  /**
+   * Returns metadata for a calendar.
+   *
+   *    * [calendarId] Calendar identifier.
+   */
+  core.Future&lt;Calendar&gt; get(core.String calendarId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "calendars/{calendarId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Calendar.parse(JSON.parse($text)));
+  }
+
+  // Method CalendarsResource.Clear
+  /**
+   * Clears a primary calendar. This operation deletes all data associated with the primary calendar
+   * of an account and cannot be undone.
+   *
+   *    * [calendarId] Calendar identifier.
+   */
+  core.Future clear(core.String calendarId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "calendars/{calendarId}/clear";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+
+  // Method CalendarsResource.Update
+  /**
+   * Updates metadata for a calendar.
+   *
+   *    * [content] the Calendar
+   *    * [calendarId] Calendar identifier.
+   */
+  core.Future&lt;Calendar&gt; update(core.String calendarId, Calendar content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Calendar.serialize(content));
+    final $path = "calendars/{calendarId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Calendar.parse(JSON.parse($text)));
+  }
+
+  // Method CalendarsResource.Patch
+  /**
+   * Updates metadata for a calendar. This method supports patch semantics.
+   *
+   *    * [content] the Calendar
+   *    * [calendarId] Calendar identifier.
+   */
+  core.Future&lt;Calendar&gt; patch(core.String calendarId, Calendar content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Calendar.serialize(content));
+    final $path = "calendars/{calendarId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Calendar.parse(JSON.parse($text)));
+  }
+
+  // Method CalendarsResource.Delete
+  /**
+   * Deletes a secondary calendar.
+   *
+   *    * [calendarId] Calendar identifier.
+   */
+  core.Future delete(core.String calendarId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "calendars/{calendarId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="CalendarsResource">
-<span class="show-code">Code</span>
-new <strong>CalendarsResource</strong>._internal(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#CalendarsResource"
-              title="Permalink to CalendarsResource.CalendarsResource">#</a></h4>
+<div class="method"><h4 id="CalendarsResource._internal">
+<button class="show-code">Code</button>
+new <strong>CalendarsResource._internal</strong>(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#CalendarsResource._internal"
+              title="Permalink to CalendarsResource.CalendarsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 CalendarsResource._internal(CalendarApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to CalendarsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to CalendarsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method"><h4 id="CalendarsResource._internal">
+<button class="show-code">Code</button>
+new <strong>CalendarsResource._internal</strong>(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#CalendarsResource._internal"
+              title="Permalink to CalendarsResource.CalendarsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+CalendarsResource._internal(CalendarApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="clear">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>clear</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#clear"
               title="Permalink to CalendarsResource.clear">#</a></h4>
 <div class="doc">
@@ -63,7 +312,7 @@ core.Future clear(core.String calendarId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "calendars/{calendarId}/clear";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -75,7 +324,7 @@ core.Future clear(core.String calendarId) {
 </div>
 </div>
 <div class="method"><h4 id="delete">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#delete"
               title="Permalink to CalendarsResource.delete">#</a></h4>
 <div class="doc">
@@ -97,7 +346,7 @@ core.Future delete(core.String calendarId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "calendars/{calendarId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $http = new http.Request($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -109,7 +358,7 @@ core.Future delete(core.String calendarId) {
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Calendar.html">Calendar</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#get"
               title="Permalink to CalendarsResource.get">#</a></h4>
 <div class="doc">
@@ -131,7 +380,7 @@ core.Future&lt;Calendar&gt; get(core.String calendarId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "calendars/{calendarId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -142,8 +391,26 @@ core.Future&lt;Calendar&gt; get(core.String calendarId) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to CalendarsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Calendar.html">Calendar</a>&gt; <strong>insert</strong>(<a href="../calendar-v3/Calendar.html">Calendar</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to CalendarsResource.insert">#</a></h4>
 <div class="doc">
@@ -166,7 +433,7 @@ core.Future&lt;Calendar&gt; insert(Calendar content) {
   final $body = JSON.stringify(Calendar.serialize(content));
   final $path = "calendars";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -177,8 +444,39 @@ core.Future&lt;Calendar&gt; insert(Calendar content) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to CalendarsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to CalendarsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Calendar.html">Calendar</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/Calendar.html">Calendar</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to CalendarsResource.patch">#</a></h4>
 <div class="doc">
@@ -203,7 +501,7 @@ core.Future&lt;Calendar&gt; patch(core.String calendarId, Calendar content) {
   final $body = JSON.stringify(Calendar.serialize(content));
   final $path = "calendars/{calendarId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -214,8 +512,19 @@ core.Future&lt;Calendar&gt; patch(core.String calendarId, Calendar content) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CalendarsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Calendar.html">Calendar</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/Calendar.html">Calendar</a> content) <a class="anchor-link" href="#update"
               title="Permalink to CalendarsResource.update">#</a></h4>
 <div class="doc">
@@ -240,7 +549,7 @@ core.Future&lt;Calendar&gt; update(core.String calendarId, Calendar content) {
   final $body = JSON.stringify(Calendar.serialize(content));
   final $path = "calendars/{calendarId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -249,6 +558,7 @@ core.Future&lt;Calendar&gt; update(core.String calendarId, Calendar content) {
       .transform((final $text) =&gt; Calendar.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

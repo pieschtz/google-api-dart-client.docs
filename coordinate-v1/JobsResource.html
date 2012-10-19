@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>JobsResource Class / coordinate-v1 Library / Dart Documentation</title>
+        <title>JobsResource class / coordinate-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,314 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../coordinate-v1.html">coordinate-v1</a> &rsaquo; <a href="../coordinate-v1/JobsResource.html">JobsResource</a></div>
+         &rsaquo; <a href="../coordinate-v1.html">coordinate-v1</a> &rsaquo; <a href="../coordinate-v1/JobsResource.html">JobsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>JobsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class JobsResource extends core.Object {
+  final CoordinateApi _$service;
+  
+  JobsResource._internal(CoordinateApi $service) : _$service = $service;
 
+  // Method JobsResource.Insert
+  /**
+   * Inserts a new job. Only the state field of the job should be set.
+   *
+   *    * [content] the Job
+   *    * [teamId] Team ID
+   *    * [address] Job address as newline (Unix) separated string
+   *    * [lat] The latitude coordinate of this job's location.
+   *    * [lng] The longitude coordinate of this job's location.
+   *    * [title] Job title
+   *    * [customerName] Customer name
+   *    * [note] Job note as newline (Unix) separated string
+   *    * [assignee] Assignee email address, or empty string to unassign.
+   *    * [customerPhoneNumber] Customer phone number
+   *    * [customField] Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'
+   */
+  core.Future&lt;Job&gt; insert(core.String teamId, core.String address, core.double lat, core.double lng, core.String title, Job content, {core.String customerName, core.String note, core.String assignee, core.String customerPhoneNumber, core.List&lt;core.String&gt; customField}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["teamId"] = teamId;
+    if (?address) $queryParams["address"] = address;
+    if (?lat) $queryParams["lat"] = lat;
+    if (?lng) $queryParams["lng"] = lng;
+    if (?title) $queryParams["title"] = title;
+    if (?customerName) $queryParams["customerName"] = customerName;
+    if (?note) $queryParams["note"] = note;
+    if (?assignee) $queryParams["assignee"] = assignee;
+    if (?customerPhoneNumber) $queryParams["customerPhoneNumber"] = customerPhoneNumber;
+    if (?customField) $queryParams["customField"] = customField;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Job.serialize(content));
+    final $path = "{teamId}/jobs";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Job.parse(JSON.parse($text)));
+  }
+
+  // Method JobsResource.Patch
+  /**
+   * Updates a job. Fields that are set in the job state will be updated. This method supports patch
+   * semantics.
+   *
+   *    * [content] the Job
+   *    * [teamId] Team ID
+   *    * [jobId] Job number
+   *    * [customerName] Customer name
+   *    * [title] Job title
+   *    * [note] Job note as newline (Unix) separated string
+   *    * [assignee] Assignee email address, or empty string to unassign.
+   *    * [customerPhoneNumber] Customer phone number
+   *    * [address] Job address as newline (Unix) separated string
+   *    * [lat] The latitude coordinate of this job's location.
+   *    * [progress] Job progress
+   *    * [lng] The longitude coordinate of this job's location.
+   *    * [customField] Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'
+   */
+  core.Future&lt;Job&gt; patch(core.String teamId, core.String jobId, Job content, {core.String customerName, core.String title, core.String note, core.String assignee, core.String customerPhoneNumber, core.String address, core.double lat, JobsResourcePatchProgress progress, core.double lng, core.List&lt;core.String&gt; customField}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["teamId"] = teamId;
+    $pathParams["jobId"] = jobId;
+    if (?customerName) $queryParams["customerName"] = customerName;
+    if (?title) $queryParams["title"] = title;
+    if (?note) $queryParams["note"] = note;
+    if (?assignee) $queryParams["assignee"] = assignee;
+    if (?customerPhoneNumber) $queryParams["customerPhoneNumber"] = customerPhoneNumber;
+    if (?address) $queryParams["address"] = address;
+    if (?lat) $queryParams["lat"] = lat;
+    if (?progress) $queryParams["progress"] = progress;
+    if (?lng) $queryParams["lng"] = lng;
+    if (?customField) $queryParams["customField"] = customField;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Job.serialize(content));
+    final $path = "{teamId}/jobs/{jobId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Job.parse(JSON.parse($text)));
+  }
+
+  // Method JobsResource.List
+  /**
+   * Retrieves jobs created or modified since the given timestamp.
+   *
+   *    * [teamId] Team ID
+   *    * [minModifiedTimestampMs] Minimum time a job was modified in milliseconds since epoch.
+   *    * [maxResults] Maximum number of results to return in one page.
+   *    * [pageToken] Continuation token
+   */
+  core.Future&lt;JobListResponse&gt; list(core.String teamId, {core.String minModifiedTimestampMs, core.int maxResults, core.String pageToken}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["teamId"] = teamId;
+    if (?minModifiedTimestampMs) $queryParams["minModifiedTimestampMs"] = minModifiedTimestampMs;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{teamId}/jobs";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; JobListResponse.parse(JSON.parse($text)));
+  }
+
+  // Method JobsResource.Update
+  /**
+   * Updates a job. Fields that are set in the job state will be updated.
+   *
+   *    * [content] the Job
+   *    * [teamId] Team ID
+   *    * [jobId] Job number
+   *    * [customerName] Customer name
+   *    * [title] Job title
+   *    * [note] Job note as newline (Unix) separated string
+   *    * [assignee] Assignee email address, or empty string to unassign.
+   *    * [customerPhoneNumber] Customer phone number
+   *    * [address] Job address as newline (Unix) separated string
+   *    * [lat] The latitude coordinate of this job's location.
+   *    * [progress] Job progress
+   *    * [lng] The longitude coordinate of this job's location.
+   *    * [customField] Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'
+   */
+  core.Future&lt;Job&gt; update(core.String teamId, core.String jobId, Job content, {core.String customerName, core.String title, core.String note, core.String assignee, core.String customerPhoneNumber, core.String address, core.double lat, JobsResourceUpdateProgress progress, core.double lng, core.List&lt;core.String&gt; customField}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["teamId"] = teamId;
+    $pathParams["jobId"] = jobId;
+    if (?customerName) $queryParams["customerName"] = customerName;
+    if (?title) $queryParams["title"] = title;
+    if (?note) $queryParams["note"] = note;
+    if (?assignee) $queryParams["assignee"] = assignee;
+    if (?customerPhoneNumber) $queryParams["customerPhoneNumber"] = customerPhoneNumber;
+    if (?address) $queryParams["address"] = address;
+    if (?lat) $queryParams["lat"] = lat;
+    if (?progress) $queryParams["progress"] = progress;
+    if (?lng) $queryParams["lng"] = lng;
+    if (?customField) $queryParams["customField"] = customField;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Job.serialize(content));
+    final $path = "{teamId}/jobs/{jobId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Job.parse(JSON.parse($text)));
+  }
+
+  // Method JobsResource.Get
+  /**
+   * Retrieves a job, including all the changes made to the job.
+   *
+   *    * [teamId] Team ID
+   *    * [jobId] Job number
+   */
+  core.Future&lt;Job&gt; get(core.String teamId, core.String jobId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["teamId"] = teamId;
+    $pathParams["jobId"] = jobId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{teamId}/jobs/{jobId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Job.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="JobsResource">
-<span class="show-code">Code</span>
-new <strong>JobsResource</strong>._internal(<a href="../coordinate-v1/CoordinateApi.html">CoordinateApi</a> $service) <a class="anchor-link" href="#JobsResource"
-              title="Permalink to JobsResource.JobsResource">#</a></h4>
+<div class="method"><h4 id="JobsResource._internal">
+<button class="show-code">Code</button>
+new <strong>JobsResource._internal</strong>(<a href="../coordinate-v1/CoordinateApi.html">CoordinateApi</a> $service) <a class="anchor-link" href="#JobsResource._internal"
+              title="Permalink to JobsResource.JobsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 JobsResource._internal(CoordinateApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to JobsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to JobsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../coordinate-v1/Job.html">Job</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> teamId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> jobId) <a class="anchor-link" href="#get"
               title="Permalink to JobsResource.get">#</a></h4>
 <div class="doc">
@@ -64,7 +345,7 @@ core.Future&lt;Job&gt; get(core.String teamId, core.String jobId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{teamId}/jobs/{jobId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -75,9 +356,27 @@ core.Future&lt;Job&gt; get(core.String teamId, core.String jobId) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to JobsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../coordinate-v1/Job.html">Job</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> teamId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> address, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lat, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lng, <a href="http://api.dartlang.org/dart_core/String.html">String</a> title, <a href="../coordinate-v1/Job.html">Job</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> customerName = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> note = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> assignee = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> customerPhoneNumber = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../coordinate-v1/Job.html">Job</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> teamId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> address, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lat, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lng, <a href="http://api.dartlang.org/dart_core/String.html">String</a> title, <a href="../coordinate-v1/Job.html">Job</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> customerName, <a href="http://api.dartlang.org/dart_core/String.html">String</a> note, <a href="http://api.dartlang.org/dart_core/String.html">String</a> assignee, <a href="http://api.dartlang.org/dart_core/String.html">String</a> customerPhoneNumber, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; customField]) <a class="anchor-link" href="#insert"
               title="Permalink to JobsResource.insert">#</a></h4>
 <div class="doc">
 <p>Inserts a new job. Only the state field of the job should be set.</p><ul><li>
@@ -89,22 +388,24 @@ core.Future&lt;Job&gt; get(core.String teamId, core.String jobId) {
 <span class="param">title</span> Job title</li><li>
 <span class="param">customerName</span> Customer name</li><li>
 <span class="param">note</span> Job note as newline (Unix) separated string</li><li>
-<span class="param">assignee</span> Assignee email address</li><li>
-<span class="param">customerPhoneNumber</span> Customer phone number</li></ul>
+<span class="param">assignee</span> Assignee email address, or empty string to unassign.</li><li>
+<span class="param">customerPhoneNumber</span> Customer phone number</li><li>
+<span class="param">customField</span> Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'</li></ul>
 <pre class="source">
-core.Future&lt;Job&gt; insert(core.String teamId, core.String address, core.double lat, core.double lng, core.String title, Job content, [core.String customerName = UNSPECIFIED, core.String note = UNSPECIFIED, core.String assignee = UNSPECIFIED, core.String customerPhoneNumber = UNSPECIFIED]) {
+core.Future&lt;Job&gt; insert(core.String teamId, core.String address, core.double lat, core.double lng, core.String title, Job content, {core.String customerName, core.String note, core.String assignee, core.String customerPhoneNumber, core.List&lt;core.String&gt; customField}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["teamId"] = teamId;
-  if (UNSPECIFIED != address) $queryParams["address"] = address;
-  if (UNSPECIFIED != lat) $queryParams["lat"] = lat;
-  if (UNSPECIFIED != lng) $queryParams["lng"] = lng;
-  if (UNSPECIFIED != title) $queryParams["title"] = title;
-  if (UNSPECIFIED != customerName) $queryParams["customerName"] = customerName;
-  if (UNSPECIFIED != note) $queryParams["note"] = note;
-  if (UNSPECIFIED != assignee) $queryParams["assignee"] = assignee;
-  if (UNSPECIFIED != customerPhoneNumber) $queryParams["customerPhoneNumber"] = customerPhoneNumber;
+  if (?address) $queryParams["address"] = address;
+  if (?lat) $queryParams["lat"] = lat;
+  if (?lng) $queryParams["lng"] = lng;
+  if (?title) $queryParams["title"] = title;
+  if (?customerName) $queryParams["customerName"] = customerName;
+  if (?note) $queryParams["note"] = note;
+  if (?assignee) $queryParams["assignee"] = assignee;
+  if (?customerPhoneNumber) $queryParams["customerPhoneNumber"] = customerPhoneNumber;
+  if (?customField) $queryParams["customField"] = customField;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -117,7 +418,7 @@ core.Future&lt;Job&gt; insert(core.String teamId, core.String address, core.doub
   final $body = JSON.stringify(Job.serialize(content));
   final $path = "{teamId}/jobs";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -128,9 +429,19 @@ core.Future&lt;Job&gt; insert(core.String teamId, core.String address, core.doub
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="JobsResource._internal">
+<button class="show-code">Code</button>
+new <strong>JobsResource._internal</strong>(<a href="../coordinate-v1/CoordinateApi.html">CoordinateApi</a> $service) <a class="anchor-link" href="#JobsResource._internal"
+              title="Permalink to JobsResource.JobsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+JobsResource._internal(CoordinateApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../coordinate-v1/JobListResponse.html">JobListResponse</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> teamId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> minModifiedTimestampMs = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../coordinate-v1/JobListResponse.html">JobListResponse</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> teamId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> minModifiedTimestampMs, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken]) <a class="anchor-link" href="#list"
               title="Permalink to JobsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves jobs created or modified since the given timestamp.</p><ul><li>
@@ -139,14 +450,14 @@ core.Future&lt;Job&gt; insert(core.String teamId, core.String address, core.doub
 <span class="param">maxResults</span> Maximum number of results to return in one page.</li><li>
 <span class="param">pageToken</span> Continuation token</li></ul>
 <pre class="source">
-core.Future&lt;JobListResponse&gt; list(core.String teamId, [core.String minModifiedTimestampMs = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED]) {
+core.Future&lt;JobListResponse&gt; list(core.String teamId, {core.String minModifiedTimestampMs, core.int maxResults, core.String pageToken}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["teamId"] = teamId;
-  if (UNSPECIFIED != minModifiedTimestampMs) $queryParams["minModifiedTimestampMs"] = minModifiedTimestampMs;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
+  if (?minModifiedTimestampMs) $queryParams["minModifiedTimestampMs"] = minModifiedTimestampMs;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -157,7 +468,7 @@ core.Future&lt;JobListResponse&gt; list(core.String teamId, [core.String minModi
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{teamId}/jobs";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -168,9 +479,40 @@ core.Future&lt;JobListResponse&gt; list(core.String teamId, [core.String minModi
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to JobsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to JobsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../coordinate-v1/Job.html">Job</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> teamId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> jobId, <a href="../coordinate-v1/Job.html">Job</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> customerName = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> title = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> note = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> assignee = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> customerPhoneNumber = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> address = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lat = UNSPECIFIED, <a href="../coordinate-v1/JobsResourcePatchProgress.html">JobsResourcePatchProgress</a> progress = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lng = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../coordinate-v1/Job.html">Job</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> teamId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> jobId, <a href="../coordinate-v1/Job.html">Job</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> customerName, <a href="http://api.dartlang.org/dart_core/String.html">String</a> title, <a href="http://api.dartlang.org/dart_core/String.html">String</a> note, <a href="http://api.dartlang.org/dart_core/String.html">String</a> assignee, <a href="http://api.dartlang.org/dart_core/String.html">String</a> customerPhoneNumber, <a href="http://api.dartlang.org/dart_core/String.html">String</a> address, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lat, <a href="../coordinate-v1/JobsResourcePatchProgress.html">JobsResourcePatchProgress</a> progress, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lng, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; customField]) <a class="anchor-link" href="#patch"
               title="Permalink to JobsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates a job. Fields that are set in the job state will be updated. This method supports patch
@@ -181,28 +523,30 @@ semantics.</p><ul><li>
 <span class="param">customerName</span> Customer name</li><li>
 <span class="param">title</span> Job title</li><li>
 <span class="param">note</span> Job note as newline (Unix) separated string</li><li>
-<span class="param">assignee</span> Assignee email address</li><li>
+<span class="param">assignee</span> Assignee email address, or empty string to unassign.</li><li>
 <span class="param">customerPhoneNumber</span> Customer phone number</li><li>
 <span class="param">address</span> Job address as newline (Unix) separated string</li><li>
 <span class="param">lat</span> The latitude coordinate of this job's location.</li><li>
 <span class="param">progress</span> Job progress</li><li>
-<span class="param">lng</span> The longitude coordinate of this job's location.</li></ul>
+<span class="param">lng</span> The longitude coordinate of this job's location.</li><li>
+<span class="param">customField</span> Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'</li></ul>
 <pre class="source">
-core.Future&lt;Job&gt; patch(core.String teamId, core.String jobId, Job content, [core.String customerName = UNSPECIFIED, core.String title = UNSPECIFIED, core.String note = UNSPECIFIED, core.String assignee = UNSPECIFIED, core.String customerPhoneNumber = UNSPECIFIED, core.String address = UNSPECIFIED, core.double lat = UNSPECIFIED, JobsResourcePatchProgress progress = UNSPECIFIED, core.double lng = UNSPECIFIED]) {
+core.Future&lt;Job&gt; patch(core.String teamId, core.String jobId, Job content, {core.String customerName, core.String title, core.String note, core.String assignee, core.String customerPhoneNumber, core.String address, core.double lat, JobsResourcePatchProgress progress, core.double lng, core.List&lt;core.String&gt; customField}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["teamId"] = teamId;
   $pathParams["jobId"] = jobId;
-  if (UNSPECIFIED != customerName) $queryParams["customerName"] = customerName;
-  if (UNSPECIFIED != title) $queryParams["title"] = title;
-  if (UNSPECIFIED != note) $queryParams["note"] = note;
-  if (UNSPECIFIED != assignee) $queryParams["assignee"] = assignee;
-  if (UNSPECIFIED != customerPhoneNumber) $queryParams["customerPhoneNumber"] = customerPhoneNumber;
-  if (UNSPECIFIED != address) $queryParams["address"] = address;
-  if (UNSPECIFIED != lat) $queryParams["lat"] = lat;
-  if (UNSPECIFIED != progress) $queryParams["progress"] = progress;
-  if (UNSPECIFIED != lng) $queryParams["lng"] = lng;
+  if (?customerName) $queryParams["customerName"] = customerName;
+  if (?title) $queryParams["title"] = title;
+  if (?note) $queryParams["note"] = note;
+  if (?assignee) $queryParams["assignee"] = assignee;
+  if (?customerPhoneNumber) $queryParams["customerPhoneNumber"] = customerPhoneNumber;
+  if (?address) $queryParams["address"] = address;
+  if (?lat) $queryParams["lat"] = lat;
+  if (?progress) $queryParams["progress"] = progress;
+  if (?lng) $queryParams["lng"] = lng;
+  if (?customField) $queryParams["customField"] = customField;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -215,7 +559,7 @@ core.Future&lt;Job&gt; patch(core.String teamId, core.String jobId, Job content,
   final $body = JSON.stringify(Job.serialize(content));
   final $path = "{teamId}/jobs/{jobId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -226,9 +570,20 @@ core.Future&lt;Job&gt; patch(core.String teamId, core.String jobId, Job content,
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to JobsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../coordinate-v1/Job.html">Job</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> teamId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> jobId, <a href="../coordinate-v1/Job.html">Job</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> customerName = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> title = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> note = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> assignee = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> customerPhoneNumber = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> address = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lat = UNSPECIFIED, <a href="../coordinate-v1/JobsResourceUpdateProgress.html">JobsResourceUpdateProgress</a> progress = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lng = UNSPECIFIED]) <a class="anchor-link" href="#update"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../coordinate-v1/Job.html">Job</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> teamId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> jobId, <a href="../coordinate-v1/Job.html">Job</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> customerName, <a href="http://api.dartlang.org/dart_core/String.html">String</a> title, <a href="http://api.dartlang.org/dart_core/String.html">String</a> note, <a href="http://api.dartlang.org/dart_core/String.html">String</a> assignee, <a href="http://api.dartlang.org/dart_core/String.html">String</a> customerPhoneNumber, <a href="http://api.dartlang.org/dart_core/String.html">String</a> address, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lat, <a href="../coordinate-v1/JobsResourceUpdateProgress.html">JobsResourceUpdateProgress</a> progress, <a href="http://api.dartlang.org/dart_core/double.html">double</a> lng, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; customField]) <a class="anchor-link" href="#update"
               title="Permalink to JobsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates a job. Fields that are set in the job state will be updated.</p><ul><li>
@@ -238,28 +593,30 @@ core.Future&lt;Job&gt; patch(core.String teamId, core.String jobId, Job content,
 <span class="param">customerName</span> Customer name</li><li>
 <span class="param">title</span> Job title</li><li>
 <span class="param">note</span> Job note as newline (Unix) separated string</li><li>
-<span class="param">assignee</span> Assignee email address</li><li>
+<span class="param">assignee</span> Assignee email address, or empty string to unassign.</li><li>
 <span class="param">customerPhoneNumber</span> Customer phone number</li><li>
 <span class="param">address</span> Job address as newline (Unix) separated string</li><li>
 <span class="param">lat</span> The latitude coordinate of this job's location.</li><li>
 <span class="param">progress</span> Job progress</li><li>
-<span class="param">lng</span> The longitude coordinate of this job's location.</li></ul>
+<span class="param">lng</span> The longitude coordinate of this job's location.</li><li>
+<span class="param">customField</span> Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'</li></ul>
 <pre class="source">
-core.Future&lt;Job&gt; update(core.String teamId, core.String jobId, Job content, [core.String customerName = UNSPECIFIED, core.String title = UNSPECIFIED, core.String note = UNSPECIFIED, core.String assignee = UNSPECIFIED, core.String customerPhoneNumber = UNSPECIFIED, core.String address = UNSPECIFIED, core.double lat = UNSPECIFIED, JobsResourceUpdateProgress progress = UNSPECIFIED, core.double lng = UNSPECIFIED]) {
+core.Future&lt;Job&gt; update(core.String teamId, core.String jobId, Job content, {core.String customerName, core.String title, core.String note, core.String assignee, core.String customerPhoneNumber, core.String address, core.double lat, JobsResourceUpdateProgress progress, core.double lng, core.List&lt;core.String&gt; customField}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["teamId"] = teamId;
   $pathParams["jobId"] = jobId;
-  if (UNSPECIFIED != customerName) $queryParams["customerName"] = customerName;
-  if (UNSPECIFIED != title) $queryParams["title"] = title;
-  if (UNSPECIFIED != note) $queryParams["note"] = note;
-  if (UNSPECIFIED != assignee) $queryParams["assignee"] = assignee;
-  if (UNSPECIFIED != customerPhoneNumber) $queryParams["customerPhoneNumber"] = customerPhoneNumber;
-  if (UNSPECIFIED != address) $queryParams["address"] = address;
-  if (UNSPECIFIED != lat) $queryParams["lat"] = lat;
-  if (UNSPECIFIED != progress) $queryParams["progress"] = progress;
-  if (UNSPECIFIED != lng) $queryParams["lng"] = lng;
+  if (?customerName) $queryParams["customerName"] = customerName;
+  if (?title) $queryParams["title"] = title;
+  if (?note) $queryParams["note"] = note;
+  if (?assignee) $queryParams["assignee"] = assignee;
+  if (?customerPhoneNumber) $queryParams["customerPhoneNumber"] = customerPhoneNumber;
+  if (?address) $queryParams["address"] = address;
+  if (?lat) $queryParams["lat"] = lat;
+  if (?progress) $queryParams["progress"] = progress;
+  if (?lng) $queryParams["lng"] = lng;
+  if (?customField) $queryParams["customField"] = customField;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -272,7 +629,7 @@ core.Future&lt;Job&gt; update(core.String teamId, core.String jobId, Job content
   final $body = JSON.stringify(Job.serialize(content));
   final $path = "{teamId}/jobs/{jobId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -281,6 +638,7 @@ core.Future&lt;Job&gt; update(core.String teamId, core.String jobId, Job content
       .transform((final $text) =&gt; Job.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

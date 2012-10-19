@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>OrkutApi Class / orkut-v2 Library / Dart Documentation</title>
+        <title>OrkutApi class / orkut-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,30 +14,148 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../orkut-v2.html">orkut-v2</a> &rsaquo; <a href="../orkut-v2/OrkutApi.html">OrkutApi</a></div>
+         &rsaquo; <a href="../orkut-v2.html">orkut-v2</a> &rsaquo; <a href="../orkut-v2/OrkutApi.html">OrkutApi</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>OrkutApi</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
 <p>Lets you manage activities, comments and badges in Orkut. More stuff coming in time.</p>
+<pre class="source">
+class OrkutApi extends core.Object {
+  /** The API root, such as [:https://www.googleapis.com:] */
+  final core.String baseUrl;
+  /** How we should identify ourselves to the service. */
+  http.Authenticator authenticator;
+  /** The client library version */
+  final core.String clientVersion = "0.1";
+  /** The application name, used in the user-agent header */
+  final core.String applicationName;
+  OrkutApi get _$service =&gt; this;
+  CommunityMembersResource _communityMembers;
+  CommunityMembersResource get communityMembers =&gt; _communityMembers;
+  ActivitiesResource _activities;
+  ActivitiesResource get activities =&gt; _activities;
+  CommunityPollCommentsResource _communityPollComments;
+  CommunityPollCommentsResource get communityPollComments =&gt; _communityPollComments;
+  CommunityPollsResource _communityPolls;
+  CommunityPollsResource get communityPolls =&gt; _communityPolls;
+  CommunityMessagesResource _communityMessages;
+  CommunityMessagesResource get communityMessages =&gt; _communityMessages;
+  CommunityTopicsResource _communityTopics;
+  CommunityTopicsResource get communityTopics =&gt; _communityTopics;
+  CommentsResource _comments;
+  CommentsResource get comments =&gt; _comments;
+  AclResource _acl;
+  AclResource get acl =&gt; _acl;
+  CommunityRelatedResource _communityRelated;
+  CommunityRelatedResource get communityRelated =&gt; _communityRelated;
+  ScrapsResource _scraps;
+  ScrapsResource get scraps =&gt; _scraps;
+  CommunityPollVotesResource _communityPollVotes;
+  CommunityPollVotesResource get communityPollVotes =&gt; _communityPollVotes;
+  CommunitiesResource _communities;
+  CommunitiesResource get communities =&gt; _communities;
+  CommunityFollowResource _communityFollow;
+  CommunityFollowResource get communityFollow =&gt; _communityFollow;
+  ActivityVisibilityResource _activityVisibility;
+  ActivityVisibilityResource get activityVisibility =&gt; _activityVisibility;
+  BadgesResource _badges;
+  BadgesResource get badges =&gt; _badges;
+  CountersResource _counters;
+  CountersResource get counters =&gt; _counters;
+  
+  /** Returns response with indentations and line breaks. */
+  core.bool prettyPrint;
+
+  /** Selector specifying which fields to include in a partial response. */
+  core.String fields;
+
+  /**
+   * Available to use for quota purposes for server-side applications. Can be any arbitrary string
+   * assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+   */
+  core.String quotaUser;
+
+  /** OAuth 2.0 token for the current user. */
+  core.String oauthToken;
+
+  /**
+   * API key. Your API key identifies your project and provides you with API access, quota, and
+   * reports. Required unless you provide an OAuth 2.0 token.
+   */
+  core.String key;
+
+  /**
+   * IP address of the site where the request originates. Use this if you want to enforce per-user
+   * limits.
+   */
+  core.String userIp;
+
+  /** Data format for the response. */
+  OrkutApiAlt alt;
+
+
+  OrkutApi({this.baseUrl:"https://www.googleapis.com/orkut/v2/", applicationName, this.authenticator}) :
+      this.applicationName = (applicationName == null) ? null : applicationName
+          .replaceAll(const core.RegExp(r'\s+'), '_')
+          .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+  { 
+    _communityMembers = new CommunityMembersResource._internal(this);
+    _activities = new ActivitiesResource._internal(this);
+    _communityPollComments = new CommunityPollCommentsResource._internal(this);
+    _communityPolls = new CommunityPollsResource._internal(this);
+    _communityMessages = new CommunityMessagesResource._internal(this);
+    _communityTopics = new CommunityTopicsResource._internal(this);
+    _comments = new CommentsResource._internal(this);
+    _acl = new AclResource._internal(this);
+    _communityRelated = new CommunityRelatedResource._internal(this);
+    _scraps = new ScrapsResource._internal(this);
+    _communityPollVotes = new CommunityPollVotesResource._internal(this);
+    _communities = new CommunitiesResource._internal(this);
+    _communityFollow = new CommunityFollowResource._internal(this);
+    _activityVisibility = new ActivityVisibilityResource._internal(this);
+    _badges = new BadgesResource._internal(this);
+    _counters = new CountersResource._internal(this);
+  }
+  core.String get userAgent {
+    var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+    return "${uaPrefix}orkut/v2/20120223 google-api-dart-client/${clientVersion}";
+  }
+
+
+  /** OAuth2 scope: Manage your Orkut activity */
+  static final core.String ORKUT_SCOPE = "https://www.googleapis.com/auth/orkut";
+
+  /** OAuth2 scope: View your Orkut data */
+  static final core.String ORKUT_READONLY_SCOPE = "https://www.googleapis.com/auth/orkut.readonly";
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
 <div class="method"><h4 id="OrkutApi">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 new <strong>OrkutApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/orkut/v2/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#OrkutApi"
               title="Permalink to OrkutApi.OrkutApi">#</a></h4>
 <div class="doc">
-
 <pre class="source">
-OrkutApi([this.baseUrl = "https://www.googleapis.com/orkut/v2/", applicationName, this.authenticator]) :
+OrkutApi({this.baseUrl:"https://www.googleapis.com/orkut/v2/", applicationName, this.authenticator}) :
     this.applicationName = (applicationName == null) ? null : applicationName
-        .replaceAll(const core.RegExp(@'\s+'), '_')
-        .replaceAll(const core.RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
 { 
   _communityMembers = new CommunityMembersResource._internal(this);
   _activities = new ActivitiesResource._internal(this);
@@ -59,9 +177,11 @@ OrkutApi([this.baseUrl = "https://www.googleapis.com/orkut/v2/", applicationName
 </pre>
 </div>
 </div>
-<h3>Static Fields</h3>
+</div>
+<div>
+<h3>Static Properties</h3>
 <div class="field"><h4 id="ORKUT_READONLY_SCOPE">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>ORKUT_READONLY_SCOPE</strong> <a class="anchor-link"
             href="#ORKUT_READONLY_SCOPE"
             title="Permalink to OrkutApi.ORKUT_READONLY_SCOPE">#</a>
@@ -74,7 +194,7 @@ static final core.String ORKUT_READONLY_SCOPE = "https://www.googleapis.com/auth
 </div>
 </div>
 <div class="field"><h4 id="ORKUT_SCOPE">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>ORKUT_SCOPE</strong> <a class="anchor-link"
             href="#ORKUT_SCOPE"
             title="Permalink to OrkutApi.ORKUT_SCOPE">#</a>
@@ -86,200 +206,47 @@ static final core.String ORKUT_SCOPE = "https://www.googleapis.com/auth/orkut";
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="acl">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/AclResource.html">AclResource</a> <strong>get acl</strong>() <a class="anchor-link" href="#acl"
-              title="Permalink to OrkutApi.get acl">#</a></h4>
-<div class="doc">
-
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="acl">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/AclResource.html">AclResource</a>         <strong>acl</strong> <a class="anchor-link"
+            href="#acl"
+            title="Permalink to OrkutApi.acl">#</a>
+        </h4>
+        <div class="doc">
 <pre class="source">
-AclResource get acl() =&gt; _acl;
+AclResource get acl =&gt; _acl;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="activities">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/ActivitiesResource.html">ActivitiesResource</a> <strong>get activities</strong>() <a class="anchor-link" href="#activities"
-              title="Permalink to OrkutApi.get activities">#</a></h4>
-<div class="doc">
-
+<div class="field"><h4 id="activities">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/ActivitiesResource.html">ActivitiesResource</a>         <strong>activities</strong> <a class="anchor-link"
+            href="#activities"
+            title="Permalink to OrkutApi.activities">#</a>
+        </h4>
+        <div class="doc">
 <pre class="source">
-ActivitiesResource get activities() =&gt; _activities;
+ActivitiesResource get activities =&gt; _activities;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="activityVisibility">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/ActivityVisibilityResource.html">ActivityVisibilityResource</a> <strong>get activityVisibility</strong>() <a class="anchor-link" href="#activityVisibility"
-              title="Permalink to OrkutApi.get activityVisibility">#</a></h4>
-<div class="doc">
-
+<div class="field"><h4 id="activityVisibility">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/ActivityVisibilityResource.html">ActivityVisibilityResource</a>         <strong>activityVisibility</strong> <a class="anchor-link"
+            href="#activityVisibility"
+            title="Permalink to OrkutApi.activityVisibility">#</a>
+        </h4>
+        <div class="doc">
 <pre class="source">
-ActivityVisibilityResource get activityVisibility() =&gt; _activityVisibility;
+ActivityVisibilityResource get activityVisibility =&gt; _activityVisibility;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="badges">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/BadgesResource.html">BadgesResource</a> <strong>get badges</strong>() <a class="anchor-link" href="#badges"
-              title="Permalink to OrkutApi.get badges">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-BadgesResource get badges() =&gt; _badges;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="comments">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommentsResource.html">CommentsResource</a> <strong>get comments</strong>() <a class="anchor-link" href="#comments"
-              title="Permalink to OrkutApi.get comments">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommentsResource get comments() =&gt; _comments;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="communities">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunitiesResource.html">CommunitiesResource</a> <strong>get communities</strong>() <a class="anchor-link" href="#communities"
-              title="Permalink to OrkutApi.get communities">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunitiesResource get communities() =&gt; _communities;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="communityFollow">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityFollowResource.html">CommunityFollowResource</a> <strong>get communityFollow</strong>() <a class="anchor-link" href="#communityFollow"
-              title="Permalink to OrkutApi.get communityFollow">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunityFollowResource get communityFollow() =&gt; _communityFollow;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="communityMembers">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityMembersResource.html">CommunityMembersResource</a> <strong>get communityMembers</strong>() <a class="anchor-link" href="#communityMembers"
-              title="Permalink to OrkutApi.get communityMembers">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunityMembersResource get communityMembers() =&gt; _communityMembers;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="communityMessages">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityMessagesResource.html">CommunityMessagesResource</a> <strong>get communityMessages</strong>() <a class="anchor-link" href="#communityMessages"
-              title="Permalink to OrkutApi.get communityMessages">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunityMessagesResource get communityMessages() =&gt; _communityMessages;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="communityPollComments">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityPollCommentsResource.html">CommunityPollCommentsResource</a> <strong>get communityPollComments</strong>() <a class="anchor-link" href="#communityPollComments"
-              title="Permalink to OrkutApi.get communityPollComments">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunityPollCommentsResource get communityPollComments() =&gt; _communityPollComments;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="communityPollVotes">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityPollVotesResource.html">CommunityPollVotesResource</a> <strong>get communityPollVotes</strong>() <a class="anchor-link" href="#communityPollVotes"
-              title="Permalink to OrkutApi.get communityPollVotes">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunityPollVotesResource get communityPollVotes() =&gt; _communityPollVotes;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="communityPolls">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityPollsResource.html">CommunityPollsResource</a> <strong>get communityPolls</strong>() <a class="anchor-link" href="#communityPolls"
-              title="Permalink to OrkutApi.get communityPolls">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunityPollsResource get communityPolls() =&gt; _communityPolls;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="communityRelated">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityRelatedResource.html">CommunityRelatedResource</a> <strong>get communityRelated</strong>() <a class="anchor-link" href="#communityRelated"
-              title="Permalink to OrkutApi.get communityRelated">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunityRelatedResource get communityRelated() =&gt; _communityRelated;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="communityTopics">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CommunityTopicsResource.html">CommunityTopicsResource</a> <strong>get communityTopics</strong>() <a class="anchor-link" href="#communityTopics"
-              title="Permalink to OrkutApi.get communityTopics">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CommunityTopicsResource get communityTopics() =&gt; _communityTopics;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="counters">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/CountersResource.html">CountersResource</a> <strong>get counters</strong>() <a class="anchor-link" href="#counters"
-              title="Permalink to OrkutApi.get counters">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-CountersResource get counters() =&gt; _counters;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="scraps">
-<span class="show-code">Code</span>
-<a href="../orkut-v2/ScrapsResource.html">ScrapsResource</a> <strong>get scraps</strong>() <a class="anchor-link" href="#scraps"
-              title="Permalink to OrkutApi.get scraps">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-ScrapsResource get scraps() =&gt; _scraps;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="userAgent">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
-              title="Permalink to OrkutApi.get userAgent">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-core.String get userAgent() {
-  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
-  return "${uaPrefix}orkut/v2/20120223 google-api-dart-client/${clientVersion}";
-}
-</pre>
-</div>
-</div>
-<h3>Fields</h3>
 <div class="field"><h4 id="alt">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../orkut-v2/OrkutApiAlt.html">OrkutApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
             href="#alt"
             title="Permalink to OrkutApi.alt">#</a>
@@ -292,7 +259,7 @@ OrkutApiAlt alt;
 </div>
 </div>
 <div class="field"><h4 id="applicationName">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to OrkutApi.applicationName">#</a>
@@ -305,7 +272,7 @@ final core.String applicationName;
 </div>
 </div>
 <div class="field"><h4 id="authenticator">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
             href="#authenticator"
             title="Permalink to OrkutApi.authenticator">#</a>
@@ -313,12 +280,24 @@ final core.String applicationName;
         <div class="doc">
 <p>How we should identify ourselves to the service.</p>
 <pre class="source">
-Authenticator authenticator;
+http.Authenticator authenticator;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="badges">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/BadgesResource.html">BadgesResource</a>         <strong>badges</strong> <a class="anchor-link"
+            href="#badges"
+            title="Permalink to OrkutApi.badges">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+BadgesResource get badges =&gt; _badges;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="baseUrl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to OrkutApi.baseUrl">#</a>
@@ -331,7 +310,7 @@ final core.String baseUrl;
 </div>
 </div>
 <div class="field"><h4 id="clientVersion">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to OrkutApi.clientVersion">#</a>
@@ -343,8 +322,140 @@ final core.String clientVersion = "0.1";
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="comments">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommentsResource.html">CommentsResource</a>         <strong>comments</strong> <a class="anchor-link"
+            href="#comments"
+            title="Permalink to OrkutApi.comments">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommentsResource get comments =&gt; _comments;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="communities">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommunitiesResource.html">CommunitiesResource</a>         <strong>communities</strong> <a class="anchor-link"
+            href="#communities"
+            title="Permalink to OrkutApi.communities">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommunitiesResource get communities =&gt; _communities;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="communityFollow">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommunityFollowResource.html">CommunityFollowResource</a>         <strong>communityFollow</strong> <a class="anchor-link"
+            href="#communityFollow"
+            title="Permalink to OrkutApi.communityFollow">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommunityFollowResource get communityFollow =&gt; _communityFollow;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="communityMembers">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommunityMembersResource.html">CommunityMembersResource</a>         <strong>communityMembers</strong> <a class="anchor-link"
+            href="#communityMembers"
+            title="Permalink to OrkutApi.communityMembers">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommunityMembersResource get communityMembers =&gt; _communityMembers;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="communityMessages">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommunityMessagesResource.html">CommunityMessagesResource</a>         <strong>communityMessages</strong> <a class="anchor-link"
+            href="#communityMessages"
+            title="Permalink to OrkutApi.communityMessages">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommunityMessagesResource get communityMessages =&gt; _communityMessages;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="communityPollComments">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommunityPollCommentsResource.html">CommunityPollCommentsResource</a>         <strong>communityPollComments</strong> <a class="anchor-link"
+            href="#communityPollComments"
+            title="Permalink to OrkutApi.communityPollComments">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommunityPollCommentsResource get communityPollComments =&gt; _communityPollComments;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="communityPolls">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommunityPollsResource.html">CommunityPollsResource</a>         <strong>communityPolls</strong> <a class="anchor-link"
+            href="#communityPolls"
+            title="Permalink to OrkutApi.communityPolls">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommunityPollsResource get communityPolls =&gt; _communityPolls;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="communityPollVotes">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommunityPollVotesResource.html">CommunityPollVotesResource</a>         <strong>communityPollVotes</strong> <a class="anchor-link"
+            href="#communityPollVotes"
+            title="Permalink to OrkutApi.communityPollVotes">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommunityPollVotesResource get communityPollVotes =&gt; _communityPollVotes;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="communityRelated">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommunityRelatedResource.html">CommunityRelatedResource</a>         <strong>communityRelated</strong> <a class="anchor-link"
+            href="#communityRelated"
+            title="Permalink to OrkutApi.communityRelated">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommunityRelatedResource get communityRelated =&gt; _communityRelated;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="communityTopics">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CommunityTopicsResource.html">CommunityTopicsResource</a>         <strong>communityTopics</strong> <a class="anchor-link"
+            href="#communityTopics"
+            title="Permalink to OrkutApi.communityTopics">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommunityTopicsResource get communityTopics =&gt; _communityTopics;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="counters">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/CountersResource.html">CountersResource</a>         <strong>counters</strong> <a class="anchor-link"
+            href="#counters"
+            title="Permalink to OrkutApi.counters">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CountersResource get counters =&gt; _counters;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="fields">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to OrkutApi.fields">#</a>
@@ -357,7 +468,7 @@ core.String fields;
 </div>
 </div>
 <div class="field"><h4 id="key">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to OrkutApi.key">#</a>
@@ -371,7 +482,7 @@ core.String key;
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to OrkutApi.oauthToken">#</a>
@@ -384,7 +495,7 @@ core.String oauthToken;
 </div>
 </div>
 <div class="field"><h4 id="prettyPrint">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to OrkutApi.prettyPrint">#</a>
@@ -397,7 +508,7 @@ core.bool prettyPrint;
 </div>
 </div>
 <div class="field"><h4 id="quotaUser">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to OrkutApi.quotaUser">#</a>
@@ -410,8 +521,48 @@ core.String quotaUser;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to OrkutApi.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="scraps">
+<button class="show-code">Code</button>
+final <a href="../orkut-v2/ScrapsResource.html">ScrapsResource</a>         <strong>scraps</strong> <a class="anchor-link"
+            href="#scraps"
+            title="Permalink to OrkutApi.scraps">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+ScrapsResource get scraps =&gt; _scraps;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userAgent">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userAgent</strong> <a class="anchor-link"
+            href="#userAgent"
+            title="Permalink to OrkutApi.userAgent">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String get userAgent {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}orkut/v2/20120223 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="userIp">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to OrkutApi.userIp">#</a>
@@ -422,6 +573,120 @@ limits.</p>
 <pre class="source">
 core.String userIp;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to OrkutApi.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to OrkutApi.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to OrkutApi.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to OrkutApi.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="OrkutApi">
+<button class="show-code">Code</button>
+new <strong>OrkutApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/orkut/v2/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#OrkutApi"
+              title="Permalink to OrkutApi.OrkutApi">#</a></h4>
+<div class="doc">
+<pre class="source">
+OrkutApi({this.baseUrl:"https://www.googleapis.com/orkut/v2/", applicationName, this.authenticator}) :
+    this.applicationName = (applicationName == null) ? null : applicationName
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+{ 
+  _communityMembers = new CommunityMembersResource._internal(this);
+  _activities = new ActivitiesResource._internal(this);
+  _communityPollComments = new CommunityPollCommentsResource._internal(this);
+  _communityPolls = new CommunityPollsResource._internal(this);
+  _communityMessages = new CommunityMessagesResource._internal(this);
+  _communityTopics = new CommunityTopicsResource._internal(this);
+  _comments = new CommentsResource._internal(this);
+  _acl = new AclResource._internal(this);
+  _communityRelated = new CommunityRelatedResource._internal(this);
+  _scraps = new ScrapsResource._internal(this);
+  _communityPollVotes = new CommunityPollVotesResource._internal(this);
+  _communities = new CommunitiesResource._internal(this);
+  _communityFollow = new CommunityFollowResource._internal(this);
+  _activityVisibility = new ActivityVisibilityResource._internal(this);
+  _badges = new BadgesResource._internal(this);
+  _counters = new CountersResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to OrkutApi.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

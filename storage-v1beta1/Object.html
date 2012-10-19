@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Object Class / storage-v1beta1 Library / Dart Documentation</title>
+        <title>Object class / storage-v1beta1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,117 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../storage-v1beta1.html">storage-v1beta1</a> &rsaquo; <a href="../storage-v1beta1/Object.html">Object</a></div>
+         &rsaquo; <a href="../storage-v1beta1.html">storage-v1beta1</a> &rsaquo; <a href="../storage-v1beta1/Object.html">Object</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Object</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Object extends IdentityHash {
+  /** The kind of item this is. For objects, this is always storage#object. */
+  core.String kind;
 
+  /** The name of this object. Required if not specified by URL parameter. */
+  core.String name;
+
+  /** Content-Language of the object data. */
+  core.String contentLanguage;
+
+  /**
+ * Object media data. Provided on your behalf when uploading raw media or multipart/related with an
+ * auxiliary media part.
+ */
+  ObjectMedia media;
+
+  /** The bucket containing this object. */
+  core.String bucket;
+
+  /** Content-Encoding of the object data. */
+  core.String contentEncoding;
+
+  /** The link to this object. */
+  core.String selfLink;
+
+  /** The owner of the object. This will always be the uploader of the object. */
+  ObjectOwner owner;
+
+  /** Cache-Control directive for the object data. */
+  core.String cacheControl;
+
+  /** Access controls on the object. */
+  core.List&lt;ObjectAccessControl&gt; acl;
+
+  /** The ID of the object. */
+  core.String id;
+
+  /** Content-Disposition of the object data. */
+  core.String contentDisposition;
+
+  /** User-provided metadata, in key/value pairs. */
+  core.Map&lt;core.String, core.String&gt; metadata;
+
+  /** Parses an instance from its JSON representation. */
+  static Object parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Object();
+    result.kind = identity(json["kind"]);
+    result.name = identity(json["name"]);
+    result.contentLanguage = identity(json["contentLanguage"]);
+    result.media = ObjectMedia.parse(json["media"]);
+    result.bucket = identity(json["bucket"]);
+    result.contentEncoding = identity(json["contentEncoding"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.owner = ObjectOwner.parse(json["owner"]);
+    result.cacheControl = identity(json["cacheControl"]);
+    result.acl = map(ObjectAccessControl.parse)(json["acl"]);
+    result.id = identity(json["id"]);
+    result.contentDisposition = identity(json["contentDisposition"]);
+    result.metadata = mapValues(identity)(json["metadata"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Object value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["name"] = identity(value.name);
+    result["contentLanguage"] = identity(value.contentLanguage);
+    result["media"] = ObjectMedia.serialize(value.media);
+    result["bucket"] = identity(value.bucket);
+    result["contentEncoding"] = identity(value.contentEncoding);
+    result["selfLink"] = identity(value.selfLink);
+    result["owner"] = ObjectOwner.serialize(value.owner);
+    result["cacheControl"] = identity(value.cacheControl);
+    result["acl"] = map(ObjectAccessControl.serialize)(value.acl);
+    result["id"] = identity(value.id);
+    result["contentDisposition"] = identity(value.contentDisposition);
+    result["metadata"] = mapValues(identity)(value.metadata);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Object</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../storage-v1beta1/Object.html">Object</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Object.parse">#</a></h4>
 <div class="doc">
@@ -59,7 +152,7 @@ static Object parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../storage-v1beta1/Object.html">Object</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Object.serialize">#</a></h4>
 <div class="doc">
@@ -86,21 +179,11 @@ static core.Object serialize(Object value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Object.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="acl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../storage-v1beta1/ObjectAccessControl.html">ObjectAccessControl</a>&gt;         <strong>acl</strong> <a class="anchor-link"
             href="#acl"
             title="Permalink to Object.acl">#</a>
@@ -113,7 +196,7 @@ core.List&lt;ObjectAccessControl&gt; acl;
 </div>
 </div>
 <div class="field"><h4 id="bucket">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>bucket</strong> <a class="anchor-link"
             href="#bucket"
             title="Permalink to Object.bucket">#</a>
@@ -126,7 +209,7 @@ core.String bucket;
 </div>
 </div>
 <div class="field"><h4 id="cacheControl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>cacheControl</strong> <a class="anchor-link"
             href="#cacheControl"
             title="Permalink to Object.cacheControl">#</a>
@@ -139,7 +222,7 @@ core.String cacheControl;
 </div>
 </div>
 <div class="field"><h4 id="contentDisposition">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>contentDisposition</strong> <a class="anchor-link"
             href="#contentDisposition"
             title="Permalink to Object.contentDisposition">#</a>
@@ -152,7 +235,7 @@ core.String contentDisposition;
 </div>
 </div>
 <div class="field"><h4 id="contentEncoding">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>contentEncoding</strong> <a class="anchor-link"
             href="#contentEncoding"
             title="Permalink to Object.contentEncoding">#</a>
@@ -165,7 +248,7 @@ core.String contentEncoding;
 </div>
 </div>
 <div class="field"><h4 id="contentLanguage">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>contentLanguage</strong> <a class="anchor-link"
             href="#contentLanguage"
             title="Permalink to Object.contentLanguage">#</a>
@@ -178,7 +261,7 @@ core.String contentLanguage;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Object.id">#</a>
@@ -191,7 +274,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Object.kind">#</a>
@@ -204,7 +287,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="media">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../storage-v1beta1/ObjectMedia.html">ObjectMedia</a>         <strong>media</strong> <a class="anchor-link"
             href="#media"
             title="Permalink to Object.media">#</a>
@@ -218,7 +301,7 @@ ObjectMedia media;
 </div>
 </div>
 <div class="field"><h4 id="metadata">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>metadata</strong> <a class="anchor-link"
             href="#metadata"
             title="Permalink to Object.metadata">#</a>
@@ -231,7 +314,7 @@ core.Map&lt;core.String, core.String&gt; metadata;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Object.name">#</a>
@@ -244,7 +327,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="owner">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../storage-v1beta1/ObjectOwner.html">ObjectOwner</a>         <strong>owner</strong> <a class="anchor-link"
             href="#owner"
             title="Permalink to Object.owner">#</a>
@@ -256,8 +339,21 @@ ObjectOwner owner;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Object.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Object.selfLink">#</a>
@@ -267,6 +363,103 @@ ObjectOwner owner;
 <pre class="source">
 core.String selfLink;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Object.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <a class="crossref" href="../storage-v1beta1/Object.html">Object</a>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Object.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Object.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Object.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Object.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <a class="crossref" href="../storage-v1beta1/Object.html">Object</a> instance.</p>
+<p><a class="crossref" href="../storage-v1beta1/Object.html">Object</a> instances have no meaningful state, and are only useful
+through their identity. An <a class="crossref" href="../storage-v1beta1/Object.html">Object</a> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Object.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

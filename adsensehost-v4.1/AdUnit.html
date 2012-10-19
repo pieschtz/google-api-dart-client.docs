@@ -1,0 +1,384 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AdUnit class / adsensehost-v4.1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adsensehost-v4.1" data-type="AdUnit">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adsensehost-v4.1.html">adsensehost-v4.1</a> &rsaquo; <a href="../adsensehost-v4.1/AdUnit.html">AdUnit</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AdUnit</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class AdUnit extends IdentityHash {
+  /**
+ * Status of this ad unit. Possible values are: NEW: Indicates that the ad unit was created within
+ * the last seven days and does not yet have any activity associated with it.
+ *
+ * ACTIVE: Indicates that there has been activity on this ad unit in the last seven days.
+ *
+ * INACTIVE: Indicates that there has been no activity on this ad unit in the last seven days.
+ */
+  core.String status;
+
+  /** Kind of resource this is, in this case adsensehost#adUnit. */
+  core.String kind;
+
+  /** Identity code of this ad unit, not necessarily unique across ad clients. */
+  core.String code;
+
+  /** Name of this ad unit. */
+  core.String name;
+
+  /** Settings specific to content ads (AFC) and highend mobile content ads (AFMC). */
+  AdUnitContentAdsSettings contentAdsSettings;
+
+  /**
+ * Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe
+ * to rely on it being in any particular format.
+ */
+  core.String id;
+
+  /** Settings specific to WAP mobile content ads (AFMC). */
+  AdUnitMobileContentAdsSettings mobileContentAdsSettings;
+
+  /** Custom style information specific to this ad unit. */
+  AdStyle customStyle;
+
+  /** Parses an instance from its JSON representation. */
+  static AdUnit parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new AdUnit();
+    result.status = identity(json["status"]);
+    result.kind = identity(json["kind"]);
+    result.code = identity(json["code"]);
+    result.name = identity(json["name"]);
+    result.contentAdsSettings = AdUnitContentAdsSettings.parse(json["contentAdsSettings"]);
+    result.id = identity(json["id"]);
+    result.mobileContentAdsSettings = AdUnitMobileContentAdsSettings.parse(json["mobileContentAdsSettings"]);
+    result.customStyle = AdStyle.parse(json["customStyle"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(AdUnit value) {
+    if (value == null) return null;
+    final result = {};
+    result["status"] = identity(value.status);
+    result["kind"] = identity(value.kind);
+    result["code"] = identity(value.code);
+    result["name"] = identity(value.name);
+    result["contentAdsSettings"] = AdUnitContentAdsSettings.serialize(value.contentAdsSettings);
+    result["id"] = identity(value.id);
+    result["mobileContentAdsSettings"] = AdUnitMobileContentAdsSettings.serialize(value.mobileContentAdsSettings);
+    result["customStyle"] = AdStyle.serialize(value.customStyle);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>AdUnit</strong></span></p>
+<div>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<button class="show-code">Code</button>
+<a href="../adsensehost-v4.1/AdUnit.html">AdUnit</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to AdUnit.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static AdUnit parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new AdUnit();
+  result.status = identity(json["status"]);
+  result.kind = identity(json["kind"]);
+  result.code = identity(json["code"]);
+  result.name = identity(json["name"]);
+  result.contentAdsSettings = AdUnitContentAdsSettings.parse(json["contentAdsSettings"]);
+  result.id = identity(json["id"]);
+  result.mobileContentAdsSettings = AdUnitMobileContentAdsSettings.parse(json["mobileContentAdsSettings"]);
+  result.customStyle = AdStyle.parse(json["customStyle"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adsensehost-v4.1/AdUnit.html">AdUnit</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to AdUnit.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(AdUnit value) {
+  if (value == null) return null;
+  final result = {};
+  result["status"] = identity(value.status);
+  result["kind"] = identity(value.kind);
+  result["code"] = identity(value.code);
+  result["name"] = identity(value.name);
+  result["contentAdsSettings"] = AdUnitContentAdsSettings.serialize(value.contentAdsSettings);
+  result["id"] = identity(value.id);
+  result["mobileContentAdsSettings"] = AdUnitMobileContentAdsSettings.serialize(value.mobileContentAdsSettings);
+  result["customStyle"] = AdStyle.serialize(value.customStyle);
+  return result;
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="code">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>code</strong> <a class="anchor-link"
+            href="#code"
+            title="Permalink to AdUnit.code">#</a>
+        </h4>
+        <div class="doc">
+<p>Identity code of this ad unit, not necessarily unique across ad clients.</p>
+<pre class="source">
+core.String code;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="contentAdsSettings">
+<button class="show-code">Code</button>
+<a href="../adsensehost-v4.1/AdUnitContentAdsSettings.html">AdUnitContentAdsSettings</a>         <strong>contentAdsSettings</strong> <a class="anchor-link"
+            href="#contentAdsSettings"
+            title="Permalink to AdUnit.contentAdsSettings">#</a>
+        </h4>
+        <div class="doc">
+<p>Settings specific to content ads (AFC) and highend mobile content ads (AFMC).</p>
+<pre class="source">
+AdUnitContentAdsSettings contentAdsSettings;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="customStyle">
+<button class="show-code">Code</button>
+<a href="../adsensehost-v4.1/AdStyle.html">AdStyle</a>         <strong>customStyle</strong> <a class="anchor-link"
+            href="#customStyle"
+            title="Permalink to AdUnit.customStyle">#</a>
+        </h4>
+        <div class="doc">
+<p>Custom style information specific to this ad unit.</p>
+<pre class="source">
+AdStyle customStyle;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to AdUnit.id">#</a>
+        </h4>
+        <div class="doc">
+<p>Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe
+to rely on it being in any particular format.</p>
+<pre class="source">
+core.String id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to AdUnit.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Kind of resource this is, in this case adsensehost#adUnit.</p>
+<pre class="source">
+core.String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="mobileContentAdsSettings">
+<button class="show-code">Code</button>
+<a href="../adsensehost-v4.1/AdUnitMobileContentAdsSettings.html">AdUnitMobileContentAdsSettings</a>         <strong>mobileContentAdsSettings</strong> <a class="anchor-link"
+            href="#mobileContentAdsSettings"
+            title="Permalink to AdUnit.mobileContentAdsSettings">#</a>
+        </h4>
+        <div class="doc">
+<p>Settings specific to WAP mobile content ads (AFMC).</p>
+<pre class="source">
+AdUnitMobileContentAdsSettings mobileContentAdsSettings;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to AdUnit.name">#</a>
+        </h4>
+        <div class="doc">
+<p>Name of this ad unit.</p>
+<pre class="source">
+core.String name;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to AdUnit.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="status">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
+            href="#status"
+            title="Permalink to AdUnit.status">#</a>
+        </h4>
+        <div class="doc">
+<p>Status of this ad unit. Possible values are: NEW: Indicates that the ad unit was created within
+the last seven days and does not yet have any activity associated with it.</p>
+<p>ACTIVE: Indicates that there has been activity on this ad unit in the last seven days.</p>
+<p>INACTIVE: Indicates that there has been no activity on this ad unit in the last seven days.</p>
+<pre class="source">
+core.String status;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to AdUnit.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to AdUnit.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to AdUnit.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to AdUnit.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to AdUnit.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to AdUnit.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

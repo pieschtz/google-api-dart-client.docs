@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>JobConfigurationLoad Class / bigquery-v2 Library / Dart Documentation</title>
+        <title>JobConfigurationLoad class / bigquery-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,143 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/JobConfigurationLoad.html">JobConfigurationLoad</a></div>
+         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/JobConfigurationLoad.html">JobConfigurationLoad</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>JobConfigurationLoad</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class JobConfigurationLoad extends IdentityHash {
+  /**
+ * [Optional] Character encoding of the input data. May be UTF-8 or ISO-8859-1. Default is UTF-8.
+ */
+  core.String encoding;
 
+  /**
+ * [Optional] Delimiter to use between fields in the import data. Default is ','. Note that
+ * delimiters are applied to the raw, binary data before the encoding is applied.
+ */
+  core.String fieldDelimiter;
+
+  /**
+ * [Experimental] Optional and defaults to CSV. Format of source files. For CSV uploads, specify
+ * "CSV". For imports of datastore backups, specify "DATASTORE_BACKUP". For imports of newline-
+ * delimited JSON, specify "NEWLINE_DELIMITED_JSON".
+ */
+  core.String sourceFormat;
+
+  /** [Required] Table being written to. */
+  TableReference destinationTable;
+
+  /**
+ * [Optional] Whether to overwrite an existing table (WRITE_TRUNCATE), append to an existing table
+ * (WRITE_APPEND), or require that the the table is empty (WRITE_EMPTY). Default is WRITE_APPEND.
+ */
+  core.String writeDisposition;
+
+  /**
+ * [Optional] Maximum number of bad records that should be ignored before the entire job is aborted
+ * and no updates are performed.
+ */
+  core.int maxBadRecords;
+
+  /** [Optional] Number of rows of initial data to skip in the data being imported. */
+  core.int skipLeadingRows;
+
+  /** [Required] Source URIs describing Google Cloud Storage locations of data to load. */
+  core.List&lt;core.String&gt; sourceUris;
+
+  /**
+ * [Optional] Quote character to use. Default is '"'. Note that quoting is done on the raw, binary
+ * data before the encoding is applied. If no quoting is done, use am empty string.
+ */
+  core.String quote;
+
+  /**
+ * [Optional] Whether to create the table if it doesn't already exist (CREATE_IF_NEEDED) or to
+ * require the table already exist (CREATE_NEVER). Default is CREATE_IF_NEEDED.
+ */
+  core.String createDisposition;
+
+  /** [Experimental] Format of inlineSchema field. */
+  core.String schemaInlineFormat;
+
+  /**
+ * [Experimental] Inline schema. For CSV schemas, specify as "Field1:Type1[,Field2:Type2]*". For
+ * example, "foo:STRING, bar:INTEGER, baz:FLOAT"
+ */
+  core.String schemaInline;
+
+  /** [Experimental] Whether to allow quoted newlines in the source CSV data. */
+  core.bool allowQuotedNewlines;
+
+  /** [Optional] Schema of the table being written to. */
+  TableSchema schema;
+
+  /** Parses an instance from its JSON representation. */
+  static JobConfigurationLoad parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new JobConfigurationLoad();
+    result.encoding = identity(json["encoding"]);
+    result.fieldDelimiter = identity(json["fieldDelimiter"]);
+    result.sourceFormat = identity(json["sourceFormat"]);
+    result.destinationTable = TableReference.parse(json["destinationTable"]);
+    result.writeDisposition = identity(json["writeDisposition"]);
+    result.maxBadRecords = identity(json["maxBadRecords"]);
+    result.skipLeadingRows = identity(json["skipLeadingRows"]);
+    result.sourceUris = map(identity)(json["sourceUris"]);
+    result.quote = identity(json["quote"]);
+    result.createDisposition = identity(json["createDisposition"]);
+    result.schemaInlineFormat = identity(json["schemaInlineFormat"]);
+    result.schemaInline = identity(json["schemaInline"]);
+    result.allowQuotedNewlines = identity(json["allowQuotedNewlines"]);
+    result.schema = TableSchema.parse(json["schema"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(JobConfigurationLoad value) {
+    if (value == null) return null;
+    final result = {};
+    result["encoding"] = identity(value.encoding);
+    result["fieldDelimiter"] = identity(value.fieldDelimiter);
+    result["sourceFormat"] = identity(value.sourceFormat);
+    result["destinationTable"] = TableReference.serialize(value.destinationTable);
+    result["writeDisposition"] = identity(value.writeDisposition);
+    result["maxBadRecords"] = identity(value.maxBadRecords);
+    result["skipLeadingRows"] = identity(value.skipLeadingRows);
+    result["sourceUris"] = map(identity)(value.sourceUris);
+    result["quote"] = identity(value.quote);
+    result["createDisposition"] = identity(value.createDisposition);
+    result["schemaInlineFormat"] = identity(value.schemaInlineFormat);
+    result["schemaInline"] = identity(value.schemaInline);
+    result["allowQuotedNewlines"] = identity(value.allowQuotedNewlines);
+    result["schema"] = TableSchema.serialize(value.schema);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>JobConfigurationLoad</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../bigquery-v2/JobConfigurationLoad.html">JobConfigurationLoad</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to JobConfigurationLoad.parse">#</a></h4>
 <div class="doc">
@@ -42,6 +161,7 @@ static JobConfigurationLoad parse(core.Map&lt;core.String, core.Object&gt; json)
   final result = new JobConfigurationLoad();
   result.encoding = identity(json["encoding"]);
   result.fieldDelimiter = identity(json["fieldDelimiter"]);
+  result.sourceFormat = identity(json["sourceFormat"]);
   result.destinationTable = TableReference.parse(json["destinationTable"]);
   result.writeDisposition = identity(json["writeDisposition"]);
   result.maxBadRecords = identity(json["maxBadRecords"]);
@@ -51,6 +171,7 @@ static JobConfigurationLoad parse(core.Map&lt;core.String, core.Object&gt; json)
   result.createDisposition = identity(json["createDisposition"]);
   result.schemaInlineFormat = identity(json["schemaInlineFormat"]);
   result.schemaInline = identity(json["schemaInline"]);
+  result.allowQuotedNewlines = identity(json["allowQuotedNewlines"]);
   result.schema = TableSchema.parse(json["schema"]);
   return result;
 }
@@ -58,7 +179,7 @@ static JobConfigurationLoad parse(core.Map&lt;core.String, core.Object&gt; json)
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../bigquery-v2/JobConfigurationLoad.html">JobConfigurationLoad</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to JobConfigurationLoad.serialize">#</a></h4>
 <div class="doc">
@@ -69,6 +190,7 @@ static core.Object serialize(JobConfigurationLoad value) {
   final result = {};
   result["encoding"] = identity(value.encoding);
   result["fieldDelimiter"] = identity(value.fieldDelimiter);
+  result["sourceFormat"] = identity(value.sourceFormat);
   result["destinationTable"] = TableReference.serialize(value.destinationTable);
   result["writeDisposition"] = identity(value.writeDisposition);
   result["maxBadRecords"] = identity(value.maxBadRecords);
@@ -78,27 +200,31 @@ static core.Object serialize(JobConfigurationLoad value) {
   result["createDisposition"] = identity(value.createDisposition);
   result["schemaInlineFormat"] = identity(value.schemaInlineFormat);
   result["schemaInline"] = identity(value.schemaInline);
+  result["allowQuotedNewlines"] = identity(value.allowQuotedNewlines);
   result["schema"] = TableSchema.serialize(value.schema);
   return result;
 }
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to JobConfigurationLoad.toString">#</a></h4>
-<div class="doc">
-
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="allowQuotedNewlines">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>allowQuotedNewlines</strong> <a class="anchor-link"
+            href="#allowQuotedNewlines"
+            title="Permalink to JobConfigurationLoad.allowQuotedNewlines">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Experimental</code> Whether to allow quoted newlines in the source CSV data.</p>
 <pre class="source">
-toString() =&gt; serialize(this).toString();
+core.bool allowQuotedNewlines;
 </pre>
 </div>
 </div>
-<h3>Fields</h3>
 <div class="field"><h4 id="createDisposition">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>createDisposition</strong> <a class="anchor-link"
             href="#createDisposition"
             title="Permalink to JobConfigurationLoad.createDisposition">#</a>
@@ -112,7 +238,7 @@ core.String createDisposition;
 </div>
 </div>
 <div class="field"><h4 id="destinationTable">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../bigquery-v2/TableReference.html">TableReference</a>         <strong>destinationTable</strong> <a class="anchor-link"
             href="#destinationTable"
             title="Permalink to JobConfigurationLoad.destinationTable">#</a>
@@ -125,7 +251,7 @@ TableReference destinationTable;
 </div>
 </div>
 <div class="field"><h4 id="encoding">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>encoding</strong> <a class="anchor-link"
             href="#encoding"
             title="Permalink to JobConfigurationLoad.encoding">#</a>
@@ -138,7 +264,7 @@ core.String encoding;
 </div>
 </div>
 <div class="field"><h4 id="fieldDelimiter">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fieldDelimiter</strong> <a class="anchor-link"
             href="#fieldDelimiter"
             title="Permalink to JobConfigurationLoad.fieldDelimiter">#</a>
@@ -152,7 +278,7 @@ core.String fieldDelimiter;
 </div>
 </div>
 <div class="field"><h4 id="maxBadRecords">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>maxBadRecords</strong> <a class="anchor-link"
             href="#maxBadRecords"
             title="Permalink to JobConfigurationLoad.maxBadRecords">#</a>
@@ -166,21 +292,34 @@ core.int maxBadRecords;
 </div>
 </div>
 <div class="field"><h4 id="quote">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quote</strong> <a class="anchor-link"
             href="#quote"
             title="Permalink to JobConfigurationLoad.quote">#</a>
         </h4>
         <div class="doc">
 <p><code>Optional</code> Quote character to use. Default is '"'. Note that quoting is done on the raw, binary
-data before the encoding is applied.</p>
+data before the encoding is applied. If no quoting is done, use am empty string.</p>
 <pre class="source">
 core.String quote;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to JobConfigurationLoad.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="schema">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../bigquery-v2/TableSchema.html">TableSchema</a>         <strong>schema</strong> <a class="anchor-link"
             href="#schema"
             title="Permalink to JobConfigurationLoad.schema">#</a>
@@ -193,7 +332,7 @@ TableSchema schema;
 </div>
 </div>
 <div class="field"><h4 id="schemaInline">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>schemaInline</strong> <a class="anchor-link"
             href="#schemaInline"
             title="Permalink to JobConfigurationLoad.schemaInline">#</a>
@@ -207,7 +346,7 @@ core.String schemaInline;
 </div>
 </div>
 <div class="field"><h4 id="schemaInlineFormat">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>schemaInlineFormat</strong> <a class="anchor-link"
             href="#schemaInlineFormat"
             title="Permalink to JobConfigurationLoad.schemaInlineFormat">#</a>
@@ -220,7 +359,7 @@ core.String schemaInlineFormat;
 </div>
 </div>
 <div class="field"><h4 id="skipLeadingRows">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>skipLeadingRows</strong> <a class="anchor-link"
             href="#skipLeadingRows"
             title="Permalink to JobConfigurationLoad.skipLeadingRows">#</a>
@@ -232,8 +371,23 @@ core.int skipLeadingRows;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="sourceFormat">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>sourceFormat</strong> <a class="anchor-link"
+            href="#sourceFormat"
+            title="Permalink to JobConfigurationLoad.sourceFormat">#</a>
+        </h4>
+        <div class="doc">
+<p><code>Experimental</code> Optional and defaults to CSV. Format of source files. For CSV uploads, specify
+"CSV". For imports of datastore backups, specify "DATASTORE<em>BACKUP". For imports of newline-
+delimited JSON, specify "NEWLINE</em>DELIMITED_JSON".</p>
+<pre class="source">
+core.String sourceFormat;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="sourceUris">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>sourceUris</strong> <a class="anchor-link"
             href="#sourceUris"
             title="Permalink to JobConfigurationLoad.sourceUris">#</a>
@@ -246,7 +400,7 @@ core.List&lt;core.String&gt; sourceUris;
 </div>
 </div>
 <div class="field"><h4 id="writeDisposition">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>writeDisposition</strong> <a class="anchor-link"
             href="#writeDisposition"
             title="Permalink to JobConfigurationLoad.writeDisposition">#</a>
@@ -257,6 +411,103 @@ core.List&lt;core.String&gt; sourceUris;
 <pre class="source">
 core.String writeDisposition;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to JobConfigurationLoad.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to JobConfigurationLoad.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to JobConfigurationLoad.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to JobConfigurationLoad.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to JobConfigurationLoad.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to JobConfigurationLoad.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

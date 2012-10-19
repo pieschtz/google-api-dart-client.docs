@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>DownloadAccessRestriction Class / books-v1 Library / Dart Documentation</title>
+        <title>DownloadAccessRestriction class / books-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,115 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/DownloadAccessRestriction.html">DownloadAccessRestriction</a></div>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/DownloadAccessRestriction.html">DownloadAccessRestriction</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>DownloadAccessRestriction</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class DownloadAccessRestriction extends IdentityHash {
+  /** Client nonce for verification. Download access and client-validation only. */
+  core.String nonce;
 
+  /** Resource type. */
+  core.String kind;
+
+  /** If deviceAllowed, whether access was just acquired with this request. */
+  core.bool justAcquired;
+
+  /** If restricted, the maximum number of content download licenses for this volume. */
+  core.int maxDownloadDevices;
+
+  /**
+ * If restricted, the number of content download licenses already acquired (including the requesting
+ * client, if licensed).
+ */
+  core.int downloadsAcquired;
+
+  /** Response signature. */
+  core.String signature;
+
+  /** Identifies the volume for which this entry applies. */
+  core.String volumeId;
+
+  /** If restricted, whether access is granted for this (user, device, volume). */
+  core.bool deviceAllowed;
+
+  /** Client app identifier for verification. Download access and client-validation only. */
+  core.String source;
+
+  /** Whether this volume has any download access restrictions. */
+  core.bool restricted;
+
+  /**
+ * Error/warning reason code. Additional codes may be added in the future. 0 OK 100
+ * ACCESS_DENIED_PUBLISHER_LIMIT 101 ACCESS_DENIED_LIMIT 200 WARNING_USED_LAST_ACCESS
+ */
+  core.String reasonCode;
+
+  /** Error/warning message. */
+  core.String message;
+
+  /** Parses an instance from its JSON representation. */
+  static DownloadAccessRestriction parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new DownloadAccessRestriction();
+    result.nonce = identity(json["nonce"]);
+    result.kind = identity(json["kind"]);
+    result.justAcquired = identity(json["justAcquired"]);
+    result.maxDownloadDevices = identity(json["maxDownloadDevices"]);
+    result.downloadsAcquired = identity(json["downloadsAcquired"]);
+    result.signature = identity(json["signature"]);
+    result.volumeId = identity(json["volumeId"]);
+    result.deviceAllowed = identity(json["deviceAllowed"]);
+    result.source = identity(json["source"]);
+    result.restricted = identity(json["restricted"]);
+    result.reasonCode = identity(json["reasonCode"]);
+    result.message = identity(json["message"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(DownloadAccessRestriction value) {
+    if (value == null) return null;
+    final result = {};
+    result["nonce"] = identity(value.nonce);
+    result["kind"] = identity(value.kind);
+    result["justAcquired"] = identity(value.justAcquired);
+    result["maxDownloadDevices"] = identity(value.maxDownloadDevices);
+    result["downloadsAcquired"] = identity(value.downloadsAcquired);
+    result["signature"] = identity(value.signature);
+    result["volumeId"] = identity(value.volumeId);
+    result["deviceAllowed"] = identity(value.deviceAllowed);
+    result["source"] = identity(value.source);
+    result["restricted"] = identity(value.restricted);
+    result["reasonCode"] = identity(value.reasonCode);
+    result["message"] = identity(value.message);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>DownloadAccessRestriction</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/DownloadAccessRestriction.html">DownloadAccessRestriction</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to DownloadAccessRestriction.parse">#</a></h4>
 <div class="doc">
@@ -58,7 +149,7 @@ static DownloadAccessRestriction parse(core.Map&lt;core.String, core.Object&gt; 
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/DownloadAccessRestriction.html">DownloadAccessRestriction</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to DownloadAccessRestriction.serialize">#</a></h4>
 <div class="doc">
@@ -84,21 +175,11 @@ static core.Object serialize(DownloadAccessRestriction value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to DownloadAccessRestriction.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="deviceAllowed">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>deviceAllowed</strong> <a class="anchor-link"
             href="#deviceAllowed"
             title="Permalink to DownloadAccessRestriction.deviceAllowed">#</a>
@@ -111,7 +192,7 @@ core.bool deviceAllowed;
 </div>
 </div>
 <div class="field"><h4 id="downloadsAcquired">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>downloadsAcquired</strong> <a class="anchor-link"
             href="#downloadsAcquired"
             title="Permalink to DownloadAccessRestriction.downloadsAcquired">#</a>
@@ -125,7 +206,7 @@ core.int downloadsAcquired;
 </div>
 </div>
 <div class="field"><h4 id="justAcquired">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>justAcquired</strong> <a class="anchor-link"
             href="#justAcquired"
             title="Permalink to DownloadAccessRestriction.justAcquired">#</a>
@@ -138,7 +219,7 @@ core.bool justAcquired;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to DownloadAccessRestriction.kind">#</a>
@@ -151,7 +232,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="maxDownloadDevices">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>maxDownloadDevices</strong> <a class="anchor-link"
             href="#maxDownloadDevices"
             title="Permalink to DownloadAccessRestriction.maxDownloadDevices">#</a>
@@ -164,7 +245,7 @@ core.int maxDownloadDevices;
 </div>
 </div>
 <div class="field"><h4 id="message">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>message</strong> <a class="anchor-link"
             href="#message"
             title="Permalink to DownloadAccessRestriction.message">#</a>
@@ -177,7 +258,7 @@ core.String message;
 </div>
 </div>
 <div class="field"><h4 id="nonce">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>nonce</strong> <a class="anchor-link"
             href="#nonce"
             title="Permalink to DownloadAccessRestriction.nonce">#</a>
@@ -190,7 +271,7 @@ core.String nonce;
 </div>
 </div>
 <div class="field"><h4 id="reasonCode">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>reasonCode</strong> <a class="anchor-link"
             href="#reasonCode"
             title="Permalink to DownloadAccessRestriction.reasonCode">#</a>
@@ -204,7 +285,7 @@ core.String reasonCode;
 </div>
 </div>
 <div class="field"><h4 id="restricted">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>restricted</strong> <a class="anchor-link"
             href="#restricted"
             title="Permalink to DownloadAccessRestriction.restricted">#</a>
@@ -216,8 +297,21 @@ core.bool restricted;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to DownloadAccessRestriction.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="signature">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>signature</strong> <a class="anchor-link"
             href="#signature"
             title="Permalink to DownloadAccessRestriction.signature">#</a>
@@ -230,7 +324,7 @@ core.String signature;
 </div>
 </div>
 <div class="field"><h4 id="source">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>source</strong> <a class="anchor-link"
             href="#source"
             title="Permalink to DownloadAccessRestriction.source">#</a>
@@ -243,7 +337,7 @@ core.String source;
 </div>
 </div>
 <div class="field"><h4 id="volumeId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>volumeId</strong> <a class="anchor-link"
             href="#volumeId"
             title="Permalink to DownloadAccessRestriction.volumeId">#</a>
@@ -253,6 +347,103 @@ core.String source;
 <pre class="source">
 core.String volumeId;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to DownloadAccessRestriction.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to DownloadAccessRestriction.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to DownloadAccessRestriction.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to DownloadAccessRestriction.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to DownloadAccessRestriction.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to DownloadAccessRestriction.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

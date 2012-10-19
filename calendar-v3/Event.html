@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Event Class / calendar-v3 Library / Dart Documentation</title>
+        <title>Event class / calendar-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,283 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/Event.html">Event</a></div>
+         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/Event.html">Event</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Event</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Event extends IdentityHash {
+  /** The creator of the event. Read-only. */
+  EventCreator creator;
 
+  /**
+ * The organizer of the event. If the organizer is also an attendee, this is indicated with a
+ * separate entry in 'attendees' with the 'organizer' field set to True. To change the organizer,
+ * use the "move" operation. Read-only, except when importing an event.
+ */
+  EventOrganizer organizer;
+
+  /** Title of the event. */
+  core.String summary;
+
+  /** Identifier of the event. */
+  core.String id;
+
+  /** An absolute link to the Google+ hangout associated with this event. Read-only. */
+  core.String hangoutLink;
+
+  /** The attendees of the event. */
+  core.List&lt;EventAttendee&gt; attendees;
+
+  /** An absolute link to this event in the Google Calendar Web UI. Read-only. */
+  core.String htmlLink;
+
+  /**
+ * List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event. This field is omitted for
+ * single events or instances of recurring events.
+ */
+  core.List&lt;core.String&gt; recurrence;
+
+  /**
+ * The (inclusive) start time of the event. For a recurring event, this is the start time of the
+ * first instance.
+ */
+  EventDateTime start;
+
+  /** ETag of the resource. */
+  core.String etag;
+
+  /** Geographic location of the event as free-form text. Optional. */
+  core.String location;
+
+  /**
+ * For an instance of a recurring event, this is the event ID of the recurring event itself.
+ * Immutable.
+ */
+  core.String recurringEventId;
+
+  /** A gadget that extends this event. */
+  EventGadget gadget;
+
+  /**
+ * Status of the event. Optional. Possible values are: - "confirmed" - The event is confirmed. This
+ * is the default status. - "tentative" - The event is tentatively confirmed. - "cancelled" - The
+ * event is cancelled.
+ */
+  core.String status;
+
+  /** Last modification time of the event (as a RFC 3339 timestamp). Read-only. */
+  core.String updated;
+
+  /** Description of the event. Optional. */
+  core.String description;
+
+  /** Event ID in the iCalendar format. */
+  core.String iCalUID;
+
+  /** Extended properties of the event. */
+  EventExtendedProperties extendedProperties;
+
+  /**
+ * Whether the end time is actually unspecified. An end time is still provided for compatibility
+ * reasons, even if this attribute is set to True. The default is False.
+ */
+  core.bool endTimeUnspecified;
+
+  /** Sequence number as per iCalendar. */
+  core.int sequence;
+
+  /**
+ * Visibility of the event. Optional. Possible values are: - "default" - Uses the default visibility
+ * for events on the calendar. This is the default value. - "public" - The event is public and event
+ * details are visible to all readers of the calendar. - "private" - The event is private and only
+ * event attendees may view event details. - "confidential" - The event is private. This value is
+ * provided for compatibility reasons.
+ */
+  core.String visibility;
+
+  /**
+ * Whether attendees other than the organizer can modify the event. Optional. The default is False.
+ */
+  core.bool guestsCanModify;
+
+  /**
+ * The (exclusive) end time of the event. For a recurring event, this is the end time of the first
+ * instance.
+ */
+  EventDateTime end;
+
+  /**
+ * Whether attendees may have been omitted from the event's representation. When retrieving an
+ * event, this may be due to a restriction specified by the 'maxAttendee' query parameter. When
+ * updating an event, this can be used to only update the participant's response. Optional. The
+ * default is False.
+ */
+  core.bool attendeesOmitted;
+
+  /** Type of the resource ("calendar#event"). */
+  core.String kind;
+
+  /**
+ * Whether this is a locked event copy where no changes can be made to the main event fields
+ * "summary", "description", "location", "start", "end" or "recurrence". The default is False. Read-
+ * Only.
+ */
+  core.bool locked;
+
+  /** Creation time of the event (as a RFC 3339 timestamp). Read-only. */
+  core.String created;
+
+  /**
+ * The color of the event. This is an ID referring to an entry in the "event" section of the colors
+ * definition (see the "colors" endpoint). Optional.
+ */
+  core.String colorId;
+
+  /** Whether anyone can invite themselves to the event. Optional. The default is False. */
+  core.bool anyoneCanAddSelf;
+
+  /** Information about the event's reminders for the authenticated user. */
+  EventReminders reminders;
+
+  /**
+ * Whether attendees other than the organizer can see who the event's attendees are. Optional. The
+ * default is False.
+ */
+  core.bool guestsCanSeeOtherGuests;
+
+  /**
+ * For an instance of a recurring event, this is the time at which this event would start according
+ * to the recurrence data in the recurring event identified by recurringEventId. Immutable.
+ */
+  EventDateTime originalStartTime;
+
+  /**
+ * Whether attendees other than the organizer can invite others to the event. Optional. The default
+ * is False.
+ */
+  core.bool guestsCanInviteOthers;
+
+  /**
+ * Whether the event blocks time on the calendar. Optional. Possible values are: - "opaque" - The
+ * event blocks time on the calendar. This is the default value. - "transparent" - The event does
+ * not block time on the calendar.
+ */
+  core.String transparency;
+
+  /**
+ * Whether this is a private event copy where changes are not shared with other copies on other
+ * calendars. Optional. Immutable.
+ */
+  core.bool privateCopy;
+
+  /** Parses an instance from its JSON representation. */
+  static Event parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Event();
+    result.creator = EventCreator.parse(json["creator"]);
+    result.organizer = EventOrganizer.parse(json["organizer"]);
+    result.summary = identity(json["summary"]);
+    result.id = identity(json["id"]);
+    result.hangoutLink = identity(json["hangoutLink"]);
+    result.attendees = map(EventAttendee.parse)(json["attendees"]);
+    result.htmlLink = identity(json["htmlLink"]);
+    result.recurrence = map(identity)(json["recurrence"]);
+    result.start = EventDateTime.parse(json["start"]);
+    result.etag = identity(json["etag"]);
+    result.location = identity(json["location"]);
+    result.recurringEventId = identity(json["recurringEventId"]);
+    result.gadget = EventGadget.parse(json["gadget"]);
+    result.status = identity(json["status"]);
+    result.updated = identity(json["updated"]);
+    result.description = identity(json["description"]);
+    result.iCalUID = identity(json["iCalUID"]);
+    result.extendedProperties = EventExtendedProperties.parse(json["extendedProperties"]);
+    result.endTimeUnspecified = identity(json["endTimeUnspecified"]);
+    result.sequence = identity(json["sequence"]);
+    result.visibility = identity(json["visibility"]);
+    result.guestsCanModify = identity(json["guestsCanModify"]);
+    result.end = EventDateTime.parse(json["end"]);
+    result.attendeesOmitted = identity(json["attendeesOmitted"]);
+    result.kind = identity(json["kind"]);
+    result.locked = identity(json["locked"]);
+    result.created = identity(json["created"]);
+    result.colorId = identity(json["colorId"]);
+    result.anyoneCanAddSelf = identity(json["anyoneCanAddSelf"]);
+    result.reminders = EventReminders.parse(json["reminders"]);
+    result.guestsCanSeeOtherGuests = identity(json["guestsCanSeeOtherGuests"]);
+    result.originalStartTime = EventDateTime.parse(json["originalStartTime"]);
+    result.guestsCanInviteOthers = identity(json["guestsCanInviteOthers"]);
+    result.transparency = identity(json["transparency"]);
+    result.privateCopy = identity(json["privateCopy"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Event value) {
+    if (value == null) return null;
+    final result = {};
+    result["creator"] = EventCreator.serialize(value.creator);
+    result["organizer"] = EventOrganizer.serialize(value.organizer);
+    result["summary"] = identity(value.summary);
+    result["id"] = identity(value.id);
+    result["hangoutLink"] = identity(value.hangoutLink);
+    result["attendees"] = map(EventAttendee.serialize)(value.attendees);
+    result["htmlLink"] = identity(value.htmlLink);
+    result["recurrence"] = map(identity)(value.recurrence);
+    result["start"] = EventDateTime.serialize(value.start);
+    result["etag"] = identity(value.etag);
+    result["location"] = identity(value.location);
+    result["recurringEventId"] = identity(value.recurringEventId);
+    result["gadget"] = EventGadget.serialize(value.gadget);
+    result["status"] = identity(value.status);
+    result["updated"] = identity(value.updated);
+    result["description"] = identity(value.description);
+    result["iCalUID"] = identity(value.iCalUID);
+    result["extendedProperties"] = EventExtendedProperties.serialize(value.extendedProperties);
+    result["endTimeUnspecified"] = identity(value.endTimeUnspecified);
+    result["sequence"] = identity(value.sequence);
+    result["visibility"] = identity(value.visibility);
+    result["guestsCanModify"] = identity(value.guestsCanModify);
+    result["end"] = EventDateTime.serialize(value.end);
+    result["attendeesOmitted"] = identity(value.attendeesOmitted);
+    result["kind"] = identity(value.kind);
+    result["locked"] = identity(value.locked);
+    result["created"] = identity(value.created);
+    result["colorId"] = identity(value.colorId);
+    result["anyoneCanAddSelf"] = identity(value.anyoneCanAddSelf);
+    result["reminders"] = EventReminders.serialize(value.reminders);
+    result["guestsCanSeeOtherGuests"] = identity(value.guestsCanSeeOtherGuests);
+    result["originalStartTime"] = EventDateTime.serialize(value.originalStartTime);
+    result["guestsCanInviteOthers"] = identity(value.guestsCanInviteOthers);
+    result["transparency"] = identity(value.transparency);
+    result["privateCopy"] = identity(value.privateCopy);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Event</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/Event.html">Event</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Event.parse">#</a></h4>
 <div class="doc">
@@ -44,6 +303,7 @@ static Event parse(core.Map&lt;core.String, core.Object&gt; json) {
   result.organizer = EventOrganizer.parse(json["organizer"]);
   result.summary = identity(json["summary"]);
   result.id = identity(json["id"]);
+  result.hangoutLink = identity(json["hangoutLink"]);
   result.attendees = map(EventAttendee.parse)(json["attendees"]);
   result.htmlLink = identity(json["htmlLink"]);
   result.recurrence = map(identity)(json["recurrence"]);
@@ -80,7 +340,7 @@ static Event parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/Event.html">Event</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Event.serialize">#</a></h4>
 <div class="doc">
@@ -93,6 +353,7 @@ static core.Object serialize(Event value) {
   result["organizer"] = EventOrganizer.serialize(value.organizer);
   result["summary"] = identity(value.summary);
   result["id"] = identity(value.id);
+  result["hangoutLink"] = identity(value.hangoutLink);
   result["attendees"] = map(EventAttendee.serialize)(value.attendees);
   result["htmlLink"] = identity(value.htmlLink);
   result["recurrence"] = map(identity)(value.recurrence);
@@ -128,21 +389,11 @@ static core.Object serialize(Event value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Event.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="anyoneCanAddSelf">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>anyoneCanAddSelf</strong> <a class="anchor-link"
             href="#anyoneCanAddSelf"
             title="Permalink to Event.anyoneCanAddSelf">#</a>
@@ -155,7 +406,7 @@ core.bool anyoneCanAddSelf;
 </div>
 </div>
 <div class="field"><h4 id="attendees">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../calendar-v3/EventAttendee.html">EventAttendee</a>&gt;         <strong>attendees</strong> <a class="anchor-link"
             href="#attendees"
             title="Permalink to Event.attendees">#</a>
@@ -168,7 +419,7 @@ core.List&lt;EventAttendee&gt; attendees;
 </div>
 </div>
 <div class="field"><h4 id="attendeesOmitted">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>attendeesOmitted</strong> <a class="anchor-link"
             href="#attendeesOmitted"
             title="Permalink to Event.attendeesOmitted">#</a>
@@ -184,7 +435,7 @@ core.bool attendeesOmitted;
 </div>
 </div>
 <div class="field"><h4 id="colorId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>colorId</strong> <a class="anchor-link"
             href="#colorId"
             title="Permalink to Event.colorId">#</a>
@@ -198,7 +449,7 @@ core.String colorId;
 </div>
 </div>
 <div class="field"><h4 id="created">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
             href="#created"
             title="Permalink to Event.created">#</a>
@@ -211,7 +462,7 @@ core.String created;
 </div>
 </div>
 <div class="field"><h4 id="creator">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/EventCreator.html">EventCreator</a>         <strong>creator</strong> <a class="anchor-link"
             href="#creator"
             title="Permalink to Event.creator">#</a>
@@ -224,7 +475,7 @@ EventCreator creator;
 </div>
 </div>
 <div class="field"><h4 id="description">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Event.description">#</a>
@@ -237,7 +488,7 @@ core.String description;
 </div>
 </div>
 <div class="field"><h4 id="end">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/EventDateTime.html">EventDateTime</a>         <strong>end</strong> <a class="anchor-link"
             href="#end"
             title="Permalink to Event.end">#</a>
@@ -251,7 +502,7 @@ EventDateTime end;
 </div>
 </div>
 <div class="field"><h4 id="endTimeUnspecified">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>endTimeUnspecified</strong> <a class="anchor-link"
             href="#endTimeUnspecified"
             title="Permalink to Event.endTimeUnspecified">#</a>
@@ -265,7 +516,7 @@ core.bool endTimeUnspecified;
 </div>
 </div>
 <div class="field"><h4 id="etag">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to Event.etag">#</a>
@@ -278,7 +529,7 @@ core.String etag;
 </div>
 </div>
 <div class="field"><h4 id="extendedProperties">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/EventExtendedProperties.html">EventExtendedProperties</a>         <strong>extendedProperties</strong> <a class="anchor-link"
             href="#extendedProperties"
             title="Permalink to Event.extendedProperties">#</a>
@@ -291,7 +542,7 @@ EventExtendedProperties extendedProperties;
 </div>
 </div>
 <div class="field"><h4 id="gadget">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/EventGadget.html">EventGadget</a>         <strong>gadget</strong> <a class="anchor-link"
             href="#gadget"
             title="Permalink to Event.gadget">#</a>
@@ -304,7 +555,7 @@ EventGadget gadget;
 </div>
 </div>
 <div class="field"><h4 id="guestsCanInviteOthers">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>guestsCanInviteOthers</strong> <a class="anchor-link"
             href="#guestsCanInviteOthers"
             title="Permalink to Event.guestsCanInviteOthers">#</a>
@@ -318,7 +569,7 @@ core.bool guestsCanInviteOthers;
 </div>
 </div>
 <div class="field"><h4 id="guestsCanModify">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>guestsCanModify</strong> <a class="anchor-link"
             href="#guestsCanModify"
             title="Permalink to Event.guestsCanModify">#</a>
@@ -331,7 +582,7 @@ core.bool guestsCanModify;
 </div>
 </div>
 <div class="field"><h4 id="guestsCanSeeOtherGuests">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>guestsCanSeeOtherGuests</strong> <a class="anchor-link"
             href="#guestsCanSeeOtherGuests"
             title="Permalink to Event.guestsCanSeeOtherGuests">#</a>
@@ -344,8 +595,21 @@ core.bool guestsCanSeeOtherGuests;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="hangoutLink">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>hangoutLink</strong> <a class="anchor-link"
+            href="#hangoutLink"
+            title="Permalink to Event.hangoutLink">#</a>
+        </h4>
+        <div class="doc">
+<p>An absolute link to the Google+ hangout associated with this event. Read-only.</p>
+<pre class="source">
+core.String hangoutLink;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="htmlLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>htmlLink</strong> <a class="anchor-link"
             href="#htmlLink"
             title="Permalink to Event.htmlLink">#</a>
@@ -358,7 +622,7 @@ core.String htmlLink;
 </div>
 </div>
 <div class="field"><h4 id="iCalUID">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>iCalUID</strong> <a class="anchor-link"
             href="#iCalUID"
             title="Permalink to Event.iCalUID">#</a>
@@ -371,7 +635,7 @@ core.String iCalUID;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Event.id">#</a>
@@ -384,7 +648,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Event.kind">#</a>
@@ -397,7 +661,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="location">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
             href="#location"
             title="Permalink to Event.location">#</a>
@@ -410,7 +674,7 @@ core.String location;
 </div>
 </div>
 <div class="field"><h4 id="locked">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>locked</strong> <a class="anchor-link"
             href="#locked"
             title="Permalink to Event.locked">#</a>
@@ -425,7 +689,7 @@ core.bool locked;
 </div>
 </div>
 <div class="field"><h4 id="organizer">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/EventOrganizer.html">EventOrganizer</a>         <strong>organizer</strong> <a class="anchor-link"
             href="#organizer"
             title="Permalink to Event.organizer">#</a>
@@ -440,7 +704,7 @@ EventOrganizer organizer;
 </div>
 </div>
 <div class="field"><h4 id="originalStartTime">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/EventDateTime.html">EventDateTime</a>         <strong>originalStartTime</strong> <a class="anchor-link"
             href="#originalStartTime"
             title="Permalink to Event.originalStartTime">#</a>
@@ -454,7 +718,7 @@ EventDateTime originalStartTime;
 </div>
 </div>
 <div class="field"><h4 id="privateCopy">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>privateCopy</strong> <a class="anchor-link"
             href="#privateCopy"
             title="Permalink to Event.privateCopy">#</a>
@@ -468,7 +732,7 @@ core.bool privateCopy;
 </div>
 </div>
 <div class="field"><h4 id="recurrence">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>recurrence</strong> <a class="anchor-link"
             href="#recurrence"
             title="Permalink to Event.recurrence">#</a>
@@ -482,7 +746,7 @@ core.List&lt;core.String&gt; recurrence;
 </div>
 </div>
 <div class="field"><h4 id="recurringEventId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>recurringEventId</strong> <a class="anchor-link"
             href="#recurringEventId"
             title="Permalink to Event.recurringEventId">#</a>
@@ -496,7 +760,7 @@ core.String recurringEventId;
 </div>
 </div>
 <div class="field"><h4 id="reminders">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/EventReminders.html">EventReminders</a>         <strong>reminders</strong> <a class="anchor-link"
             href="#reminders"
             title="Permalink to Event.reminders">#</a>
@@ -508,8 +772,21 @@ EventReminders reminders;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Event.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="sequence">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>sequence</strong> <a class="anchor-link"
             href="#sequence"
             title="Permalink to Event.sequence">#</a>
@@ -522,7 +799,7 @@ core.int sequence;
 </div>
 </div>
 <div class="field"><h4 id="start">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/EventDateTime.html">EventDateTime</a>         <strong>start</strong> <a class="anchor-link"
             href="#start"
             title="Permalink to Event.start">#</a>
@@ -536,7 +813,7 @@ EventDateTime start;
 </div>
 </div>
 <div class="field"><h4 id="status">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Event.status">#</a>
@@ -551,7 +828,7 @@ core.String status;
 </div>
 </div>
 <div class="field"><h4 id="summary">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>summary</strong> <a class="anchor-link"
             href="#summary"
             title="Permalink to Event.summary">#</a>
@@ -564,7 +841,7 @@ core.String summary;
 </div>
 </div>
 <div class="field"><h4 id="transparency">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>transparency</strong> <a class="anchor-link"
             href="#transparency"
             title="Permalink to Event.transparency">#</a>
@@ -579,7 +856,7 @@ core.String transparency;
 </div>
 </div>
 <div class="field"><h4 id="updated">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
             href="#updated"
             title="Permalink to Event.updated">#</a>
@@ -592,7 +869,7 @@ core.String updated;
 </div>
 </div>
 <div class="field"><h4 id="visibility">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>visibility</strong> <a class="anchor-link"
             href="#visibility"
             title="Permalink to Event.visibility">#</a>
@@ -606,6 +883,103 @@ provided for compatibility reasons.</p>
 <pre class="source">
 core.String visibility;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Event.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Event.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Event.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Event.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Event.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Event.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

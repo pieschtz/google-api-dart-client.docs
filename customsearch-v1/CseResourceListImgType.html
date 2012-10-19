@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>CseResourceListImgType Class / customsearch-v1 Library / Dart Documentation</title>
+        <title>CseResourceListImgType class / customsearch-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,36 +14,88 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../customsearch-v1.html">customsearch-v1</a> &rsaquo; <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a></div>
+         &rsaquo; <a href="../customsearch-v1.html">customsearch-v1</a> &rsaquo; <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>CseResourceListImgType</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class CseResourceListImgType extends core.Object implements core.Hashable {
+  /** clipart */
+  const CseResourceListImgType CLIPART = const CseResourceListImgType._internal("clipart", 0);
+  /** face */
+  const CseResourceListImgType FACE = const CseResourceListImgType._internal("face", 1);
+  /** lineart */
+  const CseResourceListImgType LINEART = const CseResourceListImgType._internal("lineart", 2);
+  /** news */
+  const CseResourceListImgType NEWS = const CseResourceListImgType._internal("news", 3);
+  /** photo */
+  const CseResourceListImgType PHOTO = const CseResourceListImgType._internal("photo", 4);
 
+  /** All values of this enumeration */
+  const core.List&lt;CseResourceListImgType&gt; values = const &lt;CseResourceListImgType&gt;[
+    CLIPART,
+    FACE,
+    LINEART,
+    NEWS,
+    PHOTO,
+  ];
+
+  /** Map from string representation to enumeration value */
+  const _valuesMap = const &lt;CseResourceListImgType&gt;{ 
+    "clipart": CLIPART,
+    "face": FACE,
+    "lineart": LINEART,
+    "news": NEWS,
+    "photo": PHOTO,
+  };
+
+  /** Get the enumeration value with a specified string representation, or null if none matches. */
+  static CseResourceListImgType valueOf(core.String item) =&gt; _valuesMap[item];
+
+  final core.int _ordinal;
+  final core.String _value;
+  const CseResourceListImgType._internal(core.String this._value, core.int this._ordinal);
+
+  /** Get the string representation of an enumeration value */
+  toString() =&gt; _value;
+  hashCode() =&gt; _ordinal ^ "ImgType".hashCode();
+}
+</pre>
 </div>
 <h3>Implements</h3>
 <p>
-<span class="type-box"><span class="icon-interface"></span><a href="../dart_core/Hashable.html">Hashable</a></span></p>
+<span class="type-box"><span class="icon-class"></span><a href="../dart_core/Hashable.html">Hashable</a></span></p>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="CseResourceListImgType">
-<span class="show-code">Code</span>
-const <strong>CseResourceListImgType</strong>._internal(<a href="http://api.dartlang.org/dart_core/String.html">String</a> _value, <a href="http://api.dartlang.org/dart_core/int.html">int</a> _ordinal) <a class="anchor-link" href="#CseResourceListImgType"
-              title="Permalink to CseResourceListImgType.CseResourceListImgType">#</a></h4>
+<div class="method"><h4 id="CseResourceListImgType._internal">
+<button class="show-code">Code</button>
+const <strong>CseResourceListImgType._internal</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> _value, <a href="http://api.dartlang.org/dart_core/int.html">int</a> _ordinal) <a class="anchor-link" href="#CseResourceListImgType._internal"
+              title="Permalink to CseResourceListImgType.CseResourceListImgType._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 const CseResourceListImgType._internal(core.String this._value, core.int this._ordinal);
 </pre>
 </div>
 </div>
+</div>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="valueOf">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a> <strong>valueOf</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> item) <a class="anchor-link" href="#valueOf"
               title="Permalink to CseResourceListImgType.valueOf">#</a></h4>
 <div class="doc">
@@ -53,82 +105,97 @@ static CseResourceListImgType valueOf(core.String item) =&gt; _valuesMap[item];
 </pre>
 </div>
 </div>
-<h3>Static Fields</h3>
+</div>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="CLIPART">
-<span class="show-code">Code</span>
-final <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>CLIPART</strong> <a class="anchor-link"
+<button class="show-code">Code</button>
+const <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>CLIPART</strong> <a class="anchor-link"
             href="#CLIPART"
             title="Permalink to CseResourceListImgType.CLIPART">#</a>
         </h4>
         <div class="doc">
 <p>clipart</p>
 <pre class="source">
-static final CseResourceListImgType CLIPART = const CseResourceListImgType._internal("clipart", 0);
+const CseResourceListImgType CLIPART = const CseResourceListImgType._internal("clipart", 0);
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="FACE">
-<span class="show-code">Code</span>
-final <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>FACE</strong> <a class="anchor-link"
+<button class="show-code">Code</button>
+const <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>FACE</strong> <a class="anchor-link"
             href="#FACE"
             title="Permalink to CseResourceListImgType.FACE">#</a>
         </h4>
         <div class="doc">
 <p>face</p>
 <pre class="source">
-static final CseResourceListImgType FACE = const CseResourceListImgType._internal("face", 1);
+const CseResourceListImgType FACE = const CseResourceListImgType._internal("face", 1);
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="LINEART">
-<span class="show-code">Code</span>
-final <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>LINEART</strong> <a class="anchor-link"
+<button class="show-code">Code</button>
+const <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>LINEART</strong> <a class="anchor-link"
             href="#LINEART"
             title="Permalink to CseResourceListImgType.LINEART">#</a>
         </h4>
         <div class="doc">
 <p>lineart</p>
 <pre class="source">
-static final CseResourceListImgType LINEART = const CseResourceListImgType._internal("lineart", 2);
+const CseResourceListImgType LINEART = const CseResourceListImgType._internal("lineart", 2);
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="NEWS">
-<span class="show-code">Code</span>
-final <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>NEWS</strong> <a class="anchor-link"
+<button class="show-code">Code</button>
+const <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>NEWS</strong> <a class="anchor-link"
             href="#NEWS"
             title="Permalink to CseResourceListImgType.NEWS">#</a>
         </h4>
         <div class="doc">
 <p>news</p>
 <pre class="source">
-static final CseResourceListImgType NEWS = const CseResourceListImgType._internal("news", 3);
+const CseResourceListImgType NEWS = const CseResourceListImgType._internal("news", 3);
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="PHOTO">
-<span class="show-code">Code</span>
-final <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>PHOTO</strong> <a class="anchor-link"
+<button class="show-code">Code</button>
+const <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>         <strong>PHOTO</strong> <a class="anchor-link"
             href="#PHOTO"
             title="Permalink to CseResourceListImgType.PHOTO">#</a>
         </h4>
         <div class="doc">
 <p>photo</p>
 <pre class="source">
-static final CseResourceListImgType PHOTO = const CseResourceListImgType._internal("photo", 4);
+const CseResourceListImgType PHOTO = const CseResourceListImgType._internal("photo", 4);
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to CseResourceListImgType.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="values">
-<span class="show-code">Code</span>
-final <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>&gt;         <strong>values</strong> <a class="anchor-link"
+<button class="show-code">Code</button>
+const <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a>&gt;         <strong>values</strong> <a class="anchor-link"
             href="#values"
             title="Permalink to CseResourceListImgType.values">#</a>
         </h4>
         <div class="doc">
 <p>All values of this enumeration</p>
 <pre class="source">
-static final core.List&lt;CseResourceListImgType&gt; values = const &lt;CseResourceListImgType&gt;[
+const core.List&lt;CseResourceListImgType&gt; values = const &lt;CseResourceListImgType&gt;[
   CLIPART,
   FACE,
   LINEART,
@@ -138,20 +205,91 @@ static final core.List&lt;CseResourceListImgType&gt; values = const &lt;CseResou
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to CseResourceListImgType.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <a class="crossref" href="../customsearch-v1/CseResourceListImgType.html#hashCode">hashCode</a> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method"><h4 id="CseResourceListImgType._internal">
+<button class="show-code">Code</button>
+const <strong>CseResourceListImgType._internal</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> _value, <a href="http://api.dartlang.org/dart_core/int.html">int</a> _ordinal) <a class="anchor-link" href="#CseResourceListImgType._internal"
+              title="Permalink to CseResourceListImgType.CseResourceListImgType._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+const CseResourceListImgType._internal(core.String this._value, core.int this._ordinal);
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="hashCode">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
               title="Permalink to CseResourceListImgType.hashCode">#</a></h4>
 <div class="doc">
-
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <a class="crossref" href="../customsearch-v1/CseResourceListImgType.html#hashCode">hashCode</a> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
 <pre class="source">
 hashCode() =&gt; _ordinal ^ "ImgType".hashCode();
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to CseResourceListImgType.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to CseResourceListImgType.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <strong>toString</strong>() <a class="anchor-link" href="#toString"
               title="Permalink to CseResourceListImgType.toString">#</a></h4>
 <div class="doc">
@@ -159,6 +297,7 @@ hashCode() =&gt; _ordinal ^ "ImgType".hashCode();
 <pre class="source">
 toString() =&gt; _value;
 </pre>
+</div>
 </div>
 </div>
         </div>

@@ -1,0 +1,370 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>LinkSpecialOffers class / gan-v1beta1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="gan-v1beta1" data-type="LinkSpecialOffers">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/LinkSpecialOffers.html">LinkSpecialOffers</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>LinkSpecialOffers</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class LinkSpecialOffers extends IdentityHash {
+  /** Price cut on the purchase */
+  Money priceCut;
+
+  /** Minimum purchase amount for price cut promotion */
+  Money priceCutMin;
+
+  /** Whether there is free shipping */
+  core.bool freeShipping;
+
+  /** List of promotion code associated with the link */
+  core.List&lt;core.String&gt; promotionCodes;
+
+  /** Percent off on the purchase */
+  core.double percentOff;
+
+  /** Minimum purchase amount for percent off promotion */
+  Money percentOffMin;
+
+  /** Whether there is a free gift */
+  core.bool freeGift;
+
+  /** Minimum purchase amount for free shipping promotion */
+  Money freeShippingMin;
+
+  /** Parses an instance from its JSON representation. */
+  static LinkSpecialOffers parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new LinkSpecialOffers();
+    result.priceCut = Money.parse(json["priceCut"]);
+    result.priceCutMin = Money.parse(json["priceCutMin"]);
+    result.freeShipping = identity(json["freeShipping"]);
+    result.promotionCodes = map(identity)(json["promotionCodes"]);
+    result.percentOff = identity(json["percentOff"]);
+    result.percentOffMin = Money.parse(json["percentOffMin"]);
+    result.freeGift = identity(json["freeGift"]);
+    result.freeShippingMin = Money.parse(json["freeShippingMin"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(LinkSpecialOffers value) {
+    if (value == null) return null;
+    final result = {};
+    result["priceCut"] = Money.serialize(value.priceCut);
+    result["priceCutMin"] = Money.serialize(value.priceCutMin);
+    result["freeShipping"] = identity(value.freeShipping);
+    result["promotionCodes"] = map(identity)(value.promotionCodes);
+    result["percentOff"] = identity(value.percentOff);
+    result["percentOffMin"] = Money.serialize(value.percentOffMin);
+    result["freeGift"] = identity(value.freeGift);
+    result["freeShippingMin"] = Money.serialize(value.freeShippingMin);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>LinkSpecialOffers</strong></span></p>
+<div>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<button class="show-code">Code</button>
+<a href="../gan-v1beta1/LinkSpecialOffers.html">LinkSpecialOffers</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to LinkSpecialOffers.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static LinkSpecialOffers parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new LinkSpecialOffers();
+  result.priceCut = Money.parse(json["priceCut"]);
+  result.priceCutMin = Money.parse(json["priceCutMin"]);
+  result.freeShipping = identity(json["freeShipping"]);
+  result.promotionCodes = map(identity)(json["promotionCodes"]);
+  result.percentOff = identity(json["percentOff"]);
+  result.percentOffMin = Money.parse(json["percentOffMin"]);
+  result.freeGift = identity(json["freeGift"]);
+  result.freeShippingMin = Money.parse(json["freeShippingMin"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/LinkSpecialOffers.html">LinkSpecialOffers</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to LinkSpecialOffers.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(LinkSpecialOffers value) {
+  if (value == null) return null;
+  final result = {};
+  result["priceCut"] = Money.serialize(value.priceCut);
+  result["priceCutMin"] = Money.serialize(value.priceCutMin);
+  result["freeShipping"] = identity(value.freeShipping);
+  result["promotionCodes"] = map(identity)(value.promotionCodes);
+  result["percentOff"] = identity(value.percentOff);
+  result["percentOffMin"] = Money.serialize(value.percentOffMin);
+  result["freeGift"] = identity(value.freeGift);
+  result["freeShippingMin"] = Money.serialize(value.freeShippingMin);
+  return result;
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="freeGift">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>freeGift</strong> <a class="anchor-link"
+            href="#freeGift"
+            title="Permalink to LinkSpecialOffers.freeGift">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether there is a free gift</p>
+<pre class="source">
+core.bool freeGift;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="freeShipping">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>freeShipping</strong> <a class="anchor-link"
+            href="#freeShipping"
+            title="Permalink to LinkSpecialOffers.freeShipping">#</a>
+        </h4>
+        <div class="doc">
+<p>Whether there is free shipping</p>
+<pre class="source">
+core.bool freeShipping;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="freeShippingMin">
+<button class="show-code">Code</button>
+<a href="../gan-v1beta1/Money.html">Money</a>         <strong>freeShippingMin</strong> <a class="anchor-link"
+            href="#freeShippingMin"
+            title="Permalink to LinkSpecialOffers.freeShippingMin">#</a>
+        </h4>
+        <div class="doc">
+<p>Minimum purchase amount for free shipping promotion</p>
+<pre class="source">
+Money freeShippingMin;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="percentOff">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>percentOff</strong> <a class="anchor-link"
+            href="#percentOff"
+            title="Permalink to LinkSpecialOffers.percentOff">#</a>
+        </h4>
+        <div class="doc">
+<p>Percent off on the purchase</p>
+<pre class="source">
+core.double percentOff;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="percentOffMin">
+<button class="show-code">Code</button>
+<a href="../gan-v1beta1/Money.html">Money</a>         <strong>percentOffMin</strong> <a class="anchor-link"
+            href="#percentOffMin"
+            title="Permalink to LinkSpecialOffers.percentOffMin">#</a>
+        </h4>
+        <div class="doc">
+<p>Minimum purchase amount for percent off promotion</p>
+<pre class="source">
+Money percentOffMin;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="priceCut">
+<button class="show-code">Code</button>
+<a href="../gan-v1beta1/Money.html">Money</a>         <strong>priceCut</strong> <a class="anchor-link"
+            href="#priceCut"
+            title="Permalink to LinkSpecialOffers.priceCut">#</a>
+        </h4>
+        <div class="doc">
+<p>Price cut on the purchase</p>
+<pre class="source">
+Money priceCut;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="priceCutMin">
+<button class="show-code">Code</button>
+<a href="../gan-v1beta1/Money.html">Money</a>         <strong>priceCutMin</strong> <a class="anchor-link"
+            href="#priceCutMin"
+            title="Permalink to LinkSpecialOffers.priceCutMin">#</a>
+        </h4>
+        <div class="doc">
+<p>Minimum purchase amount for price cut promotion</p>
+<pre class="source">
+Money priceCutMin;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="promotionCodes">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>promotionCodes</strong> <a class="anchor-link"
+            href="#promotionCodes"
+            title="Permalink to LinkSpecialOffers.promotionCodes">#</a>
+        </h4>
+        <div class="doc">
+<p>List of promotion code associated with the link</p>
+<pre class="source">
+core.List&lt;core.String&gt; promotionCodes;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to LinkSpecialOffers.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to LinkSpecialOffers.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to LinkSpecialOffers.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to LinkSpecialOffers.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to LinkSpecialOffers.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to LinkSpecialOffers.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to LinkSpecialOffers.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>TasksResource Class / taskqueue-v1beta2 Library / Dart Documentation</title>
+        <title>TasksResource class / taskqueue-v1beta2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,339 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../taskqueue-v1beta2.html">taskqueue-v1beta2</a> &rsaquo; <a href="../taskqueue-v1beta2/TasksResource.html">TasksResource</a></div>
+         &rsaquo; <a href="../taskqueue-v1beta2.html">taskqueue-v1beta2</a> &rsaquo; <a href="../taskqueue-v1beta2/TasksResource.html">TasksResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>TasksResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class TasksResource extends core.Object {
+  final TaskqueueApi _$service;
+  
+  TasksResource._internal(TaskqueueApi $service) : _$service = $service;
 
+  // Method TasksResource.Insert
+  /**
+   * Insert a new task in a TaskQueue
+   *
+   *    * [content] the Task
+   *    * [project] The project under which the queue lies
+   *    * [taskqueue] The taskqueue to insert the task into
+   */
+  core.Future&lt;Task&gt; insert(core.String project, core.String taskqueue, Task content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["project"] = project;
+    $pathParams["taskqueue"] = taskqueue;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Task.serialize(content));
+    final $path = "{project}/taskqueues/{taskqueue}/tasks";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
+  }
+
+  // Method TasksResource.Get
+  /**
+   * Get a particular task from a TaskQueue.
+   *
+   *    * [project] The project under which the queue lies.
+   *    * [taskqueue] The taskqueue in which the task belongs.
+   *    * [task] The task to get properties of.
+   */
+  core.Future&lt;Task&gt; get(core.String project, core.String taskqueue, core.String task) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["project"] = project;
+    $pathParams["taskqueue"] = taskqueue;
+    $pathParams["task"] = task;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
+  }
+
+  // Method TasksResource.List
+  /**
+   * List Tasks in a TaskQueue
+   *
+   *    * [project] The project under which the queue lies.
+   *    * [taskqueue] The id of the taskqueue to list tasks from.
+   */
+  core.Future&lt;Tasks2&gt; list(core.String project, core.String taskqueue) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["project"] = project;
+    $pathParams["taskqueue"] = taskqueue;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{project}/taskqueues/{taskqueue}/tasks";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Tasks2.parse(JSON.parse($text)));
+  }
+
+  // Method TasksResource.Update
+  /**
+   * Update tasks that are leased out of a TaskQueue.
+   *
+   *    * [content] the Task
+   *    * [project] The project under which the queue lies.
+   *    * [taskqueue]
+   *    * [task]
+   *    * [newLeaseSeconds] The new lease in seconds.
+   */
+  core.Future&lt;Task&gt; update(core.String project, core.String taskqueue, core.String task, core.int newLeaseSeconds, Task content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["project"] = project;
+    $pathParams["taskqueue"] = taskqueue;
+    $pathParams["task"] = task;
+    if (?newLeaseSeconds) $queryParams["newLeaseSeconds"] = newLeaseSeconds;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Task.serialize(content));
+    final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
+  }
+
+  // Method TasksResource.Patch
+  /**
+   * Update tasks that are leased out of a TaskQueue. This method supports patch semantics.
+   *
+   *    * [content] the Task
+   *    * [project] The project under which the queue lies.
+   *    * [taskqueue]
+   *    * [task]
+   *    * [newLeaseSeconds] The new lease in seconds.
+   */
+  core.Future&lt;Task&gt; patch(core.String project, core.String taskqueue, core.String task, core.int newLeaseSeconds, Task content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["project"] = project;
+    $pathParams["taskqueue"] = taskqueue;
+    $pathParams["task"] = task;
+    if (?newLeaseSeconds) $queryParams["newLeaseSeconds"] = newLeaseSeconds;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Task.serialize(content));
+    final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
+  }
+
+  // Method TasksResource.Delete
+  /**
+   * Delete a task from a TaskQueue.
+   *
+   *    * [project] The project under which the queue lies.
+   *    * [taskqueue] The taskqueue to delete a task from.
+   *    * [task] The id of the task to delete.
+   */
+  core.Future delete(core.String project, core.String taskqueue, core.String task) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["project"] = project;
+    $pathParams["taskqueue"] = taskqueue;
+    $pathParams["task"] = task;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+
+  // Method TasksResource.Lease
+  /**
+   * Lease 1 or more tasks from a TaskQueue.
+   *
+   *    * [project] The project under which the queue lies.
+   *    * [taskqueue] The taskqueue to lease a task from.
+   *    * [numTasks] The number of tasks to lease.
+   *    * [leaseSecs] The lease in seconds.
+   *    * [groupByTag] When true, all returned tasks will have the same tag
+   *    * [tag] The tag allowed for tasks in the response. Must only be specified if group_by_tag is true. If
+   *        group_by_tag is true and tag is not specified the tag will be that of the oldest task by
+   *        eta, i.e. the first available tag
+   */
+  core.Future&lt;Tasks&gt; lease(core.String project, core.String taskqueue, core.int numTasks, core.int leaseSecs, {core.bool groupByTag, core.String tag}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["project"] = project;
+    $pathParams["taskqueue"] = taskqueue;
+    if (?numTasks) $queryParams["numTasks"] = numTasks;
+    if (?leaseSecs) $queryParams["leaseSecs"] = leaseSecs;
+    if (?groupByTag) $queryParams["groupByTag"] = groupByTag;
+    if (?tag) $queryParams["tag"] = tag;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{project}/taskqueues/{taskqueue}/tasks/lease";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Tasks.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="TasksResource">
-<span class="show-code">Code</span>
-new <strong>TasksResource</strong>._internal(<a href="../taskqueue-v1beta2/TaskqueueApi.html">TaskqueueApi</a> $service) <a class="anchor-link" href="#TasksResource"
-              title="Permalink to TasksResource.TasksResource">#</a></h4>
+<div class="method"><h4 id="TasksResource._internal">
+<button class="show-code">Code</button>
+new <strong>TasksResource._internal</strong>(<a href="../taskqueue-v1beta2/TaskqueueApi.html">TaskqueueApi</a> $service) <a class="anchor-link" href="#TasksResource._internal"
+              title="Permalink to TasksResource.TasksResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 TasksResource._internal(TaskqueueApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to TasksResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to TasksResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> project, <a href="http://api.dartlang.org/dart_core/String.html">String</a> taskqueue, <a href="http://api.dartlang.org/dart_core/String.html">String</a> task) <a class="anchor-link" href="#delete"
               title="Permalink to TasksResource.delete">#</a></h4>
 <div class="doc">
@@ -66,7 +372,7 @@ core.Future delete(core.String project, core.String taskqueue, core.String task)
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $http = new http.Request($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -78,7 +384,7 @@ core.Future delete(core.String project, core.String taskqueue, core.String task)
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Task.html">Task</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> project, <a href="http://api.dartlang.org/dart_core/String.html">String</a> taskqueue, <a href="http://api.dartlang.org/dart_core/String.html">String</a> task) <a class="anchor-link" href="#get"
               title="Permalink to TasksResource.get">#</a></h4>
 <div class="doc">
@@ -104,7 +410,7 @@ core.Future&lt;Task&gt; get(core.String project, core.String taskqueue, core.Str
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -115,8 +421,26 @@ core.Future&lt;Task&gt; get(core.String project, core.String taskqueue, core.Str
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to TasksResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Task.html">Task</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> project, <a href="http://api.dartlang.org/dart_core/String.html">String</a> taskqueue, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to TasksResource.insert">#</a></h4>
 <div class="doc">
@@ -143,7 +467,7 @@ core.Future&lt;Task&gt; insert(core.String project, core.String taskqueue, Task 
   final $body = JSON.stringify(Task.serialize(content));
   final $path = "{project}/taskqueues/{taskqueue}/tasks";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -155,8 +479,8 @@ core.Future&lt;Task&gt; insert(core.String project, core.String taskqueue, Task 
 </div>
 </div>
 <div class="method"><h4 id="lease">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Tasks.html">Tasks</a>&gt; <strong>lease</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> project, <a href="http://api.dartlang.org/dart_core/String.html">String</a> taskqueue, <a href="http://api.dartlang.org/dart_core/int.html">int</a> numTasks, <a href="http://api.dartlang.org/dart_core/int.html">int</a> leaseSecs, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> groupByTag = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> tag = UNSPECIFIED]) <a class="anchor-link" href="#lease"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Tasks.html">Tasks</a>&gt; <strong>lease</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> project, <a href="http://api.dartlang.org/dart_core/String.html">String</a> taskqueue, <a href="http://api.dartlang.org/dart_core/int.html">int</a> numTasks, <a href="http://api.dartlang.org/dart_core/int.html">int</a> leaseSecs, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> groupByTag, <a href="http://api.dartlang.org/dart_core/String.html">String</a> tag]) <a class="anchor-link" href="#lease"
               title="Permalink to TasksResource.lease">#</a></h4>
 <div class="doc">
 <p>Lease 1 or more tasks from a TaskQueue.</p><ul><li>
@@ -170,16 +494,16 @@ core.Future&lt;Task&gt; insert(core.String project, core.String taskqueue, Task 
    group<em>by</em>tag is true and tag is not specified the tag will be that of the oldest task by
    eta, i.e. the first available tag</p></li></ul>
 <pre class="source">
-core.Future&lt;Tasks&gt; lease(core.String project, core.String taskqueue, core.int numTasks, core.int leaseSecs, [core.bool groupByTag = UNSPECIFIED, core.String tag = UNSPECIFIED]) {
+core.Future&lt;Tasks&gt; lease(core.String project, core.String taskqueue, core.int numTasks, core.int leaseSecs, {core.bool groupByTag, core.String tag}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["project"] = project;
   $pathParams["taskqueue"] = taskqueue;
-  if (UNSPECIFIED != numTasks) $queryParams["numTasks"] = numTasks;
-  if (UNSPECIFIED != leaseSecs) $queryParams["leaseSecs"] = leaseSecs;
-  if (UNSPECIFIED != groupByTag) $queryParams["groupByTag"] = groupByTag;
-  if (UNSPECIFIED != tag) $queryParams["tag"] = tag;
+  if (?numTasks) $queryParams["numTasks"] = numTasks;
+  if (?leaseSecs) $queryParams["leaseSecs"] = leaseSecs;
+  if (?groupByTag) $queryParams["groupByTag"] = groupByTag;
+  if (?tag) $queryParams["tag"] = tag;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -190,7 +514,7 @@ core.Future&lt;Tasks&gt; lease(core.String project, core.String taskqueue, core.
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{project}/taskqueues/{taskqueue}/tasks/lease";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -202,7 +526,7 @@ core.Future&lt;Tasks&gt; lease(core.String project, core.String taskqueue, core.
 </div>
 </div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Tasks2.html">Tasks2</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> project, <a href="http://api.dartlang.org/dart_core/String.html">String</a> taskqueue) <a class="anchor-link" href="#list"
               title="Permalink to TasksResource.list">#</a></h4>
 <div class="doc">
@@ -226,7 +550,7 @@ core.Future&lt;Tasks2&gt; list(core.String project, core.String taskqueue) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{project}/taskqueues/{taskqueue}/tasks";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -237,8 +561,39 @@ core.Future&lt;Tasks2&gt; list(core.String project, core.String taskqueue) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to TasksResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to TasksResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Task.html">Task</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> project, <a href="http://api.dartlang.org/dart_core/String.html">String</a> taskqueue, <a href="http://api.dartlang.org/dart_core/String.html">String</a> task, <a href="http://api.dartlang.org/dart_core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to TasksResource.patch">#</a></h4>
 <div class="doc">
@@ -256,7 +611,7 @@ core.Future&lt;Task&gt; patch(core.String project, core.String taskqueue, core.S
   $pathParams["project"] = project;
   $pathParams["taskqueue"] = taskqueue;
   $pathParams["task"] = task;
-  if (UNSPECIFIED != newLeaseSeconds) $queryParams["newLeaseSeconds"] = newLeaseSeconds;
+  if (?newLeaseSeconds) $queryParams["newLeaseSeconds"] = newLeaseSeconds;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -269,7 +624,7 @@ core.Future&lt;Task&gt; patch(core.String project, core.String taskqueue, core.S
   final $body = JSON.stringify(Task.serialize(content));
   final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -280,8 +635,29 @@ core.Future&lt;Task&gt; patch(core.String project, core.String taskqueue, core.S
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="TasksResource._internal">
+<button class="show-code">Code</button>
+new <strong>TasksResource._internal</strong>(<a href="../taskqueue-v1beta2/TaskqueueApi.html">TaskqueueApi</a> $service) <a class="anchor-link" href="#TasksResource._internal"
+              title="Permalink to TasksResource.TasksResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+TasksResource._internal(TaskqueueApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to TasksResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../taskqueue-v1beta2/Task.html">Task</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> project, <a href="http://api.dartlang.org/dart_core/String.html">String</a> taskqueue, <a href="http://api.dartlang.org/dart_core/String.html">String</a> task, <a href="http://api.dartlang.org/dart_core/int.html">int</a> newLeaseSeconds, <a href="../taskqueue-v1beta2/Task.html">Task</a> content) <a class="anchor-link" href="#update"
               title="Permalink to TasksResource.update">#</a></h4>
 <div class="doc">
@@ -299,7 +675,7 @@ core.Future&lt;Task&gt; update(core.String project, core.String taskqueue, core.
   $pathParams["project"] = project;
   $pathParams["taskqueue"] = taskqueue;
   $pathParams["task"] = task;
-  if (UNSPECIFIED != newLeaseSeconds) $queryParams["newLeaseSeconds"] = newLeaseSeconds;
+  if (?newLeaseSeconds) $queryParams["newLeaseSeconds"] = newLeaseSeconds;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -312,7 +688,7 @@ core.Future&lt;Task&gt; update(core.String project, core.String taskqueue, core.
   final $body = JSON.stringify(Task.serialize(content));
   final $path = "{project}/taskqueues/{taskqueue}/tasks/{task}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -321,6 +697,7 @@ core.Future&lt;Task&gt; update(core.String project, core.String taskqueue, core.
       .transform((final $text) =&gt; Task.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

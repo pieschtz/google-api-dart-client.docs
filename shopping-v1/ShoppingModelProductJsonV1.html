@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>ShoppingModelProductJsonV1 Class / shopping-v1 Library / Dart Documentation</title>
+        <title>ShoppingModelProductJsonV1 class / shopping-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,229 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../shopping-v1.html">shopping-v1</a> &rsaquo; <a href="../shopping-v1/ShoppingModelProductJsonV1.html">ShoppingModelProductJsonV1</a></div>
+         &rsaquo; <a href="../shopping-v1.html">shopping-v1</a> &rsaquo; <a href="../shopping-v1/ShoppingModelProductJsonV1.html">ShoppingModelProductJsonV1</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>ShoppingModelProductJsonV1</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class ShoppingModelProductJsonV1 extends IdentityHash {
+  /**
+ * Whether this product matched the user query. Only set for the variant offers (if any) attached to
+ * a product offer.
+ */
+  core.bool queryMatched;
 
+  /** The first GTIN of the product. Deprecated in favor of "gtins". */
+  core.String gtin;
+
+  /** Images of product. */
+  core.List&lt;ShoppingModelProductJsonV1Images&gt; images;
+
+  /** Inventories of product. */
+  core.List&lt;ShoppingModelProductJsonV1Inventories&gt; inventories;
+
+  /** Author of product. */
+  ShoppingModelProductJsonV1Author author;
+
+  /** Google Internal */
+  core.double score;
+
+  /** Condition of product (one of: new, refurbished, used). */
+  core.String condition;
+
+  /** Merchant-provided id of product (available only with a cx source). */
+  core.String providedId;
+
+  /** Google Internal. */
+  core.List&lt;core.String&gt; internal8;
+
+  /** Description of product. */
+  core.String description;
+
+  /** List of all the product's GTINs (in GTIN-14 format). */
+  core.List&lt;core.String&gt; gtins;
+
+  /** Google Internal. */
+  core.List&lt;core.String&gt; internal1;
+
+  /** Brand of product. */
+  core.String brand;
+
+  /** Google Internal. */
+  core.String internal3;
+
+  /** Google Internal. */
+  core.List&lt;ShoppingModelProductJsonV1Internal4&gt; internal4;
+
+  /** Google Internal. */
+  core.String internal6;
+
+  /** Google Internal. */
+  core.bool internal7;
+
+  /** Link to product. */
+  core.String link;
+
+  /** List of all the product's MPNs. */
+  core.List&lt;core.String&gt; mpns;
+
+  /** Attributes of product (available only with a cx source). */
+  core.List&lt;ShoppingModelProductJsonV1Attributes&gt; attributes;
+
+  /** The number of variant offers returned that matched the query. */
+  core.int totalMatchingVariants;
+
+  /** A list of variant offers associated with this product. */
+  core.List&lt;ShoppingModelProductJsonV1Variants&gt; variants;
+
+  /** RFC 3339 formatted modification time and date of product. */
+  core.String modificationTime;
+
+  /**
+ * Categories of product according to the selected taxonomy, omitted if no taxonomy is selected.
+ */
+  core.List&lt;core.String&gt; categories;
+
+  /** BCP 47 language tag of language of product. */
+  core.String language;
+
+  /** ISO 3166 code of target country of product. */
+  core.String country;
+
+  /** Title of product. */
+  core.String title;
+
+  /** RFC 3339 formatted creation time and date of product. */
+  core.String creationTime;
+
+  /** Google Internal. */
+  core.double internal14;
+
+  /** Google Internal. */
+  core.String internal12;
+
+  /** Google Internal. */
+  core.double internal13;
+
+  /** Google Internal. */
+  core.List&lt;core.String&gt; internal10;
+
+  /** Code to add to the page to render the +1 content. */
+  core.String plusOne;
+
+  /** Google id of product. */
+  core.String googleId;
+
+  /** Google Internal. */
+  core.double internal15;
+
+  /** Parses an instance from its JSON representation. */
+  static ShoppingModelProductJsonV1 parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new ShoppingModelProductJsonV1();
+    result.queryMatched = identity(json["queryMatched"]);
+    result.gtin = identity(json["gtin"]);
+    result.images = map(ShoppingModelProductJsonV1Images.parse)(json["images"]);
+    result.inventories = map(ShoppingModelProductJsonV1Inventories.parse)(json["inventories"]);
+    result.author = ShoppingModelProductJsonV1Author.parse(json["author"]);
+    result.score = identity(json["score"]);
+    result.condition = identity(json["condition"]);
+    result.providedId = identity(json["providedId"]);
+    result.internal8 = map(identity)(json["internal8"]);
+    result.description = identity(json["description"]);
+    result.gtins = map(identity)(json["gtins"]);
+    result.internal1 = map(identity)(json["internal1"]);
+    result.brand = identity(json["brand"]);
+    result.internal3 = identity(json["internal3"]);
+    result.internal4 = map(ShoppingModelProductJsonV1Internal4.parse)(json["internal4"]);
+    result.internal6 = identity(json["internal6"]);
+    result.internal7 = identity(json["internal7"]);
+    result.link = identity(json["link"]);
+    result.mpns = map(identity)(json["mpns"]);
+    result.attributes = map(ShoppingModelProductJsonV1Attributes.parse)(json["attributes"]);
+    result.totalMatchingVariants = identity(json["totalMatchingVariants"]);
+    result.variants = map(ShoppingModelProductJsonV1Variants.parse)(json["variants"]);
+    result.modificationTime = identity(json["modificationTime"]);
+    result.categories = map(identity)(json["categories"]);
+    result.language = identity(json["language"]);
+    result.country = identity(json["country"]);
+    result.title = identity(json["title"]);
+    result.creationTime = identity(json["creationTime"]);
+    result.internal14 = identity(json["internal14"]);
+    result.internal12 = identity(json["internal12"]);
+    result.internal13 = identity(json["internal13"]);
+    result.internal10 = map(identity)(json["internal10"]);
+    result.plusOne = identity(json["plusOne"]);
+    result.googleId = identity(json["googleId"]);
+    result.internal15 = identity(json["internal15"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(ShoppingModelProductJsonV1 value) {
+    if (value == null) return null;
+    final result = {};
+    result["queryMatched"] = identity(value.queryMatched);
+    result["gtin"] = identity(value.gtin);
+    result["images"] = map(ShoppingModelProductJsonV1Images.serialize)(value.images);
+    result["inventories"] = map(ShoppingModelProductJsonV1Inventories.serialize)(value.inventories);
+    result["author"] = ShoppingModelProductJsonV1Author.serialize(value.author);
+    result["score"] = identity(value.score);
+    result["condition"] = identity(value.condition);
+    result["providedId"] = identity(value.providedId);
+    result["internal8"] = map(identity)(value.internal8);
+    result["description"] = identity(value.description);
+    result["gtins"] = map(identity)(value.gtins);
+    result["internal1"] = map(identity)(value.internal1);
+    result["brand"] = identity(value.brand);
+    result["internal3"] = identity(value.internal3);
+    result["internal4"] = map(ShoppingModelProductJsonV1Internal4.serialize)(value.internal4);
+    result["internal6"] = identity(value.internal6);
+    result["internal7"] = identity(value.internal7);
+    result["link"] = identity(value.link);
+    result["mpns"] = map(identity)(value.mpns);
+    result["attributes"] = map(ShoppingModelProductJsonV1Attributes.serialize)(value.attributes);
+    result["totalMatchingVariants"] = identity(value.totalMatchingVariants);
+    result["variants"] = map(ShoppingModelProductJsonV1Variants.serialize)(value.variants);
+    result["modificationTime"] = identity(value.modificationTime);
+    result["categories"] = map(identity)(value.categories);
+    result["language"] = identity(value.language);
+    result["country"] = identity(value.country);
+    result["title"] = identity(value.title);
+    result["creationTime"] = identity(value.creationTime);
+    result["internal14"] = identity(value.internal14);
+    result["internal12"] = identity(value.internal12);
+    result["internal13"] = identity(value.internal13);
+    result["internal10"] = map(identity)(value.internal10);
+    result["plusOne"] = identity(value.plusOne);
+    result["googleId"] = identity(value.googleId);
+    result["internal15"] = identity(value.internal15);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ShoppingModelProductJsonV1</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../shopping-v1/ShoppingModelProductJsonV1.html">ShoppingModelProductJsonV1</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to ShoppingModelProductJsonV1.parse">#</a></h4>
 <div class="doc">
@@ -81,7 +286,7 @@ static ShoppingModelProductJsonV1 parse(core.Map&lt;core.String, core.Object&gt;
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/ShoppingModelProductJsonV1.html">ShoppingModelProductJsonV1</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to ShoppingModelProductJsonV1.serialize">#</a></h4>
 <div class="doc">
@@ -130,21 +335,11 @@ static core.Object serialize(ShoppingModelProductJsonV1 value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to ShoppingModelProductJsonV1.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="attributes">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Attributes.html">ShoppingModelProductJsonV1Attributes</a>&gt;         <strong>attributes</strong> <a class="anchor-link"
             href="#attributes"
             title="Permalink to ShoppingModelProductJsonV1.attributes">#</a>
@@ -157,7 +352,7 @@ core.List&lt;ShoppingModelProductJsonV1Attributes&gt; attributes;
 </div>
 </div>
 <div class="field"><h4 id="author">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../shopping-v1/ShoppingModelProductJsonV1Author.html">ShoppingModelProductJsonV1Author</a>         <strong>author</strong> <a class="anchor-link"
             href="#author"
             title="Permalink to ShoppingModelProductJsonV1.author">#</a>
@@ -170,7 +365,7 @@ ShoppingModelProductJsonV1Author author;
 </div>
 </div>
 <div class="field"><h4 id="brand">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>brand</strong> <a class="anchor-link"
             href="#brand"
             title="Permalink to ShoppingModelProductJsonV1.brand">#</a>
@@ -183,7 +378,7 @@ core.String brand;
 </div>
 </div>
 <div class="field"><h4 id="categories">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>categories</strong> <a class="anchor-link"
             href="#categories"
             title="Permalink to ShoppingModelProductJsonV1.categories">#</a>
@@ -196,7 +391,7 @@ core.List&lt;core.String&gt; categories;
 </div>
 </div>
 <div class="field"><h4 id="condition">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>condition</strong> <a class="anchor-link"
             href="#condition"
             title="Permalink to ShoppingModelProductJsonV1.condition">#</a>
@@ -209,7 +404,7 @@ core.String condition;
 </div>
 </div>
 <div class="field"><h4 id="country">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>country</strong> <a class="anchor-link"
             href="#country"
             title="Permalink to ShoppingModelProductJsonV1.country">#</a>
@@ -222,7 +417,7 @@ core.String country;
 </div>
 </div>
 <div class="field"><h4 id="creationTime">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>creationTime</strong> <a class="anchor-link"
             href="#creationTime"
             title="Permalink to ShoppingModelProductJsonV1.creationTime">#</a>
@@ -235,7 +430,7 @@ core.String creationTime;
 </div>
 </div>
 <div class="field"><h4 id="description">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to ShoppingModelProductJsonV1.description">#</a>
@@ -248,7 +443,7 @@ core.String description;
 </div>
 </div>
 <div class="field"><h4 id="googleId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>googleId</strong> <a class="anchor-link"
             href="#googleId"
             title="Permalink to ShoppingModelProductJsonV1.googleId">#</a>
@@ -261,7 +456,7 @@ core.String googleId;
 </div>
 </div>
 <div class="field"><h4 id="gtin">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>gtin</strong> <a class="anchor-link"
             href="#gtin"
             title="Permalink to ShoppingModelProductJsonV1.gtin">#</a>
@@ -274,7 +469,7 @@ core.String gtin;
 </div>
 </div>
 <div class="field"><h4 id="gtins">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>gtins</strong> <a class="anchor-link"
             href="#gtins"
             title="Permalink to ShoppingModelProductJsonV1.gtins">#</a>
@@ -287,7 +482,7 @@ core.List&lt;core.String&gt; gtins;
 </div>
 </div>
 <div class="field"><h4 id="images">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Images.html">ShoppingModelProductJsonV1Images</a>&gt;         <strong>images</strong> <a class="anchor-link"
             href="#images"
             title="Permalink to ShoppingModelProductJsonV1.images">#</a>
@@ -300,7 +495,7 @@ core.List&lt;ShoppingModelProductJsonV1Images&gt; images;
 </div>
 </div>
 <div class="field"><h4 id="internal1">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>internal1</strong> <a class="anchor-link"
             href="#internal1"
             title="Permalink to ShoppingModelProductJsonV1.internal1">#</a>
@@ -313,7 +508,7 @@ core.List&lt;core.String&gt; internal1;
 </div>
 </div>
 <div class="field"><h4 id="internal10">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>internal10</strong> <a class="anchor-link"
             href="#internal10"
             title="Permalink to ShoppingModelProductJsonV1.internal10">#</a>
@@ -326,7 +521,7 @@ core.List&lt;core.String&gt; internal10;
 </div>
 </div>
 <div class="field"><h4 id="internal12">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>internal12</strong> <a class="anchor-link"
             href="#internal12"
             title="Permalink to ShoppingModelProductJsonV1.internal12">#</a>
@@ -339,7 +534,7 @@ core.String internal12;
 </div>
 </div>
 <div class="field"><h4 id="internal13">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>internal13</strong> <a class="anchor-link"
             href="#internal13"
             title="Permalink to ShoppingModelProductJsonV1.internal13">#</a>
@@ -352,7 +547,7 @@ core.double internal13;
 </div>
 </div>
 <div class="field"><h4 id="internal14">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>internal14</strong> <a class="anchor-link"
             href="#internal14"
             title="Permalink to ShoppingModelProductJsonV1.internal14">#</a>
@@ -365,7 +560,7 @@ core.double internal14;
 </div>
 </div>
 <div class="field"><h4 id="internal15">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>internal15</strong> <a class="anchor-link"
             href="#internal15"
             title="Permalink to ShoppingModelProductJsonV1.internal15">#</a>
@@ -378,7 +573,7 @@ core.double internal15;
 </div>
 </div>
 <div class="field"><h4 id="internal3">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>internal3</strong> <a class="anchor-link"
             href="#internal3"
             title="Permalink to ShoppingModelProductJsonV1.internal3">#</a>
@@ -391,7 +586,7 @@ core.String internal3;
 </div>
 </div>
 <div class="field"><h4 id="internal4">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Internal4.html">ShoppingModelProductJsonV1Internal4</a>&gt;         <strong>internal4</strong> <a class="anchor-link"
             href="#internal4"
             title="Permalink to ShoppingModelProductJsonV1.internal4">#</a>
@@ -404,7 +599,7 @@ core.List&lt;ShoppingModelProductJsonV1Internal4&gt; internal4;
 </div>
 </div>
 <div class="field"><h4 id="internal6">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>internal6</strong> <a class="anchor-link"
             href="#internal6"
             title="Permalink to ShoppingModelProductJsonV1.internal6">#</a>
@@ -417,7 +612,7 @@ core.String internal6;
 </div>
 </div>
 <div class="field"><h4 id="internal7">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>internal7</strong> <a class="anchor-link"
             href="#internal7"
             title="Permalink to ShoppingModelProductJsonV1.internal7">#</a>
@@ -430,7 +625,7 @@ core.bool internal7;
 </div>
 </div>
 <div class="field"><h4 id="internal8">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>internal8</strong> <a class="anchor-link"
             href="#internal8"
             title="Permalink to ShoppingModelProductJsonV1.internal8">#</a>
@@ -443,7 +638,7 @@ core.List&lt;core.String&gt; internal8;
 </div>
 </div>
 <div class="field"><h4 id="inventories">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Inventories.html">ShoppingModelProductJsonV1Inventories</a>&gt;         <strong>inventories</strong> <a class="anchor-link"
             href="#inventories"
             title="Permalink to ShoppingModelProductJsonV1.inventories">#</a>
@@ -456,7 +651,7 @@ core.List&lt;ShoppingModelProductJsonV1Inventories&gt; inventories;
 </div>
 </div>
 <div class="field"><h4 id="language">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>language</strong> <a class="anchor-link"
             href="#language"
             title="Permalink to ShoppingModelProductJsonV1.language">#</a>
@@ -469,7 +664,7 @@ core.String language;
 </div>
 </div>
 <div class="field"><h4 id="link">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
             href="#link"
             title="Permalink to ShoppingModelProductJsonV1.link">#</a>
@@ -482,7 +677,7 @@ core.String link;
 </div>
 </div>
 <div class="field"><h4 id="modificationTime">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>modificationTime</strong> <a class="anchor-link"
             href="#modificationTime"
             title="Permalink to ShoppingModelProductJsonV1.modificationTime">#</a>
@@ -495,7 +690,7 @@ core.String modificationTime;
 </div>
 </div>
 <div class="field"><h4 id="mpns">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>mpns</strong> <a class="anchor-link"
             href="#mpns"
             title="Permalink to ShoppingModelProductJsonV1.mpns">#</a>
@@ -508,7 +703,7 @@ core.List&lt;core.String&gt; mpns;
 </div>
 </div>
 <div class="field"><h4 id="plusOne">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>plusOne</strong> <a class="anchor-link"
             href="#plusOne"
             title="Permalink to ShoppingModelProductJsonV1.plusOne">#</a>
@@ -521,7 +716,7 @@ core.String plusOne;
 </div>
 </div>
 <div class="field"><h4 id="providedId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>providedId</strong> <a class="anchor-link"
             href="#providedId"
             title="Permalink to ShoppingModelProductJsonV1.providedId">#</a>
@@ -534,7 +729,7 @@ core.String providedId;
 </div>
 </div>
 <div class="field"><h4 id="queryMatched">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>queryMatched</strong> <a class="anchor-link"
             href="#queryMatched"
             title="Permalink to ShoppingModelProductJsonV1.queryMatched">#</a>
@@ -547,8 +742,21 @@ core.bool queryMatched;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to ShoppingModelProductJsonV1.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="score">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>score</strong> <a class="anchor-link"
             href="#score"
             title="Permalink to ShoppingModelProductJsonV1.score">#</a>
@@ -561,7 +769,7 @@ core.double score;
 </div>
 </div>
 <div class="field"><h4 id="title">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to ShoppingModelProductJsonV1.title">#</a>
@@ -574,7 +782,7 @@ core.String title;
 </div>
 </div>
 <div class="field"><h4 id="totalMatchingVariants">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>totalMatchingVariants</strong> <a class="anchor-link"
             href="#totalMatchingVariants"
             title="Permalink to ShoppingModelProductJsonV1.totalMatchingVariants">#</a>
@@ -587,7 +795,7 @@ core.int totalMatchingVariants;
 </div>
 </div>
 <div class="field"><h4 id="variants">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelProductJsonV1Variants.html">ShoppingModelProductJsonV1Variants</a>&gt;         <strong>variants</strong> <a class="anchor-link"
             href="#variants"
             title="Permalink to ShoppingModelProductJsonV1.variants">#</a>
@@ -597,6 +805,103 @@ core.int totalMatchingVariants;
 <pre class="source">
 core.List&lt;ShoppingModelProductJsonV1Variants&gt; variants;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to ShoppingModelProductJsonV1.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to ShoppingModelProductJsonV1.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to ShoppingModelProductJsonV1.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to ShoppingModelProductJsonV1.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to ShoppingModelProductJsonV1.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ShoppingModelProductJsonV1.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

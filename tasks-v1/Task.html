@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Task Class / tasks-v1 Library / Dart Documentation</title>
+        <title>Task class / tasks-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,139 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../tasks-v1.html">tasks-v1</a> &rsaquo; <a href="../tasks-v1/Task.html">Task</a></div>
+         &rsaquo; <a href="../tasks-v1.html">tasks-v1</a> &rsaquo; <a href="../tasks-v1/Task.html">Task</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Task</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Task extends IdentityHash {
+  /** Status of the task. This is either "needsAction" or "completed". */
+  core.String status;
 
+  /** Type of the resource. This is always "tasks#task". */
+  core.String kind;
+
+  /** Last modification time of the task (as a RFC 3339 timestamp). */
+  core.String updated;
+
+  /**
+ * Parent task identifier. This field is omitted if it is a top-level task. This field is read-only.
+ * Use the "move" method to move the task under a different parent or to the top level.
+ */
+  core.String parent;
+
+  /** Collection of links. This collection is read-only. */
+  core.List&lt;TaskLinks&gt; links;
+
+  /** Title of the task. */
+  core.String title;
+
+  /** Flag indicating whether the task has been deleted. The default if False. */
+  core.bool deleted;
+
+  /**
+ * Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not
+ * been completed.
+ */
+  core.String completed;
+
+  /** Due date of the task (as a RFC 3339 timestamp). Optional. */
+  core.String due;
+
+  /** ETag of the resource. */
+  core.String etag;
+
+  /** Notes describing the task. Optional. */
+  core.String notes;
+
+  /**
+ * String indicating the position of the task among its sibling tasks under the same parent task or
+ * at the top level. If this string is greater than another task's corresponding position string
+ * according to lexicographical ordering, the task is positioned after the other task under the same
+ * parent task (or at the top level). This field is read-only. Use the "move" method to move the
+ * task to another position.
+ */
+  core.String position;
+
+  /**
+ * Flag indicating whether the task is hidden. This is the case if the task had been marked
+ * completed when the task list was last cleared. The default is False. This field is read-only.
+ */
+  core.bool hidden;
+
+  /** Task identifier. */
+  core.String id;
+
+  /** URL pointing to this task. Used to retrieve, update, or delete this task. */
+  core.String selfLink;
+
+  /** Parses an instance from its JSON representation. */
+  static Task parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Task();
+    result.status = identity(json["status"]);
+    result.kind = identity(json["kind"]);
+    result.updated = identity(json["updated"]);
+    result.parent = identity(json["parent"]);
+    result.links = map(TaskLinks.parse)(json["links"]);
+    result.title = identity(json["title"]);
+    result.deleted = identity(json["deleted"]);
+    result.completed = identity(json["completed"]);
+    result.due = identity(json["due"]);
+    result.etag = identity(json["etag"]);
+    result.notes = identity(json["notes"]);
+    result.position = identity(json["position"]);
+    result.hidden = identity(json["hidden"]);
+    result.id = identity(json["id"]);
+    result.selfLink = identity(json["selfLink"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Task value) {
+    if (value == null) return null;
+    final result = {};
+    result["status"] = identity(value.status);
+    result["kind"] = identity(value.kind);
+    result["updated"] = identity(value.updated);
+    result["parent"] = identity(value.parent);
+    result["links"] = map(TaskLinks.serialize)(value.links);
+    result["title"] = identity(value.title);
+    result["deleted"] = identity(value.deleted);
+    result["completed"] = identity(value.completed);
+    result["due"] = identity(value.due);
+    result["etag"] = identity(value.etag);
+    result["notes"] = identity(value.notes);
+    result["position"] = identity(value.position);
+    result["hidden"] = identity(value.hidden);
+    result["id"] = identity(value.id);
+    result["selfLink"] = identity(value.selfLink);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Task</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../tasks-v1/Task.html">Task</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Task.parse">#</a></h4>
 <div class="doc">
@@ -61,7 +176,7 @@ static Task parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../tasks-v1/Task.html">Task</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Task.serialize">#</a></h4>
 <div class="doc">
@@ -90,21 +205,11 @@ static core.Object serialize(Task value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Task.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="completed">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>completed</strong> <a class="anchor-link"
             href="#completed"
             title="Permalink to Task.completed">#</a>
@@ -118,7 +223,7 @@ core.String completed;
 </div>
 </div>
 <div class="field"><h4 id="deleted">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>deleted</strong> <a class="anchor-link"
             href="#deleted"
             title="Permalink to Task.deleted">#</a>
@@ -131,7 +236,7 @@ core.bool deleted;
 </div>
 </div>
 <div class="field"><h4 id="due">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>due</strong> <a class="anchor-link"
             href="#due"
             title="Permalink to Task.due">#</a>
@@ -144,7 +249,7 @@ core.String due;
 </div>
 </div>
 <div class="field"><h4 id="etag">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to Task.etag">#</a>
@@ -157,7 +262,7 @@ core.String etag;
 </div>
 </div>
 <div class="field"><h4 id="hidden">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>hidden</strong> <a class="anchor-link"
             href="#hidden"
             title="Permalink to Task.hidden">#</a>
@@ -171,7 +276,7 @@ core.bool hidden;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Task.id">#</a>
@@ -184,7 +289,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Task.kind">#</a>
@@ -197,7 +302,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="links">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../tasks-v1/TaskLinks.html">TaskLinks</a>&gt;         <strong>links</strong> <a class="anchor-link"
             href="#links"
             title="Permalink to Task.links">#</a>
@@ -210,7 +315,7 @@ core.List&lt;TaskLinks&gt; links;
 </div>
 </div>
 <div class="field"><h4 id="notes">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>notes</strong> <a class="anchor-link"
             href="#notes"
             title="Permalink to Task.notes">#</a>
@@ -223,7 +328,7 @@ core.String notes;
 </div>
 </div>
 <div class="field"><h4 id="parent">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>parent</strong> <a class="anchor-link"
             href="#parent"
             title="Permalink to Task.parent">#</a>
@@ -237,7 +342,7 @@ core.String parent;
 </div>
 </div>
 <div class="field"><h4 id="position">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>position</strong> <a class="anchor-link"
             href="#position"
             title="Permalink to Task.position">#</a>
@@ -253,8 +358,21 @@ core.String position;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Task.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Task.selfLink">#</a>
@@ -267,7 +385,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="status">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Task.status">#</a>
@@ -280,7 +398,7 @@ core.String status;
 </div>
 </div>
 <div class="field"><h4 id="title">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to Task.title">#</a>
@@ -293,7 +411,7 @@ core.String title;
 </div>
 </div>
 <div class="field"><h4 id="updated">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
             href="#updated"
             title="Permalink to Task.updated">#</a>
@@ -303,6 +421,103 @@ core.String title;
 <pre class="source">
 core.String updated;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Task.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Task.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Task.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Task.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Task.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Task.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

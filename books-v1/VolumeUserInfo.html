@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>VolumeUserInfo Class / books-v1 Library / Dart Documentation</title>
+        <title>VolumeUserInfo class / books-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,90 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/VolumeUserInfo.html">VolumeUserInfo</a></div>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/VolumeUserInfo.html">VolumeUserInfo</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>VolumeUserInfo</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class VolumeUserInfo extends IdentityHash {
+  /** Whether or not this volume is currently in "my books." */
+  core.bool isInMyBooks;
 
+  /**
+ * Timestamp when this volume was last modified by a user action, such as a reading position update,
+ * volume purchase or writing a review. (RFC 3339 UTC date-time format).
+ */
+  core.String updated;
+
+  /** This user's review of this volume, if one exists. */
+  Review review;
+
+  /**
+ * Whether or not this volume was purchased by the authenticated user making the request. (In LITE
+ * projection.)
+ */
+  core.bool isPurchased;
+
+  /**
+ * The user's current reading position in the volume, if one is available. (In LITE projection.)
+ */
+  ReadingPosition readingPosition;
+
+  /**
+ * Whether or not this volume was pre-ordered by the authenticated user making the request. (In LITE
+ * projection.)
+ */
+  core.bool isPreordered;
+
+  /** Parses an instance from its JSON representation. */
+  static VolumeUserInfo parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new VolumeUserInfo();
+    result.isInMyBooks = identity(json["isInMyBooks"]);
+    result.updated = identity(json["updated"]);
+    result.review = Review.parse(json["review"]);
+    result.isPurchased = identity(json["isPurchased"]);
+    result.readingPosition = ReadingPosition.parse(json["readingPosition"]);
+    result.isPreordered = identity(json["isPreordered"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(VolumeUserInfo value) {
+    if (value == null) return null;
+    final result = {};
+    result["isInMyBooks"] = identity(value.isInMyBooks);
+    result["updated"] = identity(value.updated);
+    result["review"] = Review.serialize(value.review);
+    result["isPurchased"] = identity(value.isPurchased);
+    result["readingPosition"] = ReadingPosition.serialize(value.readingPosition);
+    result["isPreordered"] = identity(value.isPreordered);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>VolumeUserInfo</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/VolumeUserInfo.html">VolumeUserInfo</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to VolumeUserInfo.parse">#</a></h4>
 <div class="doc">
@@ -52,7 +118,7 @@ static VolumeUserInfo parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/VolumeUserInfo.html">VolumeUserInfo</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to VolumeUserInfo.serialize">#</a></h4>
 <div class="doc">
@@ -72,21 +138,11 @@ static core.Object serialize(VolumeUserInfo value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to VolumeUserInfo.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="isInMyBooks">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isInMyBooks</strong> <a class="anchor-link"
             href="#isInMyBooks"
             title="Permalink to VolumeUserInfo.isInMyBooks">#</a>
@@ -99,7 +155,7 @@ core.bool isInMyBooks;
 </div>
 </div>
 <div class="field"><h4 id="isPreordered">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isPreordered</strong> <a class="anchor-link"
             href="#isPreordered"
             title="Permalink to VolumeUserInfo.isPreordered">#</a>
@@ -113,7 +169,7 @@ core.bool isPreordered;
 </div>
 </div>
 <div class="field"><h4 id="isPurchased">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isPurchased</strong> <a class="anchor-link"
             href="#isPurchased"
             title="Permalink to VolumeUserInfo.isPurchased">#</a>
@@ -127,7 +183,7 @@ core.bool isPurchased;
 </div>
 </div>
 <div class="field"><h4 id="readingPosition">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/ReadingPosition.html">ReadingPosition</a>         <strong>readingPosition</strong> <a class="anchor-link"
             href="#readingPosition"
             title="Permalink to VolumeUserInfo.readingPosition">#</a>
@@ -140,7 +196,7 @@ ReadingPosition readingPosition;
 </div>
 </div>
 <div class="field"><h4 id="review">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/Review.html">Review</a>         <strong>review</strong> <a class="anchor-link"
             href="#review"
             title="Permalink to VolumeUserInfo.review">#</a>
@@ -152,8 +208,21 @@ Review review;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to VolumeUserInfo.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="updated">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
             href="#updated"
             title="Permalink to VolumeUserInfo.updated">#</a>
@@ -164,6 +233,103 @@ volume purchase or writing a review. (RFC 3339 UTC date-time format).</p>
 <pre class="source">
 core.String updated;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to VolumeUserInfo.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to VolumeUserInfo.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to VolumeUserInfo.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to VolumeUserInfo.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to VolumeUserInfo.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to VolumeUserInfo.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

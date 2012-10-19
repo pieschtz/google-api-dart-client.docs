@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>CseResource Class / customsearch-v1 Library / Dart Documentation</title>
+        <title>CseResource class / customsearch-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,34 +14,213 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../customsearch-v1.html">customsearch-v1</a> &rsaquo; <a href="../customsearch-v1/CseResource.html">CseResource</a></div>
+         &rsaquo; <a href="../customsearch-v1.html">customsearch-v1</a> &rsaquo; <a href="../customsearch-v1/CseResource.html">CseResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>CseResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class CseResource extends core.Object {
+  final CustomsearchApi _$service;
+  
+  CseResource._internal(CustomsearchApi $service) : _$service = $service;
 
+  // Method CseResource.List
+  /**
+   * Returns metadata about the search performed, metadata about the custom search engine used for the
+   * search, and the search results.
+   *
+   *    * [q] Query
+   *    * [sort] The sort expression to apply to the results
+   *    * [orTerms] Provides additional search terms to check for in a document, where each document in the search
+   *        results must contain at least one of the additional search terms
+   *    * [highRange] Creates a range in form as_nlo value..as_nhi value and attempts to append it to query
+   *    * [num] Number of search results to return
+  Default: 10.
+   *    * [cr] Country restrict(s).
+   *    * [imgType] Returns images of a type, which can be one of: clipart, face, lineart, news, and photo.
+   *    * [gl] Geolocation of end user.
+   *    * [relatedSite] Specifies that all search results should be pages that are related to the specified URL
+   *    * [searchType] Specifies the search type: image.
+   *    * [fileType] Returns images of a specified type. Some of the allowed values are: bmp, gif, png, jpg, svg, pdf,
+   *        ...
+   *    * [start] The index of the first result to return
+   *    * [imgDominantColor] Returns images of a specific dominant color: yellow, green, teal, blue, purple, pink, white, gray,
+   *        black and brown.
+   *    * [lr] The language restriction for the search results
+   *    * [siteSearch] Specifies all search results should be pages from a given site
+   *    * [cref] The URL of a linked custom search engine
+   *    * [dateRestrict] Specifies all search results are from a time period
+   *    * [safe] Search safety level
+  Default: off.
+   *    * [c2coff] Turns off the translation between zh-CN and zh-TW.
+   *    * [googlehost] The local Google domain to use to perform the search.
+   *    * [hq] Appends the extra query terms to the query.
+   *    * [exactTerms] Identifies a phrase that all documents in the search results must contain
+   *    * [hl] Sets the user interface language.
+   *    * [lowRange] Creates a range in form as_nlo value..as_nhi value and attempts to append it to query
+   *    * [imgSize] Returns images of a specified size, where size can be one of: icon, small, medium, large, xlarge,
+   *        xxlarge, and huge.
+   *    * [imgColorType] Returns black and white, grayscale, or color images: mono, gray, and color.
+   *    * [rights] Filters based on licensing. Supported values include: cc_publicdomain, cc_attribute, cc_sharealike,
+   *        cc_noncommercial, cc_nonderived and combinations of these.
+   *    * [excludeTerms] Identifies a word or phrase that should not appear in any documents in the search results
+   *    * [filter] Controls turning on or off the duplicate content filter.
+   *    * [linkSite] Specifies that all search results should contain a link to a particular URL
+   *    * [cx] The custom search engine ID to scope this search query
+   *    * [siteSearchFilter] Controls whether to include or exclude results from the site named in the as_sitesearch parameter
+   */
+  core.Future&lt;Search&gt; list(core.String q, {core.String sort, core.String orTerms, core.String highRange, core.int num, core.String cr, CseResourceListImgType imgType, core.String gl, core.String relatedSite, CseResourceListSearchType searchType, core.String fileType, core.int start, CseResourceListImgDominantColor imgDominantColor, CseResourceListLr lr, core.String siteSearch, core.String cref, core.String dateRestrict, CseResourceListSafe safe, core.String c2coff, core.String googlehost, core.String hq, core.String exactTerms, core.String hl, core.String lowRange, CseResourceListImgSize imgSize, CseResourceListImgColorType imgColorType, core.String rights, core.String excludeTerms, CseResourceListFilter filter, core.String linkSite, core.String cx, CseResourceListSiteSearchFilter siteSearchFilter}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?q) $queryParams["q"] = q;
+    if (?sort) $queryParams["sort"] = sort;
+    if (?orTerms) $queryParams["orTerms"] = orTerms;
+    if (?highRange) $queryParams["highRange"] = highRange;
+    if (?num) $queryParams["num"] = num;
+    if (?cr) $queryParams["cr"] = cr;
+    if (?imgType) $queryParams["imgType"] = imgType;
+    if (?gl) $queryParams["gl"] = gl;
+    if (?relatedSite) $queryParams["relatedSite"] = relatedSite;
+    if (?searchType) $queryParams["searchType"] = searchType;
+    if (?fileType) $queryParams["fileType"] = fileType;
+    if (?start) $queryParams["start"] = start;
+    if (?imgDominantColor) $queryParams["imgDominantColor"] = imgDominantColor;
+    if (?lr) $queryParams["lr"] = lr;
+    if (?siteSearch) $queryParams["siteSearch"] = siteSearch;
+    if (?cref) $queryParams["cref"] = cref;
+    if (?dateRestrict) $queryParams["dateRestrict"] = dateRestrict;
+    if (?safe) $queryParams["safe"] = safe;
+    if (?c2coff) $queryParams["c2coff"] = c2coff;
+    if (?googlehost) $queryParams["googlehost"] = googlehost;
+    if (?hq) $queryParams["hq"] = hq;
+    if (?exactTerms) $queryParams["exactTerms"] = exactTerms;
+    if (?hl) $queryParams["hl"] = hl;
+    if (?lowRange) $queryParams["lowRange"] = lowRange;
+    if (?imgSize) $queryParams["imgSize"] = imgSize;
+    if (?imgColorType) $queryParams["imgColorType"] = imgColorType;
+    if (?rights) $queryParams["rights"] = rights;
+    if (?excludeTerms) $queryParams["excludeTerms"] = excludeTerms;
+    if (?filter) $queryParams["filter"] = filter;
+    if (?linkSite) $queryParams["linkSite"] = linkSite;
+    if (?cx) $queryParams["cx"] = cx;
+    if (?siteSearchFilter) $queryParams["siteSearchFilter"] = siteSearchFilter;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "v1";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Search.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="CseResource">
-<span class="show-code">Code</span>
-new <strong>CseResource</strong>._internal(<a href="../customsearch-v1/CustomsearchApi.html">CustomsearchApi</a> $service) <a class="anchor-link" href="#CseResource"
-              title="Permalink to CseResource.CseResource">#</a></h4>
+<div class="method"><h4 id="CseResource._internal">
+<button class="show-code">Code</button>
+new <strong>CseResource._internal</strong>(<a href="../customsearch-v1/CustomsearchApi.html">CustomsearchApi</a> $service) <a class="anchor-link" href="#CseResource._internal"
+              title="Permalink to CseResource.CseResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 CseResource._internal(CustomsearchApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to CseResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to CseResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method"><h4 id="CseResource._internal">
+<button class="show-code">Code</button>
+new <strong>CseResource._internal</strong>(<a href="../customsearch-v1/CustomsearchApi.html">CustomsearchApi</a> $service) <a class="anchor-link" href="#CseResource._internal"
+              title="Permalink to CseResource.CseResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+CseResource._internal(CustomsearchApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to CseResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../customsearch-v1/Search.html">Search</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> q, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> sort = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> orTerms = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> highRange = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> num = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cr = UNSPECIFIED, <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a> imgType = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> gl = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> relatedSite = UNSPECIFIED, <a href="../customsearch-v1/CseResourceListSearchType.html">CseResourceListSearchType</a> searchType = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> fileType = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> start = UNSPECIFIED, <a href="../customsearch-v1/CseResourceListImgDominantColor.html">CseResourceListImgDominantColor</a> imgDominantColor = UNSPECIFIED, <a href="../customsearch-v1/CseResourceListLr.html">CseResourceListLr</a> lr = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> siteSearch = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cref = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> dateRestrict = UNSPECIFIED, <a href="../customsearch-v1/CseResourceListSafe.html">CseResourceListSafe</a> safe = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> c2coff = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> googlehost = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> hq = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> exactTerms = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> hl = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> lowRange = UNSPECIFIED, <a href="../customsearch-v1/CseResourceListImgSize.html">CseResourceListImgSize</a> imgSize = UNSPECIFIED, <a href="../customsearch-v1/CseResourceListImgColorType.html">CseResourceListImgColorType</a> imgColorType = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> rights = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> excludeTerms = UNSPECIFIED, <a href="../customsearch-v1/CseResourceListFilter.html">CseResourceListFilter</a> filter = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> linkSite = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cx = UNSPECIFIED, <a href="../customsearch-v1/CseResourceListSiteSearchFilter.html">CseResourceListSiteSearchFilter</a> siteSearchFilter = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../customsearch-v1/Search.html">Search</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> q, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> sort, <a href="http://api.dartlang.org/dart_core/String.html">String</a> orTerms, <a href="http://api.dartlang.org/dart_core/String.html">String</a> highRange, <a href="http://api.dartlang.org/dart_core/int.html">int</a> num, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cr, <a href="../customsearch-v1/CseResourceListImgType.html">CseResourceListImgType</a> imgType, <a href="http://api.dartlang.org/dart_core/String.html">String</a> gl, <a href="http://api.dartlang.org/dart_core/String.html">String</a> relatedSite, <a href="../customsearch-v1/CseResourceListSearchType.html">CseResourceListSearchType</a> searchType, <a href="http://api.dartlang.org/dart_core/String.html">String</a> fileType, <a href="http://api.dartlang.org/dart_core/int.html">int</a> start, <a href="../customsearch-v1/CseResourceListImgDominantColor.html">CseResourceListImgDominantColor</a> imgDominantColor, <a href="../customsearch-v1/CseResourceListLr.html">CseResourceListLr</a> lr, <a href="http://api.dartlang.org/dart_core/String.html">String</a> siteSearch, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cref, <a href="http://api.dartlang.org/dart_core/String.html">String</a> dateRestrict, <a href="../customsearch-v1/CseResourceListSafe.html">CseResourceListSafe</a> safe, <a href="http://api.dartlang.org/dart_core/String.html">String</a> c2coff, <a href="http://api.dartlang.org/dart_core/String.html">String</a> googlehost, <a href="http://api.dartlang.org/dart_core/String.html">String</a> hq, <a href="http://api.dartlang.org/dart_core/String.html">String</a> exactTerms, <a href="http://api.dartlang.org/dart_core/String.html">String</a> hl, <a href="http://api.dartlang.org/dart_core/String.html">String</a> lowRange, <a href="../customsearch-v1/CseResourceListImgSize.html">CseResourceListImgSize</a> imgSize, <a href="../customsearch-v1/CseResourceListImgColorType.html">CseResourceListImgColorType</a> imgColorType, <a href="http://api.dartlang.org/dart_core/String.html">String</a> rights, <a href="http://api.dartlang.org/dart_core/String.html">String</a> excludeTerms, <a href="../customsearch-v1/CseResourceListFilter.html">CseResourceListFilter</a> filter, <a href="http://api.dartlang.org/dart_core/String.html">String</a> linkSite, <a href="http://api.dartlang.org/dart_core/String.html">String</a> cx, <a href="../customsearch-v1/CseResourceListSiteSearchFilter.html">CseResourceListSiteSearchFilter</a> siteSearchFilter]) <a class="anchor-link" href="#list"
               title="Permalink to CseResource.list">#</a></h4>
 <div class="doc">
 <p>Returns metadata about the search performed, metadata about the custom search engine used for the
@@ -93,42 +272,42 @@ Default: off.</p></li><li>
 <span class="param">cx</span> The custom search engine ID to scope this search query</li><li>
 <span class="param">siteSearchFilter</span> Controls whether to include or exclude results from the site named in the as_sitesearch parameter</li></ul>
 <pre class="source">
-core.Future&lt;Search&gt; list(core.String q, [core.String sort = UNSPECIFIED, core.String orTerms = UNSPECIFIED, core.String highRange = UNSPECIFIED, core.int num = UNSPECIFIED, core.String cr = UNSPECIFIED, CseResourceListImgType imgType = UNSPECIFIED, core.String gl = UNSPECIFIED, core.String relatedSite = UNSPECIFIED, CseResourceListSearchType searchType = UNSPECIFIED, core.String fileType = UNSPECIFIED, core.int start = UNSPECIFIED, CseResourceListImgDominantColor imgDominantColor = UNSPECIFIED, CseResourceListLr lr = UNSPECIFIED, core.String siteSearch = UNSPECIFIED, core.String cref = UNSPECIFIED, core.String dateRestrict = UNSPECIFIED, CseResourceListSafe safe = UNSPECIFIED, core.String c2coff = UNSPECIFIED, core.String googlehost = UNSPECIFIED, core.String hq = UNSPECIFIED, core.String exactTerms = UNSPECIFIED, core.String hl = UNSPECIFIED, core.String lowRange = UNSPECIFIED, CseResourceListImgSize imgSize = UNSPECIFIED, CseResourceListImgColorType imgColorType = UNSPECIFIED, core.String rights = UNSPECIFIED, core.String excludeTerms = UNSPECIFIED, CseResourceListFilter filter = UNSPECIFIED, core.String linkSite = UNSPECIFIED, core.String cx = UNSPECIFIED, CseResourceListSiteSearchFilter siteSearchFilter = UNSPECIFIED]) {
+core.Future&lt;Search&gt; list(core.String q, {core.String sort, core.String orTerms, core.String highRange, core.int num, core.String cr, CseResourceListImgType imgType, core.String gl, core.String relatedSite, CseResourceListSearchType searchType, core.String fileType, core.int start, CseResourceListImgDominantColor imgDominantColor, CseResourceListLr lr, core.String siteSearch, core.String cref, core.String dateRestrict, CseResourceListSafe safe, core.String c2coff, core.String googlehost, core.String hq, core.String exactTerms, core.String hl, core.String lowRange, CseResourceListImgSize imgSize, CseResourceListImgColorType imgColorType, core.String rights, core.String excludeTerms, CseResourceListFilter filter, core.String linkSite, core.String cx, CseResourceListSiteSearchFilter siteSearchFilter}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != q) $queryParams["q"] = q;
-  if (UNSPECIFIED != sort) $queryParams["sort"] = sort;
-  if (UNSPECIFIED != orTerms) $queryParams["orTerms"] = orTerms;
-  if (UNSPECIFIED != highRange) $queryParams["highRange"] = highRange;
-  if (UNSPECIFIED != num) $queryParams["num"] = num;
-  if (UNSPECIFIED != cr) $queryParams["cr"] = cr;
-  if (UNSPECIFIED != imgType) $queryParams["imgType"] = imgType;
-  if (UNSPECIFIED != gl) $queryParams["gl"] = gl;
-  if (UNSPECIFIED != relatedSite) $queryParams["relatedSite"] = relatedSite;
-  if (UNSPECIFIED != searchType) $queryParams["searchType"] = searchType;
-  if (UNSPECIFIED != fileType) $queryParams["fileType"] = fileType;
-  if (UNSPECIFIED != start) $queryParams["start"] = start;
-  if (UNSPECIFIED != imgDominantColor) $queryParams["imgDominantColor"] = imgDominantColor;
-  if (UNSPECIFIED != lr) $queryParams["lr"] = lr;
-  if (UNSPECIFIED != siteSearch) $queryParams["siteSearch"] = siteSearch;
-  if (UNSPECIFIED != cref) $queryParams["cref"] = cref;
-  if (UNSPECIFIED != dateRestrict) $queryParams["dateRestrict"] = dateRestrict;
-  if (UNSPECIFIED != safe) $queryParams["safe"] = safe;
-  if (UNSPECIFIED != c2coff) $queryParams["c2coff"] = c2coff;
-  if (UNSPECIFIED != googlehost) $queryParams["googlehost"] = googlehost;
-  if (UNSPECIFIED != hq) $queryParams["hq"] = hq;
-  if (UNSPECIFIED != exactTerms) $queryParams["exactTerms"] = exactTerms;
-  if (UNSPECIFIED != hl) $queryParams["hl"] = hl;
-  if (UNSPECIFIED != lowRange) $queryParams["lowRange"] = lowRange;
-  if (UNSPECIFIED != imgSize) $queryParams["imgSize"] = imgSize;
-  if (UNSPECIFIED != imgColorType) $queryParams["imgColorType"] = imgColorType;
-  if (UNSPECIFIED != rights) $queryParams["rights"] = rights;
-  if (UNSPECIFIED != excludeTerms) $queryParams["excludeTerms"] = excludeTerms;
-  if (UNSPECIFIED != filter) $queryParams["filter"] = filter;
-  if (UNSPECIFIED != linkSite) $queryParams["linkSite"] = linkSite;
-  if (UNSPECIFIED != cx) $queryParams["cx"] = cx;
-  if (UNSPECIFIED != siteSearchFilter) $queryParams["siteSearchFilter"] = siteSearchFilter;
+  if (?q) $queryParams["q"] = q;
+  if (?sort) $queryParams["sort"] = sort;
+  if (?orTerms) $queryParams["orTerms"] = orTerms;
+  if (?highRange) $queryParams["highRange"] = highRange;
+  if (?num) $queryParams["num"] = num;
+  if (?cr) $queryParams["cr"] = cr;
+  if (?imgType) $queryParams["imgType"] = imgType;
+  if (?gl) $queryParams["gl"] = gl;
+  if (?relatedSite) $queryParams["relatedSite"] = relatedSite;
+  if (?searchType) $queryParams["searchType"] = searchType;
+  if (?fileType) $queryParams["fileType"] = fileType;
+  if (?start) $queryParams["start"] = start;
+  if (?imgDominantColor) $queryParams["imgDominantColor"] = imgDominantColor;
+  if (?lr) $queryParams["lr"] = lr;
+  if (?siteSearch) $queryParams["siteSearch"] = siteSearch;
+  if (?cref) $queryParams["cref"] = cref;
+  if (?dateRestrict) $queryParams["dateRestrict"] = dateRestrict;
+  if (?safe) $queryParams["safe"] = safe;
+  if (?c2coff) $queryParams["c2coff"] = c2coff;
+  if (?googlehost) $queryParams["googlehost"] = googlehost;
+  if (?hq) $queryParams["hq"] = hq;
+  if (?exactTerms) $queryParams["exactTerms"] = exactTerms;
+  if (?hl) $queryParams["hl"] = hl;
+  if (?lowRange) $queryParams["lowRange"] = lowRange;
+  if (?imgSize) $queryParams["imgSize"] = imgSize;
+  if (?imgColorType) $queryParams["imgColorType"] = imgColorType;
+  if (?rights) $queryParams["rights"] = rights;
+  if (?excludeTerms) $queryParams["excludeTerms"] = excludeTerms;
+  if (?filter) $queryParams["filter"] = filter;
+  if (?linkSite) $queryParams["linkSite"] = linkSite;
+  if (?cx) $queryParams["cx"] = cx;
+  if (?siteSearchFilter) $queryParams["siteSearchFilter"] = siteSearchFilter;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -139,7 +318,7 @@ core.Future&lt;Search&gt; list(core.String q, [core.String sort = UNSPECIFIED, c
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "v1";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -148,6 +327,49 @@ core.Future&lt;Search&gt; list(core.String q, [core.String sort = UNSPECIFIED, c
       .transform((final $text) =&gt; Search.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to CseResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to CseResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CseResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

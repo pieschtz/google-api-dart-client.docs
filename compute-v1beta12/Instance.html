@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Instance Class / compute-v1beta12 Library / Dart Documentation</title>
+        <title>Instance class / compute-v1beta12 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,165 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/Instance.html">Instance</a></div>
+         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/Instance.html">Instance</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Instance</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Instance extends IdentityHash {
+  /**
+ * Instance status. One of the following values: "PROVISIONING", "STAGING", "RUNNING" (output only).
+ */
+  core.String status;
 
+  /** Type of the resource. */
+  core.String kind;
+
+  /**
+ * URL of the machine type resource describing which machine type to use to host the instance;
+ * provided by the client when the instance is created.
+ */
+  core.String machineType;
+
+  /**
+ * An optional textual description of the resource; provided by the client when the resource is
+ * created.
+ */
+  core.String description;
+
+  /**
+ * URL of the zone resource describing where this instance should be hosted; provided by the client
+ * when the instance is created.
+ */
+  core.String zone;
+
+  /**
+ * An optional set of tags applied to this instance. Used to identify valid sources or targets for
+ * network firewalls. Provided by the client when the instance is created. Each tag must be 1-63
+ * characters long, and comply with RFC1035.
+ */
+  core.List&lt;core.String&gt; tags;
+
+  /**
+ * An optional URL of the disk image resource to be to be installed on this instance; provided by
+ * the client when the instance is created. If not specified, the server will choose a default
+ * image.
+ */
+  core.String image;
+
+  /**
+ * Array of disks associated with this instance. Persistent disks must be created before you can
+ * assign them.
+ */
+  core.List&lt;AttachedDisk&gt; disks;
+
+  /**
+ * Name of the resource; provided by the client when the resource is created. The name must be 1-63
+ * characters long, and comply with RFC1035.
+ */
+  core.String name;
+
+  /** An optional, human-readable explanation of the status (output only). */
+  core.String statusMessage;
+
+  /**
+ * A list of service accounts each with specified scopes, for which access tokens are to be made
+ * available to the instance through metadata queries.
+ */
+  core.List&lt;ServiceAccount&gt; serviceAccounts;
+
+  /**
+ * Array of configurations for this interface. This specifies how this interface is configured to
+ * interact with other network services, such as connecting to the internet. Currently,
+ * ONE_TO_ONE_NAT is the only access config supported. If there are no accessConfigs specified, then
+ * this instance will have no external internet access.
+ */
+  core.List&lt;NetworkInterface&gt; networkInterfaces;
+
+  /** Creation timestamp in RFC3339 text format (output only). */
+  core.String creationTimestamp;
+
+  /** Unique identifier for the resource; defined by the server (output only). */
+  core.String id;
+
+  /** Server defined URL for the resource (output only). */
+  core.String selfLink;
+
+  /**
+ * Metadata key/value pairs assigned to this instance. Consists of custom metadata or predefined
+ * keys; see Instance documentation for more information.
+ */
+  Metadata metadata;
+
+  /** Parses an instance from its JSON representation. */
+  static Instance parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Instance();
+    result.status = identity(json["status"]);
+    result.kind = identity(json["kind"]);
+    result.machineType = identity(json["machineType"]);
+    result.description = identity(json["description"]);
+    result.zone = identity(json["zone"]);
+    result.tags = map(identity)(json["tags"]);
+    result.image = identity(json["image"]);
+    result.disks = map(AttachedDisk.parse)(json["disks"]);
+    result.name = identity(json["name"]);
+    result.statusMessage = identity(json["statusMessage"]);
+    result.serviceAccounts = map(ServiceAccount.parse)(json["serviceAccounts"]);
+    result.networkInterfaces = map(NetworkInterface.parse)(json["networkInterfaces"]);
+    result.creationTimestamp = identity(json["creationTimestamp"]);
+    result.id = identity(json["id"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.metadata = Metadata.parse(json["metadata"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Instance value) {
+    if (value == null) return null;
+    final result = {};
+    result["status"] = identity(value.status);
+    result["kind"] = identity(value.kind);
+    result["machineType"] = identity(value.machineType);
+    result["description"] = identity(value.description);
+    result["zone"] = identity(value.zone);
+    result["tags"] = map(identity)(value.tags);
+    result["image"] = identity(value.image);
+    result["disks"] = map(AttachedDisk.serialize)(value.disks);
+    result["name"] = identity(value.name);
+    result["statusMessage"] = identity(value.statusMessage);
+    result["serviceAccounts"] = map(ServiceAccount.serialize)(value.serviceAccounts);
+    result["networkInterfaces"] = map(NetworkInterface.serialize)(value.networkInterfaces);
+    result["creationTimestamp"] = identity(value.creationTimestamp);
+    result["id"] = identity(value.id);
+    result["selfLink"] = identity(value.selfLink);
+    result["metadata"] = Metadata.serialize(value.metadata);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Instance</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../compute-v1beta12/Instance.html">Instance</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Instance.parse">#</a></h4>
 <div class="doc">
@@ -62,7 +203,7 @@ static Instance parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/Instance.html">Instance</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Instance.serialize">#</a></h4>
 <div class="doc">
@@ -92,21 +233,11 @@ static core.Object serialize(Instance value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Instance.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="creationTimestamp">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
             href="#creationTimestamp"
             title="Permalink to Instance.creationTimestamp">#</a>
@@ -119,7 +250,7 @@ core.String creationTimestamp;
 </div>
 </div>
 <div class="field"><h4 id="description">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Instance.description">#</a>
@@ -133,7 +264,7 @@ core.String description;
 </div>
 </div>
 <div class="field"><h4 id="disks">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../compute-v1beta12/AttachedDisk.html">AttachedDisk</a>&gt;         <strong>disks</strong> <a class="anchor-link"
             href="#disks"
             title="Permalink to Instance.disks">#</a>
@@ -147,7 +278,7 @@ core.List&lt;AttachedDisk&gt; disks;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Instance.id">#</a>
@@ -160,7 +291,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="image">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>image</strong> <a class="anchor-link"
             href="#image"
             title="Permalink to Instance.image">#</a>
@@ -175,7 +306,7 @@ core.String image;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Instance.kind">#</a>
@@ -188,7 +319,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="machineType">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>machineType</strong> <a class="anchor-link"
             href="#machineType"
             title="Permalink to Instance.machineType">#</a>
@@ -202,7 +333,7 @@ core.String machineType;
 </div>
 </div>
 <div class="field"><h4 id="metadata">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../compute-v1beta12/Metadata.html">Metadata</a>         <strong>metadata</strong> <a class="anchor-link"
             href="#metadata"
             title="Permalink to Instance.metadata">#</a>
@@ -216,7 +347,7 @@ Metadata metadata;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Instance.name">#</a>
@@ -230,7 +361,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="networkInterfaces">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../compute-v1beta12/NetworkInterface.html">NetworkInterface</a>&gt;         <strong>networkInterfaces</strong> <a class="anchor-link"
             href="#networkInterfaces"
             title="Permalink to Instance.networkInterfaces">#</a>
@@ -245,8 +376,21 @@ core.List&lt;NetworkInterface&gt; networkInterfaces;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Instance.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Instance.selfLink">#</a>
@@ -259,7 +403,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="serviceAccounts">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../compute-v1beta12/ServiceAccount.html">ServiceAccount</a>&gt;         <strong>serviceAccounts</strong> <a class="anchor-link"
             href="#serviceAccounts"
             title="Permalink to Instance.serviceAccounts">#</a>
@@ -273,7 +417,7 @@ core.List&lt;ServiceAccount&gt; serviceAccounts;
 </div>
 </div>
 <div class="field"><h4 id="status">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Instance.status">#</a>
@@ -286,7 +430,7 @@ core.String status;
 </div>
 </div>
 <div class="field"><h4 id="statusMessage">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>statusMessage</strong> <a class="anchor-link"
             href="#statusMessage"
             title="Permalink to Instance.statusMessage">#</a>
@@ -299,7 +443,7 @@ core.String statusMessage;
 </div>
 </div>
 <div class="field"><h4 id="tags">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>tags</strong> <a class="anchor-link"
             href="#tags"
             title="Permalink to Instance.tags">#</a>
@@ -314,7 +458,7 @@ core.List&lt;core.String&gt; tags;
 </div>
 </div>
 <div class="field"><h4 id="zone">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>zone</strong> <a class="anchor-link"
             href="#zone"
             title="Permalink to Instance.zone">#</a>
@@ -325,6 +469,103 @@ when the instance is created.</p>
 <pre class="source">
 core.String zone;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Instance.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Instance.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Instance.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Instance.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Instance.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Instance.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

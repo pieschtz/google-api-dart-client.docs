@@ -1,0 +1,341 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ReportsFilesResourceResource class / dfareporting-v1.1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="dfareporting-v1.1" data-type="ReportsFilesResourceResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../dfareporting-v1.1.html">dfareporting-v1.1</a> &rsaquo; <a href="../dfareporting-v1.1/ReportsFilesResourceResource.html">ReportsFilesResourceResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ReportsFilesResourceResource</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class ReportsFilesResourceResource extends core.Object {
+  final DfareportingApi _$service;
+  
+  ReportsFilesResourceResource._internal(DfareportingApi $service) : _$service = $service;
+
+  // Method ReportsResource.ReportsFilesResourceResource.List
+  /**
+   * Lists files for a report.
+   *
+   *    * [profileId] The DFA profile ID.
+   *    * [reportId] The ID of the parent report.
+   *    * [sortField] The field by which to sort the list.
+  Default: LAST_MODIFIED_TIME.
+   *    * [maxResults] Maximum number of results to return.
+
+  Minimum: 0.
+  Maximum: 10.
+   *    * [pageToken] The value of the nextToken from the previous result page.
+   *    * [sortOrder] Order of sorted results, default is 'DESCENDING'.
+  Default: DESCENDING.
+   */
+  core.Future&lt;FileList&gt; list(core.String profileId, core.String reportId, {ReportsResourceReportsFilesResourceResourceListSortField sortField, core.int maxResults, core.String pageToken, ReportsResourceReportsFilesResourceResourceListSortOrder sortOrder}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["profileId"] = profileId;
+    $pathParams["reportId"] = reportId;
+    if (?sortField) $queryParams["sortField"] = sortField;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?sortOrder) $queryParams["sortOrder"] = sortOrder;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "userprofiles/{profileId}/reports/{reportId}/files";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; FileList.parse(JSON.parse($text)));
+  }
+
+  // Method ReportsResource.ReportsFilesResourceResource.Get
+  /**
+   * Retrieves a report file.
+   *
+   *    * [profileId] The DFA profile ID.
+   *    * [reportId] The ID of the report.
+   *    * [fileId] The ID of the report file.
+   */
+  core.Future&lt;File&gt; get(core.String profileId, core.String reportId, core.String fileId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["profileId"] = profileId;
+    $pathParams["reportId"] = reportId;
+    $pathParams["fileId"] = fileId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "userprofiles/{profileId}/reports/{reportId}/files/{fileId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+  }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="ReportsFilesResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>ReportsFilesResourceResource._internal</strong>(<a href="../dfareporting-v1.1/DfareportingApi.html">DfareportingApi</a> $service) <a class="anchor-link" href="#ReportsFilesResourceResource._internal"
+              title="Permalink to ReportsFilesResourceResource.ReportsFilesResourceResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+ReportsFilesResourceResource._internal(DfareportingApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to ReportsFilesResourceResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to ReportsFilesResourceResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../dfareporting-v1.1/File.html">File</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> profileId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> reportId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> fileId) <a class="anchor-link" href="#get"
+              title="Permalink to ReportsFilesResourceResource.get">#</a></h4>
+<div class="doc">
+<p>Retrieves a report file.</p><ul><li>
+<span class="param">profileId</span> The DFA profile ID.</li><li>
+<span class="param">reportId</span> The ID of the report.</li><li>
+<span class="param">fileId</span> The ID of the report file.</li></ul>
+<pre class="source">
+core.Future&lt;File&gt; get(core.String profileId, core.String reportId, core.String fileId) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["profileId"] = profileId;
+  $pathParams["reportId"] = reportId;
+  $pathParams["fileId"] = fileId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "userprofiles/{profileId}/reports/{reportId}/files/{fileId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; File.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to ReportsFilesResourceResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../dfareporting-v1.1/FileList.html">FileList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> profileId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> reportId, [<a href="../dfareporting-v1.1/ReportsResourceReportsFilesResourceResourceListSortField.html">ReportsResourceReportsFilesResourceResourceListSortField</a> sortField, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="../dfareporting-v1.1/ReportsResourceReportsFilesResourceResourceListSortOrder.html">ReportsResourceReportsFilesResourceResourceListSortOrder</a> sortOrder]) <a class="anchor-link" href="#list"
+              title="Permalink to ReportsFilesResourceResource.list">#</a></h4>
+<div class="doc">
+<p>Lists files for a report.</p><ul><li>
+<span class="param">profileId</span> The DFA profile ID.</li><li>
+<span class="param">reportId</span> The ID of the parent report.</li><li>
+<p>
+<span class="param">sortField</span> The field by which to sort the list.
+Default: LAST<em>MODIFIED</em>TIME.</p></li><li>
+<span class="param">maxResults</span> Maximum number of results to return.</li></ul>
+<p>Minimum: 0.
+Maximum: 10.
+   * 
+<span class="param">pageToken</span> The value of the nextToken from the previous result page.
+   * 
+<span class="param">sortOrder</span> Order of sorted results, default is 'DESCENDING'.
+Default: DESCENDING.</p>
+<pre class="source">
+core.Future&lt;FileList&gt; list(core.String profileId, core.String reportId, {ReportsResourceReportsFilesResourceResourceListSortField sortField, core.int maxResults, core.String pageToken, ReportsResourceReportsFilesResourceResourceListSortOrder sortOrder}) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["profileId"] = profileId;
+  $pathParams["reportId"] = reportId;
+  if (?sortField) $queryParams["sortField"] = sortField;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?sortOrder) $queryParams["sortOrder"] = sortOrder;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "userprofiles/{profileId}/reports/{reportId}/files";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; FileList.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to ReportsFilesResourceResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to ReportsFilesResourceResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ReportsFilesResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>ReportsFilesResourceResource._internal</strong>(<a href="../dfareporting-v1.1/DfareportingApi.html">DfareportingApi</a> $service) <a class="anchor-link" href="#ReportsFilesResourceResource._internal"
+              title="Permalink to ReportsFilesResourceResource.ReportsFilesResourceResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+ReportsFilesResourceResource._internal(DfareportingApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ReportsFilesResourceResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

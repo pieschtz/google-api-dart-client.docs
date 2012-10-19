@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>CalendarListResource Class / calendar-v3 Library / Dart Documentation</title>
+        <title>CalendarListResource class / calendar-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,302 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/CalendarListResource.html">CalendarListResource</a></div>
+         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/CalendarListResource.html">CalendarListResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>CalendarListResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class CalendarListResource extends core.Object {
+  final CalendarApi _$service;
+  
+  CalendarListResource._internal(CalendarApi $service) : _$service = $service;
 
+  // Method CalendarListResource.Insert
+  /**
+   * Adds an entry to the user's calendar list.
+   *
+   *    * [content] the CalendarListEntry
+   *    * [colorRgbFormat] Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB).
+   *        If this feature is used, the index-based 'color' field will be set to the best matching
+   *        option automatically. Optional. The default is False.
+   */
+  core.Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content, {core.bool colorRgbFormat}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(CalendarListEntry.serialize(content));
+    final $path = "users/me/calendarList";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; CalendarListEntry.parse(JSON.parse($text)));
+  }
+
+  // Method CalendarListResource.Get
+  /**
+   * Returns an entry on the user's calendar list.
+   *
+   *    * [calendarId] Calendar identifier.
+   */
+  core.Future&lt;CalendarListEntry&gt; get(core.String calendarId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "users/me/calendarList/{calendarId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; CalendarListEntry.parse(JSON.parse($text)));
+  }
+
+  // Method CalendarListResource.List
+  /**
+   * Returns entries on the user's calendar list.
+   *
+   *    * [pageToken] Token specifying which result page to return. Optional.
+   *    * [showHidden] Whether to show hidden entries. Optional. The default is False.
+   *    * [maxResults] Maximum number of entries returned on one result page. Optional.
+
+  Minimum: 1.
+   *    * [minAccessRole] The minimum access role for the user in the returned entires. Optional. The default is no
+   *        restriction.
+   */
+  core.Future&lt;CalendarList&gt; list({core.String pageToken, core.bool showHidden, core.int maxResults, CalendarListResourceListMinAccessRole minAccessRole}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?showHidden) $queryParams["showHidden"] = showHidden;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?minAccessRole) $queryParams["minAccessRole"] = minAccessRole;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "users/me/calendarList";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; CalendarList.parse(JSON.parse($text)));
+  }
+
+  // Method CalendarListResource.Update
+  /**
+   * Updates an entry on the user's calendar list.
+   *
+   *    * [content] the CalendarListEntry
+   *    * [calendarId] Calendar identifier.
+   *    * [colorRgbFormat] Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB).
+   *        If this feature is used, the index-based 'color' field will be set to the best matching
+   *        option automatically. Optional. The default is False.
+   */
+  core.Future&lt;CalendarListEntry&gt; update(core.String calendarId, CalendarListEntry content, {core.bool colorRgbFormat}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (?colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(CalendarListEntry.serialize(content));
+    final $path = "users/me/calendarList/{calendarId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; CalendarListEntry.parse(JSON.parse($text)));
+  }
+
+  // Method CalendarListResource.Patch
+  /**
+   * Updates an entry on the user's calendar list. This method supports patch semantics.
+   *
+   *    * [content] the CalendarListEntry
+   *    * [calendarId] Calendar identifier.
+   *    * [colorRgbFormat] Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB).
+   *        If this feature is used, the index-based 'color' field will be set to the best matching
+   *        option automatically. Optional. The default is False.
+   */
+  core.Future&lt;CalendarListEntry&gt; patch(core.String calendarId, CalendarListEntry content, {core.bool colorRgbFormat}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (?colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(CalendarListEntry.serialize(content));
+    final $path = "users/me/calendarList/{calendarId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; CalendarListEntry.parse(JSON.parse($text)));
+  }
+
+  // Method CalendarListResource.Delete
+  /**
+   * Deletes an entry on the user's calendar list.
+   *
+   *    * [calendarId] Calendar identifier.
+   */
+  core.Future delete(core.String calendarId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "users/me/calendarList/{calendarId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="CalendarListResource">
-<span class="show-code">Code</span>
-new <strong>CalendarListResource</strong>._internal(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#CalendarListResource"
-              title="Permalink to CalendarListResource.CalendarListResource">#</a></h4>
+<div class="method"><h4 id="CalendarListResource._internal">
+<button class="show-code">Code</button>
+new <strong>CalendarListResource._internal</strong>(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#CalendarListResource._internal"
+              title="Permalink to CalendarListResource.CalendarListResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 CalendarListResource._internal(CalendarApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to CalendarListResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to CalendarListResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method"><h4 id="CalendarListResource._internal">
+<button class="show-code">Code</button>
+new <strong>CalendarListResource._internal</strong>(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#CalendarListResource._internal"
+              title="Permalink to CalendarListResource.CalendarListResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+CalendarListResource._internal(CalendarApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="delete">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#delete"
               title="Permalink to CalendarListResource.delete">#</a></h4>
 <div class="doc">
@@ -62,7 +331,7 @@ core.Future delete(core.String calendarId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "users/me/calendarList/{calendarId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $http = new http.Request($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -74,7 +343,7 @@ core.Future delete(core.String calendarId) {
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId) <a class="anchor-link" href="#get"
               title="Permalink to CalendarListResource.get">#</a></h4>
 <div class="doc">
@@ -96,7 +365,7 @@ core.Future&lt;CalendarListEntry&gt; get(core.String calendarId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "users/me/calendarList/{calendarId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -107,9 +376,27 @@ core.Future&lt;CalendarListEntry&gt; get(core.String calendarId) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to CalendarListResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>insert</strong>(<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> colorRgbFormat = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>insert</strong>(<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> colorRgbFormat]) <a class="anchor-link" href="#insert"
               title="Permalink to CalendarListResource.insert">#</a></h4>
 <div class="doc">
 <p>Adds an entry to the user's calendar list.</p><ul><li>
@@ -119,11 +406,11 @@ core.Future&lt;CalendarListEntry&gt; get(core.String calendarId) {
    If this feature is used, the index-based 'color' field will be set to the best matching
    option automatically. Optional. The default is False.</p></li></ul>
 <pre class="source">
-core.Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content, [core.bool colorRgbFormat = UNSPECIFIED]) {
+core.Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content, {core.bool colorRgbFormat}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
+  if (?colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -136,7 +423,7 @@ core.Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content, [core.boo
   final $body = JSON.stringify(CalendarListEntry.serialize(content));
   final $path = "users/me/calendarList";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -148,8 +435,8 @@ core.Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content, [core.boo
 </div>
 </div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarList.html">CalendarList</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showHidden = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="../calendar-v3/CalendarListResourceListMinAccessRole.html">CalendarListResourceListMinAccessRole</a> minAccessRole = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarList.html">CalendarList</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showHidden, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="../calendar-v3/CalendarListResourceListMinAccessRole.html">CalendarListResourceListMinAccessRole</a> minAccessRole]) <a class="anchor-link" href="#list"
               title="Permalink to CalendarListResource.list">#</a></h4>
 <div class="doc">
 <p>Returns entries on the user's calendar list.</p><ul><li>
@@ -162,14 +449,14 @@ core.Future&lt;CalendarListEntry&gt; insert(CalendarListEntry content, [core.boo
 <pre><code>   restriction.
 </code></pre>
 <pre class="source">
-core.Future&lt;CalendarList&gt; list([core.String pageToken = UNSPECIFIED, core.bool showHidden = UNSPECIFIED, core.int maxResults = UNSPECIFIED, CalendarListResourceListMinAccessRole minAccessRole = UNSPECIFIED]) {
+core.Future&lt;CalendarList&gt; list({core.String pageToken, core.bool showHidden, core.int maxResults, CalendarListResourceListMinAccessRole minAccessRole}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != showHidden) $queryParams["showHidden"] = showHidden;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != minAccessRole) $queryParams["minAccessRole"] = minAccessRole;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?showHidden) $queryParams["showHidden"] = showHidden;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?minAccessRole) $queryParams["minAccessRole"] = minAccessRole;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -180,7 +467,7 @@ core.Future&lt;CalendarList&gt; list([core.String pageToken = UNSPECIFIED, core.
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "users/me/calendarList";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -191,9 +478,40 @@ core.Future&lt;CalendarList&gt; list([core.String pageToken = UNSPECIFIED, core.
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to CalendarListResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to CalendarListResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> colorRgbFormat = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> colorRgbFormat]) <a class="anchor-link" href="#patch"
               title="Permalink to CalendarListResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates an entry on the user's calendar list. This method supports patch semantics.</p><ul><li>
@@ -204,12 +522,12 @@ core.Future&lt;CalendarList&gt; list([core.String pageToken = UNSPECIFIED, core.
    If this feature is used, the index-based 'color' field will be set to the best matching
    option automatically. Optional. The default is False.</p></li></ul>
 <pre class="source">
-core.Future&lt;CalendarListEntry&gt; patch(core.String calendarId, CalendarListEntry content, [core.bool colorRgbFormat = UNSPECIFIED]) {
+core.Future&lt;CalendarListEntry&gt; patch(core.String calendarId, CalendarListEntry content, {core.bool colorRgbFormat}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
-  if (UNSPECIFIED != colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
+  if (?colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -222,7 +540,7 @@ core.Future&lt;CalendarListEntry&gt; patch(core.String calendarId, CalendarListE
   final $body = JSON.stringify(CalendarListEntry.serialize(content));
   final $path = "users/me/calendarList/{calendarId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -233,9 +551,20 @@ core.Future&lt;CalendarListEntry&gt; patch(core.String calendarId, CalendarListE
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CalendarListResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> colorRgbFormat = UNSPECIFIED]) <a class="anchor-link" href="#update"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> colorRgbFormat]) <a class="anchor-link" href="#update"
               title="Permalink to CalendarListResource.update">#</a></h4>
 <div class="doc">
 <p>Updates an entry on the user's calendar list.</p><ul><li>
@@ -246,12 +575,12 @@ core.Future&lt;CalendarListEntry&gt; patch(core.String calendarId, CalendarListE
    If this feature is used, the index-based 'color' field will be set to the best matching
    option automatically. Optional. The default is False.</p></li></ul>
 <pre class="source">
-core.Future&lt;CalendarListEntry&gt; update(core.String calendarId, CalendarListEntry content, [core.bool colorRgbFormat = UNSPECIFIED]) {
+core.Future&lt;CalendarListEntry&gt; update(core.String calendarId, CalendarListEntry content, {core.bool colorRgbFormat}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
-  if (UNSPECIFIED != colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
+  if (?colorRgbFormat) $queryParams["colorRgbFormat"] = colorRgbFormat;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -264,7 +593,7 @@ core.Future&lt;CalendarListEntry&gt; update(core.String calendarId, CalendarList
   final $body = JSON.stringify(CalendarListEntry.serialize(content));
   final $path = "users/me/calendarList/{calendarId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -273,6 +602,7 @@ core.Future&lt;CalendarListEntry&gt; update(core.String calendarId, CalendarList
       .transform((final $text) =&gt; CalendarListEntry.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

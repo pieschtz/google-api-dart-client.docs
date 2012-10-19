@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>VotesResource Class / moderator-v1 Library / Dart Documentation</title>
+        <title>VotesResource class / moderator-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,34 +14,274 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/VotesResource.html">VotesResource</a></div>
+         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/VotesResource.html">VotesResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>VotesResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class VotesResource extends core.Object {
+  final ModeratorApi _$service;
+  
+  VotesResource._internal(ModeratorApi $service) : _$service = $service;
 
+  // Method VotesResource.Insert
+  /**
+   * Inserts a new vote by the authenticated user for the specified submission within the specified
+   * series.
+   *
+   *    * [content] the Vote
+   *    * [seriesId] The decimal ID of the Series.
+   *    * [submissionId] The decimal ID of the Submission within the Series.
+   *    * [unauthToken] User identifier for unauthenticated usage mode
+   */
+  core.Future&lt;Vote&gt; insert(core.int seriesId, core.int submissionId, Vote content, {core.String unauthToken}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["seriesId"] = seriesId;
+    $pathParams["submissionId"] = submissionId;
+    if (?unauthToken) $queryParams["unauthToken"] = unauthToken;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Vote.serialize(content));
+    final $path = "series/{seriesId}/submissions/{submissionId}/votes/@me";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Vote.parse(JSON.parse($text)));
+  }
+
+  // Method VotesResource.Patch
+  /**
+   * Updates the votes by the authenticated user for the specified submission within the specified
+   * series. This method supports patch semantics.
+   *
+   *    * [content] the Vote
+   *    * [seriesId] The decimal ID of the Series.
+   *    * [submissionId] The decimal ID of the Submission within the Series.
+   *    * [userId]
+   *    * [unauthToken] User identifier for unauthenticated usage mode
+   */
+  core.Future&lt;Vote&gt; patch(core.int seriesId, core.int submissionId, Vote content, {core.String userId, core.String unauthToken}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["seriesId"] = seriesId;
+    $pathParams["submissionId"] = submissionId;
+    if (?userId) $queryParams["userId"] = userId;
+    if (?unauthToken) $queryParams["unauthToken"] = unauthToken;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Vote.serialize(content));
+    final $path = "series/{seriesId}/submissions/{submissionId}/votes/@me";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Vote.parse(JSON.parse($text)));
+  }
+
+  // Method VotesResource.List
+  /**
+   * Lists the votes by the authenticated user for the given series.
+   *
+   *    * [seriesId] The decimal ID of the Series.
+   *    * [maxResults] Maximum number of results to return.
+   *    * [startIndex] Index of the first result to be retrieved.
+   */
+  core.Future&lt;VoteList&gt; list(core.int seriesId, {core.int maxResults, core.int startIndex}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["seriesId"] = seriesId;
+    if (?maxResults) $queryParams["max-results"] = maxResults;
+    if (?startIndex) $queryParams["start-index"] = startIndex;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "series/{seriesId}/votes/@me";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; VoteList.parse(JSON.parse($text)));
+  }
+
+  // Method VotesResource.Update
+  /**
+   * Updates the votes by the authenticated user for the specified submission within the specified
+   * series.
+   *
+   *    * [content] the Vote
+   *    * [seriesId] The decimal ID of the Series.
+   *    * [submissionId] The decimal ID of the Submission within the Series.
+   *    * [userId]
+   *    * [unauthToken] User identifier for unauthenticated usage mode
+   */
+  core.Future&lt;Vote&gt; update(core.int seriesId, core.int submissionId, Vote content, {core.String userId, core.String unauthToken}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["seriesId"] = seriesId;
+    $pathParams["submissionId"] = submissionId;
+    if (?userId) $queryParams["userId"] = userId;
+    if (?unauthToken) $queryParams["unauthToken"] = unauthToken;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Vote.serialize(content));
+    final $path = "series/{seriesId}/submissions/{submissionId}/votes/@me";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Vote.parse(JSON.parse($text)));
+  }
+
+  // Method VotesResource.Get
+  /**
+   * Returns the votes by the authenticated user for the specified submission within the specified
+   * series.
+   *
+   *    * [seriesId] The decimal ID of the Series.
+   *    * [submissionId] The decimal ID of the Submission within the Series.
+   *    * [userId]
+   *    * [unauthToken] User identifier for unauthenticated usage mode
+   */
+  core.Future&lt;Vote&gt; get(core.int seriesId, core.int submissionId, {core.String userId, core.String unauthToken}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["seriesId"] = seriesId;
+    $pathParams["submissionId"] = submissionId;
+    if (?userId) $queryParams["userId"] = userId;
+    if (?unauthToken) $queryParams["unauthToken"] = unauthToken;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "series/{seriesId}/submissions/{submissionId}/votes/@me";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Vote.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="VotesResource">
-<span class="show-code">Code</span>
-new <strong>VotesResource</strong>._internal(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#VotesResource"
-              title="Permalink to VotesResource.VotesResource">#</a></h4>
+<div class="method"><h4 id="VotesResource._internal">
+<button class="show-code">Code</button>
+new <strong>VotesResource._internal</strong>(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#VotesResource._internal"
+              title="Permalink to VotesResource.VotesResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 VotesResource._internal(ModeratorApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to VotesResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to VotesResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Vote.html">Vote</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> submissionId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> userId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> unauthToken = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Vote.html">Vote</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> submissionId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> userId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> unauthToken]) <a class="anchor-link" href="#get"
               title="Permalink to VotesResource.get">#</a></h4>
 <div class="doc">
 <p>Returns the votes by the authenticated user for the specified submission within the specified
@@ -51,14 +291,14 @@ series.</p><ul><li>
 <span class="param">userId</span></li><li>
 <span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li></ul>
 <pre class="source">
-core.Future&lt;Vote&gt; get(core.int seriesId, core.int submissionId, [core.String userId = UNSPECIFIED, core.String unauthToken = UNSPECIFIED]) {
+core.Future&lt;Vote&gt; get(core.int seriesId, core.int submissionId, {core.String userId, core.String unauthToken}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["seriesId"] = seriesId;
   $pathParams["submissionId"] = submissionId;
-  if (UNSPECIFIED != userId) $queryParams["userId"] = userId;
-  if (UNSPECIFIED != unauthToken) $queryParams["unauthToken"] = unauthToken;
+  if (?userId) $queryParams["userId"] = userId;
+  if (?unauthToken) $queryParams["unauthToken"] = unauthToken;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -69,7 +309,7 @@ core.Future&lt;Vote&gt; get(core.int seriesId, core.int submissionId, [core.Stri
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "series/{seriesId}/submissions/{submissionId}/votes/@me";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -80,9 +320,27 @@ core.Future&lt;Vote&gt; get(core.int seriesId, core.int submissionId, [core.Stri
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to VotesResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Vote.html">Vote</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> submissionId, <a href="../moderator-v1/Vote.html">Vote</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> unauthToken = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Vote.html">Vote</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> submissionId, <a href="../moderator-v1/Vote.html">Vote</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> unauthToken]) <a class="anchor-link" href="#insert"
               title="Permalink to VotesResource.insert">#</a></h4>
 <div class="doc">
 <p>Inserts a new vote by the authenticated user for the specified submission within the specified
@@ -92,13 +350,13 @@ series.</p><ul><li>
 <span class="param">submissionId</span> The decimal ID of the Submission within the Series.</li><li>
 <span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li></ul>
 <pre class="source">
-core.Future&lt;Vote&gt; insert(core.int seriesId, core.int submissionId, Vote content, [core.String unauthToken = UNSPECIFIED]) {
+core.Future&lt;Vote&gt; insert(core.int seriesId, core.int submissionId, Vote content, {core.String unauthToken}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["seriesId"] = seriesId;
   $pathParams["submissionId"] = submissionId;
-  if (UNSPECIFIED != unauthToken) $queryParams["unauthToken"] = unauthToken;
+  if (?unauthToken) $queryParams["unauthToken"] = unauthToken;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -111,7 +369,7 @@ core.Future&lt;Vote&gt; insert(core.int seriesId, core.int submissionId, Vote co
   final $body = JSON.stringify(Vote.serialize(content));
   final $path = "series/{seriesId}/submissions/{submissionId}/votes/@me";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -123,8 +381,8 @@ core.Future&lt;Vote&gt; insert(core.int seriesId, core.int submissionId, Vote co
 </div>
 </div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/VoteList.html">VoteList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/VoteList.html">VoteList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex]) <a class="anchor-link" href="#list"
               title="Permalink to VotesResource.list">#</a></h4>
 <div class="doc">
 <p>Lists the votes by the authenticated user for the given series.</p><ul><li>
@@ -132,13 +390,13 @@ core.Future&lt;Vote&gt; insert(core.int seriesId, core.int submissionId, Vote co
 <span class="param">maxResults</span> Maximum number of results to return.</li><li>
 <span class="param">startIndex</span> Index of the first result to be retrieved.</li></ul>
 <pre class="source">
-core.Future&lt;VoteList&gt; list(core.int seriesId, [core.int maxResults = UNSPECIFIED, core.int startIndex = UNSPECIFIED]) {
+core.Future&lt;VoteList&gt; list(core.int seriesId, {core.int maxResults, core.int startIndex}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["seriesId"] = seriesId;
-  if (UNSPECIFIED != maxResults) $queryParams["max-results"] = maxResults;
-  if (UNSPECIFIED != startIndex) $queryParams["start-index"] = startIndex;
+  if (?maxResults) $queryParams["max-results"] = maxResults;
+  if (?startIndex) $queryParams["start-index"] = startIndex;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -149,7 +407,7 @@ core.Future&lt;VoteList&gt; list(core.int seriesId, [core.int maxResults = UNSPE
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "series/{seriesId}/votes/@me";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -160,9 +418,40 @@ core.Future&lt;VoteList&gt; list(core.int seriesId, [core.int maxResults = UNSPE
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to VotesResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to VotesResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Vote.html">Vote</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> submissionId, <a href="../moderator-v1/Vote.html">Vote</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> userId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> unauthToken = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Vote.html">Vote</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> submissionId, <a href="../moderator-v1/Vote.html">Vote</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> userId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> unauthToken]) <a class="anchor-link" href="#patch"
               title="Permalink to VotesResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates the votes by the authenticated user for the specified submission within the specified
@@ -173,14 +462,14 @@ series. This method supports patch semantics.</p><ul><li>
 <span class="param">userId</span></li><li>
 <span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li></ul>
 <pre class="source">
-core.Future&lt;Vote&gt; patch(core.int seriesId, core.int submissionId, Vote content, [core.String userId = UNSPECIFIED, core.String unauthToken = UNSPECIFIED]) {
+core.Future&lt;Vote&gt; patch(core.int seriesId, core.int submissionId, Vote content, {core.String userId, core.String unauthToken}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["seriesId"] = seriesId;
   $pathParams["submissionId"] = submissionId;
-  if (UNSPECIFIED != userId) $queryParams["userId"] = userId;
-  if (UNSPECIFIED != unauthToken) $queryParams["unauthToken"] = unauthToken;
+  if (?userId) $queryParams["userId"] = userId;
+  if (?unauthToken) $queryParams["unauthToken"] = unauthToken;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -193,7 +482,7 @@ core.Future&lt;Vote&gt; patch(core.int seriesId, core.int submissionId, Vote con
   final $body = JSON.stringify(Vote.serialize(content));
   final $path = "series/{seriesId}/submissions/{submissionId}/votes/@me";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -204,9 +493,20 @@ core.Future&lt;Vote&gt; patch(core.int seriesId, core.int submissionId, Vote con
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to VotesResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Vote.html">Vote</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> submissionId, <a href="../moderator-v1/Vote.html">Vote</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> userId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> unauthToken = UNSPECIFIED]) <a class="anchor-link" href="#update"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Vote.html">Vote</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> submissionId, <a href="../moderator-v1/Vote.html">Vote</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> userId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> unauthToken]) <a class="anchor-link" href="#update"
               title="Permalink to VotesResource.update">#</a></h4>
 <div class="doc">
 <p>Updates the votes by the authenticated user for the specified submission within the specified
@@ -217,14 +517,14 @@ series.</p><ul><li>
 <span class="param">userId</span></li><li>
 <span class="param">unauthToken</span> User identifier for unauthenticated usage mode</li></ul>
 <pre class="source">
-core.Future&lt;Vote&gt; update(core.int seriesId, core.int submissionId, Vote content, [core.String userId = UNSPECIFIED, core.String unauthToken = UNSPECIFIED]) {
+core.Future&lt;Vote&gt; update(core.int seriesId, core.int submissionId, Vote content, {core.String userId, core.String unauthToken}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["seriesId"] = seriesId;
   $pathParams["submissionId"] = submissionId;
-  if (UNSPECIFIED != userId) $queryParams["userId"] = userId;
-  if (UNSPECIFIED != unauthToken) $queryParams["unauthToken"] = unauthToken;
+  if (?userId) $queryParams["userId"] = userId;
+  if (?unauthToken) $queryParams["unauthToken"] = unauthToken;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -237,7 +537,7 @@ core.Future&lt;Vote&gt; update(core.int seriesId, core.int submissionId, Vote co
   final $body = JSON.stringify(Vote.serialize(content));
   final $path = "series/{seriesId}/submissions/{submissionId}/votes/@me";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -246,6 +546,17 @@ core.Future&lt;Vote&gt; update(core.int seriesId, core.int submissionId, Vote co
       .transform((final $text) =&gt; Vote.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method"><h4 id="VotesResource._internal">
+<button class="show-code">Code</button>
+new <strong>VotesResource._internal</strong>(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#VotesResource._internal"
+              title="Permalink to VotesResource.VotesResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+VotesResource._internal(ModeratorApi $service) : _$service = $service;
+</pre>
+</div>
 </div>
 </div>
         </div>

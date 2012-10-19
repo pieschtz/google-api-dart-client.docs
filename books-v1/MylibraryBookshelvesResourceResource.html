@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>MylibraryBookshelvesResourceResource Class / books-v1 Library / Dart Documentation</title>
+        <title>MylibraryBookshelvesResourceResource class / books-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,35 +14,299 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/MylibraryBookshelvesResourceResource.html">MylibraryBookshelvesResourceResource</a></div>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/MylibraryBookshelvesResourceResource.html">MylibraryBookshelvesResourceResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>MylibraryBookshelvesResourceResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class MylibraryBookshelvesResourceResource extends core.Object {
+  final BooksApi _$service;
+  final MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource volumes;
+  
+  MylibraryBookshelvesResourceResource._internal(BooksApi $service) : _$service = $service,
+    volumes = new MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource._internal($service);
 
+  // Method MylibraryResource.MylibraryBookshelvesResourceResource.RemoveVolume
+  /**
+   * Removes a volume from a bookshelf.
+   *
+   *    * [shelf] ID of bookshelf from which to remove a volume.
+   *    * [volumeId] ID of volume to remove.
+   *    * [source] String to identify the originator of this request.
+   */
+  core.Future removeVolume(core.String shelf, core.String volumeId, {core.String source}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["shelf"] = shelf;
+    if (?volumeId) $queryParams["volumeId"] = volumeId;
+    if (?source) $queryParams["source"] = source;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "mylibrary/bookshelves/{shelf}/removeVolume";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+
+  // Method MylibraryResource.MylibraryBookshelvesResourceResource.Get
+  /**
+   * Retrieves metadata for a specific bookshelf belonging to the authenticated user.
+   *
+   *    * [shelf] ID of bookshelf to retrieve.
+   *    * [source] String to identify the originator of this request.
+   */
+  core.Future&lt;Bookshelf&gt; get(core.String shelf, {core.String source}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["shelf"] = shelf;
+    if (?source) $queryParams["source"] = source;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "mylibrary/bookshelves/{shelf}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Bookshelf.parse(JSON.parse($text)));
+  }
+
+  // Method MylibraryResource.MylibraryBookshelvesResourceResource.ClearVolumes
+  /**
+   * Clears all volumes from a bookshelf.
+   *
+   *    * [shelf] ID of bookshelf from which to remove a volume.
+   *    * [source] String to identify the originator of this request.
+   */
+  core.Future clearVolumes(core.String shelf, {core.String source}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["shelf"] = shelf;
+    if (?source) $queryParams["source"] = source;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "mylibrary/bookshelves/{shelf}/clearVolumes";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+
+  // Method MylibraryResource.MylibraryBookshelvesResourceResource.List
+  /**
+   * Retrieves a list of bookshelves belonging to the authenticated user.
+   *
+   *    * [source] String to identify the originator of this request.
+   */
+  core.Future&lt;Bookshelves&gt; list({core.String source}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?source) $queryParams["source"] = source;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "mylibrary/bookshelves";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Bookshelves.parse(JSON.parse($text)));
+  }
+
+  // Method MylibraryResource.MylibraryBookshelvesResourceResource.AddVolume
+  /**
+   * Adds a volume to a bookshelf.
+   *
+   *    * [shelf] ID of bookshelf to which to add a volume.
+   *    * [volumeId] ID of volume to add.
+   *    * [source] String to identify the originator of this request.
+   */
+  core.Future addVolume(core.String shelf, core.String volumeId, {core.String source}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["shelf"] = shelf;
+    if (?volumeId) $queryParams["volumeId"] = volumeId;
+    if (?source) $queryParams["source"] = source;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "mylibrary/bookshelves/{shelf}/addVolume";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+
+  // Method MylibraryResource.MylibraryBookshelvesResourceResource.MoveVolume
+  /**
+   * Moves a volume within a bookshelf.
+   *
+   *    * [shelf] ID of bookshelf with the volume.
+   *    * [volumeId] ID of volume to move.
+   *    * [volumePosition] Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between
+   *        the first and the second and so on.)
+   *    * [source] String to identify the originator of this request.
+   */
+  core.Future moveVolume(core.String shelf, core.String volumeId, core.int volumePosition, {core.String source}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["shelf"] = shelf;
+    if (?volumeId) $queryParams["volumeId"] = volumeId;
+    if (?volumePosition) $queryParams["volumePosition"] = volumePosition;
+    if (?source) $queryParams["source"] = source;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "mylibrary/bookshelves/{shelf}/moveVolume";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="MylibraryBookshelvesResourceResource">
-<span class="show-code">Code</span>
-new <strong>MylibraryBookshelvesResourceResource</strong>._internal(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MylibraryBookshelvesResourceResource"
-              title="Permalink to MylibraryBookshelvesResourceResource.MylibraryBookshelvesResourceResource">#</a></h4>
+<div class="method"><h4 id="MylibraryBookshelvesResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>MylibraryBookshelvesResourceResource._internal</strong>(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MylibraryBookshelvesResourceResource._internal"
+              title="Permalink to MylibraryBookshelvesResourceResource.MylibraryBookshelvesResourceResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 MylibraryBookshelvesResourceResource._internal(BooksApi $service) : _$service = $service,
   volumes = new MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource._internal($service);
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to MylibraryBookshelvesResourceResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="volumes">
+<button class="show-code">Code</button>
+final <a href="../books-v1/MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource.html">MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource</a>         <strong>volumes</strong> <a class="anchor-link"
+            href="#volumes"
+            title="Permalink to MylibraryBookshelvesResourceResource.volumes">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+final MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource volumes;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to MylibraryBookshelvesResourceResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="addVolume">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>addVolume</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, <a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#addVolume"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>addVolume</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, <a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source]) <a class="anchor-link" href="#addVolume"
               title="Permalink to MylibraryBookshelvesResourceResource.addVolume">#</a></h4>
 <div class="doc">
 <p>Adds a volume to a bookshelf.</p><ul><li>
@@ -50,13 +314,13 @@ MylibraryBookshelvesResourceResource._internal(BooksApi $service) : _$service = 
 <span class="param">volumeId</span> ID of volume to add.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-core.Future addVolume(core.String shelf, core.String volumeId, [core.String source = UNSPECIFIED]) {
+core.Future addVolume(core.String shelf, core.String volumeId, {core.String source}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["shelf"] = shelf;
-  if (UNSPECIFIED != volumeId) $queryParams["volumeId"] = volumeId;
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (?volumeId) $queryParams["volumeId"] = volumeId;
+  if (?source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -67,7 +331,7 @@ core.Future addVolume(core.String shelf, core.String volumeId, [core.String sour
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "mylibrary/bookshelves/{shelf}/addVolume";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -79,20 +343,20 @@ core.Future addVolume(core.String shelf, core.String volumeId, [core.String sour
 </div>
 </div>
 <div class="method"><h4 id="clearVolumes">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>clearVolumes</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#clearVolumes"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>clearVolumes</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source]) <a class="anchor-link" href="#clearVolumes"
               title="Permalink to MylibraryBookshelvesResourceResource.clearVolumes">#</a></h4>
 <div class="doc">
 <p>Clears all volumes from a bookshelf.</p><ul><li>
 <span class="param">shelf</span> ID of bookshelf from which to remove a volume.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-core.Future clearVolumes(core.String shelf, [core.String source = UNSPECIFIED]) {
+core.Future clearVolumes(core.String shelf, {core.String source}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["shelf"] = shelf;
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (?source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -103,7 +367,7 @@ core.Future clearVolumes(core.String shelf, [core.String source = UNSPECIFIED]) 
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "mylibrary/bookshelves/{shelf}/clearVolumes";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -115,20 +379,20 @@ core.Future clearVolumes(core.String shelf, [core.String source = UNSPECIFIED]) 
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Bookshelf.html">Bookshelf</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Bookshelf.html">Bookshelf</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source]) <a class="anchor-link" href="#get"
               title="Permalink to MylibraryBookshelvesResourceResource.get">#</a></h4>
 <div class="doc">
 <p>Retrieves metadata for a specific bookshelf belonging to the authenticated user.</p><ul><li>
 <span class="param">shelf</span> ID of bookshelf to retrieve.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-core.Future&lt;Bookshelf&gt; get(core.String shelf, [core.String source = UNSPECIFIED]) {
+core.Future&lt;Bookshelf&gt; get(core.String shelf, {core.String source}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["shelf"] = shelf;
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (?source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -139,7 +403,7 @@ core.Future&lt;Bookshelf&gt; get(core.String shelf, [core.String source = UNSPEC
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "mylibrary/bookshelves/{shelf}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -150,19 +414,37 @@ core.Future&lt;Bookshelf&gt; get(core.String shelf, [core.String source = UNSPEC
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to MylibraryBookshelvesResourceResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Bookshelves.html">Bookshelves</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../books-v1/Bookshelves.html">Bookshelves</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> source]) <a class="anchor-link" href="#list"
               title="Permalink to MylibraryBookshelvesResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of bookshelves belonging to the authenticated user.</p><ul><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-core.Future&lt;Bookshelves&gt; list([core.String source = UNSPECIFIED]) {
+core.Future&lt;Bookshelves&gt; list({core.String source}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (?source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -173,7 +455,7 @@ core.Future&lt;Bookshelves&gt; list([core.String source = UNSPECIFIED]) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "mylibrary/bookshelves";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -185,8 +467,8 @@ core.Future&lt;Bookshelves&gt; list([core.String source = UNSPECIFIED]) {
 </div>
 </div>
 <div class="method"><h4 id="moveVolume">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>moveVolume</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, <a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> volumePosition, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#moveVolume"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>moveVolume</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, <a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> volumePosition, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source]) <a class="anchor-link" href="#moveVolume"
               title="Permalink to MylibraryBookshelvesResourceResource.moveVolume">#</a></h4>
 <div class="doc">
 <p>Moves a volume within a bookshelf.</p><ul><li>
@@ -197,14 +479,14 @@ core.Future&lt;Bookshelves&gt; list([core.String source = UNSPECIFIED]) {
    the first and the second and so on.)</p></li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-core.Future moveVolume(core.String shelf, core.String volumeId, core.int volumePosition, [core.String source = UNSPECIFIED]) {
+core.Future moveVolume(core.String shelf, core.String volumeId, core.int volumePosition, {core.String source}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["shelf"] = shelf;
-  if (UNSPECIFIED != volumeId) $queryParams["volumeId"] = volumeId;
-  if (UNSPECIFIED != volumePosition) $queryParams["volumePosition"] = volumePosition;
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (?volumeId) $queryParams["volumeId"] = volumeId;
+  if (?volumePosition) $queryParams["volumePosition"] = volumePosition;
+  if (?source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -215,7 +497,7 @@ core.Future moveVolume(core.String shelf, core.String volumeId, core.int volumeP
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "mylibrary/bookshelves/{shelf}/moveVolume";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -226,9 +508,51 @@ core.Future moveVolume(core.String shelf, core.String volumeId, core.int volumeP
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="MylibraryBookshelvesResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>MylibraryBookshelvesResourceResource._internal</strong>(<a href="../books-v1/BooksApi.html">BooksApi</a> $service) <a class="anchor-link" href="#MylibraryBookshelvesResourceResource._internal"
+              title="Permalink to MylibraryBookshelvesResourceResource.MylibraryBookshelvesResourceResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+MylibraryBookshelvesResourceResource._internal(BooksApi $service) : _$service = $service,
+  volumes = new MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource._internal($service);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to MylibraryBookshelvesResourceResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to MylibraryBookshelvesResourceResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="removeVolume">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>removeVolume</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, <a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source = UNSPECIFIED]) <a class="anchor-link" href="#removeVolume"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>removeVolume</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> shelf, <a href="http://api.dartlang.org/dart_core/String.html">String</a> volumeId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> source]) <a class="anchor-link" href="#removeVolume"
               title="Permalink to MylibraryBookshelvesResourceResource.removeVolume">#</a></h4>
 <div class="doc">
 <p>Removes a volume from a bookshelf.</p><ul><li>
@@ -236,13 +560,13 @@ core.Future moveVolume(core.String shelf, core.String volumeId, core.int volumeP
 <span class="param">volumeId</span> ID of volume to remove.</li><li>
 <span class="param">source</span> String to identify the originator of this request.</li></ul>
 <pre class="source">
-core.Future removeVolume(core.String shelf, core.String volumeId, [core.String source = UNSPECIFIED]) {
+core.Future removeVolume(core.String shelf, core.String volumeId, {core.String source}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["shelf"] = shelf;
-  if (UNSPECIFIED != volumeId) $queryParams["volumeId"] = volumeId;
-  if (UNSPECIFIED != source) $queryParams["source"] = source;
+  if (?volumeId) $queryParams["volumeId"] = volumeId;
+  if (?source) $queryParams["source"] = source;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -253,7 +577,7 @@ core.Future removeVolume(core.String shelf, core.String volumeId, [core.String s
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "mylibrary/bookshelves/{shelf}/removeVolume";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -264,18 +588,16 @@ core.Future removeVolume(core.String shelf, core.String volumeId, [core.String s
 </pre>
 </div>
 </div>
-<h3>Fields</h3>
-<div class="field"><h4 id="volumes">
-<span class="show-code">Code</span>
-final <a href="../books-v1/MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource.html">MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource</a>         <strong>volumes</strong> <a class="anchor-link"
-            href="#volumes"
-            title="Permalink to MylibraryBookshelvesResourceResource.volumes">#</a>
-        </h4>
-        <div class="doc">
-
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to MylibraryBookshelvesResourceResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
 <pre class="source">
-final MylibraryBookshelvesResourceMylibraryBookshelvesVolumesResourceResourceResourceResource volumes;
+external String toString();
 </pre>
+</div>
 </div>
 </div>
         </div>

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>CalendarListEntry Class / calendar-v3 Library / Dart Documentation</title>
+        <title>CalendarListEntry class / calendar-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,141 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a></div>
+         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>CalendarListEntry</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class CalendarListEntry extends IdentityHash {
+  /** Type of the resource ("calendar#calendarListEntry"). */
+  core.String kind;
 
+  /**
+ * The foreground color of the calendar in the format '#ffffff'. This property supersedes the index-
+ * based colorId property. Optional.
+ */
+  core.String foregroundColor;
+
+  /** The default reminders that the authenticated user has for this calendar. */
+  core.List&lt;EventReminder&gt; defaultReminders;
+
+  /** Description of the calendar. Optional. Read-only. */
+  core.String description;
+
+  /**
+ * The color of the calendar. This is an ID referring to an entry in the "calendar" section of the
+ * colors definition (see the "colors" endpoint). Optional.
+ */
+  core.String colorId;
+
+  /** Whether the calendar content shows up in the calendar UI. Optional. The default is False. */
+  core.bool selected;
+
+  /** Title of the calendar. Read-only. */
+  core.String summary;
+
+  /** ETag of the resource. */
+  core.String etag;
+
+  /** Geographic location of the calendar as free-form text. Optional. Read-only. */
+  core.String location;
+
+  /**
+ * The main color of the calendar in the format '#0088aa'. This property supersedes the index-based
+ * colorId property. Optional.
+ */
+  core.String backgroundColor;
+
+  /** The summary that the authenticated user has set for this calendar. Optional. */
+  core.String summaryOverride;
+
+  /** The time zone of the calendar. Optional. Read-only. */
+  core.String timeZone;
+
+  /** Whether the calendar has been hidden from the list. Optional. The default is False. */
+  core.bool hidden;
+
+  /**
+ * The effective access role that the authenticated user has on the calendar. Read-only. Possible
+ * values are: - "freeBusyReader" - Provides read access to free/busy information. - "reader" -
+ * Provides read access to the calendar. Private events will appear to users with reader access, but
+ * event details will be hidden. - "writer" - Provides read and write access to the calendar.
+ * Private events will appear to users with writer access, and event details will be visible. -
+ * "owner" - Provides ownership of the calendar. This role has all of the permissions of the writer
+ * role with the additional ability to see and manipulate ACLs.
+ */
+  core.String accessRole;
+
+  /** Identifier of the calendar. */
+  core.String id;
+
+  /** Parses an instance from its JSON representation. */
+  static CalendarListEntry parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new CalendarListEntry();
+    result.kind = identity(json["kind"]);
+    result.foregroundColor = identity(json["foregroundColor"]);
+    result.defaultReminders = map(EventReminder.parse)(json["defaultReminders"]);
+    result.description = identity(json["description"]);
+    result.colorId = identity(json["colorId"]);
+    result.selected = identity(json["selected"]);
+    result.summary = identity(json["summary"]);
+    result.etag = identity(json["etag"]);
+    result.location = identity(json["location"]);
+    result.backgroundColor = identity(json["backgroundColor"]);
+    result.summaryOverride = identity(json["summaryOverride"]);
+    result.timeZone = identity(json["timeZone"]);
+    result.hidden = identity(json["hidden"]);
+    result.accessRole = identity(json["accessRole"]);
+    result.id = identity(json["id"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(CalendarListEntry value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["foregroundColor"] = identity(value.foregroundColor);
+    result["defaultReminders"] = map(EventReminder.serialize)(value.defaultReminders);
+    result["description"] = identity(value.description);
+    result["colorId"] = identity(value.colorId);
+    result["selected"] = identity(value.selected);
+    result["summary"] = identity(value.summary);
+    result["etag"] = identity(value.etag);
+    result["location"] = identity(value.location);
+    result["backgroundColor"] = identity(value.backgroundColor);
+    result["summaryOverride"] = identity(value.summaryOverride);
+    result["timeZone"] = identity(value.timeZone);
+    result["hidden"] = identity(value.hidden);
+    result["accessRole"] = identity(value.accessRole);
+    result["id"] = identity(value.id);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>CalendarListEntry</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to CalendarListEntry.parse">#</a></h4>
 <div class="doc">
@@ -61,7 +178,7 @@ static CalendarListEntry parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../calendar-v3/CalendarListEntry.html">CalendarListEntry</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to CalendarListEntry.serialize">#</a></h4>
 <div class="doc">
@@ -90,21 +207,11 @@ static core.Object serialize(CalendarListEntry value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to CalendarListEntry.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="accessRole">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>accessRole</strong> <a class="anchor-link"
             href="#accessRole"
             title="Permalink to CalendarListEntry.accessRole">#</a>
@@ -123,7 +230,7 @@ core.String accessRole;
 </div>
 </div>
 <div class="field"><h4 id="backgroundColor">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>backgroundColor</strong> <a class="anchor-link"
             href="#backgroundColor"
             title="Permalink to CalendarListEntry.backgroundColor">#</a>
@@ -137,7 +244,7 @@ core.String backgroundColor;
 </div>
 </div>
 <div class="field"><h4 id="colorId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>colorId</strong> <a class="anchor-link"
             href="#colorId"
             title="Permalink to CalendarListEntry.colorId">#</a>
@@ -151,7 +258,7 @@ core.String colorId;
 </div>
 </div>
 <div class="field"><h4 id="defaultReminders">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../calendar-v3/EventReminder.html">EventReminder</a>&gt;         <strong>defaultReminders</strong> <a class="anchor-link"
             href="#defaultReminders"
             title="Permalink to CalendarListEntry.defaultReminders">#</a>
@@ -164,7 +271,7 @@ core.List&lt;EventReminder&gt; defaultReminders;
 </div>
 </div>
 <div class="field"><h4 id="description">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to CalendarListEntry.description">#</a>
@@ -177,7 +284,7 @@ core.String description;
 </div>
 </div>
 <div class="field"><h4 id="etag">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to CalendarListEntry.etag">#</a>
@@ -190,7 +297,7 @@ core.String etag;
 </div>
 </div>
 <div class="field"><h4 id="foregroundColor">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>foregroundColor</strong> <a class="anchor-link"
             href="#foregroundColor"
             title="Permalink to CalendarListEntry.foregroundColor">#</a>
@@ -204,7 +311,7 @@ core.String foregroundColor;
 </div>
 </div>
 <div class="field"><h4 id="hidden">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>hidden</strong> <a class="anchor-link"
             href="#hidden"
             title="Permalink to CalendarListEntry.hidden">#</a>
@@ -217,7 +324,7 @@ core.bool hidden;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to CalendarListEntry.id">#</a>
@@ -230,7 +337,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to CalendarListEntry.kind">#</a>
@@ -243,7 +350,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="location">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>location</strong> <a class="anchor-link"
             href="#location"
             title="Permalink to CalendarListEntry.location">#</a>
@@ -255,8 +362,21 @@ core.String location;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to CalendarListEntry.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selected">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>selected</strong> <a class="anchor-link"
             href="#selected"
             title="Permalink to CalendarListEntry.selected">#</a>
@@ -269,7 +389,7 @@ core.bool selected;
 </div>
 </div>
 <div class="field"><h4 id="summary">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>summary</strong> <a class="anchor-link"
             href="#summary"
             title="Permalink to CalendarListEntry.summary">#</a>
@@ -282,7 +402,7 @@ core.String summary;
 </div>
 </div>
 <div class="field"><h4 id="summaryOverride">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>summaryOverride</strong> <a class="anchor-link"
             href="#summaryOverride"
             title="Permalink to CalendarListEntry.summaryOverride">#</a>
@@ -295,7 +415,7 @@ core.String summaryOverride;
 </div>
 </div>
 <div class="field"><h4 id="timeZone">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>timeZone</strong> <a class="anchor-link"
             href="#timeZone"
             title="Permalink to CalendarListEntry.timeZone">#</a>
@@ -305,6 +425,103 @@ core.String summaryOverride;
 <pre class="source">
 core.String timeZone;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to CalendarListEntry.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to CalendarListEntry.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to CalendarListEntry.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to CalendarListEntry.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to CalendarListEntry.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CalendarListEntry.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

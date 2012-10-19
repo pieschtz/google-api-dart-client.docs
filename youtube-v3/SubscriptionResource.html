@@ -1,0 +1,424 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>SubscriptionResource class / youtube-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="youtube-v3" data-type="SubscriptionResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../youtube-v3.html">youtube-v3</a> &rsaquo; <a href="../youtube-v3/SubscriptionResource.html">SubscriptionResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>SubscriptionResource</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class SubscriptionResource extends core.Object {
+  final YouTubeApi _$service;
+  
+  SubscriptionResource._internal(YouTubeApi $service) : _$service = $service;
+
+  // Method SubscriptionResource.Insert
+  /**
+   * Insert a subscription.
+   *
+   *    * [content] the Subscription
+   *    * [part] One or more parts to return on the current request.
+   *    * [contentOwnerId] The authenticated user acts on behalf of this content owner.
+   */
+  core.Future&lt;Subscription&gt; insert(core.String part, Subscription content, {core.String contentOwnerId}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?part) $queryParams["part"] = part;
+    if (?contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Subscription.serialize(content));
+    final $path = "subscriptions";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Subscription.parse(JSON.parse($text)));
+  }
+
+  // Method SubscriptionResource.List
+  /**
+   * Browses the subscriptions collection.
+   *
+   *    * [part] Subscription parts to include in the returned response. Valid values are: id, snippet and
+   *        contentDetails.
+   *    * [channelId] Only return subscriptions to given channelId.
+   *    * [mine] Flag indicating only return the subscriptions of the authenticated user.
+   *    * [maxResults] Maximum number of search results to return per page.
+  Default: 5.
+  Minimum: 0.
+  Maximum: 50.
+   *    * [contentOwnerId] The authenticated user acts on behalf of this content owner.
+   *    * [pageToken] Token for the page selection.
+   *    * [forChannelId] Comma separated list of channel IDs to return subscriptions for.
+   *    * [order] Sort order.
+  Default: SUBSCRIPTION_ORDER_RELEVANCE.
+   *    * [id] YouTube IDs of the subscriptions to be returned.
+   */
+  core.Future&lt;SubscriptionListResponse&gt; list(core.String part, {core.String channelId, core.String mine, core.int maxResults, core.String contentOwnerId, core.String pageToken, core.String forChannelId, SubscriptionResourceListOrder order, core.String id}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?part) $queryParams["part"] = part;
+    if (?channelId) $queryParams["channelId"] = channelId;
+    if (?mine) $queryParams["mine"] = mine;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?forChannelId) $queryParams["forChannelId"] = forChannelId;
+    if (?order) $queryParams["order"] = order;
+    if (?id) $queryParams["id"] = id;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "subscriptions";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; SubscriptionListResponse.parse(JSON.parse($text)));
+  }
+
+  // Method SubscriptionResource.Delete
+  /**
+   * Deletes subscriptions by IDs.
+   *
+   *    * [id] YouTube IDs of the subscription to be deleted.
+   *    * [contentOwnerId] The authenticated user acts on behalf of this content owner.
+   */
+  core.Future delete(core.String id, {core.String contentOwnerId}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?id) $queryParams["id"] = id;
+    if (?contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "subscriptions";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="SubscriptionResource._internal">
+<button class="show-code">Code</button>
+new <strong>SubscriptionResource._internal</strong>(<a href="../youtube-v3/YouTubeApi.html">YouTubeApi</a> $service) <a class="anchor-link" href="#SubscriptionResource._internal"
+              title="Permalink to SubscriptionResource.SubscriptionResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+SubscriptionResource._internal(YouTubeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to SubscriptionResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to SubscriptionResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="delete">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> id, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> contentOwnerId]) <a class="anchor-link" href="#delete"
+              title="Permalink to SubscriptionResource.delete">#</a></h4>
+<div class="doc">
+<p>Deletes subscriptions by IDs.</p><ul><li>
+<span class="param">id</span> YouTube IDs of the subscription to be deleted.</li><li>
+<span class="param">contentOwnerId</span> The authenticated user acts on behalf of this content owner.</li></ul>
+<pre class="source">
+core.Future delete(core.String id, {core.String contentOwnerId}) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (?id) $queryParams["id"] = id;
+  if (?contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "subscriptions";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "DELETE", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; identity(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to SubscriptionResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="insert">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../youtube-v3/Subscription.html">Subscription</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> part, <a href="../youtube-v3/Subscription.html">Subscription</a> content, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> contentOwnerId]) <a class="anchor-link" href="#insert"
+              title="Permalink to SubscriptionResource.insert">#</a></h4>
+<div class="doc">
+<p>Insert a subscription.</p><ul><li>
+<span class="param">content</span> the Subscription</li><li>
+<span class="param">part</span> One or more parts to return on the current request.</li><li>
+<span class="param">contentOwnerId</span> The authenticated user acts on behalf of this content owner.</li></ul>
+<pre class="source">
+core.Future&lt;Subscription&gt; insert(core.String part, Subscription content, {core.String contentOwnerId}) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (?part) $queryParams["part"] = part;
+  if (?contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  $headers["Content-Type"] = "application/json";
+  final $body = JSON.stringify(Subscription.serialize(content));
+  final $path = "subscriptions";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "POST", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request($body))
+      .transform((final $text) =&gt; Subscription.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../youtube-v3/SubscriptionListResponse.html">SubscriptionListResponse</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> part, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> channelId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> mine, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> contentOwnerId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/String.html">String</a> forChannelId, <a href="../youtube-v3/SubscriptionResourceListOrder.html">SubscriptionResourceListOrder</a> order, <a href="http://api.dartlang.org/dart_core/String.html">String</a> id]) <a class="anchor-link" href="#list"
+              title="Permalink to SubscriptionResource.list">#</a></h4>
+<div class="doc">
+<p>Browses the subscriptions collection.</p><ul><li>
+<p>
+<span class="param">part</span> Subscription parts to include in the returned response. Valid values are: id, snippet and
+   contentDetails.</p></li><li>
+<span class="param">channelId</span> Only return subscriptions to given channelId.</li><li>
+<span class="param">mine</span> Flag indicating only return the subscriptions of the authenticated user.</li><li>
+<p>
+<span class="param">maxResults</span> Maximum number of search results to return per page.
+Default: 5.
+Minimum: 0.
+Maximum: 50.</p></li><li>
+<span class="param">contentOwnerId</span> The authenticated user acts on behalf of this content owner.</li><li>
+<span class="param">pageToken</span> Token for the page selection.</li><li>
+<span class="param">forChannelId</span> Comma separated list of channel IDs to return subscriptions for.</li><li>
+<p>
+<span class="param">order</span> Sort order.
+Default: SUBSCRIPTION<em>ORDER</em>RELEVANCE.</p></li><li>
+<span class="param">id</span> YouTube IDs of the subscriptions to be returned.</li></ul>
+<pre class="source">
+core.Future&lt;SubscriptionListResponse&gt; list(core.String part, {core.String channelId, core.String mine, core.int maxResults, core.String contentOwnerId, core.String pageToken, core.String forChannelId, SubscriptionResourceListOrder order, core.String id}) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (?part) $queryParams["part"] = part;
+  if (?channelId) $queryParams["channelId"] = channelId;
+  if (?mine) $queryParams["mine"] = mine;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?forChannelId) $queryParams["forChannelId"] = forChannelId;
+  if (?order) $queryParams["order"] = order;
+  if (?id) $queryParams["id"] = id;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "subscriptions";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; SubscriptionListResponse.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to SubscriptionResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to SubscriptionResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="SubscriptionResource._internal">
+<button class="show-code">Code</button>
+new <strong>SubscriptionResource._internal</strong>(<a href="../youtube-v3/YouTubeApi.html">YouTubeApi</a> $service) <a class="anchor-link" href="#SubscriptionResource._internal"
+              title="Permalink to SubscriptionResource.SubscriptionResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+SubscriptionResource._internal(YouTubeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to SubscriptionResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

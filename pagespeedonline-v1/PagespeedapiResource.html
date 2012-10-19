@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>PagespeedapiResource Class / pagespeedonline-v1 Library / Dart Documentation</title>
+        <title>PagespeedapiResource class / pagespeedonline-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,34 +14,181 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../pagespeedonline-v1.html">pagespeedonline-v1</a> &rsaquo; <a href="../pagespeedonline-v1/PagespeedapiResource.html">PagespeedapiResource</a></div>
+         &rsaquo; <a href="../pagespeedonline-v1.html">pagespeedonline-v1</a> &rsaquo; <a href="../pagespeedonline-v1/PagespeedapiResource.html">PagespeedapiResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>PagespeedapiResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class PagespeedapiResource extends core.Object {
+  final PagespeedonlineApi _$service;
+  
+  PagespeedapiResource._internal(PagespeedonlineApi $service) : _$service = $service;
 
+  // Method PagespeedapiResource.Runpagespeed
+  /**
+   * Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list
+   * of suggestions to make that page faster, and other information.
+   *
+   *    * [url] The URL to fetch and analyze
+   *    * [locale] The locale used to localize formatted results
+   *    * [rule] A Page Speed rule to run; if none are given, all rules are run
+   *    * [strategy] The analysis strategy to use
+   */
+  core.Future&lt;Result&gt; runpagespeed(core.String url, {core.String locale, core.List&lt;core.String&gt; rule, PagespeedapiResourceRunpagespeedStrategy strategy}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?url) $queryParams["url"] = url;
+    if (?locale) $queryParams["locale"] = locale;
+    if (?rule) $queryParams["rule"] = rule;
+    if (?strategy) $queryParams["strategy"] = strategy;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "runPagespeed";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Result.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="PagespeedapiResource">
-<span class="show-code">Code</span>
-new <strong>PagespeedapiResource</strong>._internal(<a href="../pagespeedonline-v1/PagespeedonlineApi.html">PagespeedonlineApi</a> $service) <a class="anchor-link" href="#PagespeedapiResource"
-              title="Permalink to PagespeedapiResource.PagespeedapiResource">#</a></h4>
+<div class="method"><h4 id="PagespeedapiResource._internal">
+<button class="show-code">Code</button>
+new <strong>PagespeedapiResource._internal</strong>(<a href="../pagespeedonline-v1/PagespeedonlineApi.html">PagespeedonlineApi</a> $service) <a class="anchor-link" href="#PagespeedapiResource._internal"
+              title="Permalink to PagespeedapiResource.PagespeedapiResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 PagespeedapiResource._internal(PagespeedonlineApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to PagespeedapiResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to PagespeedapiResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to PagespeedapiResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to PagespeedapiResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to PagespeedapiResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="PagespeedapiResource._internal">
+<button class="show-code">Code</button>
+new <strong>PagespeedapiResource._internal</strong>(<a href="../pagespeedonline-v1/PagespeedonlineApi.html">PagespeedonlineApi</a> $service) <a class="anchor-link" href="#PagespeedapiResource._internal"
+              title="Permalink to PagespeedapiResource.PagespeedapiResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+PagespeedapiResource._internal(PagespeedonlineApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="runpagespeed">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../pagespeedonline-v1/Result.html">Result</a>&gt; <strong>runpagespeed</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> url, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; rule = UNSPECIFIED, <a href="../pagespeedonline-v1/PagespeedapiResourceRunpagespeedStrategy.html">PagespeedapiResourceRunpagespeedStrategy</a> strategy = UNSPECIFIED]) <a class="anchor-link" href="#runpagespeed"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../pagespeedonline-v1/Result.html">Result</a>&gt; <strong>runpagespeed</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> url, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; rule, <a href="../pagespeedonline-v1/PagespeedapiResourceRunpagespeedStrategy.html">PagespeedapiResourceRunpagespeedStrategy</a> strategy]) <a class="anchor-link" href="#runpagespeed"
               title="Permalink to PagespeedapiResource.runpagespeed">#</a></h4>
 <div class="doc">
 <p>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list
@@ -51,14 +198,14 @@ of suggestions to make that page faster, and other information.</p><ul><li>
 <span class="param">rule</span> A Page Speed rule to run; if none are given, all rules are run</li><li>
 <span class="param">strategy</span> The analysis strategy to use</li></ul>
 <pre class="source">
-core.Future&lt;Result&gt; runpagespeed(core.String url, [core.String locale = UNSPECIFIED, core.List&lt;core.String&gt; rule = UNSPECIFIED, PagespeedapiResourceRunpagespeedStrategy strategy = UNSPECIFIED]) {
+core.Future&lt;Result&gt; runpagespeed(core.String url, {core.String locale, core.List&lt;core.String&gt; rule, PagespeedapiResourceRunpagespeedStrategy strategy}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != url) $queryParams["url"] = url;
-  if (UNSPECIFIED != locale) $queryParams["locale"] = locale;
-  if (UNSPECIFIED != rule) $queryParams["rule"] = rule;
-  if (UNSPECIFIED != strategy) $queryParams["strategy"] = strategy;
+  if (?url) $queryParams["url"] = url;
+  if (?locale) $queryParams["locale"] = locale;
+  if (?rule) $queryParams["rule"] = rule;
+  if (?strategy) $queryParams["strategy"] = strategy;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -69,7 +216,7 @@ core.Future&lt;Result&gt; runpagespeed(core.String url, [core.String locale = UN
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "runPagespeed";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -78,6 +225,18 @@ core.Future&lt;Result&gt; runpagespeed(core.String url, [core.String locale = UN
       .transform((final $text) =&gt; Result.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to PagespeedapiResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

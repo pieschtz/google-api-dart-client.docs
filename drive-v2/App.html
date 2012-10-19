@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>App Class / drive-v2 Library / Dart Documentation</title>
+        <title>App class / drive-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,126 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/App.html">App</a></div>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/App.html">App</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>App</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class App extends IdentityHash {
+  /** This is always drive#app. */
+  core.String kind;
 
+  /** The list of primary file extensions. */
+  core.List&lt;core.String&gt; primaryFileExtensions;
+
+  /** Whether the app is selected as the default handler for the types it supports. */
+  core.bool useByDefault;
+
+  /** The name of the app. */
+  core.String name;
+
+  /** The various icons for the app. */
+  core.List&lt;AppIcons&gt; icons;
+
+  /** The list of secondary file extensions. */
+  core.List&lt;core.String&gt; secondaryFileExtensions;
+
+  /** Whether the app is installed. */
+  core.bool installed;
+
+  /** The product URL. */
+  core.String productUrl;
+
+  /** The list of secondary mime types. */
+  core.List&lt;core.String&gt; secondaryMimeTypes;
+
+  /** Whether the app is authorized to access data on the user's Drive. */
+  core.bool authorized;
+
+  /** Whether this app supports creating new objects. */
+  core.bool supportsCreate;
+
+  /** Whether this app supports importing Google Docs. */
+  core.bool supportsImport;
+
+  /** The list of primary mime types. */
+  core.List&lt;core.String&gt; primaryMimeTypes;
+
+  /** The ID of the app. */
+  core.String id;
+
+  /**
+ * The type of object this app creates (e.g. Chart). If empty, the app name should be used instead.
+ */
+  core.String objectType;
+
+  /** Parses an instance from its JSON representation. */
+  static App parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new App();
+    result.kind = identity(json["kind"]);
+    result.primaryFileExtensions = map(identity)(json["primaryFileExtensions"]);
+    result.useByDefault = identity(json["useByDefault"]);
+    result.name = identity(json["name"]);
+    result.icons = map(AppIcons.parse)(json["icons"]);
+    result.secondaryFileExtensions = map(identity)(json["secondaryFileExtensions"]);
+    result.installed = identity(json["installed"]);
+    result.productUrl = identity(json["productUrl"]);
+    result.secondaryMimeTypes = map(identity)(json["secondaryMimeTypes"]);
+    result.authorized = identity(json["authorized"]);
+    result.supportsCreate = identity(json["supportsCreate"]);
+    result.supportsImport = identity(json["supportsImport"]);
+    result.primaryMimeTypes = map(identity)(json["primaryMimeTypes"]);
+    result.id = identity(json["id"]);
+    result.objectType = identity(json["objectType"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(App value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["primaryFileExtensions"] = map(identity)(value.primaryFileExtensions);
+    result["useByDefault"] = identity(value.useByDefault);
+    result["name"] = identity(value.name);
+    result["icons"] = map(AppIcons.serialize)(value.icons);
+    result["secondaryFileExtensions"] = map(identity)(value.secondaryFileExtensions);
+    result["installed"] = identity(value.installed);
+    result["productUrl"] = identity(value.productUrl);
+    result["secondaryMimeTypes"] = map(identity)(value.secondaryMimeTypes);
+    result["authorized"] = identity(value.authorized);
+    result["supportsCreate"] = identity(value.supportsCreate);
+    result["supportsImport"] = identity(value.supportsImport);
+    result["primaryMimeTypes"] = map(identity)(value.primaryMimeTypes);
+    result["id"] = identity(value.id);
+    result["objectType"] = identity(value.objectType);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>App</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../drive-v2/App.html">App</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to App.parse">#</a></h4>
 <div class="doc">
@@ -61,7 +163,7 @@ static App parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/App.html">App</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to App.serialize">#</a></h4>
 <div class="doc">
@@ -90,21 +192,11 @@ static core.Object serialize(App value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to App.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="authorized">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>authorized</strong> <a class="anchor-link"
             href="#authorized"
             title="Permalink to App.authorized">#</a>
@@ -117,7 +209,7 @@ core.bool authorized;
 </div>
 </div>
 <div class="field"><h4 id="icons">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../drive-v2/AppIcons.html">AppIcons</a>&gt;         <strong>icons</strong> <a class="anchor-link"
             href="#icons"
             title="Permalink to App.icons">#</a>
@@ -130,7 +222,7 @@ core.List&lt;AppIcons&gt; icons;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to App.id">#</a>
@@ -143,7 +235,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="installed">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>installed</strong> <a class="anchor-link"
             href="#installed"
             title="Permalink to App.installed">#</a>
@@ -156,7 +248,7 @@ core.bool installed;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to App.kind">#</a>
@@ -169,7 +261,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to App.name">#</a>
@@ -182,7 +274,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="objectType">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
             href="#objectType"
             title="Permalink to App.objectType">#</a>
@@ -195,7 +287,7 @@ core.String objectType;
 </div>
 </div>
 <div class="field"><h4 id="primaryFileExtensions">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>primaryFileExtensions</strong> <a class="anchor-link"
             href="#primaryFileExtensions"
             title="Permalink to App.primaryFileExtensions">#</a>
@@ -208,7 +300,7 @@ core.List&lt;core.String&gt; primaryFileExtensions;
 </div>
 </div>
 <div class="field"><h4 id="primaryMimeTypes">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>primaryMimeTypes</strong> <a class="anchor-link"
             href="#primaryMimeTypes"
             title="Permalink to App.primaryMimeTypes">#</a>
@@ -221,7 +313,7 @@ core.List&lt;core.String&gt; primaryMimeTypes;
 </div>
 </div>
 <div class="field"><h4 id="productUrl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>productUrl</strong> <a class="anchor-link"
             href="#productUrl"
             title="Permalink to App.productUrl">#</a>
@@ -233,8 +325,21 @@ core.String productUrl;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to App.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="secondaryFileExtensions">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>secondaryFileExtensions</strong> <a class="anchor-link"
             href="#secondaryFileExtensions"
             title="Permalink to App.secondaryFileExtensions">#</a>
@@ -247,7 +352,7 @@ core.List&lt;core.String&gt; secondaryFileExtensions;
 </div>
 </div>
 <div class="field"><h4 id="secondaryMimeTypes">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>secondaryMimeTypes</strong> <a class="anchor-link"
             href="#secondaryMimeTypes"
             title="Permalink to App.secondaryMimeTypes">#</a>
@@ -260,7 +365,7 @@ core.List&lt;core.String&gt; secondaryMimeTypes;
 </div>
 </div>
 <div class="field"><h4 id="supportsCreate">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>supportsCreate</strong> <a class="anchor-link"
             href="#supportsCreate"
             title="Permalink to App.supportsCreate">#</a>
@@ -273,7 +378,7 @@ core.bool supportsCreate;
 </div>
 </div>
 <div class="field"><h4 id="supportsImport">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>supportsImport</strong> <a class="anchor-link"
             href="#supportsImport"
             title="Permalink to App.supportsImport">#</a>
@@ -286,7 +391,7 @@ core.bool supportsImport;
 </div>
 </div>
 <div class="field"><h4 id="useByDefault">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>useByDefault</strong> <a class="anchor-link"
             href="#useByDefault"
             title="Permalink to App.useByDefault">#</a>
@@ -296,6 +401,103 @@ core.bool supportsImport;
 <pre class="source">
 core.bool useByDefault;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to App.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to App.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to App.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to App.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to App.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to App.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

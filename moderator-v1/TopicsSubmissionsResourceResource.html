@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>TopicsSubmissionsResourceResource Class / moderator-v1 Library / Dart Documentation</title>
+        <title>TopicsSubmissionsResourceResource class / moderator-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,34 +14,150 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/TopicsSubmissionsResourceResource.html">TopicsSubmissionsResourceResource</a></div>
+         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/TopicsSubmissionsResourceResource.html">TopicsSubmissionsResourceResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>TopicsSubmissionsResourceResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class TopicsSubmissionsResourceResource extends core.Object {
+  final ModeratorApi _$service;
+  
+  TopicsSubmissionsResourceResource._internal(ModeratorApi $service) : _$service = $service;
 
+  // Method TopicsResource.TopicsSubmissionsResourceResource.List
+  /**
+   * Searches the submissions for the specified topic within the specified series and returns the
+   * search results.
+   *
+   *    * [seriesId] The decimal ID of the Series.
+   *    * [topicId] The decimal ID of the Topic within the Series.
+   *    * [maxResults] Maximum number of results to return.
+   *    * [includeVotes] Specifies whether to include the current user's vote
+   *    * [startIndex] Index of the first result to be retrieved.
+   *    * [author] Restricts the results to submissions by a specific author.
+   *    * [sort] Sort order.
+   *    * [q] Search query.
+   *    * [hasAttachedVideo] Specifies whether to restrict to submissions that have videos attached.
+   */
+  core.Future&lt;SubmissionList&gt; list(core.int seriesId, core.int topicId, {core.int maxResults, core.bool includeVotes, core.int startIndex, core.String author, core.String sort, core.String q, core.bool hasAttachedVideo}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["seriesId"] = seriesId;
+    $pathParams["topicId"] = topicId;
+    if (?maxResults) $queryParams["max-results"] = maxResults;
+    if (?includeVotes) $queryParams["includeVotes"] = includeVotes;
+    if (?startIndex) $queryParams["start-index"] = startIndex;
+    if (?author) $queryParams["author"] = author;
+    if (?sort) $queryParams["sort"] = sort;
+    if (?q) $queryParams["q"] = q;
+    if (?hasAttachedVideo) $queryParams["hasAttachedVideo"] = hasAttachedVideo;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "series/{seriesId}/topics/{topicId}/submissions";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; SubmissionList.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="TopicsSubmissionsResourceResource">
-<span class="show-code">Code</span>
-new <strong>TopicsSubmissionsResourceResource</strong>._internal(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#TopicsSubmissionsResourceResource"
-              title="Permalink to TopicsSubmissionsResourceResource.TopicsSubmissionsResourceResource">#</a></h4>
+<div class="method"><h4 id="TopicsSubmissionsResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>TopicsSubmissionsResourceResource._internal</strong>(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#TopicsSubmissionsResourceResource._internal"
+              title="Permalink to TopicsSubmissionsResourceResource.TopicsSubmissionsResourceResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 TopicsSubmissionsResourceResource._internal(ModeratorApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to TopicsSubmissionsResourceResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to TopicsSubmissionsResourceResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to TopicsSubmissionsResourceResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/SubmissionList.html">SubmissionList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> topicId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> includeVotes = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> author = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> sort = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> q = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> hasAttachedVideo = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/SubmissionList.html">SubmissionList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="http://api.dartlang.org/dart_core/int.html">int</a> topicId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> includeVotes, <a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex, <a href="http://api.dartlang.org/dart_core/String.html">String</a> author, <a href="http://api.dartlang.org/dart_core/String.html">String</a> sort, <a href="http://api.dartlang.org/dart_core/String.html">String</a> q, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> hasAttachedVideo]) <a class="anchor-link" href="#list"
               title="Permalink to TopicsSubmissionsResourceResource.list">#</a></h4>
 <div class="doc">
 <p>Searches the submissions for the specified topic within the specified series and returns the
@@ -56,19 +172,19 @@ search results.</p><ul><li>
 <span class="param">q</span> Search query.</li><li>
 <span class="param">hasAttachedVideo</span> Specifies whether to restrict to submissions that have videos attached.</li></ul>
 <pre class="source">
-core.Future&lt;SubmissionList&gt; list(core.int seriesId, core.int topicId, [core.int maxResults = UNSPECIFIED, core.bool includeVotes = UNSPECIFIED, core.int startIndex = UNSPECIFIED, core.String author = UNSPECIFIED, core.String sort = UNSPECIFIED, core.String q = UNSPECIFIED, core.bool hasAttachedVideo = UNSPECIFIED]) {
+core.Future&lt;SubmissionList&gt; list(core.int seriesId, core.int topicId, {core.int maxResults, core.bool includeVotes, core.int startIndex, core.String author, core.String sort, core.String q, core.bool hasAttachedVideo}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["seriesId"] = seriesId;
   $pathParams["topicId"] = topicId;
-  if (UNSPECIFIED != maxResults) $queryParams["max-results"] = maxResults;
-  if (UNSPECIFIED != includeVotes) $queryParams["includeVotes"] = includeVotes;
-  if (UNSPECIFIED != startIndex) $queryParams["start-index"] = startIndex;
-  if (UNSPECIFIED != author) $queryParams["author"] = author;
-  if (UNSPECIFIED != sort) $queryParams["sort"] = sort;
-  if (UNSPECIFIED != q) $queryParams["q"] = q;
-  if (UNSPECIFIED != hasAttachedVideo) $queryParams["hasAttachedVideo"] = hasAttachedVideo;
+  if (?maxResults) $queryParams["max-results"] = maxResults;
+  if (?includeVotes) $queryParams["includeVotes"] = includeVotes;
+  if (?startIndex) $queryParams["start-index"] = startIndex;
+  if (?author) $queryParams["author"] = author;
+  if (?sort) $queryParams["sort"] = sort;
+  if (?q) $queryParams["q"] = q;
+  if (?hasAttachedVideo) $queryParams["hasAttachedVideo"] = hasAttachedVideo;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -79,7 +195,7 @@ core.Future&lt;SubmissionList&gt; list(core.int seriesId, core.int topicId, [cor
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "series/{seriesId}/topics/{topicId}/submissions";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -88,6 +204,59 @@ core.Future&lt;SubmissionList&gt; list(core.int seriesId, core.int topicId, [cor
       .transform((final $text) =&gt; SubmissionList.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to TopicsSubmissionsResourceResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to TopicsSubmissionsResourceResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="TopicsSubmissionsResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>TopicsSubmissionsResourceResource._internal</strong>(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#TopicsSubmissionsResourceResource._internal"
+              title="Permalink to TopicsSubmissionsResourceResource.TopicsSubmissionsResourceResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+TopicsSubmissionsResourceResource._internal(ModeratorApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to TopicsSubmissionsResourceResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

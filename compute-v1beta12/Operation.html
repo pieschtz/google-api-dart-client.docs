@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Operation Class / compute-v1beta12 Library / Dart Documentation</title>
+        <title>Operation class / compute-v1beta12 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,160 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/Operation.html">Operation</a></div>
+         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/Operation.html">Operation</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Operation</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Operation extends IdentityHash {
+  /**
+ * Status of the operation. Can be one of the following: "PENDING", "RUNNING", or "DONE" (output
+ * only).
+ */
+  core.String status;
 
+  /** Type of the resource. */
+  core.String kind;
+
+  /** Name of the resource. */
+  core.String name;
+
+  /**
+ * The time that this operation was started by the server. This is in RFC 3339 format (output only).
+ */
+  core.String startTime;
+
+  /** If operation fails, the HTTP error status code returned, e.g. 404. (output only). */
+  core.int httpErrorStatusCode;
+
+  /** User who requested the operation, for example "user@example.com" (output only). */
+  core.String user;
+
+  /**
+ * If errors occurred during processing of this operation, this field will be populated (output
+ * only).
+ */
+  OperationError error;
+
+  /** Unique target id which identifies a particular incarnation of the target (output only). */
+  core.String targetId;
+
+  /** Type of the operation. Examples include "insert", "update", and "delete" (output only). */
+  core.String operationType;
+
+  /** An optional textual description of the current status of the operation (output only). */
+  core.String statusMessage;
+
+  /** The time that this operation was requested. This is in RFC 3339 format (output only). */
+  core.String insertTime;
+
+  /** If operation fails, the HTTP error message returned, e.g. NOT FOUND. (output only). */
+  core.String httpErrorMessage;
+
+  /**
+ * An optional progress indicator that ranges from 0 to 100. There is no requirement that this be
+ * linear or support any granularity of operations. This should not be used to guess at when the
+ * operation will be complete. This number should be monotonically increasing as the operation
+ * progresses (output only).
+ */
+  core.int progress;
+
+  /**
+ * An optional identifier specified by the client when the mutation was initiated. Must be unique
+ * for all operation resources in the project (output only).
+ */
+  core.String clientOperationId;
+
+  /** The time that this operation was completed. This is in RFC 3339 format (output only). */
+  core.String endTime;
+
+  /** Creation timestamp in RFC3339 text format (output only). */
+  core.String creationTimestamp;
+
+  /** Unique identifier for the resource; defined by the server (output only). */
+  core.String id;
+
+  /** Server defined URL for the resource (output only). */
+  core.String selfLink;
+
+  /** URL of the resource the operation is mutating (output only). */
+  core.String targetLink;
+
+  /** Parses an instance from its JSON representation. */
+  static Operation parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Operation();
+    result.status = identity(json["status"]);
+    result.kind = identity(json["kind"]);
+    result.name = identity(json["name"]);
+    result.startTime = identity(json["startTime"]);
+    result.httpErrorStatusCode = identity(json["httpErrorStatusCode"]);
+    result.user = identity(json["user"]);
+    result.error = OperationError.parse(json["error"]);
+    result.targetId = identity(json["targetId"]);
+    result.operationType = identity(json["operationType"]);
+    result.statusMessage = identity(json["statusMessage"]);
+    result.insertTime = identity(json["insertTime"]);
+    result.httpErrorMessage = identity(json["httpErrorMessage"]);
+    result.progress = identity(json["progress"]);
+    result.clientOperationId = identity(json["clientOperationId"]);
+    result.endTime = identity(json["endTime"]);
+    result.creationTimestamp = identity(json["creationTimestamp"]);
+    result.id = identity(json["id"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.targetLink = identity(json["targetLink"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Operation value) {
+    if (value == null) return null;
+    final result = {};
+    result["status"] = identity(value.status);
+    result["kind"] = identity(value.kind);
+    result["name"] = identity(value.name);
+    result["startTime"] = identity(value.startTime);
+    result["httpErrorStatusCode"] = identity(value.httpErrorStatusCode);
+    result["user"] = identity(value.user);
+    result["error"] = OperationError.serialize(value.error);
+    result["targetId"] = identity(value.targetId);
+    result["operationType"] = identity(value.operationType);
+    result["statusMessage"] = identity(value.statusMessage);
+    result["insertTime"] = identity(value.insertTime);
+    result["httpErrorMessage"] = identity(value.httpErrorMessage);
+    result["progress"] = identity(value.progress);
+    result["clientOperationId"] = identity(value.clientOperationId);
+    result["endTime"] = identity(value.endTime);
+    result["creationTimestamp"] = identity(value.creationTimestamp);
+    result["id"] = identity(value.id);
+    result["selfLink"] = identity(value.selfLink);
+    result["targetLink"] = identity(value.targetLink);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Operation</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../compute-v1beta12/Operation.html">Operation</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Operation.parse">#</a></h4>
 <div class="doc">
@@ -65,7 +201,7 @@ static Operation parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/Operation.html">Operation</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Operation.serialize">#</a></h4>
 <div class="doc">
@@ -98,21 +234,11 @@ static core.Object serialize(Operation value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Operation.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="clientOperationId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>clientOperationId</strong> <a class="anchor-link"
             href="#clientOperationId"
             title="Permalink to Operation.clientOperationId">#</a>
@@ -126,7 +252,7 @@ core.String clientOperationId;
 </div>
 </div>
 <div class="field"><h4 id="creationTimestamp">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
             href="#creationTimestamp"
             title="Permalink to Operation.creationTimestamp">#</a>
@@ -139,7 +265,7 @@ core.String creationTimestamp;
 </div>
 </div>
 <div class="field"><h4 id="endTime">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>endTime</strong> <a class="anchor-link"
             href="#endTime"
             title="Permalink to Operation.endTime">#</a>
@@ -152,7 +278,7 @@ core.String endTime;
 </div>
 </div>
 <div class="field"><h4 id="error">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../compute-v1beta12/OperationError.html">OperationError</a>         <strong>error</strong> <a class="anchor-link"
             href="#error"
             title="Permalink to Operation.error">#</a>
@@ -166,7 +292,7 @@ OperationError error;
 </div>
 </div>
 <div class="field"><h4 id="httpErrorMessage">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>httpErrorMessage</strong> <a class="anchor-link"
             href="#httpErrorMessage"
             title="Permalink to Operation.httpErrorMessage">#</a>
@@ -179,7 +305,7 @@ core.String httpErrorMessage;
 </div>
 </div>
 <div class="field"><h4 id="httpErrorStatusCode">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>httpErrorStatusCode</strong> <a class="anchor-link"
             href="#httpErrorStatusCode"
             title="Permalink to Operation.httpErrorStatusCode">#</a>
@@ -192,7 +318,7 @@ core.int httpErrorStatusCode;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Operation.id">#</a>
@@ -205,7 +331,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="insertTime">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>insertTime</strong> <a class="anchor-link"
             href="#insertTime"
             title="Permalink to Operation.insertTime">#</a>
@@ -218,7 +344,7 @@ core.String insertTime;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Operation.kind">#</a>
@@ -231,7 +357,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Operation.name">#</a>
@@ -244,7 +370,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="operationType">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>operationType</strong> <a class="anchor-link"
             href="#operationType"
             title="Permalink to Operation.operationType">#</a>
@@ -257,7 +383,7 @@ core.String operationType;
 </div>
 </div>
 <div class="field"><h4 id="progress">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>progress</strong> <a class="anchor-link"
             href="#progress"
             title="Permalink to Operation.progress">#</a>
@@ -272,8 +398,21 @@ core.int progress;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Operation.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Operation.selfLink">#</a>
@@ -286,7 +425,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="startTime">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>startTime</strong> <a class="anchor-link"
             href="#startTime"
             title="Permalink to Operation.startTime">#</a>
@@ -299,7 +438,7 @@ core.String startTime;
 </div>
 </div>
 <div class="field"><h4 id="status">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Operation.status">#</a>
@@ -313,7 +452,7 @@ core.String status;
 </div>
 </div>
 <div class="field"><h4 id="statusMessage">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>statusMessage</strong> <a class="anchor-link"
             href="#statusMessage"
             title="Permalink to Operation.statusMessage">#</a>
@@ -326,7 +465,7 @@ core.String statusMessage;
 </div>
 </div>
 <div class="field"><h4 id="targetId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>targetId</strong> <a class="anchor-link"
             href="#targetId"
             title="Permalink to Operation.targetId">#</a>
@@ -339,7 +478,7 @@ core.String targetId;
 </div>
 </div>
 <div class="field"><h4 id="targetLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>targetLink</strong> <a class="anchor-link"
             href="#targetLink"
             title="Permalink to Operation.targetLink">#</a>
@@ -352,7 +491,7 @@ core.String targetLink;
 </div>
 </div>
 <div class="field"><h4 id="user">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>user</strong> <a class="anchor-link"
             href="#user"
             title="Permalink to Operation.user">#</a>
@@ -362,6 +501,103 @@ core.String targetLink;
 <pre class="source">
 core.String user;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Operation.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Operation.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Operation.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Operation.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Operation.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Operation.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>BucketsResource Class / storage-v1beta1 Library / Dart Documentation</title>
+        <title>BucketsResource class / storage-v1beta1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,298 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../storage-v1beta1.html">storage-v1beta1</a> &rsaquo; <a href="../storage-v1beta1/BucketsResource.html">BucketsResource</a></div>
+         &rsaquo; <a href="../storage-v1beta1.html">storage-v1beta1</a> &rsaquo; <a href="../storage-v1beta1/BucketsResource.html">BucketsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>BucketsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class BucketsResource extends core.Object {
+  final StorageApi _$service;
+  
+  BucketsResource._internal(StorageApi $service) : _$service = $service;
 
+  // Method BucketsResource.Insert
+  /**
+   * Creates a new bucket.
+   *
+   *    * [content] the Bucket
+   *    * [projection] Set of properties to return. Defaults to no_acl, unless the bucket resource specifies acl or
+   *        defaultObjectAcl properties, when it defaults to full.
+   */
+  core.Future&lt;Bucket&gt; insert(Bucket content, {BucketsResourceInsertProjection projection}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?projection) $queryParams["projection"] = projection;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Bucket.serialize(content));
+    final $path = "b";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Bucket.parse(JSON.parse($text)));
+  }
+
+  // Method BucketsResource.Get
+  /**
+   * Returns metadata for the specified bucket.
+   *
+   *    * [bucket] Name of a bucket.
+   *    * [projection] Set of properties to return. Defaults to no_acl.
+   */
+  core.Future&lt;Bucket&gt; get(core.String bucket, {BucketsResourceGetProjection projection}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["bucket"] = bucket;
+    if (?projection) $queryParams["projection"] = projection;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "b/{bucket}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Bucket.parse(JSON.parse($text)));
+  }
+
+  // Method BucketsResource.List
+  /**
+   * Retrieves a list of buckets for a given project.
+   *
+   *    * [projectId] A valid API project identifier.
+   *    * [maxResults] Maximum number of buckets to return.
+
+  Minimum: 0.
+   *    * [pageToken] A previously-returned page token representing part of the larger set of results to view.
+   *    * [projection] Set of properties to return. Defaults to no_acl.
+   */
+  core.Future&lt;Buckets&gt; list(core.String projectId, {core.int maxResults, core.String pageToken, BucketsResourceListProjection projection}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?projectId) $queryParams["projectId"] = projectId;
+    if (?maxResults) $queryParams["max-results"] = maxResults;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?projection) $queryParams["projection"] = projection;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "b";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Buckets.parse(JSON.parse($text)));
+  }
+
+  // Method BucketsResource.Update
+  /**
+   * Updates a bucket.
+   *
+   *    * [content] the Bucket
+   *    * [bucket] Name of a bucket.
+   *    * [projection] Set of properties to return. Defaults to full.
+   */
+  core.Future&lt;Bucket&gt; update(core.String bucket, Bucket content, {BucketsResourceUpdateProjection projection}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["bucket"] = bucket;
+    if (?projection) $queryParams["projection"] = projection;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Bucket.serialize(content));
+    final $path = "b/{bucket}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Bucket.parse(JSON.parse($text)));
+  }
+
+  // Method BucketsResource.Patch
+  /**
+   * Updates a bucket. This method supports patch semantics.
+   *
+   *    * [content] the Bucket
+   *    * [bucket] Name of a bucket.
+   *    * [projection] Set of properties to return. Defaults to full.
+   */
+  core.Future&lt;Bucket&gt; patch(core.String bucket, Bucket content, {BucketsResourcePatchProjection projection}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["bucket"] = bucket;
+    if (?projection) $queryParams["projection"] = projection;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Bucket.serialize(content));
+    final $path = "b/{bucket}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Bucket.parse(JSON.parse($text)));
+  }
+
+  // Method BucketsResource.Delete
+  /**
+   * Deletes an empty bucket.
+   *
+   *    * [bucket] Name of a bucket.
+   */
+  core.Future delete(core.String bucket) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["bucket"] = bucket;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "b/{bucket}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="BucketsResource">
-<span class="show-code">Code</span>
-new <strong>BucketsResource</strong>._internal(<a href="../storage-v1beta1/StorageApi.html">StorageApi</a> $service) <a class="anchor-link" href="#BucketsResource"
-              title="Permalink to BucketsResource.BucketsResource">#</a></h4>
+<div class="method"><h4 id="BucketsResource._internal">
+<button class="show-code">Code</button>
+new <strong>BucketsResource._internal</strong>(<a href="../storage-v1beta1/StorageApi.html">StorageApi</a> $service) <a class="anchor-link" href="#BucketsResource._internal"
+              title="Permalink to BucketsResource.BucketsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 BucketsResource._internal(StorageApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to BucketsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to BucketsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <a class="crossref" href="../storage-v1beta1/Object.html">Object</a>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method"><h4 id="BucketsResource._internal">
+<button class="show-code">Code</button>
+new <strong>BucketsResource._internal</strong>(<a href="../storage-v1beta1/StorageApi.html">StorageApi</a> $service) <a class="anchor-link" href="#BucketsResource._internal"
+              title="Permalink to BucketsResource.BucketsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+BucketsResource._internal(StorageApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="delete">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> bucket) <a class="anchor-link" href="#delete"
               title="Permalink to BucketsResource.delete">#</a></h4>
 <div class="doc">
@@ -62,7 +327,7 @@ core.Future delete(core.String bucket) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "b/{bucket}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $http = new http.Request($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -74,20 +339,20 @@ core.Future delete(core.String bucket) {
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> bucket, [<a href="../storage-v1beta1/BucketsResourceGetProjection.html">BucketsResourceGetProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> bucket, [<a href="../storage-v1beta1/BucketsResourceGetProjection.html">BucketsResourceGetProjection</a> projection]) <a class="anchor-link" href="#get"
               title="Permalink to BucketsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns metadata for the specified bucket.</p><ul><li>
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">projection</span> Set of properties to return. Defaults to no_acl.</li></ul>
 <pre class="source">
-core.Future&lt;Bucket&gt; get(core.String bucket, [BucketsResourceGetProjection projection = UNSPECIFIED]) {
+core.Future&lt;Bucket&gt; get(core.String bucket, {BucketsResourceGetProjection projection}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["bucket"] = bucket;
-  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (?projection) $queryParams["projection"] = projection;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -98,7 +363,7 @@ core.Future&lt;Bucket&gt; get(core.String bucket, [BucketsResourceGetProjection 
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "b/{bucket}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -109,9 +374,27 @@ core.Future&lt;Bucket&gt; get(core.String bucket, [BucketsResourceGetProjection 
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to BucketsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>insert</strong>(<a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourceInsertProjection.html">BucketsResourceInsertProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>insert</strong>(<a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourceInsertProjection.html">BucketsResourceInsertProjection</a> projection]) <a class="anchor-link" href="#insert"
               title="Permalink to BucketsResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates a new bucket.</p><ul><li>
@@ -120,11 +403,11 @@ core.Future&lt;Bucket&gt; get(core.String bucket, [BucketsResourceGetProjection 
 <span class="param">projection</span> Set of properties to return. Defaults to no_acl, unless the bucket resource specifies acl or
    defaultObjectAcl properties, when it defaults to full.</p></li></ul>
 <pre class="source">
-core.Future&lt;Bucket&gt; insert(Bucket content, [BucketsResourceInsertProjection projection = UNSPECIFIED]) {
+core.Future&lt;Bucket&gt; insert(Bucket content, {BucketsResourceInsertProjection projection}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (?projection) $queryParams["projection"] = projection;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -137,7 +420,7 @@ core.Future&lt;Bucket&gt; insert(Bucket content, [BucketsResourceInsertProjectio
   final $body = JSON.stringify(Bucket.serialize(content));
   final $path = "b";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -149,8 +432,8 @@ core.Future&lt;Bucket&gt; insert(Bucket content, [BucketsResourceInsertProjectio
 </div>
 </div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Buckets.html">Buckets</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> projectId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="../storage-v1beta1/BucketsResourceListProjection.html">BucketsResourceListProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Buckets.html">Buckets</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> projectId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="../storage-v1beta1/BucketsResourceListProjection.html">BucketsResourceListProjection</a> projection]) <a class="anchor-link" href="#list"
               title="Permalink to BucketsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves a list of buckets for a given project.</p><ul><li>
@@ -162,14 +445,14 @@ core.Future&lt;Bucket&gt; insert(Bucket content, [BucketsResourceInsertProjectio
    * 
 <span class="param">projection</span> Set of properties to return. Defaults to no_acl.</p>
 <pre class="source">
-core.Future&lt;Buckets&gt; list(core.String projectId, [core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED, BucketsResourceListProjection projection = UNSPECIFIED]) {
+core.Future&lt;Buckets&gt; list(core.String projectId, {core.int maxResults, core.String pageToken, BucketsResourceListProjection projection}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != projectId) $queryParams["projectId"] = projectId;
-  if (UNSPECIFIED != maxResults) $queryParams["max-results"] = maxResults;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (?projectId) $queryParams["projectId"] = projectId;
+  if (?maxResults) $queryParams["max-results"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?projection) $queryParams["projection"] = projection;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -180,7 +463,7 @@ core.Future&lt;Buckets&gt; list(core.String projectId, [core.int maxResults = UN
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "b";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -191,9 +474,40 @@ core.Future&lt;Buckets&gt; list(core.String projectId, [core.int maxResults = UN
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to BucketsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to BucketsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <a class="crossref" href="../storage-v1beta1/Object.html">Object</a> instance.</p>
+<p><a class="crossref" href="../storage-v1beta1/Object.html">Object</a> instances have no meaningful state, and are only useful
+through their identity. An <a class="crossref" href="../storage-v1beta1/Object.html">Object</a> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> bucket, <a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourcePatchProjection.html">BucketsResourcePatchProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> bucket, <a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourcePatchProjection.html">BucketsResourcePatchProjection</a> projection]) <a class="anchor-link" href="#patch"
               title="Permalink to BucketsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates a bucket. This method supports patch semantics.</p><ul><li>
@@ -201,12 +515,12 @@ core.Future&lt;Buckets&gt; list(core.String projectId, [core.int maxResults = UN
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">projection</span> Set of properties to return. Defaults to full.</li></ul>
 <pre class="source">
-core.Future&lt;Bucket&gt; patch(core.String bucket, Bucket content, [BucketsResourcePatchProjection projection = UNSPECIFIED]) {
+core.Future&lt;Bucket&gt; patch(core.String bucket, Bucket content, {BucketsResourcePatchProjection projection}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["bucket"] = bucket;
-  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (?projection) $queryParams["projection"] = projection;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -219,7 +533,7 @@ core.Future&lt;Bucket&gt; patch(core.String bucket, Bucket content, [BucketsReso
   final $body = JSON.stringify(Bucket.serialize(content));
   final $path = "b/{bucket}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -230,9 +544,20 @@ core.Future&lt;Bucket&gt; patch(core.String bucket, Bucket content, [BucketsReso
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to BucketsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> bucket, <a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourceUpdateProjection.html">BucketsResourceUpdateProjection</a> projection = UNSPECIFIED]) <a class="anchor-link" href="#update"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../storage-v1beta1/Bucket.html">Bucket</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> bucket, <a href="../storage-v1beta1/Bucket.html">Bucket</a> content, [<a href="../storage-v1beta1/BucketsResourceUpdateProjection.html">BucketsResourceUpdateProjection</a> projection]) <a class="anchor-link" href="#update"
               title="Permalink to BucketsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates a bucket.</p><ul><li>
@@ -240,12 +565,12 @@ core.Future&lt;Bucket&gt; patch(core.String bucket, Bucket content, [BucketsReso
 <span class="param">bucket</span> Name of a bucket.</li><li>
 <span class="param">projection</span> Set of properties to return. Defaults to full.</li></ul>
 <pre class="source">
-core.Future&lt;Bucket&gt; update(core.String bucket, Bucket content, [BucketsResourceUpdateProjection projection = UNSPECIFIED]) {
+core.Future&lt;Bucket&gt; update(core.String bucket, Bucket content, {BucketsResourceUpdateProjection projection}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["bucket"] = bucket;
-  if (UNSPECIFIED != projection) $queryParams["projection"] = projection;
+  if (?projection) $queryParams["projection"] = projection;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -258,7 +583,7 @@ core.Future&lt;Bucket&gt; update(core.String bucket, Bucket content, [BucketsRes
   final $body = JSON.stringify(Bucket.serialize(content));
   final $path = "b/{bucket}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -267,6 +592,7 @@ core.Future&lt;Bucket&gt; update(core.String bucket, Bucket content, [BucketsRes
       .transform((final $text) =&gt; Bucket.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

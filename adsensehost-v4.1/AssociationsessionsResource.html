@@ -1,0 +1,313 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AssociationsessionsResource class / adsensehost-v4.1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adsensehost-v4.1" data-type="AssociationsessionsResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adsensehost-v4.1.html">adsensehost-v4.1</a> &rsaquo; <a href="../adsensehost-v4.1/AssociationsessionsResource.html">AssociationsessionsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AssociationsessionsResource</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class AssociationsessionsResource extends core.Object {
+  final AdSenseHostApi _$service;
+  
+  AssociationsessionsResource._internal(AdSenseHostApi $service) : _$service = $service;
+
+  // Method AssociationsessionsResource.Start
+  /**
+   * Create an association session for initiating an association with an AdSense user.
+   *
+   *    * [productCode] Products to associate with the user.
+   *    * [websiteUrl] The URL of the user's hosted website.
+   *    * [websiteLocale] The locale of the user's hosted website.
+   *    * [userLocale] The preferred locale of the user.
+   */
+  core.Future&lt;AssociationSession&gt; start(AssociationsessionsResourceStartProductCode productCode, core.String websiteUrl, {core.String websiteLocale, core.String userLocale}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?productCode) $queryParams["productCode"] = productCode;
+    if (?websiteUrl) $queryParams["websiteUrl"] = websiteUrl;
+    if (?websiteLocale) $queryParams["websiteLocale"] = websiteLocale;
+    if (?userLocale) $queryParams["userLocale"] = userLocale;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "associationsessions/start";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; AssociationSession.parse(JSON.parse($text)));
+  }
+
+  // Method AssociationsessionsResource.Verify
+  /**
+   * Verify an association session after the association callback returns from AdSense signup.
+   *
+   *    * [token] The token returned to the association callback URL.
+   */
+  core.Future&lt;AssociationSession&gt; verify(core.String token) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?token) $queryParams["token"] = token;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "associationsessions/verify";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; AssociationSession.parse(JSON.parse($text)));
+  }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AssociationsessionsResource._internal">
+<button class="show-code">Code</button>
+new <strong>AssociationsessionsResource._internal</strong>(<a href="../adsensehost-v4.1/AdSenseHostApi.html">AdSenseHostApi</a> $service) <a class="anchor-link" href="#AssociationsessionsResource._internal"
+              title="Permalink to AssociationsessionsResource.AssociationsessionsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+AssociationsessionsResource._internal(AdSenseHostApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to AssociationsessionsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to AssociationsessionsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="AssociationsessionsResource._internal">
+<button class="show-code">Code</button>
+new <strong>AssociationsessionsResource._internal</strong>(<a href="../adsensehost-v4.1/AdSenseHostApi.html">AdSenseHostApi</a> $service) <a class="anchor-link" href="#AssociationsessionsResource._internal"
+              title="Permalink to AssociationsessionsResource.AssociationsessionsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+AssociationsessionsResource._internal(AdSenseHostApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to AssociationsessionsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to AssociationsessionsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to AssociationsessionsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="start">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../adsensehost-v4.1/AssociationSession.html">AssociationSession</a>&gt; <strong>start</strong>(<a href="../adsensehost-v4.1/AssociationsessionsResourceStartProductCode.html">AssociationsessionsResourceStartProductCode</a> productCode, <a href="http://api.dartlang.org/dart_core/String.html">String</a> websiteUrl, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> websiteLocale, <a href="http://api.dartlang.org/dart_core/String.html">String</a> userLocale]) <a class="anchor-link" href="#start"
+              title="Permalink to AssociationsessionsResource.start">#</a></h4>
+<div class="doc">
+<p>Create an association session for initiating an association with an AdSense user.</p><ul><li>
+<span class="param">productCode</span> Products to associate with the user.</li><li>
+<span class="param">websiteUrl</span> The URL of the user's hosted website.</li><li>
+<span class="param">websiteLocale</span> The locale of the user's hosted website.</li><li>
+<span class="param">userLocale</span> The preferred locale of the user.</li></ul>
+<pre class="source">
+core.Future&lt;AssociationSession&gt; start(AssociationsessionsResourceStartProductCode productCode, core.String websiteUrl, {core.String websiteLocale, core.String userLocale}) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (?productCode) $queryParams["productCode"] = productCode;
+  if (?websiteUrl) $queryParams["websiteUrl"] = websiteUrl;
+  if (?websiteLocale) $queryParams["websiteLocale"] = websiteLocale;
+  if (?userLocale) $queryParams["userLocale"] = userLocale;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "associationsessions/start";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; AssociationSession.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to AssociationsessionsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="verify">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../adsensehost-v4.1/AssociationSession.html">AssociationSession</a>&gt; <strong>verify</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> token) <a class="anchor-link" href="#verify"
+              title="Permalink to AssociationsessionsResource.verify">#</a></h4>
+<div class="doc">
+<p>Verify an association session after the association callback returns from AdSense signup.</p><ul><li>
+<span class="param">token</span> The token returned to the association callback URL.</li></ul>
+<pre class="source">
+core.Future&lt;AssociationSession&gt; verify(core.String token) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (?token) $queryParams["token"] = token;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "associationsessions/verify";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; AssociationSession.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

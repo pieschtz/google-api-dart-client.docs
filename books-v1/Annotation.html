@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Annotation Class / books-v1 Library / Dart Documentation</title>
+        <title>Annotation class / books-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,129 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/Annotation.html">Annotation</a></div>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/Annotation.html">Annotation</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Annotation</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Annotation extends IdentityHash {
+  /** Resource type. */
+  core.String kind;
 
+  /** Timestamp for the last time this annotation was modified. */
+  core.String updated;
+
+  /** Timestamp for the created time of this annotation. */
+  core.String created;
+
+  /** Indicates that this annotation is deleted. */
+  core.bool deleted;
+
+  /** Anchor text before excerpt. */
+  core.String beforeSelectedText;
+
+  /** Selection ranges for the most recent content version. */
+  AnnotationCurrentVersionRanges currentVersionRanges;
+
+  /** Anchor text after excerpt. */
+  core.String afterSelectedText;
+
+  /** Selection ranges sent from the client. */
+  AnnotationClientVersionRanges clientVersionRanges;
+
+  /** The volume that this annotation belongs to. */
+  core.String volumeId;
+
+  /** Pages that this annotation spans. */
+  core.List&lt;core.String&gt; pageIds;
+
+  /** The layer this annotation is for. */
+  core.String layerId;
+
+  /** Excerpt from the volume. */
+  core.String selectedText;
+
+  /** The highlight style for this annotation. */
+  core.String highlightStyle;
+
+  /** User-created data for this annotation. */
+  core.String data;
+
+  /** Id of this annotation, in the form of a GUID. */
+  core.String id;
+
+  /** URL to this resource. */
+  core.String selfLink;
+
+  /** Parses an instance from its JSON representation. */
+  static Annotation parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Annotation();
+    result.kind = identity(json["kind"]);
+    result.updated = identity(json["updated"]);
+    result.created = identity(json["created"]);
+    result.deleted = identity(json["deleted"]);
+    result.beforeSelectedText = identity(json["beforeSelectedText"]);
+    result.currentVersionRanges = AnnotationCurrentVersionRanges.parse(json["currentVersionRanges"]);
+    result.afterSelectedText = identity(json["afterSelectedText"]);
+    result.clientVersionRanges = AnnotationClientVersionRanges.parse(json["clientVersionRanges"]);
+    result.volumeId = identity(json["volumeId"]);
+    result.pageIds = map(identity)(json["pageIds"]);
+    result.layerId = identity(json["layerId"]);
+    result.selectedText = identity(json["selectedText"]);
+    result.highlightStyle = identity(json["highlightStyle"]);
+    result.data = identity(json["data"]);
+    result.id = identity(json["id"]);
+    result.selfLink = identity(json["selfLink"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Annotation value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["updated"] = identity(value.updated);
+    result["created"] = identity(value.created);
+    result["deleted"] = identity(value.deleted);
+    result["beforeSelectedText"] = identity(value.beforeSelectedText);
+    result["currentVersionRanges"] = AnnotationCurrentVersionRanges.serialize(value.currentVersionRanges);
+    result["afterSelectedText"] = identity(value.afterSelectedText);
+    result["clientVersionRanges"] = AnnotationClientVersionRanges.serialize(value.clientVersionRanges);
+    result["volumeId"] = identity(value.volumeId);
+    result["pageIds"] = map(identity)(value.pageIds);
+    result["layerId"] = identity(value.layerId);
+    result["selectedText"] = identity(value.selectedText);
+    result["highlightStyle"] = identity(value.highlightStyle);
+    result["data"] = identity(value.data);
+    result["id"] = identity(value.id);
+    result["selfLink"] = identity(value.selfLink);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Annotation</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/Annotation.html">Annotation</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Annotation.parse">#</a></h4>
 <div class="doc">
@@ -62,7 +167,7 @@ static Annotation parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/Annotation.html">Annotation</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Annotation.serialize">#</a></h4>
 <div class="doc">
@@ -92,21 +197,11 @@ static core.Object serialize(Annotation value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Annotation.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="afterSelectedText">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>afterSelectedText</strong> <a class="anchor-link"
             href="#afterSelectedText"
             title="Permalink to Annotation.afterSelectedText">#</a>
@@ -119,7 +214,7 @@ core.String afterSelectedText;
 </div>
 </div>
 <div class="field"><h4 id="beforeSelectedText">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>beforeSelectedText</strong> <a class="anchor-link"
             href="#beforeSelectedText"
             title="Permalink to Annotation.beforeSelectedText">#</a>
@@ -132,7 +227,7 @@ core.String beforeSelectedText;
 </div>
 </div>
 <div class="field"><h4 id="clientVersionRanges">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/AnnotationClientVersionRanges.html">AnnotationClientVersionRanges</a>         <strong>clientVersionRanges</strong> <a class="anchor-link"
             href="#clientVersionRanges"
             title="Permalink to Annotation.clientVersionRanges">#</a>
@@ -145,7 +240,7 @@ AnnotationClientVersionRanges clientVersionRanges;
 </div>
 </div>
 <div class="field"><h4 id="created">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
             href="#created"
             title="Permalink to Annotation.created">#</a>
@@ -158,7 +253,7 @@ core.String created;
 </div>
 </div>
 <div class="field"><h4 id="currentVersionRanges">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/AnnotationCurrentVersionRanges.html">AnnotationCurrentVersionRanges</a>         <strong>currentVersionRanges</strong> <a class="anchor-link"
             href="#currentVersionRanges"
             title="Permalink to Annotation.currentVersionRanges">#</a>
@@ -171,7 +266,7 @@ AnnotationCurrentVersionRanges currentVersionRanges;
 </div>
 </div>
 <div class="field"><h4 id="data">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>data</strong> <a class="anchor-link"
             href="#data"
             title="Permalink to Annotation.data">#</a>
@@ -184,7 +279,7 @@ core.String data;
 </div>
 </div>
 <div class="field"><h4 id="deleted">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>deleted</strong> <a class="anchor-link"
             href="#deleted"
             title="Permalink to Annotation.deleted">#</a>
@@ -197,7 +292,7 @@ core.bool deleted;
 </div>
 </div>
 <div class="field"><h4 id="highlightStyle">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>highlightStyle</strong> <a class="anchor-link"
             href="#highlightStyle"
             title="Permalink to Annotation.highlightStyle">#</a>
@@ -210,7 +305,7 @@ core.String highlightStyle;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Annotation.id">#</a>
@@ -223,7 +318,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Annotation.kind">#</a>
@@ -236,7 +331,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="layerId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>layerId</strong> <a class="anchor-link"
             href="#layerId"
             title="Permalink to Annotation.layerId">#</a>
@@ -249,7 +344,7 @@ core.String layerId;
 </div>
 </div>
 <div class="field"><h4 id="pageIds">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>pageIds</strong> <a class="anchor-link"
             href="#pageIds"
             title="Permalink to Annotation.pageIds">#</a>
@@ -261,8 +356,21 @@ core.List&lt;core.String&gt; pageIds;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Annotation.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selectedText">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selectedText</strong> <a class="anchor-link"
             href="#selectedText"
             title="Permalink to Annotation.selectedText">#</a>
@@ -275,7 +383,7 @@ core.String selectedText;
 </div>
 </div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Annotation.selfLink">#</a>
@@ -288,7 +396,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="updated">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
             href="#updated"
             title="Permalink to Annotation.updated">#</a>
@@ -301,7 +409,7 @@ core.String updated;
 </div>
 </div>
 <div class="field"><h4 id="volumeId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>volumeId</strong> <a class="anchor-link"
             href="#volumeId"
             title="Permalink to Annotation.volumeId">#</a>
@@ -311,6 +419,103 @@ core.String updated;
 <pre class="source">
 core.String volumeId;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Annotation.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Annotation.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Annotation.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Annotation.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Annotation.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Annotation.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

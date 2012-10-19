@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Disk Class / compute-v1beta12 Library / Dart Documentation</title>
+        <title>Disk class / compute-v1beta12 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,125 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/Disk.html">Disk</a></div>
+         &rsaquo; <a href="../compute-v1beta12.html">compute-v1beta12</a> &rsaquo; <a href="../compute-v1beta12/Disk.html">Disk</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Disk</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Disk extends IdentityHash {
+  /** The status of disk creation (output only). */
+  core.String status;
 
+  /**
+ * The source snapshot used to create this disk. Once the source snapshot has been deleted from the
+ * system, this field will be cleared, and will not be set even if a snapshot with the same name has
+ * been re-created.
+ */
+  core.String sourceSnapshot;
+
+  /** Type of the resource. */
+  core.String kind;
+
+  /**
+ * An optional textual description of the resource; provided by the client when the resource is
+ * created.
+ */
+  core.String description;
+
+  /** Size of the persistent disk, specified in GB. */
+  core.String sizeGb;
+
+  /** Unique identifier for the resource; defined by the server (output only). */
+  core.String id;
+
+  /**
+ * The 'id' value of the snapshot used to create this disk. This value may be used to determine
+ * whether the disk was created from the current or a previous instance of a given disk snapshot.
+ */
+  core.String sourceSnapshotId;
+
+  /**
+ * URL for the zone where the persistent disk resides; provided by the client when the disk is
+ * created. A persistent disk must reside in the same zone as the instance to which it is attached.
+ */
+  core.String zone;
+
+  /** Creation timestamp in RFC3339 text format (output only). */
+  core.String creationTimestamp;
+
+  /** Internal use only. */
+  core.String options;
+
+  /** Server defined URL for the resource (output only). */
+  core.String selfLink;
+
+  /**
+ * Name of the resource; provided by the client when the resource is created. The name must be 1-63
+ * characters long, and comply with RFC1035.
+ */
+  core.String name;
+
+  /** Parses an instance from its JSON representation. */
+  static Disk parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Disk();
+    result.status = identity(json["status"]);
+    result.sourceSnapshot = identity(json["sourceSnapshot"]);
+    result.kind = identity(json["kind"]);
+    result.description = identity(json["description"]);
+    result.sizeGb = identity(json["sizeGb"]);
+    result.id = identity(json["id"]);
+    result.sourceSnapshotId = identity(json["sourceSnapshotId"]);
+    result.zone = identity(json["zone"]);
+    result.creationTimestamp = identity(json["creationTimestamp"]);
+    result.options = identity(json["options"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.name = identity(json["name"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Disk value) {
+    if (value == null) return null;
+    final result = {};
+    result["status"] = identity(value.status);
+    result["sourceSnapshot"] = identity(value.sourceSnapshot);
+    result["kind"] = identity(value.kind);
+    result["description"] = identity(value.description);
+    result["sizeGb"] = identity(value.sizeGb);
+    result["id"] = identity(value.id);
+    result["sourceSnapshotId"] = identity(value.sourceSnapshotId);
+    result["zone"] = identity(value.zone);
+    result["creationTimestamp"] = identity(value.creationTimestamp);
+    result["options"] = identity(value.options);
+    result["selfLink"] = identity(value.selfLink);
+    result["name"] = identity(value.name);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Disk</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../compute-v1beta12/Disk.html">Disk</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Disk.parse">#</a></h4>
 <div class="doc">
@@ -58,7 +159,7 @@ static Disk parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../compute-v1beta12/Disk.html">Disk</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Disk.serialize">#</a></h4>
 <div class="doc">
@@ -84,21 +185,11 @@ static core.Object serialize(Disk value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Disk.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="creationTimestamp">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>creationTimestamp</strong> <a class="anchor-link"
             href="#creationTimestamp"
             title="Permalink to Disk.creationTimestamp">#</a>
@@ -111,7 +202,7 @@ core.String creationTimestamp;
 </div>
 </div>
 <div class="field"><h4 id="description">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to Disk.description">#</a>
@@ -125,7 +216,7 @@ core.String description;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Disk.id">#</a>
@@ -138,7 +229,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Disk.kind">#</a>
@@ -151,7 +242,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Disk.name">#</a>
@@ -165,7 +256,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="options">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>options</strong> <a class="anchor-link"
             href="#options"
             title="Permalink to Disk.options">#</a>
@@ -177,8 +268,21 @@ core.String options;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Disk.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Disk.selfLink">#</a>
@@ -191,7 +295,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="sizeGb">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>sizeGb</strong> <a class="anchor-link"
             href="#sizeGb"
             title="Permalink to Disk.sizeGb">#</a>
@@ -204,7 +308,7 @@ core.String sizeGb;
 </div>
 </div>
 <div class="field"><h4 id="sourceSnapshot">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>sourceSnapshot</strong> <a class="anchor-link"
             href="#sourceSnapshot"
             title="Permalink to Disk.sourceSnapshot">#</a>
@@ -219,7 +323,7 @@ core.String sourceSnapshot;
 </div>
 </div>
 <div class="field"><h4 id="sourceSnapshotId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>sourceSnapshotId</strong> <a class="anchor-link"
             href="#sourceSnapshotId"
             title="Permalink to Disk.sourceSnapshotId">#</a>
@@ -233,20 +337,20 @@ core.String sourceSnapshotId;
 </div>
 </div>
 <div class="field"><h4 id="status">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Disk.status">#</a>
         </h4>
         <div class="doc">
-<p>The status of disk creation.</p>
+<p>The status of disk creation (output only).</p>
 <pre class="source">
 core.String status;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="zone">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>zone</strong> <a class="anchor-link"
             href="#zone"
             title="Permalink to Disk.zone">#</a>
@@ -257,6 +361,103 @@ created. A persistent disk must reside in the same zone as the instance to which
 <pre class="source">
 core.String zone;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Disk.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Disk.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Disk.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Disk.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Disk.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Disk.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

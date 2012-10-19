@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Training Class / prediction-v1.5 Library / Dart Documentation</title>
+        <title>Training class / prediction-v1.5 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,110 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../prediction-v1.5.html">prediction-v1.5</a> &rsaquo; <a href="../prediction-v1.5/Training.html">Training</a></div>
+         &rsaquo; <a href="../prediction-v1.5.html">prediction-v1.5</a> &rsaquo; <a href="../prediction-v1.5/Training.html">Training</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Training</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Training extends IdentityHash {
+  /** What kind of resource this is. */
+  core.String kind;
 
+  /** Insert time of the model (as a RFC 3339 timestamp). */
+  core.String created;
+
+  /** Training completion time (as a RFC 3339 timestamp). */
+  core.String trainingComplete;
+
+  /** Google storage location of the training data file. */
+  core.String storageDataLocation;
+
+  /** Google storage location of the pmml model file. */
+  core.String storagePMMLModelLocation;
+
+  /**
+ * The current status of the training job. This can be one of following: RUNNING; DONE; ERROR;
+ * ERROR: TRAINING JOB NOT FOUND
+ */
+  core.String trainingStatus;
+
+  /** Model metadata. */
+  TrainingModelInfo modelInfo;
+
+  /** Google storage location of the preprocessing pmml file. */
+  core.String storagePMMLLocation;
+
+  /** The unique name for the predictive model. */
+  core.String id;
+
+  /** A URL to re-request this resource. */
+  core.String selfLink;
+
+  /**
+ * A class weighting function, which allows the importance weights for class labels to be specified
+ * [Categorical models only].
+ */
+  core.List&lt;core.Map&lt;core.String, core.double&gt;&gt; utility;
+
+  /** Parses an instance from its JSON representation. */
+  static Training parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Training();
+    result.kind = identity(json["kind"]);
+    result.created = identity(json["created"]);
+    result.trainingComplete = identity(json["trainingComplete"]);
+    result.storageDataLocation = identity(json["storageDataLocation"]);
+    result.storagePMMLModelLocation = identity(json["storagePMMLModelLocation"]);
+    result.trainingStatus = identity(json["trainingStatus"]);
+    result.modelInfo = TrainingModelInfo.parse(json["modelInfo"]);
+    result.storagePMMLLocation = identity(json["storagePMMLLocation"]);
+    result.id = identity(json["id"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.utility = map(mapValues(identity))(json["utility"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Training value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["created"] = identity(value.created);
+    result["trainingComplete"] = identity(value.trainingComplete);
+    result["storageDataLocation"] = identity(value.storageDataLocation);
+    result["storagePMMLModelLocation"] = identity(value.storagePMMLModelLocation);
+    result["trainingStatus"] = identity(value.trainingStatus);
+    result["modelInfo"] = TrainingModelInfo.serialize(value.modelInfo);
+    result["storagePMMLLocation"] = identity(value.storagePMMLLocation);
+    result["id"] = identity(value.id);
+    result["selfLink"] = identity(value.selfLink);
+    result["utility"] = map(mapValues(identity))(value.utility);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Training</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../prediction-v1.5/Training.html">Training</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Training.parse">#</a></h4>
 <div class="doc">
@@ -57,7 +143,7 @@ static Training parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../prediction-v1.5/Training.html">Training</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Training.serialize">#</a></h4>
 <div class="doc">
@@ -82,21 +168,11 @@ static core.Object serialize(Training value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Training.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="created">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
             href="#created"
             title="Permalink to Training.created">#</a>
@@ -109,7 +185,7 @@ core.String created;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Training.id">#</a>
@@ -122,7 +198,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Training.kind">#</a>
@@ -135,7 +211,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="modelInfo">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../prediction-v1.5/TrainingModelInfo.html">TrainingModelInfo</a>         <strong>modelInfo</strong> <a class="anchor-link"
             href="#modelInfo"
             title="Permalink to Training.modelInfo">#</a>
@@ -147,8 +223,21 @@ TrainingModelInfo modelInfo;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Training.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Training.selfLink">#</a>
@@ -161,7 +250,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="storageDataLocation">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>storageDataLocation</strong> <a class="anchor-link"
             href="#storageDataLocation"
             title="Permalink to Training.storageDataLocation">#</a>
@@ -174,7 +263,7 @@ core.String storageDataLocation;
 </div>
 </div>
 <div class="field"><h4 id="storagePMMLLocation">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>storagePMMLLocation</strong> <a class="anchor-link"
             href="#storagePMMLLocation"
             title="Permalink to Training.storagePMMLLocation">#</a>
@@ -187,7 +276,7 @@ core.String storagePMMLLocation;
 </div>
 </div>
 <div class="field"><h4 id="storagePMMLModelLocation">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>storagePMMLModelLocation</strong> <a class="anchor-link"
             href="#storagePMMLModelLocation"
             title="Permalink to Training.storagePMMLModelLocation">#</a>
@@ -200,7 +289,7 @@ core.String storagePMMLModelLocation;
 </div>
 </div>
 <div class="field"><h4 id="trainingComplete">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>trainingComplete</strong> <a class="anchor-link"
             href="#trainingComplete"
             title="Permalink to Training.trainingComplete">#</a>
@@ -213,7 +302,7 @@ core.String trainingComplete;
 </div>
 </div>
 <div class="field"><h4 id="trainingStatus">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>trainingStatus</strong> <a class="anchor-link"
             href="#trainingStatus"
             title="Permalink to Training.trainingStatus">#</a>
@@ -227,7 +316,7 @@ core.String trainingStatus;
 </div>
 </div>
 <div class="field"><h4 id="utility">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/double.html">double</a>&gt;&gt;         <strong>utility</strong> <a class="anchor-link"
             href="#utility"
             title="Permalink to Training.utility">#</a>
@@ -238,6 +327,103 @@ core.String trainingStatus;
 <pre class="source">
 core.List&lt;core.Map&lt;core.String, core.double&gt;&gt; utility;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Training.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Training.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Training.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Training.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Training.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Training.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>EventsResource Class / calendar-v3 Library / Dart Documentation</title>
+        <title>EventsResource class / calendar-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,34 +14,523 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/EventsResource.html">EventsResource</a></div>
+         &rsaquo; <a href="../calendar-v3.html">calendar-v3</a> &rsaquo; <a href="../calendar-v3/EventsResource.html">EventsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>EventsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class EventsResource extends core.Object {
+  final CalendarApi _$service;
+  
+  EventsResource._internal(CalendarApi $service) : _$service = $service;
 
+  // Method EventsResource.Insert
+  /**
+   * Creates an event.
+   *
+   *    * [content] the Event
+   *    * [calendarId] Calendar identifier.
+   *    * [sendNotifications] Whether to send notifications about the creation of the new event. Optional. The default is False.
+   */
+  core.Future&lt;Event&gt; insert(core.String calendarId, Event content, {core.bool sendNotifications}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Event.serialize(content));
+    final $path = "calendars/{calendarId}/events";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Event.parse(JSON.parse($text)));
+  }
+
+  // Method EventsResource.Get
+  /**
+   * Returns an event.
+   *
+   *    * [calendarId] Calendar identifier.
+   *    * [eventId] Event identifier.
+   *    * [timeZone] Time zone used in the response. Optional. The default is the time zone of the calendar.
+   *    * [alwaysIncludeEmail] Whether to always include a value in the "email" field for the organizer, creator and attendees,
+   *        even if no real email is available (i.e. a generated, non-working value will be provided).
+   *        The use of this option is discouraged and should only be used by clients which cannot
+   *        handle the absence of an email address value in the mentioned places. Optional. The
+   *        default is False.
+   *    * [maxAttendees] The maximum number of attendees to include in the response. If there are more than the specified
+   *        number of attendees, only the participant is returned. Optional.
+
+  Minimum: 1.
+   */
+  core.Future&lt;Event&gt; get(core.String calendarId, core.String eventId, {core.String timeZone, core.bool alwaysIncludeEmail, core.int maxAttendees}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    $pathParams["eventId"] = eventId;
+    if (?timeZone) $queryParams["timeZone"] = timeZone;
+    if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+    if (?maxAttendees) $queryParams["maxAttendees"] = maxAttendees;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "calendars/{calendarId}/events/{eventId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Event.parse(JSON.parse($text)));
+  }
+
+  // Method EventsResource.Move
+  /**
+   * Moves an event to another calendar, i.e. changes an event's organizer.
+   *
+   *    * [calendarId] Calendar identifier of the source calendar where the event currently is on.
+   *    * [eventId] Event identifier.
+   *    * [destination] Calendar identifier of the target calendar where the event is to be moved to.
+   *    * [sendNotifications] Whether to send notifications about the change of the event's organizer. Optional. The default is
+   *        False.
+   */
+  core.Future&lt;Event&gt; move(core.String calendarId, core.String eventId, core.String destination, {core.bool sendNotifications}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    $pathParams["eventId"] = eventId;
+    if (?destination) $queryParams["destination"] = destination;
+    if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "calendars/{calendarId}/events/{eventId}/move";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Event.parse(JSON.parse($text)));
+  }
+
+  // Method EventsResource.List
+  /**
+   * Returns events on the specified calendar.
+   *
+   *    * [calendarId] Calendar identifier.
+   *    * [orderBy] The order of the events returned in the result. Optional. The default is an unspecified, stable
+   *        order.
+   *    * [showHiddenInvitations] Whether to include hidden invitations in the result. Optional. The default is False.
+   *    * [showDeleted] Whether to include deleted single events (with 'status' equals 'cancelled') in the result. Cancelled
+   *        instances of recurring events will still be included if 'singleEvents' is False. Optional.
+   *        The default is False.
+   *    * [iCalUID] Specifies iCalendar UID (iCalUID) of events to be included in the response. Optional.
+   *    * [updatedMin] Lower bound for an event's last modification time (as a RFC 3339 timestamp) to filter by. Optional.
+   *        The default is not to filter by last modification time.
+   *    * [singleEvents] Whether to expand recurring events into instances and only return single one-off events and
+   *        instances of recurring events, but not the underlying recurring events themselves.
+   *        Optional. The default is False.
+   *    * [alwaysIncludeEmail] Whether to always include a value in the "email" field for the organizer, creator and attendees,
+   *        even if no real email is available (i.e. a generated, non-working value will be provided).
+   *        The use of this option is discouraged and should only be used by clients which cannot
+   *        handle the absence of an email address value in the mentioned places. Optional. The
+   *        default is False.
+   *    * [maxResults] Maximum number of events returned on one result page. Optional.
+
+  Minimum: 1.
+   *    * [q] Free text search terms to find events that match these terms in any field, except for extended
+   *        properties. Optional.
+   *    * [pageToken] Token specifying which result page to return. Optional.
+   *    * [timeMin] Lower bound (inclusive) for an event's end time to filter by. Optional. The default is not to filter
+   *        by end time.
+   *    * [timeZone] Time zone used in the response. Optional. The default is the time zone of the calendar.
+   *    * [timeMax] Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to
+   *        filter by start time.
+   *    * [maxAttendees] The maximum number of attendees to include in the response. If there are more than the specified
+   *        number of attendees, only the participant is returned. Optional.
+
+  Minimum: 1.
+   */
+  core.Future&lt;Events&gt; list(core.String calendarId, {EventsResourceListOrderBy orderBy, core.bool showHiddenInvitations, core.bool showDeleted, core.String iCalUID, core.String updatedMin, core.bool singleEvents, core.bool alwaysIncludeEmail, core.int maxResults, core.String q, core.String pageToken, core.String timeMin, core.String timeZone, core.String timeMax, core.int maxAttendees}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (?orderBy) $queryParams["orderBy"] = orderBy;
+    if (?showHiddenInvitations) $queryParams["showHiddenInvitations"] = showHiddenInvitations;
+    if (?showDeleted) $queryParams["showDeleted"] = showDeleted;
+    if (?iCalUID) $queryParams["iCalUID"] = iCalUID;
+    if (?updatedMin) $queryParams["updatedMin"] = updatedMin;
+    if (?singleEvents) $queryParams["singleEvents"] = singleEvents;
+    if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?q) $queryParams["q"] = q;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?timeMin) $queryParams["timeMin"] = timeMin;
+    if (?timeZone) $queryParams["timeZone"] = timeZone;
+    if (?timeMax) $queryParams["timeMax"] = timeMax;
+    if (?maxAttendees) $queryParams["maxAttendees"] = maxAttendees;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "calendars/{calendarId}/events";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Events.parse(JSON.parse($text)));
+  }
+
+  // Method EventsResource.Update
+  /**
+   * Updates an event.
+   *
+   *    * [content] the Event
+   *    * [calendarId] Calendar identifier.
+   *    * [eventId] Event identifier.
+   *    * [alwaysIncludeEmail] Whether to always include a value in the "email" field for the organizer, creator and attendees,
+   *        even if no real email is available (i.e. a generated, non-working value will be provided).
+   *        The use of this option is discouraged and should only be used by clients which cannot
+   *        handle the absence of an email address value in the mentioned places. Optional. The
+   *        default is False.
+   *    * [sendNotifications] Whether to send notifications about the event update (e.g. attendee's responses, title changes,
+   *        etc.). Optional. The default is False.
+   */
+  core.Future&lt;Event&gt; update(core.String calendarId, core.String eventId, Event content, {core.bool alwaysIncludeEmail, core.bool sendNotifications}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    $pathParams["eventId"] = eventId;
+    if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+    if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Event.serialize(content));
+    final $path = "calendars/{calendarId}/events/{eventId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Event.parse(JSON.parse($text)));
+  }
+
+  // Method EventsResource.Patch
+  /**
+   * Updates an event. This method supports patch semantics.
+   *
+   *    * [content] the Event
+   *    * [calendarId] Calendar identifier.
+   *    * [eventId] Event identifier.
+   *    * [alwaysIncludeEmail] Whether to always include a value in the "email" field for the organizer, creator and attendees,
+   *        even if no real email is available (i.e. a generated, non-working value will be provided).
+   *        The use of this option is discouraged and should only be used by clients which cannot
+   *        handle the absence of an email address value in the mentioned places. Optional. The
+   *        default is False.
+   *    * [sendNotifications] Whether to send notifications about the event update (e.g. attendee's responses, title changes,
+   *        etc.). Optional. The default is False.
+   */
+  core.Future&lt;Event&gt; patch(core.String calendarId, core.String eventId, Event content, {core.bool alwaysIncludeEmail, core.bool sendNotifications}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    $pathParams["eventId"] = eventId;
+    if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+    if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Event.serialize(content));
+    final $path = "calendars/{calendarId}/events/{eventId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Event.parse(JSON.parse($text)));
+  }
+
+  // Method EventsResource.Instances
+  /**
+   * Returns instances of the specified recurring event.
+   *
+   *    * [calendarId] Calendar identifier.
+   *    * [eventId] Recurring event identifier.
+   *    * [showDeleted] Whether to include deleted events (with 'eventStatus' equals 'cancelled') in the result. Optional.
+   *        The default is False.
+   *    * [alwaysIncludeEmail] Whether to always include a value in the "email" field for the organizer, creator and attendees,
+   *        even if no real email is available (i.e. a generated, non-working value will be provided).
+   *        The use of this option is discouraged and should only be used by clients which cannot
+   *        handle the absence of an email address value in the mentioned places. Optional. The
+   *        default is False.
+   *    * [maxResults] Maximum number of events returned on one result page. Optional.
+
+  Minimum: 1.
+   *    * [pageToken] Token specifying which result page to return. Optional.
+   *    * [timeZone] Time zone used in the response. Optional. The default is the time zone of the calendar.
+   *    * [originalStart] The original start time of the instance in the result. Optional.
+   *    * [maxAttendees] The maximum number of attendees to include in the response. If there are more than the specified
+   *        number of attendees, only the participant is returned. Optional.
+
+  Minimum: 1.
+   */
+  core.Future&lt;Events&gt; instances(core.String calendarId, core.String eventId, {core.bool showDeleted, core.bool alwaysIncludeEmail, core.int maxResults, core.String pageToken, core.String timeZone, core.String originalStart, core.int maxAttendees}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    $pathParams["eventId"] = eventId;
+    if (?showDeleted) $queryParams["showDeleted"] = showDeleted;
+    if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?timeZone) $queryParams["timeZone"] = timeZone;
+    if (?originalStart) $queryParams["originalStart"] = originalStart;
+    if (?maxAttendees) $queryParams["maxAttendees"] = maxAttendees;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "calendars/{calendarId}/events/{eventId}/instances";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Events.parse(JSON.parse($text)));
+  }
+
+  // Method EventsResource.Import
+  /**
+   * Imports an event.
+   *
+   *    * [content] the Event
+   *    * [calendarId] Calendar identifier.
+   */
+  core.Future&lt;Event&gt; import(core.String calendarId, Event content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Event.serialize(content));
+    final $path = "calendars/{calendarId}/events/import";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Event.parse(JSON.parse($text)));
+  }
+
+  // Method EventsResource.QuickAdd
+  /**
+   * Creates an event based on a simple text string.
+   *
+   *    * [calendarId] Calendar identifier.
+   *    * [text] The text describing the event to be created.
+   *    * [sendNotifications] Whether to send notifications about the creation of the event. Optional. The default is False.
+   */
+  core.Future&lt;Event&gt; quickAdd(core.String calendarId, core.String text, {core.bool sendNotifications}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    if (?text) $queryParams["text"] = text;
+    if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "calendars/{calendarId}/events/quickAdd";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Event.parse(JSON.parse($text)));
+  }
+
+  // Method EventsResource.Delete
+  /**
+   * Deletes an event.
+   *
+   *    * [calendarId] Calendar identifier.
+   *    * [eventId] Event identifier.
+   *    * [sendNotifications] Whether to send notifications about the deletion of the event. Optional. The default is False.
+   */
+  core.Future delete(core.String calendarId, core.String eventId, {core.bool sendNotifications}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["calendarId"] = calendarId;
+    $pathParams["eventId"] = eventId;
+    if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "calendars/{calendarId}/events/{eventId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="EventsResource">
-<span class="show-code">Code</span>
-new <strong>EventsResource</strong>._internal(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#EventsResource"
-              title="Permalink to EventsResource.EventsResource">#</a></h4>
+<div class="method"><h4 id="EventsResource._internal">
+<button class="show-code">Code</button>
+new <strong>EventsResource._internal</strong>(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#EventsResource._internal"
+              title="Permalink to EventsResource.EventsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 EventsResource._internal(CalendarApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to EventsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to EventsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#delete"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications]) <a class="anchor-link" href="#delete"
               title="Permalink to EventsResource.delete">#</a></h4>
 <div class="doc">
 <p>Deletes an event.</p><ul><li>
@@ -49,13 +538,13 @@ EventsResource._internal(CalendarApi $service) : _$service = $service;
 <span class="param">eventId</span> Event identifier.</li><li>
 <span class="param">sendNotifications</span> Whether to send notifications about the deletion of the event. Optional. The default is False.</li></ul>
 <pre class="source">
-core.Future delete(core.String calendarId, core.String eventId, [core.bool sendNotifications = UNSPECIFIED]) {
+core.Future delete(core.String calendarId, core.String eventId, {core.bool sendNotifications}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
   $pathParams["eventId"] = eventId;
-  if (UNSPECIFIED != sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+  if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -66,7 +555,7 @@ core.Future delete(core.String calendarId, core.String eventId, [core.bool sendN
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "calendars/{calendarId}/events/{eventId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $http = new http.Request($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -77,9 +566,19 @@ core.Future delete(core.String calendarId, core.String eventId, [core.bool sendN
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="EventsResource._internal">
+<button class="show-code">Code</button>
+new <strong>EventsResource._internal</strong>(<a href="../calendar-v3/CalendarApi.html">CalendarApi</a> $service) <a class="anchor-link" href="#EventsResource._internal"
+              title="Permalink to EventsResource.EventsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+EventsResource._internal(CalendarApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> timeZone = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxAttendees = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> timeZone, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxAttendees]) <a class="anchor-link" href="#get"
               title="Permalink to EventsResource.get">#</a></h4>
 <div class="doc">
 <p>Returns an event.</p><ul><li>
@@ -97,15 +596,15 @@ core.Future delete(core.String calendarId, core.String eventId, [core.bool sendN
    number of attendees, only the participant is returned. Optional.</p></li></ul>
 <p>Minimum: 1.</p>
 <pre class="source">
-core.Future&lt;Event&gt; get(core.String calendarId, core.String eventId, [core.String timeZone = UNSPECIFIED, core.bool alwaysIncludeEmail = UNSPECIFIED, core.int maxAttendees = UNSPECIFIED]) {
+core.Future&lt;Event&gt; get(core.String calendarId, core.String eventId, {core.String timeZone, core.bool alwaysIncludeEmail, core.int maxAttendees}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
   $pathParams["eventId"] = eventId;
-  if (UNSPECIFIED != timeZone) $queryParams["timeZone"] = timeZone;
-  if (UNSPECIFIED != alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
-  if (UNSPECIFIED != maxAttendees) $queryParams["maxAttendees"] = maxAttendees;
+  if (?timeZone) $queryParams["timeZone"] = timeZone;
+  if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+  if (?maxAttendees) $queryParams["maxAttendees"] = maxAttendees;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -116,7 +615,7 @@ core.Future&lt;Event&gt; get(core.String calendarId, core.String eventId, [core.
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "calendars/{calendarId}/events/{eventId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -127,8 +626,26 @@ core.Future&lt;Event&gt; get(core.String calendarId, core.String eventId, [core.
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to EventsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="import">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>import</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/Event.html">Event</a> content) <a class="anchor-link" href="#import"
               title="Permalink to EventsResource.import">#</a></h4>
 <div class="doc">
@@ -153,7 +670,7 @@ core.Future&lt;Event&gt; import(core.String calendarId, Event content) {
   final $body = JSON.stringify(Event.serialize(content));
   final $path = "calendars/{calendarId}/events/import";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -165,8 +682,8 @@ core.Future&lt;Event&gt; import(core.String calendarId, Event content) {
 </div>
 </div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#insert"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications]) <a class="anchor-link" href="#insert"
               title="Permalink to EventsResource.insert">#</a></h4>
 <div class="doc">
 <p>Creates an event.</p><ul><li>
@@ -174,12 +691,12 @@ core.Future&lt;Event&gt; import(core.String calendarId, Event content) {
 <span class="param">calendarId</span> Calendar identifier.</li><li>
 <span class="param">sendNotifications</span> Whether to send notifications about the creation of the new event. Optional. The default is False.</li></ul>
 <pre class="source">
-core.Future&lt;Event&gt; insert(core.String calendarId, Event content, [core.bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; insert(core.String calendarId, Event content, {core.bool sendNotifications}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
-  if (UNSPECIFIED != sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+  if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -192,7 +709,7 @@ core.Future&lt;Event&gt; insert(core.String calendarId, Event content, [core.boo
   final $body = JSON.stringify(Event.serialize(content));
   final $path = "calendars/{calendarId}/events";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -204,8 +721,8 @@ core.Future&lt;Event&gt; insert(core.String calendarId, Event content, [core.boo
 </div>
 </div>
 <div class="method"><h4 id="instances">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Events.html">Events</a>&gt; <strong>instances</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> timeZone = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> originalStart = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxAttendees = UNSPECIFIED]) <a class="anchor-link" href="#instances"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Events.html">Events</a>&gt; <strong>instances</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showDeleted, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/String.html">String</a> timeZone, <a href="http://api.dartlang.org/dart_core/String.html">String</a> originalStart, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxAttendees]) <a class="anchor-link" href="#instances"
               title="Permalink to EventsResource.instances">#</a></h4>
 <div class="doc">
 <p>Returns instances of the specified recurring event.</p><ul><li>
@@ -234,19 +751,19 @@ core.Future&lt;Event&gt; insert(core.String calendarId, Event content, [core.boo
 </code></pre>
 <p>Minimum: 1.</p>
 <pre class="source">
-core.Future&lt;Events&gt; instances(core.String calendarId, core.String eventId, [core.bool showDeleted = UNSPECIFIED, core.bool alwaysIncludeEmail = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String timeZone = UNSPECIFIED, core.String originalStart = UNSPECIFIED, core.int maxAttendees = UNSPECIFIED]) {
+core.Future&lt;Events&gt; instances(core.String calendarId, core.String eventId, {core.bool showDeleted, core.bool alwaysIncludeEmail, core.int maxResults, core.String pageToken, core.String timeZone, core.String originalStart, core.int maxAttendees}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
   $pathParams["eventId"] = eventId;
-  if (UNSPECIFIED != showDeleted) $queryParams["showDeleted"] = showDeleted;
-  if (UNSPECIFIED != alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != timeZone) $queryParams["timeZone"] = timeZone;
-  if (UNSPECIFIED != originalStart) $queryParams["originalStart"] = originalStart;
-  if (UNSPECIFIED != maxAttendees) $queryParams["maxAttendees"] = maxAttendees;
+  if (?showDeleted) $queryParams["showDeleted"] = showDeleted;
+  if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?timeZone) $queryParams["timeZone"] = timeZone;
+  if (?originalStart) $queryParams["originalStart"] = originalStart;
+  if (?maxAttendees) $queryParams["maxAttendees"] = maxAttendees;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -257,7 +774,7 @@ core.Future&lt;Events&gt; instances(core.String calendarId, core.String eventId,
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "calendars/{calendarId}/events/{eventId}/instances";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -269,8 +786,8 @@ core.Future&lt;Events&gt; instances(core.String calendarId, core.String eventId,
 </div>
 </div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Events.html">Events</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, [<a href="../calendar-v3/EventsResourceListOrderBy.html">EventsResourceListOrderBy</a> orderBy = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showHiddenInvitations = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showDeleted = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> iCalUID = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> updatedMin = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> singleEvents = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> q = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> timeMin = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> timeZone = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> timeMax = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxAttendees = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Events.html">Events</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, [<a href="../calendar-v3/EventsResourceListOrderBy.html">EventsResourceListOrderBy</a> orderBy, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showHiddenInvitations, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> showDeleted, <a href="http://api.dartlang.org/dart_core/String.html">String</a> iCalUID, <a href="http://api.dartlang.org/dart_core/String.html">String</a> updatedMin, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> singleEvents, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> q, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/String.html">String</a> timeMin, <a href="http://api.dartlang.org/dart_core/String.html">String</a> timeZone, <a href="http://api.dartlang.org/dart_core/String.html">String</a> timeMax, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxAttendees]) <a class="anchor-link" href="#list"
               title="Permalink to EventsResource.list">#</a></h4>
 <div class="doc">
 <p>Returns events on the specified calendar.</p><ul><li>
@@ -280,7 +797,8 @@ core.Future&lt;Events&gt; instances(core.String calendarId, core.String eventId,
    order.</p></li><li>
 <span class="param">showHiddenInvitations</span> Whether to include hidden invitations in the result. Optional. The default is False.</li><li>
 <p>
-<span class="param">showDeleted</span> Whether to include deleted events (with 'eventStatus' equals 'cancelled') in the result. Optional.
+<span class="param">showDeleted</span> Whether to include deleted single events (with 'status' equals 'cancelled') in the result. Cancelled
+   instances of recurring events will still be included if 'singleEvents' is False. Optional.
    The default is False.</p></li><li>
 <span class="param">iCalUID</span> Specifies iCalendar UID (iCalUID) of events to be included in the response. Optional.</li><li>
 <p>
@@ -315,25 +833,25 @@ core.Future&lt;Events&gt; instances(core.String calendarId, core.String eventId,
    number of attendees, only the participant is returned. Optional.</p></li></ul>
 <p>Minimum: 1.</p>
 <pre class="source">
-core.Future&lt;Events&gt; list(core.String calendarId, [EventsResourceListOrderBy orderBy = UNSPECIFIED, core.bool showHiddenInvitations = UNSPECIFIED, core.bool showDeleted = UNSPECIFIED, core.String iCalUID = UNSPECIFIED, core.String updatedMin = UNSPECIFIED, core.bool singleEvents = UNSPECIFIED, core.bool alwaysIncludeEmail = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String q = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String timeMin = UNSPECIFIED, core.String timeZone = UNSPECIFIED, core.String timeMax = UNSPECIFIED, core.int maxAttendees = UNSPECIFIED]) {
+core.Future&lt;Events&gt; list(core.String calendarId, {EventsResourceListOrderBy orderBy, core.bool showHiddenInvitations, core.bool showDeleted, core.String iCalUID, core.String updatedMin, core.bool singleEvents, core.bool alwaysIncludeEmail, core.int maxResults, core.String q, core.String pageToken, core.String timeMin, core.String timeZone, core.String timeMax, core.int maxAttendees}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
-  if (UNSPECIFIED != orderBy) $queryParams["orderBy"] = orderBy;
-  if (UNSPECIFIED != showHiddenInvitations) $queryParams["showHiddenInvitations"] = showHiddenInvitations;
-  if (UNSPECIFIED != showDeleted) $queryParams["showDeleted"] = showDeleted;
-  if (UNSPECIFIED != iCalUID) $queryParams["iCalUID"] = iCalUID;
-  if (UNSPECIFIED != updatedMin) $queryParams["updatedMin"] = updatedMin;
-  if (UNSPECIFIED != singleEvents) $queryParams["singleEvents"] = singleEvents;
-  if (UNSPECIFIED != alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != q) $queryParams["q"] = q;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != timeMin) $queryParams["timeMin"] = timeMin;
-  if (UNSPECIFIED != timeZone) $queryParams["timeZone"] = timeZone;
-  if (UNSPECIFIED != timeMax) $queryParams["timeMax"] = timeMax;
-  if (UNSPECIFIED != maxAttendees) $queryParams["maxAttendees"] = maxAttendees;
+  if (?orderBy) $queryParams["orderBy"] = orderBy;
+  if (?showHiddenInvitations) $queryParams["showHiddenInvitations"] = showHiddenInvitations;
+  if (?showDeleted) $queryParams["showDeleted"] = showDeleted;
+  if (?iCalUID) $queryParams["iCalUID"] = iCalUID;
+  if (?updatedMin) $queryParams["updatedMin"] = updatedMin;
+  if (?singleEvents) $queryParams["singleEvents"] = singleEvents;
+  if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?q) $queryParams["q"] = q;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?timeMin) $queryParams["timeMin"] = timeMin;
+  if (?timeZone) $queryParams["timeZone"] = timeZone;
+  if (?timeMax) $queryParams["timeMax"] = timeMax;
+  if (?maxAttendees) $queryParams["maxAttendees"] = maxAttendees;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -344,7 +862,7 @@ core.Future&lt;Events&gt; list(core.String calendarId, [EventsResourceListOrderB
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "calendars/{calendarId}/events";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -356,8 +874,8 @@ core.Future&lt;Events&gt; list(core.String calendarId, [EventsResourceListOrderB
 </div>
 </div>
 <div class="method"><h4 id="move">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>move</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> destination, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#move"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>move</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> destination, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications]) <a class="anchor-link" href="#move"
               title="Permalink to EventsResource.move">#</a></h4>
 <div class="doc">
 <p>Moves an event to another calendar, i.e. changes an event's organizer.</p><ul><li>
@@ -368,14 +886,14 @@ core.Future&lt;Events&gt; list(core.String calendarId, [EventsResourceListOrderB
 <span class="param">sendNotifications</span> Whether to send notifications about the change of the event's organizer. Optional. The default is
    False.</p></li></ul>
 <pre class="source">
-core.Future&lt;Event&gt; move(core.String calendarId, core.String eventId, core.String destination, [core.bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; move(core.String calendarId, core.String eventId, core.String destination, {core.bool sendNotifications}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
   $pathParams["eventId"] = eventId;
-  if (UNSPECIFIED != destination) $queryParams["destination"] = destination;
-  if (UNSPECIFIED != sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+  if (?destination) $queryParams["destination"] = destination;
+  if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -386,7 +904,7 @@ core.Future&lt;Event&gt; move(core.String calendarId, core.String eventId, core.
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "calendars/{calendarId}/events/{eventId}/move";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -397,9 +915,40 @@ core.Future&lt;Event&gt; move(core.String calendarId, core.String eventId, core.
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to EventsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to EventsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#patch"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications]) <a class="anchor-link" href="#patch"
               title="Permalink to EventsResource.patch">#</a></h4>
 <div class="doc">
 <p>Updates an event. This method supports patch semantics.</p><ul><li>
@@ -416,14 +965,14 @@ core.Future&lt;Event&gt; move(core.String calendarId, core.String eventId, core.
 <span class="param">sendNotifications</span> Whether to send notifications about the event update (e.g. attendee's responses, title changes,
    etc.). Optional. The default is False.</p></li></ul>
 <pre class="source">
-core.Future&lt;Event&gt; patch(core.String calendarId, core.String eventId, Event content, [core.bool alwaysIncludeEmail = UNSPECIFIED, core.bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; patch(core.String calendarId, core.String eventId, Event content, {core.bool alwaysIncludeEmail, core.bool sendNotifications}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
   $pathParams["eventId"] = eventId;
-  if (UNSPECIFIED != alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
-  if (UNSPECIFIED != sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+  if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+  if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -436,7 +985,7 @@ core.Future&lt;Event&gt; patch(core.String calendarId, core.String eventId, Even
   final $body = JSON.stringify(Event.serialize(content));
   final $path = "calendars/{calendarId}/events/{eventId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -448,8 +997,8 @@ core.Future&lt;Event&gt; patch(core.String calendarId, core.String eventId, Even
 </div>
 </div>
 <div class="method"><h4 id="quickAdd">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>quickAdd</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> text, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#quickAdd"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>quickAdd</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> text, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications]) <a class="anchor-link" href="#quickAdd"
               title="Permalink to EventsResource.quickAdd">#</a></h4>
 <div class="doc">
 <p>Creates an event based on a simple text string.</p><ul><li>
@@ -457,13 +1006,13 @@ core.Future&lt;Event&gt; patch(core.String calendarId, core.String eventId, Even
 <span class="param">text</span> The text describing the event to be created.</li><li>
 <span class="param">sendNotifications</span> Whether to send notifications about the creation of the event. Optional. The default is False.</li></ul>
 <pre class="source">
-core.Future&lt;Event&gt; quickAdd(core.String calendarId, core.String text, [core.bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; quickAdd(core.String calendarId, core.String text, {core.bool sendNotifications}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
-  if (UNSPECIFIED != text) $queryParams["text"] = text;
-  if (UNSPECIFIED != sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+  if (?text) $queryParams["text"] = text;
+  if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -474,7 +1023,7 @@ core.Future&lt;Event&gt; quickAdd(core.String calendarId, core.String text, [cor
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "calendars/{calendarId}/events/quickAdd";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -485,9 +1034,20 @@ core.Future&lt;Event&gt; quickAdd(core.String calendarId, core.String text, [cor
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to EventsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications = UNSPECIFIED]) <a class="anchor-link" href="#update"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../calendar-v3/Event.html">Event</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> calendarId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> eventId, <a href="../calendar-v3/Event.html">Event</a> content, [<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> alwaysIncludeEmail, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sendNotifications]) <a class="anchor-link" href="#update"
               title="Permalink to EventsResource.update">#</a></h4>
 <div class="doc">
 <p>Updates an event.</p><ul><li>
@@ -504,14 +1064,14 @@ core.Future&lt;Event&gt; quickAdd(core.String calendarId, core.String text, [cor
 <span class="param">sendNotifications</span> Whether to send notifications about the event update (e.g. attendee's responses, title changes,
    etc.). Optional. The default is False.</p></li></ul>
 <pre class="source">
-core.Future&lt;Event&gt; update(core.String calendarId, core.String eventId, Event content, [core.bool alwaysIncludeEmail = UNSPECIFIED, core.bool sendNotifications = UNSPECIFIED]) {
+core.Future&lt;Event&gt; update(core.String calendarId, core.String eventId, Event content, {core.bool alwaysIncludeEmail, core.bool sendNotifications}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["calendarId"] = calendarId;
   $pathParams["eventId"] = eventId;
-  if (UNSPECIFIED != alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
-  if (UNSPECIFIED != sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
+  if (?alwaysIncludeEmail) $queryParams["alwaysIncludeEmail"] = alwaysIncludeEmail;
+  if (?sendNotifications) $queryParams["sendNotifications"] = sendNotifications;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -524,7 +1084,7 @@ core.Future&lt;Event&gt; update(core.String calendarId, core.String eventId, Eve
   final $body = JSON.stringify(Event.serialize(content));
   final $path = "calendars/{calendarId}/events/{eventId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -533,6 +1093,7 @@ core.Future&lt;Event&gt; update(core.String calendarId, core.String eventId, Eve
       .transform((final $text) =&gt; Event.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

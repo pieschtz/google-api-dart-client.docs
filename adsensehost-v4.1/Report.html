@@ -1,0 +1,372 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Report class / adsensehost-v4.1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adsensehost-v4.1" data-type="Report">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adsensehost-v4.1.html">adsensehost-v4.1</a> &rsaquo; <a href="../adsensehost-v4.1/Report.html">Report</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Report</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class Report extends IdentityHash {
+  /** Kind this is, in this case adsensehost#report. */
+  core.String kind;
+
+  /**
+ * The output rows of the report. Each row is a list of cells; one for each dimension in the
+ * request, followed by one for each metric in the request. The dimension cells contain strings, and
+ * the metric cells contain numbers.
+ */
+  core.List&lt;core.List&lt;core.String&gt;&gt; rows;
+
+  /** Any warnings associated with generation of the report. */
+  core.List&lt;core.String&gt; warnings;
+
+  /**
+ * The totals of the report. This is the same length as any other row in the report; cells
+ * corresponding to dimension columns are empty.
+ */
+  core.List&lt;core.String&gt; totals;
+
+  /**
+ * The header information of the columns requested in the report. This is a list of headers; one for
+ * each dimension in the request, followed by one for each metric in the request.
+ */
+  core.List&lt;ReportHeaders&gt; headers;
+
+  /**
+ * The total number of rows matched by the report request. Fewer rows may be returned in the
+ * response due to being limited by the row count requested or the report row limit.
+ */
+  core.String totalMatchedRows;
+
+  /**
+ * The averages of the report. This is the same length as any other row in the report; cells
+ * corresponding to dimension columns are empty.
+ */
+  core.List&lt;core.String&gt; averages;
+
+  /** Parses an instance from its JSON representation. */
+  static Report parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Report();
+    result.kind = identity(json["kind"]);
+    result.rows = map(map(identity))(json["rows"]);
+    result.warnings = map(identity)(json["warnings"]);
+    result.totals = map(identity)(json["totals"]);
+    result.headers = map(ReportHeaders.parse)(json["headers"]);
+    result.totalMatchedRows = identity(json["totalMatchedRows"]);
+    result.averages = map(identity)(json["averages"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Report value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["rows"] = map(map(identity))(value.rows);
+    result["warnings"] = map(identity)(value.warnings);
+    result["totals"] = map(identity)(value.totals);
+    result["headers"] = map(ReportHeaders.serialize)(value.headers);
+    result["totalMatchedRows"] = identity(value.totalMatchedRows);
+    result["averages"] = map(identity)(value.averages);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Report</strong></span></p>
+<div>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<button class="show-code">Code</button>
+<a href="../adsensehost-v4.1/Report.html">Report</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to Report.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static Report parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new Report();
+  result.kind = identity(json["kind"]);
+  result.rows = map(map(identity))(json["rows"]);
+  result.warnings = map(identity)(json["warnings"]);
+  result.totals = map(identity)(json["totals"]);
+  result.headers = map(ReportHeaders.parse)(json["headers"]);
+  result.totalMatchedRows = identity(json["totalMatchedRows"]);
+  result.averages = map(identity)(json["averages"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../adsensehost-v4.1/Report.html">Report</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to Report.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(Report value) {
+  if (value == null) return null;
+  final result = {};
+  result["kind"] = identity(value.kind);
+  result["rows"] = map(map(identity))(value.rows);
+  result["warnings"] = map(identity)(value.warnings);
+  result["totals"] = map(identity)(value.totals);
+  result["headers"] = map(ReportHeaders.serialize)(value.headers);
+  result["totalMatchedRows"] = identity(value.totalMatchedRows);
+  result["averages"] = map(identity)(value.averages);
+  return result;
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="averages">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>averages</strong> <a class="anchor-link"
+            href="#averages"
+            title="Permalink to Report.averages">#</a>
+        </h4>
+        <div class="doc">
+<p>The averages of the report. This is the same length as any other row in the report; cells
+corresponding to dimension columns are empty.</p>
+<pre class="source">
+core.List&lt;core.String&gt; averages;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="headers">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../adsensehost-v4.1/ReportHeaders.html">ReportHeaders</a>&gt;         <strong>headers</strong> <a class="anchor-link"
+            href="#headers"
+            title="Permalink to Report.headers">#</a>
+        </h4>
+        <div class="doc">
+<p>The header information of the columns requested in the report. This is a list of headers; one for
+each dimension in the request, followed by one for each metric in the request.</p>
+<pre class="source">
+core.List&lt;ReportHeaders&gt; headers;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="kind">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
+            href="#kind"
+            title="Permalink to Report.kind">#</a>
+        </h4>
+        <div class="doc">
+<p>Kind this is, in this case adsensehost#report.</p>
+<pre class="source">
+core.String kind;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rows">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;&gt;         <strong>rows</strong> <a class="anchor-link"
+            href="#rows"
+            title="Permalink to Report.rows">#</a>
+        </h4>
+        <div class="doc">
+<p>The output rows of the report. Each row is a list of cells; one for each dimension in the
+request, followed by one for each metric in the request. The dimension cells contain strings, and
+the metric cells contain numbers.</p>
+<pre class="source">
+core.List&lt;core.List&lt;core.String&gt;&gt; rows;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Report.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="totalMatchedRows">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>totalMatchedRows</strong> <a class="anchor-link"
+            href="#totalMatchedRows"
+            title="Permalink to Report.totalMatchedRows">#</a>
+        </h4>
+        <div class="doc">
+<p>The total number of rows matched by the report request. Fewer rows may be returned in the
+response due to being limited by the row count requested or the report row limit.</p>
+<pre class="source">
+core.String totalMatchedRows;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="totals">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>totals</strong> <a class="anchor-link"
+            href="#totals"
+            title="Permalink to Report.totals">#</a>
+        </h4>
+        <div class="doc">
+<p>The totals of the report. This is the same length as any other row in the report; cells
+corresponding to dimension columns are empty.</p>
+<pre class="source">
+core.List&lt;core.String&gt; totals;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="warnings">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>warnings</strong> <a class="anchor-link"
+            href="#warnings"
+            title="Permalink to Report.warnings">#</a>
+        </h4>
+        <div class="doc">
+<p>Any warnings associated with generation of the report.</p>
+<pre class="source">
+core.List&lt;core.String&gt; warnings;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Report.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Report.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Report.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Report.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Report.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Report.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>DriveApi Class / drive-v2 Library / Dart Documentation</title>
+        <title>DriveApi class / drive-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,35 +14,146 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/DriveApi.html">DriveApi</a></div>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/DriveApi.html">DriveApi</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>DriveApi</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
 <p>The API to interact with Drive.</p>
+<pre class="source">
+class DriveApi extends core.Object {
+  /** The API root, such as [:https://www.googleapis.com:] */
+  final core.String baseUrl;
+  /** How we should identify ourselves to the service. */
+  http.Authenticator authenticator;
+  /** The client library version */
+  final core.String clientVersion = "0.1";
+  /** The application name, used in the user-agent header */
+  final core.String applicationName;
+  DriveApi get _$service =&gt; this;
+  FilesResource _files;
+  FilesResource get files =&gt; _files;
+  AboutResource _about;
+  AboutResource get about =&gt; _about;
+  AppsResource _apps;
+  AppsResource get apps =&gt; _apps;
+  CommentsResource _comments;
+  CommentsResource get comments =&gt; _comments;
+  ParentsResource _parents;
+  ParentsResource get parents =&gt; _parents;
+  RepliesResource _replies;
+  RepliesResource get replies =&gt; _replies;
+  RevisionsResource _revisions;
+  RevisionsResource get revisions =&gt; _revisions;
+  ChangesResource _changes;
+  ChangesResource get changes =&gt; _changes;
+  ChildrenResource _children;
+  ChildrenResource get children =&gt; _children;
+  PermissionsResource _permissions;
+  PermissionsResource get permissions =&gt; _permissions;
+  
+  /** Returns response with indentations and line breaks. */
+  core.bool prettyPrint;
+
+  /** Selector specifying which fields to include in a partial response. */
+  core.String fields;
+
+  /**
+   * Available to use for quota purposes for server-side applications. Can be any arbitrary string
+   * assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+   */
+  core.String quotaUser;
+
+  /** OAuth 2.0 token for the current user. */
+  core.String oauthToken;
+
+  /**
+   * API key. Your API key identifies your project and provides you with API access, quota, and
+   * reports. Required unless you provide an OAuth 2.0 token.
+   */
+  core.String key;
+
+  /**
+   * IP address of the site where the request originates. Use this if you want to enforce per-user
+   * limits.
+   */
+  core.String userIp;
+
+  /** Data format for the response. */
+  DriveApiAlt alt;
+
+
+  DriveApi({this.baseUrl:"https://www.googleapis.com/drive/v2/", applicationName, this.authenticator}) :
+      this.applicationName = (applicationName == null) ? null : applicationName
+          .replaceAll(const core.RegExp(r'\s+'), '_')
+          .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+  { 
+    _files = new FilesResource._internal(this);
+    _about = new AboutResource._internal(this);
+    _apps = new AppsResource._internal(this);
+    _comments = new CommentsResource._internal(this);
+    _parents = new ParentsResource._internal(this);
+    _replies = new RepliesResource._internal(this);
+    _revisions = new RevisionsResource._internal(this);
+    _changes = new ChangesResource._internal(this);
+    _children = new ChildrenResource._internal(this);
+    _permissions = new PermissionsResource._internal(this);
+  }
+  core.String get userAgent {
+    var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+    return "${uaPrefix}drive/v2/20121016 google-api-dart-client/${clientVersion}";
+  }
+
+
+  /** OAuth2 scope: View and manage the files and documents in your Google Drive */
+  static final core.String DRIVE_SCOPE = "https://www.googleapis.com/auth/drive";
+
+  /** OAuth2 scope: View your Google Drive apps */
+  static final core.String DRIVE_APPS_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.apps.readonly";
+
+  /** OAuth2 scope: View and manage Google Drive files that you have opened or created with this app */
+  static final core.String DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/drive.file";
+
+  /** OAuth2 scope: View metadata for files and documents in your Google Drive */
+  static final core.String DRIVE_METADATA_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.metadata.readonly";
+
+  /** OAuth2 scope: View the files and documents in your Google Drive */
+  static final core.String DRIVE_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.readonly";
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
 <div class="method"><h4 id="DriveApi">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 new <strong>DriveApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/drive/v2/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#DriveApi"
               title="Permalink to DriveApi.DriveApi">#</a></h4>
 <div class="doc">
-
 <pre class="source">
-DriveApi([this.baseUrl = "https://www.googleapis.com/drive/v2/", applicationName, this.authenticator]) :
+DriveApi({this.baseUrl:"https://www.googleapis.com/drive/v2/", applicationName, this.authenticator}) :
     this.applicationName = (applicationName == null) ? null : applicationName
-        .replaceAll(const core.RegExp(@'\s+'), '_')
-        .replaceAll(const core.RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
 { 
   _files = new FilesResource._internal(this);
   _about = new AboutResource._internal(this);
   _apps = new AppsResource._internal(this);
+  _comments = new CommentsResource._internal(this);
   _parents = new ParentsResource._internal(this);
+  _replies = new RepliesResource._internal(this);
   _revisions = new RevisionsResource._internal(this);
   _changes = new ChangesResource._internal(this);
   _children = new ChildrenResource._internal(this);
@@ -51,9 +162,11 @@ DriveApi([this.baseUrl = "https://www.googleapis.com/drive/v2/", applicationName
 </pre>
 </div>
 </div>
-<h3>Static Fields</h3>
+</div>
+<div>
+<h3>Static Properties</h3>
 <div class="field"><h4 id="DRIVE_APPS_READONLY_SCOPE">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>DRIVE_APPS_READONLY_SCOPE</strong> <a class="anchor-link"
             href="#DRIVE_APPS_READONLY_SCOPE"
             title="Permalink to DriveApi.DRIVE_APPS_READONLY_SCOPE">#</a>
@@ -66,7 +179,7 @@ static final core.String DRIVE_APPS_READONLY_SCOPE = "https://www.googleapis.com
 </div>
 </div>
 <div class="field"><h4 id="DRIVE_FILE_SCOPE">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>DRIVE_FILE_SCOPE</strong> <a class="anchor-link"
             href="#DRIVE_FILE_SCOPE"
             title="Permalink to DriveApi.DRIVE_FILE_SCOPE">#</a>
@@ -79,7 +192,7 @@ static final core.String DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/dri
 </div>
 </div>
 <div class="field"><h4 id="DRIVE_METADATA_READONLY_SCOPE">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>DRIVE_METADATA_READONLY_SCOPE</strong> <a class="anchor-link"
             href="#DRIVE_METADATA_READONLY_SCOPE"
             title="Permalink to DriveApi.DRIVE_METADATA_READONLY_SCOPE">#</a>
@@ -92,7 +205,7 @@ static final core.String DRIVE_METADATA_READONLY_SCOPE = "https://www.googleapis
 </div>
 </div>
 <div class="field"><h4 id="DRIVE_READONLY_SCOPE">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>DRIVE_READONLY_SCOPE</strong> <a class="anchor-link"
             href="#DRIVE_READONLY_SCOPE"
             title="Permalink to DriveApi.DRIVE_READONLY_SCOPE">#</a>
@@ -105,7 +218,7 @@ static final core.String DRIVE_READONLY_SCOPE = "https://www.googleapis.com/auth
 </div>
 </div>
 <div class="field"><h4 id="DRIVE_SCOPE">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>DRIVE_SCOPE</strong> <a class="anchor-link"
             href="#DRIVE_SCOPE"
             title="Permalink to DriveApi.DRIVE_SCOPE">#</a>
@@ -117,112 +230,23 @@ static final core.String DRIVE_SCOPE = "https://www.googleapis.com/auth/drive";
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="about">
-<span class="show-code">Code</span>
-<a href="../drive-v2/AboutResource.html">AboutResource</a> <strong>get about</strong>() <a class="anchor-link" href="#about"
-              title="Permalink to DriveApi.get about">#</a></h4>
-<div class="doc">
-
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="about">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/AboutResource.html">AboutResource</a>         <strong>about</strong> <a class="anchor-link"
+            href="#about"
+            title="Permalink to DriveApi.about">#</a>
+        </h4>
+        <div class="doc">
 <pre class="source">
-AboutResource get about() =&gt; _about;
+AboutResource get about =&gt; _about;
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="apps">
-<span class="show-code">Code</span>
-<a href="../drive-v2/AppsResource.html">AppsResource</a> <strong>get apps</strong>() <a class="anchor-link" href="#apps"
-              title="Permalink to DriveApi.get apps">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-AppsResource get apps() =&gt; _apps;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="changes">
-<span class="show-code">Code</span>
-<a href="../drive-v2/ChangesResource.html">ChangesResource</a> <strong>get changes</strong>() <a class="anchor-link" href="#changes"
-              title="Permalink to DriveApi.get changes">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-ChangesResource get changes() =&gt; _changes;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="children">
-<span class="show-code">Code</span>
-<a href="../drive-v2/ChildrenResource.html">ChildrenResource</a> <strong>get children</strong>() <a class="anchor-link" href="#children"
-              title="Permalink to DriveApi.get children">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-ChildrenResource get children() =&gt; _children;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="files">
-<span class="show-code">Code</span>
-<a href="../drive-v2/FilesResource.html">FilesResource</a> <strong>get files</strong>() <a class="anchor-link" href="#files"
-              title="Permalink to DriveApi.get files">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-FilesResource get files() =&gt; _files;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="parents">
-<span class="show-code">Code</span>
-<a href="../drive-v2/ParentsResource.html">ParentsResource</a> <strong>get parents</strong>() <a class="anchor-link" href="#parents"
-              title="Permalink to DriveApi.get parents">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-ParentsResource get parents() =&gt; _parents;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="permissions">
-<span class="show-code">Code</span>
-<a href="../drive-v2/PermissionsResource.html">PermissionsResource</a> <strong>get permissions</strong>() <a class="anchor-link" href="#permissions"
-              title="Permalink to DriveApi.get permissions">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-PermissionsResource get permissions() =&gt; _permissions;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="revisions">
-<span class="show-code">Code</span>
-<a href="../drive-v2/RevisionsResource.html">RevisionsResource</a> <strong>get revisions</strong>() <a class="anchor-link" href="#revisions"
-              title="Permalink to DriveApi.get revisions">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-RevisionsResource get revisions() =&gt; _revisions;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="userAgent">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
-              title="Permalink to DriveApi.get userAgent">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-core.String get userAgent() {
-  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
-  return "${uaPrefix}drive/v2/20120816 google-api-dart-client/${clientVersion}";
-}
-</pre>
-</div>
-</div>
-<h3>Fields</h3>
 <div class="field"><h4 id="alt">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../drive-v2/DriveApiAlt.html">DriveApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
             href="#alt"
             title="Permalink to DriveApi.alt">#</a>
@@ -235,7 +259,7 @@ DriveApiAlt alt;
 </div>
 </div>
 <div class="field"><h4 id="applicationName">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to DriveApi.applicationName">#</a>
@@ -247,8 +271,20 @@ final core.String applicationName;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="apps">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/AppsResource.html">AppsResource</a>         <strong>apps</strong> <a class="anchor-link"
+            href="#apps"
+            title="Permalink to DriveApi.apps">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+AppsResource get apps =&gt; _apps;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="authenticator">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
             href="#authenticator"
             title="Permalink to DriveApi.authenticator">#</a>
@@ -256,12 +292,12 @@ final core.String applicationName;
         <div class="doc">
 <p>How we should identify ourselves to the service.</p>
 <pre class="source">
-Authenticator authenticator;
+http.Authenticator authenticator;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="baseUrl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to DriveApi.baseUrl">#</a>
@@ -273,8 +309,32 @@ final core.String baseUrl;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="changes">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/ChangesResource.html">ChangesResource</a>         <strong>changes</strong> <a class="anchor-link"
+            href="#changes"
+            title="Permalink to DriveApi.changes">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+ChangesResource get changes =&gt; _changes;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="children">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/ChildrenResource.html">ChildrenResource</a>         <strong>children</strong> <a class="anchor-link"
+            href="#children"
+            title="Permalink to DriveApi.children">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+ChildrenResource get children =&gt; _children;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="clientVersion">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to DriveApi.clientVersion">#</a>
@@ -286,8 +346,20 @@ final core.String clientVersion = "0.1";
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="comments">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/CommentsResource.html">CommentsResource</a>         <strong>comments</strong> <a class="anchor-link"
+            href="#comments"
+            title="Permalink to DriveApi.comments">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CommentsResource get comments =&gt; _comments;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="fields">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to DriveApi.fields">#</a>
@@ -299,8 +371,20 @@ core.String fields;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="files">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/FilesResource.html">FilesResource</a>         <strong>files</strong> <a class="anchor-link"
+            href="#files"
+            title="Permalink to DriveApi.files">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+FilesResource get files =&gt; _files;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="key">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to DriveApi.key">#</a>
@@ -314,7 +398,7 @@ core.String key;
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to DriveApi.oauthToken">#</a>
@@ -326,8 +410,32 @@ core.String oauthToken;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="parents">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/ParentsResource.html">ParentsResource</a>         <strong>parents</strong> <a class="anchor-link"
+            href="#parents"
+            title="Permalink to DriveApi.parents">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+ParentsResource get parents =&gt; _parents;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="permissions">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/PermissionsResource.html">PermissionsResource</a>         <strong>permissions</strong> <a class="anchor-link"
+            href="#permissions"
+            title="Permalink to DriveApi.permissions">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+PermissionsResource get permissions =&gt; _permissions;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="prettyPrint">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to DriveApi.prettyPrint">#</a>
@@ -340,7 +448,7 @@ core.bool prettyPrint;
 </div>
 </div>
 <div class="field"><h4 id="quotaUser">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to DriveApi.quotaUser">#</a>
@@ -353,8 +461,60 @@ core.String quotaUser;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="replies">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/RepliesResource.html">RepliesResource</a>         <strong>replies</strong> <a class="anchor-link"
+            href="#replies"
+            title="Permalink to DriveApi.replies">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+RepliesResource get replies =&gt; _replies;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="revisions">
+<button class="show-code">Code</button>
+final <a href="../drive-v2/RevisionsResource.html">RevisionsResource</a>         <strong>revisions</strong> <a class="anchor-link"
+            href="#revisions"
+            title="Permalink to DriveApi.revisions">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+RevisionsResource get revisions =&gt; _revisions;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to DriveApi.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userAgent">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userAgent</strong> <a class="anchor-link"
+            href="#userAgent"
+            title="Permalink to DriveApi.userAgent">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String get userAgent {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}drive/v2/20121016 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="userIp">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to DriveApi.userIp">#</a>
@@ -365,6 +525,114 @@ limits.</p>
 <pre class="source">
 core.String userIp;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to DriveApi.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="DriveApi">
+<button class="show-code">Code</button>
+new <strong>DriveApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/drive/v2/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#DriveApi"
+              title="Permalink to DriveApi.DriveApi">#</a></h4>
+<div class="doc">
+<pre class="source">
+DriveApi({this.baseUrl:"https://www.googleapis.com/drive/v2/", applicationName, this.authenticator}) :
+    this.applicationName = (applicationName == null) ? null : applicationName
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+{ 
+  _files = new FilesResource._internal(this);
+  _about = new AboutResource._internal(this);
+  _apps = new AppsResource._internal(this);
+  _comments = new CommentsResource._internal(this);
+  _parents = new ParentsResource._internal(this);
+  _replies = new RepliesResource._internal(this);
+  _revisions = new RevisionsResource._internal(this);
+  _changes = new ChangesResource._internal(this);
+  _children = new ChildrenResource._internal(this);
+  _permissions = new PermissionsResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to DriveApi.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to DriveApi.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to DriveApi.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to DriveApi.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

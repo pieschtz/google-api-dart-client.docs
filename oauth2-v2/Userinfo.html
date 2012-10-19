@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Userinfo Class / oauth2-v2 Library / Dart Documentation</title>
+        <title>Userinfo class / oauth2-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,109 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../oauth2-v2.html">oauth2-v2</a> &rsaquo; <a href="../oauth2-v2/Userinfo.html">Userinfo</a></div>
+         &rsaquo; <a href="../oauth2-v2.html">oauth2-v2</a> &rsaquo; <a href="../oauth2-v2/Userinfo.html">Userinfo</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Userinfo</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Userinfo extends IdentityHash {
+  /** The user's last name. */
+  core.String familyName;
 
+  /** The user's full name. */
+  core.String name;
+
+  /** URL of the user's picture image. */
+  core.String picture;
+
+  /** The user's default locale. */
+  core.String locale;
+
+  /** The user's gender. */
+  core.String gender;
+
+  /** The user's email address. */
+  core.String email;
+
+  /** The user's birthday. The year is not present. */
+  core.String birthday;
+
+  /** URL of the profile page. */
+  core.String link;
+
+  /** The user's first name. */
+  core.String givenName;
+
+  /** The user's default timezone. */
+  core.String timezone;
+
+  /** The focus obfuscated gaia id of the user. */
+  core.String id;
+
+  /** Boolean flag which is true if the email address is verified. */
+  core.bool verifiedEmail;
+
+  /** Parses an instance from its JSON representation. */
+  static Userinfo parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Userinfo();
+    result.familyName = identity(json["family_name"]);
+    result.name = identity(json["name"]);
+    result.picture = identity(json["picture"]);
+    result.locale = identity(json["locale"]);
+    result.gender = identity(json["gender"]);
+    result.email = identity(json["email"]);
+    result.birthday = identity(json["birthday"]);
+    result.link = identity(json["link"]);
+    result.givenName = identity(json["given_name"]);
+    result.timezone = identity(json["timezone"]);
+    result.id = identity(json["id"]);
+    result.verifiedEmail = identity(json["verified_email"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Userinfo value) {
+    if (value == null) return null;
+    final result = {};
+    result["family_name"] = identity(value.familyName);
+    result["name"] = identity(value.name);
+    result["picture"] = identity(value.picture);
+    result["locale"] = identity(value.locale);
+    result["gender"] = identity(value.gender);
+    result["email"] = identity(value.email);
+    result["birthday"] = identity(value.birthday);
+    result["link"] = identity(value.link);
+    result["given_name"] = identity(value.givenName);
+    result["timezone"] = identity(value.timezone);
+    result["id"] = identity(value.id);
+    result["verified_email"] = identity(value.verifiedEmail);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Userinfo</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../oauth2-v2/Userinfo.html">Userinfo</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Userinfo.parse">#</a></h4>
 <div class="doc">
@@ -58,7 +143,7 @@ static Userinfo parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../oauth2-v2/Userinfo.html">Userinfo</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Userinfo.serialize">#</a></h4>
 <div class="doc">
@@ -84,21 +169,11 @@ static core.Object serialize(Userinfo value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Userinfo.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="birthday">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>birthday</strong> <a class="anchor-link"
             href="#birthday"
             title="Permalink to Userinfo.birthday">#</a>
@@ -111,7 +186,7 @@ core.String birthday;
 </div>
 </div>
 <div class="field"><h4 id="email">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>email</strong> <a class="anchor-link"
             href="#email"
             title="Permalink to Userinfo.email">#</a>
@@ -124,7 +199,7 @@ core.String email;
 </div>
 </div>
 <div class="field"><h4 id="familyName">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>familyName</strong> <a class="anchor-link"
             href="#familyName"
             title="Permalink to Userinfo.familyName">#</a>
@@ -137,7 +212,7 @@ core.String familyName;
 </div>
 </div>
 <div class="field"><h4 id="gender">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>gender</strong> <a class="anchor-link"
             href="#gender"
             title="Permalink to Userinfo.gender">#</a>
@@ -150,7 +225,7 @@ core.String gender;
 </div>
 </div>
 <div class="field"><h4 id="givenName">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>givenName</strong> <a class="anchor-link"
             href="#givenName"
             title="Permalink to Userinfo.givenName">#</a>
@@ -163,7 +238,7 @@ core.String givenName;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Userinfo.id">#</a>
@@ -176,7 +251,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="link">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>link</strong> <a class="anchor-link"
             href="#link"
             title="Permalink to Userinfo.link">#</a>
@@ -189,7 +264,7 @@ core.String link;
 </div>
 </div>
 <div class="field"><h4 id="locale">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>locale</strong> <a class="anchor-link"
             href="#locale"
             title="Permalink to Userinfo.locale">#</a>
@@ -202,7 +277,7 @@ core.String locale;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Userinfo.name">#</a>
@@ -215,7 +290,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="picture">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>picture</strong> <a class="anchor-link"
             href="#picture"
             title="Permalink to Userinfo.picture">#</a>
@@ -227,8 +302,21 @@ core.String picture;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Userinfo.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="timezone">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>timezone</strong> <a class="anchor-link"
             href="#timezone"
             title="Permalink to Userinfo.timezone">#</a>
@@ -241,7 +329,7 @@ core.String timezone;
 </div>
 </div>
 <div class="field"><h4 id="verifiedEmail">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>verifiedEmail</strong> <a class="anchor-link"
             href="#verifiedEmail"
             title="Permalink to Userinfo.verifiedEmail">#</a>
@@ -251,6 +339,103 @@ core.String timezone;
 <pre class="source">
 core.bool verifiedEmail;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Userinfo.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Userinfo.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Userinfo.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Userinfo.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Userinfo.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Userinfo.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

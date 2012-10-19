@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>BigqueryApi Class / bigquery-v2 Library / Dart Documentation</title>
+        <title>BigqueryApi class / bigquery-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,30 +14,121 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a></div>
+         &rsaquo; <a href="../bigquery-v2.html">bigquery-v2</a> &rsaquo; <a href="../bigquery-v2/BigqueryApi.html">BigqueryApi</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>BigqueryApi</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
 <p>A data platform for customers to create, manage, share and query data.</p>
+<pre class="source">
+class BigqueryApi extends core.Object {
+  /** The API root, such as [:https://www.googleapis.com:] */
+  final core.String baseUrl;
+  /** How we should identify ourselves to the service. */
+  http.Authenticator authenticator;
+  /** The client library version */
+  final core.String clientVersion = "0.1";
+  /** The application name, used in the user-agent header */
+  final core.String applicationName;
+  BigqueryApi get _$service =&gt; this;
+  TablesResource _tables;
+  TablesResource get tables =&gt; _tables;
+  DatasetsResource _datasets;
+  DatasetsResource get datasets =&gt; _datasets;
+  JobsResource _jobs;
+  JobsResource get jobs =&gt; _jobs;
+  TabledataResource _tabledata;
+  TabledataResource get tabledata =&gt; _tabledata;
+  ProjectsResource _projects;
+  ProjectsResource get projects =&gt; _projects;
+  
+  /** Returns response with indentations and line breaks. */
+  core.bool prettyPrint;
+
+  /** Selector specifying which fields to include in a partial response. */
+  core.String fields;
+
+  /**
+   * Available to use for quota purposes for server-side applications. Can be any arbitrary string
+   * assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+   */
+  core.String quotaUser;
+
+  /** OAuth 2.0 token for the current user. */
+  core.String oauthToken;
+
+  /**
+   * API key. Your API key identifies your project and provides you with API access, quota, and
+   * reports. Required unless you provide an OAuth 2.0 token.
+   */
+  core.String key;
+
+  /**
+   * IP address of the site where the request originates. Use this if you want to enforce per-user
+   * limits.
+   */
+  core.String userIp;
+
+  /** Data format for the response. */
+  BigqueryApiAlt alt;
+
+
+  BigqueryApi({this.baseUrl:"https://www.googleapis.com/bigquery/v2/", applicationName, this.authenticator}) :
+      this.applicationName = (applicationName == null) ? null : applicationName
+          .replaceAll(const core.RegExp(r'\s+'), '_')
+          .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+  { 
+    _tables = new TablesResource._internal(this);
+    _datasets = new DatasetsResource._internal(this);
+    _jobs = new JobsResource._internal(this);
+    _tabledata = new TabledataResource._internal(this);
+    _projects = new ProjectsResource._internal(this);
+  }
+  core.String get userAgent {
+    var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+    return "${uaPrefix}bigquery/v2/20121014 google-api-dart-client/${clientVersion}";
+  }
+
+
+  /** OAuth2 scope: View and manage your data in Google BigQuery */
+  static final core.String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
+
+  /** OAuth2 scope: Manage your data and permissions in Google Cloud Storage */
+  static final core.String DEVSTORAGE_FULL_CONTROL_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
+
+  /** OAuth2 scope: View your data in Google Cloud Storage */
+  static final core.String DEVSTORAGE_READ_ONLY_SCOPE = "https://www.googleapis.com/auth/devstorage.read_only";
+
+  /** OAuth2 scope: Manage your data in Google Cloud Storage */
+  static final core.String DEVSTORAGE_READ_WRITE_SCOPE = "https://www.googleapis.com/auth/devstorage.read_write";
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
 <div class="method"><h4 id="BigqueryApi">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 new <strong>BigqueryApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/bigquery/v2/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#BigqueryApi"
               title="Permalink to BigqueryApi.BigqueryApi">#</a></h4>
 <div class="doc">
-
 <pre class="source">
-BigqueryApi([this.baseUrl = "https://www.googleapis.com/bigquery/v2/", applicationName, this.authenticator]) :
+BigqueryApi({this.baseUrl:"https://www.googleapis.com/bigquery/v2/", applicationName, this.authenticator}) :
     this.applicationName = (applicationName == null) ? null : applicationName
-        .replaceAll(const core.RegExp(@'\s+'), '_')
-        .replaceAll(const core.RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
 { 
   _tables = new TablesResource._internal(this);
   _datasets = new DatasetsResource._internal(this);
@@ -48,9 +139,11 @@ BigqueryApi([this.baseUrl = "https://www.googleapis.com/bigquery/v2/", applicati
 </pre>
 </div>
 </div>
-<h3>Static Fields</h3>
+</div>
+<div>
+<h3>Static Properties</h3>
 <div class="field"><h4 id="BIGQUERY_SCOPE">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>BIGQUERY_SCOPE</strong> <a class="anchor-link"
             href="#BIGQUERY_SCOPE"
             title="Permalink to BigqueryApi.BIGQUERY_SCOPE">#</a>
@@ -62,79 +155,50 @@ static final core.String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigqu
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="datasets">
-<span class="show-code">Code</span>
-<a href="../bigquery-v2/DatasetsResource.html">DatasetsResource</a> <strong>get datasets</strong>() <a class="anchor-link" href="#datasets"
-              title="Permalink to BigqueryApi.get datasets">#</a></h4>
-<div class="doc">
-
+<div class="field"><h4 id="DEVSTORAGE_FULL_CONTROL_SCOPE">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>DEVSTORAGE_FULL_CONTROL_SCOPE</strong> <a class="anchor-link"
+            href="#DEVSTORAGE_FULL_CONTROL_SCOPE"
+            title="Permalink to BigqueryApi.DEVSTORAGE_FULL_CONTROL_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: Manage your data and permissions in Google Cloud Storage</p>
 <pre class="source">
-DatasetsResource get datasets() =&gt; _datasets;
+static final core.String DEVSTORAGE_FULL_CONTROL_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="jobs">
-<span class="show-code">Code</span>
-<a href="../bigquery-v2/JobsResource.html">JobsResource</a> <strong>get jobs</strong>() <a class="anchor-link" href="#jobs"
-              title="Permalink to BigqueryApi.get jobs">#</a></h4>
-<div class="doc">
-
+<div class="field"><h4 id="DEVSTORAGE_READ_ONLY_SCOPE">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>DEVSTORAGE_READ_ONLY_SCOPE</strong> <a class="anchor-link"
+            href="#DEVSTORAGE_READ_ONLY_SCOPE"
+            title="Permalink to BigqueryApi.DEVSTORAGE_READ_ONLY_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View your data in Google Cloud Storage</p>
 <pre class="source">
-JobsResource get jobs() =&gt; _jobs;
+static final core.String DEVSTORAGE_READ_ONLY_SCOPE = "https://www.googleapis.com/auth/devstorage.read_only";
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="projects">
-<span class="show-code">Code</span>
-<a href="../bigquery-v2/ProjectsResource.html">ProjectsResource</a> <strong>get projects</strong>() <a class="anchor-link" href="#projects"
-              title="Permalink to BigqueryApi.get projects">#</a></h4>
-<div class="doc">
-
+<div class="field"><h4 id="DEVSTORAGE_READ_WRITE_SCOPE">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>DEVSTORAGE_READ_WRITE_SCOPE</strong> <a class="anchor-link"
+            href="#DEVSTORAGE_READ_WRITE_SCOPE"
+            title="Permalink to BigqueryApi.DEVSTORAGE_READ_WRITE_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: Manage your data in Google Cloud Storage</p>
 <pre class="source">
-ProjectsResource get projects() =&gt; _projects;
+static final core.String DEVSTORAGE_READ_WRITE_SCOPE = "https://www.googleapis.com/auth/devstorage.read_write";
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="tabledata">
-<span class="show-code">Code</span>
-<a href="../bigquery-v2/TabledataResource.html">TabledataResource</a> <strong>get tabledata</strong>() <a class="anchor-link" href="#tabledata"
-              title="Permalink to BigqueryApi.get tabledata">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-TabledataResource get tabledata() =&gt; _tabledata;
-</pre>
 </div>
-</div>
-<div class="method"><h4 id="tables">
-<span class="show-code">Code</span>
-<a href="../bigquery-v2/TablesResource.html">TablesResource</a> <strong>get tables</strong>() <a class="anchor-link" href="#tables"
-              title="Permalink to BigqueryApi.get tables">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-TablesResource get tables() =&gt; _tables;
-</pre>
-</div>
-</div>
-<div class="method"><h4 id="userAgent">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
-              title="Permalink to BigqueryApi.get userAgent">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-core.String get userAgent() {
-  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
-  return "${uaPrefix}bigquery/v2/20120807 google-api-dart-client/${clientVersion}";
-}
-</pre>
-</div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="alt">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../bigquery-v2/BigqueryApiAlt.html">BigqueryApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
             href="#alt"
             title="Permalink to BigqueryApi.alt">#</a>
@@ -147,7 +211,7 @@ BigqueryApiAlt alt;
 </div>
 </div>
 <div class="field"><h4 id="applicationName">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to BigqueryApi.applicationName">#</a>
@@ -160,7 +224,7 @@ final core.String applicationName;
 </div>
 </div>
 <div class="field"><h4 id="authenticator">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
             href="#authenticator"
             title="Permalink to BigqueryApi.authenticator">#</a>
@@ -168,12 +232,12 @@ final core.String applicationName;
         <div class="doc">
 <p>How we should identify ourselves to the service.</p>
 <pre class="source">
-Authenticator authenticator;
+http.Authenticator authenticator;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="baseUrl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to BigqueryApi.baseUrl">#</a>
@@ -186,7 +250,7 @@ final core.String baseUrl;
 </div>
 </div>
 <div class="field"><h4 id="clientVersion">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to BigqueryApi.clientVersion">#</a>
@@ -198,8 +262,20 @@ final core.String clientVersion = "0.1";
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="datasets">
+<button class="show-code">Code</button>
+final <a href="../bigquery-v2/DatasetsResource.html">DatasetsResource</a>         <strong>datasets</strong> <a class="anchor-link"
+            href="#datasets"
+            title="Permalink to BigqueryApi.datasets">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+DatasetsResource get datasets =&gt; _datasets;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="fields">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to BigqueryApi.fields">#</a>
@@ -211,8 +287,20 @@ core.String fields;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="jobs">
+<button class="show-code">Code</button>
+final <a href="../bigquery-v2/JobsResource.html">JobsResource</a>         <strong>jobs</strong> <a class="anchor-link"
+            href="#jobs"
+            title="Permalink to BigqueryApi.jobs">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+JobsResource get jobs =&gt; _jobs;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="key">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to BigqueryApi.key">#</a>
@@ -226,7 +314,7 @@ core.String key;
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to BigqueryApi.oauthToken">#</a>
@@ -239,7 +327,7 @@ core.String oauthToken;
 </div>
 </div>
 <div class="field"><h4 id="prettyPrint">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to BigqueryApi.prettyPrint">#</a>
@@ -251,8 +339,20 @@ core.bool prettyPrint;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="projects">
+<button class="show-code">Code</button>
+final <a href="../bigquery-v2/ProjectsResource.html">ProjectsResource</a>         <strong>projects</strong> <a class="anchor-link"
+            href="#projects"
+            title="Permalink to BigqueryApi.projects">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+ProjectsResource get projects =&gt; _projects;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="quotaUser">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to BigqueryApi.quotaUser">#</a>
@@ -265,8 +365,60 @@ core.String quotaUser;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to BigqueryApi.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="tabledata">
+<button class="show-code">Code</button>
+final <a href="../bigquery-v2/TabledataResource.html">TabledataResource</a>         <strong>tabledata</strong> <a class="anchor-link"
+            href="#tabledata"
+            title="Permalink to BigqueryApi.tabledata">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+TabledataResource get tabledata =&gt; _tabledata;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="tables">
+<button class="show-code">Code</button>
+final <a href="../bigquery-v2/TablesResource.html">TablesResource</a>         <strong>tables</strong> <a class="anchor-link"
+            href="#tables"
+            title="Permalink to BigqueryApi.tables">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+TablesResource get tables =&gt; _tables;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userAgent">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userAgent</strong> <a class="anchor-link"
+            href="#userAgent"
+            title="Permalink to BigqueryApi.userAgent">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String get userAgent {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}bigquery/v2/20121014 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="userIp">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to BigqueryApi.userIp">#</a>
@@ -277,6 +429,109 @@ limits.</p>
 <pre class="source">
 core.String userIp;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to BigqueryApi.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="BigqueryApi">
+<button class="show-code">Code</button>
+new <strong>BigqueryApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/bigquery/v2/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#BigqueryApi"
+              title="Permalink to BigqueryApi.BigqueryApi">#</a></h4>
+<div class="doc">
+<pre class="source">
+BigqueryApi({this.baseUrl:"https://www.googleapis.com/bigquery/v2/", applicationName, this.authenticator}) :
+    this.applicationName = (applicationName == null) ? null : applicationName
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+{ 
+  _tables = new TablesResource._internal(this);
+  _datasets = new DatasetsResource._internal(this);
+  _jobs = new JobsResource._internal(this);
+  _tabledata = new TabledataResource._internal(this);
+  _projects = new ProjectsResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to BigqueryApi.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to BigqueryApi.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to BigqueryApi.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to BigqueryApi.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

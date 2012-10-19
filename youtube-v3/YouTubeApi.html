@@ -1,0 +1,614 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>YouTubeApi class / youtube-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="youtube-v3" data-type="YouTubeApi">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../youtube-v3.html">youtube-v3</a> &rsaquo; <a href="../youtube-v3/YouTubeApi.html">YouTubeApi</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>YouTubeApi</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>Programmatic access to YouTube features.</p>
+<pre class="source">
+class YouTubeApi extends core.Object {
+  /** The API root, such as [:https://www.googleapis.com:] */
+  final core.String baseUrl;
+  /** How we should identify ourselves to the service. */
+  http.Authenticator authenticator;
+  /** The client library version */
+  final core.String clientVersion = "0.1";
+  /** The application name, used in the user-agent header */
+  final core.String applicationName;
+  YouTubeApi get _$service =&gt; this;
+  ActivitiesResource _activities;
+  ActivitiesResource get activities =&gt; _activities;
+  SearchResource _search;
+  SearchResource get search =&gt; _search;
+  GuideCategoriesResource _guideCategories;
+  GuideCategoriesResource get guideCategories =&gt; _guideCategories;
+  PlaylistsResource _playlists;
+  PlaylistsResource get playlists =&gt; _playlists;
+  VideosResource _videos;
+  VideosResource get videos =&gt; _videos;
+  ChannelsResource _channels;
+  ChannelsResource get channels =&gt; _channels;
+  PlaylistItemsResource _playlistItems;
+  PlaylistItemsResource get playlistItems =&gt; _playlistItems;
+  VideoCategoriesResource _videoCategories;
+  VideoCategoriesResource get videoCategories =&gt; _videoCategories;
+  SubscriptionResource _subscription;
+  SubscriptionResource get subscription =&gt; _subscription;
+  
+  /** Returns response with indentations and line breaks. */
+  core.bool prettyPrint;
+
+  /** Selector specifying which fields to include in a partial response. */
+  core.String fields;
+
+  /**
+   * Available to use for quota purposes for server-side applications. Can be any arbitrary string
+   * assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+   */
+  core.String quotaUser;
+
+  /** OAuth 2.0 token for the current user. */
+  core.String oauthToken;
+
+  /**
+   * API key. Your API key identifies your project and provides you with API access, quota, and
+   * reports. Required unless you provide an OAuth 2.0 token.
+   */
+  core.String key;
+
+  /**
+   * IP address of the site where the request originates. Use this if you want to enforce per-user
+   * limits.
+   */
+  core.String userIp;
+
+  /** Data format for the response. */
+  YouTubeApiAlt alt;
+
+
+  YouTubeApi({this.baseUrl:"https://www.googleapis.com/youtube/v3/", applicationName, this.authenticator}) :
+      this.applicationName = (applicationName == null) ? null : applicationName
+          .replaceAll(const core.RegExp(r'\s+'), '_')
+          .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+  { 
+    _activities = new ActivitiesResource._internal(this);
+    _search = new SearchResource._internal(this);
+    _guideCategories = new GuideCategoriesResource._internal(this);
+    _playlists = new PlaylistsResource._internal(this);
+    _videos = new VideosResource._internal(this);
+    _channels = new ChannelsResource._internal(this);
+    _playlistItems = new PlaylistItemsResource._internal(this);
+    _videoCategories = new VideoCategoriesResource._internal(this);
+    _subscription = new SubscriptionResource._internal(this);
+  }
+  core.String get userAgent {
+    var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+    return "${uaPrefix}youtube/v3/20121013 google-api-dart-client/${clientVersion}";
+  }
+
+
+  /** OAuth2 scope: Manage your YouTube account */
+  static final core.String YOUTUBE_SCOPE = "https://www.googleapis.com/auth/youtube";
+
+  /** OAuth2 scope: View your YouTube account */
+  static final core.String YOUTUBE_READONLY_SCOPE = "https://www.googleapis.com/auth/youtube.readonly";
+
+  /** OAuth2 scope: Manage your YouTube videos */
+  static final core.String YOUTUBE_UPLOAD_SCOPE = "https://www.googleapis.com/auth/youtube.upload";
+
+  /** OAuth2 scope: View and manage your assets and associated content on YouTube */
+  static final core.String YOUTUBEPARTNER_SCOPE = "https://www.googleapis.com/auth/youtubepartner";
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="YouTubeApi">
+<button class="show-code">Code</button>
+new <strong>YouTubeApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/youtube/v3/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#YouTubeApi"
+              title="Permalink to YouTubeApi.YouTubeApi">#</a></h4>
+<div class="doc">
+<pre class="source">
+YouTubeApi({this.baseUrl:"https://www.googleapis.com/youtube/v3/", applicationName, this.authenticator}) :
+    this.applicationName = (applicationName == null) ? null : applicationName
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+{ 
+  _activities = new ActivitiesResource._internal(this);
+  _search = new SearchResource._internal(this);
+  _guideCategories = new GuideCategoriesResource._internal(this);
+  _playlists = new PlaylistsResource._internal(this);
+  _videos = new VideosResource._internal(this);
+  _channels = new ChannelsResource._internal(this);
+  _playlistItems = new PlaylistItemsResource._internal(this);
+  _videoCategories = new VideoCategoriesResource._internal(this);
+  _subscription = new SubscriptionResource._internal(this);
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Static Properties</h3>
+<div class="field"><h4 id="YOUTUBE_READONLY_SCOPE">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>YOUTUBE_READONLY_SCOPE</strong> <a class="anchor-link"
+            href="#YOUTUBE_READONLY_SCOPE"
+            title="Permalink to YouTubeApi.YOUTUBE_READONLY_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View your YouTube account</p>
+<pre class="source">
+static final core.String YOUTUBE_READONLY_SCOPE = "https://www.googleapis.com/auth/youtube.readonly";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="YOUTUBE_SCOPE">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>YOUTUBE_SCOPE</strong> <a class="anchor-link"
+            href="#YOUTUBE_SCOPE"
+            title="Permalink to YouTubeApi.YOUTUBE_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: Manage your YouTube account</p>
+<pre class="source">
+static final core.String YOUTUBE_SCOPE = "https://www.googleapis.com/auth/youtube";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="YOUTUBE_UPLOAD_SCOPE">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>YOUTUBE_UPLOAD_SCOPE</strong> <a class="anchor-link"
+            href="#YOUTUBE_UPLOAD_SCOPE"
+            title="Permalink to YouTubeApi.YOUTUBE_UPLOAD_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: Manage your YouTube videos</p>
+<pre class="source">
+static final core.String YOUTUBE_UPLOAD_SCOPE = "https://www.googleapis.com/auth/youtube.upload";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="YOUTUBEPARTNER_SCOPE">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>YOUTUBEPARTNER_SCOPE</strong> <a class="anchor-link"
+            href="#YOUTUBEPARTNER_SCOPE"
+            title="Permalink to YouTubeApi.YOUTUBEPARTNER_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View and manage your assets and associated content on YouTube</p>
+<pre class="source">
+static final core.String YOUTUBEPARTNER_SCOPE = "https://www.googleapis.com/auth/youtubepartner";
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="activities">
+<button class="show-code">Code</button>
+final <a href="../youtube-v3/ActivitiesResource.html">ActivitiesResource</a>         <strong>activities</strong> <a class="anchor-link"
+            href="#activities"
+            title="Permalink to YouTubeApi.activities">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+ActivitiesResource get activities =&gt; _activities;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="alt">
+<button class="show-code">Code</button>
+<a href="../youtube-v3/YouTubeApiAlt.html">YouTubeApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
+            href="#alt"
+            title="Permalink to YouTubeApi.alt">#</a>
+        </h4>
+        <div class="doc">
+<p>Data format for the response.</p>
+<pre class="source">
+YouTubeApiAlt alt;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="applicationName">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+            href="#applicationName"
+            title="Permalink to YouTubeApi.applicationName">#</a>
+        </h4>
+        <div class="doc">
+<p>The application name, used in the user-agent header</p>
+<pre class="source">
+final core.String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<button class="show-code">Code</button>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to YouTubeApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+http.Authenticator authenticator;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="baseUrl">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+            href="#baseUrl"
+            title="Permalink to YouTubeApi.baseUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The API root, such as <code>https://www.googleapis.com</code></p>
+<pre class="source">
+final core.String baseUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="channels">
+<button class="show-code">Code</button>
+final <a href="../youtube-v3/ChannelsResource.html">ChannelsResource</a>         <strong>channels</strong> <a class="anchor-link"
+            href="#channels"
+            title="Permalink to YouTubeApi.channels">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+ChannelsResource get channels =&gt; _channels;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clientVersion">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+            href="#clientVersion"
+            title="Permalink to YouTubeApi.clientVersion">#</a>
+        </h4>
+        <div class="doc">
+<p>The client library version</p>
+<pre class="source">
+final core.String clientVersion = "0.1";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fields">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+            href="#fields"
+            title="Permalink to YouTubeApi.fields">#</a>
+        </h4>
+        <div class="doc">
+<p>Selector specifying which fields to include in a partial response.</p>
+<pre class="source">
+core.String fields;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="guideCategories">
+<button class="show-code">Code</button>
+final <a href="../youtube-v3/GuideCategoriesResource.html">GuideCategoriesResource</a>         <strong>guideCategories</strong> <a class="anchor-link"
+            href="#guideCategories"
+            title="Permalink to YouTubeApi.guideCategories">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+GuideCategoriesResource get guideCategories =&gt; _guideCategories;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="key">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+            href="#key"
+            title="Permalink to YouTubeApi.key">#</a>
+        </h4>
+        <div class="doc">
+<p>API key. Your API key identifies your project and provides you with API access, quota, and
+reports. Required unless you provide an OAuth 2.0 token.</p>
+<pre class="source">
+core.String key;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="oauthToken">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+            href="#oauthToken"
+            title="Permalink to YouTubeApi.oauthToken">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth 2.0 token for the current user.</p>
+<pre class="source">
+core.String oauthToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="playlistItems">
+<button class="show-code">Code</button>
+final <a href="../youtube-v3/PlaylistItemsResource.html">PlaylistItemsResource</a>         <strong>playlistItems</strong> <a class="anchor-link"
+            href="#playlistItems"
+            title="Permalink to YouTubeApi.playlistItems">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+PlaylistItemsResource get playlistItems =&gt; _playlistItems;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="playlists">
+<button class="show-code">Code</button>
+final <a href="../youtube-v3/PlaylistsResource.html">PlaylistsResource</a>         <strong>playlists</strong> <a class="anchor-link"
+            href="#playlists"
+            title="Permalink to YouTubeApi.playlists">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+PlaylistsResource get playlists =&gt; _playlists;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prettyPrint">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+            href="#prettyPrint"
+            title="Permalink to YouTubeApi.prettyPrint">#</a>
+        </h4>
+        <div class="doc">
+<p>Returns response with indentations and line breaks.</p>
+<pre class="source">
+core.bool prettyPrint;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaUser">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+            href="#quotaUser"
+            title="Permalink to YouTubeApi.quotaUser">#</a>
+        </h4>
+        <div class="doc">
+<p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
+<pre class="source">
+core.String quotaUser;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to YouTubeApi.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="search">
+<button class="show-code">Code</button>
+final <a href="../youtube-v3/SearchResource.html">SearchResource</a>         <strong>search</strong> <a class="anchor-link"
+            href="#search"
+            title="Permalink to YouTubeApi.search">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+SearchResource get search =&gt; _search;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="subscription">
+<button class="show-code">Code</button>
+final <a href="../youtube-v3/SubscriptionResource.html">SubscriptionResource</a>         <strong>subscription</strong> <a class="anchor-link"
+            href="#subscription"
+            title="Permalink to YouTubeApi.subscription">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+SubscriptionResource get subscription =&gt; _subscription;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userAgent">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userAgent</strong> <a class="anchor-link"
+            href="#userAgent"
+            title="Permalink to YouTubeApi.userAgent">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String get userAgent {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}youtube/v3/20121013 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userIp">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+            href="#userIp"
+            title="Permalink to YouTubeApi.userIp">#</a>
+        </h4>
+        <div class="doc">
+<p>IP address of the site where the request originates. Use this if you want to enforce per-user
+limits.</p>
+<pre class="source">
+core.String userIp;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="videoCategories">
+<button class="show-code">Code</button>
+final <a href="../youtube-v3/VideoCategoriesResource.html">VideoCategoriesResource</a>         <strong>videoCategories</strong> <a class="anchor-link"
+            href="#videoCategories"
+            title="Permalink to YouTubeApi.videoCategories">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+VideoCategoriesResource get videoCategories =&gt; _videoCategories;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="videos">
+<button class="show-code">Code</button>
+final <a href="../youtube-v3/VideosResource.html">VideosResource</a>         <strong>videos</strong> <a class="anchor-link"
+            href="#videos"
+            title="Permalink to YouTubeApi.videos">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+VideosResource get videos =&gt; _videos;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to YouTubeApi.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to YouTubeApi.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to YouTubeApi.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to YouTubeApi.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to YouTubeApi.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="YouTubeApi">
+<button class="show-code">Code</button>
+new <strong>YouTubeApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/youtube/v3/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#YouTubeApi"
+              title="Permalink to YouTubeApi.YouTubeApi">#</a></h4>
+<div class="doc">
+<pre class="source">
+YouTubeApi({this.baseUrl:"https://www.googleapis.com/youtube/v3/", applicationName, this.authenticator}) :
+    this.applicationName = (applicationName == null) ? null : applicationName
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+{ 
+  _activities = new ActivitiesResource._internal(this);
+  _search = new SearchResource._internal(this);
+  _guideCategories = new GuideCategoriesResource._internal(this);
+  _playlists = new PlaylistsResource._internal(this);
+  _videos = new VideosResource._internal(this);
+  _channels = new ChannelsResource._internal(this);
+  _playlistItems = new PlaylistItemsResource._internal(this);
+  _videoCategories = new VideoCategoriesResource._internal(this);
+  _subscription = new SubscriptionResource._internal(this);
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,428 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>ReportPathToConversionCriteriaReportProperties class / dfareporting-v1.1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="dfareporting-v1.1" data-type="ReportPathToConversionCriteriaReportProperties">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../dfareporting-v1.1.html">dfareporting-v1.1</a> &rsaquo; <a href="../dfareporting-v1.1/ReportPathToConversionCriteriaReportProperties.html">ReportPathToConversionCriteriaReportProperties</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>ReportPathToConversionCriteriaReportProperties</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class ReportPathToConversionCriteriaReportProperties extends IdentityHash {
+  /**
+ * DFA checks to see if a click interaction occurred within the specified period of time before a
+ * conversion. By default the value is pulled from Floodlight or you can manually enter a custom
+ * value. Valid values: 1-90.
+ */
+  core.int clicksLookbackWindow;
+
+  /** Enable pivoting on interaction path. */
+  core.bool pivotOnInteractionPath;
+
+  /**
+ * DFA checks to see if an impression interaction occurred within the specified period of time
+ * before a conversion. By default the value is pulled from Floodlight or you can manually enter a
+ * custom value. Valid values: 1-90.
+ */
+  core.int impressionsLookbackWindow;
+
+  /**
+ * Include conversions that have no associated cookies and no exposures. Its therefore impossible to
+ * know how the user was exposed to your ads during the lookback window prior to a conversion.
+ */
+  core.bool includeUnattributedIPConversions;
+
+  /**
+ * Include conversions of users with a DoubleClick cookie but without an exposure. That means the
+ * user did not click or see an ad from the advertiser within the Floodlight group, or that the
+ * interaction happened outside the lookback window.
+ */
+  core.bool includeUnattributedCookieConversions;
+
+  /**
+ * The maximum amount of time that can take place between interactions (clicks or impressions) by
+ * the same user. Valid values: 1-90.
+ */
+  core.int maximumInteractionGap;
+
+  /** Include conversions that have no cookie, but do have an exposure path. */
+  core.bool includeAttributedIPConversions;
+
+  /**
+ * The maximum number of click interactions to include in the report. Advertisers currently paying
+ * for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your
+ * network is paying for E2C, you can have up to 5 total exposures per report.
+ */
+  core.int maximumClickInteractions;
+
+  /**
+ * The maximum number of click interactions to include in the report. Advertisers currently paying
+ * for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your
+ * network is paying for E2C, you can have up to 5 total exposures per report.
+ */
+  core.int maximumImpressionInteractions;
+
+  /** Parses an instance from its JSON representation. */
+  static ReportPathToConversionCriteriaReportProperties parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new ReportPathToConversionCriteriaReportProperties();
+    result.clicksLookbackWindow = identity(json["clicksLookbackWindow"]);
+    result.pivotOnInteractionPath = identity(json["pivotOnInteractionPath"]);
+    result.impressionsLookbackWindow = identity(json["impressionsLookbackWindow"]);
+    result.includeUnattributedIPConversions = identity(json["includeUnattributedIPConversions"]);
+    result.includeUnattributedCookieConversions = identity(json["includeUnattributedCookieConversions"]);
+    result.maximumInteractionGap = identity(json["maximumInteractionGap"]);
+    result.includeAttributedIPConversions = identity(json["includeAttributedIPConversions"]);
+    result.maximumClickInteractions = identity(json["maximumClickInteractions"]);
+    result.maximumImpressionInteractions = identity(json["maximumImpressionInteractions"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(ReportPathToConversionCriteriaReportProperties value) {
+    if (value == null) return null;
+    final result = {};
+    result["clicksLookbackWindow"] = identity(value.clicksLookbackWindow);
+    result["pivotOnInteractionPath"] = identity(value.pivotOnInteractionPath);
+    result["impressionsLookbackWindow"] = identity(value.impressionsLookbackWindow);
+    result["includeUnattributedIPConversions"] = identity(value.includeUnattributedIPConversions);
+    result["includeUnattributedCookieConversions"] = identity(value.includeUnattributedCookieConversions);
+    result["maximumInteractionGap"] = identity(value.maximumInteractionGap);
+    result["includeAttributedIPConversions"] = identity(value.includeAttributedIPConversions);
+    result["maximumClickInteractions"] = identity(value.maximumClickInteractions);
+    result["maximumImpressionInteractions"] = identity(value.maximumImpressionInteractions);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>ReportPathToConversionCriteriaReportProperties</strong></span></p>
+<div>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<button class="show-code">Code</button>
+<a href="../dfareporting-v1.1/ReportPathToConversionCriteriaReportProperties.html">ReportPathToConversionCriteriaReportProperties</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to ReportPathToConversionCriteriaReportProperties.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static ReportPathToConversionCriteriaReportProperties parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new ReportPathToConversionCriteriaReportProperties();
+  result.clicksLookbackWindow = identity(json["clicksLookbackWindow"]);
+  result.pivotOnInteractionPath = identity(json["pivotOnInteractionPath"]);
+  result.impressionsLookbackWindow = identity(json["impressionsLookbackWindow"]);
+  result.includeUnattributedIPConversions = identity(json["includeUnattributedIPConversions"]);
+  result.includeUnattributedCookieConversions = identity(json["includeUnattributedCookieConversions"]);
+  result.maximumInteractionGap = identity(json["maximumInteractionGap"]);
+  result.includeAttributedIPConversions = identity(json["includeAttributedIPConversions"]);
+  result.maximumClickInteractions = identity(json["maximumClickInteractions"]);
+  result.maximumImpressionInteractions = identity(json["maximumImpressionInteractions"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../dfareporting-v1.1/ReportPathToConversionCriteriaReportProperties.html">ReportPathToConversionCriteriaReportProperties</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to ReportPathToConversionCriteriaReportProperties.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(ReportPathToConversionCriteriaReportProperties value) {
+  if (value == null) return null;
+  final result = {};
+  result["clicksLookbackWindow"] = identity(value.clicksLookbackWindow);
+  result["pivotOnInteractionPath"] = identity(value.pivotOnInteractionPath);
+  result["impressionsLookbackWindow"] = identity(value.impressionsLookbackWindow);
+  result["includeUnattributedIPConversions"] = identity(value.includeUnattributedIPConversions);
+  result["includeUnattributedCookieConversions"] = identity(value.includeUnattributedCookieConversions);
+  result["maximumInteractionGap"] = identity(value.maximumInteractionGap);
+  result["includeAttributedIPConversions"] = identity(value.includeAttributedIPConversions);
+  result["maximumClickInteractions"] = identity(value.maximumClickInteractions);
+  result["maximumImpressionInteractions"] = identity(value.maximumImpressionInteractions);
+  return result;
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="clicksLookbackWindow">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>clicksLookbackWindow</strong> <a class="anchor-link"
+            href="#clicksLookbackWindow"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.clicksLookbackWindow">#</a>
+        </h4>
+        <div class="doc">
+<p>DFA checks to see if a click interaction occurred within the specified period of time before a
+conversion. By default the value is pulled from Floodlight or you can manually enter a custom
+value. Valid values: 1-90.</p>
+<pre class="source">
+core.int clicksLookbackWindow;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="impressionsLookbackWindow">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>impressionsLookbackWindow</strong> <a class="anchor-link"
+            href="#impressionsLookbackWindow"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.impressionsLookbackWindow">#</a>
+        </h4>
+        <div class="doc">
+<p>DFA checks to see if an impression interaction occurred within the specified period of time
+before a conversion. By default the value is pulled from Floodlight or you can manually enter a
+custom value. Valid values: 1-90.</p>
+<pre class="source">
+core.int impressionsLookbackWindow;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="includeAttributedIPConversions">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>includeAttributedIPConversions</strong> <a class="anchor-link"
+            href="#includeAttributedIPConversions"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.includeAttributedIPConversions">#</a>
+        </h4>
+        <div class="doc">
+<p>Include conversions that have no cookie, but do have an exposure path.</p>
+<pre class="source">
+core.bool includeAttributedIPConversions;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="includeUnattributedCookieConversions">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>includeUnattributedCookieConversions</strong> <a class="anchor-link"
+            href="#includeUnattributedCookieConversions"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.includeUnattributedCookieConversions">#</a>
+        </h4>
+        <div class="doc">
+<p>Include conversions of users with a DoubleClick cookie but without an exposure. That means the
+user did not click or see an ad from the advertiser within the Floodlight group, or that the
+interaction happened outside the lookback window.</p>
+<pre class="source">
+core.bool includeUnattributedCookieConversions;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="includeUnattributedIPConversions">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>includeUnattributedIPConversions</strong> <a class="anchor-link"
+            href="#includeUnattributedIPConversions"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.includeUnattributedIPConversions">#</a>
+        </h4>
+        <div class="doc">
+<p>Include conversions that have no associated cookies and no exposures. Its therefore impossible to
+know how the user was exposed to your ads during the lookback window prior to a conversion.</p>
+<pre class="source">
+core.bool includeUnattributedIPConversions;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maximumClickInteractions">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>maximumClickInteractions</strong> <a class="anchor-link"
+            href="#maximumClickInteractions"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.maximumClickInteractions">#</a>
+        </h4>
+        <div class="doc">
+<p>The maximum number of click interactions to include in the report. Advertisers currently paying
+for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your
+network is paying for E2C, you can have up to 5 total exposures per report.</p>
+<pre class="source">
+core.int maximumClickInteractions;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maximumImpressionInteractions">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>maximumImpressionInteractions</strong> <a class="anchor-link"
+            href="#maximumImpressionInteractions"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.maximumImpressionInteractions">#</a>
+        </h4>
+        <div class="doc">
+<p>The maximum number of click interactions to include in the report. Advertisers currently paying
+for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your
+network is paying for E2C, you can have up to 5 total exposures per report.</p>
+<pre class="source">
+core.int maximumImpressionInteractions;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="maximumInteractionGap">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>maximumInteractionGap</strong> <a class="anchor-link"
+            href="#maximumInteractionGap"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.maximumInteractionGap">#</a>
+        </h4>
+        <div class="doc">
+<p>The maximum amount of time that can take place between interactions (clicks or impressions) by
+the same user. Valid values: 1-90.</p>
+<pre class="source">
+core.int maximumInteractionGap;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="pivotOnInteractionPath">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>pivotOnInteractionPath</strong> <a class="anchor-link"
+            href="#pivotOnInteractionPath"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.pivotOnInteractionPath">#</a>
+        </h4>
+        <div class="doc">
+<p>Enable pivoting on interaction path.</p>
+<pre class="source">
+core.bool pivotOnInteractionPath;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to ReportPathToConversionCriteriaReportProperties.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to ReportPathToConversionCriteriaReportProperties.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to ReportPathToConversionCriteriaReportProperties.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to ReportPathToConversionCriteriaReportProperties.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to ReportPathToConversionCriteriaReportProperties.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to ReportPathToConversionCriteriaReportProperties.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to ReportPathToConversionCriteriaReportProperties.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

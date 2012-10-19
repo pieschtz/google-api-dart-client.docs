@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>About Class / drive-v2 Library / Dart Documentation</title>
+        <title>About class / drive-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,152 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/About.html">About</a></div>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/About.html">About</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>About</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class About extends IdentityHash {
+  /** This is always drive#about. */
+  core.String kind;
 
+  /** List of additional features enabled on this account. */
+  core.List&lt;AboutFeatures&gt; features;
+
+  /** The number of quota bytes used. */
+  core.String quotaBytesUsed;
+
+  /** The authenticated user. */
+  User user;
+
+  /** The current user's ID as visible in the permissions collection. */
+  core.String permissionId;
+
+  /** List of max upload sizes for each file type. The most specific type takes precedence. */
+  core.List&lt;AboutMaxUploadSizes&gt; maxUploadSizes;
+
+  /** The name of the current user. */
+  core.String name;
+
+  /** The number of remaining change ids. */
+  core.String remainingChangeIds;
+
+  /**
+ * Information about supported additional roles per file type. The most specific type takes
+ * precedence.
+ */
+  core.List&lt;AboutAdditionalRoleInfo&gt; additionalRoleInfo;
+
+  /** The ETag of the item. */
+  core.String etag;
+
+  /** The allowable import formats. */
+  core.List&lt;AboutImportFormats&gt; importFormats;
+
+  /** The total number of quota bytes. */
+  core.String quotaBytesTotal;
+
+  /** The id of the root folder. */
+  core.String rootFolderId;
+
+  /** The largest change id. */
+  core.String largestChangeId;
+
+  /** The number of quota bytes used by trashed items. */
+  core.String quotaBytesUsedInTrash;
+
+  /** The allowable export formats. */
+  core.List&lt;AboutExportFormats&gt; exportFormats;
+
+  /** The number of quota bytes used by all Google apps (Drive, Picasa, etc.). */
+  core.String quotaBytesUsedAggregate;
+
+  /** The domain sharing policy for the current user. */
+  core.String domainSharingPolicy;
+
+  /** A link back to this item. */
+  core.String selfLink;
+
+  /** A boolean indicating whether the authenticated app is installed by the authenticated user. */
+  core.bool isCurrentAppInstalled;
+
+  /** Parses an instance from its JSON representation. */
+  static About parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new About();
+    result.kind = identity(json["kind"]);
+    result.features = map(AboutFeatures.parse)(json["features"]);
+    result.quotaBytesUsed = identity(json["quotaBytesUsed"]);
+    result.user = User.parse(json["user"]);
+    result.permissionId = identity(json["permissionId"]);
+    result.maxUploadSizes = map(AboutMaxUploadSizes.parse)(json["maxUploadSizes"]);
+    result.name = identity(json["name"]);
+    result.remainingChangeIds = identity(json["remainingChangeIds"]);
+    result.additionalRoleInfo = map(AboutAdditionalRoleInfo.parse)(json["additionalRoleInfo"]);
+    result.etag = identity(json["etag"]);
+    result.importFormats = map(AboutImportFormats.parse)(json["importFormats"]);
+    result.quotaBytesTotal = identity(json["quotaBytesTotal"]);
+    result.rootFolderId = identity(json["rootFolderId"]);
+    result.largestChangeId = identity(json["largestChangeId"]);
+    result.quotaBytesUsedInTrash = identity(json["quotaBytesUsedInTrash"]);
+    result.exportFormats = map(AboutExportFormats.parse)(json["exportFormats"]);
+    result.quotaBytesUsedAggregate = identity(json["quotaBytesUsedAggregate"]);
+    result.domainSharingPolicy = identity(json["domainSharingPolicy"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.isCurrentAppInstalled = identity(json["isCurrentAppInstalled"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(About value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["features"] = map(AboutFeatures.serialize)(value.features);
+    result["quotaBytesUsed"] = identity(value.quotaBytesUsed);
+    result["user"] = User.serialize(value.user);
+    result["permissionId"] = identity(value.permissionId);
+    result["maxUploadSizes"] = map(AboutMaxUploadSizes.serialize)(value.maxUploadSizes);
+    result["name"] = identity(value.name);
+    result["remainingChangeIds"] = identity(value.remainingChangeIds);
+    result["additionalRoleInfo"] = map(AboutAdditionalRoleInfo.serialize)(value.additionalRoleInfo);
+    result["etag"] = identity(value.etag);
+    result["importFormats"] = map(AboutImportFormats.serialize)(value.importFormats);
+    result["quotaBytesTotal"] = identity(value.quotaBytesTotal);
+    result["rootFolderId"] = identity(value.rootFolderId);
+    result["largestChangeId"] = identity(value.largestChangeId);
+    result["quotaBytesUsedInTrash"] = identity(value.quotaBytesUsedInTrash);
+    result["exportFormats"] = map(AboutExportFormats.serialize)(value.exportFormats);
+    result["quotaBytesUsedAggregate"] = identity(value.quotaBytesUsedAggregate);
+    result["domainSharingPolicy"] = identity(value.domainSharingPolicy);
+    result["selfLink"] = identity(value.selfLink);
+    result["isCurrentAppInstalled"] = identity(value.isCurrentAppInstalled);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>About</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../drive-v2/About.html">About</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to About.parse">#</a></h4>
 <div class="doc">
@@ -43,6 +171,7 @@ static About parse(core.Map&lt;core.String, core.Object&gt; json) {
   result.kind = identity(json["kind"]);
   result.features = map(AboutFeatures.parse)(json["features"]);
   result.quotaBytesUsed = identity(json["quotaBytesUsed"]);
+  result.user = User.parse(json["user"]);
   result.permissionId = identity(json["permissionId"]);
   result.maxUploadSizes = map(AboutMaxUploadSizes.parse)(json["maxUploadSizes"]);
   result.name = identity(json["name"]);
@@ -55,6 +184,7 @@ static About parse(core.Map&lt;core.String, core.Object&gt; json) {
   result.largestChangeId = identity(json["largestChangeId"]);
   result.quotaBytesUsedInTrash = identity(json["quotaBytesUsedInTrash"]);
   result.exportFormats = map(AboutExportFormats.parse)(json["exportFormats"]);
+  result.quotaBytesUsedAggregate = identity(json["quotaBytesUsedAggregate"]);
   result.domainSharingPolicy = identity(json["domainSharingPolicy"]);
   result.selfLink = identity(json["selfLink"]);
   result.isCurrentAppInstalled = identity(json["isCurrentAppInstalled"]);
@@ -64,7 +194,7 @@ static About parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/About.html">About</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to About.serialize">#</a></h4>
 <div class="doc">
@@ -76,6 +206,7 @@ static core.Object serialize(About value) {
   result["kind"] = identity(value.kind);
   result["features"] = map(AboutFeatures.serialize)(value.features);
   result["quotaBytesUsed"] = identity(value.quotaBytesUsed);
+  result["user"] = User.serialize(value.user);
   result["permissionId"] = identity(value.permissionId);
   result["maxUploadSizes"] = map(AboutMaxUploadSizes.serialize)(value.maxUploadSizes);
   result["name"] = identity(value.name);
@@ -88,6 +219,7 @@ static core.Object serialize(About value) {
   result["largestChangeId"] = identity(value.largestChangeId);
   result["quotaBytesUsedInTrash"] = identity(value.quotaBytesUsedInTrash);
   result["exportFormats"] = map(AboutExportFormats.serialize)(value.exportFormats);
+  result["quotaBytesUsedAggregate"] = identity(value.quotaBytesUsedAggregate);
   result["domainSharingPolicy"] = identity(value.domainSharingPolicy);
   result["selfLink"] = identity(value.selfLink);
   result["isCurrentAppInstalled"] = identity(value.isCurrentAppInstalled);
@@ -96,21 +228,11 @@ static core.Object serialize(About value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to About.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="additionalRoleInfo">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../drive-v2/AboutAdditionalRoleInfo.html">AboutAdditionalRoleInfo</a>&gt;         <strong>additionalRoleInfo</strong> <a class="anchor-link"
             href="#additionalRoleInfo"
             title="Permalink to About.additionalRoleInfo">#</a>
@@ -124,7 +246,7 @@ core.List&lt;AboutAdditionalRoleInfo&gt; additionalRoleInfo;
 </div>
 </div>
 <div class="field"><h4 id="domainSharingPolicy">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>domainSharingPolicy</strong> <a class="anchor-link"
             href="#domainSharingPolicy"
             title="Permalink to About.domainSharingPolicy">#</a>
@@ -137,7 +259,7 @@ core.String domainSharingPolicy;
 </div>
 </div>
 <div class="field"><h4 id="etag">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to About.etag">#</a>
@@ -150,7 +272,7 @@ core.String etag;
 </div>
 </div>
 <div class="field"><h4 id="exportFormats">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../drive-v2/AboutExportFormats.html">AboutExportFormats</a>&gt;         <strong>exportFormats</strong> <a class="anchor-link"
             href="#exportFormats"
             title="Permalink to About.exportFormats">#</a>
@@ -163,7 +285,7 @@ core.List&lt;AboutExportFormats&gt; exportFormats;
 </div>
 </div>
 <div class="field"><h4 id="features">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../drive-v2/AboutFeatures.html">AboutFeatures</a>&gt;         <strong>features</strong> <a class="anchor-link"
             href="#features"
             title="Permalink to About.features">#</a>
@@ -176,7 +298,7 @@ core.List&lt;AboutFeatures&gt; features;
 </div>
 </div>
 <div class="field"><h4 id="importFormats">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../drive-v2/AboutImportFormats.html">AboutImportFormats</a>&gt;         <strong>importFormats</strong> <a class="anchor-link"
             href="#importFormats"
             title="Permalink to About.importFormats">#</a>
@@ -189,7 +311,7 @@ core.List&lt;AboutImportFormats&gt; importFormats;
 </div>
 </div>
 <div class="field"><h4 id="isCurrentAppInstalled">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isCurrentAppInstalled</strong> <a class="anchor-link"
             href="#isCurrentAppInstalled"
             title="Permalink to About.isCurrentAppInstalled">#</a>
@@ -202,7 +324,7 @@ core.bool isCurrentAppInstalled;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to About.kind">#</a>
@@ -215,7 +337,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="largestChangeId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>largestChangeId</strong> <a class="anchor-link"
             href="#largestChangeId"
             title="Permalink to About.largestChangeId">#</a>
@@ -228,7 +350,7 @@ core.String largestChangeId;
 </div>
 </div>
 <div class="field"><h4 id="maxUploadSizes">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../drive-v2/AboutMaxUploadSizes.html">AboutMaxUploadSizes</a>&gt;         <strong>maxUploadSizes</strong> <a class="anchor-link"
             href="#maxUploadSizes"
             title="Permalink to About.maxUploadSizes">#</a>
@@ -241,7 +363,7 @@ core.List&lt;AboutMaxUploadSizes&gt; maxUploadSizes;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to About.name">#</a>
@@ -254,7 +376,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="permissionId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>permissionId</strong> <a class="anchor-link"
             href="#permissionId"
             title="Permalink to About.permissionId">#</a>
@@ -267,7 +389,7 @@ core.String permissionId;
 </div>
 </div>
 <div class="field"><h4 id="quotaBytesTotal">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaBytesTotal</strong> <a class="anchor-link"
             href="#quotaBytesTotal"
             title="Permalink to About.quotaBytesTotal">#</a>
@@ -280,7 +402,7 @@ core.String quotaBytesTotal;
 </div>
 </div>
 <div class="field"><h4 id="quotaBytesUsed">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaBytesUsed</strong> <a class="anchor-link"
             href="#quotaBytesUsed"
             title="Permalink to About.quotaBytesUsed">#</a>
@@ -292,8 +414,21 @@ core.String quotaBytesUsed;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="quotaBytesUsedAggregate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaBytesUsedAggregate</strong> <a class="anchor-link"
+            href="#quotaBytesUsedAggregate"
+            title="Permalink to About.quotaBytesUsedAggregate">#</a>
+        </h4>
+        <div class="doc">
+<p>The number of quota bytes used by all Google apps (Drive, Picasa, etc.).</p>
+<pre class="source">
+core.String quotaBytesUsedAggregate;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="quotaBytesUsedInTrash">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaBytesUsedInTrash</strong> <a class="anchor-link"
             href="#quotaBytesUsedInTrash"
             title="Permalink to About.quotaBytesUsedInTrash">#</a>
@@ -306,7 +441,7 @@ core.String quotaBytesUsedInTrash;
 </div>
 </div>
 <div class="field"><h4 id="remainingChangeIds">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>remainingChangeIds</strong> <a class="anchor-link"
             href="#remainingChangeIds"
             title="Permalink to About.remainingChangeIds">#</a>
@@ -319,7 +454,7 @@ core.String remainingChangeIds;
 </div>
 </div>
 <div class="field"><h4 id="rootFolderId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>rootFolderId</strong> <a class="anchor-link"
             href="#rootFolderId"
             title="Permalink to About.rootFolderId">#</a>
@@ -331,8 +466,21 @@ core.String rootFolderId;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to About.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to About.selfLink">#</a>
@@ -342,6 +490,116 @@ core.String rootFolderId;
 <pre class="source">
 core.String selfLink;
 </pre>
+</div>
+</div>
+<div class="field"><h4 id="user">
+<button class="show-code">Code</button>
+<a href="../drive-v2/User.html">User</a>         <strong>user</strong> <a class="anchor-link"
+            href="#user"
+            title="Permalink to About.user">#</a>
+        </h4>
+        <div class="doc">
+<p>The authenticated user.</p>
+<pre class="source">
+User user;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to About.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to About.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to About.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to About.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to About.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to About.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>DirectoryListItems Class / discovery-v1 Library / Dart Documentation</title>
+        <title>DirectoryListItems class / discovery-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,109 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../discovery-v1.html">discovery-v1</a> &rsaquo; <a href="../discovery-v1/DirectoryListItems.html">DirectoryListItems</a></div>
+         &rsaquo; <a href="../discovery-v1.html">discovery-v1</a> &rsaquo; <a href="../discovery-v1/DirectoryListItems.html">DirectoryListItems</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>DirectoryListItems</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class DirectoryListItems extends IdentityHash {
+  /** The kind for this response. */
+  core.String kind;
 
+  /** Labels for the status of this API, such as labs or deprecated. */
+  core.List&lt;core.String&gt; labels;
+
+  /** The description of this API. */
+  core.String description;
+
+  /** Links to 16x16 and 32x32 icons representing the API. */
+  DirectoryListItemsIcons icons;
+
+  /** The url for the discovery REST document. */
+  core.String discoveryRestUrl;
+
+  /** True if this version is the preferred version to use. */
+  core.bool preferred;
+
+  /** The name of the API. */
+  core.String name;
+
+  /** A link to the discovery document. */
+  core.String discoveryLink;
+
+  /** The version of the API. */
+  core.String version;
+
+  /** The title of this API. */
+  core.String title;
+
+  /** The id of this API. */
+  core.String id;
+
+  /** A link to human readable documentation for the API. */
+  core.String documentationLink;
+
+  /** Parses an instance from its JSON representation. */
+  static DirectoryListItems parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new DirectoryListItems();
+    result.kind = identity(json["kind"]);
+    result.labels = map(identity)(json["labels"]);
+    result.description = identity(json["description"]);
+    result.icons = DirectoryListItemsIcons.parse(json["icons"]);
+    result.discoveryRestUrl = identity(json["discoveryRestUrl"]);
+    result.preferred = identity(json["preferred"]);
+    result.name = identity(json["name"]);
+    result.discoveryLink = identity(json["discoveryLink"]);
+    result.version = identity(json["version"]);
+    result.title = identity(json["title"]);
+    result.id = identity(json["id"]);
+    result.documentationLink = identity(json["documentationLink"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(DirectoryListItems value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["labels"] = map(identity)(value.labels);
+    result["description"] = identity(value.description);
+    result["icons"] = DirectoryListItemsIcons.serialize(value.icons);
+    result["discoveryRestUrl"] = identity(value.discoveryRestUrl);
+    result["preferred"] = identity(value.preferred);
+    result["name"] = identity(value.name);
+    result["discoveryLink"] = identity(value.discoveryLink);
+    result["version"] = identity(value.version);
+    result["title"] = identity(value.title);
+    result["id"] = identity(value.id);
+    result["documentationLink"] = identity(value.documentationLink);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>DirectoryListItems</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../discovery-v1/DirectoryListItems.html">DirectoryListItems</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to DirectoryListItems.parse">#</a></h4>
 <div class="doc">
@@ -58,7 +143,7 @@ static DirectoryListItems parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../discovery-v1/DirectoryListItems.html">DirectoryListItems</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to DirectoryListItems.serialize">#</a></h4>
 <div class="doc">
@@ -84,21 +169,11 @@ static core.Object serialize(DirectoryListItems value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to DirectoryListItems.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="description">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to DirectoryListItems.description">#</a>
@@ -111,7 +186,7 @@ core.String description;
 </div>
 </div>
 <div class="field"><h4 id="discoveryLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>discoveryLink</strong> <a class="anchor-link"
             href="#discoveryLink"
             title="Permalink to DirectoryListItems.discoveryLink">#</a>
@@ -124,7 +199,7 @@ core.String discoveryLink;
 </div>
 </div>
 <div class="field"><h4 id="discoveryRestUrl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>discoveryRestUrl</strong> <a class="anchor-link"
             href="#discoveryRestUrl"
             title="Permalink to DirectoryListItems.discoveryRestUrl">#</a>
@@ -137,7 +212,7 @@ core.String discoveryRestUrl;
 </div>
 </div>
 <div class="field"><h4 id="documentationLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>documentationLink</strong> <a class="anchor-link"
             href="#documentationLink"
             title="Permalink to DirectoryListItems.documentationLink">#</a>
@@ -150,7 +225,7 @@ core.String documentationLink;
 </div>
 </div>
 <div class="field"><h4 id="icons">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../discovery-v1/DirectoryListItemsIcons.html">DirectoryListItemsIcons</a>         <strong>icons</strong> <a class="anchor-link"
             href="#icons"
             title="Permalink to DirectoryListItems.icons">#</a>
@@ -163,7 +238,7 @@ DirectoryListItemsIcons icons;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to DirectoryListItems.id">#</a>
@@ -176,7 +251,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to DirectoryListItems.kind">#</a>
@@ -189,7 +264,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="labels">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>labels</strong> <a class="anchor-link"
             href="#labels"
             title="Permalink to DirectoryListItems.labels">#</a>
@@ -202,7 +277,7 @@ core.List&lt;core.String&gt; labels;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to DirectoryListItems.name">#</a>
@@ -215,7 +290,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="preferred">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>preferred</strong> <a class="anchor-link"
             href="#preferred"
             title="Permalink to DirectoryListItems.preferred">#</a>
@@ -227,8 +302,21 @@ core.bool preferred;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to DirectoryListItems.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="title">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to DirectoryListItems.title">#</a>
@@ -241,7 +329,7 @@ core.String title;
 </div>
 </div>
 <div class="field"><h4 id="version">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>version</strong> <a class="anchor-link"
             href="#version"
             title="Permalink to DirectoryListItems.version">#</a>
@@ -251,6 +339,103 @@ core.String title;
 <pre class="source">
 core.String version;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to DirectoryListItems.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to DirectoryListItems.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to DirectoryListItems.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to DirectoryListItems.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to DirectoryListItems.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to DirectoryListItems.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

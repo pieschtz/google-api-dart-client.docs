@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>BlogsResource Class / blogger-v3 Library / Dart Documentation</title>
+        <title>BlogsResource class / blogger-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,46 +14,200 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../blogger-v3.html">blogger-v3</a> &rsaquo; <a href="../blogger-v3/BlogsResource.html">BlogsResource</a></div>
+         &rsaquo; <a href="../blogger-v3.html">blogger-v3</a> &rsaquo; <a href="../blogger-v3/BlogsResource.html">BlogsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>BlogsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class BlogsResource extends core.Object {
+  final BloggerApi _$service;
+  
+  BlogsResource._internal(BloggerApi $service) : _$service = $service;
 
+  // Method BlogsResource.ListByUser
+  /**
+   * Retrieves a list of blogs, possibly filtered.
+   *
+   *    * [userId] ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the
+   *        user's profile identifier.
+   */
+  core.Future&lt;BlogList&gt; listByUser(core.String userId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["userId"] = userId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "users/{userId}/blogs";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; BlogList.parse(JSON.parse($text)));
+  }
+
+  // Method BlogsResource.GetByUrl
+  /**
+   * Retrieve a Blog by URL.
+   *
+   *    * [url] The URL of the blog to retrieve.
+   */
+  core.Future&lt;Blog&gt; getByUrl({core.String url}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?url) $queryParams["url"] = url;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "blogs/byurl";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Blog.parse(JSON.parse($text)));
+  }
+
+  // Method BlogsResource.Get
+  /**
+   * Gets one blog by id.
+   *
+   *    * [blogId] The ID of the blog to get.
+   *    * [maxPosts] Maximum number of posts to pull back with the blog.
+   */
+  core.Future&lt;Blog&gt; get(core.String blogId, {core.int maxPosts}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    if (?maxPosts) $queryParams["maxPosts"] = maxPosts;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "blogs/{blogId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Blog.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="BlogsResource">
-<span class="show-code">Code</span>
-new <strong>BlogsResource</strong>._internal(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#BlogsResource"
-              title="Permalink to BlogsResource.BlogsResource">#</a></h4>
+<div class="method"><h4 id="BlogsResource._internal">
+<button class="show-code">Code</button>
+new <strong>BlogsResource._internal</strong>(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#BlogsResource._internal"
+              title="Permalink to BlogsResource.BlogsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 BlogsResource._internal(BloggerApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to BlogsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to BlogsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method"><h4 id="BlogsResource._internal">
+<button class="show-code">Code</button>
+new <strong>BlogsResource._internal</strong>(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#BlogsResource._internal"
+              title="Permalink to BlogsResource.BlogsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+BlogsResource._internal(BloggerApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Blog.html">Blog</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxPosts = UNSPECIFIED]) <a class="anchor-link" href="#get"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Blog.html">Blog</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxPosts]) <a class="anchor-link" href="#get"
               title="Permalink to BlogsResource.get">#</a></h4>
 <div class="doc">
 <p>Gets one blog by id.</p><ul><li>
 <span class="param">blogId</span> The ID of the blog to get.</li><li>
 <span class="param">maxPosts</span> Maximum number of posts to pull back with the blog.</li></ul>
 <pre class="source">
-core.Future&lt;Blog&gt; get(core.String blogId, [core.int maxPosts = UNSPECIFIED]) {
+core.Future&lt;Blog&gt; get(core.String blogId, {core.int maxPosts}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["blogId"] = blogId;
-  if (UNSPECIFIED != maxPosts) $queryParams["maxPosts"] = maxPosts;
+  if (?maxPosts) $queryParams["maxPosts"] = maxPosts;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -64,7 +218,7 @@ core.Future&lt;Blog&gt; get(core.String blogId, [core.int maxPosts = UNSPECIFIED
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "blogs/{blogId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -76,18 +230,18 @@ core.Future&lt;Blog&gt; get(core.String blogId, [core.int maxPosts = UNSPECIFIED
 </div>
 </div>
 <div class="method"><h4 id="getByUrl">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Blog.html">Blog</a>&gt; <strong>getByUrl</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> url = UNSPECIFIED]) <a class="anchor-link" href="#getByUrl"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Blog.html">Blog</a>&gt; <strong>getByUrl</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> url]) <a class="anchor-link" href="#getByUrl"
               title="Permalink to BlogsResource.getByUrl">#</a></h4>
 <div class="doc">
 <p>Retrieve a Blog by URL.</p><ul><li>
 <span class="param">url</span> The URL of the blog to retrieve.</li></ul>
 <pre class="source">
-core.Future&lt;Blog&gt; getByUrl([core.String url = UNSPECIFIED]) {
+core.Future&lt;Blog&gt; getByUrl({core.String url}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != url) $queryParams["url"] = url;
+  if (?url) $queryParams["url"] = url;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -98,7 +252,7 @@ core.Future&lt;Blog&gt; getByUrl([core.String url = UNSPECIFIED]) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "blogs/byurl";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -109,8 +263,26 @@ core.Future&lt;Blog&gt; getByUrl([core.String url = UNSPECIFIED]) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to BlogsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="listByUser">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/BlogList.html">BlogList</a>&gt; <strong>listByUser</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> userId) <a class="anchor-link" href="#listByUser"
               title="Permalink to BlogsResource.listByUser">#</a></h4>
 <div class="doc">
@@ -134,7 +306,7 @@ core.Future&lt;BlogList&gt; listByUser(core.String userId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "users/{userId}/blogs";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -143,6 +315,49 @@ core.Future&lt;BlogList&gt; listByUser(core.String userId) {
       .transform((final $text) =&gt; BlogList.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to BlogsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to BlogsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to BlogsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

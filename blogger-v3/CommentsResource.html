@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>CommentsResource Class / blogger-v3 Library / Dart Documentation</title>
+        <title>CommentsResource class / blogger-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,170 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../blogger-v3.html">blogger-v3</a> &rsaquo; <a href="../blogger-v3/CommentsResource.html">CommentsResource</a></div>
+         &rsaquo; <a href="../blogger-v3.html">blogger-v3</a> &rsaquo; <a href="../blogger-v3/CommentsResource.html">CommentsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>CommentsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class CommentsResource extends core.Object {
+  final BloggerApi _$service;
+  
+  CommentsResource._internal(BloggerApi $service) : _$service = $service;
 
+  // Method CommentsResource.List
+  /**
+   * Retrieves the comments for a blog, possibly filtered.
+   *
+   *    * [blogId] ID of the blog to fetch comments from.
+   *    * [postId] ID of the post to fetch posts from.
+   *    * [startDate] Earliest date of comment to fetch, a date-time with RFC 3339 formatting.
+   *    * [endDate] Latest date of comment to fetch, a date-time with RFC 3339 formatting.
+   *    * [maxResults] Maximum number of comments to include in the result.
+   *    * [pageToken] Continuation token if request is paged.
+   *    * [fetchBodies] Whether the body content of the comments is included.
+   */
+  core.Future&lt;CommentList&gt; list(core.String blogId, core.String postId, {core.String startDate, core.String endDate, core.int maxResults, core.String pageToken, core.bool fetchBodies}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    $pathParams["postId"] = postId;
+    if (?startDate) $queryParams["startDate"] = startDate;
+    if (?endDate) $queryParams["endDate"] = endDate;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?fetchBodies) $queryParams["fetchBodies"] = fetchBodies;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "blogs/{blogId}/posts/{postId}/comments";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; CommentList.parse(JSON.parse($text)));
+  }
+
+  // Method CommentsResource.Get
+  /**
+   * Gets one comment by id.
+   *
+   *    * [blogId] ID of the blog to containing the comment.
+   *    * [postId] ID of the post to fetch posts from.
+   *    * [commentId] The ID of the comment to get.
+   */
+  core.Future&lt;Comment&gt; get(core.String blogId, core.String postId, core.String commentId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["blogId"] = blogId;
+    $pathParams["postId"] = postId;
+    $pathParams["commentId"] = commentId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "blogs/{blogId}/posts/{postId}/comments/{commentId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Comment.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="CommentsResource">
-<span class="show-code">Code</span>
-new <strong>CommentsResource</strong>._internal(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#CommentsResource"
-              title="Permalink to CommentsResource.CommentsResource">#</a></h4>
+<div class="method"><h4 id="CommentsResource._internal">
+<button class="show-code">Code</button>
+new <strong>CommentsResource._internal</strong>(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#CommentsResource._internal"
+              title="Permalink to CommentsResource.CommentsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 CommentsResource._internal(BloggerApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to CommentsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to CommentsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
+<div class="method"><h4 id="CommentsResource._internal">
+<button class="show-code">Code</button>
+new <strong>CommentsResource._internal</strong>(<a href="../blogger-v3/BloggerApi.html">BloggerApi</a> $service) <a class="anchor-link" href="#CommentsResource._internal"
+              title="Permalink to CommentsResource.CommentsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+CommentsResource._internal(BloggerApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/Comment.html">Comment</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> postId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> commentId) <a class="anchor-link" href="#get"
               title="Permalink to CommentsResource.get">#</a></h4>
 <div class="doc">
@@ -66,7 +203,7 @@ core.Future&lt;Comment&gt; get(core.String blogId, core.String postId, core.Stri
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "blogs/{blogId}/posts/{postId}/comments/{commentId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -77,9 +214,27 @@ core.Future&lt;Comment&gt; get(core.String blogId, core.String postId, core.Stri
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to CommentsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/CommentList.html">CommentList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> postId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> startDate = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> endDate = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> fetchBodies = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../blogger-v3/CommentList.html">CommentList</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> blogId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> postId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> startDate, <a href="http://api.dartlang.org/dart_core/String.html">String</a> endDate, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> fetchBodies]) <a class="anchor-link" href="#list"
               title="Permalink to CommentsResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves the comments for a blog, possibly filtered.</p><ul><li>
@@ -91,17 +246,17 @@ core.Future&lt;Comment&gt; get(core.String blogId, core.String postId, core.Stri
 <span class="param">pageToken</span> Continuation token if request is paged.</li><li>
 <span class="param">fetchBodies</span> Whether the body content of the comments is included.</li></ul>
 <pre class="source">
-core.Future&lt;CommentList&gt; list(core.String blogId, core.String postId, [core.String startDate = UNSPECIFIED, core.String endDate = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.bool fetchBodies = UNSPECIFIED]) {
+core.Future&lt;CommentList&gt; list(core.String blogId, core.String postId, {core.String startDate, core.String endDate, core.int maxResults, core.String pageToken, core.bool fetchBodies}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["blogId"] = blogId;
   $pathParams["postId"] = postId;
-  if (UNSPECIFIED != startDate) $queryParams["startDate"] = startDate;
-  if (UNSPECIFIED != endDate) $queryParams["endDate"] = endDate;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != fetchBodies) $queryParams["fetchBodies"] = fetchBodies;
+  if (?startDate) $queryParams["startDate"] = startDate;
+  if (?endDate) $queryParams["endDate"] = endDate;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?fetchBodies) $queryParams["fetchBodies"] = fetchBodies;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -112,7 +267,7 @@ core.Future&lt;CommentList&gt; list(core.String blogId, core.String postId, [cor
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "blogs/{blogId}/posts/{postId}/comments";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -121,6 +276,49 @@ core.Future&lt;CommentList&gt; list(core.String blogId, core.String postId, [cor
       .transform((final $text) =&gt; CommentList.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to CommentsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to CommentsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to CommentsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

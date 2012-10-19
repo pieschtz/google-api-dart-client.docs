@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>TasklistsResource Class / tasks-v1 Library / Dart Documentation</title>
+        <title>TasklistsResource class / tasks-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,273 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../tasks-v1.html">tasks-v1</a> &rsaquo; <a href="../tasks-v1/TasklistsResource.html">TasklistsResource</a></div>
+         &rsaquo; <a href="../tasks-v1.html">tasks-v1</a> &rsaquo; <a href="../tasks-v1/TasklistsResource.html">TasklistsResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>TasklistsResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class TasklistsResource extends core.Object {
+  final TasksApi _$service;
+  
+  TasklistsResource._internal(TasksApi $service) : _$service = $service;
 
+  // Method TasklistsResource.Insert
+  /**
+   * Creates a new task list and adds it to the authenticated user's task lists.
+   *
+   *    * [content] the TaskList
+   */
+  core.Future&lt;TaskList&gt; insert(TaskList content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(TaskList.serialize(content));
+    final $path = "users/@me/lists";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; TaskList.parse(JSON.parse($text)));
+  }
+
+  // Method TasklistsResource.Get
+  /**
+   * Returns the authenticated user's specified task list.
+   *
+   *    * [tasklist] Task list identifier.
+   */
+  core.Future&lt;TaskList&gt; get(core.String tasklist) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tasklist"] = tasklist;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "users/@me/lists/{tasklist}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; TaskList.parse(JSON.parse($text)));
+  }
+
+  // Method TasklistsResource.List
+  /**
+   * Returns all the authenticated user's task lists.
+   *
+   *    * [pageToken] Token specifying the result page to return. Optional.
+   *    * [maxResults] Maximum number of task lists returned on one page. Optional. The default is 100.
+   */
+  core.Future&lt;TaskLists&gt; list({core.String pageToken, core.String maxResults}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "users/@me/lists";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; TaskLists.parse(JSON.parse($text)));
+  }
+
+  // Method TasklistsResource.Update
+  /**
+   * Updates the authenticated user's specified task list.
+   *
+   *    * [content] the TaskList
+   *    * [tasklist] Task list identifier.
+   */
+  core.Future&lt;TaskList&gt; update(core.String tasklist, TaskList content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tasklist"] = tasklist;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(TaskList.serialize(content));
+    final $path = "users/@me/lists/{tasklist}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; TaskList.parse(JSON.parse($text)));
+  }
+
+  // Method TasklistsResource.Patch
+  /**
+   * Updates the authenticated user's specified task list. This method supports patch semantics.
+   *
+   *    * [content] the TaskList
+   *    * [tasklist] Task list identifier.
+   */
+  core.Future&lt;TaskList&gt; patch(core.String tasklist, TaskList content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tasklist"] = tasklist;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(TaskList.serialize(content));
+    final $path = "users/@me/lists/{tasklist}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; TaskList.parse(JSON.parse($text)));
+  }
+
+  // Method TasklistsResource.Delete
+  /**
+   * Deletes the authenticated user's specified task list.
+   *
+   *    * [tasklist] Task list identifier.
+   */
+  core.Future delete(core.String tasklist) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["tasklist"] = tasklist;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "users/@me/lists/{tasklist}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "DELETE", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="TasklistsResource">
-<span class="show-code">Code</span>
-new <strong>TasklistsResource</strong>._internal(<a href="../tasks-v1/TasksApi.html">TasksApi</a> $service) <a class="anchor-link" href="#TasklistsResource"
-              title="Permalink to TasklistsResource.TasklistsResource">#</a></h4>
+<div class="method"><h4 id="TasklistsResource._internal">
+<button class="show-code">Code</button>
+new <strong>TasklistsResource._internal</strong>(<a href="../tasks-v1/TasksApi.html">TasksApi</a> $service) <a class="anchor-link" href="#TasklistsResource._internal"
+              title="Permalink to TasklistsResource.TasklistsResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 TasklistsResource._internal(TasksApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to TasklistsResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to TasklistsResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="delete">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>delete</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tasklist) <a class="anchor-link" href="#delete"
               title="Permalink to TasklistsResource.delete">#</a></h4>
 <div class="doc">
@@ -62,7 +302,7 @@ core.Future delete(core.String tasklist) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "users/@me/lists/{tasklist}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "DELETE", $headers);
+  final $http = new http.Request($url, "DELETE", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -74,7 +314,7 @@ core.Future delete(core.String tasklist) {
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskList.html">TaskList</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tasklist) <a class="anchor-link" href="#get"
               title="Permalink to TasklistsResource.get">#</a></h4>
 <div class="doc">
@@ -96,7 +336,7 @@ core.Future&lt;TaskList&gt; get(core.String tasklist) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "users/@me/lists/{tasklist}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -107,8 +347,26 @@ core.Future&lt;TaskList&gt; get(core.String tasklist) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to TasklistsResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskList.html">TaskList</a>&gt; <strong>insert</strong>(<a href="../tasks-v1/TaskList.html">TaskList</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to TasklistsResource.insert">#</a></h4>
 <div class="doc">
@@ -131,7 +389,7 @@ core.Future&lt;TaskList&gt; insert(TaskList content) {
   final $body = JSON.stringify(TaskList.serialize(content));
   final $path = "users/@me/lists";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -143,20 +401,20 @@ core.Future&lt;TaskList&gt; insert(TaskList content) {
 </div>
 </div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskLists.html">TaskLists</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskLists.html">TaskLists</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/String.html">String</a> maxResults]) <a class="anchor-link" href="#list"
               title="Permalink to TasklistsResource.list">#</a></h4>
 <div class="doc">
 <p>Returns all the authenticated user's task lists.</p><ul><li>
 <span class="param">pageToken</span> Token specifying the result page to return. Optional.</li><li>
 <span class="param">maxResults</span> Maximum number of task lists returned on one page. Optional. The default is 100.</li></ul>
 <pre class="source">
-core.Future&lt;TaskLists&gt; list([core.String pageToken = UNSPECIFIED, core.String maxResults = UNSPECIFIED]) {
+core.Future&lt;TaskLists&gt; list({core.String pageToken, core.String maxResults}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -167,7 +425,7 @@ core.Future&lt;TaskLists&gt; list([core.String pageToken = UNSPECIFIED, core.Str
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "users/@me/lists";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -178,8 +436,39 @@ core.Future&lt;TaskLists&gt; list([core.String pageToken = UNSPECIFIED, core.Str
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to TasklistsResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to TasklistsResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskList.html">TaskList</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tasklist, <a href="../tasks-v1/TaskList.html">TaskList</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to TasklistsResource.patch">#</a></h4>
 <div class="doc">
@@ -204,7 +493,7 @@ core.Future&lt;TaskList&gt; patch(core.String tasklist, TaskList content) {
   final $body = JSON.stringify(TaskList.serialize(content));
   final $path = "users/@me/lists/{tasklist}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -215,8 +504,29 @@ core.Future&lt;TaskList&gt; patch(core.String tasklist, TaskList content) {
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="TasklistsResource._internal">
+<button class="show-code">Code</button>
+new <strong>TasklistsResource._internal</strong>(<a href="../tasks-v1/TasksApi.html">TasksApi</a> $service) <a class="anchor-link" href="#TasklistsResource._internal"
+              title="Permalink to TasklistsResource.TasklistsResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+TasklistsResource._internal(TasksApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to TasklistsResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../tasks-v1/TaskList.html">TaskList</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> tasklist, <a href="../tasks-v1/TaskList.html">TaskList</a> content) <a class="anchor-link" href="#update"
               title="Permalink to TasklistsResource.update">#</a></h4>
 <div class="doc">
@@ -241,7 +551,7 @@ core.Future&lt;TaskList&gt; update(core.String tasklist, TaskList content) {
   final $body = JSON.stringify(TaskList.serialize(content));
   final $path = "users/@me/lists/{tasklist}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -250,6 +560,7 @@ core.Future&lt;TaskList&gt; update(core.String tasklist, TaskList content) {
       .transform((final $text) =&gt; TaskList.parse(JSON.parse($text)));
 }
 </pre>
+</div>
 </div>
 </div>
         </div>

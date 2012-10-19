@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>PeopleResource Class / plus-v1 Library / Dart Documentation</title>
+        <title>PeopleResource class / plus-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,198 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/PeopleResource.html">PeopleResource</a></div>
+         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/PeopleResource.html">PeopleResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>PeopleResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class PeopleResource extends core.Object {
+  final PlusApi _$service;
+  
+  PeopleResource._internal(PlusApi $service) : _$service = $service;
 
+  // Method PeopleResource.ListByActivity
+  /**
+   * List all of the people in the specified collection for a particular activity.
+   *
+   *    * [activityId] The ID of the activity to get the list of people for.
+   *    * [collection] The collection of people to list.
+   *    * [pageToken] The continuation token, which is used to page through large result sets. To get the next page of
+   *        results, set this parameter to the value of "nextPageToken" from the previous response.
+   *    * [maxResults] The maximum number of people to include in the response, which is used for paging. For any response,
+   *        the actual number returned might be less than the specified maxResults.
+  Default: 20.
+   *        Minimum: 1.
+  Maximum: 100.
+   */
+  core.Future&lt;PeopleFeed&gt; listByActivity(core.String activityId, PeopleResourceListByActivityCollection collection, {core.String pageToken, core.int maxResults}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["activityId"] = activityId;
+    $pathParams["collection"] = collection;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "activities/{activityId}/people/{collection}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; PeopleFeed.parse(JSON.parse($text)));
+  }
+
+  // Method PeopleResource.Search
+  /**
+   * Search all public profiles.
+   *
+   *    * [query] Specify a query string for full text search of public text in all profiles.
+   *    * [pageToken] The continuation token, which is used to page through large result sets. To get the next page of
+   *        results, set this parameter to the value of "nextPageToken" from the previous response.
+   *        This token can be of any length.
+   *    * [maxResults] The maximum number of people to include in the response, which is used for paging. For any response,
+   *        the actual number returned might be less than the specified maxResults.
+  Default: 10.
+   *        Minimum: 1.
+  Maximum: 20.
+   *    * [language] Specify the preferred language to search with. See search language codes for available values.
+   */
+  core.Future&lt;PeopleFeed&gt; search(core.String query, {core.String pageToken, core.int maxResults, core.String language}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?query) $queryParams["query"] = query;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?language) $queryParams["language"] = language;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "people";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; PeopleFeed.parse(JSON.parse($text)));
+  }
+
+  // Method PeopleResource.Get
+  /**
+   * Get a person's profile.
+   *
+   *    * [userId] The ID of the person to get the profile for. The special value "me" can be used to indicate the
+   *        authenticated user.
+   */
+  core.Future&lt;Person&gt; get(core.String userId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["userId"] = userId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "people/{userId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Person.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="PeopleResource">
-<span class="show-code">Code</span>
-new <strong>PeopleResource</strong>._internal(<a href="../plus-v1/PlusApi.html">PlusApi</a> $service) <a class="anchor-link" href="#PeopleResource"
-              title="Permalink to PeopleResource.PeopleResource">#</a></h4>
+<div class="method"><h4 id="PeopleResource._internal">
+<button class="show-code">Code</button>
+new <strong>PeopleResource._internal</strong>(<a href="../plus-v1/PlusApi.html">PlusApi</a> $service) <a class="anchor-link" href="#PeopleResource._internal"
+              title="Permalink to PeopleResource.PeopleResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 PeopleResource._internal(PlusApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to PeopleResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to PeopleResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../plus-v1/Person.html">Person</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> userId) <a class="anchor-link" href="#get"
               title="Permalink to PeopleResource.get">#</a></h4>
 <div class="doc">
@@ -64,7 +229,7 @@ core.Future&lt;Person&gt; get(core.String userId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "people/{userId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -75,32 +240,50 @@ core.Future&lt;Person&gt; get(core.String userId) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to PeopleResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="listByActivity">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../plus-v1/PeopleFeed.html">PeopleFeed</a>&gt; <strong>listByActivity</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> activityId, <a href="../plus-v1/PeopleResourceListByActivityCollection.html">PeopleResourceListByActivityCollection</a> collection, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED]) <a class="anchor-link" href="#listByActivity"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../plus-v1/PeopleFeed.html">PeopleFeed</a>&gt; <strong>listByActivity</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> activityId, <a href="../plus-v1/PeopleResourceListByActivityCollection.html">PeopleResourceListByActivityCollection</a> collection, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults]) <a class="anchor-link" href="#listByActivity"
               title="Permalink to PeopleResource.listByActivity">#</a></h4>
 <div class="doc">
 <p>List all of the people in the specified collection for a particular activity.</p><ul><li>
 <span class="param">activityId</span> The ID of the activity to get the list of people for.</li><li>
 <span class="param">collection</span> The collection of people to list.</li><li>
 <p>
-<span class="param">pageToken</span> The continuation token, used to page through large result sets. To get the next page of results, set
-   this parameter to the value of "nextPageToken" from the previous response.</p></li><li>
+<span class="param">pageToken</span> The continuation token, which is used to page through large result sets. To get the next page of
+   results, set this parameter to the value of "nextPageToken" from the previous response.</p></li><li>
 <p>
-<span class="param">maxResults</span> The maximum number of people to include in the response, used for paging. For any response, the
-   actual number returned may be less than the specified maxResults.
+<span class="param">maxResults</span> The maximum number of people to include in the response, which is used for paging. For any response,
+   the actual number returned might be less than the specified maxResults.
 Default: 20.
-Minimum: 1.
-   Maximum: 100.</p></li></ul>
+   Minimum: 1.
+Maximum: 100.</p></li></ul>
 <pre class="source">
-core.Future&lt;PeopleFeed&gt; listByActivity(core.String activityId, PeopleResourceListByActivityCollection collection, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED]) {
+core.Future&lt;PeopleFeed&gt; listByActivity(core.String activityId, PeopleResourceListByActivityCollection collection, {core.String pageToken, core.int maxResults}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["activityId"] = activityId;
   $pathParams["collection"] = collection;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -111,7 +294,7 @@ core.Future&lt;PeopleFeed&gt; listByActivity(core.String activityId, PeopleResou
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "activities/{activityId}/people/{collection}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -122,33 +305,74 @@ core.Future&lt;PeopleFeed&gt; listByActivity(core.String activityId, PeopleResou
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to PeopleResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to PeopleResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="PeopleResource._internal">
+<button class="show-code">Code</button>
+new <strong>PeopleResource._internal</strong>(<a href="../plus-v1/PlusApi.html">PlusApi</a> $service) <a class="anchor-link" href="#PeopleResource._internal"
+              title="Permalink to PeopleResource.PeopleResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+PeopleResource._internal(PlusApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="search">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../plus-v1/PeopleFeed.html">PeopleFeed</a>&gt; <strong>search</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> query, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> language = UNSPECIFIED]) <a class="anchor-link" href="#search"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../plus-v1/PeopleFeed.html">PeopleFeed</a>&gt; <strong>search</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> query, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> language]) <a class="anchor-link" href="#search"
               title="Permalink to PeopleResource.search">#</a></h4>
 <div class="doc">
 <p>Search all public profiles.</p><ul><li>
 <span class="param">query</span> Specify a query string for full text search of public text in all profiles.</li><li>
 <p>
-<span class="param">pageToken</span> The continuation token, used to page through large result sets. To get the next page of results, set
-   this parameter to the value of "nextPageToken" from the previous response. This token may
-   be of any length.</p></li><li>
+<span class="param">pageToken</span> The continuation token, which is used to page through large result sets. To get the next page of
+   results, set this parameter to the value of "nextPageToken" from the previous response.
+   This token can be of any length.</p></li><li>
 <p>
-<span class="param">maxResults</span> The maximum number of people to include in the response, used for paging. For any response, the
-   actual number returned may be less than the specified maxResults.
+<span class="param">maxResults</span> The maximum number of people to include in the response, which is used for paging. For any response,
+   the actual number returned might be less than the specified maxResults.
 Default: 10.
-Minimum: 1.
-   Maximum: 20.</p></li><li>
+   Minimum: 1.
+Maximum: 20.</p></li><li>
 <span class="param">language</span> Specify the preferred language to search with. See search language codes for available values.</li></ul>
 <pre class="source">
-core.Future&lt;PeopleFeed&gt; search(core.String query, [core.String pageToken = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.String language = UNSPECIFIED]) {
+core.Future&lt;PeopleFeed&gt; search(core.String query, {core.String pageToken, core.int maxResults, core.String language}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != query) $queryParams["query"] = query;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != language) $queryParams["language"] = language;
+  if (?query) $queryParams["query"] = query;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?language) $queryParams["language"] = language;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -159,7 +383,7 @@ core.Future&lt;PeopleFeed&gt; search(core.String query, [core.String pageToken =
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "people";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -168,6 +392,18 @@ core.Future&lt;PeopleFeed&gt; search(core.String query, [core.String pageToken =
       .transform((final $text) =&gt; PeopleFeed.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to PeopleResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

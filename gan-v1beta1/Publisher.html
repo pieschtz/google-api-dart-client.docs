@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Publisher Class / gan-v1beta1 Library / Dart Documentation</title>
+        <title>Publisher class / gan-v1beta1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,118 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/Publisher.html">Publisher</a></div>
+         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/Publisher.html">Publisher</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Publisher</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Publisher extends IdentityHash {
+  /** The status of the requesting advertiser's relationship with this publisher. */
+  core.String status;
 
+  /** The kind for a publisher. */
+  core.String kind;
+
+  /** The name of this publisher. */
+  core.String name;
+
+  /**
+ * Classification that this publisher belongs to. See this link for all publisher classifications: h
+ * ttp://www.google.com/support/affiliatenetwork/advertiser/bin/answer.py?hl=en=107625=cb=cb=-k5fihz
+ * thfaik=4
+ */
+  core.String classification;
+
+  /**
+ * The sum of fees paid to this publisher divided by the total number of clicks over the past seven
+ * days. Values are multiplied by 100 for display purposes.
+ */
+  Money epcSevenDayAverage;
+
+  /**
+ * A rank based on commissions paid to this publisher over the past 90 days. A number between 1 and
+ * 4 where 4 means the top quartile (most money paid) and 1 means the bottom quartile (least money
+ * paid).
+ */
+  core.String payoutRank;
+
+  /**
+ * The sum of fees paid to this publisher divided by the total number of clicks over the past three
+ * months. Values are multiplied by 100 for display purposes.
+ */
+  Money epcNinetyDayAverage;
+
+  /** The requested publisher. */
+  Publisher item;
+
+  /** Date that this publisher was approved as a Google Affiliate Network publisher. */
+  core.String joinDate;
+
+  /** Websites that this publisher uses to advertise. */
+  core.List&lt;core.String&gt; sites;
+
+  /** The ID of this publisher. */
+  core.String id;
+
+  /** Parses an instance from its JSON representation. */
+  static Publisher parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Publisher();
+    result.status = identity(json["status"]);
+    result.kind = identity(json["kind"]);
+    result.name = identity(json["name"]);
+    result.classification = identity(json["classification"]);
+    result.epcSevenDayAverage = Money.parse(json["epcSevenDayAverage"]);
+    result.payoutRank = identity(json["payoutRank"]);
+    result.epcNinetyDayAverage = Money.parse(json["epcNinetyDayAverage"]);
+    result.item = Publisher.parse(json["item"]);
+    result.joinDate = identity(json["joinDate"]);
+    result.sites = map(identity)(json["sites"]);
+    result.id = identity(json["id"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Publisher value) {
+    if (value == null) return null;
+    final result = {};
+    result["status"] = identity(value.status);
+    result["kind"] = identity(value.kind);
+    result["name"] = identity(value.name);
+    result["classification"] = identity(value.classification);
+    result["epcSevenDayAverage"] = Money.serialize(value.epcSevenDayAverage);
+    result["payoutRank"] = identity(value.payoutRank);
+    result["epcNinetyDayAverage"] = Money.serialize(value.epcNinetyDayAverage);
+    result["item"] = Publisher.serialize(value.item);
+    result["joinDate"] = identity(value.joinDate);
+    result["sites"] = map(identity)(value.sites);
+    result["id"] = identity(value.id);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Publisher</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../gan-v1beta1/Publisher.html">Publisher</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Publisher.parse">#</a></h4>
 <div class="doc">
@@ -57,7 +151,7 @@ static Publisher parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../gan-v1beta1/Publisher.html">Publisher</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Publisher.serialize">#</a></h4>
 <div class="doc">
@@ -82,21 +176,11 @@ static core.Object serialize(Publisher value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Publisher.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="classification">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>classification</strong> <a class="anchor-link"
             href="#classification"
             title="Permalink to Publisher.classification">#</a>
@@ -111,7 +195,7 @@ core.String classification;
 </div>
 </div>
 <div class="field"><h4 id="epcNinetyDayAverage">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../gan-v1beta1/Money.html">Money</a>         <strong>epcNinetyDayAverage</strong> <a class="anchor-link"
             href="#epcNinetyDayAverage"
             title="Permalink to Publisher.epcNinetyDayAverage">#</a>
@@ -125,7 +209,7 @@ Money epcNinetyDayAverage;
 </div>
 </div>
 <div class="field"><h4 id="epcSevenDayAverage">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../gan-v1beta1/Money.html">Money</a>         <strong>epcSevenDayAverage</strong> <a class="anchor-link"
             href="#epcSevenDayAverage"
             title="Permalink to Publisher.epcSevenDayAverage">#</a>
@@ -139,7 +223,7 @@ Money epcSevenDayAverage;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Publisher.id">#</a>
@@ -152,7 +236,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="item">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../gan-v1beta1/Publisher.html">Publisher</a>         <strong>item</strong> <a class="anchor-link"
             href="#item"
             title="Permalink to Publisher.item">#</a>
@@ -165,7 +249,7 @@ Publisher item;
 </div>
 </div>
 <div class="field"><h4 id="joinDate">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>joinDate</strong> <a class="anchor-link"
             href="#joinDate"
             title="Permalink to Publisher.joinDate">#</a>
@@ -178,7 +262,7 @@ core.String joinDate;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Publisher.kind">#</a>
@@ -191,7 +275,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Publisher.name">#</a>
@@ -204,7 +288,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="payoutRank">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>payoutRank</strong> <a class="anchor-link"
             href="#payoutRank"
             title="Permalink to Publisher.payoutRank">#</a>
@@ -218,8 +302,21 @@ core.String payoutRank;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Publisher.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="sites">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>sites</strong> <a class="anchor-link"
             href="#sites"
             title="Permalink to Publisher.sites">#</a>
@@ -232,7 +329,7 @@ core.List&lt;core.String&gt; sites;
 </div>
 </div>
 <div class="field"><h4 id="status">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>status</strong> <a class="anchor-link"
             href="#status"
             title="Permalink to Publisher.status">#</a>
@@ -242,6 +339,103 @@ core.List&lt;core.String&gt; sites;
 <pre class="source">
 core.String status;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Publisher.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Publisher.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Publisher.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Publisher.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Publisher.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Publisher.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

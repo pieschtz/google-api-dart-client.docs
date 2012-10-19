@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Goal Class / analytics-v3 Library / Dart Documentation</title>
+        <title>Goal class / analytics-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,141 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/Goal.html">Goal</a></div>
+         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/Goal.html">Goal</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Goal</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Goal extends IdentityHash {
+  /** Resource type for an Analytics goal. */
+  core.String kind;
 
+  /** Details for the goal of the type VISIT_TIME_ON_SITE. */
+  GoalVisitTimeOnSiteDetails visitTimeOnSiteDetails;
+
+  /** Goal name. */
+  core.String name;
+
+  /** Time this goal was created. */
+  core.String created;
+
+  /** Details for the goal of the type URL_DESTINATION. */
+  GoalUrlDestinationDetails urlDestinationDetails;
+
+  /** Time this goal was last modified. */
+  core.String updated;
+
+  /** Goal value. */
+  core.double value;
+
+  /** Details for the goal of the type VISIT_NUM_PAGES. */
+  GoalVisitNumPagesDetails visitNumPagesDetails;
+
+  /** Internal ID for the web property to which this goal belongs. */
+  core.String internalWebPropertyId;
+
+  /** Details for the goal of the type EVENT. */
+  GoalEventDetails eventDetails;
+
+  /** Web property ID to which this goal belongs. The web property ID is of the form UA-XXXXX-YY. */
+  core.String webPropertyId;
+
+  /** Determines whether this goal is active. */
+  core.bool active;
+
+  /** Profile ID to which this goal belongs. */
+  core.String profileId;
+
+  /** Parent link for a goal. Points to the profile to which this goal belongs. */
+  GoalParentLink parentLink;
+
+  /**
+ * Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_SITE, VISIT_NUM_PAGES, AND EVENT.
+ */
+  core.String type;
+
+  /** Goal ID. */
+  core.String id;
+
+  /** Link for this goal. */
+  core.String selfLink;
+
+  /** Account ID to which this goal belongs. */
+  core.String accountId;
+
+  /** Parses an instance from its JSON representation. */
+  static Goal parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Goal();
+    result.kind = identity(json["kind"]);
+    result.visitTimeOnSiteDetails = GoalVisitTimeOnSiteDetails.parse(json["visitTimeOnSiteDetails"]);
+    result.name = identity(json["name"]);
+    result.created = identity(json["created"]);
+    result.urlDestinationDetails = GoalUrlDestinationDetails.parse(json["urlDestinationDetails"]);
+    result.updated = identity(json["updated"]);
+    result.value = identity(json["value"]);
+    result.visitNumPagesDetails = GoalVisitNumPagesDetails.parse(json["visitNumPagesDetails"]);
+    result.internalWebPropertyId = identity(json["internalWebPropertyId"]);
+    result.eventDetails = GoalEventDetails.parse(json["eventDetails"]);
+    result.webPropertyId = identity(json["webPropertyId"]);
+    result.active = identity(json["active"]);
+    result.profileId = identity(json["profileId"]);
+    result.parentLink = GoalParentLink.parse(json["parentLink"]);
+    result.type = identity(json["type"]);
+    result.id = identity(json["id"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.accountId = identity(json["accountId"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Goal value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["visitTimeOnSiteDetails"] = GoalVisitTimeOnSiteDetails.serialize(value.visitTimeOnSiteDetails);
+    result["name"] = identity(value.name);
+    result["created"] = identity(value.created);
+    result["urlDestinationDetails"] = GoalUrlDestinationDetails.serialize(value.urlDestinationDetails);
+    result["updated"] = identity(value.updated);
+    result["value"] = identity(value.value);
+    result["visitNumPagesDetails"] = GoalVisitNumPagesDetails.serialize(value.visitNumPagesDetails);
+    result["internalWebPropertyId"] = identity(value.internalWebPropertyId);
+    result["eventDetails"] = GoalEventDetails.serialize(value.eventDetails);
+    result["webPropertyId"] = identity(value.webPropertyId);
+    result["active"] = identity(value.active);
+    result["profileId"] = identity(value.profileId);
+    result["parentLink"] = GoalParentLink.serialize(value.parentLink);
+    result["type"] = identity(value.type);
+    result["id"] = identity(value.id);
+    result["selfLink"] = identity(value.selfLink);
+    result["accountId"] = identity(value.accountId);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Goal</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/Goal.html">Goal</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Goal.parse">#</a></h4>
 <div class="doc">
@@ -64,7 +181,7 @@ static Goal parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../analytics-v3/Goal.html">Goal</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Goal.serialize">#</a></h4>
 <div class="doc">
@@ -96,21 +213,11 @@ static core.Object serialize(Goal value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Goal.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="accountId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>accountId</strong> <a class="anchor-link"
             href="#accountId"
             title="Permalink to Goal.accountId">#</a>
@@ -123,7 +230,7 @@ core.String accountId;
 </div>
 </div>
 <div class="field"><h4 id="active">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>active</strong> <a class="anchor-link"
             href="#active"
             title="Permalink to Goal.active">#</a>
@@ -136,7 +243,7 @@ core.bool active;
 </div>
 </div>
 <div class="field"><h4 id="created">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>created</strong> <a class="anchor-link"
             href="#created"
             title="Permalink to Goal.created">#</a>
@@ -149,7 +256,7 @@ core.String created;
 </div>
 </div>
 <div class="field"><h4 id="eventDetails">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/GoalEventDetails.html">GoalEventDetails</a>         <strong>eventDetails</strong> <a class="anchor-link"
             href="#eventDetails"
             title="Permalink to Goal.eventDetails">#</a>
@@ -162,7 +269,7 @@ GoalEventDetails eventDetails;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Goal.id">#</a>
@@ -175,7 +282,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="internalWebPropertyId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>internalWebPropertyId</strong> <a class="anchor-link"
             href="#internalWebPropertyId"
             title="Permalink to Goal.internalWebPropertyId">#</a>
@@ -188,7 +295,7 @@ core.String internalWebPropertyId;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Goal.kind">#</a>
@@ -201,7 +308,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Goal.name">#</a>
@@ -214,7 +321,7 @@ core.String name;
 </div>
 </div>
 <div class="field"><h4 id="parentLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/GoalParentLink.html">GoalParentLink</a>         <strong>parentLink</strong> <a class="anchor-link"
             href="#parentLink"
             title="Permalink to Goal.parentLink">#</a>
@@ -227,7 +334,7 @@ GoalParentLink parentLink;
 </div>
 </div>
 <div class="field"><h4 id="profileId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>profileId</strong> <a class="anchor-link"
             href="#profileId"
             title="Permalink to Goal.profileId">#</a>
@@ -239,8 +346,21 @@ core.String profileId;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Goal.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Goal.selfLink">#</a>
@@ -253,7 +373,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="type">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>type</strong> <a class="anchor-link"
             href="#type"
             title="Permalink to Goal.type">#</a>
@@ -266,7 +386,7 @@ core.String type;
 </div>
 </div>
 <div class="field"><h4 id="updated">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>updated</strong> <a class="anchor-link"
             href="#updated"
             title="Permalink to Goal.updated">#</a>
@@ -279,7 +399,7 @@ core.String updated;
 </div>
 </div>
 <div class="field"><h4 id="urlDestinationDetails">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/GoalUrlDestinationDetails.html">GoalUrlDestinationDetails</a>         <strong>urlDestinationDetails</strong> <a class="anchor-link"
             href="#urlDestinationDetails"
             title="Permalink to Goal.urlDestinationDetails">#</a>
@@ -292,7 +412,7 @@ GoalUrlDestinationDetails urlDestinationDetails;
 </div>
 </div>
 <div class="field"><h4 id="value">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>value</strong> <a class="anchor-link"
             href="#value"
             title="Permalink to Goal.value">#</a>
@@ -305,7 +425,7 @@ core.double value;
 </div>
 </div>
 <div class="field"><h4 id="visitNumPagesDetails">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/GoalVisitNumPagesDetails.html">GoalVisitNumPagesDetails</a>         <strong>visitNumPagesDetails</strong> <a class="anchor-link"
             href="#visitNumPagesDetails"
             title="Permalink to Goal.visitNumPagesDetails">#</a>
@@ -318,7 +438,7 @@ GoalVisitNumPagesDetails visitNumPagesDetails;
 </div>
 </div>
 <div class="field"><h4 id="visitTimeOnSiteDetails">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/GoalVisitTimeOnSiteDetails.html">GoalVisitTimeOnSiteDetails</a>         <strong>visitTimeOnSiteDetails</strong> <a class="anchor-link"
             href="#visitTimeOnSiteDetails"
             title="Permalink to Goal.visitTimeOnSiteDetails">#</a>
@@ -331,7 +451,7 @@ GoalVisitTimeOnSiteDetails visitTimeOnSiteDetails;
 </div>
 </div>
 <div class="field"><h4 id="webPropertyId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>webPropertyId</strong> <a class="anchor-link"
             href="#webPropertyId"
             title="Permalink to Goal.webPropertyId">#</a>
@@ -341,6 +461,103 @@ GoalVisitTimeOnSiteDetails visitTimeOnSiteDetails;
 <pre class="source">
 core.String webPropertyId;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Goal.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Goal.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Goal.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Goal.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Goal.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Goal.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

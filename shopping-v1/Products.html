@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Products Class / shopping-v1 Library / Dart Documentation</title>
+        <title>Products class / shopping-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,154 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../shopping-v1.html">shopping-v1</a> &rsaquo; <a href="../shopping-v1/Products.html">Products</a></div>
+         &rsaquo; <a href="../shopping-v1.html">shopping-v1</a> &rsaquo; <a href="../shopping-v1/Products.html">Products</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Products</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Products extends IdentityHash {
+  /** List of promotions. */
+  core.List&lt;ProductsPromotions&gt; promotions;
 
+  /** Self link of feed. */
+  core.String selfLink;
+
+  /** The fixed string "shopping#products". The kind of feed returned. */
+  core.String kind;
+
+  /** List of returned stores. */
+  core.List&lt;ProductsStores&gt; stores;
+
+  /** Current item count. */
+  core.int currentItemCount;
+
+  /** List of returned products. */
+  core.List&lt;Product&gt; items;
+
+  /** List of facets. */
+  core.List&lt;ProductsFacets&gt; facets;
+
+  /** Number of items per page of results. */
+  core.int itemsPerPage;
+
+  /** Redirects. */
+  core.List&lt;core.String&gt; redirects;
+
+  /** Next link of feed. */
+  core.String nextLink;
+
+  /** Related queries. */
+  core.List&lt;core.String&gt; relatedQueries;
+
+  /** Total number of search results. */
+  core.int totalItems;
+
+  /** 1-based index of the first item in the search results. */
+  core.int startIndex;
+
+  /** Etag of feed. */
+  core.String etag;
+
+  /** Unique identifier for this request. */
+  core.String requestId;
+
+  /** Recommendations for category. */
+  core.List&lt;ShoppingModelRecommendationsJsonV1&gt; categoryRecommendations;
+
+  /** Google internal. */
+  ShoppingModelDebugJsonV1 debug;
+
+  /** Spelling. */
+  ProductsSpelling spelling;
+
+  /** Previous link of feed. */
+  core.String previousLink;
+
+  /** Id of feed. */
+  core.String id;
+
+  /** List of categories. */
+  core.List&lt;ShoppingModelCategoryJsonV1&gt; categories;
+
+  /** Parses an instance from its JSON representation. */
+  static Products parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Products();
+    result.promotions = map(ProductsPromotions.parse)(json["promotions"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.kind = identity(json["kind"]);
+    result.stores = map(ProductsStores.parse)(json["stores"]);
+    result.currentItemCount = identity(json["currentItemCount"]);
+    result.items = map(Product.parse)(json["items"]);
+    result.facets = map(ProductsFacets.parse)(json["facets"]);
+    result.itemsPerPage = identity(json["itemsPerPage"]);
+    result.redirects = map(identity)(json["redirects"]);
+    result.nextLink = identity(json["nextLink"]);
+    result.relatedQueries = map(identity)(json["relatedQueries"]);
+    result.totalItems = identity(json["totalItems"]);
+    result.startIndex = identity(json["startIndex"]);
+    result.etag = identity(json["etag"]);
+    result.requestId = identity(json["requestId"]);
+    result.categoryRecommendations = map(ShoppingModelRecommendationsJsonV1.parse)(json["categoryRecommendations"]);
+    result.debug = ShoppingModelDebugJsonV1.parse(json["debug"]);
+    result.spelling = ProductsSpelling.parse(json["spelling"]);
+    result.previousLink = identity(json["previousLink"]);
+    result.id = identity(json["id"]);
+    result.categories = map(ShoppingModelCategoryJsonV1.parse)(json["categories"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Products value) {
+    if (value == null) return null;
+    final result = {};
+    result["promotions"] = map(ProductsPromotions.serialize)(value.promotions);
+    result["selfLink"] = identity(value.selfLink);
+    result["kind"] = identity(value.kind);
+    result["stores"] = map(ProductsStores.serialize)(value.stores);
+    result["currentItemCount"] = identity(value.currentItemCount);
+    result["items"] = map(Product.serialize)(value.items);
+    result["facets"] = map(ProductsFacets.serialize)(value.facets);
+    result["itemsPerPage"] = identity(value.itemsPerPage);
+    result["redirects"] = map(identity)(value.redirects);
+    result["nextLink"] = identity(value.nextLink);
+    result["relatedQueries"] = map(identity)(value.relatedQueries);
+    result["totalItems"] = identity(value.totalItems);
+    result["startIndex"] = identity(value.startIndex);
+    result["etag"] = identity(value.etag);
+    result["requestId"] = identity(value.requestId);
+    result["categoryRecommendations"] = map(ShoppingModelRecommendationsJsonV1.serialize)(value.categoryRecommendations);
+    result["debug"] = ShoppingModelDebugJsonV1.serialize(value.debug);
+    result["spelling"] = ProductsSpelling.serialize(value.spelling);
+    result["previousLink"] = identity(value.previousLink);
+    result["id"] = identity(value.id);
+    result["categories"] = map(ShoppingModelCategoryJsonV1.serialize)(value.categories);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Products</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../shopping-v1/Products.html">Products</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Products.parse">#</a></h4>
 <div class="doc">
@@ -67,7 +197,7 @@ static Products parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../shopping-v1/Products.html">Products</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Products.serialize">#</a></h4>
 <div class="doc">
@@ -102,21 +232,11 @@ static core.Object serialize(Products value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Products.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="categories">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelCategoryJsonV1.html">ShoppingModelCategoryJsonV1</a>&gt;         <strong>categories</strong> <a class="anchor-link"
             href="#categories"
             title="Permalink to Products.categories">#</a>
@@ -129,7 +249,7 @@ core.List&lt;ShoppingModelCategoryJsonV1&gt; categories;
 </div>
 </div>
 <div class="field"><h4 id="categoryRecommendations">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ShoppingModelRecommendationsJsonV1.html">ShoppingModelRecommendationsJsonV1</a>&gt;         <strong>categoryRecommendations</strong> <a class="anchor-link"
             href="#categoryRecommendations"
             title="Permalink to Products.categoryRecommendations">#</a>
@@ -142,7 +262,7 @@ core.List&lt;ShoppingModelRecommendationsJsonV1&gt; categoryRecommendations;
 </div>
 </div>
 <div class="field"><h4 id="currentItemCount">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>currentItemCount</strong> <a class="anchor-link"
             href="#currentItemCount"
             title="Permalink to Products.currentItemCount">#</a>
@@ -155,7 +275,7 @@ core.int currentItemCount;
 </div>
 </div>
 <div class="field"><h4 id="debug">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../shopping-v1/ShoppingModelDebugJsonV1.html">ShoppingModelDebugJsonV1</a>         <strong>debug</strong> <a class="anchor-link"
             href="#debug"
             title="Permalink to Products.debug">#</a>
@@ -168,7 +288,7 @@ ShoppingModelDebugJsonV1 debug;
 </div>
 </div>
 <div class="field"><h4 id="etag">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to Products.etag">#</a>
@@ -181,7 +301,7 @@ core.String etag;
 </div>
 </div>
 <div class="field"><h4 id="facets">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ProductsFacets.html">ProductsFacets</a>&gt;         <strong>facets</strong> <a class="anchor-link"
             href="#facets"
             title="Permalink to Products.facets">#</a>
@@ -194,7 +314,7 @@ core.List&lt;ProductsFacets&gt; facets;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Products.id">#</a>
@@ -207,7 +327,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="items">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/Product.html">Product</a>&gt;         <strong>items</strong> <a class="anchor-link"
             href="#items"
             title="Permalink to Products.items">#</a>
@@ -220,7 +340,7 @@ core.List&lt;Product&gt; items;
 </div>
 </div>
 <div class="field"><h4 id="itemsPerPage">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>itemsPerPage</strong> <a class="anchor-link"
             href="#itemsPerPage"
             title="Permalink to Products.itemsPerPage">#</a>
@@ -233,7 +353,7 @@ core.int itemsPerPage;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Products.kind">#</a>
@@ -246,7 +366,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="nextLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>nextLink</strong> <a class="anchor-link"
             href="#nextLink"
             title="Permalink to Products.nextLink">#</a>
@@ -259,7 +379,7 @@ core.String nextLink;
 </div>
 </div>
 <div class="field"><h4 id="previousLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>previousLink</strong> <a class="anchor-link"
             href="#previousLink"
             title="Permalink to Products.previousLink">#</a>
@@ -272,7 +392,7 @@ core.String previousLink;
 </div>
 </div>
 <div class="field"><h4 id="promotions">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ProductsPromotions.html">ProductsPromotions</a>&gt;         <strong>promotions</strong> <a class="anchor-link"
             href="#promotions"
             title="Permalink to Products.promotions">#</a>
@@ -285,7 +405,7 @@ core.List&lt;ProductsPromotions&gt; promotions;
 </div>
 </div>
 <div class="field"><h4 id="redirects">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>redirects</strong> <a class="anchor-link"
             href="#redirects"
             title="Permalink to Products.redirects">#</a>
@@ -298,7 +418,7 @@ core.List&lt;core.String&gt; redirects;
 </div>
 </div>
 <div class="field"><h4 id="relatedQueries">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>relatedQueries</strong> <a class="anchor-link"
             href="#relatedQueries"
             title="Permalink to Products.relatedQueries">#</a>
@@ -311,7 +431,7 @@ core.List&lt;core.String&gt; relatedQueries;
 </div>
 </div>
 <div class="field"><h4 id="requestId">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>requestId</strong> <a class="anchor-link"
             href="#requestId"
             title="Permalink to Products.requestId">#</a>
@@ -323,8 +443,21 @@ core.String requestId;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Products.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to Products.selfLink">#</a>
@@ -337,7 +470,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="spelling">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../shopping-v1/ProductsSpelling.html">ProductsSpelling</a>         <strong>spelling</strong> <a class="anchor-link"
             href="#spelling"
             title="Permalink to Products.spelling">#</a>
@@ -350,7 +483,7 @@ ProductsSpelling spelling;
 </div>
 </div>
 <div class="field"><h4 id="startIndex">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>startIndex</strong> <a class="anchor-link"
             href="#startIndex"
             title="Permalink to Products.startIndex">#</a>
@@ -363,7 +496,7 @@ core.int startIndex;
 </div>
 </div>
 <div class="field"><h4 id="stores">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../shopping-v1/ProductsStores.html">ProductsStores</a>&gt;         <strong>stores</strong> <a class="anchor-link"
             href="#stores"
             title="Permalink to Products.stores">#</a>
@@ -376,7 +509,7 @@ core.List&lt;ProductsStores&gt; stores;
 </div>
 </div>
 <div class="field"><h4 id="totalItems">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>totalItems</strong> <a class="anchor-link"
             href="#totalItems"
             title="Permalink to Products.totalItems">#</a>
@@ -386,6 +519,103 @@ core.List&lt;ProductsStores&gt; stores;
 <pre class="source">
 core.int totalItems;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Products.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Products.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Products.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Products.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Products.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Products.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>AndroidpublisherApi Class / androidpublisher-v1 Library / Dart Documentation</title>
+        <title>AndroidpublisherApi class / androidpublisher-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,65 +14,108 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../androidpublisher-v1.html">androidpublisher-v1</a> &rsaquo; <a href="../androidpublisher-v1/AndroidpublisherApi.html">AndroidpublisherApi</a></div>
+         &rsaquo; <a href="../androidpublisher-v1.html">androidpublisher-v1</a> &rsaquo; <a href="../androidpublisher-v1/AndroidpublisherApi.html">AndroidpublisherApi</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>AndroidpublisherApi</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
 <p>Lets Android application developers access their Google Play accounts.</p>
+<pre class="source">
+class AndroidpublisherApi extends core.Object {
+  /** The API root, such as [:https://www.googleapis.com:] */
+  final core.String baseUrl;
+  /** How we should identify ourselves to the service. */
+  http.Authenticator authenticator;
+  /** The client library version */
+  final core.String clientVersion = "0.1";
+  /** The application name, used in the user-agent header */
+  final core.String applicationName;
+  AndroidpublisherApi get _$service =&gt; this;
+  PurchasesResource _purchases;
+  PurchasesResource get purchases =&gt; _purchases;
+  
+  /** Returns response with indentations and line breaks. */
+  core.bool prettyPrint;
+
+  /** Selector specifying which fields to include in a partial response. */
+  core.String fields;
+
+  /**
+   * Available to use for quota purposes for server-side applications. Can be any arbitrary string
+   * assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+   */
+  core.String quotaUser;
+
+  /** OAuth 2.0 token for the current user. */
+  core.String oauthToken;
+
+  /**
+   * API key. Your API key identifies your project and provides you with API access, quota, and
+   * reports. Required unless you provide an OAuth 2.0 token.
+   */
+  core.String key;
+
+  /**
+   * IP address of the site where the request originates. Use this if you want to enforce per-user
+   * limits.
+   */
+  core.String userIp;
+
+  /** Data format for the response. */
+  AndroidpublisherApiAlt alt;
+
+
+  AndroidpublisherApi({this.baseUrl:"https://www.googleapis.com/androidpublisher/v1/applications/", applicationName, this.authenticator}) :
+      this.applicationName = (applicationName == null) ? null : applicationName
+          .replaceAll(const core.RegExp(r'\s+'), '_')
+          .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+  { 
+    _purchases = new PurchasesResource._internal(this);
+  }
+  core.String get userAgent {
+    var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+    return "${uaPrefix}androidpublisher/v1/20120608 google-api-dart-client/${clientVersion}";
+  }
+
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
 <div class="method"><h4 id="AndroidpublisherApi">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 new <strong>AndroidpublisherApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/androidpublisher/v1/applications/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#AndroidpublisherApi"
               title="Permalink to AndroidpublisherApi.AndroidpublisherApi">#</a></h4>
 <div class="doc">
-
 <pre class="source">
-AndroidpublisherApi([this.baseUrl = "https://www.googleapis.com/androidpublisher/v1/applications/", applicationName, this.authenticator]) :
+AndroidpublisherApi({this.baseUrl:"https://www.googleapis.com/androidpublisher/v1/applications/", applicationName, this.authenticator}) :
     this.applicationName = (applicationName == null) ? null : applicationName
-        .replaceAll(const core.RegExp(@'\s+'), '_')
-        .replaceAll(const core.RegExp(@'[^-_.,0-9a-zA-Z]'), '')
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
 { 
   _purchases = new PurchasesResource._internal(this);
 }
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="purchases">
-<span class="show-code">Code</span>
-<a href="../androidpublisher-v1/PurchasesResource.html">PurchasesResource</a> <strong>get purchases</strong>() <a class="anchor-link" href="#purchases"
-              title="Permalink to AndroidpublisherApi.get purchases">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-PurchasesResource get purchases() =&gt; _purchases;
-</pre>
 </div>
-</div>
-<div class="method"><h4 id="userAgent">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>get userAgent</strong>() <a class="anchor-link" href="#userAgent"
-              title="Permalink to AndroidpublisherApi.get userAgent">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-core.String get userAgent() {
-  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
-  return "${uaPrefix}androidpublisher/v1/20120608 google-api-dart-client/${clientVersion}";
-}
-</pre>
-</div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="alt">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../androidpublisher-v1/AndroidpublisherApiAlt.html">AndroidpublisherApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
             href="#alt"
             title="Permalink to AndroidpublisherApi.alt">#</a>
@@ -85,7 +128,7 @@ AndroidpublisherApiAlt alt;
 </div>
 </div>
 <div class="field"><h4 id="applicationName">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
             href="#applicationName"
             title="Permalink to AndroidpublisherApi.applicationName">#</a>
@@ -98,7 +141,7 @@ final core.String applicationName;
 </div>
 </div>
 <div class="field"><h4 id="authenticator">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
             href="#authenticator"
             title="Permalink to AndroidpublisherApi.authenticator">#</a>
@@ -106,12 +149,12 @@ final core.String applicationName;
         <div class="doc">
 <p>How we should identify ourselves to the service.</p>
 <pre class="source">
-Authenticator authenticator;
+http.Authenticator authenticator;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="baseUrl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
             href="#baseUrl"
             title="Permalink to AndroidpublisherApi.baseUrl">#</a>
@@ -124,7 +167,7 @@ final core.String baseUrl;
 </div>
 </div>
 <div class="field"><h4 id="clientVersion">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
             href="#clientVersion"
             title="Permalink to AndroidpublisherApi.clientVersion">#</a>
@@ -137,7 +180,7 @@ final core.String clientVersion = "0.1";
 </div>
 </div>
 <div class="field"><h4 id="fields">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
             href="#fields"
             title="Permalink to AndroidpublisherApi.fields">#</a>
@@ -150,7 +193,7 @@ core.String fields;
 </div>
 </div>
 <div class="field"><h4 id="key">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
             href="#key"
             title="Permalink to AndroidpublisherApi.key">#</a>
@@ -164,7 +207,7 @@ core.String key;
 </div>
 </div>
 <div class="field"><h4 id="oauthToken">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
             href="#oauthToken"
             title="Permalink to AndroidpublisherApi.oauthToken">#</a>
@@ -177,7 +220,7 @@ core.String oauthToken;
 </div>
 </div>
 <div class="field"><h4 id="prettyPrint">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
             href="#prettyPrint"
             title="Permalink to AndroidpublisherApi.prettyPrint">#</a>
@@ -189,8 +232,20 @@ core.bool prettyPrint;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="purchases">
+<button class="show-code">Code</button>
+final <a href="../androidpublisher-v1/PurchasesResource.html">PurchasesResource</a>         <strong>purchases</strong> <a class="anchor-link"
+            href="#purchases"
+            title="Permalink to AndroidpublisherApi.purchases">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+PurchasesResource get purchases =&gt; _purchases;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="quotaUser">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
             href="#quotaUser"
             title="Permalink to AndroidpublisherApi.quotaUser">#</a>
@@ -203,8 +258,36 @@ core.String quotaUser;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to AndroidpublisherApi.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userAgent">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userAgent</strong> <a class="anchor-link"
+            href="#userAgent"
+            title="Permalink to AndroidpublisherApi.userAgent">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String get userAgent {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}androidpublisher/v1/20120608 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="userIp">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
             href="#userIp"
             title="Permalink to AndroidpublisherApi.userIp">#</a>
@@ -215,6 +298,105 @@ limits.</p>
 <pre class="source">
 core.String userIp;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to AndroidpublisherApi.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="AndroidpublisherApi">
+<button class="show-code">Code</button>
+new <strong>AndroidpublisherApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/androidpublisher/v1/applications/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#AndroidpublisherApi"
+              title="Permalink to AndroidpublisherApi.AndroidpublisherApi">#</a></h4>
+<div class="doc">
+<pre class="source">
+AndroidpublisherApi({this.baseUrl:"https://www.googleapis.com/androidpublisher/v1/applications/", applicationName, this.authenticator}) :
+    this.applicationName = (applicationName == null) ? null : applicationName
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+{ 
+  _purchases = new PurchasesResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to AndroidpublisherApi.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to AndroidpublisherApi.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to AndroidpublisherApi.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to AndroidpublisherApi.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

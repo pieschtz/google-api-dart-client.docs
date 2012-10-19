@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>JobState Class / coordinate-v1 Library / Dart Documentation</title>
+        <title>JobState class / coordinate-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,94 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../coordinate-v1.html">coordinate-v1</a> &rsaquo; <a href="../coordinate-v1/JobState.html">JobState</a></div>
+         &rsaquo; <a href="../coordinate-v1.html">coordinate-v1</a> &rsaquo; <a href="../coordinate-v1/JobState.html">JobState</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>JobState</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class JobState extends IdentityHash {
+  /** Identifies this object as a job state. */
+  core.String kind;
 
+  /** Customer name. */
+  core.String customerName;
+
+  /** Job title. */
+  core.String title;
+
+  /** Note added to the job. */
+  core.List&lt;core.String&gt; note;
+
+  /** Email address of the assignee. */
+  core.String assignee;
+
+  /** Customer phone number. */
+  core.String customerPhoneNumber;
+
+  /** Job location. */
+  Location location;
+
+  /** Job progress. */
+  core.String progress;
+
+  /** Custom fields. */
+  CustomFields customFields;
+
+  /** Parses an instance from its JSON representation. */
+  static JobState parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new JobState();
+    result.kind = identity(json["kind"]);
+    result.customerName = identity(json["customerName"]);
+    result.title = identity(json["title"]);
+    result.note = map(identity)(json["note"]);
+    result.assignee = identity(json["assignee"]);
+    result.customerPhoneNumber = identity(json["customerPhoneNumber"]);
+    result.location = Location.parse(json["location"]);
+    result.progress = identity(json["progress"]);
+    result.customFields = CustomFields.parse(json["customFields"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(JobState value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["customerName"] = identity(value.customerName);
+    result["title"] = identity(value.title);
+    result["note"] = map(identity)(value.note);
+    result["assignee"] = identity(value.assignee);
+    result["customerPhoneNumber"] = identity(value.customerPhoneNumber);
+    result["location"] = Location.serialize(value.location);
+    result["progress"] = identity(value.progress);
+    result["customFields"] = CustomFields.serialize(value.customFields);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>JobState</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../coordinate-v1/JobState.html">JobState</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to JobState.parse">#</a></h4>
 <div class="doc">
@@ -48,13 +118,14 @@ static JobState parse(core.Map&lt;core.String, core.Object&gt; json) {
   result.customerPhoneNumber = identity(json["customerPhoneNumber"]);
   result.location = Location.parse(json["location"]);
   result.progress = identity(json["progress"]);
+  result.customFields = CustomFields.parse(json["customFields"]);
   return result;
 }
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../coordinate-v1/JobState.html">JobState</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to JobState.serialize">#</a></h4>
 <div class="doc">
@@ -71,26 +142,17 @@ static core.Object serialize(JobState value) {
   result["customerPhoneNumber"] = identity(value.customerPhoneNumber);
   result["location"] = Location.serialize(value.location);
   result["progress"] = identity(value.progress);
+  result["customFields"] = CustomFields.serialize(value.customFields);
   return result;
 }
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to JobState.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="assignee">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>assignee</strong> <a class="anchor-link"
             href="#assignee"
             title="Permalink to JobState.assignee">#</a>
@@ -103,7 +165,7 @@ core.String assignee;
 </div>
 </div>
 <div class="field"><h4 id="customerName">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>customerName</strong> <a class="anchor-link"
             href="#customerName"
             title="Permalink to JobState.customerName">#</a>
@@ -116,7 +178,7 @@ core.String customerName;
 </div>
 </div>
 <div class="field"><h4 id="customerPhoneNumber">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>customerPhoneNumber</strong> <a class="anchor-link"
             href="#customerPhoneNumber"
             title="Permalink to JobState.customerPhoneNumber">#</a>
@@ -128,8 +190,21 @@ core.String customerPhoneNumber;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="customFields">
+<button class="show-code">Code</button>
+<a href="../coordinate-v1/CustomFields.html">CustomFields</a>         <strong>customFields</strong> <a class="anchor-link"
+            href="#customFields"
+            title="Permalink to JobState.customFields">#</a>
+        </h4>
+        <div class="doc">
+<p>Custom fields.</p>
+<pre class="source">
+CustomFields customFields;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to JobState.kind">#</a>
@@ -142,7 +217,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="location">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../coordinate-v1/Location.html">Location</a>         <strong>location</strong> <a class="anchor-link"
             href="#location"
             title="Permalink to JobState.location">#</a>
@@ -155,7 +230,7 @@ Location location;
 </div>
 </div>
 <div class="field"><h4 id="note">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>note</strong> <a class="anchor-link"
             href="#note"
             title="Permalink to JobState.note">#</a>
@@ -168,7 +243,7 @@ core.List&lt;core.String&gt; note;
 </div>
 </div>
 <div class="field"><h4 id="progress">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>progress</strong> <a class="anchor-link"
             href="#progress"
             title="Permalink to JobState.progress">#</a>
@@ -180,8 +255,21 @@ core.String progress;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to JobState.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="title">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to JobState.title">#</a>
@@ -191,6 +279,103 @@ core.String progress;
 <pre class="source">
 core.String title;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to JobState.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to JobState.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to JobState.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to JobState.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to JobState.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to JobState.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

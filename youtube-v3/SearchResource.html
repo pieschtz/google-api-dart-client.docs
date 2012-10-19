@@ -1,0 +1,306 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>SearchResource class / youtube-v3 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="youtube-v3" data-type="SearchResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../youtube-v3.html">youtube-v3</a> &rsaquo; <a href="../youtube-v3/SearchResource.html">SearchResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>SearchResource</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class SearchResource extends core.Object {
+  final YouTubeApi _$service;
+  
+  SearchResource._internal(YouTubeApi $service) : _$service = $service;
+
+  // Method SearchResource.List
+  /**
+   * Universal search for youtube.
+   *
+   *    * [part] Search result parts to include in the returned response. Valid values are: id and snippet.
+   *    * [topicId] Only search for resources with the specified topic
+   *    * [videoDuration] Add a filter on the duration of the videos.
+   *    * [videoDimension] Add a filter for the number of dimensions in the videos.
+   *    * [videoLicense] Add a filter on the licensing of the videos.
+   *    * [maxResults] Maximum number of search results to return per page.
+  Default: 5.
+  Minimum: 0.
+  Maximum: 50.
+   *    * [order] Sort order.
+  Default: SEARCH_SORT_RELEVANCE.
+   *    * [q] Query to search in Youtube.
+   *    * [pageToken] Token for the page selection.
+   *    * [videoCaption] Add a filter on the the presence of captions on the videos.
+   *    * [videoDefinition] Add a filter for the definition of the videos.
+   *    * [published] Only search for resources uploaded at a specific pediod
+   *    * [relatedToVideo] Search for resources related to this video. Need to be used with type set to 'video'
+   *    * [type] Type of resource to search.
+  Default: video,channel,playlist.
+   *    * [contentOwnerId] The authenticated user acts on behalf of this content owner.
+   */
+  core.Future&lt;SearchListResponse&gt; list(core.String part, {core.String topicId, SearchResourceListVideoDuration videoDuration, SearchResourceListVideoDimension videoDimension, SearchResourceListVideoLicense videoLicense, core.int maxResults, SearchResourceListOrder order, core.String q, core.String pageToken, SearchResourceListVideoCaption videoCaption, SearchResourceListVideoDefinition videoDefinition, SearchResourceListPublished published, core.String relatedToVideo, core.String type, core.String contentOwnerId}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?part) $queryParams["part"] = part;
+    if (?topicId) $queryParams["topicId"] = topicId;
+    if (?videoDuration) $queryParams["videoDuration"] = videoDuration;
+    if (?videoDimension) $queryParams["videoDimension"] = videoDimension;
+    if (?videoLicense) $queryParams["videoLicense"] = videoLicense;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?order) $queryParams["order"] = order;
+    if (?q) $queryParams["q"] = q;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?videoCaption) $queryParams["videoCaption"] = videoCaption;
+    if (?videoDefinition) $queryParams["videoDefinition"] = videoDefinition;
+    if (?published) $queryParams["published"] = published;
+    if (?relatedToVideo) $queryParams["relatedToVideo"] = relatedToVideo;
+    if (?type) $queryParams["type"] = type;
+    if (?contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "search";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; SearchListResponse.parse(JSON.parse($text)));
+  }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="SearchResource._internal">
+<button class="show-code">Code</button>
+new <strong>SearchResource._internal</strong>(<a href="../youtube-v3/YouTubeApi.html">YouTubeApi</a> $service) <a class="anchor-link" href="#SearchResource._internal"
+              title="Permalink to SearchResource.SearchResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+SearchResource._internal(YouTubeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to SearchResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to SearchResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to SearchResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../youtube-v3/SearchListResponse.html">SearchListResponse</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> part, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> topicId, <a href="../youtube-v3/SearchResourceListVideoDuration.html">SearchResourceListVideoDuration</a> videoDuration, <a href="../youtube-v3/SearchResourceListVideoDimension.html">SearchResourceListVideoDimension</a> videoDimension, <a href="../youtube-v3/SearchResourceListVideoLicense.html">SearchResourceListVideoLicense</a> videoLicense, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="../youtube-v3/SearchResourceListOrder.html">SearchResourceListOrder</a> order, <a href="http://api.dartlang.org/dart_core/String.html">String</a> q, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="../youtube-v3/SearchResourceListVideoCaption.html">SearchResourceListVideoCaption</a> videoCaption, <a href="../youtube-v3/SearchResourceListVideoDefinition.html">SearchResourceListVideoDefinition</a> videoDefinition, <a href="../youtube-v3/SearchResourceListPublished.html">SearchResourceListPublished</a> published, <a href="http://api.dartlang.org/dart_core/String.html">String</a> relatedToVideo, <a href="http://api.dartlang.org/dart_core/String.html">String</a> type, <a href="http://api.dartlang.org/dart_core/String.html">String</a> contentOwnerId]) <a class="anchor-link" href="#list"
+              title="Permalink to SearchResource.list">#</a></h4>
+<div class="doc">
+<p>Universal search for youtube.</p><ul><li>
+<span class="param">part</span> Search result parts to include in the returned response. Valid values are: id and snippet.</li><li>
+<span class="param">topicId</span> Only search for resources with the specified topic</li><li>
+<span class="param">videoDuration</span> Add a filter on the duration of the videos.</li><li>
+<span class="param">videoDimension</span> Add a filter for the number of dimensions in the videos.</li><li>
+<span class="param">videoLicense</span> Add a filter on the licensing of the videos.</li><li>
+<p>
+<span class="param">maxResults</span> Maximum number of search results to return per page.
+Default: 5.
+Minimum: 0.
+Maximum: 50.</p></li><li>
+<p>
+<span class="param">order</span> Sort order.
+Default: SEARCH<em>SORT</em>RELEVANCE.</p></li><li>
+<span class="param">q</span> Query to search in Youtube.</li><li>
+<span class="param">pageToken</span> Token for the page selection.</li><li>
+<span class="param">videoCaption</span> Add a filter on the the presence of captions on the videos.</li><li>
+<span class="param">videoDefinition</span> Add a filter for the definition of the videos.</li><li>
+<span class="param">published</span> Only search for resources uploaded at a specific pediod</li><li>
+<span class="param">relatedToVideo</span> Search for resources related to this video. Need to be used with type set to 'video'</li><li>
+<p>
+<span class="param">type</span> Type of resource to search.
+Default: video,channel,playlist.</p></li><li>
+<span class="param">contentOwnerId</span> The authenticated user acts on behalf of this content owner.</li></ul>
+<pre class="source">
+core.Future&lt;SearchListResponse&gt; list(core.String part, {core.String topicId, SearchResourceListVideoDuration videoDuration, SearchResourceListVideoDimension videoDimension, SearchResourceListVideoLicense videoLicense, core.int maxResults, SearchResourceListOrder order, core.String q, core.String pageToken, SearchResourceListVideoCaption videoCaption, SearchResourceListVideoDefinition videoDefinition, SearchResourceListPublished published, core.String relatedToVideo, core.String type, core.String contentOwnerId}) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  if (?part) $queryParams["part"] = part;
+  if (?topicId) $queryParams["topicId"] = topicId;
+  if (?videoDuration) $queryParams["videoDuration"] = videoDuration;
+  if (?videoDimension) $queryParams["videoDimension"] = videoDimension;
+  if (?videoLicense) $queryParams["videoLicense"] = videoLicense;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?order) $queryParams["order"] = order;
+  if (?q) $queryParams["q"] = q;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?videoCaption) $queryParams["videoCaption"] = videoCaption;
+  if (?videoDefinition) $queryParams["videoDefinition"] = videoDefinition;
+  if (?published) $queryParams["published"] = published;
+  if (?relatedToVideo) $queryParams["relatedToVideo"] = relatedToVideo;
+  if (?type) $queryParams["type"] = type;
+  if (?contentOwnerId) $queryParams["contentOwnerId"] = contentOwnerId;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "search";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; SearchListResponse.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to SearchResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to SearchResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="SearchResource._internal">
+<button class="show-code">Code</button>
+new <strong>SearchResource._internal</strong>(<a href="../youtube-v3/YouTubeApi.html">YouTubeApi</a> $service) <a class="anchor-link" href="#SearchResource._internal"
+              title="Permalink to SearchResource.SearchResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+SearchResource._internal(YouTubeApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to SearchResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

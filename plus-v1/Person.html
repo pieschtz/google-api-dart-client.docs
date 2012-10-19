@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>Person Class / plus-v1 Library / Dart Documentation</title>
+        <title>Person class / plus-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,171 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/Person.html">Person</a></div>
+         &rsaquo; <a href="../plus-v1.html">plus-v1</a> &rsaquo; <a href="../plus-v1/Person.html">Person</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>Person</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class Person extends IdentityHash {
+  /**
+ * The person's relationship status. Possible values are: - "single" - Person is single. -
+ * "in_a_relationship" - Person is in a relationship. - "engaged" - Person is engaged. - "married" -
+ * Person is married. - "its_complicated" - The relationship is complicated. - "open_relationship" -
+ * Person is in an open relationship. - "widowed" - Person is widowed. - "in_domestic_partnership" -
+ * Person is in a domestic partnership. - "in_civil_union" - Person is in a civil union.
+ */
+  core.String relationshipStatus;
 
+  /** A list of current or past organizations with which this person is associated. */
+  core.List&lt;PersonOrganizations&gt; organizations;
+
+  /** Identifies this resource as a person. Value: "plus#person". */
+  core.String kind;
+
+  /** The name of this person, suitable for display. */
+  core.String displayName;
+
+  /** An object representation of the individual components of a person's name. */
+  PersonName name;
+
+  /** The URL of this person's profile. */
+  core.String url;
+
+  /**
+ * The person's gender. Possible values are: - "male" - Male gender. - "female" - Female gender. -
+ * "other" - Other.
+ */
+  core.String gender;
+
+  /** A short biography for this person. */
+  core.String aboutMe;
+
+  /** The brief description (tagline) of this person. */
+  core.String tagline;
+
+  /** A list of URLs for this person. */
+  core.List&lt;PersonUrls&gt; urls;
+
+  /** A list of places where this person has lived. */
+  core.List&lt;PersonPlacesLived&gt; placesLived;
+
+  /** A list of email addresses for this person. */
+  core.List&lt;PersonEmails&gt; emails;
+
+  /** The nickname of this person. */
+  core.String nickname;
+
+  /** The person's date of birth, represented as YYYY-MM-DD. */
+  core.String birthday;
+
+  /** ETag of this response for caching purposes. */
+  core.String etag;
+
+  /** The representation of the person's profile photo. */
+  PersonImage image;
+
+  /**
+ * If "true", indicates that the person has installed the app that is making the request and has
+ * chosen to expose this install state to the caller. A value of "false" indicates that the install
+ * state cannot be determined (it is either not installed or the person has chosen to keep this
+ * information private).
+ */
+  core.bool hasApp;
+
+  /** The ID of this person. */
+  core.String id;
+
+  /** The languages spoken by this person. */
+  core.List&lt;core.String&gt; languagesSpoken;
+
+  /** The current location for this person. */
+  core.String currentLocation;
+
+  /**
+ * Type of person within Google+. Possible values are: - "person" - represents an actual person. -
+ * "page" - represents a page.
+ */
+  core.String objectType;
+
+  /** Parses an instance from its JSON representation. */
+  static Person parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new Person();
+    result.relationshipStatus = identity(json["relationshipStatus"]);
+    result.organizations = map(PersonOrganizations.parse)(json["organizations"]);
+    result.kind = identity(json["kind"]);
+    result.displayName = identity(json["displayName"]);
+    result.name = PersonName.parse(json["name"]);
+    result.url = identity(json["url"]);
+    result.gender = identity(json["gender"]);
+    result.aboutMe = identity(json["aboutMe"]);
+    result.tagline = identity(json["tagline"]);
+    result.urls = map(PersonUrls.parse)(json["urls"]);
+    result.placesLived = map(PersonPlacesLived.parse)(json["placesLived"]);
+    result.emails = map(PersonEmails.parse)(json["emails"]);
+    result.nickname = identity(json["nickname"]);
+    result.birthday = identity(json["birthday"]);
+    result.etag = identity(json["etag"]);
+    result.image = PersonImage.parse(json["image"]);
+    result.hasApp = identity(json["hasApp"]);
+    result.id = identity(json["id"]);
+    result.languagesSpoken = map(identity)(json["languagesSpoken"]);
+    result.currentLocation = identity(json["currentLocation"]);
+    result.objectType = identity(json["objectType"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(Person value) {
+    if (value == null) return null;
+    final result = {};
+    result["relationshipStatus"] = identity(value.relationshipStatus);
+    result["organizations"] = map(PersonOrganizations.serialize)(value.organizations);
+    result["kind"] = identity(value.kind);
+    result["displayName"] = identity(value.displayName);
+    result["name"] = PersonName.serialize(value.name);
+    result["url"] = identity(value.url);
+    result["gender"] = identity(value.gender);
+    result["aboutMe"] = identity(value.aboutMe);
+    result["tagline"] = identity(value.tagline);
+    result["urls"] = map(PersonUrls.serialize)(value.urls);
+    result["placesLived"] = map(PersonPlacesLived.serialize)(value.placesLived);
+    result["emails"] = map(PersonEmails.serialize)(value.emails);
+    result["nickname"] = identity(value.nickname);
+    result["birthday"] = identity(value.birthday);
+    result["etag"] = identity(value.etag);
+    result["image"] = PersonImage.serialize(value.image);
+    result["hasApp"] = identity(value.hasApp);
+    result["id"] = identity(value.id);
+    result["languagesSpoken"] = map(identity)(value.languagesSpoken);
+    result["currentLocation"] = identity(value.currentLocation);
+    result["objectType"] = identity(value.objectType);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>Person</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../plus-v1/Person.html">Person</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to Person.parse">#</a></h4>
 <div class="doc">
@@ -67,7 +214,7 @@ static Person parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../plus-v1/Person.html">Person</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to Person.serialize">#</a></h4>
 <div class="doc">
@@ -102,21 +249,11 @@ static core.Object serialize(Person value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to Person.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="aboutMe">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>aboutMe</strong> <a class="anchor-link"
             href="#aboutMe"
             title="Permalink to Person.aboutMe">#</a>
@@ -129,7 +266,7 @@ core.String aboutMe;
 </div>
 </div>
 <div class="field"><h4 id="birthday">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>birthday</strong> <a class="anchor-link"
             href="#birthday"
             title="Permalink to Person.birthday">#</a>
@@ -142,7 +279,7 @@ core.String birthday;
 </div>
 </div>
 <div class="field"><h4 id="currentLocation">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>currentLocation</strong> <a class="anchor-link"
             href="#currentLocation"
             title="Permalink to Person.currentLocation">#</a>
@@ -155,7 +292,7 @@ core.String currentLocation;
 </div>
 </div>
 <div class="field"><h4 id="displayName">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>displayName</strong> <a class="anchor-link"
             href="#displayName"
             title="Permalink to Person.displayName">#</a>
@@ -168,7 +305,7 @@ core.String displayName;
 </div>
 </div>
 <div class="field"><h4 id="emails">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../plus-v1/PersonEmails.html">PersonEmails</a>&gt;         <strong>emails</strong> <a class="anchor-link"
             href="#emails"
             title="Permalink to Person.emails">#</a>
@@ -181,7 +318,7 @@ core.List&lt;PersonEmails&gt; emails;
 </div>
 </div>
 <div class="field"><h4 id="etag">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to Person.etag">#</a>
@@ -194,7 +331,7 @@ core.String etag;
 </div>
 </div>
 <div class="field"><h4 id="gender">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>gender</strong> <a class="anchor-link"
             href="#gender"
             title="Permalink to Person.gender">#</a>
@@ -208,7 +345,7 @@ core.String gender;
 </div>
 </div>
 <div class="field"><h4 id="hasApp">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>hasApp</strong> <a class="anchor-link"
             href="#hasApp"
             title="Permalink to Person.hasApp">#</a>
@@ -224,7 +361,7 @@ core.bool hasApp;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to Person.id">#</a>
@@ -237,7 +374,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="image">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../plus-v1/PersonImage.html">PersonImage</a>         <strong>image</strong> <a class="anchor-link"
             href="#image"
             title="Permalink to Person.image">#</a>
@@ -250,7 +387,7 @@ PersonImage image;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to Person.kind">#</a>
@@ -263,7 +400,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="languagesSpoken">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>languagesSpoken</strong> <a class="anchor-link"
             href="#languagesSpoken"
             title="Permalink to Person.languagesSpoken">#</a>
@@ -276,7 +413,7 @@ core.List&lt;core.String&gt; languagesSpoken;
 </div>
 </div>
 <div class="field"><h4 id="name">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../plus-v1/PersonName.html">PersonName</a>         <strong>name</strong> <a class="anchor-link"
             href="#name"
             title="Permalink to Person.name">#</a>
@@ -289,7 +426,7 @@ PersonName name;
 </div>
 </div>
 <div class="field"><h4 id="nickname">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>nickname</strong> <a class="anchor-link"
             href="#nickname"
             title="Permalink to Person.nickname">#</a>
@@ -302,7 +439,7 @@ core.String nickname;
 </div>
 </div>
 <div class="field"><h4 id="objectType">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>objectType</strong> <a class="anchor-link"
             href="#objectType"
             title="Permalink to Person.objectType">#</a>
@@ -316,7 +453,7 @@ core.String objectType;
 </div>
 </div>
 <div class="field"><h4 id="organizations">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../plus-v1/PersonOrganizations.html">PersonOrganizations</a>&gt;         <strong>organizations</strong> <a class="anchor-link"
             href="#organizations"
             title="Permalink to Person.organizations">#</a>
@@ -329,7 +466,7 @@ core.List&lt;PersonOrganizations&gt; organizations;
 </div>
 </div>
 <div class="field"><h4 id="placesLived">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../plus-v1/PersonPlacesLived.html">PersonPlacesLived</a>&gt;         <strong>placesLived</strong> <a class="anchor-link"
             href="#placesLived"
             title="Permalink to Person.placesLived">#</a>
@@ -342,7 +479,7 @@ core.List&lt;PersonPlacesLived&gt; placesLived;
 </div>
 </div>
 <div class="field"><h4 id="relationshipStatus">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>relationshipStatus</strong> <a class="anchor-link"
             href="#relationshipStatus"
             title="Permalink to Person.relationshipStatus">#</a>
@@ -358,8 +495,21 @@ core.String relationshipStatus;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to Person.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="tagline">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>tagline</strong> <a class="anchor-link"
             href="#tagline"
             title="Permalink to Person.tagline">#</a>
@@ -372,7 +522,7 @@ core.String tagline;
 </div>
 </div>
 <div class="field"><h4 id="url">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>url</strong> <a class="anchor-link"
             href="#url"
             title="Permalink to Person.url">#</a>
@@ -385,7 +535,7 @@ core.String url;
 </div>
 </div>
 <div class="field"><h4 id="urls">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../plus-v1/PersonUrls.html">PersonUrls</a>&gt;         <strong>urls</strong> <a class="anchor-link"
             href="#urls"
             title="Permalink to Person.urls">#</a>
@@ -395,6 +545,103 @@ core.String url;
 <pre class="source">
 core.List&lt;PersonUrls&gt; urls;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to Person.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to Person.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to Person.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Person.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to Person.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to Person.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

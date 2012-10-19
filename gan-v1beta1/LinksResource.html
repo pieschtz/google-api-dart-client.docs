@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>LinksResource Class / gan-v1beta1 Library / Dart Documentation</title>
+        <title>LinksResource class / gan-v1beta1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,216 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/LinksResource.html">LinksResource</a></div>
+         &rsaquo; <a href="../gan-v1beta1.html">gan-v1beta1</a> &rsaquo; <a href="../gan-v1beta1/LinksResource.html">LinksResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>LinksResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class LinksResource extends core.Object {
+  final GanApi _$service;
+  
+  LinksResource._internal(GanApi $service) : _$service = $service;
 
+  // Method LinksResource.Insert
+  /**
+   * Inserts a new link.
+   *
+   *    * [content] the Link
+   *    * [role] The role of the requester. Valid values: 'advertisers' or 'publishers'.
+   *    * [roleId] The ID of the requesting advertiser or publisher.
+   */
+  core.Future&lt;Link&gt; insert(LinksResourceInsertRole role, core.String roleId, Link content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["role"] = role;
+    $pathParams["roleId"] = roleId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Link.serialize(content));
+    final $path = "{role}/{roleId}/link";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Link.parse(JSON.parse($text)));
+  }
+
+  // Method LinksResource.List
+  /**
+   * Retrieves all links that match the query parameters.
+   *
+   *    * [role] The role of the requester. Valid values: 'advertisers' or 'publishers'.
+   *    * [roleId] The ID of the requesting advertiser or publisher.
+   *    * [linkType] The type of the link.
+   *    * [startDateMin] The beginning of the start date range.
+   *    * [assetSize] The size of the given asset.
+   *    * [searchText] Field for full text search across title and merchandising text, supports link id search.
+   *    * [createDateMax] The end of the create date range.
+   *    * [createDateMin] The beginning of the create date range.
+   *    * [relationshipStatus] The status of the relationship.
+   *    * [maxResults] Max number of items to return in this page. Optional. Defaults to 20.
+
+  Minimum: 0.
+  Maximum: 100.
+   *    * [advertiserId] Limits the resulting links to the ones belonging to the listed advertisers.
+   *    * [pageToken] The value of 'nextPageToken' from the previous page. Optional.
+   *    * [startDateMax] The end of the start date range.
+   *    * [promotionType] The promotion type.
+   *    * [authorship] The role of the author of the link.
+   */
+  core.Future&lt;Links&gt; list(LinksResourceListRole role, core.String roleId, {LinksResourceListLinkType linkType, core.String startDateMin, core.List&lt;core.String&gt; assetSize, core.String searchText, core.String createDateMax, core.String createDateMin, LinksResourceListRelationshipStatus relationshipStatus, core.int maxResults, core.List&lt;core.String&gt; advertiserId, core.String pageToken, core.String startDateMax, LinksResourceListPromotionType promotionType, LinksResourceListAuthorship authorship}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["role"] = role;
+    $pathParams["roleId"] = roleId;
+    if (?linkType) $queryParams["linkType"] = linkType;
+    if (?startDateMin) $queryParams["startDateMin"] = startDateMin;
+    if (?assetSize) $queryParams["assetSize"] = assetSize;
+    if (?searchText) $queryParams["searchText"] = searchText;
+    if (?createDateMax) $queryParams["createDateMax"] = createDateMax;
+    if (?createDateMin) $queryParams["createDateMin"] = createDateMin;
+    if (?relationshipStatus) $queryParams["relationshipStatus"] = relationshipStatus;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (?advertiserId) $queryParams["advertiserId"] = advertiserId;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?startDateMax) $queryParams["startDateMax"] = startDateMax;
+    if (?promotionType) $queryParams["promotionType"] = promotionType;
+    if (?authorship) $queryParams["authorship"] = authorship;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{role}/{roleId}/links";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Links.parse(JSON.parse($text)));
+  }
+
+  // Method LinksResource.Get
+  /**
+   * Retrieves data about a single link if the requesting advertiser/publisher has access to it.
+   * Advertisers can look up their own links. Publishers can look up visible links or links belonging
+   * to advertisers they are in a relationship with.
+   *
+   *    * [role] The role of the requester. Valid values: 'advertisers' or 'publishers'.
+   *    * [roleId] The ID of the requesting advertiser or publisher.
+   *    * [linkId] The ID of the link to look up.
+   */
+  core.Future&lt;Link&gt; get(LinksResourceGetRole role, core.String roleId, core.String linkId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["role"] = role;
+    $pathParams["roleId"] = roleId;
+    $pathParams["linkId"] = linkId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{role}/{roleId}/link/{linkId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Link.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="LinksResource">
-<span class="show-code">Code</span>
-new <strong>LinksResource</strong>._internal(<a href="../gan-v1beta1/GanApi.html">GanApi</a> $service) <a class="anchor-link" href="#LinksResource"
-              title="Permalink to LinksResource.LinksResource">#</a></h4>
+<div class="method"><h4 id="LinksResource._internal">
+<button class="show-code">Code</button>
+new <strong>LinksResource._internal</strong>(<a href="../gan-v1beta1/GanApi.html">GanApi</a> $service) <a class="anchor-link" href="#LinksResource._internal"
+              title="Permalink to LinksResource.LinksResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 LinksResource._internal(GanApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to LinksResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to LinksResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Link.html">Link</a>&gt; <strong>get</strong>(<a href="../gan-v1beta1/LinksResourceGetRole.html">LinksResourceGetRole</a> role, <a href="http://api.dartlang.org/dart_core/String.html">String</a> roleId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> linkId) <a class="anchor-link" href="#get"
               title="Permalink to LinksResource.get">#</a></h4>
 <div class="doc">
@@ -68,7 +251,7 @@ core.Future&lt;Link&gt; get(LinksResourceGetRole role, core.String roleId, core.
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{role}/{roleId}/link/{linkId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -79,8 +262,26 @@ core.Future&lt;Link&gt; get(LinksResourceGetRole role, core.String roleId, core.
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to LinksResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Link.html">Link</a>&gt; <strong>insert</strong>(<a href="../gan-v1beta1/LinksResourceInsertRole.html">LinksResourceInsertRole</a> role, <a href="http://api.dartlang.org/dart_core/String.html">String</a> roleId, <a href="../gan-v1beta1/Link.html">Link</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to LinksResource.insert">#</a></h4>
 <div class="doc">
@@ -107,7 +308,7 @@ core.Future&lt;Link&gt; insert(LinksResourceInsertRole role, core.String roleId,
   final $body = JSON.stringify(Link.serialize(content));
   final $path = "{role}/{roleId}/link";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -118,9 +319,19 @@ core.Future&lt;Link&gt; insert(LinksResourceInsertRole role, core.String roleId,
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="LinksResource._internal">
+<button class="show-code">Code</button>
+new <strong>LinksResource._internal</strong>(<a href="../gan-v1beta1/GanApi.html">GanApi</a> $service) <a class="anchor-link" href="#LinksResource._internal"
+              title="Permalink to LinksResource.LinksResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+LinksResource._internal(GanApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Links.html">Links</a>&gt; <strong>list</strong>(<a href="../gan-v1beta1/LinksResourceListRole.html">LinksResourceListRole</a> role, <a href="http://api.dartlang.org/dart_core/String.html">String</a> roleId, [<a href="../gan-v1beta1/LinksResourceListLinkType.html">LinksResourceListLinkType</a> linkType = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startDateMin = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; assetSize = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListRelationshipStatus.html">LinksResourceListRelationshipStatus</a> relationshipStatus = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAdvertiserCategory.html">LinksResourceListAdvertiserCategory</a> advertiserCategory = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; advertiserId = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startDateMax = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListPromotionType.html">LinksResourceListPromotionType</a> promotionType = UNSPECIFIED, <a href="../gan-v1beta1/LinksResourceListAuthorship.html">LinksResourceListAuthorship</a> authorship = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../gan-v1beta1/Links.html">Links</a>&gt; <strong>list</strong>(<a href="../gan-v1beta1/LinksResourceListRole.html">LinksResourceListRole</a> role, <a href="http://api.dartlang.org/dart_core/String.html">String</a> roleId, [<a href="../gan-v1beta1/LinksResourceListLinkType.html">LinksResourceListLinkType</a> linkType, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startDateMin, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; assetSize, <a href="http://api.dartlang.org/dart_core/String.html">String</a> searchText, <a href="http://api.dartlang.org/dart_core/String.html">String</a> createDateMax, <a href="http://api.dartlang.org/dart_core/String.html">String</a> createDateMin, <a href="../gan-v1beta1/LinksResourceListRelationshipStatus.html">LinksResourceListRelationshipStatus</a> relationshipStatus, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; advertiserId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/String.html">String</a> startDateMax, <a href="../gan-v1beta1/LinksResourceListPromotionType.html">LinksResourceListPromotionType</a> promotionType, <a href="../gan-v1beta1/LinksResourceListAuthorship.html">LinksResourceListAuthorship</a> authorship]) <a class="anchor-link" href="#list"
               title="Permalink to LinksResource.list">#</a></h4>
 <div class="doc">
 <p>Retrieves all links that match the query parameters.</p><ul><li>
@@ -129,8 +340,10 @@ core.Future&lt;Link&gt; insert(LinksResourceInsertRole role, core.String roleId,
 <span class="param">linkType</span> The type of the link.</li><li>
 <span class="param">startDateMin</span> The beginning of the start date range.</li><li>
 <span class="param">assetSize</span> The size of the given asset.</li><li>
+<span class="param">searchText</span> Field for full text search across title and merchandising text, supports link id search.</li><li>
+<span class="param">createDateMax</span> The end of the create date range.</li><li>
+<span class="param">createDateMin</span> The beginning of the create date range.</li><li>
 <span class="param">relationshipStatus</span> The status of the relationship.</li><li>
-<span class="param">advertiserCategory</span> The advertiser's primary vertical.</li><li>
 <span class="param">maxResults</span> Max number of items to return in this page. Optional. Defaults to 20.</li></ul>
 <p>Minimum: 0.
 Maximum: 100.
@@ -145,23 +358,25 @@ Maximum: 100.
    * 
 <span class="param">authorship</span> The role of the author of the link.</p>
 <pre class="source">
-core.Future&lt;Links&gt; list(LinksResourceListRole role, core.String roleId, [LinksResourceListLinkType linkType = UNSPECIFIED, core.String startDateMin = UNSPECIFIED, core.List&lt;core.String&gt; assetSize = UNSPECIFIED, LinksResourceListRelationshipStatus relationshipStatus = UNSPECIFIED, LinksResourceListAdvertiserCategory advertiserCategory = UNSPECIFIED, core.int maxResults = UNSPECIFIED, core.List&lt;core.String&gt; advertiserId = UNSPECIFIED, core.String pageToken = UNSPECIFIED, core.String startDateMax = UNSPECIFIED, LinksResourceListPromotionType promotionType = UNSPECIFIED, LinksResourceListAuthorship authorship = UNSPECIFIED]) {
+core.Future&lt;Links&gt; list(LinksResourceListRole role, core.String roleId, {LinksResourceListLinkType linkType, core.String startDateMin, core.List&lt;core.String&gt; assetSize, core.String searchText, core.String createDateMax, core.String createDateMin, LinksResourceListRelationshipStatus relationshipStatus, core.int maxResults, core.List&lt;core.String&gt; advertiserId, core.String pageToken, core.String startDateMax, LinksResourceListPromotionType promotionType, LinksResourceListAuthorship authorship}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
   $pathParams["role"] = role;
   $pathParams["roleId"] = roleId;
-  if (UNSPECIFIED != linkType) $queryParams["linkType"] = linkType;
-  if (UNSPECIFIED != startDateMin) $queryParams["startDateMin"] = startDateMin;
-  if (UNSPECIFIED != assetSize) $queryParams["assetSize"] = assetSize;
-  if (UNSPECIFIED != relationshipStatus) $queryParams["relationshipStatus"] = relationshipStatus;
-  if (UNSPECIFIED != advertiserCategory) $queryParams["advertiserCategory"] = advertiserCategory;
-  if (UNSPECIFIED != maxResults) $queryParams["maxResults"] = maxResults;
-  if (UNSPECIFIED != advertiserId) $queryParams["advertiserId"] = advertiserId;
-  if (UNSPECIFIED != pageToken) $queryParams["pageToken"] = pageToken;
-  if (UNSPECIFIED != startDateMax) $queryParams["startDateMax"] = startDateMax;
-  if (UNSPECIFIED != promotionType) $queryParams["promotionType"] = promotionType;
-  if (UNSPECIFIED != authorship) $queryParams["authorship"] = authorship;
+  if (?linkType) $queryParams["linkType"] = linkType;
+  if (?startDateMin) $queryParams["startDateMin"] = startDateMin;
+  if (?assetSize) $queryParams["assetSize"] = assetSize;
+  if (?searchText) $queryParams["searchText"] = searchText;
+  if (?createDateMax) $queryParams["createDateMax"] = createDateMax;
+  if (?createDateMin) $queryParams["createDateMin"] = createDateMin;
+  if (?relationshipStatus) $queryParams["relationshipStatus"] = relationshipStatus;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (?advertiserId) $queryParams["advertiserId"] = advertiserId;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?startDateMax) $queryParams["startDateMax"] = startDateMax;
+  if (?promotionType) $queryParams["promotionType"] = promotionType;
+  if (?authorship) $queryParams["authorship"] = authorship;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -172,7 +387,7 @@ core.Future&lt;Links&gt; list(LinksResourceListRole role, core.String roleId, [L
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{role}/{roleId}/links";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -181,6 +396,49 @@ core.Future&lt;Links&gt; list(LinksResourceListRole role, core.String roleId, [L
       .transform((final $text) =&gt; Links.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to LinksResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to LinksResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to LinksResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>VolumeVolumeInfo Class / books-v1 Library / Dart Documentation</title>
+        <title>VolumeVolumeInfo class / books-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,158 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/VolumeVolumeInfo.html">VolumeVolumeInfo</a></div>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/VolumeVolumeInfo.html">VolumeVolumeInfo</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>VolumeVolumeInfo</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class VolumeVolumeInfo extends IdentityHash {
+  /** Publisher of this volume. (In LITE projection.) */
+  core.String publisher;
 
+  /** Volume subtitle. (In LITE projection.) */
+  core.String subtitle;
+
+  /**
+ * A synopsis of the volume. The text of the description is formatted in HTML and includes simple
+ * formatting elements, such as b, i, and br tags. (In LITE projection.)
+ */
+  core.String description;
+
+  /**
+ * Best language for this volume (based on content). It is the two-letter ISO 639-1 code such as
+ * 'fr', 'en', etc.
+ */
+  core.String language;
+
+  /** Total number of pages. */
+  core.int pageCount;
+
+  /** A list of image links for all the sizes that are available. (In LITE projection.) */
+  VolumeVolumeInfoImageLinks imageLinks;
+
+  /** Date of publication. (In LITE projection.) */
+  core.String publishedDate;
+
+  /** URL to preview this volume on the Google Books site. */
+  core.String previewLink;
+
+  /** Type of publication of this volume. Possible values are BOOK or MAGAZINE. */
+  core.String printType;
+
+  /** The number of review ratings for this volume. */
+  core.int ratingsCount;
+
+  /**
+ * The main category to which this volume belongs. It will be the category from the categories list
+ * returned below that has the highest weight.
+ */
+  core.String mainCategory;
+
+  /** Physical dimensions of this volume. */
+  VolumeVolumeInfoDimensions dimensions;
+
+  /** An identifier for the version of the volume content (text &amp; images). (In LITE projection) */
+  core.String contentVersion;
+
+  /** Industry standard identifiers for this volume. */
+  core.List&lt;VolumeVolumeInfoIndustryIdentifiers&gt; industryIdentifiers;
+
+  /** The names of the authors and/or editors for this volume. (In LITE projection) */
+  core.List&lt;core.String&gt; authors;
+
+  /** Volume title. (In LITE projection.) */
+  core.String title;
+
+  /** Canonical URL for a volume. (In LITE projection.) */
+  core.String canonicalVolumeLink;
+
+  /** URL to view information about this volume on the Google Books site. (In LITE projection) */
+  core.String infoLink;
+
+  /** A list of subject categories, such as "Fiction", "Suspense", etc. */
+  core.List&lt;core.String&gt; categories;
+
+  /** The mean review rating for this volume. (min = 1.0, max = 5.0) */
+  core.double averageRating;
+
+  /** Parses an instance from its JSON representation. */
+  static VolumeVolumeInfo parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new VolumeVolumeInfo();
+    result.publisher = identity(json["publisher"]);
+    result.subtitle = identity(json["subtitle"]);
+    result.description = identity(json["description"]);
+    result.language = identity(json["language"]);
+    result.pageCount = identity(json["pageCount"]);
+    result.imageLinks = VolumeVolumeInfoImageLinks.parse(json["imageLinks"]);
+    result.publishedDate = identity(json["publishedDate"]);
+    result.previewLink = identity(json["previewLink"]);
+    result.printType = identity(json["printType"]);
+    result.ratingsCount = identity(json["ratingsCount"]);
+    result.mainCategory = identity(json["mainCategory"]);
+    result.dimensions = VolumeVolumeInfoDimensions.parse(json["dimensions"]);
+    result.contentVersion = identity(json["contentVersion"]);
+    result.industryIdentifiers = map(VolumeVolumeInfoIndustryIdentifiers.parse)(json["industryIdentifiers"]);
+    result.authors = map(identity)(json["authors"]);
+    result.title = identity(json["title"]);
+    result.canonicalVolumeLink = identity(json["canonicalVolumeLink"]);
+    result.infoLink = identity(json["infoLink"]);
+    result.categories = map(identity)(json["categories"]);
+    result.averageRating = identity(json["averageRating"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(VolumeVolumeInfo value) {
+    if (value == null) return null;
+    final result = {};
+    result["publisher"] = identity(value.publisher);
+    result["subtitle"] = identity(value.subtitle);
+    result["description"] = identity(value.description);
+    result["language"] = identity(value.language);
+    result["pageCount"] = identity(value.pageCount);
+    result["imageLinks"] = VolumeVolumeInfoImageLinks.serialize(value.imageLinks);
+    result["publishedDate"] = identity(value.publishedDate);
+    result["previewLink"] = identity(value.previewLink);
+    result["printType"] = identity(value.printType);
+    result["ratingsCount"] = identity(value.ratingsCount);
+    result["mainCategory"] = identity(value.mainCategory);
+    result["dimensions"] = VolumeVolumeInfoDimensions.serialize(value.dimensions);
+    result["contentVersion"] = identity(value.contentVersion);
+    result["industryIdentifiers"] = map(VolumeVolumeInfoIndustryIdentifiers.serialize)(value.industryIdentifiers);
+    result["authors"] = map(identity)(value.authors);
+    result["title"] = identity(value.title);
+    result["canonicalVolumeLink"] = identity(value.canonicalVolumeLink);
+    result["infoLink"] = identity(value.infoLink);
+    result["categories"] = map(identity)(value.categories);
+    result["averageRating"] = identity(value.averageRating);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>VolumeVolumeInfo</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/VolumeVolumeInfo.html">VolumeVolumeInfo</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to VolumeVolumeInfo.parse">#</a></h4>
 <div class="doc">
@@ -66,7 +200,7 @@ static VolumeVolumeInfo parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/VolumeVolumeInfo.html">VolumeVolumeInfo</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to VolumeVolumeInfo.serialize">#</a></h4>
 <div class="doc">
@@ -100,21 +234,11 @@ static core.Object serialize(VolumeVolumeInfo value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to VolumeVolumeInfo.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="authors">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>authors</strong> <a class="anchor-link"
             href="#authors"
             title="Permalink to VolumeVolumeInfo.authors">#</a>
@@ -127,7 +251,7 @@ core.List&lt;core.String&gt; authors;
 </div>
 </div>
 <div class="field"><h4 id="averageRating">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/double.html">double</a>         <strong>averageRating</strong> <a class="anchor-link"
             href="#averageRating"
             title="Permalink to VolumeVolumeInfo.averageRating">#</a>
@@ -140,7 +264,7 @@ core.double averageRating;
 </div>
 </div>
 <div class="field"><h4 id="canonicalVolumeLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>canonicalVolumeLink</strong> <a class="anchor-link"
             href="#canonicalVolumeLink"
             title="Permalink to VolumeVolumeInfo.canonicalVolumeLink">#</a>
@@ -153,7 +277,7 @@ core.String canonicalVolumeLink;
 </div>
 </div>
 <div class="field"><h4 id="categories">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>categories</strong> <a class="anchor-link"
             href="#categories"
             title="Permalink to VolumeVolumeInfo.categories">#</a>
@@ -166,7 +290,7 @@ core.List&lt;core.String&gt; categories;
 </div>
 </div>
 <div class="field"><h4 id="contentVersion">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>contentVersion</strong> <a class="anchor-link"
             href="#contentVersion"
             title="Permalink to VolumeVolumeInfo.contentVersion">#</a>
@@ -179,7 +303,7 @@ core.String contentVersion;
 </div>
 </div>
 <div class="field"><h4 id="description">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to VolumeVolumeInfo.description">#</a>
@@ -193,7 +317,7 @@ core.String description;
 </div>
 </div>
 <div class="field"><h4 id="dimensions">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/VolumeVolumeInfoDimensions.html">VolumeVolumeInfoDimensions</a>         <strong>dimensions</strong> <a class="anchor-link"
             href="#dimensions"
             title="Permalink to VolumeVolumeInfo.dimensions">#</a>
@@ -206,7 +330,7 @@ VolumeVolumeInfoDimensions dimensions;
 </div>
 </div>
 <div class="field"><h4 id="imageLinks">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../books-v1/VolumeVolumeInfoImageLinks.html">VolumeVolumeInfoImageLinks</a>         <strong>imageLinks</strong> <a class="anchor-link"
             href="#imageLinks"
             title="Permalink to VolumeVolumeInfo.imageLinks">#</a>
@@ -219,7 +343,7 @@ VolumeVolumeInfoImageLinks imageLinks;
 </div>
 </div>
 <div class="field"><h4 id="industryIdentifiers">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../books-v1/VolumeVolumeInfoIndustryIdentifiers.html">VolumeVolumeInfoIndustryIdentifiers</a>&gt;         <strong>industryIdentifiers</strong> <a class="anchor-link"
             href="#industryIdentifiers"
             title="Permalink to VolumeVolumeInfo.industryIdentifiers">#</a>
@@ -232,7 +356,7 @@ core.List&lt;VolumeVolumeInfoIndustryIdentifiers&gt; industryIdentifiers;
 </div>
 </div>
 <div class="field"><h4 id="infoLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>infoLink</strong> <a class="anchor-link"
             href="#infoLink"
             title="Permalink to VolumeVolumeInfo.infoLink">#</a>
@@ -245,7 +369,7 @@ core.String infoLink;
 </div>
 </div>
 <div class="field"><h4 id="language">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>language</strong> <a class="anchor-link"
             href="#language"
             title="Permalink to VolumeVolumeInfo.language">#</a>
@@ -259,7 +383,7 @@ core.String language;
 </div>
 </div>
 <div class="field"><h4 id="mainCategory">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>mainCategory</strong> <a class="anchor-link"
             href="#mainCategory"
             title="Permalink to VolumeVolumeInfo.mainCategory">#</a>
@@ -273,7 +397,7 @@ core.String mainCategory;
 </div>
 </div>
 <div class="field"><h4 id="pageCount">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>pageCount</strong> <a class="anchor-link"
             href="#pageCount"
             title="Permalink to VolumeVolumeInfo.pageCount">#</a>
@@ -286,7 +410,7 @@ core.int pageCount;
 </div>
 </div>
 <div class="field"><h4 id="previewLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>previewLink</strong> <a class="anchor-link"
             href="#previewLink"
             title="Permalink to VolumeVolumeInfo.previewLink">#</a>
@@ -299,7 +423,7 @@ core.String previewLink;
 </div>
 </div>
 <div class="field"><h4 id="printType">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>printType</strong> <a class="anchor-link"
             href="#printType"
             title="Permalink to VolumeVolumeInfo.printType">#</a>
@@ -312,7 +436,7 @@ core.String printType;
 </div>
 </div>
 <div class="field"><h4 id="publishedDate">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>publishedDate</strong> <a class="anchor-link"
             href="#publishedDate"
             title="Permalink to VolumeVolumeInfo.publishedDate">#</a>
@@ -325,7 +449,7 @@ core.String publishedDate;
 </div>
 </div>
 <div class="field"><h4 id="publisher">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>publisher</strong> <a class="anchor-link"
             href="#publisher"
             title="Permalink to VolumeVolumeInfo.publisher">#</a>
@@ -338,7 +462,7 @@ core.String publisher;
 </div>
 </div>
 <div class="field"><h4 id="ratingsCount">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>ratingsCount</strong> <a class="anchor-link"
             href="#ratingsCount"
             title="Permalink to VolumeVolumeInfo.ratingsCount">#</a>
@@ -350,8 +474,21 @@ core.int ratingsCount;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to VolumeVolumeInfo.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="subtitle">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>subtitle</strong> <a class="anchor-link"
             href="#subtitle"
             title="Permalink to VolumeVolumeInfo.subtitle">#</a>
@@ -364,7 +501,7 @@ core.String subtitle;
 </div>
 </div>
 <div class="field"><h4 id="title">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to VolumeVolumeInfo.title">#</a>
@@ -374,6 +511,103 @@ core.String subtitle;
 <pre class="source">
 core.String title;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to VolumeVolumeInfo.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to VolumeVolumeInfo.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to VolumeVolumeInfo.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to VolumeVolumeInfo.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to VolumeVolumeInfo.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to VolumeVolumeInfo.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

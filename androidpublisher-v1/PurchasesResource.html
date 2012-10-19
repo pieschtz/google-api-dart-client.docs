@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>PurchasesResource Class / androidpublisher-v1 Library / Dart Documentation</title>
+        <title>PurchasesResource class / androidpublisher-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,33 +14,154 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../androidpublisher-v1.html">androidpublisher-v1</a> &rsaquo; <a href="../androidpublisher-v1/PurchasesResource.html">PurchasesResource</a></div>
+         &rsaquo; <a href="../androidpublisher-v1.html">androidpublisher-v1</a> &rsaquo; <a href="../androidpublisher-v1/PurchasesResource.html">PurchasesResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>PurchasesResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class PurchasesResource extends core.Object {
+  final AndroidpublisherApi _$service;
+  
+  PurchasesResource._internal(AndroidpublisherApi $service) : _$service = $service;
 
+  // Method PurchasesResource.Cancel
+  /**
+   * Cancels a user's subscription purchase. The subscription remains valid until its expiration time.
+   *
+   *    * [packageName] The package name of the application for which this subscription was purchased (for example,
+   *        'com.some.thing').
+   *    * [subscriptionId] The purchased subscription ID (for example, 'monthly001').
+   *    * [token] The token provided to the user's device when the subscription was purchased.
+   */
+  core.Future cancel(core.String packageName, core.String subscriptionId, core.String token) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["packageName"] = packageName;
+    $pathParams["subscriptionId"] = subscriptionId;
+    $pathParams["token"] = token;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}/cancel";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; identity(JSON.parse($text)));
+  }
+
+  // Method PurchasesResource.Get
+  /**
+   * Checks whether a user's subscription purchase is valid and returns its expiry time.
+   *
+   *    * [packageName] The package name of the application for which this subscription was purchased (for example,
+   *        'com.some.thing').
+   *    * [subscriptionId] The purchased subscription ID (for example, 'monthly001').
+   *    * [token] The token provided to the user's device when the subscription was purchased.
+   */
+  core.Future&lt;SubscriptionPurchase&gt; get(core.String packageName, core.String subscriptionId, core.String token) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["packageName"] = packageName;
+    $pathParams["subscriptionId"] = subscriptionId;
+    $pathParams["token"] = token;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; SubscriptionPurchase.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="PurchasesResource">
-<span class="show-code">Code</span>
-new <strong>PurchasesResource</strong>._internal(<a href="../androidpublisher-v1/AndroidpublisherApi.html">AndroidpublisherApi</a> $service) <a class="anchor-link" href="#PurchasesResource"
-              title="Permalink to PurchasesResource.PurchasesResource">#</a></h4>
+<div class="method"><h4 id="PurchasesResource._internal">
+<button class="show-code">Code</button>
+new <strong>PurchasesResource._internal</strong>(<a href="../androidpublisher-v1/AndroidpublisherApi.html">AndroidpublisherApi</a> $service) <a class="anchor-link" href="#PurchasesResource._internal"
+              title="Permalink to PurchasesResource.PurchasesResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 PurchasesResource._internal(AndroidpublisherApi $service) : _$service = $service;
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to PurchasesResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to PurchasesResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="cancel">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a> <strong>cancel</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> packageName, <a href="http://api.dartlang.org/dart_core/String.html">String</a> subscriptionId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> token) <a class="anchor-link" href="#cancel"
               title="Permalink to PurchasesResource.cancel">#</a></h4>
 <div class="doc">
@@ -68,7 +189,7 @@ core.Future cancel(core.String packageName, core.String subscriptionId, core.Str
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}/cancel";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -80,7 +201,7 @@ core.Future cancel(core.String packageName, core.String subscriptionId, core.Str
 </div>
 </div>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../androidpublisher-v1/SubscriptionPurchase.html">SubscriptionPurchase</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> packageName, <a href="http://api.dartlang.org/dart_core/String.html">String</a> subscriptionId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> token) <a class="anchor-link" href="#get"
               title="Permalink to PurchasesResource.get">#</a></h4>
 <div class="doc">
@@ -108,7 +229,7 @@ core.Future&lt;SubscriptionPurchase&gt; get(core.String packageName, core.String
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -117,6 +238,77 @@ core.Future&lt;SubscriptionPurchase&gt; get(core.String packageName, core.String
       .transform((final $text) =&gt; SubscriptionPurchase.parse(JSON.parse($text)));
 }
 </pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to PurchasesResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to PurchasesResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to PurchasesResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="PurchasesResource._internal">
+<button class="show-code">Code</button>
+new <strong>PurchasesResource._internal</strong>(<a href="../androidpublisher-v1/AndroidpublisherApi.html">AndroidpublisherApi</a> $service) <a class="anchor-link" href="#PurchasesResource._internal"
+              title="Permalink to PurchasesResource.PurchasesResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+PurchasesResource._internal(AndroidpublisherApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to PurchasesResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

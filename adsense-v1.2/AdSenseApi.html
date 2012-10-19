@@ -1,0 +1,548 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AdSenseApi class / adsense-v1.2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adsense-v1.2" data-type="AdSenseApi">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adsense-v1.2.html">adsense-v1.2</a> &rsaquo; <a href="../adsense-v1.2/AdSenseApi.html">AdSenseApi</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AdSenseApi</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>Gives AdSense publishers access to their inventory and the ability to generate reports</p>
+<pre class="source">
+class AdSenseApi extends core.Object {
+  /** The API root, such as [:https://www.googleapis.com:] */
+  final core.String baseUrl;
+  /** How we should identify ourselves to the service. */
+  http.Authenticator authenticator;
+  /** The client library version */
+  final core.String clientVersion = "0.1";
+  /** The application name, used in the user-agent header */
+  final core.String applicationName;
+  AdSenseApi get _$service =&gt; this;
+  UrlchannelsResource _urlchannels;
+  UrlchannelsResource get urlchannels =&gt; _urlchannels;
+  AdunitsResource _adunits;
+  AdunitsResource get adunits =&gt; _adunits;
+  AdclientsResource _adclients;
+  AdclientsResource get adclients =&gt; _adclients;
+  SavedadstylesResource _savedadstyles;
+  SavedadstylesResource get savedadstyles =&gt; _savedadstyles;
+  ReportsResource _reports;
+  ReportsResource get reports =&gt; _reports;
+  AccountsResource _accounts;
+  AccountsResource get accounts =&gt; _accounts;
+  CustomchannelsResource _customchannels;
+  CustomchannelsResource get customchannels =&gt; _customchannels;
+  
+  /** Returns response with indentations and line breaks. */
+  core.bool prettyPrint;
+
+  /** Selector specifying which fields to include in a partial response. */
+  core.String fields;
+
+  /**
+   * Available to use for quota purposes for server-side applications. Can be any arbitrary string
+   * assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
+   */
+  core.String quotaUser;
+
+  /** OAuth 2.0 token for the current user. */
+  core.String oauthToken;
+
+  /**
+   * API key. Your API key identifies your project and provides you with API access, quota, and
+   * reports. Required unless you provide an OAuth 2.0 token.
+   */
+  core.String key;
+
+  /**
+   * IP address of the site where the request originates. Use this if you want to enforce per-user
+   * limits.
+   */
+  core.String userIp;
+
+  /** Data format for the response. */
+  AdSenseApiAlt alt;
+
+
+  AdSenseApi({this.baseUrl:"https://www.googleapis.com/adsense/v1.2/", applicationName, this.authenticator}) :
+      this.applicationName = (applicationName == null) ? null : applicationName
+          .replaceAll(const core.RegExp(r'\s+'), '_')
+          .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+  { 
+    _urlchannels = new UrlchannelsResource._internal(this);
+    _adunits = new AdunitsResource._internal(this);
+    _adclients = new AdclientsResource._internal(this);
+    _savedadstyles = new SavedadstylesResource._internal(this);
+    _reports = new ReportsResource._internal(this);
+    _accounts = new AccountsResource._internal(this);
+    _customchannels = new CustomchannelsResource._internal(this);
+  }
+  core.String get userAgent {
+    var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+    return "${uaPrefix}adsense/v1.2/20121007 google-api-dart-client/${clientVersion}";
+  }
+
+
+  /** OAuth2 scope: View and manage your AdSense data */
+  static final core.String ADSENSE_SCOPE = "https://www.googleapis.com/auth/adsense";
+
+  /** OAuth2 scope: View your AdSense data */
+  static final core.String ADSENSE_READONLY_SCOPE = "https://www.googleapis.com/auth/adsense.readonly";
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AdSenseApi">
+<button class="show-code">Code</button>
+new <strong>AdSenseApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/adsense/v1.2/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#AdSenseApi"
+              title="Permalink to AdSenseApi.AdSenseApi">#</a></h4>
+<div class="doc">
+<pre class="source">
+AdSenseApi({this.baseUrl:"https://www.googleapis.com/adsense/v1.2/", applicationName, this.authenticator}) :
+    this.applicationName = (applicationName == null) ? null : applicationName
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+{ 
+  _urlchannels = new UrlchannelsResource._internal(this);
+  _adunits = new AdunitsResource._internal(this);
+  _adclients = new AdclientsResource._internal(this);
+  _savedadstyles = new SavedadstylesResource._internal(this);
+  _reports = new ReportsResource._internal(this);
+  _accounts = new AccountsResource._internal(this);
+  _customchannels = new CustomchannelsResource._internal(this);
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Static Properties</h3>
+<div class="field"><h4 id="ADSENSE_READONLY_SCOPE">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>ADSENSE_READONLY_SCOPE</strong> <a class="anchor-link"
+            href="#ADSENSE_READONLY_SCOPE"
+            title="Permalink to AdSenseApi.ADSENSE_READONLY_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View your AdSense data</p>
+<pre class="source">
+static final core.String ADSENSE_READONLY_SCOPE = "https://www.googleapis.com/auth/adsense.readonly";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="ADSENSE_SCOPE">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>ADSENSE_SCOPE</strong> <a class="anchor-link"
+            href="#ADSENSE_SCOPE"
+            title="Permalink to AdSenseApi.ADSENSE_SCOPE">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth2 scope: View and manage your AdSense data</p>
+<pre class="source">
+static final core.String ADSENSE_SCOPE = "https://www.googleapis.com/auth/adsense";
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="accounts">
+<button class="show-code">Code</button>
+final <a href="../adsense-v1.2/AccountsResource.html">AccountsResource</a>         <strong>accounts</strong> <a class="anchor-link"
+            href="#accounts"
+            title="Permalink to AdSenseApi.accounts">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+AccountsResource get accounts =&gt; _accounts;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="adclients">
+<button class="show-code">Code</button>
+final <a href="../adsense-v1.2/AdclientsResource.html">AdclientsResource</a>         <strong>adclients</strong> <a class="anchor-link"
+            href="#adclients"
+            title="Permalink to AdSenseApi.adclients">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+AdclientsResource get adclients =&gt; _adclients;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="adunits">
+<button class="show-code">Code</button>
+final <a href="../adsense-v1.2/AdunitsResource.html">AdunitsResource</a>         <strong>adunits</strong> <a class="anchor-link"
+            href="#adunits"
+            title="Permalink to AdSenseApi.adunits">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+AdunitsResource get adunits =&gt; _adunits;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="alt">
+<button class="show-code">Code</button>
+<a href="../adsense-v1.2/AdSenseApiAlt.html">AdSenseApiAlt</a>         <strong>alt</strong> <a class="anchor-link"
+            href="#alt"
+            title="Permalink to AdSenseApi.alt">#</a>
+        </h4>
+        <div class="doc">
+<p>Data format for the response.</p>
+<pre class="source">
+AdSenseApiAlt alt;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="applicationName">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>applicationName</strong> <a class="anchor-link"
+            href="#applicationName"
+            title="Permalink to AdSenseApi.applicationName">#</a>
+        </h4>
+        <div class="doc">
+<p>The application name, used in the user-agent header</p>
+<pre class="source">
+final core.String applicationName;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="authenticator">
+<button class="show-code">Code</button>
+<a href="../http/Authenticator.html">Authenticator</a>         <strong>authenticator</strong> <a class="anchor-link"
+            href="#authenticator"
+            title="Permalink to AdSenseApi.authenticator">#</a>
+        </h4>
+        <div class="doc">
+<p>How we should identify ourselves to the service.</p>
+<pre class="source">
+http.Authenticator authenticator;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="baseUrl">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>baseUrl</strong> <a class="anchor-link"
+            href="#baseUrl"
+            title="Permalink to AdSenseApi.baseUrl">#</a>
+        </h4>
+        <div class="doc">
+<p>The API root, such as <code>https://www.googleapis.com</code></p>
+<pre class="source">
+final core.String baseUrl;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="clientVersion">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>clientVersion</strong> <a class="anchor-link"
+            href="#clientVersion"
+            title="Permalink to AdSenseApi.clientVersion">#</a>
+        </h4>
+        <div class="doc">
+<p>The client library version</p>
+<pre class="source">
+final core.String clientVersion = "0.1";
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="customchannels">
+<button class="show-code">Code</button>
+final <a href="../adsense-v1.2/CustomchannelsResource.html">CustomchannelsResource</a>         <strong>customchannels</strong> <a class="anchor-link"
+            href="#customchannels"
+            title="Permalink to AdSenseApi.customchannels">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+CustomchannelsResource get customchannels =&gt; _customchannels;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="fields">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fields</strong> <a class="anchor-link"
+            href="#fields"
+            title="Permalink to AdSenseApi.fields">#</a>
+        </h4>
+        <div class="doc">
+<p>Selector specifying which fields to include in a partial response.</p>
+<pre class="source">
+core.String fields;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="key">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>key</strong> <a class="anchor-link"
+            href="#key"
+            title="Permalink to AdSenseApi.key">#</a>
+        </h4>
+        <div class="doc">
+<p>API key. Your API key identifies your project and provides you with API access, quota, and
+reports. Required unless you provide an OAuth 2.0 token.</p>
+<pre class="source">
+core.String key;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="oauthToken">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>oauthToken</strong> <a class="anchor-link"
+            href="#oauthToken"
+            title="Permalink to AdSenseApi.oauthToken">#</a>
+        </h4>
+        <div class="doc">
+<p>OAuth 2.0 token for the current user.</p>
+<pre class="source">
+core.String oauthToken;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="prettyPrint">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>prettyPrint</strong> <a class="anchor-link"
+            href="#prettyPrint"
+            title="Permalink to AdSenseApi.prettyPrint">#</a>
+        </h4>
+        <div class="doc">
+<p>Returns response with indentations and line breaks.</p>
+<pre class="source">
+core.bool prettyPrint;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quotaUser">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaUser</strong> <a class="anchor-link"
+            href="#quotaUser"
+            title="Permalink to AdSenseApi.quotaUser">#</a>
+        </h4>
+        <div class="doc">
+<p>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</p>
+<pre class="source">
+core.String quotaUser;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="reports">
+<button class="show-code">Code</button>
+final <a href="../adsense-v1.2/ReportsResource.html">ReportsResource</a>         <strong>reports</strong> <a class="anchor-link"
+            href="#reports"
+            title="Permalink to AdSenseApi.reports">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+ReportsResource get reports =&gt; _reports;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to AdSenseApi.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="savedadstyles">
+<button class="show-code">Code</button>
+final <a href="../adsense-v1.2/SavedadstylesResource.html">SavedadstylesResource</a>         <strong>savedadstyles</strong> <a class="anchor-link"
+            href="#savedadstyles"
+            title="Permalink to AdSenseApi.savedadstyles">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+SavedadstylesResource get savedadstyles =&gt; _savedadstyles;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="urlchannels">
+<button class="show-code">Code</button>
+final <a href="../adsense-v1.2/UrlchannelsResource.html">UrlchannelsResource</a>         <strong>urlchannels</strong> <a class="anchor-link"
+            href="#urlchannels"
+            title="Permalink to AdSenseApi.urlchannels">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+UrlchannelsResource get urlchannels =&gt; _urlchannels;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userAgent">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userAgent</strong> <a class="anchor-link"
+            href="#userAgent"
+            title="Permalink to AdSenseApi.userAgent">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String get userAgent {
+  var uaPrefix = (applicationName == null) ? "" : "$applicationName ";
+  return "${uaPrefix}adsense/v1.2/20121007 google-api-dart-client/${clientVersion}";
+}
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="userIp">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>userIp</strong> <a class="anchor-link"
+            href="#userIp"
+            title="Permalink to AdSenseApi.userIp">#</a>
+        </h4>
+        <div class="doc">
+<p>IP address of the site where the request originates. Use this if you want to enforce per-user
+limits.</p>
+<pre class="source">
+core.String userIp;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to AdSenseApi.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="AdSenseApi">
+<button class="show-code">Code</button>
+new <strong>AdSenseApi</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> baseUrl = "https://www.googleapis.com/adsense/v1.2/", applicationName, <a href="../http/Authenticator.html">Authenticator</a> authenticator]) <a class="anchor-link" href="#AdSenseApi"
+              title="Permalink to AdSenseApi.AdSenseApi">#</a></h4>
+<div class="doc">
+<pre class="source">
+AdSenseApi({this.baseUrl:"https://www.googleapis.com/adsense/v1.2/", applicationName, this.authenticator}) :
+    this.applicationName = (applicationName == null) ? null : applicationName
+        .replaceAll(const core.RegExp(r'\s+'), '_')
+        .replaceAll(const core.RegExp(r'[^-_.,0-9a-zA-Z]'), '')
+{ 
+  _urlchannels = new UrlchannelsResource._internal(this);
+  _adunits = new AdunitsResource._internal(this);
+  _adclients = new AdclientsResource._internal(this);
+  _savedadstyles = new SavedadstylesResource._internal(this);
+  _reports = new ReportsResource._internal(this);
+  _accounts = new AccountsResource._internal(this);
+  _customchannels = new CustomchannelsResource._internal(this);
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to AdSenseApi.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to AdSenseApi.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to AdSenseApi.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to AdSenseApi.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

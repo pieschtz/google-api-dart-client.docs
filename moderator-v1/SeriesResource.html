@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>SeriesResource Class / moderator-v1 Library / Dart Documentation</title>
+        <title>SeriesResource class / moderator-v1 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,25 +14,204 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/SeriesResource.html">SeriesResource</a></div>
+         &rsaquo; <a href="../moderator-v1.html">moderator-v1</a> &rsaquo; <a href="../moderator-v1/SeriesResource.html">SeriesResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>SeriesResource</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class SeriesResource extends core.Object {
+  final ModeratorApi _$service;
+  final SeriesSubmissionsResourceResource submissions;
+  final SeriesResponsesResourceResource responses;
+  
+  SeriesResource._internal(ModeratorApi $service) : _$service = $service,
+    submissions = new SeriesSubmissionsResourceResource._internal($service),
+    responses = new SeriesResponsesResourceResource._internal($service);
 
+  // Method SeriesResource.Insert
+  /**
+   * Inserts a new series.
+   *
+   *    * [content] the Series
+   */
+  core.Future&lt;Series&gt; insert(Series content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Series.serialize(content));
+    final $path = "series";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "POST", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Series.parse(JSON.parse($text)));
+  }
+
+  // Method SeriesResource.Patch
+  /**
+   * Updates the specified series. This method supports patch semantics.
+   *
+   *    * [content] the Series
+   *    * [seriesId] The decimal ID of the Series.
+   */
+  core.Future&lt;Series&gt; patch(core.int seriesId, Series content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["seriesId"] = seriesId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Series.serialize(content));
+    final $path = "series/{seriesId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PATCH", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Series.parse(JSON.parse($text)));
+  }
+
+  // Method SeriesResource.List
+  /**
+   * Searches the series and returns the search results.
+   *
+   *    * [maxResults] Maximum number of results to return.
+   *    * [q] Search query.
+   *    * [startIndex] Index of the first result to be retrieved.
+   */
+  core.Future&lt;SeriesList&gt; list({core.int maxResults, core.String q, core.int startIndex}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    if (?maxResults) $queryParams["max-results"] = maxResults;
+    if (?q) $queryParams["q"] = q;
+    if (?startIndex) $queryParams["start-index"] = startIndex;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "series";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; SeriesList.parse(JSON.parse($text)));
+  }
+
+  // Method SeriesResource.Update
+  /**
+   * Updates the specified series.
+   *
+   *    * [content] the Series
+   *    * [seriesId] The decimal ID of the Series.
+   */
+  core.Future&lt;Series&gt; update(core.int seriesId, Series content) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["seriesId"] = seriesId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    $headers["Content-Type"] = "application/json";
+    final $body = JSON.stringify(Series.serialize(content));
+    final $path = "series/{seriesId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "PUT", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request($body))
+        .transform((final $text) =&gt; Series.parse(JSON.parse($text)));
+  }
+
+  // Method SeriesResource.Get
+  /**
+   * Returns the specified series.
+   *
+   *    * [seriesId] The decimal ID of the Series.
+   */
+  core.Future&lt;Series&gt; get(core.int seriesId) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["seriesId"] = seriesId;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "series/{seriesId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; Series.parse(JSON.parse($text)));
+  }
+}
+</pre>
 </div>
+<div>
 <h3>Constructors</h3>
-<div class="method"><h4 id="SeriesResource">
-<span class="show-code">Code</span>
-new <strong>SeriesResource</strong>._internal(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#SeriesResource"
-              title="Permalink to SeriesResource.SeriesResource">#</a></h4>
+<div class="method"><h4 id="SeriesResource._internal">
+<button class="show-code">Code</button>
+new <strong>SeriesResource._internal</strong>(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#SeriesResource._internal"
+              title="Permalink to SeriesResource.SeriesResource._internal">#</a></h4>
 <div class="doc">
-
 <pre class="source">
 SeriesResource._internal(ModeratorApi $service) : _$service = $service,
   submissions = new SeriesSubmissionsResourceResource._internal($service),
@@ -40,9 +219,70 @@ SeriesResource._internal(ModeratorApi $service) : _$service = $service,
 </pre>
 </div>
 </div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="responses">
+<button class="show-code">Code</button>
+final <a href="../moderator-v1/SeriesResponsesResourceResource.html">SeriesResponsesResourceResource</a>         <strong>responses</strong> <a class="anchor-link"
+            href="#responses"
+            title="Permalink to SeriesResource.responses">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+final SeriesResponsesResourceResource responses;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to SeriesResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="submissions">
+<button class="show-code">Code</button>
+final <a href="../moderator-v1/SeriesSubmissionsResourceResource.html">SeriesSubmissionsResourceResource</a>         <strong>submissions</strong> <a class="anchor-link"
+            href="#submissions"
+            title="Permalink to SeriesResource.submissions">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+final SeriesSubmissionsResourceResource submissions;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to SeriesResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
 <h3>Methods</h3>
 <div class="method"><h4 id="get">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Series.html">Series</a>&gt; <strong>get</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId) <a class="anchor-link" href="#get"
               title="Permalink to SeriesResource.get">#</a></h4>
 <div class="doc">
@@ -64,7 +304,7 @@ core.Future&lt;Series&gt; get(core.int seriesId) {
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "series/{seriesId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -75,8 +315,26 @@ core.Future&lt;Series&gt; get(core.int seriesId) {
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to SeriesResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="insert">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Series.html">Series</a>&gt; <strong>insert</strong>(<a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#insert"
               title="Permalink to SeriesResource.insert">#</a></h4>
 <div class="doc">
@@ -99,7 +357,7 @@ core.Future&lt;Series&gt; insert(Series content) {
   final $body = JSON.stringify(Series.serialize(content));
   final $path = "series";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "POST", $headers);
+  final $http = new http.Request($url, "POST", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -111,8 +369,8 @@ core.Future&lt;Series&gt; insert(Series content) {
 </div>
 </div>
 <div class="method"><h4 id="list">
-<span class="show-code">Code</span>
-<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/SeriesList.html">SeriesList</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/String.html">String</a> q = UNSPECIFIED, <a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex = UNSPECIFIED]) <a class="anchor-link" href="#list"
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/SeriesList.html">SeriesList</a>&gt; <strong>list</strong>([<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults, <a href="http://api.dartlang.org/dart_core/String.html">String</a> q, <a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex]) <a class="anchor-link" href="#list"
               title="Permalink to SeriesResource.list">#</a></h4>
 <div class="doc">
 <p>Searches the series and returns the search results.</p><ul><li>
@@ -120,13 +378,13 @@ core.Future&lt;Series&gt; insert(Series content) {
 <span class="param">q</span> Search query.</li><li>
 <span class="param">startIndex</span> Index of the first result to be retrieved.</li></ul>
 <pre class="source">
-core.Future&lt;SeriesList&gt; list([core.int maxResults = UNSPECIFIED, core.String q = UNSPECIFIED, core.int startIndex = UNSPECIFIED]) {
+core.Future&lt;SeriesList&gt; list({core.int maxResults, core.String q, core.int startIndex}) {
   final $queryParams = {};
   final $headers = {};
   final $pathParams = {};
-  if (UNSPECIFIED != maxResults) $queryParams["max-results"] = maxResults;
-  if (UNSPECIFIED != q) $queryParams["q"] = q;
-  if (UNSPECIFIED != startIndex) $queryParams["start-index"] = startIndex;
+  if (?maxResults) $queryParams["max-results"] = maxResults;
+  if (?q) $queryParams["q"] = q;
+  if (?startIndex) $queryParams["start-index"] = startIndex;
   if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
   if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
   if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
@@ -137,7 +395,7 @@ core.Future&lt;SeriesList&gt; list([core.int maxResults = UNSPECIFIED, core.Stri
   $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
   final $path = "series";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "GET", $headers);
+  final $http = new http.Request($url, "GET", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -148,8 +406,39 @@ core.Future&lt;SeriesList&gt; list([core.int maxResults = UNSPECIFIED, core.Stri
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to SeriesResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to SeriesResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="patch">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Series.html">Series</a>&gt; <strong>patch</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#patch"
               title="Permalink to SeriesResource.patch">#</a></h4>
 <div class="doc">
@@ -174,7 +463,7 @@ core.Future&lt;Series&gt; patch(core.int seriesId, Series content) {
   final $body = JSON.stringify(Series.serialize(content));
   final $path = "series/{seriesId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PATCH", $headers);
+  final $http = new http.Request($url, "PATCH", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -185,8 +474,31 @@ core.Future&lt;Series&gt; patch(core.int seriesId, Series content) {
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="SeriesResource._internal">
+<button class="show-code">Code</button>
+new <strong>SeriesResource._internal</strong>(<a href="../moderator-v1/ModeratorApi.html">ModeratorApi</a> $service) <a class="anchor-link" href="#SeriesResource._internal"
+              title="Permalink to SeriesResource.SeriesResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+SeriesResource._internal(ModeratorApi $service) : _$service = $service,
+  submissions = new SeriesSubmissionsResourceResource._internal($service),
+  responses = new SeriesResponsesResourceResource._internal($service);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to SeriesResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="update">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../moderator-v1/Series.html">Series</a>&gt; <strong>update</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seriesId, <a href="../moderator-v1/Series.html">Series</a> content) <a class="anchor-link" href="#update"
               title="Permalink to SeriesResource.update">#</a></h4>
 <div class="doc">
@@ -211,7 +523,7 @@ core.Future&lt;Series&gt; update(core.int seriesId, Series content) {
   final $body = JSON.stringify(Series.serialize(content));
   final $path = "series/{seriesId}";
   final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
-  final $http = new HttpRequest($url, "PUT", $headers);
+  final $http = new http.Request($url, "PUT", $headers);
   final $authenticatedHttp = (_$service.authenticator == null)
       ? new core.Future.immediate($http)
       : _$service.authenticator.authenticate($http);
@@ -221,32 +533,6 @@ core.Future&lt;Series&gt; update(core.int seriesId, Series content) {
 }
 </pre>
 </div>
-</div>
-<h3>Fields</h3>
-<div class="field"><h4 id="responses">
-<span class="show-code">Code</span>
-final <a href="../moderator-v1/SeriesResponsesResourceResource.html">SeriesResponsesResourceResource</a>         <strong>responses</strong> <a class="anchor-link"
-            href="#responses"
-            title="Permalink to SeriesResource.responses">#</a>
-        </h4>
-        <div class="doc">
-
-<pre class="source">
-final SeriesResponsesResourceResource responses;
-</pre>
-</div>
-</div>
-<div class="field"><h4 id="submissions">
-<span class="show-code">Code</span>
-final <a href="../moderator-v1/SeriesSubmissionsResourceResource.html">SeriesSubmissionsResourceResource</a>         <strong>submissions</strong> <a class="anchor-link"
-            href="#submissions"
-            title="Permalink to SeriesResource.submissions">#</a>
-        </h4>
-        <div class="doc">
-
-<pre class="source">
-final SeriesSubmissionsResourceResource submissions;
-</pre>
 </div>
 </div>
         </div>

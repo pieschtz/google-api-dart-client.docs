@@ -1,0 +1,348 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource class / adsense-v1.2 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="adsense-v1.2" data-type="AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../adsense-v1.2.html">adsense-v1.2</a> &rsaquo; <a href="../adsense-v1.2/AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.html">AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource extends core.Object {
+  final AdSenseApi _$service;
+  
+  AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal(AdSenseApi $service) : _$service = $service;
+
+  // Method AccountsResource.AccountsReportsResourceResource.AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.List
+  /**
+   * List all saved reports in the specified AdSense account.
+   *
+   *    * [accountId] Account to which the saved reports belong.
+   *    * [pageToken] A continuation token, used to page through saved reports. To retrieve the next page, set this
+   *        parameter to the value of "nextPageToken" from the previous response.
+   *    * [maxResults] The maximum number of saved reports to include in the response, used for paging.
+
+  Minimum: 0.
+   *        Maximum: 100.
+   */
+  core.Future&lt;SavedReports&gt; list(core.String accountId, {core.String pageToken, core.int maxResults}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["accountId"] = accountId;
+    if (?pageToken) $queryParams["pageToken"] = pageToken;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "accounts/{accountId}/reports/saved";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; SavedReports.parse(JSON.parse($text)));
+  }
+
+  // Method AccountsResource.AccountsReportsResourceResource.AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.Generate
+  /**
+   * Generate an AdSense report based on the saved report ID sent in the query parameters.
+   *
+   *    * [accountId] Account to which the saved reports belong.
+   *    * [savedReportId] The saved report to retrieve.
+   *    * [locale] Optional locale to use for translating report output to a local language. Defaults to "en_US" if not
+   *        specified.
+   *    * [startIndex] Index of the first row of report data to return.
+
+  Minimum: 0.
+  Maximum: 5000.
+   *    * [maxResults] The maximum number of rows of report data to return.
+
+  Minimum: 0.
+  Maximum: 50000.
+   */
+  core.Future&lt;AdsenseReportsGenerateResponse&gt; generate(core.String accountId, core.String savedReportId, {core.String locale, core.int startIndex, core.int maxResults}) {
+    final $queryParams = {};
+    final $headers = {};
+    final $pathParams = {};
+    $pathParams["accountId"] = accountId;
+    $pathParams["savedReportId"] = savedReportId;
+    if (?locale) $queryParams["locale"] = locale;
+    if (?startIndex) $queryParams["startIndex"] = startIndex;
+    if (?maxResults) $queryParams["maxResults"] = maxResults;
+    if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+    if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+    if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+    if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+    if (_$service.key != null) $queryParams["key"] = _$service.key;
+    if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+    if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+    $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+    final $path = "accounts/{accountId}/reports/{savedReportId}";
+    final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+    final $http = new http.Request($url, "GET", $headers);
+    final $authenticatedHttp = (_$service.authenticator == null)
+        ? new core.Future.immediate($http)
+        : _$service.authenticator.authenticate($http);
+    return $authenticatedHttp
+        .chain((final $req) =&gt; $req.request())
+        .transform((final $text) =&gt; AdsenseReportsGenerateResponse.parse(JSON.parse($text)));
+  }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal</strong>(<a href="../adsense-v1.2/AdSenseApi.html">AdSenseApi</a> $service) <a class="anchor-link" href="#AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal"
+              title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal(AdSenseApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal">
+<button class="show-code">Code</button>
+new <strong>AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal</strong>(<a href="../adsense-v1.2/AdSenseApi.html">AdSenseApi</a> $service) <a class="anchor-link" href="#AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal"
+              title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal">#</a></h4>
+<div class="doc">
+<pre class="source">
+AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource._internal(AdSenseApi $service) : _$service = $service;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="generate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../adsense-v1.2/AdsenseReportsGenerateResponse.html">AdsenseReportsGenerateResponse</a>&gt; <strong>generate</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> accountId, <a href="http://api.dartlang.org/dart_core/String.html">String</a> savedReportId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale, <a href="http://api.dartlang.org/dart_core/int.html">int</a> startIndex, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults]) <a class="anchor-link" href="#generate"
+              title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.generate">#</a></h4>
+<div class="doc">
+<p>Generate an AdSense report based on the saved report ID sent in the query parameters.</p><ul><li>
+<span class="param">accountId</span> Account to which the saved reports belong.</li><li>
+<span class="param">savedReportId</span> The saved report to retrieve.</li><li>
+<p>
+<span class="param">locale</span> Optional locale to use for translating report output to a local language. Defaults to "en_US" if not
+   specified.</p></li><li>
+<span class="param">startIndex</span> Index of the first row of report data to return.</li></ul>
+<p>Minimum: 0.
+Maximum: 5000.
+   * 
+<span class="param">maxResults</span> The maximum number of rows of report data to return.</p>
+<p>Minimum: 0.
+Maximum: 50000.</p>
+<pre class="source">
+core.Future&lt;AdsenseReportsGenerateResponse&gt; generate(core.String accountId, core.String savedReportId, {core.String locale, core.int startIndex, core.int maxResults}) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["accountId"] = accountId;
+  $pathParams["savedReportId"] = savedReportId;
+  if (?locale) $queryParams["locale"] = locale;
+  if (?startIndex) $queryParams["startIndex"] = startIndex;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "accounts/{accountId}/reports/{savedReportId}";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; AdsenseReportsGenerateResponse.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<pre class="source">
+external int hashCode();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="list">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Future.html">Future</a>&lt;<a href="../adsense-v1.2/SavedReports.html">SavedReports</a>&gt; <strong>list</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> accountId, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> pageToken, <a href="http://api.dartlang.org/dart_core/int.html">int</a> maxResults]) <a class="anchor-link" href="#list"
+              title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.list">#</a></h4>
+<div class="doc">
+<p>List all saved reports in the specified AdSense account.</p><ul><li>
+<span class="param">accountId</span> Account to which the saved reports belong.</li><li>
+<p>
+<span class="param">pageToken</span> A continuation token, used to page through saved reports. To retrieve the next page, set this
+   parameter to the value of "nextPageToken" from the previous response.</p></li><li>
+<span class="param">maxResults</span> The maximum number of saved reports to include in the response, used for paging.</li></ul>
+<p>Minimum: 0.</p>
+<pre><code>   Maximum: 100.
+</code></pre>
+<pre class="source">
+core.Future&lt;SavedReports&gt; list(core.String accountId, {core.String pageToken, core.int maxResults}) {
+  final $queryParams = {};
+  final $headers = {};
+  final $pathParams = {};
+  $pathParams["accountId"] = accountId;
+  if (?pageToken) $queryParams["pageToken"] = pageToken;
+  if (?maxResults) $queryParams["maxResults"] = maxResults;
+  if (_$service.prettyPrint != null) $queryParams["prettyPrint"] = _$service.prettyPrint;
+  if (_$service.fields != null) $queryParams["fields"] = _$service.fields;
+  if (_$service.quotaUser != null) $queryParams["quotaUser"] = _$service.quotaUser;
+  if (_$service.oauthToken != null) $headers["Authorization"] = "Bearer ${_$service.oauthToken}";
+  if (_$service.key != null) $queryParams["key"] = _$service.key;
+  if (_$service.userIp != null) $queryParams["userIp"] = _$service.userIp;
+  if (_$service.alt != null) $queryParams["alt"] = _$service.alt;
+  $headers["X-JavaScript-User-Agent"] = _$service.userAgent;
+  final $path = "accounts/{accountId}/reports/saved";
+  final $url = new UrlPattern("${_$service.baseUrl}${$path}").generate($pathParams, $queryParams);
+  final $http = new http.Request($url, "GET", $headers);
+  final $authenticatedHttp = (_$service.authenticator == null)
+      ? new core.Future.immediate($http)
+      : _$service.authenticator.authenticate($http);
+  return $authenticatedHttp
+      .chain((final $req) =&gt; $req.request())
+      .transform((final $text) =&gt; SavedReports.parse(JSON.parse($text)));
+}
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to AccountsReportsResourceAccountsReportsSavedResourceResourceResourceResource.toString">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Returns a string representation of this object.</p>
+<pre class="source">
+external String toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

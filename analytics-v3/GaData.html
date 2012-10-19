@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>GaData Class / analytics-v3 Library / Dart Documentation</title>
+        <title>GaData class / analytics-v3 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,128 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/GaData.html">GaData</a></div>
+         &rsaquo; <a href="../analytics-v3.html">analytics-v3</a> &rsaquo; <a href="../analytics-v3/GaData.html">GaData</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>GaData</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class GaData extends IdentityHash {
+  /** Resource type. */
+  core.String kind;
 
+  /**
+ * Analytics data rows, where each row contains a list of dimension values followed by the metric
+ * values. The order of dimensions and metrics is same as specified in the request.
+ */
+  core.List&lt;core.List&lt;core.String&gt;&gt; rows;
+
+  /** Determines if Analytics data contains samples. */
+  core.bool containsSampledData;
+
+  /** The total number of rows for the query, regardless of the number of rows in the response. */
+  core.int totalResults;
+
+  /**
+ * The maximum number of rows the response can contain, regardless of the actual number of rows
+ * returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise
+ * specified by the max-results query parameter.
+ */
+  core.int itemsPerPage;
+
+  /**
+ * Total values for the requested metrics over all the results, not just the results returned in
+ * this response. The order of the metric totals is same as the metric order specified in the
+ * request.
+ */
+  core.Map&lt;core.String, core.String&gt; totalsForAllResults;
+
+  /** Link to next page for this Analytics data query. */
+  core.String nextLink;
+
+  /** Unique ID for this data response. */
+  core.String id;
+
+  /** Analytics data request query parameters. */
+  GaDataQuery query;
+
+  /** Link to previous page for this Analytics data query. */
+  core.String previousLink;
+
+  /** Information for the profile, for which the Analytics data was requested. */
+  GaDataProfileInfo profileInfo;
+
+  /**
+ * Column headers that list dimension names followed by the metric names. The order of dimensions
+ * and metrics is same as specified in the request.
+ */
+  core.List&lt;GaDataColumnHeaders&gt; columnHeaders;
+
+  /** Link to this page. */
+  core.String selfLink;
+
+  /** Parses an instance from its JSON representation. */
+  static GaData parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new GaData();
+    result.kind = identity(json["kind"]);
+    result.rows = map(map(identity))(json["rows"]);
+    result.containsSampledData = identity(json["containsSampledData"]);
+    result.totalResults = identity(json["totalResults"]);
+    result.itemsPerPage = identity(json["itemsPerPage"]);
+    result.totalsForAllResults = mapValues(identity)(json["totalsForAllResults"]);
+    result.nextLink = identity(json["nextLink"]);
+    result.id = identity(json["id"]);
+    result.query = GaDataQuery.parse(json["query"]);
+    result.previousLink = identity(json["previousLink"]);
+    result.profileInfo = GaDataProfileInfo.parse(json["profileInfo"]);
+    result.columnHeaders = map(GaDataColumnHeaders.parse)(json["columnHeaders"]);
+    result.selfLink = identity(json["selfLink"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(GaData value) {
+    if (value == null) return null;
+    final result = {};
+    result["kind"] = identity(value.kind);
+    result["rows"] = map(map(identity))(value.rows);
+    result["containsSampledData"] = identity(value.containsSampledData);
+    result["totalResults"] = identity(value.totalResults);
+    result["itemsPerPage"] = identity(value.itemsPerPage);
+    result["totalsForAllResults"] = mapValues(identity)(value.totalsForAllResults);
+    result["nextLink"] = identity(value.nextLink);
+    result["id"] = identity(value.id);
+    result["query"] = GaDataQuery.serialize(value.query);
+    result["previousLink"] = identity(value.previousLink);
+    result["profileInfo"] = GaDataProfileInfo.serialize(value.profileInfo);
+    result["columnHeaders"] = map(GaDataColumnHeaders.serialize)(value.columnHeaders);
+    result["selfLink"] = identity(value.selfLink);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>GaData</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/GaData.html">GaData</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to GaData.parse">#</a></h4>
 <div class="doc">
@@ -59,7 +163,7 @@ static GaData parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../analytics-v3/GaData.html">GaData</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to GaData.serialize">#</a></h4>
 <div class="doc">
@@ -86,21 +190,11 @@ static core.Object serialize(GaData value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to GaData.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="columnHeaders">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../analytics-v3/GaDataColumnHeaders.html">GaDataColumnHeaders</a>&gt;         <strong>columnHeaders</strong> <a class="anchor-link"
             href="#columnHeaders"
             title="Permalink to GaData.columnHeaders">#</a>
@@ -114,7 +208,7 @@ core.List&lt;GaDataColumnHeaders&gt; columnHeaders;
 </div>
 </div>
 <div class="field"><h4 id="containsSampledData">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>containsSampledData</strong> <a class="anchor-link"
             href="#containsSampledData"
             title="Permalink to GaData.containsSampledData">#</a>
@@ -127,7 +221,7 @@ core.bool containsSampledData;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to GaData.id">#</a>
@@ -140,7 +234,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="itemsPerPage">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>itemsPerPage</strong> <a class="anchor-link"
             href="#itemsPerPage"
             title="Permalink to GaData.itemsPerPage">#</a>
@@ -155,7 +249,7 @@ core.int itemsPerPage;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to GaData.kind">#</a>
@@ -168,7 +262,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="nextLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>nextLink</strong> <a class="anchor-link"
             href="#nextLink"
             title="Permalink to GaData.nextLink">#</a>
@@ -181,7 +275,7 @@ core.String nextLink;
 </div>
 </div>
 <div class="field"><h4 id="previousLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>previousLink</strong> <a class="anchor-link"
             href="#previousLink"
             title="Permalink to GaData.previousLink">#</a>
@@ -194,7 +288,7 @@ core.String previousLink;
 </div>
 </div>
 <div class="field"><h4 id="profileInfo">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/GaDataProfileInfo.html">GaDataProfileInfo</a>         <strong>profileInfo</strong> <a class="anchor-link"
             href="#profileInfo"
             title="Permalink to GaData.profileInfo">#</a>
@@ -207,7 +301,7 @@ GaDataProfileInfo profileInfo;
 </div>
 </div>
 <div class="field"><h4 id="query">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../analytics-v3/GaDataQuery.html">GaDataQuery</a>         <strong>query</strong> <a class="anchor-link"
             href="#query"
             title="Permalink to GaData.query">#</a>
@@ -220,7 +314,7 @@ GaDataQuery query;
 </div>
 </div>
 <div class="field"><h4 id="rows">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;&gt;         <strong>rows</strong> <a class="anchor-link"
             href="#rows"
             title="Permalink to GaData.rows">#</a>
@@ -233,8 +327,21 @@ core.List&lt;core.List&lt;core.String&gt;&gt; rows;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to GaData.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to GaData.selfLink">#</a>
@@ -247,7 +354,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="totalResults">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>totalResults</strong> <a class="anchor-link"
             href="#totalResults"
             title="Permalink to GaData.totalResults">#</a>
@@ -260,7 +367,7 @@ core.int totalResults;
 </div>
 </div>
 <div class="field"><h4 id="totalsForAllResults">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>totalsForAllResults</strong> <a class="anchor-link"
             href="#totalsForAllResults"
             title="Permalink to GaData.totalsForAllResults">#</a>
@@ -272,6 +379,103 @@ request.</p>
 <pre class="source">
 core.Map&lt;core.String, core.String&gt; totalsForAllResults;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to GaData.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to GaData.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to GaData.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to GaData.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to GaData.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to GaData.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>

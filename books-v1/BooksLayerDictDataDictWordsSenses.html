@@ -1,0 +1,362 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>BooksLayerDictDataDictWordsSenses class / books-v1 Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="books-v1" data-type="BooksLayerDictDataDictWordsSenses">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../books-v1.html">books-v1</a> &rsaquo; <a href="../books-v1/BooksLayerDictDataDictWordsSenses.html">BooksLayerDictDataDictWordsSenses</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>BooksLayerDictDataDictWordsSenses</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<pre class="source">
+class BooksLayerDictDataDictWordsSenses extends IdentityHash {
+  
+  core.String pronunciationUrl;
+
+  
+  core.List&lt;BooksLayerDictDataDictWordsSensesSynonyms&gt; synonyms;
+
+  
+  core.List&lt;BooksLayerDictDataDictWordsSensesConjugations&gt; conjugations;
+
+  
+  BooksLayerDictDataDictWordsSensesSource source;
+
+  
+  core.String pronunciation;
+
+  
+  core.String partOfSpeech;
+
+  
+  core.String syllabification;
+
+  
+  core.List&lt;BooksLayerDictDataDictWordsSensesDefinitions&gt; definitions;
+
+  /** Parses an instance from its JSON representation. */
+  static BooksLayerDictDataDictWordsSenses parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new BooksLayerDictDataDictWordsSenses();
+    result.pronunciationUrl = identity(json["pronunciationUrl"]);
+    result.synonyms = map(BooksLayerDictDataDictWordsSensesSynonyms.parse)(json["synonyms"]);
+    result.conjugations = map(BooksLayerDictDataDictWordsSensesConjugations.parse)(json["conjugations"]);
+    result.source = BooksLayerDictDataDictWordsSensesSource.parse(json["source"]);
+    result.pronunciation = identity(json["pronunciation"]);
+    result.partOfSpeech = identity(json["partOfSpeech"]);
+    result.syllabification = identity(json["syllabification"]);
+    result.definitions = map(BooksLayerDictDataDictWordsSensesDefinitions.parse)(json["definitions"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(BooksLayerDictDataDictWordsSenses value) {
+    if (value == null) return null;
+    final result = {};
+    result["pronunciationUrl"] = identity(value.pronunciationUrl);
+    result["synonyms"] = map(BooksLayerDictDataDictWordsSensesSynonyms.serialize)(value.synonyms);
+    result["conjugations"] = map(BooksLayerDictDataDictWordsSensesConjugations.serialize)(value.conjugations);
+    result["source"] = BooksLayerDictDataDictWordsSensesSource.serialize(value.source);
+    result["pronunciation"] = identity(value.pronunciation);
+    result["partOfSpeech"] = identity(value.partOfSpeech);
+    result["syllabification"] = identity(value.syllabification);
+    result["definitions"] = map(BooksLayerDictDataDictWordsSensesDefinitions.serialize)(value.definitions);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>BooksLayerDictDataDictWordsSenses</strong></span></p>
+<div>
+<h3>Static Methods</h3>
+<div class="method"><h4 id="parse">
+<button class="show-code">Code</button>
+<a href="../books-v1/BooksLayerDictDataDictWordsSenses.html">BooksLayerDictDataDictWordsSenses</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
+              title="Permalink to BooksLayerDictDataDictWordsSenses.parse">#</a></h4>
+<div class="doc">
+<p>Parses an instance from its JSON representation.</p>
+<pre class="source">
+static BooksLayerDictDataDictWordsSenses parse(core.Map&lt;core.String, core.Object&gt; json) {
+  if (json == null) return null;
+  final result = new BooksLayerDictDataDictWordsSenses();
+  result.pronunciationUrl = identity(json["pronunciationUrl"]);
+  result.synonyms = map(BooksLayerDictDataDictWordsSensesSynonyms.parse)(json["synonyms"]);
+  result.conjugations = map(BooksLayerDictDataDictWordsSensesConjugations.parse)(json["conjugations"]);
+  result.source = BooksLayerDictDataDictWordsSensesSource.parse(json["source"]);
+  result.pronunciation = identity(json["pronunciation"]);
+  result.partOfSpeech = identity(json["partOfSpeech"]);
+  result.syllabification = identity(json["syllabification"]);
+  result.definitions = map(BooksLayerDictDataDictWordsSensesDefinitions.parse)(json["definitions"]);
+  return result;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="serialize">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../books-v1/BooksLayerDictDataDictWordsSenses.html">BooksLayerDictDataDictWordsSenses</a> value) <a class="anchor-link" href="#serialize"
+              title="Permalink to BooksLayerDictDataDictWordsSenses.serialize">#</a></h4>
+<div class="doc">
+<p>Converts an instance to its JSON representation.</p>
+<pre class="source">
+static core.Object serialize(BooksLayerDictDataDictWordsSenses value) {
+  if (value == null) return null;
+  final result = {};
+  result["pronunciationUrl"] = identity(value.pronunciationUrl);
+  result["synonyms"] = map(BooksLayerDictDataDictWordsSensesSynonyms.serialize)(value.synonyms);
+  result["conjugations"] = map(BooksLayerDictDataDictWordsSensesConjugations.serialize)(value.conjugations);
+  result["source"] = BooksLayerDictDataDictWordsSensesSource.serialize(value.source);
+  result["pronunciation"] = identity(value.pronunciation);
+  result["partOfSpeech"] = identity(value.partOfSpeech);
+  result["syllabification"] = identity(value.syllabification);
+  result["definitions"] = map(BooksLayerDictDataDictWordsSensesDefinitions.serialize)(value.definitions);
+  return result;
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="conjugations">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../books-v1/BooksLayerDictDataDictWordsSensesConjugations.html">BooksLayerDictDataDictWordsSensesConjugations</a>&gt;         <strong>conjugations</strong> <a class="anchor-link"
+            href="#conjugations"
+            title="Permalink to BooksLayerDictDataDictWordsSenses.conjugations">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.List&lt;BooksLayerDictDataDictWordsSensesConjugations&gt; conjugations;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="definitions">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../books-v1/BooksLayerDictDataDictWordsSensesDefinitions.html">BooksLayerDictDataDictWordsSensesDefinitions</a>&gt;         <strong>definitions</strong> <a class="anchor-link"
+            href="#definitions"
+            title="Permalink to BooksLayerDictDataDictWordsSenses.definitions">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.List&lt;BooksLayerDictDataDictWordsSensesDefinitions&gt; definitions;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="partOfSpeech">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>partOfSpeech</strong> <a class="anchor-link"
+            href="#partOfSpeech"
+            title="Permalink to BooksLayerDictDataDictWordsSenses.partOfSpeech">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String partOfSpeech;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="pronunciation">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>pronunciation</strong> <a class="anchor-link"
+            href="#pronunciation"
+            title="Permalink to BooksLayerDictDataDictWordsSenses.pronunciation">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String pronunciation;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="pronunciationUrl">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>pronunciationUrl</strong> <a class="anchor-link"
+            href="#pronunciationUrl"
+            title="Permalink to BooksLayerDictDataDictWordsSenses.pronunciationUrl">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String pronunciationUrl;
+</pre>
+</div>
+</div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to BooksLayerDictDataDictWordsSenses.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="source">
+<button class="show-code">Code</button>
+<a href="../books-v1/BooksLayerDictDataDictWordsSensesSource.html">BooksLayerDictDataDictWordsSensesSource</a>         <strong>source</strong> <a class="anchor-link"
+            href="#source"
+            title="Permalink to BooksLayerDictDataDictWordsSenses.source">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+BooksLayerDictDataDictWordsSensesSource source;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="syllabification">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>syllabification</strong> <a class="anchor-link"
+            href="#syllabification"
+            title="Permalink to BooksLayerDictDataDictWordsSenses.syllabification">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.String syllabification;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="synonyms">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../books-v1/BooksLayerDictDataDictWordsSensesSynonyms.html">BooksLayerDictDataDictWordsSensesSynonyms</a>&gt;         <strong>synonyms</strong> <a class="anchor-link"
+            href="#synonyms"
+            title="Permalink to BooksLayerDictDataDictWordsSenses.synonyms">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+core.List&lt;BooksLayerDictDataDictWordsSensesSynonyms&gt; synonyms;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to BooksLayerDictDataDictWordsSenses.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to BooksLayerDictDataDictWordsSenses.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to BooksLayerDictDataDictWordsSenses.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to BooksLayerDictDataDictWordsSenses.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to BooksLayerDictDataDictWordsSenses.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to BooksLayerDictDataDictWordsSenses.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -2,7 +2,7 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>File Class / drive-v2 Library / Dart Documentation</title>
+        <title>File class / drive-v2 Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
@@ -14,24 +14,264 @@
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/File.html">File</a></div>
+         &rsaquo; <a href="../drive-v2.html">drive-v2</a> &rsaquo; <a href="../drive-v2/File.html">File</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
         <div class="nav">
         
 </div>
 <div class="content">
         <h2><strong>File</strong>
-          Class
+          class
         </h2>
         
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
 <div class="doc">
+<pre class="source">
+class File extends IdentityHash {
+  /**
+ * The MIME type of the file. This is only mutable on update when uploading new content. This field
+ * can be left blank, and the mimetype will be determined from the uploaded content's MIME type.
+ */
+  core.String mimeType;
 
+  /** A link to the file's thumbnail. */
+  core.String thumbnailLink;
+
+  /** A group of labels for the file. */
+  FileLabels labels;
+
+  /** Indexable text attributes for the file (can only be written) */
+  FileIndexableText indexableText;
+
+  /**
+ * Whether this file has been explicitly trashed, as opposed to recursively trashed. This will only
+ * be populated if the file is trashed.
+ */
+  core.bool explicitlyTrashed;
+
+  /** ETag of the file. */
+  core.String etag;
+
+  /**
+ * Name of the last user to modify this file. This will only be populated if a user has edited this
+ * file.
+ */
+  core.String lastModifyingUserName;
+
+  /** Whether writers can share the document with other users. */
+  core.bool writersCanShare;
+
+  /** The id of the file. */
+  core.String id;
+
+  /** The title of this file. */
+  core.String title;
+
+  /** Name(s) of the owner(s) of this file. */
+  core.List&lt;core.String&gt; ownerNames;
+
+  /** Time at which this file was shared with the user (formatted RFC 3339 timestamp). */
+  core.String sharedWithMeDate;
+
+  /** Last time this file was viewed by the user (formatted RFC 3339 timestamp). */
+  core.String lastViewedByMeDate;
+
+  /**
+ * Collection of parent folders which contain this file. Setting this field will put the file in all
+ * of the provided folders. On insert, if no folders are provided, the file will be placed in the
+ * default root folder.
+ */
+  core.List&lt;ParentReference&gt; parents;
+
+  /** Links for exporting Google Docs to specific formats. */
+  core.Map&lt;core.String, core.String&gt; exportLinks;
+
+  /**
+ * Thumbnail for the file. Only accepted on upload and for files that are not already thumbnailed by
+ * Google.
+ */
+  FileThumbnail thumbnail;
+
+  /**
+ * The original filename if the file was uploaded manually, or the original title if the file was
+ * inserted through the API. Note that renames of the title will not change the original filename.
+ * This will only be populated on files with content stored in Drive.
+ */
+  core.String originalFilename;
+
+  /** A short description of the file. */
+  core.String description;
+
+  /**
+ * A link for downloading the content of the file in a browser using cookie based authentication. In
+ * cases where the content is shared publicly, the content can be downloaded without any
+ * credentials.
+ */
+  core.String webContentLink;
+
+  /** Whether the file can be edited by the current user. */
+  core.bool editable;
+
+  /** The type of file. This is always drive#file. */
+  core.String kind;
+
+  /** The number of quota bytes used by this file. */
+  core.String quotaBytesUsed;
+
+  /**
+ * The size of the file in bytes. This will only be populated on files with content stored in Drive.
+ */
+  core.String fileSize;
+
+  /** Create time for this file (formatted ISO8601 timestamp). */
+  core.String createdDate;
+
+  /**
+ * An MD5 checksum for the content of this file. This will only be populated on files with content
+ * stored in Drive.
+ */
+  core.String md5Checksum;
+
+  /**
+ * Metadata about image media. This will only be present for image types, and its contents will
+ * depend on what can be parsed from the image content.
+ */
+  FileImageMediaMetadata imageMediaMetadata;
+
+  /** A link for embedding the file. */
+  core.String embedLink;
+
+  /** A link for opening the file in using a relevant Google editor or viewer. */
+  core.String alternateLink;
+
+  /**
+ * Last time this file was modified by the user (formatted RFC 3339 timestamp). Note that setting
+ * modifiedDate will also update the modifiedByMe date for the user which set the date.
+ */
+  core.String modifiedByMeDate;
+
+  /**
+ * Short term download URL for the file. This will only be populated on files with content stored in
+ * Drive.
+ */
+  core.String downloadUrl;
+
+  /** The permissions for the authenticated user on this file. */
+  Permission userPermission;
+
+  /**
+ * The file extension used when downloading this file. This field is set from the title when
+ * inserting or uploading new content. This will only be populated on files with content stored in
+ * Drive.
+ */
+  core.String fileExtension;
+
+  /** A link back to this file. */
+  core.String selfLink;
+
+  /**
+ * Last time this file was modified by anyone (formatted RFC 3339 timestamp). This is only mutable
+ * on update when the setModifiedDate parameter is set.
+ */
+  core.String modifiedDate;
+
+  /** Parses an instance from its JSON representation. */
+  static File parse(core.Map&lt;core.String, core.Object&gt; json) {
+    if (json == null) return null;
+    final result = new File();
+    result.mimeType = identity(json["mimeType"]);
+    result.thumbnailLink = identity(json["thumbnailLink"]);
+    result.labels = FileLabels.parse(json["labels"]);
+    result.indexableText = FileIndexableText.parse(json["indexableText"]);
+    result.explicitlyTrashed = identity(json["explicitlyTrashed"]);
+    result.etag = identity(json["etag"]);
+    result.lastModifyingUserName = identity(json["lastModifyingUserName"]);
+    result.writersCanShare = identity(json["writersCanShare"]);
+    result.id = identity(json["id"]);
+    result.title = identity(json["title"]);
+    result.ownerNames = map(identity)(json["ownerNames"]);
+    result.sharedWithMeDate = identity(json["sharedWithMeDate"]);
+    result.lastViewedByMeDate = identity(json["lastViewedByMeDate"]);
+    result.parents = map(ParentReference.parse)(json["parents"]);
+    result.exportLinks = mapValues(identity)(json["exportLinks"]);
+    result.thumbnail = FileThumbnail.parse(json["thumbnail"]);
+    result.originalFilename = identity(json["originalFilename"]);
+    result.description = identity(json["description"]);
+    result.webContentLink = identity(json["webContentLink"]);
+    result.editable = identity(json["editable"]);
+    result.kind = identity(json["kind"]);
+    result.quotaBytesUsed = identity(json["quotaBytesUsed"]);
+    result.fileSize = identity(json["fileSize"]);
+    result.createdDate = identity(json["createdDate"]);
+    result.md5Checksum = identity(json["md5Checksum"]);
+    result.imageMediaMetadata = FileImageMediaMetadata.parse(json["imageMediaMetadata"]);
+    result.embedLink = identity(json["embedLink"]);
+    result.alternateLink = identity(json["alternateLink"]);
+    result.modifiedByMeDate = identity(json["modifiedByMeDate"]);
+    result.downloadUrl = identity(json["downloadUrl"]);
+    result.userPermission = Permission.parse(json["userPermission"]);
+    result.fileExtension = identity(json["fileExtension"]);
+    result.selfLink = identity(json["selfLink"]);
+    result.modifiedDate = identity(json["modifiedDate"]);
+    return result;
+  }
+  /** Converts an instance to its JSON representation. */
+  static core.Object serialize(File value) {
+    if (value == null) return null;
+    final result = {};
+    result["mimeType"] = identity(value.mimeType);
+    result["thumbnailLink"] = identity(value.thumbnailLink);
+    result["labels"] = FileLabels.serialize(value.labels);
+    result["indexableText"] = FileIndexableText.serialize(value.indexableText);
+    result["explicitlyTrashed"] = identity(value.explicitlyTrashed);
+    result["etag"] = identity(value.etag);
+    result["lastModifyingUserName"] = identity(value.lastModifyingUserName);
+    result["writersCanShare"] = identity(value.writersCanShare);
+    result["id"] = identity(value.id);
+    result["title"] = identity(value.title);
+    result["ownerNames"] = map(identity)(value.ownerNames);
+    result["sharedWithMeDate"] = identity(value.sharedWithMeDate);
+    result["lastViewedByMeDate"] = identity(value.lastViewedByMeDate);
+    result["parents"] = map(ParentReference.serialize)(value.parents);
+    result["exportLinks"] = mapValues(identity)(value.exportLinks);
+    result["thumbnail"] = FileThumbnail.serialize(value.thumbnail);
+    result["originalFilename"] = identity(value.originalFilename);
+    result["description"] = identity(value.description);
+    result["webContentLink"] = identity(value.webContentLink);
+    result["editable"] = identity(value.editable);
+    result["kind"] = identity(value.kind);
+    result["quotaBytesUsed"] = identity(value.quotaBytesUsed);
+    result["fileSize"] = identity(value.fileSize);
+    result["createdDate"] = identity(value.createdDate);
+    result["md5Checksum"] = identity(value.md5Checksum);
+    result["imageMediaMetadata"] = FileImageMediaMetadata.serialize(value.imageMediaMetadata);
+    result["embedLink"] = identity(value.embedLink);
+    result["alternateLink"] = identity(value.alternateLink);
+    result["modifiedByMeDate"] = identity(value.modifiedByMeDate);
+    result["downloadUrl"] = identity(value.downloadUrl);
+    result["userPermission"] = Permission.serialize(value.userPermission);
+    result["fileExtension"] = identity(value.fileExtension);
+    result["selfLink"] = identity(value.selfLink);
+    result["modifiedDate"] = identity(value.modifiedDate);
+    return result;
+  }
+  toString() =&gt; serialize(this).toString();
+}
+</pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../utils/IdentityHash.html">IdentityHash</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>File</strong></span></p>
+<div>
 <h3>Static Methods</h3>
 <div class="method"><h4 id="parse">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../drive-v2/File.html">File</a> <strong>parse</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/Object.html">Object</a>&gt; json) <a class="anchor-link" href="#parse"
               title="Permalink to File.parse">#</a></h4>
 <div class="doc">
@@ -55,6 +295,7 @@ static File parse(core.Map&lt;core.String, core.Object&gt; json) {
   result.lastViewedByMeDate = identity(json["lastViewedByMeDate"]);
   result.parents = map(ParentReference.parse)(json["parents"]);
   result.exportLinks = mapValues(identity)(json["exportLinks"]);
+  result.thumbnail = FileThumbnail.parse(json["thumbnail"]);
   result.originalFilename = identity(json["originalFilename"]);
   result.description = identity(json["description"]);
   result.webContentLink = identity(json["webContentLink"]);
@@ -79,7 +320,7 @@ static File parse(core.Map&lt;core.String, core.Object&gt; json) {
 </div>
 </div>
 <div class="method"><h4 id="serialize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> <strong>serialize</strong>(<a href="../drive-v2/File.html">File</a> value) <a class="anchor-link" href="#serialize"
               title="Permalink to File.serialize">#</a></h4>
 <div class="doc">
@@ -103,6 +344,7 @@ static core.Object serialize(File value) {
   result["lastViewedByMeDate"] = identity(value.lastViewedByMeDate);
   result["parents"] = map(ParentReference.serialize)(value.parents);
   result["exportLinks"] = mapValues(identity)(value.exportLinks);
+  result["thumbnail"] = FileThumbnail.serialize(value.thumbnail);
   result["originalFilename"] = identity(value.originalFilename);
   result["description"] = identity(value.description);
   result["webContentLink"] = identity(value.webContentLink);
@@ -126,21 +368,11 @@ static core.Object serialize(File value) {
 </pre>
 </div>
 </div>
-<h3>Methods</h3>
-<div class="method"><h4 id="toString">
-<span class="show-code">Code</span>
-<strong>toString</strong>() <a class="anchor-link" href="#toString"
-              title="Permalink to File.toString">#</a></h4>
-<div class="doc">
-
-<pre class="source">
-toString() =&gt; serialize(this).toString();
-</pre>
 </div>
-</div>
-<h3>Fields</h3>
+<div>
+<h3>Properties</h3>
 <div class="field"><h4 id="alternateLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>alternateLink</strong> <a class="anchor-link"
             href="#alternateLink"
             title="Permalink to File.alternateLink">#</a>
@@ -153,7 +385,7 @@ core.String alternateLink;
 </div>
 </div>
 <div class="field"><h4 id="createdDate">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>createdDate</strong> <a class="anchor-link"
             href="#createdDate"
             title="Permalink to File.createdDate">#</a>
@@ -166,7 +398,7 @@ core.String createdDate;
 </div>
 </div>
 <div class="field"><h4 id="description">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>description</strong> <a class="anchor-link"
             href="#description"
             title="Permalink to File.description">#</a>
@@ -179,7 +411,7 @@ core.String description;
 </div>
 </div>
 <div class="field"><h4 id="downloadUrl">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>downloadUrl</strong> <a class="anchor-link"
             href="#downloadUrl"
             title="Permalink to File.downloadUrl">#</a>
@@ -193,7 +425,7 @@ core.String downloadUrl;
 </div>
 </div>
 <div class="field"><h4 id="editable">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>editable</strong> <a class="anchor-link"
             href="#editable"
             title="Permalink to File.editable">#</a>
@@ -206,7 +438,7 @@ core.bool editable;
 </div>
 </div>
 <div class="field"><h4 id="embedLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>embedLink</strong> <a class="anchor-link"
             href="#embedLink"
             title="Permalink to File.embedLink">#</a>
@@ -219,7 +451,7 @@ core.String embedLink;
 </div>
 </div>
 <div class="field"><h4 id="etag">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>etag</strong> <a class="anchor-link"
             href="#etag"
             title="Permalink to File.etag">#</a>
@@ -232,7 +464,7 @@ core.String etag;
 </div>
 </div>
 <div class="field"><h4 id="explicitlyTrashed">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>explicitlyTrashed</strong> <a class="anchor-link"
             href="#explicitlyTrashed"
             title="Permalink to File.explicitlyTrashed">#</a>
@@ -246,7 +478,7 @@ core.bool explicitlyTrashed;
 </div>
 </div>
 <div class="field"><h4 id="exportLinks">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>exportLinks</strong> <a class="anchor-link"
             href="#exportLinks"
             title="Permalink to File.exportLinks">#</a>
@@ -259,7 +491,7 @@ core.Map&lt;core.String, core.String&gt; exportLinks;
 </div>
 </div>
 <div class="field"><h4 id="fileExtension">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fileExtension</strong> <a class="anchor-link"
             href="#fileExtension"
             title="Permalink to File.fileExtension">#</a>
@@ -274,7 +506,7 @@ core.String fileExtension;
 </div>
 </div>
 <div class="field"><h4 id="fileSize">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>fileSize</strong> <a class="anchor-link"
             href="#fileSize"
             title="Permalink to File.fileSize">#</a>
@@ -287,7 +519,7 @@ core.String fileSize;
 </div>
 </div>
 <div class="field"><h4 id="id">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>id</strong> <a class="anchor-link"
             href="#id"
             title="Permalink to File.id">#</a>
@@ -300,7 +532,7 @@ core.String id;
 </div>
 </div>
 <div class="field"><h4 id="imageMediaMetadata">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../drive-v2/FileImageMediaMetadata.html">FileImageMediaMetadata</a>         <strong>imageMediaMetadata</strong> <a class="anchor-link"
             href="#imageMediaMetadata"
             title="Permalink to File.imageMediaMetadata">#</a>
@@ -314,7 +546,7 @@ FileImageMediaMetadata imageMediaMetadata;
 </div>
 </div>
 <div class="field"><h4 id="indexableText">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../drive-v2/FileIndexableText.html">FileIndexableText</a>         <strong>indexableText</strong> <a class="anchor-link"
             href="#indexableText"
             title="Permalink to File.indexableText">#</a>
@@ -327,7 +559,7 @@ FileIndexableText indexableText;
 </div>
 </div>
 <div class="field"><h4 id="kind">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>kind</strong> <a class="anchor-link"
             href="#kind"
             title="Permalink to File.kind">#</a>
@@ -340,7 +572,7 @@ core.String kind;
 </div>
 </div>
 <div class="field"><h4 id="labels">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../drive-v2/FileLabels.html">FileLabels</a>         <strong>labels</strong> <a class="anchor-link"
             href="#labels"
             title="Permalink to File.labels">#</a>
@@ -353,7 +585,7 @@ FileLabels labels;
 </div>
 </div>
 <div class="field"><h4 id="lastModifyingUserName">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>lastModifyingUserName</strong> <a class="anchor-link"
             href="#lastModifyingUserName"
             title="Permalink to File.lastModifyingUserName">#</a>
@@ -367,7 +599,7 @@ core.String lastModifyingUserName;
 </div>
 </div>
 <div class="field"><h4 id="lastViewedByMeDate">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>lastViewedByMeDate</strong> <a class="anchor-link"
             href="#lastViewedByMeDate"
             title="Permalink to File.lastViewedByMeDate">#</a>
@@ -380,7 +612,7 @@ core.String lastViewedByMeDate;
 </div>
 </div>
 <div class="field"><h4 id="md5Checksum">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>md5Checksum</strong> <a class="anchor-link"
             href="#md5Checksum"
             title="Permalink to File.md5Checksum">#</a>
@@ -394,7 +626,7 @@ core.String md5Checksum;
 </div>
 </div>
 <div class="field"><h4 id="mimeType">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>mimeType</strong> <a class="anchor-link"
             href="#mimeType"
             title="Permalink to File.mimeType">#</a>
@@ -408,7 +640,7 @@ core.String mimeType;
 </div>
 </div>
 <div class="field"><h4 id="modifiedByMeDate">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>modifiedByMeDate</strong> <a class="anchor-link"
             href="#modifiedByMeDate"
             title="Permalink to File.modifiedByMeDate">#</a>
@@ -422,7 +654,7 @@ core.String modifiedByMeDate;
 </div>
 </div>
 <div class="field"><h4 id="modifiedDate">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>modifiedDate</strong> <a class="anchor-link"
             href="#modifiedDate"
             title="Permalink to File.modifiedDate">#</a>
@@ -436,7 +668,7 @@ core.String modifiedDate;
 </div>
 </div>
 <div class="field"><h4 id="originalFilename">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>originalFilename</strong> <a class="anchor-link"
             href="#originalFilename"
             title="Permalink to File.originalFilename">#</a>
@@ -451,7 +683,7 @@ core.String originalFilename;
 </div>
 </div>
 <div class="field"><h4 id="ownerNames">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt;         <strong>ownerNames</strong> <a class="anchor-link"
             href="#ownerNames"
             title="Permalink to File.ownerNames">#</a>
@@ -464,7 +696,7 @@ core.List&lt;core.String&gt; ownerNames;
 </div>
 </div>
 <div class="field"><h4 id="parents">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../drive-v2/ParentReference.html">ParentReference</a>&gt;         <strong>parents</strong> <a class="anchor-link"
             href="#parents"
             title="Permalink to File.parents">#</a>
@@ -479,7 +711,7 @@ core.List&lt;ParentReference&gt; parents;
 </div>
 </div>
 <div class="field"><h4 id="quotaBytesUsed">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>quotaBytesUsed</strong> <a class="anchor-link"
             href="#quotaBytesUsed"
             title="Permalink to File.quotaBytesUsed">#</a>
@@ -491,8 +723,21 @@ core.String quotaBytesUsed;
 </pre>
 </div>
 </div>
+<div class="field inherited"><h4 id="runtimeType">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Type.html">Type</a>         <strong>runtimeType</strong> <a class="anchor-link"
+            href="#runtimeType"
+            title="Permalink to File.runtimeType">#</a>
+        </h4>
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>A representation of the runtime type of the object.</p>
+<pre class="source">
+external Type get runtimeType;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="selfLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>selfLink</strong> <a class="anchor-link"
             href="#selfLink"
             title="Permalink to File.selfLink">#</a>
@@ -505,7 +750,7 @@ core.String selfLink;
 </div>
 </div>
 <div class="field"><h4 id="sharedWithMeDate">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>sharedWithMeDate</strong> <a class="anchor-link"
             href="#sharedWithMeDate"
             title="Permalink to File.sharedWithMeDate">#</a>
@@ -517,8 +762,22 @@ core.String sharedWithMeDate;
 </pre>
 </div>
 </div>
+<div class="field"><h4 id="thumbnail">
+<button class="show-code">Code</button>
+<a href="../drive-v2/FileThumbnail.html">FileThumbnail</a>         <strong>thumbnail</strong> <a class="anchor-link"
+            href="#thumbnail"
+            title="Permalink to File.thumbnail">#</a>
+        </h4>
+        <div class="doc">
+<p>Thumbnail for the file. Only accepted on upload and for files that are not already thumbnailed by
+Google.</p>
+<pre class="source">
+FileThumbnail thumbnail;
+</pre>
+</div>
+</div>
 <div class="field"><h4 id="thumbnailLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>thumbnailLink</strong> <a class="anchor-link"
             href="#thumbnailLink"
             title="Permalink to File.thumbnailLink">#</a>
@@ -531,7 +790,7 @@ core.String thumbnailLink;
 </div>
 </div>
 <div class="field"><h4 id="title">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>title</strong> <a class="anchor-link"
             href="#title"
             title="Permalink to File.title">#</a>
@@ -544,7 +803,7 @@ core.String title;
 </div>
 </div>
 <div class="field"><h4 id="userPermission">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="../drive-v2/Permission.html">Permission</a>         <strong>userPermission</strong> <a class="anchor-link"
             href="#userPermission"
             title="Permalink to File.userPermission">#</a>
@@ -557,7 +816,7 @@ Permission userPermission;
 </div>
 </div>
 <div class="field"><h4 id="webContentLink">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>webContentLink</strong> <a class="anchor-link"
             href="#webContentLink"
             title="Permalink to File.webContentLink">#</a>
@@ -572,7 +831,7 @@ core.String webContentLink;
 </div>
 </div>
 <div class="field"><h4 id="writersCanShare">
-<span class="show-code">Code</span>
+<button class="show-code">Code</button>
 <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>writersCanShare</strong> <a class="anchor-link"
             href="#writersCanShare"
             title="Permalink to File.writersCanShare">#</a>
@@ -582,6 +841,103 @@ core.String webContentLink;
 <pre class="source">
 core.bool writersCanShare;
 </pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Operators</h3>
+<div class="method inherited"><h4 id="==">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+              title="Permalink to File.operator ==">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>The equality operator.</p>
+<p>The default behavior for all <code>Object</code>s is to return true if and
+only if <code>this</code> and 
+<span class="param">other</span> are the same object.</p>
+<p>If a subclass overrides the equality operator it should override
+the <code>hashCode</code> method as well to maintain consistency.</p>
+<pre class="source">
+bool operator ==(other) =&gt; identical(this, other);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method inherited"><h4 id="hashCode">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>hashCode</strong>() <a class="anchor-link" href="#hashCode"
+              title="Permalink to File.hashCode">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <code>hashCode</code> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+int hashCode() =&gt; _id;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="IdentityHash">
+<button class="show-code">Code</button>
+new <strong>IdentityHash</strong>() <a class="anchor-link" href="#IdentityHash"
+              title="Permalink to File.IdentityHash">#</a></h4>
+<div class="inherited-from">inherited from <a href="../utils/IdentityHash.html">IdentityHash</a> </div><div class="doc">
+<pre class="source">
+IdentityHash() : _id = _cnt++;
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+<strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/List.html">List</a> args) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to File.noSuchMethod">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p><code>noSuchMethod</code> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <code>noSuchMethod</code>. If <code>noSuchMethod</code>
+returns a value, that value becomes the result of the original
+invocation.</p>
+<p>The default behavior of <code>noSuchMethod</code> is to throw a
+<code>noSuchMethodError</code>.</p>
+<pre class="source">
+external Dynamic noSuchMethod(String name, List args);
+</pre>
+</div>
+</div>
+<div class="method inherited"><h4 id="Object">
+<button class="show-code">Code</button>
+const <strong>Object</strong>() <a class="anchor-link" href="#Object"
+              title="Permalink to File.Object">#</a></h4>
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div><div class="doc">
+<p>Creates a new <code>Object</code> instance.</p>
+<p><code>Object</code> instances have no meaningful state, and are only useful
+through their identity. An <code>Object</code> instance is equal to itself
+only.</p>
+<pre class="source">
+const Object();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to File.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+toString() =&gt; serialize(this).toString();
+</pre>
+</div>
 </div>
 </div>
         </div>
